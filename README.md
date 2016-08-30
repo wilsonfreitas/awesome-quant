@@ -12,7 +12,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Frameworks](#frameworks) - frameworks that support different languages
 - [Reproducing Works](#reproducing-works) - repositories that reproduce books and papers results or implement examples
 
-##Python
+## Python
 
 ### Numerical Libraries & Data Structures
 
@@ -167,13 +167,13 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ### Time Series
 
-- [tseries]() - 
-- [xts]() - 
-- [fGarch]() - 
-- [timeSeries]() - 
-- [rugarch]() - 
-- [rmgarch]() - 
-- 
+- [tseries](https://cran.r-project.org/web/packages/tseries/index.html) - Time Series Analysis and Computational Finance
+- [zoo](https://cran.r-project.org/web/packages/zoo/index.html) - S3 Infrastructure for Regular and Irregular Time Series (Z's Ordered Observations)
+- [xts](https://cran.r-project.org/web/packages/xts/index.html) - eXtensible Time Series
+- [fGarch](https://cran.r-project.org/web/packages/fGarch/index.html) - Rmetrics - Autoregressive Conditional Heteroskedastic Modelling
+- [timeSeries](https://cran.r-project.org/web/packages/timeSeries/index.html) - Rmetrics - Financial Time Series Objects
+- [rugarch](https://cran.r-project.org/web/packages/rugarch/index.html) - Univariate GARCH Models
+- [rmgarch](https://cran.r-project.org/web/packages/rmgarch/index.html) - Multivariate GARCH Models
 
 ### Calendars
 
