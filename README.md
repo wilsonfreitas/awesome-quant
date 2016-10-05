@@ -173,7 +173,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [timeSeries]() - 
 - [rugarch]() - 
 - [rmgarch]() - 
-- 
 
 ### Calendars
 
