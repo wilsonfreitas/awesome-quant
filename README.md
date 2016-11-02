@@ -20,6 +20,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [scipy](https://www.scipy.org) - SciPy (pronounced “Sigh Pie”) is a Python-based ecosystem of open-source software for mathematics, science, and engineering.
 - [pandas](http://pandas.pydata.org) - pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
 - [quantdsl](https://github.com/johnbywater/quantdsl) - Domain specific language for quantitative analytics in finance and trading
+- [statistics](https://docs.python.org/3/library/statistics.html) - Builtin Python library for all basic statistical calculations
 
 ### Financial Instruments
 
