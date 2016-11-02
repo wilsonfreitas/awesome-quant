@@ -186,6 +186,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [QuantLib.jl](https://github.com/pazzo83/QuantLib.jl) - Quantlib implementation in pure Julia.
 - [FinancialMarkets.jl](https://github.com/imanuelcostigan/FinancialMarkets.jl) - Describe and model financial markets objects using Julia
 - [Ito.jl](https://github.com/aviks/Ito.jl) - A Julia package for quantitative finance
+- [TALib.jl](https://github.com/femtotrader/TALib.jl) - A Julia wrapper for TA-Lib
 
 ## Java
 
