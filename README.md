@@ -50,6 +50,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pandas_talib](https://github.com/femtotrader/pandas_talib) - A Python Pandas implementation of technical analysis indicators
 - [algobroker](https://github.com/joequant/algobroker) - This is an execution engine for algo trading
 - [pysentosa](https://pypi.python.org/pypi/pysentosa) - Python API for sentosa trading system
+- [finmarketpy](https://github.com/cuemacro/finmarketpy) - Python library for backtesting trading strategies and analyzing financial markets
 
 ### Risk Analysis
 
