@@ -9,6 +9,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Java](#java)
 - [Haskell](#haskell)
 - [Scala](#scala)
+- [Ruby](#ruby)
 - [Frameworks](#frameworks) - frameworks that support different languages
 - [Reproducing Works](#reproducing-works) - repositories that reproduce books and papers results or implement examples
 
@@ -222,6 +223,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Scala
 
 - [QuantScale](https://github.com/choucrifahed/quantscale) - Scala Quantitative Finance Library
+
+## Ruby
+
+- [Jiji](https://github.com/unageanu/jiji2) - Open Source Forex algorithmic trading framework using OANDA REST API.
 
 ## Frameworks
 
