@@ -5,6 +5,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [Python](#python)
 - [R](#r)
+- [Matlab](#matlab)
 - [Julia](#julia)
 - [Java](#java)
 - [Haskell](#haskell)
@@ -202,6 +203,13 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [timeDate](https://cran.r-project.org/web/packages/timeDate/index.html) - Chronological and Calendar Objects
 - [bizdays](https://cran.r-project.org/web/packages/bizdays/index.html) - Business days calculations and utilities
 
+### Matlab
+
+#### FrameWorks
+
+- [QUANTAXIS](https://github.com/yutiansut/quantaxis) - Integrated Quantitative Toolbox with Matlab
+
+
 ## Julia
 
 - [QuantLib.jl](https://github.com/pazzo83/QuantLib.jl) - Quantlib implementation in pure Julia.
@@ -214,6 +222,11 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [JQuantLib](http://www.jquantlib.org) - JQuantLib is a free, open-source, comprehensive framework for quantitative finance, written in 100% Java.
 - [finmat.net](http://finmath.net) - Java library with algorithms and methodologies related to mathematical finance.
 - [quantcomponents](https://github.com/lsgro/quantcomponents) - Free Java components for Quantitative Finance and Algorithmic Trading
+
+## JavaScipts
+
+### Data Visualization
+- [QUANTAXIS_Visualziation](https://github.com/yutiansut/quantaxis_visualization) an awesome visualization center based on quantaxis
 
 ## Haskell
 
