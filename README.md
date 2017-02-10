@@ -8,6 +8,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Matlab](#matlab)
 - [Julia](#julia)
 - [Java](#java)
+- [JavaScipts](#javascripts)
 - [Haskell](#haskell)
 - [Scala](#scala)
 - [Ruby](#ruby)
