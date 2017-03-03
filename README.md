@@ -8,7 +8,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Matlab](#matlab)
 - [Julia](#julia)
 - [Java](#java)
-- [JavaScipts](#javascripts)
+- [JavaScript](#javascript)
 - [Haskell](#haskell)
 - [Scala](#scala)
 - [Ruby](#ruby)
@@ -225,7 +225,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [quantcomponents](https://github.com/lsgro/quantcomponents) - Free Java components for Quantitative Finance and Algorithmic Trading
 - [DRIP](https://lakshmidrip.github.io/DRIP) - Fixed Income, Asset Allocation, Transaction Cost Analysis, XVA Metrics Libraries.
 
-## JavaScipts
+## JavaScript
 
 ### Data Visualization
 - [QUANTAXIS_Visualziation](https://github.com/yutiansut/quantaxis_visualization) an awesome visualization center based on quantaxis
