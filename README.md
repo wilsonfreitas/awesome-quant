@@ -69,6 +69,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [ARCH](https://github.com/bashtage/arch) - ARCH models in Python
 - [statsmodels](http://statsmodels.sourceforge.net) - Python module that allows users to explore data, estimate statistical models, and perform statistical tests.
 - [dynts](https://github.com/quantmind/dynts) - Python package for timeseries analysis and manipulation
+- [PyFlux](https://github.com/RJT1990/pyflux) - Python library for timeseries modelling and inference (frequentist and Bayesian) on models
 
 ### Calendars
 
