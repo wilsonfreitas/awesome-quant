@@ -114,7 +114,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [xlsxwriter](https://xlsxwriter.readthedocs.org/) - Write files in the Excel 2007+ XLSX file format
 - [xlwt](https://github.com/python-excel/xlwt) - Library to create spreadsheet files compatible with MS Excel 97/2000/XP/2003 XLS files, on any platform.
 - [DataNitro](https://datanitro.com/) - DataNitro also offers full-featured Python-Excel integration, including UDFs. Trial downloads are available, but users must purchase a license.
-- [ExcelPython](https://github.com/ericremoreynolds/excelpython) - An open source, easy to use interface for calling Python code from Excel.
 - [xlloop](http://xlloop.sourceforge.net) - XLLoop is an open source framework for implementing Excel user-defined functions (UDFs) on a centralised server (a function server).
 - [expy](http://www.bnikolic.co.uk/expy/expy.html) - The ExPy add-in allows easy use of Python directly from within an Microsoft Excel spreadsheet, both to execute arbitrary code and to define new Excel functions.
 - [pyxll](https://www.pyxll.com) - PyXLL is an Excel add-in that enables you to extend Excel using nothing but Python code.
