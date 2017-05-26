@@ -239,7 +239,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Scala
 
 - [QuantScale](https://github.com/choucrifahed/quantscale) - Scala Quantitative Finance Library
-- [IFTTT Stock Data Manipulator](https://github.com/frankcash/IFTT-Stock-Data-Manipulator) Scala library for working with stock data from IFTTT recipes.
+- [Scala Quant](https://github.com/frankcash/Scala-Quant) Scala library for working with stock data from IFTTT recipes or Google Finance.
 
 ## Ruby
 
