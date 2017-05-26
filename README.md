@@ -54,6 +54,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [algobroker](https://github.com/joequant/algobroker) - This is an execution engine for algo trading
 - [pysentosa](https://pypi.python.org/pypi/pysentosa) - Python API for sentosa trading system
 - [finmarketpy](https://github.com/cuemacro/finmarketpy) - Python library for backtesting trading strategies and analyzing financial markets
+- [binary-martingale](https://github.com/metaperl/binary-martingale) - Computer program to automatically trade binary options martingale style
 
 ### Risk Analysis
 
@@ -177,6 +178,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [derivmkts](https://cran.r-project.org/web/packages/derivmkts/index.html) - Functions and R Code to Accompany Derivatives Markets
 - [FinCal](https://github.com/felixfan/FinCal) - Package for time value of money calculation, time series analysis and computational finance
 - [r-quant](https://github.com/artyyouth/r-quant) - R code for quantitative analysis in finance
+- [binary_options](https://github.com/KlausGlueckert/binary_options) - predicting stock direction for binary option trading
+- [options.studies](https://github.com/taylorizing/options.studies) - options trading studies functions for use with options.data package and shiny
 
 ### Trading
 
