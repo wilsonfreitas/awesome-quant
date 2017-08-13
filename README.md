@@ -108,6 +108,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [coinmarketcap](https://github.com/mrsmn/coinmarketcap-api) - Python API for coinmarketcap
 - [after-hours](https://github.com/datawrestler/after-hours) - Obtain pre market and after hours stock prices for a given symbol
 - [bronto-python](https://github.com/Scotts-Marketplace/bronto-python/) - Bronto API Integration for Python
+- [pytdx](https://github.com/rainx/pytdx) - Python Interface for retrieving chinese stock realtime quote data from TongDaXin Nodes
 
 ### Excel Integration
 
