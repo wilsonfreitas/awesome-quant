@@ -60,6 +60,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [pyfolio](https://github.com/quantopian/pyfolio) - Portfolio and risk analytics in Python
 - [qrisk](https://github.com/quantopian/qrisk) - Common financial risk and performance metrics
+- [fecon235](https://github.com/rsvp/fecon235) - Computational tools for financial economics include: Gaussian Mixture model of leptokurtotic risk, adaptive Boltzmann portfolios.
 - [finance](https://pypi.python.org/pypi/finance) - Financial Risk Calculations. Optimized for ease of use through class construction and operator overload.
 - [qfrm](https://pypi.python.org/pypi/qfrm) - Quantitative Financial Risk Management: awesome OOP tools for measuring, managing and visualizing risk of financial instruments and portfolios.
 - [visualize-wealth](https://github.com/benjaminmgross/visualize-wealth) - Portfolio construction and quantitative analysis
