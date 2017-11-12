@@ -230,7 +230,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TimeSeries.jl](https://github.com/JuliaStats/TimeSeries.jl) - Time series toolkit for Julia
 - [MarketTechnicals.jl](https://github.com/JuliaQuant/MarketTechnicals.jl) - Technical analysis of financial time series on top of TimeSeries
 - [MarketData.jl](https://github.com/JuliaQuant/MarketData.jl) - Time series market data
-- [TimeFrames](https://github.com/femtotrader/TimeFrames.jl)
+- [TimeFrames.jl](https://github.com/femtotrader/TimeFrames.jl)
 
 ## Java
 
