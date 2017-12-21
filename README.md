@@ -12,6 +12,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Haskell](#haskell)
 - [Scala](#scala)
 - [Ruby](#ruby)
+- [CSharp](#csharp)
 - [Frameworks](#frameworks) - frameworks that support different languages
 - [Reproducing Works](#reproducing-works) - repositories that reproduce books and papers results or implement examples
 
@@ -272,6 +273,9 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 	- [QuantLib.jl](https://github.com/pazzo83/QuantLib.jl) - Julia port
 - [TA-Lib](http://ta-lib.org) - perform technical analysis of financial market data
 
+## CSharp
+
+- [QuantConnect](https://github.com/QuantConnect/Lean) - Lean Engine is an open-source fully managed C# algorithmic trading engine built for desktop and cloud usage.
 
 ## Reproducing Works
 
