@@ -74,6 +74,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [dynts](https://github.com/quantmind/dynts) - Python package for timeseries analysis and manipulation
 - [PyFlux](https://github.com/RJT1990/pyflux) - Python library for timeseries modelling and inference (frequentist and Bayesian) on models
 - [tsfresh](https://github.com/blue-yonder/tsfresh) - Automatic extraction of relevant features from time series
+- [quandl-metabase](https://hasura.io/hub/project/anirudhm/quandl-metabase-time-series) - Python quickstart to visualize Quandl timeseries datasets with Metabase
 
 ### Calendars
 
