@@ -36,6 +36,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [ffn](https://github.com/pmorissette/ffn) - A financial function library for Python
 - [pynance](http://pynance.net) - PyNance is open-source software for retrieving, analysing and visualizing data from stock and derivatives markets.
 - [tia](https://github.com/bpsmith/tia) - Toolkit for integration and analysis
+- [hasura/base-python-dash](https://hasura.io/hub/project/hasura/base-python-dash) - Hasura quickstart to deploy Dash framework. Written on top of Flask, Plotly.js, and React.js, Dash is ideal for building data visualization apps with highly custom user interfaces in pure Python
+- [hasura/base-python-bokeh](https://hasura.io/hub/project/hasura/base-python-bokeh) - Hasura quickstart to visualize data with bokeh library
 
 ### Trading & Backtesting
 
@@ -74,7 +76,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [dynts](https://github.com/quantmind/dynts) - Python package for timeseries analysis and manipulation
 - [PyFlux](https://github.com/RJT1990/pyflux) - Python library for timeseries modelling and inference (frequentist and Bayesian) on models
 - [tsfresh](https://github.com/blue-yonder/tsfresh) - Automatic extraction of relevant features from time series
-- [quandl-metabase](https://hasura.io/hub/project/anirudhm/quandl-metabase-time-series) - Python quickstart to visualize Quandl timeseries datasets with Metabase
+- [hasura/quandl-metabase](https://hasura.io/hub/project/anirudhm/quandl-metabase-time-series) - Hasura quickstart to visualize Quandl's timeseries datasets with Metabase
 
 ### Calendars
 
