@@ -25,6 +25,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pandas](http://pandas.pydata.org) - pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
 - [quantdsl](https://github.com/johnbywater/quantdsl) - Domain specific language for quantitative analytics in finance and trading
 - [statistics](https://docs.python.org/3/library/statistics.html) - Builtin Python library for all basic statistical calculations
+- [sympy](http://www.sympy.org/) - SymPy is a Python library for symbolic mathematics.
+- [pymc3](http://docs.pymc.io/) - Probabilistic Programming in Python: Bayesian Modeling and Probabilistic Machine Learning with Theano
 
 ### Financial Instruments
 
