@@ -213,6 +213,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [timeSeries](https://cran.r-project.org/web/packages/timeSeries/index.html) - Rmetrics - Financial Time Series Objects
 - [rugarch](https://cran.r-project.org/web/packages/rugarch/index.html) - Univariate GARCH Models
 - [rmgarch](https://cran.r-project.org/web/packages/rmgarch/index.html) - Multivariate GARCH Models
+- [tidypredict](https://github.com/edgararuiz/tidypredict) - Run predictions inside the database <http://tidypredict.netlify.com/>
 
 ### Calendars
 
