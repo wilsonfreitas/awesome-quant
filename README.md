@@ -28,7 +28,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [sympy](http://www.sympy.org/) - SymPy is a Python library for symbolic mathematics.
 - [pymc3](http://docs.pymc.io/) - Probabilistic Programming in Python: Bayesian Modeling and Probabilistic Machine Learning with Theano
 
-### Financial Instruments
+### Financial Instruments and Pricing
 
 - [PyQL](https://github.com/enthought/pyql) - QuantLib's Python port
 - [pyfin](https://github.com/opendoor-labs/pyfin) - Basic options pricing in Python
@@ -40,6 +40,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [tia](https://github.com/bpsmith/tia) - Toolkit for integration and analysis
 - [hasura/base-python-dash](https://hasura.io/hub/project/hasura/base-python-dash) - Hasura quickstart to deploy Dash framework. Written on top of Flask, Plotly.js, and React.js, Dash is ideal for building data visualization apps with highly custom user interfaces in pure Python
 - [hasura/base-python-bokeh](https://hasura.io/hub/project/hasura/base-python-bokeh) - Hasura quickstart to visualize data with bokeh library
+- [pysabr](https://github.com/ynouri/pysabr) - SABR model Python implementation
 
 ### Trading & Backtesting
 
@@ -155,7 +156,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [GetTDData](https://cran.r-project.org/web/packages/GetTDData/index.html) - Downloads and aggregates data for Brazilian government issued bonds directly from the website of Tesouro Direto.
 - [GetHFData](https://cran.r-project.org/web/packages/GetHFData/index.html) - Downloads and aggregates high frequency trading data for Brazilian instruments directly from Bovespa ftp site.
 
-### Financial Instruments
+### Financial Instruments and Pricing
 
 - [RQuantLib](http://dirk.eddelbuettel.com/code/rquantlib.html) - RQuantLib connects GNU R with QuantLib.
 - [quantmod](https://cran.r-project.org/web/packages/quantmod/index.html) - Quantitative Financial Modelling Framework
