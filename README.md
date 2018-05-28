@@ -75,6 +75,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [visualize-wealth](https://github.com/benjaminmgross/visualize-wealth) - Portfolio construction and quantitative analysis
 - [VisualPortfolio](https://github.com/wegamekinglc/VisualPortfolio) - This tool is used to visualize the perfomance of a portfolio
 
+### Factor Analysis
+
+- [alphalens](https://github.com/quantopian/alphalens) - Performance analysis of predictive alpha factors
+
 ### Time Series
 
 - [ARCH](https://github.com/bashtage/arch) - ARCH models in Python
