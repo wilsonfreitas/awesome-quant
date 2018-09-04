@@ -110,7 +110,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Stockex](https://github.com/cttn/Stockex) - Python wrapper for Yahoo! Finance API
 - [finsymbols](https://github.com/skillachie/finsymbols) - Obtains stock symbols and relating information for SP500, AMEX, NYSE, and NASDAQ
 - [FRB](https://github.com/avelkoski/FRB) - Python Client for FRED® API
-- [inquisitor](https://github.com/inquirim/inquisitor) - Python Interface to Inquirim.com API
+- [inquisitor](https://github.com/inquirim/inquisitor) - Python Interface to Econdb.com API
 - [yfi](https://github.com/nickelkr/yfi) - Yahoo! YQL library
 - [chinesestockapi](https://pypi.python.org/pypi/chinesestockapi) - Python API to get Chinese stock price
 - [exchange](https://github.com/akarat/exchange) - Get current exchange rate
