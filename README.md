@@ -146,6 +146,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [xts](https://cran.r-project.org/web/packages/xts/index.html) - eXtensible Time Series: Provide for uniform handling of R's different time-based data classes by extending zoo, maximizing native format information preservation and allowing for user level customization and extension, while simplifying cross-class interoperability.
 - [data.table](https://cran.r-project.org/web/packages/data.table/index.html) - Extension of data.frame: Fast aggregation of large data (e.g. 100GB in RAM), fast ordered joins, fast add/modify/delete of columns by group using no copies at all, list columns and a fast file reader (fread). Offers a natural and flexible syntax, for faster development.
+- [sparseEigen](https://github.com/dppalomar/sparseEigen) - Sparse pricipal component analysis.
 - [TSdbi](http://tsdbi.r-forge.r-project.org/) - Provides a common interface to time series databases.
 - [tseries](https://cran.r-project.org/web/packages/tseries/index.html) - Time Series Analysis and Computational Finance.
 - [its](https://cran.r-project.org/web/packages/its/index.html) - Irregular time series.
