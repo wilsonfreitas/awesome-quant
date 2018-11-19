@@ -64,6 +64,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [finmarketpy](https://github.com/cuemacro/finmarketpy) - Python library for backtesting trading strategies and analyzing financial markets
 - [binary-martingale](https://github.com/metaperl/binary-martingale) - Computer program to automatically trade binary options martingale style
 - [fooltrader](https://github.com/foolcage/fooltrader) - the project using big-data technology to provide an uniform way to analyze the whole market
+- [pylivetrader](https://github.com/alpacahq/pylivetrader) - zipline-compatible live trading library
+- [pipeline-live](https://github.com/alpacahq/pipeline-live) - zipline's pipeline capability with IEX for live trading
 
 ### Risk Analysis
 
@@ -127,6 +129,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pdblp](https://github.com/matthewgilbert/pdblp) - A simple interface to integrate pandas and the Bloomberg Open API
 - [tiingo](https://github.com/hydrosquall/tiingo-python) - Python interface for daily composite prices/OHLC/Volume + Real-time News Feeds, powered by the Tiingo Data Platform. 
 - [IEX](https://github.com/addisonlynch/iexfinance) - Python Interface for retrieving real-time and historical prices and equities data from The Investor's Exchange.
+- [alpaca-trade-api](https://github.com/alpacahq/alpaca-trade-api) - Python interface for retrieving real-time and historical prices from Alpaca API as well as trade execution.
 
 ### Excel Integration
 
