@@ -185,6 +185,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [financial](https://cran.r-project.org/web/packages/financial/index.html) - Time value of money, cash flows and other financial functions.
 - [sparseIndexTracking](https://github.com/dppalomar/sparseIndexTracking) - Portfolio design to track an index
 - [covFactorModel](https://github.com/dppalomar/covFactorModel) - Covariance matrix estimation via factor models
+- [riskParityPortfolio](https://github.com/dppalomar/riskParityPortfolio) - Blazingly fast design of risk parity portfolios
 - [sde](https://cran.r-project.org/web/packages/sde/index.html) - Simulation and Inference for Stochastic Differential Equations
 - [termstrc](https://cran.r-project.org/web/packages/termstrc/index.html) - Zero-coupon Yield Curve Estimation
 - [YieldCurve](https://cran.r-project.org/web/packages/YieldCurve/index.html) - Modelling and estimation of the yield curve
