@@ -66,6 +66,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [fooltrader](https://github.com/foolcage/fooltrader) - the project using big-data technology to provide an uniform way to analyze the whole market
 - [pylivetrader](https://github.com/alpacahq/pylivetrader) - zipline-compatible live trading library
 - [pipeline-live](https://github.com/alpacahq/pipeline-live) - zipline's pipeline capability with IEX for live trading
+- [zipline-extensions](https://github.com/quantrocket-llc/zipline-extensions) - Zipline extensions and adapters for QuantRocket
+- [moonshot](https://github.com/quantrocket-llc/moonshot) - Vectorized backtester and trading engine for QuantRocket based on Pandas
 
 ### Risk Analysis
 
