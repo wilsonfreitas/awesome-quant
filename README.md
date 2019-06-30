@@ -62,7 +62,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [finmarketpy](https://github.com/cuemacro/finmarketpy) - Python library for backtesting trading strategies and analyzing financial markets
 - [binary-martingale](https://github.com/metaperl/binary-martingale) - Computer program to automatically trade binary options martingale style
 - [fooltrader](https://github.com/foolcage/fooltrader) - the project using big-data technology to provide an uniform way to analyze the whole market
-
+- [zvt](https://github.com/zvtvz/zvt) - the project using sql,pandas to provide an uniform and extendable way to record data,computing factors,select securites, backtesting,realtime trading and it could show all of them in clearly charts in realtime.
 ### Risk Analysis
 
 - [pyfolio](https://github.com/quantopian/pyfolio) - Portfolio and risk analytics in Python
