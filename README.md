@@ -260,6 +260,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Java
 
+- [Strata](http://strata.opengamma.io/) - Modern open-source analytics and market risk library designed and written in Java.
 - [JQuantLib](http://www.jquantlib.org) - JQuantLib is a free, open-source, comprehensive framework for quantitative finance, written in 100% Java.
 - [finmath.net](http://finmath.net) - Java library with algorithms and methodologies related to mathematical finance.
 - [quantcomponents](https://github.com/lsgro/quantcomponents) - Free Java components for Quantitative Finance and Algorithmic Trading.
