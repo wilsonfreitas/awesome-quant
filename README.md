@@ -72,7 +72,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [PyPortfolioOpt](https://github.com/robertmartin8/PyPortfolioOpt) - Financial portfolio optimisation in python, including classical efficient frontier and advanced methods.
 - [mlfinlab](https://github.com/hudson-and-thames/mlfinlab) - Implementations regarding "Advances in Financial Machine Learning" by Marcos Lopez de Prado. (Feature Engineering, Financial Data Structures, Meta-Labeling)
 - [aat](https://github.com/timkpaine/aat) - Async Algorithmic Trading Engine
-- [backtesting.py](https://github.com/kernc/backtesting.py) - Backtest trading strategies in Python
+- [Backtesting.py](https://kernc.github.io/backtesting.py/) - Backtest trading strategies in Python
 - [catalyst](https://github.com/enigmampc/catalyst) - An Algorithmic Trading Library for Crypto-Assets in Python
 - [zvt](https://github.com/zvtvz/zvt) - write trading algorithm once, run it on all markets
 
