@@ -44,6 +44,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [hasura/base-python-bokeh](https://platform.hasura.io/hub/projects/hasura/base-python-bokeh) - Hasura quickstart to visualize data with bokeh library.
 - [pysabr](https://github.com/ynouri/pysabr) - SABR model Python implementation.
 
+### Indicators
+- [pandas_talib](https://github.com/femtotrader/pandas_talib) - A Python Pandas implementation of technical analysis indicators.
+- [Tulipy](https://github.com/cirla/tulipy) - Financial Technical Analysis Indicator Library (Python bindings for [tulipindicators]( https://github.com/TulipCharts/tulipindicators))
+
 ### Trading & Backtesting
 
 - [TA-Lib](https://ta-lib.org) - perform technical analysis of financial market data.
