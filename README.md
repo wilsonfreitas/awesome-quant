@@ -62,6 +62,9 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pybacktest](https://github.com/ematvey/pybacktest) - Vectorized backtesting framework in Python / pandas, designed to make your backtesting easier.
 - [pyalgotrade](https://github.com/gbeced/pyalgotrade) - Python Algorithmic Trading Library.
 - [tradingWithPython](https://pypi.org/project/tradingWithPython/) - A collection of functions and classes for Quantitative trading.
+- [pandas_talib](https://github.com/femtotrader/pandas_talib) - A Python Pandas implementation of technical analysis indicators.
+- [pandas-ta](https://github.com/twopirllc/pandas-ta) - An easy to use Python 3 Pandas Extension with 80+Technical Analysis Indicators
+- [ta](https://github.com/bukosabino/ta) - Technical Analysis Library using Pandas (Python)
 - [algobroker](https://github.com/joequant/algobroker) - This is an execution engine for algo trading.
 - [pysentosa](https://pypi.org/project/pysentosa/) - Python API for sentosa trading system.
 - [finmarketpy](https://github.com/cuemacro/finmarketpy) - Python library for backtesting trading strategies and analyzing financial markets.
@@ -74,6 +77,11 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [moonshot](https://github.com/quantrocket-llc/moonshot) - Vectorized backtester and trading engine for QuantRocket based on Pandas.
 - [PyPortfolioOpt](https://github.com/robertmartin8/PyPortfolioOpt) - Financial portfolio optimisation in python, including classical efficient frontier and advanced methods.
 - [mlfinlab](https://github.com/hudson-and-thames/mlfinlab) - Implementations regarding "Advances in Financial Machine Learning" by Marcos Lopez de Prado. (Feature Engineering, Financial Data Structures, Meta-Labeling)
+- [aat](https://github.com/timkpaine/aat) - Async Algorithmic Trading Engine
+- [Backtesting.py](https://kernc.github.io/backtesting.py/) - Backtest trading strategies in Python
+- [catalyst](https://github.com/enigmampc/catalyst) - An Algorithmic Trading Library for Crypto-Assets in Python
+- [zvt](https://github.com/zvtvz/zvt) - write trading algorithm once, run it on all markets
+
 
 ### Risk Analysis
 
