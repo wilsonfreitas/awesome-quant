@@ -85,7 +85,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [aat](https://github.com/timkpaine/aat) - Async Algorithmic Trading Engine
 - [Backtesting.py](https://kernc.github.io/backtesting.py/) - Backtest trading strategies in Python
 - [catalyst](https://github.com/enigmampc/catalyst) - An Algorithmic Trading Library for Crypto-Assets in Python
-- [zvt](https://github.com/zvtvz/zvt) - write trading algorithm once, run it on all markets
 
 
 ### Risk Analysis
