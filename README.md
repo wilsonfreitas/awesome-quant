@@ -87,6 +87,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [quantstats](https://github.com/ranaroussi/quantstats) - Portfolio analytics for quants, written in Python
 - [qtpylib](https://github.com/ranaroussi/qtpylib) - QTPyLib, Pythonic Algorithmic Trading <http://qtpylib.io> 
 - [Quantdom](https://github.com/constverum/Quantdom) - Python-based framework for backtesting trading strategies & analyzing financial markets [GUI :neckbeard:]
+- [freqtrade](https://github.com/freqtrade/freqtrade) - Free, open source crypto trading bot
 
 
 ### Risk Analysis
