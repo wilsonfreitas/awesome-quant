@@ -310,6 +310,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Elixir/Erlang
 
 - [Tai](https://github.com/fremantle-capital/tai) - Open Source composable, real time, market data and trade execution toolkit.
+- [Workbench](https://github.com/fremantle-industries/workbench) - From Idea to Execution - Manage your trading operation across a globally distributed cluster
 
 ## Frameworks
 
