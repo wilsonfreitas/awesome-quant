@@ -171,6 +171,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [expy](http://www.bnikolic.co.uk/expy/expy.html) - The ExPy add-in allows easy use of Python directly from within an Microsoft Excel spreadsheet, both to execute arbitrary code and to define new Excel functions.
 - [pyxll](https://www.pyxll.com) - PyXLL is an Excel add-in that enables you to extend Excel using nothing but Python code.
 
+### Visualization
+
+- [D-Tale](https://github.com/man-group/dtale) - Visualizer for pandas dataframes and xarray datasets.
+
 ## R
 
 ### Numerical Libraries & Data Structures
