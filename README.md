@@ -15,6 +15,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Scala](#scala)
 - [Ruby](#ruby)
 - [Elixir/Erlang](#elixirerlang)
+- [Golang](#golang)
 - [CSharp](#csharp)
 - [Frameworks](#frameworks) - frameworks that support different languages
 - [Reproducing Works](#reproducing-works) - repositories that reproduce books and papers results or implement examples
@@ -311,6 +312,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [Tai](https://github.com/fremantle-capital/tai) - Open Source composable, real time, market data and trade execution toolkit.
 - [Workbench](https://github.com/fremantle-industries/workbench) - From Idea to Execution - Manage your trading operation across a globally distributed cluster
+
+## Golang
+
+- [Kelp](https://github.com/stellar/kelp) - Kelp is an open-source Golang algorithmic cryptocurrency trading bot that runs on centralized exchanges and Stellar DEX (command-line usage and desktop GUI).
 
 ## Frameworks
 
