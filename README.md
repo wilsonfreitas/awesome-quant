@@ -160,6 +160,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [yahooquery](https://github.com/dpguthrie/yahooquery) - Python interface for retrieving data through unofficial Yahoo Finance API.
 - [investpy](https://github.com/alvarobartt/investpy) - Financial Data Extraction from Investing.com with Python! <https://investpy.readthedocs.io/>
 - [yliveticker](https://github.com/yahoofinancelive/yliveticker) - Live stream of market data from Yahoo Finance websocket.
+- [bbgbridge](https://github.com/ran404/bbgbridge) - Easy to use Bloomberg Desktop API wrapper for Python.
 
 ### Excel Integration
 
