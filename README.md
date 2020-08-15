@@ -15,6 +15,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Scala](#scala)
 - [Ruby](#ruby)
 - [Elixir/Erlang](#elixirerlang)
+- [Golang](#golang)
 - [CSharp](#csharp)
 - [Frameworks](#frameworks) - frameworks that support different languages
 - [Reproducing Works](#reproducing-works) - repositories that reproduce books and papers results or implement examples
@@ -88,7 +89,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [qtpylib](https://github.com/ranaroussi/qtpylib) - QTPyLib, Pythonic Algorithmic Trading <http://qtpylib.io> 
 - [Quantdom](https://github.com/constverum/Quantdom) - Python-based framework for backtesting trading strategies & analyzing financial markets [GUI :neckbeard:]
 - [freqtrade](https://github.com/freqtrade/freqtrade) - Free, open source crypto trading bot
-
+- [algorithmic-trading-with-python](https://github.com/chrisconlan/algorithmic-trading-with-python) - Free `pandas` and `scikit-learn` resources for trading simulation, backtesting, and machine learning on financial data.
+- [DeepDow](https://github.com/jankrepl/deepdow) - Portfolio optimization with deep learning
 
 ### Risk Analysis
 
@@ -156,6 +158,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [metatrader5](https://pypi.org/project/MetaTrader5/) - API Connector to MetaTrader 5 Terminal
 - [akshare](https://github.com/jindaxiang/akshare) - AkShare is an elegant and simple financial data interface library for Python, built for human beings! <https://akshare.readthedocs.io>
 - [yahooquery](https://github.com/dpguthrie/yahooquery) - Python interface for retrieving data through unofficial Yahoo Finance API.
+- [investpy](https://github.com/alvarobartt/investpy) - Financial Data Extraction from Investing.com with Python! <https://investpy.readthedocs.io/>
+- [yliveticker](https://github.com/yahoofinancelive/yliveticker) - Live stream of market data from Yahoo Finance websocket.
 
 ### Excel Integration
 
@@ -168,6 +172,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [xlloop](http://xlloop.sourceforge.net) - XLLoop is an open source framework for implementing Excel user-defined functions (UDFs) on a centralised server (a function server).
 - [expy](http://www.bnikolic.co.uk/expy/expy.html) - The ExPy add-in allows easy use of Python directly from within an Microsoft Excel spreadsheet, both to execute arbitrary code and to define new Excel functions.
 - [pyxll](https://www.pyxll.com) - PyXLL is an Excel add-in that enables you to extend Excel using nothing but Python code.
+
+### Visualization
+
+- [D-Tale](https://github.com/man-group/dtale) - Visualizer for pandas dataframes and xarray datasets.
 
 ## R
 
@@ -311,6 +319,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [Tai](https://github.com/fremantle-capital/tai) - Open Source composable, real time, market data and trade execution toolkit.
 - [Workbench](https://github.com/fremantle-industries/workbench) - From Idea to Execution - Manage your trading operation across a globally distributed cluster
+
+## Golang
+
+- [Kelp](https://github.com/stellar/kelp) - Kelp is an open-source Golang algorithmic cryptocurrency trading bot that runs on centralized exchanges and Stellar DEX (command-line usage and desktop GUI).
 
 ## Frameworks
 
