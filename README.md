@@ -96,8 +96,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [algorithmic-trading-with-python](https://github.com/chrisconlan/algorithmic-trading-with-python) - Free `pandas` and `scikit-learn` resources for trading simulation, backtesting, and machine learning on financial data.
 - [DeepDow](https://github.com/jankrepl/deepdow) - Portfolio optimization with deep learning
 
-
-
 ### Risk Analysis
 
 - [pyfolio](https://github.com/quantopian/pyfolio) - Portfolio and risk analytics in Python.
