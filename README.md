@@ -109,6 +109,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ### Factor Analysis
 
 - [alphalens](https://github.com/quantopian/alphalens) - Performance analysis of predictive alpha factors.
+- [Spectre](https://github.com/Heerozh/spectre) - GPU-accelerated Factors analysis library and Backtester
 
 ### Time Series
 
