@@ -183,6 +183,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ### Visualization
 
 - [D-Tale](https://github.com/man-group/dtale) - Visualizer for pandas dataframes and xarray datasets.
+- [mplfinance](https://github.com/matplotlib/mplfinance) - matplotlib utilities for the visualization, and visual analysis, of financial data.
 
 ## R
 
