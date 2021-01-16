@@ -267,6 +267,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [tidyquant](https://github.com/business-science/tidyquant) - Bringing financial analysis to the tidyverse.
 - [timetk](https://github.com/business-science/timetk) - A toolkit for working with time series in R.
 - [tibbletime](https://github.com/business-science/tibbletime) - Built on top of the tidyverse, tibbletime is an extension that allows for the creation of time aware tibbles through the setting of a time index.
+- [matrixprofile](https://github.com/matrix-profile-foundation/matrixprofile) - Time series data mining library built on top of the novel Matrix Profile data structure and algorithms.
 
 ### Calendars
 
