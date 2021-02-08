@@ -96,6 +96,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [algorithmic-trading-with-python](https://github.com/chrisconlan/algorithmic-trading-with-python) - Free `pandas` and `scikit-learn` resources for trading simulation, backtesting, and machine learning on financial data.
 - [DeepDow](https://github.com/jankrepl/deepdow) - Portfolio optimization with deep learning
 - [Qlib](https://github.com/microsoft/qlib) -  An AI-oriented Quantitative Investment Platform by Microsoft. Full ML pipeline of data processing, model training, back-testing; and covers the entire chain of quantitative investment: alpha seeking, risk modeling, portfolio optimization, and order execution.
+- [machine-learning-for-trading](https://github.com/stefan-jansen/machine-learning-for-trading) - Code and resources for Machine Learning for Algorithmic Trading
 
 ### Risk Analysis
 
@@ -268,6 +269,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [tidyquant](https://github.com/business-science/tidyquant) - Bringing financial analysis to the tidyverse.
 - [timetk](https://github.com/business-science/timetk) - A toolkit for working with time series in R.
 - [tibbletime](https://github.com/business-science/tibbletime) - Built on top of the tidyverse, tibbletime is an extension that allows for the creation of time aware tibbles through the setting of a time index.
+- [matrixprofile](https://github.com/matrix-profile-foundation/matrixprofile) - Time series data mining library built on top of the novel Matrix Profile data structure and algorithms.
 
 ### Calendars
 
