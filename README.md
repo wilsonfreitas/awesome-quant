@@ -95,6 +95,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [freqtrade](https://github.com/freqtrade/freqtrade) - Free, open source crypto trading bot
 - [algorithmic-trading-with-python](https://github.com/chrisconlan/algorithmic-trading-with-python) - Free `pandas` and `scikit-learn` resources for trading simulation, backtesting, and machine learning on financial data.
 - [DeepDow](https://github.com/jankrepl/deepdow) - Portfolio optimization with deep learning
+- [machine-learning-for-trading](https://github.com/stefan-jansen/machine-learning-for-trading) - Code and resources for Machine Learning for Algorithmic Trading
 
 ### Risk Analysis
 
