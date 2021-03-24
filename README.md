@@ -46,7 +46,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [hasura/base-python-bokeh](https://platform.hasura.io/hub/projects/hasura/base-python-bokeh) - Hasura quickstart to visualize data with bokeh library.
 - [pysabr](https://github.com/ynouri/pysabr) - SABR model Python implementation.
 - [FinancePy](https://github.com/domokane/FinancePy) - A Python Finance Library that focuses on the pricing and risk-management of Financial Derivatives, including fixed-income, equity, FX and credit derivatives.
-- [FinancePy-Examples](https://github.com/domokane/FinancePy-Examples) - Examples of how to use FinancePy
 - [gs-quant](https://github.com/goldmansachs/gs-quant) - Python toolkit for quantitative finance
 - [willowtree](https://github.com/federicomariamassari/willowtree) - Robust and flexible Python implementation of the willow tree lattice for derivatives pricing.
 - [financial-engineering](https://github.com/federicomariamassari/financial-engineering) - Applications of Monte Carlo methods to financial engineering projects, in Python.
