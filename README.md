@@ -358,6 +358,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [QuantConnect](https://github.com/QuantConnect/Lean) - Lean Engine is an open-source fully managed C# algorithmic trading engine built for desktop and cloud usage.
 
+## Rust
+
+- [QuantMath](https://github.com/MarcusRainbow/QuantMath) - Financial maths library for risk-neutral pricing and risk
+
 ## Reproducing Works
 
 - [Derman Papers](https://github.com/MarcosCarreira/DermanPapers) - Notebooks that replicate original quantitative finance papers from Emanuel Derman.
