@@ -100,6 +100,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [DeepDow](https://github.com/jankrepl/deepdow) - Portfolio optimization with deep learning
 - [Qlib](https://github.com/microsoft/qlib) -  An AI-oriented Quantitative Investment Platform by Microsoft. Full ML pipeline of data processing, model training, back-testing; and covers the entire chain of quantitative investment: alpha seeking, risk modeling, portfolio optimization, and order execution.
 - [machine-learning-for-trading](https://github.com/stefan-jansen/machine-learning-for-trading) - Code and resources for Machine Learning for Algorithmic Trading
+- [AlphaPy](https://github.com/ScottfreeLLC/AlphaPy) - Automated Machine Learning [AutoML] with Python, scikit-learn, Keras, XGBoost, LightGBM, and CatBoost
 
 ### Risk Analysis
 
