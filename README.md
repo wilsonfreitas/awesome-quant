@@ -322,6 +322,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [quantfin](https://github.com/boundedvariation/quantfin) - quant finance in pure haskell.
 - [hqfl](https://github.com/co-category/hqfl) - Haskell Quantitative Finance Library.
+- [Haxcel](https://github.com/MarcusRainbow/Haxcel) - Excel Addin for Haskell
 
 ## Scala
 
