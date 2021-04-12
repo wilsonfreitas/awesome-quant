@@ -102,6 +102,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [machine-learning-for-trading](https://github.com/stefan-jansen/machine-learning-for-trading) - Code and resources for Machine Learning for Algorithmic Trading
 - [AlphaPy](https://github.com/ScottfreeLLC/AlphaPy) - Automated Machine Learning [AutoML] with Python, scikit-learn, Keras, XGBoost, LightGBM, and CatBoost
 - [jesse](https://github.com/jesse-ai/jesse) - An advanced crypto trading bot written in Python
+- [rqalpha](https://github.com/ricequant/rqalpha) - A extendable, replaceable Python algorithmic backtest && trading framework supporting multiple securities.
 
 ### Risk Analysis
 
