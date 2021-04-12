@@ -118,6 +118,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [visualize-wealth](https://github.com/benjaminmgross/visualize-wealth) - Portfolio construction and quantitative analysis.
 - [VisualPortfolio](https://github.com/wegamekinglc/VisualPortfolio) - This tool is used to visualize the perfomance of a portfolio.
 - [universal-portfolios](https://github.com/Marigold/universal-portfolios) - Collection of algorithms for online portfolio selection.
+- [FinQuant](https://github.com/fmilthaler/FinQuant) - A program for financial portfolio management, analysis and optimisation.
 
 ### Factor Analysis
 
