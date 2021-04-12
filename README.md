@@ -323,6 +323,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## JavaScript
 
+- [finance.js](https://github.com/ebradyjobory/finance.js) - A JavaScript library for common financial calculations.
+
 ### Data Visualization
 - [QUANTAXIS_Webkit](https://github.com/yutiansut/QUANTAXIS_Webkit) an awesome visualization center based on quantaxis.
 
