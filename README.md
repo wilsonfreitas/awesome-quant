@@ -107,6 +107,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [FinRL-Library](https://github.com/AI4Finance-LLC/FinRL-Library) - A Deep Reinforcement Learning Library for Automated Trading in Quantitative Finance. NeurIPS 2020.
 - [bulbea](https://github.com/achillesrasquinha/bulbea) - Deep Learning based Python Library for Stock Market Prediction and Modelling.
 - [ib_nope](https://github.com/ajhpark/ib_nope) - Automated trading system for NOPE strategy over IBKR TWS.
+- [OctoBot](https://github.com/Drakkar-Software/OctoBot) - Open source cryptocurrency trading bot for high frequency, arbitrage, TA and social trading with an advanced web interface.
 
 ### Risk Analysis
 
