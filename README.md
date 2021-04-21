@@ -357,6 +357,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Golang
 
 - [Kelp](https://github.com/stellar/kelp) - Kelp is an open-source Golang algorithmic cryptocurrency trading bot that runs on centralized exchanges and Stellar DEX (command-line usage and desktop GUI).
+- [marketstore](https://github.com/alpacahq/marketstore) - DataFrame Server for Financial Timeseries Data.
 
 ## Frameworks
 
