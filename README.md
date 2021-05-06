@@ -395,3 +395,4 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Python_Option_Pricing](https://github.com/dedwards25/Python_Option_Pricing) - An libary to price financial options written in Python. Includes: Black Scholes, Black 76, Implied Volatility, American, European, Asian, Spread Options.
 - [python-training](https://github.com/jpmorganchase/python-training) - J.P. Morgan's Python training for business analysts and traders.
 - [Stock_Analysis_For_Quant](https://github.com/LastAncientOne/Stock_Analysis_For_Quant) - Different Types of Stock Analysis in Excel, Matlab, Power BI, Python, R, and Tableau.
+- [algorithmic-trading-with-python](https://github.com/chrisconlan/algorithmic-trading-with-python) - Source code for Algorithmic Trading with Python (2020) by Chris Conlan.
