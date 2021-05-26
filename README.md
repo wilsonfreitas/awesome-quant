@@ -274,6 +274,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TTR](https://cran.r-project.org/web/packages/TTR/index.html) - Technical Trading Rules.
 - [QuantTools](https://quanttools.bitbucket.io/_site/index.html) - Enhanced Quantitative Trading Modelling.
 
+### Backtesting
+
+- [quantstrat](https://github.com/braverock/quantstrat) - Transaction-oriented infrastructure for constructing trading systems and simulation. Provides support for multi-asset class and multi-currency portfolios for backtesting and other financial research.
+
 ### Risk Analysis
 
 - [PerformanceAnalytics](https://cran.r-project.org/web/packages/PerformanceAnalytics/index.html) - Econometric tools for performance and risk analysis.
