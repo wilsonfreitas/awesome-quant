@@ -277,6 +277,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pa](https://cran.r-project.org/web/packages/pa/index.html) - Performance Attribution for Equity Portfolios.
 - [TTR](https://cran.r-project.org/web/packages/TTR/index.html) - Technical Trading Rules.
 - [QuantTools](https://quanttools.bitbucket.io/_site/index.html) - Enhanced Quantitative Trading Modelling.
+- [blotter](https://github.com/braverock/blotter) - Transaction infrastructure for defining instruments, transactions, portfolios and accounts for trading systems and simulation. Provides portfolio support for multi-asset class and multi-currency portfolios. Actively maintained and developed.
 
 ### Backtesting
 
