@@ -266,6 +266,9 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [r-quant](https://github.com/artyyouth/r-quant) - R code for quantitative analysis in finance.
 - [options.studies](https://github.com/taylorizing/options.studies) - options trading studies functions for use with options.data package and shiny.
 
+### Portfolio Optimization
+- [PortfolioAnalytics](https://cran.r-project.org/web/packages/PortfolioAnalytics/PortfolioAnalytics.pdf) - Portfolio Analysis, Including Numerical Methods for Optimizationof Portfolios
+
 ### Trading
 
 - [TA-Lib](https://ta-lib.org) - perform technical analysis of financial market data.
@@ -281,6 +284,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ### Risk Analysis
 
 - [PerformanceAnalytics](https://cran.r-project.org/web/packages/PerformanceAnalytics/index.html) - Econometric tools for performance and risk analysis.
+
+### Factor Analysis
+- [FactorAnalytics](https://github.com/braverock/FactorAnalytics) - The FactorAnalytics package contains fitting and analysis methods for the three main types of factor models used in conjunction with portfolio construction, optimization and risk management, namely fundamental factor models, time series factor models and statistical factor models.
+- [Expected Returns](https://github.com/JustinMShea/ExpectedReturns) - Solutions for enhancing portfolio diversification and replications of seminal papers with R, most of which are discussed in one of the best investment references of the recent decade, Expected Returns: An Investors Guide to Harvesting Market Rewards by Antti Ilmanen.
 
 ### Time Series
 
