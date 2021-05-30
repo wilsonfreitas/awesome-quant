@@ -1,4 +1,5 @@
 # awesome-quant
+
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance)
@@ -54,9 +55,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [tf-quant-finance](https://github.com/google/tf-quant-finance) - High-performance TensorFlow library for quantitative finance.
 
 ### Indicators
+
 - [pandas_talib](https://github.com/femtotrader/pandas_talib) - A Python Pandas implementation of technical analysis indicators.
 - [finta](https://github.com/peerchemist/finta) - Common financial technical analysis indicators implemented in Pandas.
-- [Tulipy](https://github.com/cirla/tulipy) - Financial Technical Analysis Indicator Library (Python bindings for [tulipindicators]( https://github.com/TulipCharts/tulipindicators))
+- [Tulipy](https://github.com/cirla/tulipy) - Financial Technical Analysis Indicator Library (Python bindings for [tulipindicators](https://github.com/TulipCharts/tulipindicators))
 - [lppls](https://github.com/Boulder-Investment-Technologies/lppls) - A Python module for fitting the [Log-Periodic Power Law Singularity (LPPLS)](https://en.wikipedia.org/wiki/Didier_Sornette#The_JLS_and_LPPLS_models) model.
 
 ### Trading & Backtesting
@@ -96,12 +98,12 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Backtesting.py](https://kernc.github.io/backtesting.py/) - Backtest trading strategies in Python
 - [catalyst](https://github.com/enigmampc/catalyst) - An Algorithmic Trading Library for Crypto-Assets in Python
 - [quantstats](https://github.com/ranaroussi/quantstats) - Portfolio analytics for quants, written in Python
-- [qtpylib](https://github.com/ranaroussi/qtpylib) - QTPyLib, Pythonic Algorithmic Trading <http://qtpylib.io> 
+- [qtpylib](https://github.com/ranaroussi/qtpylib) - QTPyLib, Pythonic Algorithmic Trading <http://qtpylib.io>
 - [Quantdom](https://github.com/constverum/Quantdom) - Python-based framework for backtesting trading strategies & analyzing financial markets [GUI :neckbeard:]
 - [freqtrade](https://github.com/freqtrade/freqtrade) - Free, open source crypto trading bot
 - [algorithmic-trading-with-python](https://github.com/chrisconlan/algorithmic-trading-with-python) - Free `pandas` and `scikit-learn` resources for trading simulation, backtesting, and machine learning on financial data.
 - [DeepDow](https://github.com/jankrepl/deepdow) - Portfolio optimization with deep learning
-- [Qlib](https://github.com/microsoft/qlib) -  An AI-oriented Quantitative Investment Platform by Microsoft. Full ML pipeline of data processing, model training, back-testing; and covers the entire chain of quantitative investment: alpha seeking, risk modeling, portfolio optimization, and order execution.
+- [Qlib](https://github.com/microsoft/qlib) - An AI-oriented Quantitative Investment Platform by Microsoft. Full ML pipeline of data processing, model training, back-testing; and covers the entire chain of quantitative investment: alpha seeking, risk modeling, portfolio optimization, and order execution.
 - [machine-learning-for-trading](https://github.com/stefan-jansen/machine-learning-for-trading) - Code and resources for Machine Learning for Algorithmic Trading
 - [AlphaPy](https://github.com/ScottfreeLLC/AlphaPy) - Automated Machine Learning [AutoML] with Python, scikit-learn, Keras, XGBoost, LightGBM, and CatBoost
 - [jesse](https://github.com/jesse-ai/jesse) - An advanced crypto trading bot written in Python
@@ -190,6 +192,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [bbgbridge](https://github.com/ran404/bbgbridge) - Easy to use Bloomberg Desktop API wrapper for Python.
 - [alpha_vantage](https://github.com/RomelTorres/alpha_vantage) - A python wrapper for Alpha Vantage API for financial data.
 - [trafalgar](https://github.com/ssantoshp/trafalgar) - Python library to make development of portfolio analysis faster and easier.
+- [FinanceDataReader](https://github.com/FinanceData/FinanceDataReader) - Open Source Financial data reader for U.S, Korean, Japanese, Chinese, Vietnamese Stocks
 
 ### Excel Integration
 
@@ -239,13 +242,13 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [RQuantLib](http://dirk.eddelbuettel.com/code/rquantlib.html) - RQuantLib connects GNU R with QuantLib.
 - [quantmod](https://cran.r-project.org/web/packages/quantmod/index.html) - Quantitative Financial Modelling Framework.
 - [Rmetrics](https://www.rmetrics.org) - The premier open source software solution for teaching and training quantitative finance.
-	- [fAsianOptions](https://cran.r-project.org/web/packages/fAsianOptions/index.html) - EBM and Asian Option Valuation.
-	- [fAssets](https://cran.r-project.org/web/packages/fAssets/index.html) - Analysing and Modelling Financial Assets.
-	- [fBasics](https://cran.r-project.org/web/packages/fBasics/index.html) - Markets and Basic Statistics.
-	- [fBonds](https://cran.r-project.org/web/packages/fBonds/index.html) - Bonds and Interest Rate Models.
-	- [fExoticOptions](https://cran.r-project.org/web/packages/fExoticOptions/index.html) - Exotic Option Valuation.
-	- [fOptions](https://cran.r-project.org/web/packages/fOptions/index.html) - Pricing and Evaluating Basic Options.
-	- [fPortfolio](https://cran.r-project.org/web/packages/fPortfolio/index.html) - Portfolio Selection and Optimization.
+  - [fAsianOptions](https://cran.r-project.org/web/packages/fAsianOptions/index.html) - EBM and Asian Option Valuation.
+  - [fAssets](https://cran.r-project.org/web/packages/fAssets/index.html) - Analysing and Modelling Financial Assets.
+  - [fBasics](https://cran.r-project.org/web/packages/fBasics/index.html) - Markets and Basic Statistics.
+  - [fBonds](https://cran.r-project.org/web/packages/fBonds/index.html) - Bonds and Interest Rate Models.
+  - [fExoticOptions](https://cran.r-project.org/web/packages/fExoticOptions/index.html) - Exotic Option Valuation.
+  - [fOptions](https://cran.r-project.org/web/packages/fOptions/index.html) - Pricing and Evaluating Basic Options.
+  - [fPortfolio](https://cran.r-project.org/web/packages/fPortfolio/index.html) - Portfolio Selection and Optimization.
 - [portfolio](https://cran.r-project.org/web/packages/portfolio/index.html) - Analysing equity portfolios.
 - [portfolioSim](https://cran.r-project.org/web/packages/portfolioSim/index.html) - Framework for simulating equity portfolio strategies.
 - [sparseIndexTracking](https://github.com/dppalomar/sparseIndexTracking) - Portfolio design to track an index.
@@ -269,6 +272,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [options.studies](https://github.com/taylorizing/options.studies) - options trading studies functions for use with options.data package and shiny.
 
 ### Portfolio Optimization
+
 - [PortfolioAnalytics](https://cran.r-project.org/web/packages/PortfolioAnalytics/PortfolioAnalytics.pdf) - Portfolio Analysis, Including Numerical Methods for Optimizationof Portfolios
 
 ### Trading
@@ -289,6 +293,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [PerformanceAnalytics](https://cran.r-project.org/web/packages/PerformanceAnalytics/index.html) - Econometric tools for performance and risk analysis.
 
 ### Factor Analysis
+
 - [FactorAnalytics](https://github.com/braverock/FactorAnalytics) - The FactorAnalytics package contains fitting and analysis methods for the three main types of factor models used in conjunction with portfolio construction, optimization and risk management, namely fundamental factor models, time series factor models and statistical factor models.
 - [Expected Returns](https://github.com/JustinMShea/ExpectedReturns) - Solutions for enhancing portfolio diversification and replications of seminal papers with R, most of which are discussed in one of the best investment references of the recent decade, Expected Returns: An Investors Guide to Harvesting Market Rewards by Antti Ilmanen.
 
@@ -319,7 +324,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [QUANTAXIS](https://github.com/yutiansut/quantaxis) - Integrated Quantitative Toolbox with Matlab.
 
-
 ## Julia
 
 - [QuantLib.jl](https://github.com/pazzo83/QuantLib.jl) - Quantlib implementation in pure Julia.
@@ -335,7 +339,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [MarketData.jl](https://github.com/JuliaQuant/MarketData.jl) - Time series market data.
 - [TimeFrames.jl](https://github.com/femtotrader/TimeFrames.jl) - A Julia library that defines TimeFrame (essentially for resampling TimeSeries).
 
-
 ## Java
 
 - [Strata](http://strata.opengamma.io/) - Modern open-source analytics and market risk library designed and written in Java.
@@ -349,6 +352,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [finance.js](https://github.com/ebradyjobory/finance.js) - A JavaScript library for common financial calculations.
 
 ### Data Visualization
+
 - [QUANTAXIS_Webkit](https://github.com/yutiansut/QUANTAXIS_Webkit) an awesome visualization center based on quantaxis.
 
 ## Haskell
@@ -366,6 +370,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [Jiji](https://github.com/unageanu/jiji2) - Open Source Forex algorithmic trading framework using OANDA REST API.
 -
+
 ## Elixir/Erlang
 
 - [Tai](https://github.com/fremantle-capital/tai) - Open Source composable, real time, market data and trade execution toolkit.
@@ -383,13 +388,13 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Frameworks
 
 - [QuantLib](https://www.quantlib.org) - The QuantLib project is aimed at providing a comprehensive software framework for quantitative finance.
-	- [JQuantLib](http://www.jquantlib.org) - Java port.
-	- [RQuantLib](http://dirk.eddelbuettel.com/code/rquantlib.html) - R port.
-	- [QuantLibAddin](https://www.quantlib.org/quantlibaddin/) - Excel support.
-	- [QuantLibXL](https://www.quantlib.org/quantlibxl/) - Excel support.
-	- [QLNet](https://github.com/amaggiulli/qlnet) - .Net port.
-	- [PyQL](https://github.com/enthought/pyql) - Python port.
-	- [QuantLib.jl](https://github.com/pazzo83/QuantLib.jl) - Julia port.
+  - [JQuantLib](http://www.jquantlib.org) - Java port.
+  - [RQuantLib](http://dirk.eddelbuettel.com/code/rquantlib.html) - R port.
+  - [QuantLibAddin](https://www.quantlib.org/quantlibaddin/) - Excel support.
+  - [QuantLibXL](https://www.quantlib.org/quantlibxl/) - Excel support.
+  - [QLNet](https://github.com/amaggiulli/qlnet) - .Net port.
+  - [PyQL](https://github.com/enthought/pyql) - Python port.
+  - [QuantLib.jl](https://github.com/pazzo83/QuantLib.jl) - Julia port.
 - [TA-Lib](https://ta-lib.org) - perform technical analysis of financial market data.
 
 ## CSharp
