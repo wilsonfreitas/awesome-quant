@@ -16,6 +16,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Ruby](#ruby)
 - [Elixir/Erlang](#elixirerlang)
 - [Golang](#golang)
+- [CPP](#cpp)
 - [CSharp](#csharp)
 - [Frameworks](#frameworks) - frameworks that support different languages
 - [Reproducing Works](#reproducing-works) - repositories that reproduce books and papers results or implement examples
@@ -374,6 +375,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [Kelp](https://github.com/stellar/kelp) - Kelp is an open-source Golang algorithmic cryptocurrency trading bot that runs on centralized exchanges and Stellar DEX (command-line usage and desktop GUI).
 - [marketstore](https://github.com/alpacahq/marketstore) - DataFrame Server for Financial Timeseries Data.
+
+## CPP
+
+- [TradeFrame](https://github.com/rburkholder/trade-frame) - C++ 17 based framework/library (with sample applications) for testing options based automated trading ideas using DTN IQ real time data feed and Interactive Brokers (TWS API) for trade execution. Comes with built-in [Option Greeks/IV](https://github.com/rburkholder/trade-frame/tree/master/lib/TFOptions) calculation library.
 
 ## Frameworks
 
