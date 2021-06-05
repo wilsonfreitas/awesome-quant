@@ -237,6 +237,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [GetTDData](https://cran.r-project.org/web/packages/GetTDData/index.html) - Downloads and aggregates data for Brazilian government issued bonds directly from the website of Tesouro Direto.
 - [GetHFData](https://cran.r-project.org/web/packages/GetHFData/index.html) - Downloads and aggregates high frequency trading data for Brazilian instruments directly from Bovespa ftp site.
 - [Reddit WallstreetBets API](https://dashboard.nbshare.io/apps/reddit/api/) - Provides daily top 50 stocks from reddit (subreddit) Wallstreetbets and their sentiments via the API
+- [td](https://cran.r-project.org/package=td) - Interfaces the 'twelvedata' API for stocks and (digital and standard) currencies
 
 ### Financial Instruments and Pricing
 
