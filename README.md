@@ -145,7 +145,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ### Calendars
 
-- [trading_calendars](https://github.com/quantopian/trading_calendars) - Stock Exchange Trading Calendars.
+- [exchange_calendars](https://github.com/gerrymanoim/exchange_calendars) - Stock Exchange Trading Calendars.
 - [bizdays](https://github.com/wilsonfreitas/python-bizdays) - Business days calculations and utilities.
 - [pandas_market_calendars](https://github.com/rsheftel/pandas_market_calendars) - Exchange calendars to use with pandas for trading applications.
 
