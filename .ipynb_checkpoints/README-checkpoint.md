@@ -129,7 +129,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [universal-portfolios](https://github.com/Marigold/universal-portfolios) - Collection of algorithms for online portfolio selection.
 - [FinQuant](https://github.com/fmilthaler/FinQuant) - A program for financial portfolio management, analysis and optimisation.
 - [Empyrial](https://github.com/ssantoshp/Empyrial) - Portfolio's risk and performance analytics and returns predictions.
-- [risktools](https://github.com/bbcho/risktools-dev) - Risk tools for use within the crude and crude products trading with partial implementation of R's PerformanceAnalytics.
+- [risktools](https://github.com/bbcho/risktools-dev) - Risk tools for use within the crude and crude products trading space with partial implementation of R's PerformanceAnalytics.
 
 ### Factor Analysis
 
