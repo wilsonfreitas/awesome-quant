@@ -355,6 +355,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [finance.js](https://github.com/ebradyjobory/finance.js) - A JavaScript library for common financial calculations.
 - [portfolio-allocation](https://github.com/lequant40/portfolio_allocation_js) - PortfolioAllocation is a JavaScript library designed to help constructing financial portfolios made of several assets: bonds, commodities, cryptocurrencies, currencies, exchange traded funds (ETFs), mutual funds, stocks...
+- [Ghostfolio](https://github.com/ghostfolio/ghostfolio) - Wealth management software to keep track of financial assets like stocks, ETFs or cryptocurrencies and make solid, data-driven investment decisions.
 
 ### Data Visualization
 
