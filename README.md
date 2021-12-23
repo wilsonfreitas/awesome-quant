@@ -130,6 +130,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [FinQuant](https://github.com/fmilthaler/FinQuant) - A program for financial portfolio management, analysis and optimisation.
 - [Empyrial](https://github.com/ssantoshp/Empyrial) - Portfolio's risk and performance analytics and returns predictions.
 - [risktools](https://github.com/bbcho/risktools-dev) - Risk tools for use within the crude and crude products trading space with partial implementation of R's PerformanceAnalytics.
+- [Riskfolio-Lib](https://github.com/dcajasn/Riskfolio-Lib) - Portfolio Optimization and Quantitative Strategic Asset Allocation in Python.
 
 ### Factor Analysis
 
