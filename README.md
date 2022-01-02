@@ -442,4 +442,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [py4at](https://github.com/yhilpisch/py4at) - Jupyter Notebooks and code for the book Python for Algorithmic Trading (O'Reilly) by Yves Hilpisch.
 - [dawp](https://github.com/yhilpisch/dawp) - Jupyter Notebooks and code for Derivatives Analytics with Python (Wiley Finance) by Yves Hilpisch.
 - [dx](https://github.com/yhilpisch/dx) - DX Analytics | Financial and Derivatives Analytics with Python.
+- [QuantFinanceBook](https://github.com/LechGrzelak/QuantFinanceBook) - Quantitative Finance book.
+- [Computational-Finance-Course](https://github.com/LechGrzelak/Computational-Finance-Course) - Here you will find materials for the course of Computational Finance.
 
