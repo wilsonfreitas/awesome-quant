@@ -361,6 +361,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [finance.js](https://github.com/ebradyjobory/finance.js) - A JavaScript library for common financial calculations.
 - [portfolio-allocation](https://github.com/lequant40/portfolio_allocation_js) - PortfolioAllocation is a JavaScript library designed to help constructing financial portfolios made of several assets: bonds, commodities, cryptocurrencies, currencies, exchange traded funds (ETFs), mutual funds, stocks...
 - [Ghostfolio](https://github.com/ghostfolio/ghostfolio) - Wealth management software to keep track of financial assets like stocks, ETFs or cryptocurrencies and make solid, data-driven investment decisions.
+- [IndicatorTS](https://github.com/cinar/indicatorts) - Indicator is a TypeScript module providing various stock technical analysis indicators, strategies, and a backtest framework for trading.
 
 ### Data Visualization
 
@@ -392,6 +393,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [Kelp](https://github.com/stellar/kelp) - Kelp is an open-source Golang algorithmic cryptocurrency trading bot that runs on centralized exchanges and Stellar DEX (command-line usage and desktop GUI).
 - [marketstore](https://github.com/alpacahq/marketstore) - DataFrame Server for Financial Timeseries Data.
+- [IndicatorGo](https://github.com/cinar/indicator) - IndicatorGo is a Golang module providing various stock technical analysis indicators, strategies, and a backtest framework for trading.
 
 ## CPP
 
