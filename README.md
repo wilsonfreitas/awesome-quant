@@ -448,4 +448,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [dx](https://github.com/yhilpisch/dx) - DX Analytics | Financial and Derivatives Analytics with Python.
 - [QuantFinanceBook](https://github.com/LechGrzelak/QuantFinanceBook) - Quantitative Finance book.
 - [Computational-Finance-Course](https://github.com/LechGrzelak/Computational-Finance-Course) - Here you will find materials for the course of Computational Finance.
+- [rough_bergomi](https://github.com/ryanmccrickerd/rough_bergomi) - A Python implementation of the rough Bergomi model.
+- [frh-fx](https://github.com/ryanmccrickerd/frh-fx) - A python implementation of the fast-reversion Heston model of Mechkov for FX purposes.
 
