@@ -358,6 +358,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [finmath.net](http://finmath.net) - Java library with algorithms and methodologies related to mathematical finance.
 - [quantcomponents](https://github.com/lsgro/quantcomponents) - Free Java components for Quantitative Finance and Algorithmic Trading.
 - [DRIP](https://lakshmidrip.github.io/DRIP) - Fixed Income, Asset Allocation, Transaction Cost Analysis, XVA Metrics Libraries.
+- [ta4j](https://github.com/ta4j/ta4j) - A Java library for technical analysis.
 
 ## JavaScript
 
