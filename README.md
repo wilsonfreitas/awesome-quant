@@ -43,7 +43,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [QuantPy](https://github.com/jsmidt/QuantPy) - A framework for quantitative finance In python.
 - [Finance-Python](https://github.com/alpha-miner/Finance-Python) - Python tools for Finance.
 - [ffn](https://github.com/pmorissette/ffn) - A financial function library for Python.
-- [pynance](https://pynance.net) - PyNance is open-source software for retrieving, analysing and visualizing data from stock and derivatives markets.
+- [pynance](https://github.com/GriffinAustin/pynance) - Lightweight Python library for assembling and analysing financial data.
 - [tia](https://github.com/bpsmith/tia) - Toolkit for integration and analysis.
 - [hasura/base-python-dash](https://platform.hasura.io/hub/projects/hasura/base-python-dash) - Hasura quickstart to deploy Dash framework. Written on top of Flask, Plotly.js, and React.js, Dash is ideal for building data visualization apps with highly custom user interfaces in pure Python.
 - [hasura/base-python-bokeh](https://platform.hasura.io/hub/projects/hasura/base-python-bokeh) - Hasura quickstart to visualize data with bokeh library.
