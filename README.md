@@ -360,7 +360,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ### Data Visualization
 
-- [QUANTAXIS_Webkit](https://github.com/yutiansut/QUANTAXIS_Webkit) an awesome visualization center based on quantaxis.
+- [QUANTAXIS_Webkit](https://github.com/yutiansut/QUANTAXIS_Webkit) - An awesome visualization center based on quantaxis.
 
 ## Haskell
 
@@ -371,7 +371,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Scala
 
 - [QuantScale](https://github.com/choucrifahed/quantscale) - Scala Quantitative Finance Library.
-- [Scala Quant](https://github.com/frankcash/Scala-Quant) Scala library for working with stock data from IFTTT recipes or Google Finance.
+- [Scala Quant](https://github.com/frankcash/Scala-Quant) - Scala library for working with stock data from IFTTT recipes or Google Finance.
 
 ## Ruby
 
