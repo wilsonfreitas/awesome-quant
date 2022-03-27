@@ -66,7 +66,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ### Trading & Backtesting
 
 - [TA-Lib](https://ta-lib.org) - perform technical analysis of financial market data.
-- [trade](https://github.com/rochars/trade) - trade is a Python framework for the development of financial applications.
 - [zipline](https://www.zipline.io) - Pythonic algorithmic trading library.
 - [QuantSoftware Toolkit](https://github.com/QuantSoftware/QuantSoftwareToolkit) - Python-based open source software framework designed to support portfolio construction and management.
 - [quantitative](https://github.com/jeffrey-liang/quantitative) - Quantitative finance, and backtesting library.
