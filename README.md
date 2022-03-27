@@ -118,6 +118,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TuneTA](https://github.com/jmrichardson/tuneta) - TuneTA optimizes technical indicators using a distance correlation measure to a user defined target feature such as next day return.
 - [AutoTrader](https://github.com/kieran-mackle/AutoTrader) - A Python-based development platform for automated trading systems - from backtesting to optimisation to livetrading.
 - [fast-trade](https://github.com/jrmeier/fast-trade) - A library built with backtest portability and performance in mind for backtest trading strategies.
+- [qf-lib](https://github.com/quarkfin/qf-lib) - QF-Lib is a Python library that provides high quality tools for quantitative finance.
 
 ### Risk Analysis
 
