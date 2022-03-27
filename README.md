@@ -431,3 +431,4 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [QuantFinance](https://github.com/PythonCharmers/QuantFinance) - Training materials in quantitative finance.
 - [MarketAnalysis](https://github.com/Poseyy/MarketAnalysis) - Implementing many different methods and popular analysis tools in Python.
 - [IPythonScripts](https://github.com/mgroncki/IPythonScripts) - Tutorials about Quantitative Finance in Python and QuantLib: Pricing, xVAs, Hedging, Portfolio Optimisation, Machine Learning and Deep Learning.
+- [Computational-Finance-Course](https://github.com/LechGrzelak/Computational-Finance-Course) - Materials for the course of Computational Finance.
