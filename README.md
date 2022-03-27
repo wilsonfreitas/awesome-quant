@@ -53,6 +53,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [financial-engineering](https://github.com/federicomariamassari/financial-engineering) - Applications of Monte Carlo methods to financial engineering projects, in Python.
 - [optlib](https://github.com/dbrojas/optlib) - A library for financial options pricing written in Python.
 - [tf-quant-finance](https://github.com/google/tf-quant-finance) - High-performance TensorFlow library for quantitative finance.
+- [Q-Fin](https://github.com/RomanMichaelPaolucci/Q-Fin) - A Python library for mathematical finance.
 
 ### Indicators
 
