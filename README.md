@@ -376,7 +376,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Ruby
 
 - [Jiji](https://github.com/unageanu/jiji2) - Open Source Forex algorithmic trading framework using OANDA REST API.
--
 
 ## Elixir/Erlang
 
