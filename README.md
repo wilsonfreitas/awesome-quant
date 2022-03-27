@@ -19,8 +19,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Golang](#golang)
 - [CPP](#cpp)
 - [CSharp](#csharp)
-- [Frameworks](#frameworks) - frameworks that support different languages
-- [Reproducing Works](#reproducing-works) - repositories that reproduce books and papers results or implement examples
+- [Frameworks](#frameworks)
+- [Reproducing Works](#reproducing-works)
 
 ## Python
 
