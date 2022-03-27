@@ -429,3 +429,4 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [MEDIUM_NoteBook](https://github.com/cerlymarco/MEDIUM_NoteBook) - Repository containing notebooks of [cerlymarco](https://github.com/cerlymarco)'s posts on Medium.
 - [QuantFinance](https://github.com/PythonCharmers/QuantFinance) - Training materials in quantitative finance.
 - [MarketAnalysis](https://github.com/Poseyy/MarketAnalysis) - Implementing many different methods and popular analysis tools in Python.
+- [IPythonScripts](https://github.com/mgroncki/IPythonScripts) - Tutorials about Quantitative Finance in Python and QuantLib: Pricing, xVAs, Hedging, Portfolio Optimisation, Machine Learning and Deep Learning.
