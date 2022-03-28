@@ -11,7 +11,7 @@ from github import Github
 g = Github(os.environ['GITHUB_ACCESS_TOKEN'])
 
 def extract_repo(url):
-  reu = re.compile('^https://github.com/([\w-]+/[\w-]+)$')
+  reu = re.compile('^https://github.com/([\w-]+/[-\w\.]+)$')
   m = reu.match(url)
   if m:
     return m.group(1)

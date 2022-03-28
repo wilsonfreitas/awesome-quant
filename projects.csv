@@ -31,8 +31,8 @@ finta,Python > Indicators,2021-10-19,https://github.com/peerchemist/finta,Common
 Tulipy,Python > Indicators,2019-04-11,https://github.com/cirla/tulipy,Financial Technical Analysis Indicator Library (Python bindings for [tulipindicators](https://github.com/TulipCharts/tulipindicators)),True,False,cirla/tulipy
 lppls,Python > Indicators,2021-12-23,https://github.com/Boulder-Investment-Technologies/lppls,A Python module for fitting the [Log-Periodic Power Law Singularity (LPPLS)](https://en.wikipedia.org/wiki/Didier_Sornette#The_JLS_and_LPPLS_models) model.,True,False,Boulder-Investment-Technologies/lppls
 Blankly,Python > Trading & Backtesting,2022-03-10,https://github.com/Blankly-Finance/Blankly,"Fully integrated backtesting, paper trading, and live deployment.",True,False,Blankly-Finance/Blankly
-TA-Lib,Python > Trading & Backtesting,,https://ta-lib.org,perform technical analysis of financial market data.,False,False,
-zipline,Python > Trading & Backtesting,,https://www.zipline.io,Pythonic algorithmic trading library.,False,False,
+TA-Lib,Python > Trading & Backtesting,2022-02-12,https://github.com/mrjbq7/ta-lib,Python wrapper for TA-Lib (http://ta-lib.org/).,True,False,mrjbq7/ta-lib
+zipline,Python > Trading & Backtesting,2020-10-14,https://github.com/quantopian/zipline,Pythonic algorithmic trading library.,True,False,quantopian/zipline
 QuantSoftware Toolkit,Python > Trading & Backtesting,2016-10-07,https://github.com/QuantSoftware/QuantSoftwareToolkit,Python-based open source software framework designed to support portfolio construction and management.,True,False,QuantSoftware/QuantSoftwareToolkit
 quantitative,Python > Trading & Backtesting,2019-03-03,https://github.com/jeffrey-liang/quantitative,"Quantitative finance, and backtesting library.",True,False,jeffrey-liang/quantitative
 analyzer,Python > Trading & Backtesting,2015-12-22,https://github.com/llazzaro/analyzer,Python framework for real-time financial and backtesting trading strategies.,True,False,llazzaro/analyzer
@@ -56,7 +56,7 @@ zipline-extensions,Python > Trading & Backtesting,2018-09-17,https://github.com/
 moonshot,Python > Trading & Backtesting,2021-04-13,https://github.com/quantrocket-llc/moonshot,Vectorized backtester and trading engine for QuantRocket based on Pandas.,True,False,quantrocket-llc/moonshot
 PyPortfolioOpt,Python > Trading & Backtesting,2022-03-23,https://github.com/robertmartin8/PyPortfolioOpt,"Financial portfolio optimisation in python, including classical efficient frontier and advanced methods.",True,False,robertmartin8/PyPortfolioOpt
 Eiten,Python > Trading & Backtesting,2020-09-21,https://github.com/tradytics/eiten,"Eiten is an open source toolkit by Tradytics that implements various statistical and algorithmic investing strategies such as Eigen Portfolios, Minimum Variance Portfolios, Maximum Sharpe Ratio Portfolios, and Genetic Algorithms based Portfolios.",True,False,tradytics/eiten
-riskparity.py,Python > Trading & Backtesting,,https://github.com/dppalomar/riskparity.py,fast and scalable design of risk parity portfolios with TensorFlow 2.0,True,False,
+riskparity.py,Python > Trading & Backtesting,2022-03-18,https://github.com/dppalomar/riskparity.py,fast and scalable design of risk parity portfolios with TensorFlow 2.0,True,False,dppalomar/riskparity.py
 mlfinlab,Python > Trading & Backtesting,2021-12-01,https://github.com/hudson-and-thames/mlfinlab,"Implementations regarding ""Advances in Financial Machine Learning"" by Marcos Lopez de Prado. (Feature Engineering, Financial Data Structures, Meta-Labeling)",True,False,hudson-and-thames/mlfinlab
 pyqstrat,Python > Trading & Backtesting,2022-01-08,https://github.com/abbass2/pyqstrat,"A fast, extensible, transparent python library for backtesting quantitative strategies.",True,False,abbass2/pyqstrat
 NowTrade,Python > Trading & Backtesting,2017-02-07,https://github.com/edouardpoitras/NowTrade,Python library for backtesting technical/mechanical strategies in the stock and currency markets.,True,False,edouardpoitras/NowTrade
@@ -67,7 +67,7 @@ catalyst,Python > Trading & Backtesting,2021-09-22,https://github.com/enigmampc/
 quantstats,Python > Trading & Backtesting,2022-02-14,https://github.com/ranaroussi/quantstats,"Portfolio analytics for quants, written in Python",True,False,ranaroussi/quantstats
 qtpylib,Python > Trading & Backtesting,2021-03-24,https://github.com/ranaroussi/qtpylib,"QTPyLib, Pythonic Algorithmic Trading <http://qtpylib.io>",True,False,ranaroussi/qtpylib
 Quantdom,Python > Trading & Backtesting,2019-03-12,https://github.com/constverum/Quantdom,Python-based framework for backtesting trading strategies & analyzing financial markets [GUI :neckbeard:],True,False,constverum/Quantdom
-freqtrade,Python > Trading & Backtesting,2022-03-26,https://github.com/freqtrade/freqtrade,"Free, open source crypto trading bot",True,False,freqtrade/freqtrade
+freqtrade,Python > Trading & Backtesting,2022-03-28,https://github.com/freqtrade/freqtrade,"Free, open source crypto trading bot",True,False,freqtrade/freqtrade
 algorithmic-trading-with-python,Python > Trading & Backtesting,2021-06-01,https://github.com/chrisconlan/algorithmic-trading-with-python,"Free `pandas` and `scikit-learn` resources for trading simulation, backtesting, and machine learning on financial data.",True,False,chrisconlan/algorithmic-trading-with-python
 DeepDow,Python > Trading & Backtesting,2022-03-11,https://github.com/jankrepl/deepdow,Portfolio optimization with deep learning,True,False,jankrepl/deepdow
 Qlib,Python > Trading & Backtesting,2022-03-24,https://github.com/microsoft/qlib,"An AI-oriented Quantitative Investment Platform by Microsoft. Full ML pipeline of data processing, model training, back-testing; and covers the entire chain of quantitative investment: alpha seeking, risk modeling, portfolio optimization, and order execution.",True,False,microsoft/qlib
@@ -75,7 +75,7 @@ machine-learning-for-trading,Python > Trading & Backtesting,2022-03-08,https://g
 AlphaPy,Python > Trading & Backtesting,2021-10-23,https://github.com/ScottfreeLLC/AlphaPy,"Automated Machine Learning [AutoML] with Python, scikit-learn, Keras, XGBoost, LightGBM, and CatBoost",True,False,ScottfreeLLC/AlphaPy
 jesse,Python > Trading & Backtesting,2022-03-23,https://github.com/jesse-ai/jesse,An advanced crypto trading bot written in Python,True,False,jesse-ai/jesse
 rqalpha,Python > Trading & Backtesting,2022-02-05,https://github.com/ricequant/rqalpha,"A extendable, replaceable Python algorithmic backtest && trading framework supporting multiple securities.",True,False,ricequant/rqalpha
-FinRL-Library,Python > Trading & Backtesting,2022-03-27,https://github.com/AI4Finance-LLC/FinRL-Library,A Deep Reinforcement Learning Library for Automated Trading in Quantitative Finance. NeurIPS 2020.,True,False,AI4Finance-LLC/FinRL-Library
+FinRL-Library,Python > Trading & Backtesting,2022-03-28,https://github.com/AI4Finance-LLC/FinRL-Library,A Deep Reinforcement Learning Library for Automated Trading in Quantitative Finance. NeurIPS 2020.,True,False,AI4Finance-LLC/FinRL-Library
 bulbea,Python > Trading & Backtesting,2017-03-19,https://github.com/achillesrasquinha/bulbea,Deep Learning based Python Library for Stock Market Prediction and Modelling.,True,False,achillesrasquinha/bulbea
 ib_nope,Python > Trading & Backtesting,2021-04-22,https://github.com/ajhpark/ib_nope,Automated trading system for NOPE strategy over IBKR TWS.,True,False,ajhpark/ib_nope
 OctoBot,Python > Trading & Backtesting,2022-02-09,https://github.com/Drakkar-Software/OctoBot,"Open source cryptocurrency trading bot for high frequency, arbitrage, TA and social trading with an advanced web interface.",True,False,Drakkar-Software/OctoBot
@@ -150,14 +150,15 @@ iexfinance,Python > Data Sources,2021-01-02,https://github.com/addisonlynch/iexf
 pyEX,Python > Data Sources,2022-03-27,https://github.com/timkpaine/pyEX,"Python interface to IEX with emphasis on pandas, support for streaming data, premium data, points data (economic, rates, commodities), and technical indicators.",True,False,timkpaine/pyEX
 alpaca-trade-api,Python > Data Sources,2022-03-25,https://github.com/alpacahq/alpaca-trade-api-python,Python interface for retrieving real-time and historical prices from Alpaca API as well as trade execution.,True,False,alpacahq/alpaca-trade-api-python
 metatrader5,Python > Data Sources,,https://pypi.org/project/MetaTrader5/,API Connector to MetaTrader 5 Terminal,False,False,
-akshare,Python > Data Sources,2022-03-27,https://github.com/jindaxiang/akshare,"AkShare is an elegant and simple financial data interface library for Python, built for human beings! <https://akshare.readthedocs.io>",True,False,jindaxiang/akshare
+akshare,Python > Data Sources,2022-03-28,https://github.com/jindaxiang/akshare,"AkShare is an elegant and simple financial data interface library for Python, built for human beings! <https://akshare.readthedocs.io>",True,False,jindaxiang/akshare
 yahooquery,Python > Data Sources,2021-02-26,https://github.com/dpguthrie/yahooquery,Python interface for retrieving data through unofficial Yahoo Finance API.,True,False,dpguthrie/yahooquery
-investpy,Python > Data Sources,2022-02-04,https://github.com/alvarobartt/investpy,Financial Data Extraction from Investing.com with Python! <https://investpy.readthedocs.io/>,True,False,alvarobartt/investpy
+investpy,Python > Data Sources,2022-03-28,https://github.com/alvarobartt/investpy,Financial Data Extraction from Investing.com with Python! <https://investpy.readthedocs.io/>,True,False,alvarobartt/investpy
 yliveticker,Python > Data Sources,2021-04-29,https://github.com/yahoofinancelive/yliveticker,Live stream of market data from Yahoo Finance websocket.,True,False,yahoofinancelive/yliveticker
 bbgbridge,Python > Data Sources,2020-01-07,https://github.com/ran404/bbgbridge,Easy to use Bloomberg Desktop API wrapper for Python.,True,False,ran404/bbgbridge
 alpha_vantage,Python > Data Sources,2021-06-14,https://github.com/RomelTorres/alpha_vantage,A python wrapper for Alpha Vantage API for financial data.,True,False,RomelTorres/alpha_vantage
 FinanceDataReader,Python > Data Sources,2022-03-14,https://github.com/FinanceData/FinanceDataReader,"Open Source Financial data reader for U.S, Korean, Japanese, Chinese, Vietnamese Stocks",True,False,FinanceData/FinanceDataReader
-pystlouisfed,Python > Data Sources,2022-02-23,https://github.com/TomasKoutek/pystlouisfed,"Python client for Federal Reserve Bank of St. Louis API - FRED, ALFRED, GeoFRED and FRASER",True,False,TomasKoutek/pystlouisfed
+pystlouisfed,Python > Data Sources,2022-02-23,https://github.com/TomasKoutek/pystlouisfed,"Python client for Federal Reserve Bank of St. Louis API - FRED, ALFRED, GeoFRED and FRASER.",True,False,TomasKoutek/pystlouisfed
+python-bcb,Python > Data Sources,2022-03-23,https://github.com/wilsonfreitas/python-bcb,Python interface to Brazilian Central Bank web services.,True,False,wilsonfreitas/python-bcb
 xlwings,Python > Excel Integration,,https://www.xlwings.org/,Make Excel fly with Python.,False,False,
 openpyxl,Python > Excel Integration,,https://openpyxl.readthedocs.io/en/latest/,Read/Write Excel 2007 xlsx/xlsm files.,False,False,
 xlrd,Python > Excel Integration,2021-08-19,https://github.com/python-excel/xlrd,Library for developers to extract data from Microsoft Excel spreadsheet files.,True,False,python-excel/xlrd
@@ -172,7 +173,7 @@ mplfinance,Python > Visualization,2022-03-04,https://github.com/matplotlib/mplfi
 finplot,Python > Visualization,2022-03-09,https://github.com/highfestiva/finplot,Performant and effortless finance plotting for Python.,True,False,highfestiva/finplot
 finvizfinance,Python > Visualization,2022-03-02,https://github.com/lit26/finvizfinance,Finviz analysis python library.,True,False,lit26/finvizfinance
 xts,R > Numerical Libraries & Data Structures,,https://cran.r-project.org/web/packages/xts/index.html,"eXtensible Time Series: Provide for uniform handling of R's different time-based data classes by extending zoo, maximizing native format information preservation and allowing for user level customization and extension, while simplifying cross-class interoperability.",False,True,
-data.table,R > Numerical Libraries & Data Structures,,https://cran.r-project.org/web/packages/data.table/index.html,"Extension of data.frame: Fast aggregation of large data (e.g. 100GB in RAM), fast ordered joins, fast add/modify/delete of columns by group using no copies at all, list columns and a fast file reader (fread). Offers a natural and flexible syntax, for faster development.",False,True,
+data.table,R > Numerical Libraries & Data Structures,2022-03-16,https://github.com/Rdatatable/data.table,"Extension of data.frame: Fast aggregation of large data (e.g. 100GB in RAM), fast ordered joins, fast add/modify/delete of columns by group using no copies at all, list columns and a fast file reader (fread). Offers a natural and flexible syntax, for faster development.",True,False,Rdatatable/data.table
 sparseEigen,R > Numerical Libraries & Data Structures,2018-12-22,https://github.com/dppalomar/sparseEigen,Sparse pricipal component analysis.,True,False,dppalomar/sparseEigen
 TSdbi,R > Numerical Libraries & Data Structures,,http://tsdbi.r-forge.r-project.org/,Provides a common interface to time series databases.,False,False,
 tseries,R > Numerical Libraries & Data Structures,,https://cran.r-project.org/web/packages/tseries/index.html,Time Series Analysis and Computational Finance.,False,True,
@@ -181,13 +182,14 @@ tis,R > Numerical Libraries & Data Structures,,https://cran.r-project.org/web/pa
 tfplot,R > Numerical Libraries & Data Structures,,https://cran.r-project.org/web/packages/tfplot/index.html,Utilities for simple manipulation and quick plotting of time series data.,False,True,
 tframe,R > Numerical Libraries & Data Structures,,https://cran.r-project.org/web/packages/tframe/index.html,A kernel of functions for programming time series methods in a way that is relatively independently of the representation of time.,False,True,
 IBrokers,R > Data Sources,,https://cran.r-project.org/web/packages/IBrokers/index.html,Provides native R access to Interactive Brokers Trader Workstation API.,False,True,
-Rblpapi,R > Data Sources,,https://cran.r-project.org/web/packages/Rblpapi/index.html,An R Interface to 'Bloomberg' is provided via the 'Blp API'.,False,True,
+Rblpapi,R > Data Sources,2022-02-23,https://github.com/Rblp/Rblpapi,An R Interface to 'Bloomberg' is provided via the 'Blp API'.,True,False,Rblp/Rblpapi
 Quandl,R > Data Sources,,https://www.quandl.com/tools/r,Get Financial Data Directly Into R.,False,False,
-Rbitcoin,R > Data Sources,,https://cran.r-project.org/web/packages/Rbitcoin/index.html,"Unified markets API interface (bitstamp, kraken, btce, bitmarket).",False,True,
-GetTDData,R > Data Sources,,https://cran.r-project.org/web/packages/GetTDData/index.html,Downloads and aggregates data for Brazilian government issued bonds directly from the website of Tesouro Direto.,False,True,
-GetHFData,R > Data Sources,,https://cran.r-project.org/web/packages/GetHFData/index.html,Downloads and aggregates high frequency trading data for Brazilian instruments directly from Bovespa ftp site.,False,True,
-Reddit WallstreetBets API,R > Data Sources,,https://dashboard.nbshare.io/apps/reddit/api/,Provides daily top 50 stocks from reddit (subreddit) Wallstreetbets and their sentiments via the API,False,False,
-td,R > Data Sources,,https://cran.r-project.org/package=td,Interfaces the 'twelvedata' API for stocks and (digital and standard) currencies,False,True,
+Rbitcoin,R > Data Sources,2016-10-25,https://github.com/jangorecki/Rbitcoin,"Unified markets API interface (bitstamp, kraken, btce, bitmarket).",True,False,jangorecki/Rbitcoin
+GetTDData,R > Data Sources,2022-03-18,https://github.com/msperlin/GetTDData,Downloads and aggregates data for Brazilian government issued bonds directly from the website of Tesouro Direto.,True,False,msperlin/GetTDData
+GetHFData,R > Data Sources,2020-06-30,https://github.com/msperlin/GetHFData,Downloads and aggregates high frequency trading data for Brazilian instruments directly from Bovespa ftp site.,True,False,msperlin/GetHFData
+Reddit WallstreetBets API,R > Data Sources,,https://dashboard.nbshare.io/apps/reddit/api/,Provides daily top 50 stocks from reddit (subreddit) Wallstreetbets and their sentiments via the API.,False,False,
+td,R > Data Sources,2022-02-03,https://github.com/eddelbuettel/td,Interfaces the 'twelvedata' API for stocks and (digital and standard) currencies.,True,False,eddelbuettel/td
+rbcb,R > Data Sources,2022-02-24,https://github.com/wilsonfreitas/rbcb,R interface to Brazilian Central Bank web services.,True,False,wilsonfreitas/rbcb
 RQuantLib,R > Financial Instruments and Pricing,,http://dirk.eddelbuettel.com/code/rquantlib.html,RQuantLib connects GNU R with QuantLib.,False,False,
 quantmod,R > Financial Instruments and Pricing,,https://cran.r-project.org/web/packages/quantmod/index.html,Quantitative Financial Modelling Framework.,False,True,
 Rmetrics,R > Financial Instruments and Pricing,,https://www.rmetrics.org,The premier open source software solution for teaching and training quantitative finance.,False,False,
@@ -198,8 +200,7 @@ fBonds,R > Financial Instruments and Pricing,,https://cran.r-project.org/web/pac
 fExoticOptions,R > Financial Instruments and Pricing,,https://cran.r-project.org/web/packages/fExoticOptions/index.html,Exotic Option Valuation.,False,True,
 fOptions,R > Financial Instruments and Pricing,,https://cran.r-project.org/web/packages/fOptions/index.html,Pricing and Evaluating Basic Options.,False,True,
 fPortfolio,R > Financial Instruments and Pricing,,https://cran.r-project.org/web/packages/fPortfolio/index.html,Portfolio Selection and Optimization.,False,True,
-portfolio,R > Financial Instruments and Pricing,,https://cran.r-project.org/web/packages/portfolio/index.html,Analysing equity portfolios.,False,True,
-portfolioSim,R > Financial Instruments and Pricing,,https://cran.r-project.org/web/packages/portfolioSim/index.html,Framework for simulating equity portfolio strategies.,False,True,
+portfolio,R > Financial Instruments and Pricing,2021-07-09,https://github.com/dgerlanc/portfolio,Analysing equity portfolios.,True,False,dgerlanc/portfolio
 sparseIndexTracking,R > Financial Instruments and Pricing,2019-06-13,https://github.com/dppalomar/sparseIndexTracking,Portfolio design to track an index.,True,False,dppalomar/sparseIndexTracking
 covFactorModel,R > Financial Instruments and Pricing,2019-03-25,https://github.com/dppalomar/covFactorModel,Covariance matrix estimation via factor models.,True,False,dppalomar/covFactorModel
 riskParityPortfolio,R > Financial Instruments and Pricing,2022-02-10,https://github.com/dppalomar/riskParityPortfolio,Blazingly fast design of risk parity portfolios.,True,False,dppalomar/riskParityPortfolio
@@ -214,29 +215,30 @@ LSMonteCarlo,R > Financial Instruments and Pricing,,https://cran.r-project.org/w
 OptHedging,R > Financial Instruments and Pricing,,https://cran.r-project.org/web/packages/OptHedging/index.html,Estimation of value and hedging strategy of call and put options.,False,True,
 tvm,R > Financial Instruments and Pricing,,https://cran.r-project.org/web/packages/tvm/index.html,Time Value of Money Functions.,False,True,
 OptionPricing,R > Financial Instruments and Pricing,,https://cran.r-project.org/web/packages/OptionPricing/index.html,Option Pricing with Efficient Simulation Algorithms.,False,True,
-credule,R > Financial Instruments and Pricing,,https://cran.r-project.org/web/packages/credule/index.html,Credit Default Swap Functions.,False,True,
+credule,R > Financial Instruments and Pricing,2015-08-05,https://github.com/blenezet/credule,Credit Default Swap Functions.,True,False,blenezet/credule
 derivmkts,R > Financial Instruments and Pricing,,https://cran.r-project.org/web/packages/derivmkts/index.html,Functions and R Code to Accompany Derivatives Markets.,False,True,
 FinCal,R > Financial Instruments and Pricing,2017-04-12,https://github.com/felixfan/FinCal,"Package for time value of money calculation, time series analysis and computational finance.",True,False,felixfan/FinCal
 r-quant,R > Financial Instruments and Pricing,2014-02-19,https://github.com/artyyouth/r-quant,R code for quantitative analysis in finance.,True,False,artyyouth/r-quant
-options.studies,R > Financial Instruments and Pricing,,https://github.com/taylorizing/options.studies,options trading studies functions for use with options.data package and shiny.,True,False,
-PortfolioAnalytics,R > Portfolio Optimization,,https://cran.r-project.org/web/packages/PortfolioAnalytics/PortfolioAnalytics.pdf,"Portfolio Analysis, Including Numerical Methods for Optimizationof Portfolios",False,True,
-TA-Lib,R > Trading,,https://ta-lib.org,perform technical analysis of financial market data.,False,False,
+options.studies,R > Financial Instruments and Pricing,2015-12-17,https://github.com/taylorizing/options.studies,options trading studies functions for use with options.data package and shiny.,True,False,taylorizing/options.studies
+PortfolioAnalytics,R > Financial Instruments and Pricing,2021-05-09,https://github.com/braverock/PortfolioAnalytics,"Portfolio Analysis, Including Numerical Methods for Optimizationof Portfolios.",True,False,braverock/PortfolioAnalytics
+fmbasics,R > Financial Instruments and Pricing,2019-12-03,https://github.com/imanuelcostigan/fmbasics,Financial Market Building Blocks.,True,False,imanuelcostigan/fmbasics
+R-fixedincome,R > Financial Instruments and Pricing,2022-03-21,https://github.com/wilsonfreitas/R-fixedincome,Fixed income tools for R.,True,False,wilsonfreitas/R-fixedincome
 backtest,R > Trading,,https://cran.r-project.org/web/packages/backtest/index.html,Exploring Portfolio-Based Conjectures About Financial Instruments.,False,True,
 pa,R > Trading,,https://cran.r-project.org/web/packages/pa/index.html,Performance Attribution for Equity Portfolios.,False,True,
-TTR,R > Trading,,https://cran.r-project.org/web/packages/TTR/index.html,Technical Trading Rules.,False,True,
+TTR,R > Trading,2021-12-11,https://github.com/joshuaulrich/TTR,Technical Trading Rules.,True,False,joshuaulrich/TTR
 QuantTools,R > Trading,,https://quanttools.bitbucket.io/_site/index.html,Enhanced Quantitative Trading Modelling.,False,False,
 blotter,R > Trading,2021-03-06,https://github.com/braverock/blotter,"Transaction infrastructure for defining instruments, transactions, portfolios and accounts for trading systems and simulation. Provides portfolio support for multi-asset class and multi-currency portfolios. Actively maintained and developed.",True,False,braverock/blotter
 quantstrat,R > Backtesting,2021-03-05,https://github.com/braverock/quantstrat,Transaction-oriented infrastructure for constructing trading systems and simulation. Provides support for multi-asset class and multi-currency portfolios for backtesting and other financial research.,True,False,braverock/quantstrat
-PerformanceAnalytics,R > Risk Analysis,,https://cran.r-project.org/web/packages/PerformanceAnalytics/index.html,Econometric tools for performance and risk analysis.,False,True,
+PerformanceAnalytics,R > Risk Analysis,2022-01-07,https://github.com/braverock/PerformanceAnalytics,Econometric tools for performance and risk analysis.,True,False,braverock/PerformanceAnalytics
 FactorAnalytics,R > Factor Analysis,2022-03-26,https://github.com/braverock/FactorAnalytics,"The FactorAnalytics package contains fitting and analysis methods for the three main types of factor models used in conjunction with portfolio construction, optimization and risk management, namely fundamental factor models, time series factor models and statistical factor models.",True,False,braverock/FactorAnalytics
 Expected Returns,R > Factor Analysis,2022-03-27,https://github.com/JustinMShea/ExpectedReturns,"Solutions for enhancing portfolio diversification and replications of seminal papers with R, most of which are discussed in one of the best investment references of the recent decade, Expected Returns: An Investors Guide to Harvesting Market Rewards by Antti Ilmanen.",True,False,JustinMShea/ExpectedReturns
 tseries,R > Time Series,,https://cran.r-project.org/web/packages/tseries/index.html,Time Series Analysis and Computational Finance.,False,True,
 zoo,R > Time Series,,https://cran.r-project.org/web/packages/zoo/index.html,S3 Infrastructure for Regular and Irregular Time Series (Z's Ordered Observations).,False,True,
-xts,R > Time Series,,https://cran.r-project.org/web/packages/xts/index.html,eXtensible Time Series.,False,True,
+xts,R > Time Series,2022-03-27,https://github.com/joshuaulrich/xts,eXtensible Time Series.,True,False,joshuaulrich/xts
 fGarch,R > Time Series,,https://cran.r-project.org/web/packages/fGarch/index.html,Rmetrics - Autoregressive Conditional Heteroskedastic Modelling.,False,True,
 timeSeries,R > Time Series,,https://cran.r-project.org/web/packages/timeSeries/index.html,Rmetrics - Financial Time Series Objects.,False,True,
-rugarch,R > Time Series,,https://cran.r-project.org/web/packages/rugarch/index.html,Univariate GARCH Models.,False,True,
-rmgarch,R > Time Series,,https://cran.r-project.org/web/packages/rmgarch/index.html,Multivariate GARCH Models.,False,True,
+rugarch,R > Time Series,2022-02-04,https://github.com/alexiosg/rugarch,Univariate GARCH Models.,True,False,alexiosg/rugarch
+rmgarch,R > Time Series,2022-03-05,https://github.com/alexiosg/rmgarch,Multivariate GARCH Models.,True,False,alexiosg/rmgarch
 tidypredict,R > Time Series,2021-09-28,https://github.com/edgararuiz/tidypredict,Run predictions inside the database <https://tidypredict.netlify.com/>.,True,False,edgararuiz/tidypredict
 tidyquant,R > Time Series,2021-12-30,https://github.com/business-science/tidyquant,Bringing financial analysis to the tidyverse.,True,False,business-science/tidyquant
 timetk,R > Time Series,2022-01-19,https://github.com/business-science/timetk,A toolkit for working with time series in R.,True,False,business-science/timetk
@@ -244,27 +246,26 @@ tibbletime,R > Time Series,2021-02-18,https://github.com/business-science/tibble
 matrixprofile,R > Time Series,2021-06-26,https://github.com/matrix-profile-foundation/matrixprofile,Time series data mining library built on top of the novel Matrix Profile data structure and algorithms.,True,False,matrix-profile-foundation/matrixprofile
 garchmodels,R > Time Series,2021-08-10,https://github.com/AlbertoAlmuinha/garchmodels,A parsnip backend for GARCH models.,True,False,AlbertoAlmuinha/garchmodels
 timeDate,R > Calendars,,https://cran.r-project.org/web/packages/timeDate/index.html,Chronological and Calendar Objects,False,True,
-bizdays,R > Calendars,,https://cran.r-project.org/web/packages/bizdays/index.html,Business days calculations and utilities,False,True,
+bizdays,R > Calendars,2022-03-20,https://github.com/wilsonfreitas/R-bizdays,Business days calculations and utilities,True,False,wilsonfreitas/R-bizdays
 QUANTAXIS,Matlab > FrameWorks,2022-02-08,https://github.com/yutiansut/quantaxis,Integrated Quantitative Toolbox with Matlab.,True,False,yutiansut/quantaxis
-QuantLib.jl,Julia,,https://github.com/pazzo83/QuantLib.jl,Quantlib implementation in pure Julia.,True,False,
-FinancialMarkets.jl,Julia,,https://github.com/imanuelcostigan/FinancialMarkets.jl,Describe and model financial markets objects using Julia.,True,False,
-Ito.jl,Julia,,https://github.com/aviks/Ito.jl,A Julia package for quantitative finance.,True,False,
-TALib.jl,Julia,,https://github.com/femtotrader/TALib.jl,A Julia wrapper for TA-Lib.,True,False,
+QuantLib.jl,Julia,2020-02-18,https://github.com/pazzo83/QuantLib.jl,Quantlib implementation in pure Julia.,True,False,pazzo83/QuantLib.jl
+Ito.jl,Julia,2017-03-21,https://github.com/aviks/Ito.jl,A Julia package for quantitative finance.,True,False,aviks/Ito.jl
+TALib.jl,Julia,2017-08-22,https://github.com/femtotrader/TALib.jl,A Julia wrapper for TA-Lib.,True,False,femtotrader/TALib.jl
 Miletus.jl,Julia,,https://juliacomputing.com/docs/miletus/index.html,"A financial contract definition, modeling language, and valuation framework.",False,False,
-Temporal.jl,Julia,,https://github.com/dysonance/Temporal.jl,Flexible and efficient time series class & methods.,True,False,
-Indicators.jl,Julia,,https://github.com/dysonance/Indicators.jl,Financial market technical analysis & indicators on top of Temporal.,True,False,
-Strategems.jl,Julia,,https://github.com/dysonance/Strategems.jl,Quantitative systematic trading strategy development and backtesting.,True,False,
-TimeSeries.jl,Julia,,https://github.com/JuliaStats/TimeSeries.jl,Time series toolkit for Julia.,True,False,
-MarketTechnicals.jl,Julia,,https://github.com/JuliaQuant/MarketTechnicals.jl,Technical analysis of financial time series on top of TimeSeries.,True,False,
-MarketData.jl,Julia,,https://github.com/JuliaQuant/MarketData.jl,Time series market data.,True,False,
-TimeFrames.jl,Julia,,https://github.com/femtotrader/TimeFrames.jl,A Julia library that defines TimeFrame (essentially for resampling TimeSeries).,True,False,
+Temporal.jl,Julia,2021-12-28,https://github.com/dysonance/Temporal.jl,Flexible and efficient time series class & methods.,True,False,dysonance/Temporal.jl
+Indicators.jl,Julia,2021-12-28,https://github.com/dysonance/Indicators.jl,Financial market technical analysis & indicators on top of Temporal.,True,False,dysonance/Indicators.jl
+Strategems.jl,Julia,2021-04-06,https://github.com/dysonance/Strategems.jl,Quantitative systematic trading strategy development and backtesting.,True,False,dysonance/Strategems.jl
+TimeSeries.jl,Julia,2022-01-11,https://github.com/JuliaStats/TimeSeries.jl,Time series toolkit for Julia.,True,False,JuliaStats/TimeSeries.jl
+MarketTechnicals.jl,Julia,2021-07-12,https://github.com/JuliaQuant/MarketTechnicals.jl,Technical analysis of financial time series on top of TimeSeries.,True,False,JuliaQuant/MarketTechnicals.jl
+MarketData.jl,Julia,2022-02-01,https://github.com/JuliaQuant/MarketData.jl,Time series market data.,True,False,JuliaQuant/MarketData.jl
+TimeFrames.jl,Julia,2019-02-16,https://github.com/femtotrader/TimeFrames.jl,A Julia library that defines TimeFrame (essentially for resampling TimeSeries).,True,False,femtotrader/TimeFrames.jl
 Strata,Java,,http://strata.opengamma.io/,Modern open-source analytics and market risk library designed and written in Java.,False,False,
 JQuantLib,Java,,http://www.jquantlib.org,"JQuantLib is a free, open-source, comprehensive framework for quantitative finance, written in 100% Java.",False,False,
 finmath.net,Java,,http://finmath.net,Java library with algorithms and methodologies related to mathematical finance.,False,False,
 quantcomponents,Java,2015-10-07,https://github.com/lsgro/quantcomponents,Free Java components for Quantitative Finance and Algorithmic Trading.,True,False,lsgro/quantcomponents
 DRIP,Java,,https://lakshmidrip.github.io/DRIP,"Fixed Income, Asset Allocation, Transaction Cost Analysis, XVA Metrics Libraries.",False,False,
 ta4j,Java,2021-10-11,https://github.com/ta4j/ta4j,A Java library for technical analysis.,True,False,ta4j/ta4j
-finance.js,JavaScript,,https://github.com/ebradyjobory/finance.js,A JavaScript library for common financial calculations.,True,False,
+finance.js,JavaScript,2018-10-11,https://github.com/ebradyjobory/finance.js,A JavaScript library for common financial calculations.,True,False,ebradyjobory/finance.js
 portfolio-allocation,JavaScript,2020-10-09,https://github.com/lequant40/portfolio_allocation_js,"PortfolioAllocation is a JavaScript library designed to help constructing financial portfolios made of several assets: bonds, commodities, cryptocurrencies, currencies, exchange traded funds (ETFs), mutual funds, stocks...",True,False,lequant40/portfolio_allocation_js
 Ghostfolio,JavaScript,2022-03-26,https://github.com/ghostfolio/ghostfolio,"Wealth management software to keep track of financial assets like stocks, ETFs or cryptocurrencies and make solid, data-driven investment decisions.",True,False,ghostfolio/ghostfolio
 IndicatorTS,JavaScript,2022-01-29,https://github.com/cinar/indicatorts,"Indicator is a TypeScript module providing various stock technical analysis indicators, strategies, and a backtest framework for trading.",True,False,cinar/indicatorts
@@ -290,12 +291,12 @@ QuantLibAddin,Frameworks,,https://www.quantlib.org/quantlibaddin/,Excel support.
 QuantLibXL,Frameworks,,https://www.quantlib.org/quantlibxl/,Excel support.,False,False,
 QLNet,Frameworks,2021-12-07,https://github.com/amaggiulli/qlnet,.Net port.,True,False,amaggiulli/qlnet
 PyQL,Frameworks,2022-01-27,https://github.com/enthought/pyql,Python port.,True,False,enthought/pyql
-QuantLib.jl,Frameworks,,https://github.com/pazzo83/QuantLib.jl,Julia port.,True,False,
+QuantLib.jl,Frameworks,2020-02-18,https://github.com/pazzo83/QuantLib.jl,Julia port.,True,False,pazzo83/QuantLib.jl
 TA-Lib,Frameworks,,https://ta-lib.org,perform technical analysis of financial market data.,False,False,
 Portfolio Optimizer,Frameworks,,https://portfoliooptimizer.io/,Portfolio Optimizer is a Web API for portfolio analysis and optimization.,False,False,
 QuantConnect,CSharp,2022-03-18,https://github.com/QuantConnect/Lean,Lean Engine is an open-source fully managed C# algorithmic trading engine built for desktop and cloud usage.,True,False,QuantConnect/Lean
 StockSharp,CSharp,2022-03-21,https://github.com/StockSharp/StockSharp,"Algorithmic trading and quantitative trading open source platform to develop trading robots (stock markets, forex, crypto, bitcoins, and options).",True,False,StockSharp/StockSharp
-TDAmeritrade.DotNetCore,CSharp,,https://github.com/NVentimiglia/TDAmeritrade.DotNetCore,"Free, open-source .NET Client for the TD Ameritrade Trading Platform. Helps developers integrate TD Ameritrade API into custom trading solutions.",True,False,
+TDAmeritrade.DotNetCore,CSharp,2021-09-26,https://github.com/NVentimiglia/TDAmeritrade.DotNetCore,"Free, open-source .NET Client for the TD Ameritrade Trading Platform. Helps developers integrate TD Ameritrade API into custom trading solutions.",True,False,NVentimiglia/TDAmeritrade.DotNetCore
 QuantMath,Rust,2020-05-28,https://github.com/MarcusRainbow/QuantMath,Financial maths library for risk-neutral pricing and risk,True,False,MarcusRainbow/QuantMath
 Derman Papers,"Reproducing Works, Training & Books",2017-10-21,https://github.com/MarcosCarreira/DermanPapers,Notebooks that replicate original quantitative finance papers from Emanuel Derman.,True,False,MarcosCarreira/DermanPapers
 ML-Quant,"Reproducing Works, Training & Books",,https://www.ml-quant.com/,"Top Quant resources like ArXiv (sanity), SSRN, RePec, Journals, Podcasts, Videos, and Blogs.",False,False,
