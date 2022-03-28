@@ -235,7 +235,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ### Numerical Libraries & Data Structures
 
 - [xts](https://cran.r-project.org/web/packages/xts/index.html) - eXtensible Time Series: Provide for uniform handling of R's different time-based data classes by extending zoo, maximizing native format information preservation and allowing for user level customization and extension, while simplifying cross-class interoperability.
-- [data.table](https://cran.r-project.org/web/packages/data.table/index.html) - Extension of data.frame: Fast aggregation of large data (e.g. 100GB in RAM), fast ordered joins, fast add/modify/delete of columns by group using no copies at all, list columns and a fast file reader (fread). Offers a natural and flexible syntax, for faster development.
+- [data.table](https://github.com/Rdatatable/data) - Extension of data.frame: Fast aggregation of large data (e.g. 100GB in RAM), fast ordered joins, fast add/modify/delete of columns by group using no copies at all, list columns and a fast file reader (fread). Offers a natural and flexible syntax, for faster development.
 - [sparseEigen](https://github.com/dppalomar/sparseEigen) - Sparse pricipal component analysis.
 - [TSdbi](http://tsdbi.r-forge.r-project.org/) - Provides a common interface to time series databases.
 - [tseries](https://cran.r-project.org/web/packages/tseries/index.html) - Time Series Analysis and Computational Finance.
@@ -247,13 +247,13 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ### Data Sources
 
 - [IBrokers](https://cran.r-project.org/web/packages/IBrokers/index.html) - Provides native R access to Interactive Brokers Trader Workstation API.
-- [Rblpapi](https://cran.r-project.org/web/packages/Rblpapi/index.html) - An R Interface to 'Bloomberg' is provided via the 'Blp API'.
+- [Rblpapi](https://github.com/Rblp/Rblpapi) - An R Interface to 'Bloomberg' is provided via the 'Blp API'.
 - [Quandl](https://www.quandl.com/tools/r) - Get Financial Data Directly Into R.
-- [Rbitcoin](https://cran.r-project.org/web/packages/Rbitcoin/index.html) - Unified markets API interface (bitstamp, kraken, btce, bitmarket).
-- [GetTDData](https://cran.r-project.org/web/packages/GetTDData/index.html) - Downloads and aggregates data for Brazilian government issued bonds directly from the website of Tesouro Direto.
-- [GetHFData](https://cran.r-project.org/web/packages/GetHFData/index.html) - Downloads and aggregates high frequency trading data for Brazilian instruments directly from Bovespa ftp site.
+- [Rbitcoin](https://github.com/jangorecki/Rbitcoin) - Unified markets API interface (bitstamp, kraken, btce, bitmarket).
+- [GetTDData](https://github.com/msperlin/GetTDData) - Downloads and aggregates data for Brazilian government issued bonds directly from the website of Tesouro Direto.
+- [GetHFData](https://github.com/msperlin/GetHFData) - Downloads and aggregates high frequency trading data for Brazilian instruments directly from Bovespa ftp site.
 - [Reddit WallstreetBets API](https://dashboard.nbshare.io/apps/reddit/api/) - Provides daily top 50 stocks from reddit (subreddit) Wallstreetbets and their sentiments via the API
-- [td](https://cran.r-project.org/package=td) - Interfaces the 'twelvedata' API for stocks and (digital and standard) currencies
+- [td](https://github.com/eddelbuettel/td) - Interfaces the 'twelvedata' API for stocks and (digital and standard) currencies
 
 ### Financial Instruments and Pricing
 
@@ -267,8 +267,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
   - [fExoticOptions](https://cran.r-project.org/web/packages/fExoticOptions/index.html) - Exotic Option Valuation.
   - [fOptions](https://cran.r-project.org/web/packages/fOptions/index.html) - Pricing and Evaluating Basic Options.
   - [fPortfolio](https://cran.r-project.org/web/packages/fPortfolio/index.html) - Portfolio Selection and Optimization.
-- [portfolio](https://cran.r-project.org/web/packages/portfolio/index.html) - Analysing equity portfolios.
-- [portfolioSim](https://cran.r-project.org/web/packages/portfolioSim/index.html) - Framework for simulating equity portfolio strategies.
+- [portfolio](https://github.com/dgerlanc/portfolio) - Analysing equity portfolios.
 - [sparseIndexTracking](https://github.com/dppalomar/sparseIndexTracking) - Portfolio design to track an index.
 - [covFactorModel](https://github.com/dppalomar/covFactorModel) - Covariance matrix estimation via factor models.
 - [riskParityPortfolio](https://github.com/dppalomar/riskParityPortfolio) - Blazingly fast design of risk parity portfolios.
@@ -283,22 +282,19 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [OptHedging](https://cran.r-project.org/web/packages/OptHedging/index.html) - Estimation of value and hedging strategy of call and put options.
 - [tvm](https://cran.r-project.org/web/packages/tvm/index.html) - Time Value of Money Functions.
 - [OptionPricing](https://cran.r-project.org/web/packages/OptionPricing/index.html) - Option Pricing with Efficient Simulation Algorithms.
-- [credule](https://cran.r-project.org/web/packages/credule/index.html) - Credit Default Swap Functions.
+- [credule](https://github.com/blenezet/credule) - Credit Default Swap Functions.
 - [derivmkts](https://cran.r-project.org/web/packages/derivmkts/index.html) - Functions and R Code to Accompany Derivatives Markets.
 - [FinCal](https://github.com/felixfan/FinCal) - Package for time value of money calculation, time series analysis and computational finance.
 - [r-quant](https://github.com/artyyouth/r-quant) - R code for quantitative analysis in finance.
 - [options.studies](https://github.com/taylorizing/options.studies) - options trading studies functions for use with options.data package and shiny.
-
-### Portfolio Optimization
-
-- [PortfolioAnalytics](https://cran.r-project.org/web/packages/PortfolioAnalytics/PortfolioAnalytics.pdf) - Portfolio Analysis, Including Numerical Methods for Optimizationof Portfolios
+- [PortfolioAnalytics](https://github.com/braverock/PortfolioAnalytics) - Portfolio Analysis, Including Numerical Methods for Optimizationof Portfolios
 
 ### Trading
 
 - [TA-Lib](https://ta-lib.org) - perform technical analysis of financial market data.
 - [backtest](https://cran.r-project.org/web/packages/backtest/index.html) - Exploring Portfolio-Based Conjectures About Financial Instruments.
 - [pa](https://cran.r-project.org/web/packages/pa/index.html) - Performance Attribution for Equity Portfolios.
-- [TTR](https://cran.r-project.org/web/packages/TTR/index.html) - Technical Trading Rules.
+- [TTR](https://github.com/joshuaulrich/TTR) - Technical Trading Rules.
 - [QuantTools](https://quanttools.bitbucket.io/_site/index.html) - Enhanced Quantitative Trading Modelling.
 - [blotter](https://github.com/braverock/blotter) - Transaction infrastructure for defining instruments, transactions, portfolios and accounts for trading systems and simulation. Provides portfolio support for multi-asset class and multi-currency portfolios. Actively maintained and developed.
 
@@ -308,7 +304,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ### Risk Analysis
 
-- [PerformanceAnalytics](https://cran.r-project.org/web/packages/PerformanceAnalytics/index.html) - Econometric tools for performance and risk analysis.
+- [PerformanceAnalytics](https://github.com/braverock/PerformanceAnalytics) - Econometric tools for performance and risk analysis.
 
 ### Factor Analysis
 
@@ -319,11 +315,11 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [tseries](https://cran.r-project.org/web/packages/tseries/index.html) - Time Series Analysis and Computational Finance.
 - [zoo](https://cran.r-project.org/web/packages/zoo/index.html) - S3 Infrastructure for Regular and Irregular Time Series (Z's Ordered Observations).
-- [xts](https://cran.r-project.org/web/packages/xts/index.html) - eXtensible Time Series.
+- [xts](https://github.com/joshuaulrich/xts) - eXtensible Time Series.
 - [fGarch](https://cran.r-project.org/web/packages/fGarch/index.html) - Rmetrics - Autoregressive Conditional Heteroskedastic Modelling.
 - [timeSeries](https://cran.r-project.org/web/packages/timeSeries/index.html) - Rmetrics - Financial Time Series Objects.
-- [rugarch](https://cran.r-project.org/web/packages/rugarch/index.html) - Univariate GARCH Models.
-- [rmgarch](https://cran.r-project.org/web/packages/rmgarch/index.html) - Multivariate GARCH Models.
+- [rugarch](https://github.com/alexiosg/rugarch) - Univariate GARCH Models.
+- [rmgarch](https://github.com/alexiosg/rmgarch) - Multivariate GARCH Models.
 - [tidypredict](https://github.com/edgararuiz/tidypredict) - Run predictions inside the database <https://tidypredict.netlify.com/>.
 - [tidyquant](https://github.com/business-science/tidyquant) - Bringing financial analysis to the tidyverse.
 - [timetk](https://github.com/business-science/timetk) - A toolkit for working with time series in R.
@@ -334,7 +330,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ### Calendars
 
 - [timeDate](https://cran.r-project.org/web/packages/timeDate/index.html) - Chronological and Calendar Objects
-- [bizdays](https://cran.r-project.org/web/packages/bizdays/index.html) - Business days calculations and utilities
+- [bizdays](https://github.com/wilsonfreitas/R-bizdays) - Business days calculations and utilities
 
 ## Matlab
 
