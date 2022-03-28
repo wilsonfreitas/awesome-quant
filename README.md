@@ -235,7 +235,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ### Numerical Libraries & Data Structures
 
-- [xts](https://cran.r-project.org/web/packages/xts/index.html) - eXtensible Time Series: Provide for uniform handling of R's different time-based data classes by extending zoo, maximizing native format information preservation and allowing for user level customization and extension, while simplifying cross-class interoperability.
+- [xts](https://github.com/joshuaulrich/xts) - eXtensible Time Series: Provide for uniform handling of R's different time-based data classes by extending zoo, maximizing native format information preservation and allowing for user level customization and extension, while simplifying cross-class interoperability.
 - [data.table](https://github.com/Rdatatable/data.table) - Extension of data.frame: Fast aggregation of large data (e.g. 100GB in RAM), fast ordered joins, fast add/modify/delete of columns by group using no copies at all, list columns and a fast file reader (fread). Offers a natural and flexible syntax, for faster development.
 - [sparseEigen](https://github.com/dppalomar/sparseEigen) - Sparse pricipal component analysis.
 - [TSdbi](http://tsdbi.r-forge.r-project.org/) - Provides a common interface to time series databases.
@@ -317,8 +317,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ### Time Series
 
 - [tseries](https://cran.r-project.org/web/packages/tseries/index.html) - Time Series Analysis and Computational Finance.
-- [zoo](https://cran.r-project.org/web/packages/zoo/index.html) - S3 Infrastructure for Regular and Irregular Time Series (Z's Ordered Observations).
-- [xts](https://github.com/joshuaulrich/xts) - eXtensible Time Series.
 - [fGarch](https://cran.r-project.org/web/packages/fGarch/index.html) - Rmetrics - Autoregressive Conditional Heteroskedastic Modelling.
 - [timeSeries](https://cran.r-project.org/web/packages/timeSeries/index.html) - Rmetrics - Financial Time Series Objects.
 - [rugarch](https://github.com/alexiosg/rugarch) - Univariate GARCH Models.
