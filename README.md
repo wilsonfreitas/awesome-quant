@@ -68,8 +68,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ### Trading & Backtesting
 
 - [Blankly](https://github.com/Blankly-Finance/Blankly) - Fully integrated backtesting, paper trading, and live deployment.
-- [TA-Lib](https://ta-lib.org) - perform technical analysis of financial market data.
-- [zipline](https://www.zipline.io) - Pythonic algorithmic trading library.
+- [TA-Lib](https://github.com/mrjbq7/ta-lib) - Python wrapper for TA-Lib (http://ta-lib.org/).
+- [zipline](https://github.com/quantopian/zipline) - Pythonic algorithmic trading library.
 - [QuantSoftware Toolkit](https://github.com/QuantSoftware/QuantSoftwareToolkit) - Python-based open source software framework designed to support portfolio construction and management.
 - [quantitative](https://github.com/jeffrey-liang/quantitative) - Quantitative finance, and backtesting library.
 - [analyzer](https://github.com/llazzaro/analyzer) - Python framework for real-time financial and backtesting trading strategies.
@@ -291,7 +291,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ### Trading
 
-- [TA-Lib](https://ta-lib.org) - perform technical analysis of financial market data.
 - [backtest](https://cran.r-project.org/web/packages/backtest/index.html) - Exploring Portfolio-Based Conjectures About Financial Instruments.
 - [pa](https://cran.r-project.org/web/packages/pa/index.html) - Performance Attribution for Equity Portfolios.
 - [TTR](https://github.com/joshuaulrich/TTR) - Technical Trading Rules.
