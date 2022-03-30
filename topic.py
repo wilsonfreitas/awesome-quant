@@ -21,4 +21,5 @@ repos = g.search_repositories(query=f'topic:{topic}')
 for repo in repos:
     if repo.stargazers_count < 1000:
         break
-    print(repo.name, repo.stargazers_count, repo.language, repo.html_url, repo.description, repo.updated_at, repo.archived)
+    print(repo.name, repo.stargazers_count, repo.language, repo.html_url,
+          repo.description, repo.updated_at, repo.archived)

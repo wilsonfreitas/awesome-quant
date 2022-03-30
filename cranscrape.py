@@ -60,13 +60,15 @@ urls = [
     'https://cran.r-project.org/web/packages/bizdays/index.html',
 ]
 
+
 def get_data(url):
-  res = requests.get(url)
-  m = reu.search(res.text)
-  if m:
-    return dict(cran=url, github=m.group(0), repo=m.group(1))
-  else:
-    return dict(cran=url, github='', repo='')
+    res = requests.get(url)
+    m = reu.search(res.text)
+    if m:
+        return dict(cran=url, github=m.group(0), repo=m.group(1))
+    else:
+        return dict(cran=url, github='', repo='')
+
 
 all_data = [get_data(url) for url in urls]
 df = pd.DataFrame(all_data)
