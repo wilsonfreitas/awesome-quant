@@ -462,3 +462,4 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [frh-fx](https://github.com/ryanmccrickerd/frh-fx) - A python implementation of the fast-reversion Heston model of Mechkov for FX purposes.
 - [value-investing-studies](https://github.com/euclidjda/value-investing-studies) - A collection of data analysis studies that examine the performance and characteristics of value investing over long periods of time.
 - [machine-learning-asset-management](https://github.com/firmai/machine-learning-asset-management) - Machine Learning in Asset Management (by @firmai).
+- [Deep-Learning-Machine-Learning-Stock](https://github.com/LastAncientOne/Deep-Learning-Machine-Learning-Stock) - Deep Learning and Machine Learning stocks represent a promising long-term or short-term opportunity for investors and traders.
