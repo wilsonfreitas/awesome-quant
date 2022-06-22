@@ -37,6 +37,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ### Financial Instruments and Pricing
 
+- [OpenBB Terminal](https://github.com/OpenBB-finance/OpenBBTerminal) - Terminal for investment research for everyone.
 - [PyQL](https://github.com/enthought/pyql) - QuantLib's Python port.
 - [pyfin](https://github.com/opendoor-labs/pyfin) - Basic options pricing in Python. [ARCHIVED]
 - [vollib](https://github.com/vollib/vollib) - vollib is a python library for calculating option prices, implied volatility and greeks.
