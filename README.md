@@ -213,9 +213,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [FinanceDataReader](https://github.com/FinanceData/FinanceDataReader) - Open Source Financial data reader for U.S, Korean, Japanese, Chinese, Vietnamese Stocks
 - [pystlouisfed](https://github.com/TomasKoutek/pystlouisfed) - Python client for Federal Reserve Bank of St. Louis API - FRED, ALFRED, GeoFRED and FRASER.
 - [python-bcb](https://github.com/wilsonfreitas/python-bcb) - Python interface to Brazilian Central Bank web services.
-
-### Data Processing
-
 - [market-prices](https://github.com/maread99/market_prices) - Create meaningful OHLCV datasets from knowledge of [exchange-calendars](https://github.com/gerrymanoim/exchange_calendars) (works out-the-box with data from Yahoo Finance).
 
 ### Excel Integration
