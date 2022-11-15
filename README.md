@@ -357,6 +357,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [MarketTechnicals.jl](https://github.com/JuliaQuant/MarketTechnicals.jl) - Technical analysis of financial time series on top of TimeSeries.
 - [MarketData.jl](https://github.com/JuliaQuant/MarketData.jl) - Time series market data.
 - [TimeFrames.jl](https://github.com/femtotrader/TimeFrames.jl) - A Julia library that defines TimeFrame (essentially for resampling TimeSeries).
+- [DataFrames.jl](https://github.com/JuliaData/DataFrames.jl) - In-memory tabular data in Julia
+- [TSFrames.jl](https://github.com/xKDR/TSFrames.jl) - Handle timeseries data on top of the powerful and mature DataFrames.jl
 
 ## Java
 
