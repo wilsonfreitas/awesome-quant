@@ -62,6 +62,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ### Indicators
 
 - [pandas_talib](https://github.com/femtotrader/pandas_talib) - A Python Pandas implementation of technical analysis indicators.
+- [pandas_ta](https://github.com/twopirllc/pandas-ta) - A Pure Python Pandas implementation of technical analysis indicators, without TA-Lib dependencies.
 - [finta](https://github.com/peerchemist/finta) - Common financial technical analysis indicators implemented in Pandas.
 - [Tulipy](https://github.com/cirla/tulipy) - Financial Technical Analysis Indicator Library (Python bindings for [tulipindicators](https://github.com/TulipCharts/tulipindicators))
 - [lppls](https://github.com/Boulder-Investment-Technologies/lppls) - A Python module for fitting the [Log-Periodic Power Law Singularity (LPPLS)](https://en.wikipedia.org/wiki/Didier_Sornette#The_JLS_and_LPPLS_models) model.
