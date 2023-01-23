@@ -34,6 +34,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [statistics](https://docs.python.org/3/library/statistics.html) - Builtin Python library for all basic statistical calculations.
 - [sympy](https://www.sympy.org/) - SymPy is a Python library for symbolic mathematics.
 - [pymc3](https://docs.pymc.io/) - Probabilistic Programming in Python: Bayesian Modeling and Probabilistic Machine Learning with Theano.
+- [modelx](https://docs.modelx.io/) - Python reimagination of spreadsheets as formula-centric objects that are interoperable with pandas.
+
 
 ### Financial Instruments and Pricing
 
