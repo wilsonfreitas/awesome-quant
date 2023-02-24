@@ -239,6 +239,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [mplfinance](https://github.com/matplotlib/mplfinance) - matplotlib utilities for the visualization, and visual analysis, of financial data.
 - [finplot](https://github.com/highfestiva/finplot) - Performant and effortless finance plotting for Python.
 - [finvizfinance](https://github.com/lit26/finvizfinance) - Finviz analysis python library.
+- [market-analy](https://github.com/maread99/market_analy) - Analysis and interactive charting using [market-prices](https://github.com/maread99/market_prices) and bqplot.
 
 ## R
 
