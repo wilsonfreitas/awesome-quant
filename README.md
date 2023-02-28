@@ -479,4 +479,4 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Differential Machine Learning and Axes that matter by Brian Huge and Antoine Savine](https://github.com/differential-machine-learning/notebooks) - Implement, demonstrate, reproduce and extend the results of the Risk articles 'Differential Machine Learning' (2020) and 'PCA with a Difference' (2021) by Huge and Savine, and cover implementation details left out from the papers.
 - [systematictradingexamples](https://github.com/robcarver17/systematictradingexamples) - Examples of code related to book [Systematic Trading](www.systematictrading.org) and [blog](http://qoppac.blogspot.com)
 - [pysystemtrade_examples](https://github.com/robcarver17/pysystemtrade_examples) - Examples using pysystemtrade for Robert Carver's [blog](http://qoppac.blogspot.com).
-
+- [ML_Finance_Codes](https://github.com/mfrdixon/ML_Finance_Codes) - Machine Learning in Finance: From Theory to Practice Book
