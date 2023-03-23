@@ -266,6 +266,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Reddit WallstreetBets API](https://dashboard.nbshare.io/apps/reddit/api/) - Provides daily top 50 stocks from reddit (subreddit) Wallstreetbets and their sentiments via the API.
 - [td](https://github.com/eddelbuettel/td) - Interfaces the 'twelvedata' API for stocks and (digital and standard) currencies.
 - [rbcb](https://github.com/wilsonfreitas/rbcb) - R interface to Brazilian Central Bank web services.
+- [rb3](https://github.com/ropensci/rb3) - A bunch of downloaders and parsers for data delivered from B3.
+- [simfinapi](https://github.com/matthiasgomolka/simfinapi) - Makes 'SimFin' data (https://simfin.com/) easily accessible in R.
 
 ### Financial Instruments and Pricing
 
