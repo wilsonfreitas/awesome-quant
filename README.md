@@ -444,6 +444,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Rust
 
 - [QuantMath](https://github.com/MarcusRainbow/QuantMath) - Financial maths library for risk-neutral pricing and risk
+- [Barter](https://github.com/barter-rs/barter-rs) - Open-source Rust framework for building event-driven live-trading & backtesting systems
 
 ## Reproducing Works, Training & Books
 
