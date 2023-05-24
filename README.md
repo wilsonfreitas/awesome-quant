@@ -450,6 +450,9 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [QuantMath](https://github.com/MarcusRainbow/QuantMath) - Financial maths library for risk-neutral pricing and risk
 - [Barter](https://github.com/barter-rs/barter-rs) - Open-source Rust framework for building event-driven live-trading & backtesting systems
+- [LFEST](https://github.com/MathisWellmann/lfest-rs) - Simulated perpetual futures exchange to trade your strategy against.
+- [TradeAggregation](https://github.com/MathisWellmann/trade_aggregation-rs) - Aggregate trades into user-defined candles using information driven rules.
+- [SlidingFeatures](https://github.com/MathisWellmann/sliding_features-rs) - Chainable tree-like sliding windows for signal processing and technical analysis.
 
 ## Reproducing Works, Training & Books
 
