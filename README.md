@@ -36,7 +36,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pymc3](https://docs.pymc.io/) - Probabilistic Programming in Python: Bayesian Modeling and Probabilistic Machine Learning with Theano.
 - [modelx](https://docs.modelx.io/) - Python reimagination of spreadsheets as formula-centric objects that are interoperable with pandas.
 
-
 ### Financial Instruments and Pricing
 
 - [OpenBB Terminal](https://github.com/OpenBB-finance/OpenBBTerminal) - Terminal for investment research for everyone.
@@ -73,7 +72,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ### Trading & Backtesting
 
 - [Blankly](https://github.com/Blankly-Finance/Blankly) - Fully integrated backtesting, paper trading, and live deployment.
-- [TA-Lib](https://github.com/mrjbq7/ta-lib) - Python wrapper for TA-Lib (http://ta-lib.org/).
+- [TA-Lib](https://github.com/mrjbq7/ta-lib) - Python wrapper for TA-Lib (<http://ta-lib.org/>).
 - [zipline](https://github.com/quantopian/zipline) - Pythonic algorithmic trading library.
 - [QuantSoftware Toolkit](https://github.com/QuantSoftware/QuantSoftwareToolkit) - Python-based open source software framework designed to support portfolio construction and management.
 - [quantitative](https://github.com/jeffrey-liang/quantitative) - Quantitative finance, and backtesting library.
@@ -273,7 +272,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [td](https://github.com/eddelbuettel/td) - Interfaces the 'twelvedata' API for stocks and (digital and standard) currencies.
 - [rbcb](https://github.com/wilsonfreitas/rbcb) - R interface to Brazilian Central Bank web services.
 - [rb3](https://github.com/ropensci/rb3) - A bunch of downloaders and parsers for data delivered from B3.
-- [simfinapi](https://github.com/matthiasgomolka/simfinapi) - Makes 'SimFin' data (https://simfin.com/) easily accessible in R.
+- [simfinapi](https://github.com/matthiasgomolka/simfinapi) - Makes 'SimFin' data (<https://simfin.com/>) easily accessible in R.
 
 ### Financial Instruments and Pricing
 
@@ -450,6 +449,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [QuantMath](https://github.com/MarcusRainbow/QuantMath) - Financial maths library for risk-neutral pricing and risk
 - [Barter](https://github.com/barter-rs/barter-rs) - Open-source Rust framework for building event-driven live-trading & backtesting systems
+- [RustQuant](https://github.com/avhz/RustQuant) - Quantitative finance library written in Rust.
 
 ## Reproducing Works, Training & Books
 
