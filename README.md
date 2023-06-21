@@ -391,6 +391,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [IndicatorTS](https://github.com/cinar/indicatorts) - Indicator is a TypeScript module providing various stock technical analysis indicators, strategies, and a backtest framework for trading.
 - [ccxt](https://github.com/ccxt/ccxt) - A JavaScript / Python / PHP cryptocurrency trading API with support for more than 100 bitcoin/altcoin exchanges.
 - [PENDAX](https://github.com/CompendiumFi/PENDAX-SDK) - Javascript SDK for Trading/Data API and Websockets for FTX, FTXUS, OKX, Bybit, & More.
+- [Mida](https://github.com/Reiryoku-Technologies/Mida) - The open-source and cross-platform trading framework (https://www.mida.org/).
 
 ### Data Visualization
 
