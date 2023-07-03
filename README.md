@@ -32,35 +32,37 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pandas](https://pandas.pydata.org) - pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
 - [quantdsl](https://github.com/johnbywater/quantdsl) - Domain specific language for quantitative analytics in finance and trading.
 - [statistics](https://docs.python.org/3/library/statistics.html) - Builtin Python library for all basic statistical calculations.
+- [statsmodels](https://www.statsmodels.org) - classes and functions for the estimation of many different statistical models, as well as for conducting statistical tests, and statistical data exploration.
 - [sympy](https://www.sympy.org/) - SymPy is a Python library for symbolic mathematics.
 - [pymc3](https://docs.pymc.io/) - Probabilistic Programming in Python: Bayesian Modeling and Probabilistic Machine Learning with Theano.
 - [modelx](https://docs.modelx.io/) - Python reimagination of spreadsheets as formula-centric objects that are interoperable with pandas.
 
 ### Financial Instruments and Pricing
-
+- [AbsBox](https://github.com/yellowbean/AbsBox) - A Python based library to model cashflow for structured product like Asset-backed securities (ABS) and Mortgage-backed securities (MBS).
+- [ffn](https://github.com/pmorissette/ffn) - A financial function library for Python.
+- [FinancePy](https://github.com/domokane/FinancePy) - A Python Finance Library that focuses on the pricing and risk-management of Financial Derivatives, including fixed-income, equity, FX and credit derivatives.
+- [Finance-Python](https://github.com/alpha-miner/Finance-Python) - Python tools for Finance.
+- [financial-engineering](https://github.com/federicomariamassari/financial-engineering) - Applications of Monte Carlo methods to financial engineering projects, in Python.
+- [finoptions](https://github.com/bbcho/finoptions-dev) - Complete python implementation of R package fOptions with partial implementation of fExoticOptions for pricing various options. 
+- [gs-quant](https://github.com/goldmansachs/gs-quant) - Python toolkit for quantitative finance
+- [hasura/base-python-dash](https://platform.hasura.io/hub/projects/hasura/base-python-dash) - Hasura quickstart to deploy Dash framework. Written on top of Flask, Plotly.js, and React.js, Dash is ideal for building
+  data visualization apps with highly custom user interfaces in pure Python.
+- [hasura/base-python-bokeh](https://platform.hasura.io/hub/projects/hasura/base-python-bokeh) - Hasura quickstart to visualize data with bokeh library.
 - [OpenBB Terminal](https://github.com/OpenBB-finance/OpenBBTerminal) - Terminal for investment research for everyone.
+- [optlib](https://github.com/dbrojas/optlib) - A library for financial options pricing written in Python.
 - [PyQL](https://github.com/enthought/pyql) - QuantLib's Python port.
 - [pyfin](https://github.com/opendoor-labs/pyfin) - Basic options pricing in Python. [ARCHIVED]
-- [vollib](https://github.com/vollib/vollib) - vollib is a python library for calculating option prices, implied volatility and greeks.
-- [QuantPy](https://github.com/jsmidt/QuantPy) - A framework for quantitative finance In python.
-- [Finance-Python](https://github.com/alpha-miner/Finance-Python) - Python tools for Finance.
-- [ffn](https://github.com/pmorissette/ffn) - A financial function library for Python.
 - [pynance](https://github.com/GriffinAustin/pynance) - Lightweight Python library for assembling and analysing financial data.
-- [tia](https://github.com/bpsmith/tia) - Toolkit for integration and analysis.
-- [hasura/base-python-dash](https://platform.hasura.io/hub/projects/hasura/base-python-dash) - Hasura quickstart to deploy Dash framework. Written on top of Flask, Plotly.js, and React.js, Dash is ideal for building data visualization apps with highly custom user interfaces in pure Python.
-- [hasura/base-python-bokeh](https://platform.hasura.io/hub/projects/hasura/base-python-bokeh) - Hasura quickstart to visualize data with bokeh library.
 - [pysabr](https://github.com/ynouri/pysabr) - SABR model Python implementation.
-- [FinancePy](https://github.com/domokane/FinancePy) - A Python Finance Library that focuses on the pricing and risk-management of Financial Derivatives, including fixed-income, equity, FX and credit derivatives.
-- [gs-quant](https://github.com/goldmansachs/gs-quant) - Python toolkit for quantitative finance
-- [willowtree](https://github.com/federicomariamassari/willowtree) - Robust and flexible Python implementation of the willow tree lattice for derivatives pricing.
-- [financial-engineering](https://github.com/federicomariamassari/financial-engineering) - Applications of Monte Carlo methods to financial engineering projects, in Python.
-- [optlib](https://github.com/dbrojas/optlib) - A library for financial options pricing written in Python.
-- [tf-quant-finance](https://github.com/google/tf-quant-finance) - High-performance TensorFlow library for quantitative finance.
-- [Q-Fin](https://github.com/RomanMichaelPaolucci/Q-Fin) - A Python library for mathematical finance.
-- [Quantsbin](https://github.com/quantsbin/Quantsbin) - Tools for pricing and plotting of vanilla option prices, greeks and various other analysis around them.
-- [finoptions](https://github.com/bbcho/finoptions-dev) - Complete python implementation of R package fOptions with partial implementation of fExoticOptions for pricing various options.
 - [pypme](https://github.com/ymyke/pypme) - PME (Public Market Equivalent) calculation.
-- [AbsBox](https://github.com/yellowbean/AbsBox) - A Python based library to model cashflow for structured product like Asset-backed securities (ABS) and Mortgage-backed securities (MBS).
+- [Q-Fin](https://github.com/RomanMichaelPaolucci/Q-Fin) - A Python library for mathematical finance.
+- [QuantLib] (https://quantlib-python-docs.readthedocs.io/en/latest/) - QuantLib (https://www.quantlib.org/) is a C++ library for financial quantitative analysts and developers. 
+- [QuantPy](https://github.com/jsmidt/QuantPy) - A framework for quantitative finance In python.
+- [Quantsbin](https://github.com/quantsbin/Quantsbin) - Tools for pricing and plotting of vanilla option prices, greeks and various other analysis around them.
+- [tf-quant-finance](https://github.com/google/tf-quant-finance) - High-performance TensorFlow library for quantitative finance. 
+- [tia](https://github.com/bpsmith/tia) - Toolkit for integration and analysis. 
+- [vollib](https://github.com/vollib/vollib) - vollib is a python library for calculating option prices, implied volatility and greeks.
+- [willowtree](https://github.com/federicomariamassari/willowtree) - Robust and flexible Python implementation of the willow tree lattice for derivatives pricing.
 
 ### Indicators
 
