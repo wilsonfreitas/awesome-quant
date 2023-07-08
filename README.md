@@ -438,6 +438,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
   - [QuantLibXL](https://www.quantlib.org/quantlibxl/) - Excel support.
   - [QLNet](https://github.com/amaggiulli/qlnet) - .Net port.
   - [PyQL](https://github.com/enthought/pyql) - Python port.
+  - [QuantLib-Python Documentation](https://quantlib-python-docs.readthedocs.io/) - Documentation for the Python bindings for the QuantLib library
   - [QuantLib.jl](https://github.com/pazzo83/QuantLib.jl) - Julia port.
 - [TA-Lib](https://ta-lib.org) - perform technical analysis of financial market data.
 - [Portfolio Optimizer](https://portfoliooptimizer.io/) - Portfolio Optimizer is a Web API for portfolio analysis and optimization.
