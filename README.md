@@ -378,7 +378,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Haskell
 
 - [quantfin](https://github.com/boundedvariation/quantfin) - quant finance in pure haskell.
-- [hqfl](https://github.com/co-category/hqfl) - Haskell Quantitative Finance Library.
 - [Haxcel](https://github.com/MarcusRainbow/Haxcel) - Excel Addin for Haskell.
 - [Ffinar](https://github.com/MarcusRainbow/Ffinar) - A financial maths library in Haskell.
 
@@ -418,6 +417,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
   - [PyQL](https://github.com/enthought/pyql) - Python port.
   - [QuantLib.jl](https://github.com/pazzo83/QuantLib.jl) - Julia port.
 - [TA-Lib](https://ta-lib.org) - perform technical analysis of financial market data.
+  - [ta-lib-python](https://github.com/TA-Lib/ta-lib-python)
+  - [ta-lib](https://github.com/TA-Lib/ta-lib)
 - [Portfolio Optimizer](https://portfoliooptimizer.io/) - Portfolio Optimizer is a Web API for portfolio analysis and optimization.
 
 ## CSharp
@@ -446,7 +447,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [algorithmic-trading-with-python](https://github.com/chrisconlan/algorithmic-trading-with-python) - Source code for Algorithmic Trading with Python (2020) by Chris Conlan.
 - [MEDIUM_NoteBook](https://github.com/cerlymarco/MEDIUM_NoteBook) - Repository containing notebooks of [cerlymarco](https://github.com/cerlymarco)'s posts on Medium.
 - [QuantFinance](https://github.com/PythonCharmers/QuantFinance) - Training materials in quantitative finance.
-- [MarketAnalysis](https://github.com/Poseyy/MarketAnalysis) - Implementing many different methods and popular analysis tools in Python.
 - [IPythonScripts](https://github.com/mgroncki/IPythonScripts) - Tutorials about Quantitative Finance in Python and QuantLib: Pricing, xVAs, Hedging, Portfolio Optimisation, Machine Learning and Deep Learning.
 - [Computational-Finance-Course](https://github.com/LechGrzelak/Computational-Finance-Course) - Materials for the course of Computational Finance.
 - [Machine-Learning-for-Asset-Managers](https://github.com/emoen/Machine-Learning-for-Asset-Managers) - Implementation of code snippets, exercises and application to live data from Machine Learning for Asset Managers (Elements in Quantitative Finance) written by Prof. Marcos López de Prado.
