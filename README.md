@@ -1,14 +1,4 @@
----
-title: "Awesome Quant"
-format: html
-keep-md: true
-date-modified: "`r Sys.Date()`"
-keywords: ["r packages", "python packages", "julia packages",
-    "software development", "software engineering", "financial computing",
-    "r", "python", "julia"]
----
-
-
+# Awesome Quant
 
 A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance).
 
@@ -475,9 +465,3 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [machine-learning-asset-management](https://github.com/firmai/machine-learning-asset-management) - Machine Learning in Asset Management (by @firmai).
 - [Deep-Learning-Machine-Learning-Stock](https://github.com/LastAncientOne/Deep-Learning-Machine-Learning-Stock) - Deep Learning and Machine Learning stocks represent a promising long-term or short-term opportunity for investors and traders.
 - [Technical_Analysis_and_Feature_Engineering](https://github.com/jo-cho/Technical_Analysis_and_Feature_Engineering) - Feature Engineering and Feature Importance of Machine Learning in Financial Market.
-
-# Code of Conduct
-
-Please note that the `awesome-quant` project is released with a
-[Contributor Code of Conduct](https://github.com/wilsonfreitas/awesome-quant/blob/main/CODE_OF_CONDUCT.md).
-By contributing to this project, you agree to abide by its terms.
