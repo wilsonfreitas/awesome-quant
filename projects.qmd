@@ -1,0 +1,24 @@
+---
+title: "Projects"
+format: 
+   html:
+     df-print: kable
+---
+
+Compilation of projects providing access to the date of last commit or publication date.
+
+```{r message=FALSE, warning=FALSE, echo=FALSE, table.cap="Projects"}
+#| label: tbl-projects
+#| tbl-cap: Projects
+#| results: asis
+
+library(tidyverse)
+
+df <- readr::read_csv("projects.csv")
+dt <- df |>
+  filter(!is.na(last_commit)) |>
+  mutate(project=paste0("<a href='", url, "'>", project, "</a>")) |>
+  select(project, section, last_commit) |>
+  arrange(desc(last_commit), section)
+htmltools::tagList(DT::datatable(dt, list(pageLength = 50, escape = FALSE)))
+```

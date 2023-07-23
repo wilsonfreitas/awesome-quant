@@ -29,7 +29,7 @@ def get_last_commit(repo):
         else:
             return ''
     except:
-        print('ERROR' + repo)
+        print('ERROR ' + repo)
         return 'error'
 
 
@@ -92,4 +92,4 @@ while True:
 projects = [p.regs for p in projects]
 df = pd.DataFrame(projects)
 df.to_csv('projects.csv', index=False)
-df.to_markdown('projects.md', index=False)
+# df.to_markdown('projects.md', index=False)

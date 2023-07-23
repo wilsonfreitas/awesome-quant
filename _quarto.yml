@@ -8,6 +8,8 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: projects.qmd
+        text: Projects
       - href: CODE_OF_CONDUCT.qmd
         text: Code of Conduct
 
@@ -16,6 +18,4 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
-
-
 

@@ -3,7 +3,8 @@ import requests
 import re
 import pandas as pd
 
-reu = re.compile('https://github.com/([\w-]+/[\w-]+)')
+reu = re.compile(r'https://github.com/([\w-]+/[\w-]+)')
+red = re.compile(r'\d\d\d\d-\d\d-\d\d')
 
 url = 'https://cran.r-project.org/web/packages/xts/index.html'
 
