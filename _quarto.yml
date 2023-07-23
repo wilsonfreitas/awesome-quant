@@ -1,0 +1,21 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Awesome Quant"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: CODE_OF_CONDUCT.qmd
+        text: Code of Conduct
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+
