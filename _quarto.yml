@@ -1,6 +1,11 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "*.ipynb"
+    - "!quant.md"
+    - "!github.ipynb"
 
 website:
   title: "Awesome Quant"

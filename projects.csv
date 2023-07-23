@@ -30,7 +30,7 @@ pandas_talib,Python > Indicators,2018-05-30,https://github.com/femtotrader/panda
 finta,Python > Indicators,2022-07-24,https://github.com/peerchemist/finta,Common financial technical analysis indicators implemented in Pandas.,True,False,peerchemist/finta
 Tulipy,Python > Indicators,2019-04-11,https://github.com/cirla/tulipy,Financial Technical Analysis Indicator Library (Python bindings for [tulipindicators](https://github.com/TulipCharts/tulipindicators)),True,False,cirla/tulipy
 lppls,Python > Indicators,2023-06-06,https://github.com/Boulder-Investment-Technologies/lppls,A Python module for fitting the [Log-Periodic Power Law Singularity (LPPLS)](https://en.wikipedia.org/wiki/Didier_Sornette#The_JLS_and_LPPLS_models) model.,True,False,Boulder-Investment-Technologies/lppls
-Blankly,Python > Trading & Backtesting,2023-06-25,https://github.com/Blankly-Finance/Blankly,"Fully integrated backtesting, paper trading, and live deployment.",True,False,Blankly-Finance/Blankly
+Blankly,Python > Trading & Backtesting,2023-07-23,https://github.com/Blankly-Finance/Blankly,"Fully integrated backtesting, paper trading, and live deployment.",True,False,Blankly-Finance/Blankly
 TA-Lib,Python > Trading & Backtesting,2023-07-19,https://github.com/mrjbq7/ta-lib,Python wrapper for TA-Lib (http://ta-lib.org/).,True,False,mrjbq7/ta-lib
 zipline,Python > Trading & Backtesting,2020-10-14,https://github.com/quantopian/zipline,Pythonic algorithmic trading library.,True,False,quantopian/zipline
 QuantSoftware Toolkit,Python > Trading & Backtesting,2016-10-07,https://github.com/QuantSoftware/QuantSoftwareToolkit,Python-based open source software framework designed to support portfolio construction and management.,True,False,QuantSoftware/QuantSoftwareToolkit
@@ -97,7 +97,7 @@ qfrm,Python > Risk Analysis,,https://pypi.org/project/qfrm/,"Quantitative Financ
 visualize-wealth,Python > Risk Analysis,2015-06-10,https://github.com/benjaminmgross/visualize-wealth,Portfolio construction and quantitative analysis.,True,False,benjaminmgross/visualize-wealth
 VisualPortfolio,Python > Risk Analysis,2017-02-28,https://github.com/wegamekinglc/VisualPortfolio,This tool is used to visualize the perfomance of a portfolio.,True,False,wegamekinglc/VisualPortfolio
 universal-portfolios,Python > Risk Analysis,2023-04-19,https://github.com/Marigold/universal-portfolios,Collection of algorithms for online portfolio selection.,True,False,Marigold/universal-portfolios
-FinQuant,Python > Risk Analysis,2023-07-19,https://github.com/fmilthaler/FinQuant,"A program for financial portfolio management, analysis and optimisation.",True,False,fmilthaler/FinQuant
+FinQuant,Python > Risk Analysis,2023-07-23,https://github.com/fmilthaler/FinQuant,"A program for financial portfolio management, analysis and optimisation.",True,False,fmilthaler/FinQuant
 Empyrial,Python > Risk Analysis,2023-07-07,https://github.com/ssantoshp/Empyrial,Portfolio's risk and performance analytics and returns predictions.,True,False,ssantoshp/Empyrial
 risktools,Python > Risk Analysis,2023-07-05,https://github.com/bbcho/risktools-dev,Risk tools for use within the crude and crude products trading space with partial implementation of R's PerformanceAnalytics.,True,False,bbcho/risktools-dev
 Riskfolio-Lib,Python > Risk Analysis,2023-06-20,https://github.com/dcajasn/Riskfolio-Lib,Portfolio Optimization and Quantitative Strategic Asset Allocation in Python.,True,False,dcajasn/Riskfolio-Lib
@@ -137,7 +137,7 @@ chinesestockapi,Python > Data Sources,,https://pypi.org/project/chinesestockapi/
 exchange,Python > Data Sources,2015-07-07,https://github.com/akarat/exchange,Get current exchange rate.,True,False,akarat/exchange
 ticks,Python > Data Sources,2016-01-08,https://github.com/jamescnowell/ticks,Simple command line tool to get stock ticker data.,True,False,jamescnowell/ticks
 pybbg,Python > Data Sources,2015-01-20,https://github.com/bpsmith/pybbg,Python interface to Bloomberg COM APIs.,True,False,bpsmith/pybbg
-ccy,Python > Data Sources,2023-07-22,https://github.com/lsbardel/ccy,Python module for currencies.,True,False,lsbardel/ccy
+ccy,Python > Data Sources,2023-07-23,https://github.com/lsbardel/ccy,Python module for currencies.,True,False,lsbardel/ccy
 tushare,Python > Data Sources,,https://pypi.org/project/tushare/,A utility for crawling historical and Real-time Quotes data of China stocks.,False,False,
 jsm,Python > Data Sources,,https://pypi.org/project/jsm/,Get the japanese stock market data.,False,False,
 cn_stock_src,Python > Data Sources,2016-02-29,https://github.com/jealous/cn_stock_src,Utility for retrieving basic China stock data from different sources.,True,False,jealous/cn_stock_src
@@ -307,7 +307,7 @@ QuantEcon,"Reproducing Works, Training & Books",,https://quantecon.org/,"Lecture
 FinanceHub,"Reproducing Works, Training & Books",2021-05-25,https://github.com/Finance-Hub/FinanceHub,Resources for Quantitative Finance,True,False,Finance-Hub/FinanceHub
 Python_Option_Pricing,"Reproducing Works, Training & Books",2017-07-26,https://github.com/dedwards25/Python_Option_Pricing,"An libary to price financial options written in Python. Includes: Black Scholes, Black 76, Implied Volatility, American, European, Asian, Spread Options.",True,False,dedwards25/Python_Option_Pricing
 python-training,"Reproducing Works, Training & Books",2023-07-07,https://github.com/jpmorganchase/python-training,J.P. Morgan's Python training for business analysts and traders.,True,False,jpmorganchase/python-training
-Stock_Analysis_For_Quant,"Reproducing Works, Training & Books",2023-07-22,https://github.com/LastAncientOne/Stock_Analysis_For_Quant,"Different Types of Stock Analysis in Excel, Matlab, Power BI, Python, R, and Tableau.",True,False,LastAncientOne/Stock_Analysis_For_Quant
+Stock_Analysis_For_Quant,"Reproducing Works, Training & Books",2023-07-23,https://github.com/LastAncientOne/Stock_Analysis_For_Quant,"Different Types of Stock Analysis in Excel, Matlab, Power BI, Python, R, and Tableau.",True,False,LastAncientOne/Stock_Analysis_For_Quant
 algorithmic-trading-with-python,"Reproducing Works, Training & Books",2021-06-01,https://github.com/chrisconlan/algorithmic-trading-with-python,Source code for Algorithmic Trading with Python (2020) by Chris Conlan.,True,False,chrisconlan/algorithmic-trading-with-python
 MEDIUM_NoteBook,"Reproducing Works, Training & Books",2023-06-27,https://github.com/cerlymarco/MEDIUM_NoteBook,Repository containing notebooks of [cerlymarco](https://github.com/cerlymarco)'s posts on Medium.,True,False,cerlymarco/MEDIUM_NoteBook
 QuantFinance,"Reproducing Works, Training & Books",2022-03-12,https://github.com/PythonCharmers/QuantFinance,Training materials in quantitative finance.,True,False,PythonCharmers/QuantFinance

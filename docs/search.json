@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
     "objectID": "CODE_OF_CONDUCT.html",
     "href": "CODE_OF_CONDUCT.html",
     "title": "Contributor Covenant Code of Conduct",
@@ -56,11 +49,11 @@
     "text": "Attribution\nThis Code of Conduct is adapted from the Contributor Covenant, version 2.0, available at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.\nCommunity Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.\nFor answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https://www.contributor-covenant.org/translations."
   },
   {
-    "objectID": "github.html",
-    "href": "github.html",
-    "title": "Awesome Quant",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "import os\nimport re\nimport pandas as pd\nfrom threading import Thread\n\nfrom github import Github\n\n# using an access token\ng = Github('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')\n\n\nrepo = 'co-category/hqfl'\nr = g.get_repo(repo)\n\nUnknownObjectException: 404 {\"message\": \"Not Found\", \"documentation_url\": \"https://docs.github.com/rest/repos/repos#get-a-repository\"}"
+    "text": "About this site"
   },
   {
     "objectID": "index.html",
@@ -187,12 +180,5 @@
     "title": "Projects",
     "section": "",
     "text": "Compilation of projects providing access to the date of last commit or publication date."
-  },
-  {
-    "objectID": "quants.html",
-    "href": "quants.html",
-    "title": "Awesome Quant",
-    "section": "",
-    "text": "quants\nhttps://sites.google.com/site/peterreinhardhansen/\nhttp://www.dixiederivatives.com/excelpricingfiles.htm"
   }
 ]
