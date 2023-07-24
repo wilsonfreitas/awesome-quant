@@ -17,8 +17,8 @@ library(tidyverse)
 df <- readr::read_csv("projects.csv")
 dt <- df |>
   filter(!is.na(last_commit)) |>
-  # mutate(project=paste0("<a href='", url, "'>", project, "</a>")) |>
+  mutate(project=paste0("<a href='", url, "'>", project, "</a>")) |>
   select(project, section, last_commit) |>
   arrange(desc(last_commit), section)
-htmltools::tagList(DT::datatable(dt, list(pageLength = 50)))
+htmltools::tagList(DT::datatable(dt, list(pageLength = 50), escape = FALSE))
 ```
