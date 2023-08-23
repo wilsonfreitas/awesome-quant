@@ -72,6 +72,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ### Trading & Backtesting
 
+- [QSTrader](https://github.com/mhallsmoore/qstrader) - QSTrader backtesting simulation engine.
 - [Blankly](https://github.com/Blankly-Finance/Blankly) - Fully integrated backtesting, paper trading, and live deployment.
 - [TA-Lib](https://github.com/mrjbq7/ta-lib) - Python wrapper for TA-Lib (<http://ta-lib.org/>).
 - [zipline](https://github.com/quantopian/zipline) - Pythonic algorithmic trading library.
