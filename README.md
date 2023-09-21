@@ -62,6 +62,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pypme](https://github.com/ymyke/pypme) - PME (Public Market Equivalent) calculation.
 - [AbsBox](https://github.com/yellowbean/AbsBox) - A Python based library to model cashflow for structured product like Asset-backed securities (ABS) and Mortgage-backed securities (MBS).
 - [Intrinsic-Value-Calculator](https://github.com/akashaero/Intrinsic-Value-Calculator) - A Python tool for quick calculations of a stock's fair value using Discounted Cash Flow analysis.
+- [Kelly-Criterion](https://github.com/deltaray-io/kelly-criterion) - Kelly Criterion implemented in Python to size portfolios based on J. L. Kelly Jr's formula.
 
 ### Indicators
 
