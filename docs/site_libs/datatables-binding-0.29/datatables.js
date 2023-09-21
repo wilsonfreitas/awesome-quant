@@ -2,7 +2,7 @@
 
 // some helper functions: using a global object DTWidget so that it can be used
 // in JS() code, e.g. datatable(options = list(foo = JS('code'))); unlike R's
-// dynamic scoping, when 'code' is eval()'ed, JavaScript does not know objects
+// dynamic scoping, when 'code' is eval'ed, JavaScript does not know objects
 // from the "parent frame", e.g. JS('DTWidget') will not work unless it was made
 // a global object
 var DTWidget = {};

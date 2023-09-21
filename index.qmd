@@ -49,6 +49,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pypme](https://github.com/ymyke/pypme) - PME (Public Market Equivalent) calculation.
 - [AbsBox](https://github.com/yellowbean/AbsBox) - A Python based library to model cashflow for structured product like Asset-backed securities (ABS) and Mortgage-backed securities (MBS).
 - [Intrinsic-Value-Calculator](https://github.com/akashaero/Intrinsic-Value-Calculator) - A Python tool for quick calculations of a stock's fair value using Discounted Cash Flow analysis.
+- [Kelly-Criterion](https://github.com/deltaray-io/kelly-criterion) - Kelly Criterion implemented in Python to size portfolios based on J. L. Kelly Jr's formula.
 
 ### Indicators
 
@@ -59,6 +60,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ### Trading & Backtesting
 
+- [QSTrader](https://github.com/mhallsmoore/qstrader) - QSTrader backtesting simulation engine.
 - [Blankly](https://github.com/Blankly-Finance/Blankly) - Fully integrated backtesting, paper trading, and live deployment.
 - [TA-Lib](https://github.com/mrjbq7/ta-lib) - Python wrapper for TA-Lib (<http://ta-lib.org/>).
 - [zipline](https://github.com/quantopian/zipline) - Pythonic algorithmic trading library.
@@ -132,7 +134,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [finance](https://pypi.org/project/finance/) - Financial Risk Calculations. Optimized for ease of use through class construction and operator overload.
 - [qfrm](https://pypi.org/project/qfrm/) - Quantitative Financial Risk Management: awesome OOP tools for measuring, managing and visualizing risk of financial instruments and portfolios.
 - [visualize-wealth](https://github.com/benjaminmgross/visualize-wealth) - Portfolio construction and quantitative analysis.
-- [VisualPortfolio](https://github.com/wegamekinglc/VisualPortfolio) - This tool is used to visualize the perfomance of a portfolio.
+- [VisualPortfolio](https://github.com/wegamekinglc/VisualPortfolio) - This tool is used to visualize the performance of a portfolio.
 - [universal-portfolios](https://github.com/Marigold/universal-portfolios) - Collection of algorithms for online portfolio selection.
 - [FinQuant](https://github.com/fmilthaler/FinQuant) - A program for financial portfolio management, analysis and optimisation.
 - [Empyrial](https://github.com/ssantoshp/Empyrial) - Portfolio's risk and performance analytics and returns predictions.
@@ -428,6 +430,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
   - [PyQL](https://github.com/enthought/pyql) - Python port.
   - [QuantLib.jl](https://github.com/pazzo83/QuantLib.jl) - Julia port.
   - [QuantLib-Python Documentation](https://quantlib-python-docs.readthedocs.io/) - Documentation for the Python bindings for the QuantLib library
+  - [QuantLib with Automatic Differention enabled](https://github.com/auto-differentiation/quantlib-xad) - Integration of Automatic Differentiation with the QuantLib library
 - [TA-Lib](https://ta-lib.org) - perform technical analysis of financial market data.
   - [ta-lib-python](https://github.com/TA-Lib/ta-lib-python)
   - [ta-lib](https://github.com/TA-Lib/ta-lib)
