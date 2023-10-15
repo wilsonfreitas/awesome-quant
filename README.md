@@ -138,6 +138,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pytrendseries](https://github.com/rafa-rod/pytrendseries) - Detect trend in time series, drawdown, drawdown within a constant look-back window , maximum drawdown, time underwater.
 - [PyLOB](https://github.com/DrAshBooth/PyLOB) - Fully functioning fast Limit Order Book written in Python.
 - [PyBroker](https://github.com/edtechre/pybroker) - Algorithmic Trading with Machine Learning.
+- [OctoBot Script](https://github.com/Drakkar-Software/OctoBot-Script) - A quant framework to create cryptocurrencies strategies - from backtesting to optimisation to livetrading.
 
 ### Risk Analysis
 
