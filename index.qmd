@@ -126,6 +126,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [PyLOB](https://github.com/DrAshBooth/PyLOB) - Fully functioning fast Limit Order Book written in Python.
 - [PyBroker](https://github.com/edtechre/pybroker) - Algorithmic Trading with Machine Learning.
 - [OctoBot Script](https://github.com/Drakkar-Software/OctoBot-Script) - A quant framework to create cryptocurrencies strategies - from backtesting to optimisation to livetrading.
+- [hftbacktest](https://github.com/nkaz001/hftbacktest) - A high-frequency trading and market-making backtesting tool accounts for limit orders, queue positions, and latencies, utilizing full tick data for trades and order books.
 
 ### Risk Analysis
 
@@ -494,3 +495,4 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Hands-On Machine Learning for Algorithmic Trading](https://github.com/packtpublishing/hands-on-machine-learning-for-algorithmic-trading) - Hands-On Machine Learning for Algorithmic Trading, published by Packt
 - [financialnoob-misc](https://github.com/financialnoob/misc) - Codes from @financialnoob's posts
 - [MesoSim Options Trading Strategy Library](https://github.com/deltaray-io/strategy-library) - Free and public Options Trading strategy library for MesoSim. 
+- [Quant-Finance-With-Python-Code](https://github.com/lingyixu/Quant-Finance-With-Python-Code) - Repo for code examples in Quantitative Finance with Python by Chris Kelliher
