@@ -161,6 +161,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [alphalens](https://github.com/quantopian/alphalens) - Performance analysis of predictive alpha factors.
 - [Spectre](https://github.com/Heerozh/spectre) - GPU-accelerated Factors analysis library and Backtester
 
+### Quant Research Environment
+
+- [Jupyter Quant](https://github.com/gnzsnz/jupyter-quant) - A dockerized Jupyter quant research environment with preloaded tools for quant analysis, statsmodels, pymc, arch, py_vollib, zipline-reloaded, PyPortfolioOpt, etc.
+
 ### Time Series
 
 - [ARCH](https://github.com/bashtage/arch) - ARCH models in Python.
