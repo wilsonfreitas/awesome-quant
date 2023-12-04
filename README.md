@@ -72,7 +72,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [lppls](https://github.com/Boulder-Investment-Technologies/lppls) - A Python module for fitting the [Log-Periodic Power Law Singularity (LPPLS)](https://en.wikipedia.org/wiki/Didier_Sornette#The_JLS_and_LPPLS_models) model.
 
 ### Trading & Backtesting
-
+- [Investing algorithm framework](https://github.com/coding-kitties/investing-algorithm-framework) - Framework for developing, backtesting, and deploying automated trading algorithms.
 - [QSTrader](https://github.com/mhallsmoore/qstrader) - QSTrader backtesting simulation engine.
 - [Blankly](https://github.com/Blankly-Finance/Blankly) - Fully integrated backtesting, paper trading, and live deployment.
 - [TA-Lib](https://github.com/mrjbq7/ta-lib) - Python wrapper for TA-Lib (<http://ta-lib.org/>).
@@ -454,6 +454,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
   - [ta-lib-python](https://github.com/TA-Lib/ta-lib-python)
   - [ta-lib](https://github.com/TA-Lib/ta-lib)
 - [Portfolio Optimizer](https://portfoliooptimizer.io/) - Portfolio Optimizer is a Web API for portfolio analysis and optimization.
+
 
 ## CSharp
 
