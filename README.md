@@ -402,7 +402,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [IndicatorTS](https://github.com/cinar/indicatorts) - Indicator is a TypeScript module providing various stock technical analysis indicators, strategies, and a backtest framework for trading.
 - [ccxt](https://github.com/ccxt/ccxt) - A JavaScript / Python / PHP cryptocurrency trading API with support for more than 100 bitcoin/altcoin exchanges.
 - [PENDAX](https://github.com/CompendiumFi/PENDAX-SDK) - Javascript SDK for Trading/Data API and Websockets for FTX, FTXUS, OKX, Bybit, & More.
-- [Mida](https://github.com/Reiryoku-Technologies/Mida) - The open-source and cross-platform trading framework (https://www.mida.org/).
 
 ### Data Visualization
 
@@ -515,3 +514,4 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [financialnoob-misc](https://github.com/financialnoob/misc) - Codes from @financialnoob's posts
 - [MesoSim Options Trading Strategy Library](https://github.com/deltaray-io/strategy-library) - Free and public Options Trading strategy library for MesoSim. 
 - [Quant-Finance-With-Python-Code](https://github.com/lingyixu/Quant-Finance-With-Python-Code) - Repo for code examples in Quantitative Finance with Python by Chris Kelliher
+- [QuantFinanceTraining](https://github.com/JoaoJungblut/QuantFinanceTraining) - This repository contains codes that were executed during my training in the CQF (Certificate in Quantitative Finance). The codes are organized by class, facilitating navigation and reference.
