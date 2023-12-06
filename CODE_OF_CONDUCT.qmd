@@ -1,5 +1,9 @@
 ---
 title: "Contributor Covenant Code of Conduct"
+include-in-header:
+  - text: |
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7994446359957143"
+      crossorigin="anonymous"></script>
 ---
 
 ## Our Pledge

@@ -3,6 +3,10 @@ title: "Projects"
 format: 
    html:
      df-print: kable
+include-in-header:
+  - text: |
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7994446359957143"
+      crossorigin="anonymous"></script>
 ---
 
 Compilation of projects providing access to the date of last commit or publication date.
