@@ -4,7 +4,7 @@ import re
 import pandas as pd
 
 reu = re.compile(r'https://github.com/([\w-]+/[\w-]+)')
-red = re.compile(r'\d\d\d\d-\d\d-\d\d')
+red = re.compile(r'\d{4}-\d{2}-\d{2}')
 
 url = 'https://cran.r-project.org/web/packages/xts/index.html'
 
