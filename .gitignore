@@ -2,3 +2,4 @@ env.ps1
 .vscode
 /.quarto/
 github.ipynb
+build.sh
