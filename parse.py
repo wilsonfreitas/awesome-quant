@@ -46,6 +46,7 @@ class Project(Thread):
         is_github = 'github.com' in m.group(2)
         is_cran = 'cran.r-project.org' in m.group(2)
         repo = extract_repo(m.group(2))
+        print(repo)
         last_commit = get_last_commit(repo)
         self.regs = dict(
             project=m.group(1),
