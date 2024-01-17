@@ -377,7 +377,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [QuantLib.jl](https://github.com/pazzo83/QuantLib.jl) - Quantlib implementation in pure Julia.
 - [Ito.jl](https://github.com/aviks/Ito.jl) - A Julia package for quantitative finance.
 - [TALib.jl](https://github.com/femtotrader/TALib.jl) - A Julia wrapper for TA-Lib.
-- [IncTA.jl](https://femtotrader.github.io/IncTA.jl) - Julia Incremental Technical Analysis Indicators
+- [IncTA.jl](https://github.com/femtotrader/IncTA.jl) - Julia Incremental Technical Analysis Indicators
 - [Miletus.jl](https://github.com/JuliaComputing/Miletus.jl) - A financial contract definition, modeling language, and valuation framework.
 - [Temporal.jl](https://github.com/dysonance/Temporal.jl) - Flexible and efficient time series class & methods.
 - [Indicators.jl](https://github.com/dysonance/Indicators.jl) - Financial market technical analysis & indicators on top of Temporal.

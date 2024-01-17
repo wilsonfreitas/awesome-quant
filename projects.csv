@@ -78,7 +78,7 @@ catalyst,Python > Trading & Backtesting,2021-09-22,https://github.com/enigmampc/
 quantstats,Python > Trading & Backtesting,2023-07-06,https://github.com/ranaroussi/quantstats,"Portfolio analytics for quants, written in Python",True,False,ranaroussi/quantstats
 qtpylib,Python > Trading & Backtesting,2021-03-24,https://github.com/ranaroussi/qtpylib,"QTPyLib, Pythonic Algorithmic Trading <http://qtpylib.io>",True,False,ranaroussi/qtpylib
 Quantdom,Python > Trading & Backtesting,2019-03-12,https://github.com/constverum/Quantdom,Python-based framework for backtesting trading strategies & analyzing financial markets [GUI :neckbeard:],True,False,constverum/Quantdom
-freqtrade,Python > Trading & Backtesting,2024-01-13,https://github.com/freqtrade/freqtrade,"Free, open source crypto trading bot",True,False,freqtrade/freqtrade
+freqtrade,Python > Trading & Backtesting,2024-01-14,https://github.com/freqtrade/freqtrade,"Free, open source crypto trading bot",True,False,freqtrade/freqtrade
 algorithmic-trading-with-python,Python > Trading & Backtesting,2021-06-01,https://github.com/chrisconlan/algorithmic-trading-with-python,"Free `pandas` and `scikit-learn` resources for trading simulation, backtesting, and machine learning on financial data.",True,False,chrisconlan/algorithmic-trading-with-python
 DeepDow,Python > Trading & Backtesting,2022-08-02,https://github.com/jankrepl/deepdow,Portfolio optimization with deep learning,True,False,jankrepl/deepdow
 Qlib,Python > Trading & Backtesting,2023-11-21,https://github.com/microsoft/qlib,"An AI-oriented Quantitative Investment Platform by Microsoft. Full ML pipeline of data processing, model training, back-testing; and covers the entire chain of quantitative investment: alpha seeking, risk modeling, portfolio optimization, and order execution.",True,False,microsoft/qlib
@@ -171,7 +171,7 @@ iexfinance,Python > Data Sources,2021-01-02,https://github.com/addisonlynch/iexf
 pyEX,Python > Data Sources,2023-12-18,https://github.com/timkpaine/pyEX,"Python interface to IEX with emphasis on pandas, support for streaming data, premium data, points data (economic, rates, commodities), and technical indicators.",True,False,timkpaine/pyEX
 alpaca-trade-api,Python > Data Sources,2024-01-12,https://github.com/alpacahq/alpaca-trade-api-python,Python interface for retrieving real-time and historical prices from Alpaca API as well as trade execution.,True,False,alpacahq/alpaca-trade-api-python
 metatrader5,Python > Data Sources,,https://pypi.org/project/MetaTrader5/,API Connector to MetaTrader 5 Terminal,False,False,
-akshare,Python > Data Sources,2024-01-13,https://github.com/jindaxiang/akshare,"AkShare is an elegant and simple financial data interface library for Python, built for human beings! <https://akshare.readthedocs.io>",True,False,jindaxiang/akshare
+akshare,Python > Data Sources,2024-01-14,https://github.com/jindaxiang/akshare,"AkShare is an elegant and simple financial data interface library for Python, built for human beings! <https://akshare.readthedocs.io>",True,False,jindaxiang/akshare
 yahooquery,Python > Data Sources,2023-12-16,https://github.com/dpguthrie/yahooquery,Python interface for retrieving data through unofficial Yahoo Finance API.,True,False,dpguthrie/yahooquery
 investpy,Python > Data Sources,2022-10-02,https://github.com/alvarobartt/investpy,Financial Data Extraction from Investing.com with Python! <https://investpy.readthedocs.io/>,True,False,alvarobartt/investpy
 yliveticker,Python > Data Sources,2021-04-29,https://github.com/yahoofinancelive/yliveticker,Live stream of market data from Yahoo Finance websocket.,True,False,yahoofinancelive/yliveticker
@@ -280,6 +280,7 @@ QUANTAXIS,Matlab > FrameWorks,2023-01-10,https://github.com/yutiansut/quantaxis,
 QuantLib.jl,Julia,2020-02-18,https://github.com/pazzo83/QuantLib.jl,Quantlib implementation in pure Julia.,True,False,pazzo83/QuantLib.jl
 Ito.jl,Julia,2017-03-21,https://github.com/aviks/Ito.jl,A Julia package for quantitative finance.,True,False,aviks/Ito.jl
 TALib.jl,Julia,2017-08-22,https://github.com/femtotrader/TALib.jl,A Julia wrapper for TA-Lib.,True,False,femtotrader/TALib.jl
+IncTA.jl,Julia,2024-01-14,https://github.com/femtotrader/IncTA.jl,Julia Incremental Technical Analysis Indicators,True,False,femtotrader/IncTA.jl
 Miletus.jl,Julia,2023-12-07,https://github.com/JuliaComputing/Miletus.jl,"A financial contract definition, modeling language, and valuation framework.",True,False,JuliaComputing/Miletus.jl
 Temporal.jl,Julia,2021-12-28,https://github.com/dysonance/Temporal.jl,Flexible and efficient time series class & methods.,True,False,dysonance/Temporal.jl
 Indicators.jl,Julia,2022-12-06,https://github.com/dysonance/Indicators.jl,Financial market technical analysis & indicators on top of Temporal.,True,False,dysonance/Indicators.jl
@@ -300,7 +301,7 @@ finance.js,JavaScript,2018-10-11,https://github.com/ebradyjobory/finance.js,A Ja
 portfolio-allocation,JavaScript,2022-08-11,https://github.com/lequant40/portfolio_allocation_js,"PortfolioAllocation is a JavaScript library designed to help constructing financial portfolios made of several assets: bonds, commodities, cryptocurrencies, currencies, exchange traded funds (ETFs), mutual funds, stocks...",True,False,lequant40/portfolio_allocation_js
 Ghostfolio,JavaScript,2024-01-14,https://github.com/ghostfolio/ghostfolio,"Wealth management software to keep track of financial assets like stocks, ETFs or cryptocurrencies and make solid, data-driven investment decisions.",True,False,ghostfolio/ghostfolio
 IndicatorTS,JavaScript,2023-10-21,https://github.com/cinar/indicatorts,"Indicator is a TypeScript module providing various stock technical analysis indicators, strategies, and a backtest framework for trading.",True,False,cinar/indicatorts
-ccxt,JavaScript,2024-01-13,https://github.com/ccxt/ccxt,A JavaScript / Python / PHP cryptocurrency trading API with support for more than 100 bitcoin/altcoin exchanges.,True,False,ccxt/ccxt
+ccxt,JavaScript,2024-01-14,https://github.com/ccxt/ccxt,A JavaScript / Python / PHP cryptocurrency trading API with support for more than 100 bitcoin/altcoin exchanges.,True,False,ccxt/ccxt
 PENDAX,JavaScript,2023-08-31,https://github.com/CompendiumFi/PENDAX-SDK,"Javascript SDK for Trading/Data API and Websockets for FTX, FTXUS, OKX, Bybit, & More.",True,False,CompendiumFi/PENDAX-SDK
 QUANTAXIS_Webkit,JavaScript > Data Visualization,2017-07-30,https://github.com/yutiansut/QUANTAXIS_Webkit,An awesome visualization center based on quantaxis.,True,False,yutiansut/QUANTAXIS_Webkit
 quantfin,Haskell,2019-04-06,https://github.com/boundedvariation/quantfin,quant finance in pure haskell.,True,False,boundedvariation/quantfin
