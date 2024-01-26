@@ -144,6 +144,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [hftbacktest](https://github.com/nkaz001/hftbacktest) - A high-frequency trading and market-making backtesting tool accounts for limit orders, queue positions, and latencies, utilizing full tick data for trades and order books.
 - [vnpy](https://github.com/vnpy/vnpy) - VeighNa is a Python-based open source quantitative trading system development framework.
 - [Intelligent Trading Bot](https://github.com/asavinov/intelligent-trading-bot) - Automatically generating signals and trading based on machine learning and feature engineering
+- [fastquant](https://github.com/enzoampil/fastquant) - fastquant allows you to easily backtest investment strategies with as few as 3 lines of python code.
 
 ### Risk Analysis
 
