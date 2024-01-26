@@ -135,6 +135,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [hftbacktest](https://github.com/nkaz001/hftbacktest) - A high-frequency trading and market-making backtesting tool accounts for limit orders, queue positions, and latencies, utilizing full tick data for trades and order books.
 - [vnpy](https://github.com/vnpy/vnpy) - VeighNa is a Python-based open source quantitative trading system development framework.
 - [Intelligent Trading Bot](https://github.com/asavinov/intelligent-trading-bot) - Automatically generating signals and trading based on machine learning and feature engineering
+- [fastquant](https://github.com/enzoampil/fastquant) - fastquant allows you to easily backtest investment strategies with as few as 3 lines of python code.
+- [nautilus_trader](https://github.com/nautechsystems/nautilus_trader) - A high-performance algorithmic trading platform and event-driven backtester.
 
 ### Risk Analysis
 
@@ -465,6 +467,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TradeAggregation](https://github.com/MathisWellmann/trade_aggregation-rs) - Aggregate trades into user-defined candles using information driven rules.
 - [SlidingFeatures](https://github.com/MathisWellmann/sliding_features-rs) - Chainable tree-like sliding windows for signal processing and technical analysis.
 - [RustQuant](https://github.com/avhz/RustQuant) - Quantitative finance library written in Rust.
+- [finalytics](https://github.com/Nnamdi-sys/finalytics) - A rust library for financial data analysis.
 
 
 ## Reproducing Works, Training & Books
@@ -510,3 +513,4 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [MesoSim Options Trading Strategy Library](https://github.com/deltaray-io/strategy-library) - Free and public Options Trading strategy library for MesoSim. 
 - [Quant-Finance-With-Python-Code](https://github.com/lingyixu/Quant-Finance-With-Python-Code) - Repo for code examples in Quantitative Finance with Python by Chris Kelliher
 - [QuantFinanceTraining](https://github.com/JoaoJungblut/QuantFinanceTraining) - This repository contains codes that were executed during my training in the CQF (Certificate in Quantitative Finance). The codes are organized by class, facilitating navigation and reference.
+- [Statistical-Learning-based-Portfolio-Optimization](https://github.com/YannickKae/Statistical-Learning-based-Portfolio-Optimization) - This R Shiny App utilizes the Hierarchical Equal Risk Contribution (HERC) approach, a modern portfolio optimization method developed by Raffinot (2018).
