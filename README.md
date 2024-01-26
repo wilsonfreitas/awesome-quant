@@ -475,6 +475,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TradeAggregation](https://github.com/MathisWellmann/trade_aggregation-rs) - Aggregate trades into user-defined candles using information driven rules.
 - [SlidingFeatures](https://github.com/MathisWellmann/sliding_features-rs) - Chainable tree-like sliding windows for signal processing and technical analysis.
 - [RustQuant](https://github.com/avhz/RustQuant) - Quantitative finance library written in Rust.
+- [finalytics](https://github.com/Nnamdi-sys/finalytics) - A rust library for financial data analysis.
 
 
 ## Reproducing Works, Training & Books
