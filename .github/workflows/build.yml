@@ -20,7 +20,7 @@ jobs:
     - name: Install dependencies
       run: |
         poetry install
-    - name: Run tests
+    - name: Run parser
       run: |
         export GITHUB_ACCESS_TOKEN=${{ secrets.GITHUB_TOKEN }}
         poetry run python parse.py
