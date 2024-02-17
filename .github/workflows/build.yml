@@ -51,23 +51,23 @@ jobs:
       uses: quarto-dev/quarto-actions/setup@v2
       with:
         version: 1.4.550
-    - uses: r-lib/actions/setup-r@v2
-      with:
-        r-version: '4.2.0' # The R version to download (if necessary) and use.
-    - uses: r-lib/actions/setup-r-dependencies@v2
-      with:
-        packages:
-          any::knitr
-          any::rmarkdown
-          any::downlit
-          any::xml2
-          any::tidyverse
-          any::DT
+    # - uses: r-lib/actions/setup-r@v2
+    #   with:
+    #     r-version: '4.2.0' # The R version to download (if necessary) and use.
+    # - uses: r-lib/actions/setup-r-dependencies@v2
+    #   with:
+    #     packages:
+    #       any::knitr
+    #       any::rmarkdown
+    #       any::downlit
+    #       any::xml2
+    #       any::tidyverse
+    #       any::DT
     - name: Run quarto render
       run: |
-        quarto render
+        quarto render ./site/
     - name: Deploy pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs
+        publish_dir: ./site/docs
