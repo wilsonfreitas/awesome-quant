@@ -3,7 +3,7 @@ title: "Awesome Quant"
 date-modified: "`r Sys.Date()`"
 keywords: ["r packages", "python packages", "julia packages",
     "software development", "software engineering", "financial computing",
-    "r", "python", "julia"]
+    "r", "python", "julia", "rust", "java"]
 include-in-header:
   - text: |
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7994446359957143"

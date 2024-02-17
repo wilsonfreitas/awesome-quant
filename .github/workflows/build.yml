@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    # - uses: actions/checkout@v4
+    - uses: actions/checkout@v4
     # - uses: actions/setup-python@v4
     #   with:
     #     python-version: '3.x'
@@ -68,8 +68,14 @@ jobs:
     #   with:
     #     to: html
     #     path: 'site'
-    - name: Deploy pages
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Publish to GitHub Pages (and render)
+      uses: quarto-dev/quarto-actions/publish@v2
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./site/docs
+        target: gh-pages
+        render: false
+        path: "site"
+    # - name: Deploy pages
+    #   uses: peaceiris/actions-gh-pages@v3
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     publish_dir: ./site/docs
