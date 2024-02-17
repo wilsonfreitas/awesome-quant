@@ -92,5 +92,5 @@ while True:
 
 projects = [p.regs for p in projects]
 df = pd.DataFrame(projects)
-df.to_csv('projects.csv', index=False)
+df.to_csv('site/projects.csv', index=False)
 # df.to_markdown('projects.md', index=False)
