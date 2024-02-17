@@ -24,26 +24,26 @@ jobs:
       run: |
         export GITHUB_ACCESS_TOKEN=${{ secrets.GITHUB_TOKEN }}
         poetry run python parse.py
-    # - uses: r-lib/actions/setup-r@v2
-    #   with:
-    #     r-version: '4.2.0' # The R version to download (if necessary) and use.
-    # - uses: r-lib/actions/setup-renv@v2
-    #   with:
-    #     cache-version: 1
-    # - uses: r-lib/actions/setup-r-dependencies@v2
-    #   with:
-    #     packages:
-    #       any::knitr
-    #       any::rmarkdown
-    #       any::downlit
-    #       any::xml2
-    #       any::tidyverse
-    #       any::DT
-    # - name: Run quarto render
-    #   run: |
-    #     quarto render .
-    # - name: Deploy pages
-    #   uses: peaceiris/actions-gh-pages@v3
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     publish_dir: ./docs
+    - uses: r-lib/actions/setup-r@v2
+      with:
+        r-version: '4.2.0' # The R version to download (if necessary) and use.
+    - uses: r-lib/actions/setup-renv@v2
+      with:
+        cache-version: 1
+    - uses: r-lib/actions/setup-r-dependencies@v2
+      with:
+        packages:
+          any::knitr
+          any::rmarkdown
+          any::downlit
+          any::xml2
+          any::tidyverse
+          any::DT
+    - name: Run quarto render
+      run: |
+        quarto render .
+    - name: Deploy pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
