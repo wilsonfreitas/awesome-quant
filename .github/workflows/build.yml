@@ -63,9 +63,10 @@ jobs:
     #       any::xml2
     #       any::tidyverse
     #       any::DT
-    - name: Run quarto render
-      run: |
-        quarto render site/
+    - name: Render Quarto Project
+      uses: quarto-dev/quarto-actions/render@v2
+      with:
+        path: ./site
     - name: Deploy pages
       uses: peaceiris/actions-gh-pages@v3
       with:
