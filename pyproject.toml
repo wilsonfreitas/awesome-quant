@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "awesome-quant"
+version = "0.1.0"
+description = ""
+authors = ["Wilson Freitas <wilson.freitas@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+PyGithub = "^2.2.0"
+pandas = "^2.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
