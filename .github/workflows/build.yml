@@ -59,10 +59,10 @@ jobs:
     #       any::xml2
     #       any::tidyverse
     #       any::DT
-    # - name: setup Quarto
-    #   uses: quarto-dev/quarto-actions/setup@v2
-    #   with:
-    #     version: 1.4.550
+    - name: setup Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
+      with:
+        version: 1.4.550
     # - name: Render Quarto Project
     #   uses: quarto-dev/quarto-actions/render@v2
     #   with:
