@@ -10,40 +10,52 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v4
+    # - uses: actions/checkout@v4
+    # - uses: actions/setup-python@v4
+    #   with:
+    #     python-version: '3.x'
+    # - name: Install Poetry
+    #   run: |
+    #     pip install poetry
+    # - name: Install dependencies
+    #   run: |
+    #     poetry install
+    # - name: Run parser
+    #   run: |
+    #     export GITHUB_ACCESS_TOKEN=${{ secrets.GITHUB_TOKEN }}
+    #     poetry run python parse.py
+    # - uses: r-lib/actions/setup-r@v2
+    #   with:
+    #     r-version: '4.2.0' # The R version to download (if necessary) and use.
+    # - uses: r-lib/actions/setup-renv@v2
+    #   with:
+    #     cache-version: 1
+    # - uses: r-lib/actions/setup-r-dependencies@v2
+    #   with:
+    #     packages:
+    #       any::knitr
+    #       any::rmarkdown
+    #       any::downlit
+    #       any::xml2
+    #       any::tidyverse
+    #       any::DT
+    # - name: Run quarto render
+    #   run: |
+    #     quarto render .
+    # - name: Deploy pages
+    #   uses: peaceiris/actions-gh-pages@v3
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     publish_dir: ./docs
+    - name: setup Quarto
+      uses: quarto-dev/quarto-actions/setup@v2
       with:
-        python-version: '3.x'
-    - name: Install Poetry
-      run: |
-        pip install poetry
-    - name: Install dependencies
-      run: |
-        poetry install
-    - name: Run parser
-      run: |
-        export GITHUB_ACCESS_TOKEN=${{ secrets.GITHUB_TOKEN }}
-        poetry run python parse.py
-    - uses: r-lib/actions/setup-r@v2
+        version: 1.4.550
+    - name: Render Quarto Project
+      uses: quarto-dev/quarto-actions/render@v2
+    - name: Publish to GitHub Pages (and render)
+      uses: quarto-dev/quarto-actions/publish@v2
       with:
-        r-version: '4.2.0' # The R version to download (if necessary) and use.
-    - uses: r-lib/actions/setup-renv@v2
-      with:
-        cache-version: 1
-    - uses: r-lib/actions/setup-r-dependencies@v2
-      with:
-        packages:
-          any::knitr
-          any::rmarkdown
-          any::downlit
-          any::xml2
-          any::tidyverse
-          any::DT
-    - name: Run quarto render
-      run: |
-        quarto render .
-    - name: Deploy pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs
+        target: gh-pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
