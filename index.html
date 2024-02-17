@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="keywords" content="r packages, python packages, julia packages, software development, software engineering, financial computing, r, python, julia, rust, java">
+
+<title>Awesome Quant</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7994446359957143" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Awesome Quant</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./CODE_OF_CONDUCT.html"> 
+<span class="menu-text">Code of Conduct</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#python" id="toc-python" class="nav-link active" data-scroll-target="#python">Python</a>
+  <ul class="collapse">
+  <li><a href="#numerical-libraries-data-structures" id="toc-numerical-libraries-data-structures" class="nav-link" data-scroll-target="#numerical-libraries-data-structures">Numerical Libraries &amp; Data Structures</a></li>
+  <li><a href="#financial-instruments-and-pricing" id="toc-financial-instruments-and-pricing" class="nav-link" data-scroll-target="#financial-instruments-and-pricing">Financial Instruments and Pricing</a></li>
+  <li><a href="#indicators" id="toc-indicators" class="nav-link" data-scroll-target="#indicators">Indicators</a></li>
+  <li><a href="#trading-backtesting" id="toc-trading-backtesting" class="nav-link" data-scroll-target="#trading-backtesting">Trading &amp; Backtesting</a></li>
+  <li><a href="#risk-analysis" id="toc-risk-analysis" class="nav-link" data-scroll-target="#risk-analysis">Risk Analysis</a></li>
+  <li><a href="#factor-analysis" id="toc-factor-analysis" class="nav-link" data-scroll-target="#factor-analysis">Factor Analysis</a></li>
+  <li><a href="#quant-research-environment" id="toc-quant-research-environment" class="nav-link" data-scroll-target="#quant-research-environment">Quant Research Environment</a></li>
+  <li><a href="#time-series" id="toc-time-series" class="nav-link" data-scroll-target="#time-series">Time Series</a></li>
+  <li><a href="#calendars" id="toc-calendars" class="nav-link" data-scroll-target="#calendars">Calendars</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data Sources</a></li>
+  <li><a href="#excel-integration" id="toc-excel-integration" class="nav-link" data-scroll-target="#excel-integration">Excel Integration</a></li>
+  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a></li>
+  </ul></li>
+  <li><a href="#r" id="toc-r" class="nav-link" data-scroll-target="#r">R</a>
+  <ul class="collapse">
+  <li><a href="#numerical-libraries-data-structures-1" id="toc-numerical-libraries-data-structures-1" class="nav-link" data-scroll-target="#numerical-libraries-data-structures-1">Numerical Libraries &amp; Data Structures</a></li>
+  <li><a href="#data-sources-1" id="toc-data-sources-1" class="nav-link" data-scroll-target="#data-sources-1">Data Sources</a></li>
+  <li><a href="#financial-instruments-and-pricing-1" id="toc-financial-instruments-and-pricing-1" class="nav-link" data-scroll-target="#financial-instruments-and-pricing-1">Financial Instruments and Pricing</a></li>
+  <li><a href="#trading" id="toc-trading" class="nav-link" data-scroll-target="#trading">Trading</a></li>
+  <li><a href="#backtesting" id="toc-backtesting" class="nav-link" data-scroll-target="#backtesting">Backtesting</a></li>
+  <li><a href="#risk-analysis-1" id="toc-risk-analysis-1" class="nav-link" data-scroll-target="#risk-analysis-1">Risk Analysis</a></li>
+  <li><a href="#factor-analysis-1" id="toc-factor-analysis-1" class="nav-link" data-scroll-target="#factor-analysis-1">Factor Analysis</a></li>
+  <li><a href="#time-series-1" id="toc-time-series-1" class="nav-link" data-scroll-target="#time-series-1">Time Series</a></li>
+  <li><a href="#calendars-1" id="toc-calendars-1" class="nav-link" data-scroll-target="#calendars-1">Calendars</a></li>
+  </ul></li>
+  <li><a href="#matlab" id="toc-matlab" class="nav-link" data-scroll-target="#matlab">Matlab</a>
+  <ul class="collapse">
+  <li><a href="#frameworks" id="toc-frameworks" class="nav-link" data-scroll-target="#frameworks">FrameWorks</a></li>
+  </ul></li>
+  <li><a href="#julia" id="toc-julia" class="nav-link" data-scroll-target="#julia">Julia</a></li>
+  <li><a href="#java" id="toc-java" class="nav-link" data-scroll-target="#java">Java</a></li>
+  <li><a href="#javascript" id="toc-javascript" class="nav-link" data-scroll-target="#javascript">JavaScript</a>
+  <ul class="collapse">
+  <li><a href="#data-visualization" id="toc-data-visualization" class="nav-link" data-scroll-target="#data-visualization">Data Visualization</a></li>
+  </ul></li>
+  <li><a href="#haskell" id="toc-haskell" class="nav-link" data-scroll-target="#haskell">Haskell</a></li>
+  <li><a href="#scala" id="toc-scala" class="nav-link" data-scroll-target="#scala">Scala</a></li>
+  <li><a href="#ruby" id="toc-ruby" class="nav-link" data-scroll-target="#ruby">Ruby</a></li>
+  <li><a href="#elixirerlang" id="toc-elixirerlang" class="nav-link" data-scroll-target="#elixirerlang">Elixir/Erlang</a></li>
+  <li><a href="#golang" id="toc-golang" class="nav-link" data-scroll-target="#golang">Golang</a></li>
+  <li><a href="#cpp" id="toc-cpp" class="nav-link" data-scroll-target="#cpp">CPP</a></li>
+  <li><a href="#frameworks-1" id="toc-frameworks-1" class="nav-link" data-scroll-target="#frameworks-1">Frameworks</a></li>
+  <li><a href="#csharp" id="toc-csharp" class="nav-link" data-scroll-target="#csharp">CSharp</a></li>
+  <li><a href="#rust" id="toc-rust" class="nav-link" data-scroll-target="#rust">Rust</a></li>
+  <li><a href="#reproducing-works-training-books" id="toc-reproducing-works-training-books" class="nav-link" data-scroll-target="#reproducing-works-training-books">Reproducing Works, Training &amp; Books</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Awesome Quant</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">Invalid Date</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+<div>
+  <div class="keywords">
+    <div class="block-title">Keywords</div>
+    <p>r packages, python packages, julia packages, software development, software engineering, financial computing, r, python, julia, rust, java</p>
+  </div>
+</div>
+
+</header>
+
+
+<p>A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance).</p>
+<p><a href="https://awesome.re"><img src="https://awesome.re/badge.svg" class="img-fluid"></a></p>
+<section id="python" class="level2">
+<h2 class="anchored" data-anchor-id="python">Python</h2>
+<section id="numerical-libraries-data-structures" class="level3">
+<h3 class="anchored" data-anchor-id="numerical-libraries-data-structures">Numerical Libraries &amp; Data Structures</h3>
+<ul>
+<li><a href="https://www.numpy.org">numpy</a> - NumPy is the fundamental package for scientific computing with Python.</li>
+<li><a href="https://www.scipy.org">scipy</a> - SciPy (pronounced “Sigh Pie”) is a Python-based ecosystem of open-source software for mathematics, science, and engineering.</li>
+<li><a href="https://pandas.pydata.org">pandas</a> - pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.</li>
+<li><a href="https://github.com/johnbywater/quantdsl">quantdsl</a> - Domain specific language for quantitative analytics in finance and trading.</li>
+<li><a href="https://docs.python.org/3/library/statistics.html">statistics</a> - Builtin Python library for all basic statistical calculations.</li>
+<li><a href="https://www.sympy.org/">sympy</a> - SymPy is a Python library for symbolic mathematics.</li>
+<li><a href="https://docs.pymc.io/">pymc3</a> - Probabilistic Programming in Python: Bayesian Modeling and Probabilistic Machine Learning with Theano.</li>
+<li><a href="https://docs.modelx.io/">modelx</a> - Python reimagination of spreadsheets as formula-centric objects that are interoperable with pandas.</li>
+<li><a href="https://github.com/man-group/ArcticDB">ArcticDB</a> - High performance datastore for time series and tick data.</li>
+</ul>
+</section>
+<section id="financial-instruments-and-pricing" class="level3">
+<h3 class="anchored" data-anchor-id="financial-instruments-and-pricing">Financial Instruments and Pricing</h3>
+<ul>
+<li><a href="https://github.com/OpenBB-finance/OpenBBTerminal">OpenBB Terminal</a> - Terminal for investment research for everyone.</li>
+<li><a href="https://github.com/enthought/pyql">PyQL</a> - QuantLib’s Python port.</li>
+<li><a href="https://github.com/opendoor-labs/pyfin">pyfin</a> - Basic options pricing in Python. <em>ARCHIVED</em></li>
+<li><a href="https://github.com/vollib/vollib">vollib</a> - vollib is a python library for calculating option prices, implied volatility and greeks.</li>
+<li><a href="https://github.com/jsmidt/QuantPy">QuantPy</a> - A framework for quantitative finance In python.</li>
+<li><a href="https://github.com/alpha-miner/Finance-Python">Finance-Python</a> - Python tools for Finance.</li>
+<li><a href="https://github.com/pmorissette/ffn">ffn</a> - A financial function library for Python.</li>
+<li><a href="https://github.com/GriffinAustin/pynance">pynance</a> - Lightweight Python library for assembling and analysing financial data.</li>
+<li><a href="https://github.com/bpsmith/tia">tia</a> - Toolkit for integration and analysis.</li>
+<li><a href="https://platform.hasura.io/hub/projects/hasura/base-python-dash">hasura/base-python-dash</a> - Hasura quickstart to deploy Dash framework. Written on top of Flask, Plotly.js, and React.js, Dash is ideal for building data visualization apps with highly custom user interfaces in pure Python.</li>
+<li><a href="https://platform.hasura.io/hub/projects/hasura/base-python-bokeh">hasura/base-python-bokeh</a> - Hasura quickstart to visualize data with bokeh library.</li>
+<li><a href="https://github.com/ynouri/pysabr">pysabr</a> - SABR model Python implementation.</li>
+<li><a href="https://github.com/domokane/FinancePy">FinancePy</a> - A Python Finance Library that focuses on the pricing and risk-management of Financial Derivatives, including fixed-income, equity, FX and credit derivatives.</li>
+<li><a href="https://github.com/goldmansachs/gs-quant">gs-quant</a> - Python toolkit for quantitative finance</li>
+<li><a href="https://github.com/federicomariamassari/willowtree">willowtree</a> - Robust and flexible Python implementation of the willow tree lattice for derivatives pricing.</li>
+<li><a href="https://github.com/federicomariamassari/financial-engineering">financial-engineering</a> - Applications of Monte Carlo methods to financial engineering projects, in Python.</li>
+<li><a href="https://github.com/dbrojas/optlib">optlib</a> - A library for financial options pricing written in Python.</li>
+<li><a href="https://github.com/google/tf-quant-finance">tf-quant-finance</a> - High-performance TensorFlow library for quantitative finance.</li>
+<li><a href="https://github.com/RomanMichaelPaolucci/Q-Fin">Q-Fin</a> - A Python library for mathematical finance.</li>
+<li><a href="https://github.com/quantsbin/Quantsbin">Quantsbin</a> - Tools for pricing and plotting of vanilla option prices, greeks and various other analysis around them.</li>
+<li><a href="https://github.com/bbcho/finoptions-dev">finoptions</a> - Complete python implementation of R package fOptions with partial implementation of fExoticOptions for pricing various options.</li>
+<li><a href="https://github.com/ymyke/pypme">pypme</a> - PME (Public Market Equivalent) calculation.</li>
+<li><a href="https://github.com/yellowbean/AbsBox">AbsBox</a> - A Python based library to model cashflow for structured product like Asset-backed securities (ABS) and Mortgage-backed securities (MBS).</li>
+<li><a href="https://github.com/akashaero/Intrinsic-Value-Calculator">Intrinsic-Value-Calculator</a> - A Python tool for quick calculations of a stock’s fair value using Discounted Cash Flow analysis.</li>
+<li><a href="https://github.com/deltaray-io/kelly-criterion">Kelly-Criterion</a> - Kelly Criterion implemented in Python to size portfolios based on J. L. Kelly Jr’s formula.</li>
+</ul>
+</section>
+<section id="indicators" class="level3">
+<h3 class="anchored" data-anchor-id="indicators">Indicators</h3>
+<ul>
+<li><a href="https://github.com/femtotrader/pandas_talib">pandas_talib</a> - A Python Pandas implementation of technical analysis indicators.</li>
+<li><a href="https://github.com/peerchemist/finta">finta</a> - Common financial technical analysis indicators implemented in Pandas.</li>
+<li><a href="https://github.com/cirla/tulipy">Tulipy</a> - Financial Technical Analysis Indicator Library (Python bindings for <a href="https://github.com/TulipCharts/tulipindicators">tulipindicators</a>)</li>
+<li><a href="https://github.com/Boulder-Investment-Technologies/lppls">lppls</a> - A Python module for fitting the <a href="https://en.wikipedia.org/wiki/Didier_Sornette#The_JLS_and_LPPLS_models">Log-Periodic Power Law Singularity (LPPLS)</a> model.</li>
+</ul>
+</section>
+<section id="trading-backtesting" class="level3">
+<h3 class="anchored" data-anchor-id="trading-backtesting">Trading &amp; Backtesting</h3>
+<ul>
+<li><a href="https://github.com/skfolio/skfolio">skfolio</a> - Python library for portfolio optimization built on top of scikit-learn. It provides a unified interface and sklearn compatible tools to build, tune and cross-validate portfolio models.</li>
+<li><a href="https://github.com/coding-kitties/investing-algorithm-framework">Investing algorithm framework</a> - Framework for developing, backtesting, and deploying automated trading algorithms.</li>
+<li><a href="https://github.com/mhallsmoore/qstrader">QSTrader</a> - QSTrader backtesting simulation engine.</li>
+<li><a href="https://github.com/Blankly-Finance/Blankly">Blankly</a> - Fully integrated backtesting, paper trading, and live deployment.</li>
+<li><a href="https://github.com/mrjbq7/ta-lib">TA-Lib</a> - Python wrapper for TA-Lib (<a href="http://ta-lib.org/" class="uri">http://ta-lib.org/</a>).</li>
+<li><a href="https://github.com/quantopian/zipline">zipline</a> - Pythonic algorithmic trading library.</li>
+<li><a href="https://github.com/QuantSoftware/QuantSoftwareToolkit">QuantSoftware Toolkit</a> - Python-based open source software framework designed to support portfolio construction and management.</li>
+<li><a href="https://github.com/jeffrey-liang/quantitative">quantitative</a> - Quantitative finance, and backtesting library.</li>
+<li><a href="https://github.com/llazzaro/analyzer">analyzer</a> - Python framework for real-time financial and backtesting trading strategies.</li>
+<li><a href="https://github.com/pmorissette/bt">bt</a> - Flexible Backtesting for Python.</li>
+<li><a href="https://github.com/backtrader/backtrader">backtrader</a> - Python Backtesting library for trading strategies.</li>
+<li><a href="https://github.com/thalesians/pythalesians">pythalesians</a> - Python library to backtest trading strategies, plot charts, seamlessly download market data, analyse market patterns etc.</li>
+<li><a href="https://github.com/ematvey/pybacktest">pybacktest</a> - Vectorized backtesting framework in Python / pandas, designed to make your backtesting easier.</li>
+<li><a href="https://github.com/gbeced/pyalgotrade">pyalgotrade</a> - Python Algorithmic Trading Library.</li>
+<li><a href="https://github.com/gbeced/basana">basana</a> - A Python async and event driven framework for algorithmic trading, with a focus on crypto currencies.</li>
+<li><a href="https://pypi.org/project/tradingWithPython/">tradingWithPython</a> - A collection of functions and classes for Quantitative trading.</li>
+<li><a href="https://github.com/twopirllc/pandas-ta">Pandas TA</a> - Pandas TA is an easy to use Python 3 Pandas Extension with 115+ Indicators. Easily build Custom Strategies.</li>
+<li><a href="https://github.com/bukosabino/ta">ta</a> - Technical Analysis Library using Pandas (Python)</li>
+<li><a href="https://github.com/joequant/algobroker">algobroker</a> - This is an execution engine for algo trading.</li>
+<li><a href="https://pypi.org/project/pysentosa/">pysentosa</a> - Python API for sentosa trading system.</li>
+<li><a href="https://github.com/cuemacro/finmarketpy">finmarketpy</a> - Python library for backtesting trading strategies and analyzing financial markets.</li>
+<li><a href="https://github.com/metaperl/binary-martingale">binary-martingale</a> - Computer program to automatically trade binary options martingale style.</li>
+<li><a href="https://github.com/foolcage/fooltrader">fooltrader</a> - the project using big-data technology to provide an uniform way to analyze the whole market.</li>
+<li><a href="https://github.com/zvtvz/zvt">zvt</a> - the project using sql,pandas to provide an uniform and extendable way to record data,computing factors,select securites, backtesting,realtime trading and it could show all of them in clearly charts in realtime.</li>
+<li><a href="https://github.com/alpacahq/pylivetrader">pylivetrader</a> - zipline-compatible live trading library.</li>
+<li><a href="https://github.com/alpacahq/pipeline-live">pipeline-live</a> - zipline’s pipeline capability with IEX for live trading.</li>
+<li><a href="https://github.com/quantrocket-llc/zipline-extensions">zipline-extensions</a> - Zipline extensions and adapters for QuantRocket.</li>
+<li><a href="https://github.com/quantrocket-llc/moonshot">moonshot</a> - Vectorized backtester and trading engine for QuantRocket based on Pandas.</li>
+<li><a href="https://github.com/robertmartin8/PyPortfolioOpt">PyPortfolioOpt</a> - Financial portfolio optimisation in python, including classical efficient frontier and advanced methods.</li>
+<li><a href="https://github.com/tradytics/eiten">Eiten</a> - Eiten is an open source toolkit by Tradytics that implements various statistical and algorithmic investing strategies such as Eigen Portfolios, Minimum Variance Portfolios, Maximum Sharpe Ratio Portfolios, and Genetic Algorithms based Portfolios.</li>
+<li><a href="https://github.com/dppalomar/riskparity.py">riskparity.py</a> - fast and scalable design of risk parity portfolios with TensorFlow 2.0</li>
+<li><a href="https://github.com/hudson-and-thames/mlfinlab">mlfinlab</a> - Implementations regarding “Advances in Financial Machine Learning” by Marcos Lopez de Prado. (Feature Engineering, Financial Data Structures, Meta-Labeling)</li>
+<li><a href="https://github.com/abbass2/pyqstrat">pyqstrat</a> - A fast, extensible, transparent python library for backtesting quantitative strategies.</li>
+<li><a href="https://github.com/edouardpoitras/NowTrade">NowTrade</a> - Python library for backtesting technical/mechanical strategies in the stock and currency markets.</li>
+<li><a href="https://github.com/fja05680/pinkfish">pinkfish</a> - A backtester and spreadsheet library for security analysis.</li>
+<li><a href="https://github.com/timkpaine/aat">aat</a> - Async Algorithmic Trading Engine</li>
+<li><a href="https://kernc.github.io/backtesting.py/">Backtesting.py</a> - Backtest trading strategies in Python</li>
+<li><a href="https://github.com/enigmampc/catalyst">catalyst</a> - An Algorithmic Trading Library for Crypto-Assets in Python</li>
+<li><a href="https://github.com/ranaroussi/quantstats">quantstats</a> - Portfolio analytics for quants, written in Python</li>
+<li><a href="https://github.com/ranaroussi/qtpylib">qtpylib</a> - QTPyLib, Pythonic Algorithmic Trading <a href="http://qtpylib.io" class="uri">http://qtpylib.io</a></li>
+<li><a href="https://github.com/constverum/Quantdom">Quantdom</a> - Python-based framework for backtesting trading strategies &amp; analyzing financial markets [GUI :neckbeard:]</li>
+<li><a href="https://github.com/freqtrade/freqtrade">freqtrade</a> - Free, open source crypto trading bot</li>
+<li><a href="https://github.com/chrisconlan/algorithmic-trading-with-python">algorithmic-trading-with-python</a> - Free <code>pandas</code> and <code>scikit-learn</code> resources for trading simulation, backtesting, and machine learning on financial data.</li>
+<li><a href="https://github.com/jankrepl/deepdow">DeepDow</a> - Portfolio optimization with deep learning</li>
+<li><a href="https://github.com/microsoft/qlib">Qlib</a> - An AI-oriented Quantitative Investment Platform by Microsoft. Full ML pipeline of data processing, model training, back-testing; and covers the entire chain of quantitative investment: alpha seeking, risk modeling, portfolio optimization, and order execution.</li>
+<li><a href="https://github.com/stefan-jansen/machine-learning-for-trading">machine-learning-for-trading</a> - Code and resources for Machine Learning for Algorithmic Trading</li>
+<li><a href="https://github.com/ScottfreeLLC/AlphaPy">AlphaPy</a> - Automated Machine Learning [AutoML] with Python, scikit-learn, Keras, XGBoost, LightGBM, and CatBoost</li>
+<li><a href="https://github.com/jesse-ai/jesse">jesse</a> - An advanced crypto trading bot written in Python</li>
+<li><a href="https://github.com/ricequant/rqalpha">rqalpha</a> - A extendable, replaceable Python algorithmic backtest &amp;&amp; trading framework supporting multiple securities.</li>
+<li><a href="https://github.com/AI4Finance-LLC/FinRL-Library">FinRL-Library</a> - A Deep Reinforcement Learning Library for Automated Trading in Quantitative Finance. NeurIPS 2020.</li>
+<li><a href="https://github.com/achillesrasquinha/bulbea">bulbea</a> - Deep Learning based Python Library for Stock Market Prediction and Modelling.</li>
+<li><a href="https://github.com/ajhpark/ib_nope">ib_nope</a> - Automated trading system for NOPE strategy over IBKR TWS.</li>
+<li><a href="https://github.com/Drakkar-Software/OctoBot">OctoBot</a> - Open source cryptocurrency trading bot for high frequency, arbitrage, TA and social trading with an advanced web interface.</li>
+<li><a href="https://github.com/mementum/bta-lib">bta-lib</a> - Technical Analysis library in pandas for backtesting algotrading and quantitative analysis.</li>
+<li><a href="https://github.com/huseinzol05/Stock-Prediction-Models">Stock-Prediction-Models</a> - Gathers machine learning and deep learning models for Stock forecasting including trading bots and simulations.</li>
+<li><a href="https://github.com/jmrichardson/tuneta">TuneTA</a> - TuneTA optimizes technical indicators using a distance correlation measure to a user defined target feature such as next day return.</li>
+<li><a href="https://github.com/kieran-mackle/AutoTrader">AutoTrader</a> - A Python-based development platform for automated trading systems - from backtesting to optimisation to livetrading.</li>
+<li><a href="https://github.com/jrmeier/fast-trade">fast-trade</a> - A library built with backtest portability and performance in mind for backtest trading strategies.</li>
+<li><a href="https://github.com/quarkfin/qf-lib">qf-lib</a> - QF-Lib is a Python library that provides high quality tools for quantitative finance.</li>
+<li><a href="https://github.com/alexgolec/tda-api">tda-api</a> - Gather data and trade equities, options, and ETFs via TDAmeritrade.</li>
+<li><a href="https://github.com/polakowo/vectorbt">vectorbt</a> - Find your trading edge, using a powerful toolkit for backtesting, algorithmic trading, and research.</li>
+<li><a href="https://github.com/QuantConnect/Lean">Lean</a> - Lean Algorithmic Trading Engine by QuantConnect (Python, C#).</li>
+<li><a href="https://github.com/jrmeier/fast-trade">fast-trade</a> - Low code backtesting library utilizing pandas and technical analysis indicators.</li>
+<li><a href="https://github.com/robcarver17/pysystemtrade">pysystemtrade</a> - pysystemtrade is the open source version of Robert Carver’s backtesting and trading engine that implements systems according to the framework outlined in his book “Systematic Trading”, which is further developed on his <a href="https://qoppac.blogspot.com/">blog</a>.</li>
+<li><a href="https://github.com/rafa-rod/pytrendseries">pytrendseries</a> - Detect trend in time series, drawdown, drawdown within a constant look-back window , maximum drawdown, time underwater.</li>
+<li><a href="https://github.com/DrAshBooth/PyLOB">PyLOB</a> - Fully functioning fast Limit Order Book written in Python.</li>
+<li><a href="https://github.com/edtechre/pybroker">PyBroker</a> - Algorithmic Trading with Machine Learning.</li>
+<li><a href="https://github.com/Drakkar-Software/OctoBot-Script">OctoBot Script</a> - A quant framework to create cryptocurrencies strategies - from backtesting to optimisation to livetrading.</li>
+<li><a href="https://github.com/nkaz001/hftbacktest">hftbacktest</a> - A high-frequency trading and market-making backtesting tool accounts for limit orders, queue positions, and latencies, utilizing full tick data for trades and order books.</li>
+<li><a href="https://github.com/vnpy/vnpy">vnpy</a> - VeighNa is a Python-based open source quantitative trading system development framework.</li>
+<li><a href="https://github.com/asavinov/intelligent-trading-bot">Intelligent Trading Bot</a> - Automatically generating signals and trading based on machine learning and feature engineering</li>
+<li><a href="https://github.com/enzoampil/fastquant">fastquant</a> - fastquant allows you to easily backtest investment strategies with as few as 3 lines of python code.</li>
+<li><a href="https://github.com/nautechsystems/nautilus_trader">nautilus_trader</a> - A high-performance algorithmic trading platform and event-driven backtester.</li>
+</ul>
+</section>
+<section id="risk-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="risk-analysis">Risk Analysis</h3>
+<ul>
+<li><a href="https://github.com/quantopian/pyfolio">pyfolio</a> - Portfolio and risk analytics in Python.</li>
+<li><a href="https://github.com/quantopian/empyrical">empyrical</a> - Common financial risk and performance metrics.</li>
+<li><a href="https://github.com/rsvp/fecon235">fecon235</a> - Computational tools for financial economics include: Gaussian Mixture model of leptokurtotic risk, adaptive Boltzmann portfolios.</li>
+<li><a href="https://pypi.org/project/finance/">finance</a> - Financial Risk Calculations. Optimized for ease of use through class construction and operator overload.</li>
+<li><a href="https://pypi.org/project/qfrm/">qfrm</a> - Quantitative Financial Risk Management: awesome OOP tools for measuring, managing and visualizing risk of financial instruments and portfolios.</li>
+<li><a href="https://github.com/benjaminmgross/visualize-wealth">visualize-wealth</a> - Portfolio construction and quantitative analysis.</li>
+<li><a href="https://github.com/wegamekinglc/VisualPortfolio">VisualPortfolio</a> - This tool is used to visualize the performance of a portfolio.</li>
+<li><a href="https://github.com/Marigold/universal-portfolios">universal-portfolios</a> - Collection of algorithms for online portfolio selection.</li>
+<li><a href="https://github.com/fmilthaler/FinQuant">FinQuant</a> - A program for financial portfolio management, analysis and optimisation.</li>
+<li><a href="https://github.com/ssantoshp/Empyrial">Empyrial</a> - Portfolio’s risk and performance analytics and returns predictions.</li>
+<li><a href="https://github.com/bbcho/risktools-dev">risktools</a> - Risk tools for use within the crude and crude products trading space with partial implementation of R’s PerformanceAnalytics.</li>
+<li><a href="https://github.com/dcajasn/Riskfolio-Lib">Riskfolio-Lib</a> - Portfolio Optimization and Quantitative Strategic Asset Allocation in Python.</li>
+</ul>
+</section>
+<section id="factor-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="factor-analysis">Factor Analysis</h3>
+<ul>
+<li><a href="https://github.com/quantopian/alphalens">alphalens</a> - Performance analysis of predictive alpha factors.</li>
+<li><a href="https://github.com/Heerozh/spectre">Spectre</a> - GPU-accelerated Factors analysis library and Backtester</li>
+</ul>
+</section>
+<section id="quant-research-environment" class="level3">
+<h3 class="anchored" data-anchor-id="quant-research-environment">Quant Research Environment</h3>
+<ul>
+<li><a href="https://github.com/gnzsnz/jupyter-quant">Jupyter Quant</a> - A dockerized Jupyter quant research environment with preloaded tools for quant analysis, statsmodels, pymc, arch, py_vollib, zipline-reloaded, PyPortfolioOpt, etc.</li>
+</ul>
+</section>
+<section id="time-series" class="level3">
+<h3 class="anchored" data-anchor-id="time-series">Time Series</h3>
+<ul>
+<li><a href="https://github.com/bashtage/arch">ARCH</a> - ARCH models in Python.</li>
+<li><a href="http://statsmodels.sourceforge.net">statsmodels</a> - Python module that allows users to explore data, estimate statistical models, and perform statistical tests.</li>
+<li><a href="https://github.com/quantmind/dynts">dynts</a> - Python package for timeseries analysis and manipulation.</li>
+<li><a href="https://github.com/RJT1990/pyflux">PyFlux</a> - Python library for timeseries modelling and inference (frequentist and Bayesian) on models.</li>
+<li><a href="https://github.com/blue-yonder/tsfresh">tsfresh</a> - Automatic extraction of relevant features from time series.</li>
+<li><a href="https://platform.hasura.io/hub/projects/anirudhm/quandl-metabase-time-series">hasura/quandl-metabase</a> - Hasura quickstart to visualize Quandl’s timeseries datasets with Metabase.</li>
+<li><a href="https://github.com/facebook/prophet">Facebook Prophet</a> - Tool for producing high quality forecasts for time series data that has multiple seasonality with linear or non-linear growth.</li>
+<li><a href="https://github.com/cerlymarco/tsmoothie">tsmoothie</a> - A python library for time-series smoothing and outlier detection in a vectorized way.</li>
+<li><a href="https://github.com/alkaline-ml/pmdarima">pmdarima</a> - A statistical library designed to fill the void in Python’s time series analysis capabilities, including the equivalent of R’s auto.arima function.</li>
+<li><a href="https://github.com/awslabs/gluon-ts">gluon-ts</a> - vProbabilistic time series modeling in Python.</li>
+</ul>
+</section>
+<section id="calendars" class="level3">
+<h3 class="anchored" data-anchor-id="calendars">Calendars</h3>
+<ul>
+<li><a href="https://github.com/gerrymanoim/exchange_calendars">exchange_calendars</a> - Stock Exchange Trading Calendars.</li>
+<li><a href="https://github.com/wilsonfreitas/python-bizdays">bizdays</a> - Business days calculations and utilities.</li>
+<li><a href="https://github.com/rsheftel/pandas_market_calendars">pandas_market_calendars</a> - Exchange calendars to use with pandas for trading applications.</li>
+</ul>
+</section>
+<section id="data-sources" class="level3">
+<h3 class="anchored" data-anchor-id="data-sources">Data Sources</h3>
+<ul>
+<li><a href="https://github.com/ranaroussi/yfinance">yfinance</a> - Yahoo! Finance market data downloader (+faster Pandas Datareader)</li>
+<li><a href="https://github.com/cuemacro/findatapy">findatapy</a> - Python library to download market data via Bloomberg, Quandl, Yahoo etc.</li>
+<li><a href="https://github.com/hongtaocai/googlefinance">googlefinance</a> - Python module to get real-time stock data from Google Finance API.</li>
+<li><a href="https://github.com/lukaszbanasiak/yahoo-finance">yahoo-finance</a> - Python module to get stock data from Yahoo! Finance.</li>
+<li><a href="https://github.com/pydata/pandas-datareader">pandas-datareader</a> - Python module to get data from various sources (Google Finance, Yahoo Finance, FRED, OECD, Fama/French, World Bank, Eurostat…) into Pandas datastructures such as DataFrame, Panel with a caching mechanism.</li>
+<li><a href="https://github.com/davidastephens/pandas-finance">pandas-finance</a> - High level API for access to and analysis of financial data.</li>
+<li><a href="https://github.com/innes213/pyhoofinance">pyhoofinance</a> - Rapidly queries Yahoo Finance for multiple tickers and returns typed data for analysis.</li>
+<li><a href="https://github.com/Karthik005/yfinanceapi">yfinanceapi</a> - Finance API for Python.</li>
+<li><a href="https://github.com/slawek87/yql-finance">yql-finance</a> - yql-finance is simple and fast. API returns stock closing prices for current period of time and current stock ticker (i.e.&nbsp;APPL, GOOGL).</li>
+<li><a href="https://github.com/cgoldberg/ystockquote">ystockquote</a> - Retrieve stock quote data from Yahoo Finance.</li>
+<li><a href="https://github.com/mcdallas/wallstreet">wallstreet</a> - Real time stock and option data.</li>
+<li><a href="https://github.com/ZachLiuGIS/stock_extractor">stock_extractor</a> - General Purpose Stock Extractors from Online Resources.</li>
+<li><a href="https://github.com/cttn/Stockex">Stockex</a> - Python wrapper for Yahoo! Finance API.</li>
+<li><a href="https://github.com/skillachie/finsymbols">finsymbols</a> - Obtains stock symbols and relating information for SP500, AMEX, NYSE, and NASDAQ.</li>
+<li><a href="https://github.com/avelkoski/FRB">FRB</a> - Python Client for FRED® API.</li>
+<li><a href="https://github.com/econdb/inquisitor">inquisitor</a> - Python Interface to Econdb.com API.</li>
+<li><a href="https://github.com/nickelkr/yfi">yfi</a> - Yahoo! YQL library.</li>
+<li><a href="https://pypi.org/project/chinesestockapi/">chinesestockapi</a> - Python API to get Chinese stock price.</li>
+<li><a href="https://github.com/akarat/exchange">exchange</a> - Get current exchange rate.</li>
+<li><a href="https://github.com/jamescnowell/ticks">ticks</a> - Simple command line tool to get stock ticker data.</li>
+<li><a href="https://github.com/bpsmith/pybbg">pybbg</a> - Python interface to Bloomberg COM APIs.</li>
+<li><a href="https://github.com/lsbardel/ccy">ccy</a> - Python module for currencies.</li>
+<li><a href="https://pypi.org/project/tushare/">tushare</a> - A utility for crawling historical and Real-time Quotes data of China stocks.</li>
+<li><a href="https://pypi.org/project/jsm/">jsm</a> - Get the japanese stock market data.</li>
+<li><a href="https://github.com/jealous/cn_stock_src">cn_stock_src</a> - Utility for retrieving basic China stock data from different sources.</li>
+<li><a href="https://github.com/barnumbirr/coinmarketcap">coinmarketcap</a> - Python API for coinmarketcap.</li>
+<li><a href="https://github.com/datawrestler/after-hours">after-hours</a> - Obtain pre market and after hours stock prices for a given symbol.</li>
+<li><a href="https://pypi.org/project/bronto-python/">bronto-python</a> - Bronto API Integration for Python.</li>
+<li><a href="https://github.com/rainx/pytdx">pytdx</a> - Python Interface for retrieving chinese stock realtime quote data from TongDaXin Nodes.</li>
+<li><a href="https://github.com/matthewgilbert/pdblp">pdblp</a> - A simple interface to integrate pandas and the Bloomberg Open API.</li>
+<li><a href="https://github.com/hydrosquall/tiingo-python">tiingo</a> - Python interface for daily composite prices/OHLC/Volume + Real-time News Feeds, powered by the Tiingo Data Platform.</li>
+<li><a href="https://github.com/addisonlynch/iexfinance">iexfinance</a> - Python Interface for retrieving real-time and historical prices and equities data from The Investor’s Exchange.</li>
+<li><a href="https://github.com/timkpaine/pyEX">pyEX</a> - Python interface to IEX with emphasis on pandas, support for streaming data, premium data, points data (economic, rates, commodities), and technical indicators.</li>
+<li><a href="https://github.com/alpacahq/alpaca-trade-api-python">alpaca-trade-api</a> - Python interface for retrieving real-time and historical prices from Alpaca API as well as trade execution.</li>
+<li><a href="https://pypi.org/project/MetaTrader5/">metatrader5</a> - API Connector to MetaTrader 5 Terminal</li>
+<li><a href="https://github.com/jindaxiang/akshare">akshare</a> - AkShare is an elegant and simple financial data interface library for Python, built for human beings! <a href="https://akshare.readthedocs.io" class="uri">https://akshare.readthedocs.io</a></li>
+<li><a href="https://github.com/dpguthrie/yahooquery">yahooquery</a> - Python interface for retrieving data through unofficial Yahoo Finance API.</li>
+<li><a href="https://github.com/alvarobartt/investpy">investpy</a> - Financial Data Extraction from Investing.com with Python! <a href="https://investpy.readthedocs.io/" class="uri">https://investpy.readthedocs.io/</a></li>
+<li><a href="https://github.com/yahoofinancelive/yliveticker">yliveticker</a> - Live stream of market data from Yahoo Finance websocket.</li>
+<li><a href="https://github.com/ran404/bbgbridge">bbgbridge</a> - Easy to use Bloomberg Desktop API wrapper for Python.</li>
+<li><a href="https://github.com/RomelTorres/alpha_vantage">alpha_vantage</a> - A python wrapper for Alpha Vantage API for financial data.</li>
+<li><a href="https://github.com/FinanceData/FinanceDataReader">FinanceDataReader</a> - Open Source Financial data reader for U.S, Korean, Japanese, Chinese, Vietnamese Stocks</li>
+<li><a href="https://github.com/TomasKoutek/pystlouisfed">pystlouisfed</a> - Python client for Federal Reserve Bank of St.&nbsp;Louis API - FRED, ALFRED, GeoFRED and FRASER.</li>
+<li><a href="https://github.com/wilsonfreitas/python-bcb">python-bcb</a> - Python interface to Brazilian Central Bank web services.</li>
+<li><a href="https://github.com/maread99/market_prices">market-prices</a> - Create meaningful OHLCV datasets from knowledge of <a href="https://github.com/gerrymanoim/exchange_calendars">exchange-calendars</a> (works out-the-box with data from Yahoo Finance).</li>
+<li><a href="https://github.com/tardis-dev/tardis-python">tardis-python</a> - Python interface for Tardis.dev high frequency crypto market data</li>
+<li><a href="https://github.com/crypto-lake/lake-api">lake-api</a> - Python interface for Crypto Lake high frequency crypto market data</li>
+<li><a href="https://github.com/ymyke/tessa">tessa</a> - simple, hassle-free access to price information of financial assets (currently based on yfinance and pycoingecko), including search and a symbol class.</li>
+<li><a href="https://github.com/dr-leo/pandaSDMX">pandaSDMX</a> - Python package that implements SDMX 2.1 (ISO 17369:2013), a format for exchange of statistical data and metadata used by national statistical agencies, central banks, and international organisations.</li>
+<li><a href="https://github.com/LenkaV/CIF">cif</a> - Python package that include few composite indicators, which summarize multidimensional relationships between individual economic indicators.</li>
+<li><a href="https://github.com/theOGognf/finagg">finagg</a> - finagg is a Python package that provides implementations of popular and free financial APIs, tools for aggregating historical data from those APIs into SQL databases, and tools for transforming aggregated data into features useful for analysis and AI/ML.</li>
+</ul>
+</section>
+<section id="excel-integration" class="level3">
+<h3 class="anchored" data-anchor-id="excel-integration">Excel Integration</h3>
+<ul>
+<li><a href="https://www.xlwings.org/">xlwings</a> - Make Excel fly with Python.</li>
+<li><a href="https://openpyxl.readthedocs.io/en/latest/">openpyxl</a> - Read/Write Excel 2007 xlsx/xlsm files.</li>
+<li><a href="https://github.com/python-excel/xlrd">xlrd</a> - Library for developers to extract data from Microsoft Excel spreadsheet files.</li>
+<li><a href="https://xlsxwriter.readthedocs.io/">xlsxwriter</a> - Write files in the Excel 2007+ XLSX file format.</li>
+<li><a href="https://github.com/python-excel/xlwt">xlwt</a> - Library to create spreadsheet files compatible with MS Excel 97/2000/XP/2003 XLS files, on any platform.</li>
+<li><a href="https://datanitro.com/">DataNitro</a> - DataNitro also offers full-featured Python-Excel integration, including UDFs. Trial downloads are available, but users must purchase a license.</li>
+<li><a href="http://xlloop.sourceforge.net">xlloop</a> - XLLoop is an open source framework for implementing Excel user-defined functions (UDFs) on a centralised server (a function server).</li>
+<li><a href="http://www.bnikolic.co.uk/expy/expy.html">expy</a> - The ExPy add-in allows easy use of Python directly from within an Microsoft Excel spreadsheet, both to execute arbitrary code and to define new Excel functions.</li>
+<li><a href="https://www.pyxll.com">pyxll</a> - PyXLL is an Excel add-in that enables you to extend Excel using nothing but Python code.</li>
+</ul>
+</section>
+<section id="visualization" class="level3">
+<h3 class="anchored" data-anchor-id="visualization">Visualization</h3>
+<ul>
+<li><a href="https://github.com/man-group/dtale">D-Tale</a> - Visualizer for pandas dataframes and xarray datasets.</li>
+<li><a href="https://github.com/matplotlib/mplfinance">mplfinance</a> - matplotlib utilities for the visualization, and visual analysis, of financial data.</li>
+<li><a href="https://github.com/highfestiva/finplot">finplot</a> - Performant and effortless finance plotting for Python.</li>
+<li><a href="https://github.com/lit26/finvizfinance">finvizfinance</a> - Finviz analysis python library.</li>
+<li><a href="https://github.com/maread99/market_analy">market-analy</a> - Analysis and interactive charting using <a href="https://github.com/maread99/market_prices">market-prices</a> and bqplot.</li>
+</ul>
+</section>
+</section>
+<section id="r" class="level2">
+<h2 class="anchored" data-anchor-id="r">R</h2>
+<section id="numerical-libraries-data-structures-1" class="level3">
+<h3 class="anchored" data-anchor-id="numerical-libraries-data-structures-1">Numerical Libraries &amp; Data Structures</h3>
+<ul>
+<li><a href="https://github.com/joshuaulrich/xts">xts</a> - eXtensible Time Series: Provide for uniform handling of R’s different time-based data classes by extending zoo, maximizing native format information preservation and allowing for user level customization and extension, while simplifying cross-class interoperability.</li>
+<li><a href="https://github.com/Rdatatable/data.table">data.table</a> - Extension of data.frame: Fast aggregation of large data (e.g.&nbsp;100GB in RAM), fast ordered joins, fast add/modify/delete of columns by group using no copies at all, list columns and a fast file reader (fread). Offers a natural and flexible syntax, for faster development.</li>
+<li><a href="https://github.com/dppalomar/sparseEigen">sparseEigen</a> - Sparse pricipal component analysis.</li>
+<li><a href="http://tsdbi.r-forge.r-project.org/">TSdbi</a> - Provides a common interface to time series databases.</li>
+<li><a href="https://cran.r-project.org/web/packages/tseries/index.html">tseries</a> - Time Series Analysis and Computational Finance.</li>
+<li><a href="https://cran.r-project.org/web/packages/zoo/index.html">zoo</a> - S3 Infrastructure for Regular and Irregular Time Series (Z’s Ordered Observations).</li>
+<li><a href="https://cran.r-project.org/web/packages/tis/index.html">tis</a> - Functions and S3 classes for time indexes and time indexed series, which are compatible with FAME frequencies.</li>
+<li><a href="https://cran.r-project.org/web/packages/tfplot/index.html">tfplot</a> - Utilities for simple manipulation and quick plotting of time series data.</li>
+<li><a href="https://cran.r-project.org/web/packages/tframe/index.html">tframe</a> - A kernel of functions for programming time series methods in a way that is relatively independently of the representation of time.</li>
+</ul>
+</section>
+<section id="data-sources-1" class="level3">
+<h3 class="anchored" data-anchor-id="data-sources-1">Data Sources</h3>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/IBrokers/index.html">IBrokers</a> - Provides native R access to Interactive Brokers Trader Workstation API.</li>
+<li><a href="https://github.com/Rblp/Rblpapi">Rblpapi</a> - An R Interface to ‘Bloomberg’ is provided via the ‘Blp API’.</li>
+<li><a href="https://www.quandl.com/tools/r">Quandl</a> - Get Financial Data Directly Into R.</li>
+<li><a href="https://github.com/jangorecki/Rbitcoin">Rbitcoin</a> - Unified markets API interface (bitstamp, kraken, btce, bitmarket).</li>
+<li><a href="https://github.com/msperlin/GetTDData">GetTDData</a> - Downloads and aggregates data for Brazilian government issued bonds directly from the website of Tesouro Direto.</li>
+<li><a href="https://github.com/msperlin/GetHFData">GetHFData</a> - Downloads and aggregates high frequency trading data for Brazilian instruments directly from Bovespa ftp site.</li>
+<li><a href="https://dashboard.nbshare.io/apps/reddit/api/">Reddit WallstreetBets API</a> - Provides daily top 50 stocks from reddit (subreddit) Wallstreetbets and their sentiments via the API.</li>
+<li><a href="https://github.com/eddelbuettel/td">td</a> - Interfaces the ‘twelvedata’ API for stocks and (digital and standard) currencies.</li>
+<li><a href="https://github.com/wilsonfreitas/rbcb">rbcb</a> - R interface to Brazilian Central Bank web services.</li>
+<li><a href="https://github.com/ropensci/rb3">rb3</a> - A bunch of downloaders and parsers for data delivered from B3.</li>
+<li><a href="https://github.com/matthiasgomolka/simfinapi">simfinapi</a> - Makes ‘SimFin’ data (<a href="https://simfin.com/" class="uri">https://simfin.com/</a>) easily accessible in R.</li>
+</ul>
+</section>
+<section id="financial-instruments-and-pricing-1" class="level3">
+<h3 class="anchored" data-anchor-id="financial-instruments-and-pricing-1">Financial Instruments and Pricing</h3>
+<ul>
+<li><a href="http://dirk.eddelbuettel.com/code/rquantlib.html">RQuantLib</a> - RQuantLib connects GNU R with QuantLib.</li>
+<li><a href="https://cran.r-project.org/web/packages/quantmod/index.html">quantmod</a> - Quantitative Financial Modelling Framework.</li>
+<li><a href="https://www.rmetrics.org">Rmetrics</a> - The premier open source software solution for teaching and training quantitative finance.
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/fAsianOptions/index.html">fAsianOptions</a> - EBM and Asian Option Valuation.</li>
+<li><a href="https://cran.r-project.org/web/packages/fAssets/index.html">fAssets</a> - Analysing and Modelling Financial Assets.</li>
+<li><a href="https://cran.r-project.org/web/packages/fBasics/index.html">fBasics</a> - Markets and Basic Statistics.</li>
+<li><a href="https://cran.r-project.org/web/packages/fBonds/index.html">fBonds</a> - Bonds and Interest Rate Models.</li>
+<li><a href="https://cran.r-project.org/web/packages/fExoticOptions/index.html">fExoticOptions</a> - Exotic Option Valuation.</li>
+<li><a href="https://cran.r-project.org/web/packages/fOptions/index.html">fOptions</a> - Pricing and Evaluating Basic Options.</li>
+<li><a href="https://cran.r-project.org/web/packages/fPortfolio/index.html">fPortfolio</a> - Portfolio Selection and Optimization.</li>
+</ul></li>
+<li><a href="https://github.com/dgerlanc/portfolio">portfolio</a> - Analysing equity portfolios.</li>
+<li><a href="https://github.com/dppalomar/sparseIndexTracking">sparseIndexTracking</a> - Portfolio design to track an index.</li>
+<li><a href="https://github.com/dppalomar/covFactorModel">covFactorModel</a> - Covariance matrix estimation via factor models.</li>
+<li><a href="https://github.com/dppalomar/riskParityPortfolio">riskParityPortfolio</a> - Blazingly fast design of risk parity portfolios.</li>
+<li><a href="https://cran.r-project.org/web/packages/sde/index.html">sde</a> - Simulation and Inference for Stochastic Differential Equations.</li>
+<li><a href="https://cran.r-project.org/web/packages/YieldCurve/index.html">YieldCurve</a> - Modelling and estimation of the yield curve.</li>
+<li><a href="https://cran.r-project.org/web/packages/SmithWilsonYieldCurve/index.html">SmithWilsonYieldCurve</a> - Constructs a yield curve by the Smith-Wilson method from a table of LIBOR and SWAP rates.</li>
+<li><a href="https://cran.r-project.org/web/packages/ycinterextra/index.html">ycinterextra</a> - Yield curve or zero-coupon prices interpolation and extrapolation.</li>
+<li><a href="https://cran.r-project.org/web/packages/AmericanCallOpt/index.html">AmericanCallOpt</a> - This package includes pricing function for selected American call options with underlying assets that generate payouts.</li>
+<li><a href="https://cran.r-project.org/web/packages/VarSwapPrice/index.html">VarSwapPrice</a> - Pricing a variance swap on an equity index.</li>
+<li><a href="https://cran.r-project.org/web/packages/RND/index.html">RND</a> - Risk Neutral Density Extraction Package.</li>
+<li><a href="https://cran.r-project.org/web/packages/LSMonteCarlo/index.html">LSMonteCarlo</a> - American options pricing with Least Squares Monte Carlo method.</li>
+<li><a href="https://cran.r-project.org/web/packages/OptHedging/index.html">OptHedging</a> - Estimation of value and hedging strategy of call and put options.</li>
+<li><a href="https://cran.r-project.org/web/packages/tvm/index.html">tvm</a> - Time Value of Money Functions.</li>
+<li><a href="https://cran.r-project.org/web/packages/OptionPricing/index.html">OptionPricing</a> - Option Pricing with Efficient Simulation Algorithms.</li>
+<li><a href="https://github.com/blenezet/credule">credule</a> - Credit Default Swap Functions.</li>
+<li><a href="https://cran.r-project.org/web/packages/derivmkts/index.html">derivmkts</a> - Functions and R Code to Accompany Derivatives Markets.</li>
+<li><a href="https://github.com/felixfan/FinCal">FinCal</a> - Package for time value of money calculation, time series analysis and computational finance.</li>
+<li><a href="https://github.com/artyyouth/r-quant">r-quant</a> - R code for quantitative analysis in finance.</li>
+<li><a href="https://github.com/taylorizing/options.studies">options.studies</a> - options trading studies functions for use with options.data package and shiny.</li>
+<li><a href="https://github.com/braverock/PortfolioAnalytics">PortfolioAnalytics</a> - Portfolio Analysis, Including Numerical Methods for Optimizationof Portfolios.</li>
+<li><a href="https://github.com/imanuelcostigan/fmbasics">fmbasics</a> - Financial Market Building Blocks.</li>
+<li><a href="https://github.com/wilsonfreitas/R-fixedincome">R-fixedincome</a> - Fixed income tools for R.</li>
+</ul>
+</section>
+<section id="trading" class="level3">
+<h3 class="anchored" data-anchor-id="trading">Trading</h3>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/backtest/index.html">backtest</a> - Exploring Portfolio-Based Conjectures About Financial Instruments.</li>
+<li><a href="https://cran.r-project.org/web/packages/pa/index.html">pa</a> - Performance Attribution for Equity Portfolios.</li>
+<li><a href="https://github.com/joshuaulrich/TTR">TTR</a> - Technical Trading Rules.</li>
+<li><a href="https://quanttools.bitbucket.io/_site/index.html">QuantTools</a> - Enhanced Quantitative Trading Modelling.</li>
+<li><a href="https://github.com/braverock/blotter">blotter</a> - Transaction infrastructure for defining instruments, transactions, portfolios and accounts for trading systems and simulation. Provides portfolio support for multi-asset class and multi-currency portfolios. Actively maintained and developed.</li>
+</ul>
+</section>
+<section id="backtesting" class="level3">
+<h3 class="anchored" data-anchor-id="backtesting">Backtesting</h3>
+<ul>
+<li><a href="https://github.com/braverock/quantstrat">quantstrat</a> - Transaction-oriented infrastructure for constructing trading systems and simulation. Provides support for multi-asset class and multi-currency portfolios for backtesting and other financial research.</li>
+</ul>
+</section>
+<section id="risk-analysis-1" class="level3">
+<h3 class="anchored" data-anchor-id="risk-analysis-1">Risk Analysis</h3>
+<ul>
+<li><a href="https://github.com/braverock/PerformanceAnalytics">PerformanceAnalytics</a> - Econometric tools for performance and risk analysis.</li>
+</ul>
+</section>
+<section id="factor-analysis-1" class="level3">
+<h3 class="anchored" data-anchor-id="factor-analysis-1">Factor Analysis</h3>
+<ul>
+<li><a href="https://github.com/braverock/FactorAnalytics">FactorAnalytics</a> - The FactorAnalytics package contains fitting and analysis methods for the three main types of factor models used in conjunction with portfolio construction, optimization and risk management, namely fundamental factor models, time series factor models and statistical factor models.</li>
+<li><a href="https://github.com/JustinMShea/ExpectedReturns">Expected Returns</a> - Solutions for enhancing portfolio diversification and replications of seminal papers with R, most of which are discussed in one of the best investment references of the recent decade, Expected Returns: An Investors Guide to Harvesting Market Rewards by Antti Ilmanen.</li>
+</ul>
+</section>
+<section id="time-series-1" class="level3">
+<h3 class="anchored" data-anchor-id="time-series-1">Time Series</h3>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/tseries/index.html">tseries</a> - Time Series Analysis and Computational Finance.</li>
+<li><a href="https://cran.r-project.org/web/packages/fGarch/index.html">fGarch</a> - Rmetrics - Autoregressive Conditional Heteroskedastic Modelling.</li>
+<li><a href="https://cran.r-project.org/web/packages/timeSeries/index.html">timeSeries</a> - Rmetrics - Financial Time Series Objects.</li>
+<li><a href="https://github.com/alexiosg/rugarch">rugarch</a> - Univariate GARCH Models.</li>
+<li><a href="https://github.com/alexiosg/rmgarch">rmgarch</a> - Multivariate GARCH Models.</li>
+<li><a href="https://github.com/edgararuiz/tidypredict">tidypredict</a> - Run predictions inside the database <a href="https://tidypredict.netlify.com/" class="uri">https://tidypredict.netlify.com/</a>.</li>
+<li><a href="https://github.com/business-science/tidyquant">tidyquant</a> - Bringing financial analysis to the tidyverse.</li>
+<li><a href="https://github.com/business-science/timetk">timetk</a> - A toolkit for working with time series in R.</li>
+<li><a href="https://github.com/business-science/tibbletime">tibbletime</a> - Built on top of the tidyverse, tibbletime is an extension that allows for the creation of time aware tibbles through the setting of a time index.</li>
+<li><a href="https://github.com/matrix-profile-foundation/matrixprofile">matrixprofile</a> - Time series data mining library built on top of the novel Matrix Profile data structure and algorithms.</li>
+<li><a href="https://github.com/AlbertoAlmuinha/garchmodels">garchmodels</a> - A parsnip backend for GARCH models.</li>
+</ul>
+</section>
+<section id="calendars-1" class="level3">
+<h3 class="anchored" data-anchor-id="calendars-1">Calendars</h3>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/timeDate/index.html">timeDate</a> - Chronological and Calendar Objects</li>
+<li><a href="https://github.com/wilsonfreitas/R-bizdays">bizdays</a> - Business days calculations and utilities</li>
+</ul>
+</section>
+</section>
+<section id="matlab" class="level2">
+<h2 class="anchored" data-anchor-id="matlab">Matlab</h2>
+<section id="frameworks" class="level3">
+<h3 class="anchored" data-anchor-id="frameworks">FrameWorks</h3>
+<ul>
+<li><a href="https://github.com/yutiansut/quantaxis">QUANTAXIS</a> - Integrated Quantitative Toolbox with Matlab.</li>
+</ul>
+</section>
+</section>
+<section id="julia" class="level2">
+<h2 class="anchored" data-anchor-id="julia">Julia</h2>
+<ul>
+<li><a href="https://github.com/pazzo83/QuantLib.jl">QuantLib.jl</a> - Quantlib implementation in pure Julia.</li>
+<li><a href="https://github.com/aviks/Ito.jl">Ito.jl</a> - A Julia package for quantitative finance.</li>
+<li><a href="https://github.com/femtotrader/TALib.jl">TALib.jl</a> - A Julia wrapper for TA-Lib.</li>
+<li><a href="https://github.com/femtotrader/IncTA.jl">IncTA.jl</a> - Julia Incremental Technical Analysis Indicators</li>
+<li><a href="https://github.com/JuliaComputing/Miletus.jl">Miletus.jl</a> - A financial contract definition, modeling language, and valuation framework.</li>
+<li><a href="https://github.com/dysonance/Temporal.jl">Temporal.jl</a> - Flexible and efficient time series class &amp; methods.</li>
+<li><a href="https://github.com/dysonance/Indicators.jl">Indicators.jl</a> - Financial market technical analysis &amp; indicators on top of Temporal.</li>
+<li><a href="https://github.com/dysonance/Strategems.jl">Strategems.jl</a> - Quantitative systematic trading strategy development and backtesting.</li>
+<li><a href="https://github.com/JuliaStats/TimeSeries.jl">TimeSeries.jl</a> - Time series toolkit for Julia.</li>
+<li><a href="https://github.com/JuliaQuant/MarketTechnicals.jl">MarketTechnicals.jl</a> - Technical analysis of financial time series on top of TimeSeries.</li>
+<li><a href="https://github.com/JuliaQuant/MarketData.jl">MarketData.jl</a> - Time series market data.</li>
+<li><a href="https://github.com/femtotrader/TimeFrames.jl">TimeFrames.jl</a> - A Julia library that defines TimeFrame (essentially for resampling TimeSeries).</li>
+<li><a href="https://github.com/JuliaData/DataFrames.jl">DataFrames.jl</a> - In-memory tabular data in Julia</li>
+<li><a href="https://github.com/xKDR/TSFrames.jl">TSFrames.jl</a> - Handle timeseries data on top of the powerful and mature DataFrames.jl</li>
+</ul>
+</section>
+<section id="java" class="level2">
+<h2 class="anchored" data-anchor-id="java">Java</h2>
+<ul>
+<li><a href="http://strata.opengamma.io/">Strata</a> - Modern open-source analytics and market risk library designed and written in Java.</li>
+<li><a href="http://www.jquantlib.org">JQuantLib</a> - JQuantLib is a free, open-source, comprehensive framework for quantitative finance, written in 100% Java.</li>
+<li><a href="http://finmath.net">finmath.net</a> - Java library with algorithms and methodologies related to mathematical finance.</li>
+<li><a href="https://github.com/lsgro/quantcomponents">quantcomponents</a> - Free Java components for Quantitative Finance and Algorithmic Trading.</li>
+<li><a href="https://lakshmidrip.github.io/DRIP">DRIP</a> - Fixed Income, Asset Allocation, Transaction Cost Analysis, XVA Metrics Libraries.</li>
+<li><a href="https://github.com/ta4j/ta4j">ta4j</a> - A Java library for technical analysis.</li>
+</ul>
+</section>
+<section id="javascript" class="level2">
+<h2 class="anchored" data-anchor-id="javascript">JavaScript</h2>
+<ul>
+<li><a href="https://github.com/ebradyjobory/finance.js">finance.js</a> - A JavaScript library for common financial calculations.</li>
+<li><a href="https://github.com/lequant40/portfolio_allocation_js">portfolio-allocation</a> - PortfolioAllocation is a JavaScript library designed to help constructing financial portfolios made of several assets: bonds, commodities, cryptocurrencies, currencies, exchange traded funds (ETFs), mutual funds, stocks…</li>
+<li><a href="https://github.com/ghostfolio/ghostfolio">Ghostfolio</a> - Wealth management software to keep track of financial assets like stocks, ETFs or cryptocurrencies and make solid, data-driven investment decisions.</li>
+<li><a href="https://github.com/cinar/indicatorts">IndicatorTS</a> - Indicator is a TypeScript module providing various stock technical analysis indicators, strategies, and a backtest framework for trading.</li>
+<li><a href="https://github.com/ccxt/ccxt">ccxt</a> - A JavaScript / Python / PHP cryptocurrency trading API with support for more than 100 bitcoin/altcoin exchanges.</li>
+<li><a href="https://github.com/CompendiumFi/PENDAX-SDK">PENDAX</a> - Javascript SDK for Trading/Data API and Websockets for FTX, FTXUS, OKX, Bybit, &amp; More.</li>
+</ul>
+<section id="data-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="data-visualization">Data Visualization</h3>
+<ul>
+<li><a href="https://github.com/yutiansut/QUANTAXIS_Webkit">QUANTAXIS_Webkit</a> - An awesome visualization center based on quantaxis.</li>
+</ul>
+</section>
+</section>
+<section id="haskell" class="level2">
+<h2 class="anchored" data-anchor-id="haskell">Haskell</h2>
+<ul>
+<li><a href="https://github.com/boundedvariation/quantfin">quantfin</a> - quant finance in pure haskell.</li>
+<li><a href="https://github.com/MarcusRainbow/Haxcel">Haxcel</a> - Excel Addin for Haskell.</li>
+<li><a href="https://github.com/MarcusRainbow/Ffinar">Ffinar</a> - A financial maths library in Haskell.</li>
+</ul>
+</section>
+<section id="scala" class="level2">
+<h2 class="anchored" data-anchor-id="scala">Scala</h2>
+<ul>
+<li><a href="https://github.com/choucrifahed/quantscale">QuantScale</a> - Scala Quantitative Finance Library.</li>
+<li><a href="https://github.com/frankcash/Scala-Quant">Scala Quant</a> - Scala library for working with stock data from IFTTT recipes or Google Finance.</li>
+</ul>
+</section>
+<section id="ruby" class="level2">
+<h2 class="anchored" data-anchor-id="ruby">Ruby</h2>
+<ul>
+<li><a href="https://github.com/unageanu/jiji2">Jiji</a> - Open Source Forex algorithmic trading framework using OANDA REST API.</li>
+</ul>
+</section>
+<section id="elixirerlang" class="level2">
+<h2 class="anchored" data-anchor-id="elixirerlang">Elixir/Erlang</h2>
+<ul>
+<li><a href="https://github.com/fremantle-capital/tai">Tai</a> - Open Source composable, real time, market data and trade execution toolkit.</li>
+<li><a href="https://github.com/fremantle-industries/workbench">Workbench</a> - From Idea to Execution - Manage your trading operation across a globally distributed cluster</li>
+<li><a href="https://github.com/fremantle-industries/prop">Prop</a> - An open and opinionated trading platform using productive &amp; familiar open source libraries and tools for strategy research, execution and operation.</li>
+</ul>
+</section>
+<section id="golang" class="level2">
+<h2 class="anchored" data-anchor-id="golang">Golang</h2>
+<ul>
+<li><a href="https://github.com/stellar/kelp">Kelp</a> - Kelp is an open-source Golang algorithmic cryptocurrency trading bot that runs on centralized exchanges and Stellar DEX (command-line usage and desktop GUI).</li>
+<li><a href="https://github.com/alpacahq/marketstore">marketstore</a> - DataFrame Server for Financial Timeseries Data.</li>
+<li><a href="https://github.com/cinar/indicator">IndicatorGo</a> - IndicatorGo is a Golang module providing various stock technical analysis indicators, strategies, and a backtest framework for trading.</li>
+</ul>
+</section>
+<section id="cpp" class="level2">
+<h2 class="anchored" data-anchor-id="cpp">CPP</h2>
+<ul>
+<li><a href="https://github.com/rburkholder/trade-frame">TradeFrame</a> - C++ 17 based framework/library (with sample applications) for testing options based automated trading ideas using DTN IQ real time data feed and Interactive Brokers (TWS API) for trade execution. Comes with built-in <a href="https://github.com/rburkholder/trade-frame/tree/master/lib/TFOptions">Option Greeks/IV</a> calculation library.</li>
+</ul>
+</section>
+<section id="frameworks-1" class="level2">
+<h2 class="anchored" data-anchor-id="frameworks-1">Frameworks</h2>
+<ul>
+<li><a href="https://www.quantlib.org">QuantLib</a> - The QuantLib project is aimed at providing a comprehensive software framework for quantitative finance.
+<ul>
+<li><a href="http://www.jquantlib.org">JQuantLib</a> - Java port.</li>
+<li><a href="http://dirk.eddelbuettel.com/code/rquantlib.html">RQuantLib</a> - R port.</li>
+<li><a href="https://www.quantlib.org/quantlibaddin/">QuantLibAddin</a> - Excel support.</li>
+<li><a href="https://www.quantlib.org/quantlibxl/">QuantLibXL</a> - Excel support.</li>
+<li><a href="https://github.com/amaggiulli/qlnet">QLNet</a> - .Net port.</li>
+<li><a href="https://github.com/enthought/pyql">PyQL</a> - Python port.</li>
+<li><a href="https://github.com/pazzo83/QuantLib.jl">QuantLib.jl</a> - Julia port.</li>
+<li><a href="https://quantlib-python-docs.readthedocs.io/">QuantLib-Python Documentation</a> - Documentation for the Python bindings for the QuantLib library</li>
+<li><a href="https://github.com/auto-differentiation/quantlib-xad">QuantLib with Automatic Differention enabled</a> - Integration of Automatic Differentiation with the QuantLib library</li>
+</ul></li>
+<li><a href="https://ta-lib.org">TA-Lib</a> - perform technical analysis of financial market data.
+<ul>
+<li><a href="https://github.com/TA-Lib/ta-lib-python">ta-lib-python</a></li>
+<li><a href="https://github.com/TA-Lib/ta-lib">ta-lib</a></li>
+</ul></li>
+<li><a href="https://portfoliooptimizer.io/">Portfolio Optimizer</a> - Portfolio Optimizer is a Web API for portfolio analysis and optimization.</li>
+</ul>
+</section>
+<section id="csharp" class="level2">
+<h2 class="anchored" data-anchor-id="csharp">CSharp</h2>
+<ul>
+<li><a href="https://github.com/QuantConnect/Lean">QuantConnect</a> - Lean Engine is an open-source fully managed C# algorithmic trading engine built for desktop and cloud usage.</li>
+<li><a href="https://github.com/StockSharp/StockSharp">StockSharp</a> - Algorithmic trading and quantitative trading open source platform to develop trading robots (stock markets, forex, crypto, bitcoins, and options).</li>
+<li><a href="https://github.com/NVentimiglia/TDAmeritrade.DotNetCore">TDAmeritrade.DotNetCore</a> - Free, open-source .NET Client for the TD Ameritrade Trading Platform. Helps developers integrate TD Ameritrade API into custom trading solutions.</li>
+</ul>
+</section>
+<section id="rust" class="level2">
+<h2 class="anchored" data-anchor-id="rust">Rust</h2>
+<ul>
+<li><a href="https://github.com/MarcusRainbow/QuantMath">QuantMath</a> - Financial maths library for risk-neutral pricing and risk</li>
+<li><a href="https://github.com/barter-rs/barter-rs">Barter</a> - Open-source Rust framework for building event-driven live-trading &amp; backtesting systems</li>
+<li><a href="https://github.com/MathisWellmann/lfest-rs">LFEST</a> - Simulated perpetual futures exchange to trade your strategy against.</li>
+<li><a href="https://github.com/MathisWellmann/trade_aggregation-rs">TradeAggregation</a> - Aggregate trades into user-defined candles using information driven rules.</li>
+<li><a href="https://github.com/MathisWellmann/sliding_features-rs">SlidingFeatures</a> - Chainable tree-like sliding windows for signal processing and technical analysis.</li>
+<li><a href="https://github.com/avhz/RustQuant">RustQuant</a> - Quantitative finance library written in Rust.</li>
+<li><a href="https://github.com/Nnamdi-sys/finalytics">finalytics</a> - A rust library for financial data analysis.</li>
+</ul>
+</section>
+<section id="reproducing-works-training-books" class="level2">
+<h2 class="anchored" data-anchor-id="reproducing-works-training-books">Reproducing Works, Training &amp; Books</h2>
+<ul>
+<li><a href="https://github.com/MarcosCarreira/DermanPapers">Derman Papers</a> - Notebooks that replicate original quantitative finance papers from Emanuel Derman.</li>
+<li><a href="https://www.ml-quant.com/">ML-Quant</a> - Top Quant resources like ArXiv (sanity), SSRN, RePec, Journals, Podcasts, Videos, and Blogs.</li>
+<li><a href="https://github.com/jasonstrimpel/volatility-trading">volatility-trading</a> - A complete set of volatility estimators based on Euan Sinclair’s Volatility Trading.</li>
+<li><a href="https://github.com/paulperry/quant">quant</a> - Quantitative Finance and Algorithmic Trading exhaust; mostly ipython notebooks based on Quantopian, Zipline, or Pandas.</li>
+<li><a href="https://github.com/rsvp/fecon235">fecon235</a> - Open source project for software tools in financial economics. Many jupyter notebook to verify theoretical ideas and practical methods interactively.</li>
+<li><a href="https://github.com/LongOnly/Quantitative-Notebooks">Quantitative-Notebooks</a> - Educational notebooks on quantitative finance, algorithmic trading, financial modelling and investment strategy</li>
+<li><a href="https://quantecon.org/">QuantEcon</a> - Lecture series on economics, finance, econometrics and data science; QuantEcon.py, QuantEcon.jl, notebooks</li>
+<li><a href="https://github.com/Finance-Hub/FinanceHub">FinanceHub</a> - Resources for Quantitative Finance</li>
+<li><a href="https://github.com/dedwards25/Python_Option_Pricing">Python_Option_Pricing</a> - An libary to price financial options written in Python. Includes: Black Scholes, Black 76, Implied Volatility, American, European, Asian, Spread Options.</li>
+<li><a href="https://github.com/jpmorganchase/python-training">python-training</a> - J.P. Morgan’s Python training for business analysts and traders.</li>
+<li><a href="https://github.com/LastAncientOne/Stock_Analysis_For_Quant">Stock_Analysis_For_Quant</a> - Different Types of Stock Analysis in Excel, Matlab, Power BI, Python, R, and Tableau.</li>
+<li><a href="https://github.com/chrisconlan/algorithmic-trading-with-python">algorithmic-trading-with-python</a> - Source code for Algorithmic Trading with Python (2020) by Chris Conlan.</li>
+<li><a href="https://github.com/cerlymarco/MEDIUM_NoteBook">MEDIUM_NoteBook</a> - Repository containing notebooks of <a href="https://github.com/cerlymarco">cerlymarco</a>’s posts on Medium.</li>
+<li><a href="https://github.com/PythonCharmers/QuantFinance">QuantFinance</a> - Training materials in quantitative finance.</li>
+<li><a href="https://github.com/mgroncki/IPythonScripts">IPythonScripts</a> - Tutorials about Quantitative Finance in Python and QuantLib: Pricing, xVAs, Hedging, Portfolio Optimisation, Machine Learning and Deep Learning.</li>
+<li><a href="https://github.com/LechGrzelak/Computational-Finance-Course">Computational-Finance-Course</a> - Materials for the course of Computational Finance.</li>
+<li><a href="https://github.com/emoen/Machine-Learning-for-Asset-Managers">Machine-Learning-for-Asset-Managers</a> - Implementation of code snippets, exercises and application to live data from Machine Learning for Asset Managers (Elements in Quantitative Finance) written by Prof.&nbsp;Marcos López de Prado.</li>
+<li><a href="https://github.com/PacktPublishing/Python-for-Finance-Cookbook">Python-for-Finance-Cookbook</a> - Python for Finance Cookbook, published by Packt.</li>
+<li><a href="https://github.com/ysaporito/modelos_vol_derivativos">modelos_vol_derivativos</a> - “Modelos de Volatilidade para Derivativos” book’s Jupyter notebooks</li>
+<li><a href="https://github.com/enricoschumann/NMOF">NMOF</a> - Functions, examples and data from the first and the second edition of “Numerical Methods and Optimization in Finance” by M. Gilli, D. Maringer and E. Schumann (2019, ISBN:978-0128150658).</li>
+<li><a href="https://github.com/yhilpisch/py4fi2nd">py4fi2nd</a> - Jupyter Notebooks and code for Python for Finance (2nd ed., O’Reilly) by Yves Hilpisch.</li>
+<li><a href="https://github.com/yhilpisch/aiif">aiif</a> - Jupyter Notebooks and code for the book Artificial Intelligence in Finance (O’Reilly) by Yves Hilpisch.</li>
+<li><a href="https://github.com/yhilpisch/py4at">py4at</a> - Jupyter Notebooks and code for the book Python for Algorithmic Trading (O’Reilly) by Yves Hilpisch.</li>
+<li><a href="https://github.com/yhilpisch/dawp">dawp</a> - Jupyter Notebooks and code for Derivatives Analytics with Python (Wiley Finance) by Yves Hilpisch.</li>
+<li><a href="https://github.com/yhilpisch/dx">dx</a> - DX Analytics | Financial and Derivatives Analytics with Python.</li>
+<li><a href="https://github.com/LechGrzelak/QuantFinanceBook">QuantFinanceBook</a> - Quantitative Finance book.</li>
+<li><a href="https://github.com/ryanmccrickerd/rough_bergomi">rough_bergomi</a> - A Python implementation of the rough Bergomi model.</li>
+<li><a href="https://github.com/ryanmccrickerd/frh-fx">frh-fx</a> - A python implementation of the fast-reversion Heston model of Mechkov for FX purposes.</li>
+<li><a href="https://github.com/euclidjda/value-investing-studies">Value Investing Studies</a> - A collection of data analysis studies that examine the performance and characteristics of value investing over long periods of time.</li>
+<li><a href="https://github.com/firmai/machine-learning-asset-management">Machine Learning Asset Management</a> - Machine Learning in Asset Management (by <span class="citation" data-cites="firmai">@firmai</span>).</li>
+<li><a href="https://github.com/LastAncientOne/Deep-Learning-Machine-Learning-Stock">Deep Learning Machine Learning Stock</a> - Deep Learning and Machine Learning stocks represent a promising long-term or short-term opportunity for investors and traders.</li>
+<li><a href="https://github.com/jo-cho/Technical_Analysis_and_Feature_Engineering">Technical Analysis and Feature Engineering</a> - Feature Engineering and Feature Importance of Machine Learning in Financial Market.</li>
+<li><a href="https://github.com/differential-machine-learning/notebooks">Differential Machine Learning and Axes that matter by Brian Huge and Antoine Savine</a> - Implement, demonstrate, reproduce and extend the results of the Risk articles ‘Differential Machine Learning’ (2020) and ‘PCA with a Difference’ (2021) by Huge and Savine, and cover implementation details left out from the papers.</li>
+<li><a href="https://github.com/robcarver17/systematictradingexamples">systematictradingexamples</a> - Examples of code related to book <a href="www.systematictrading.org">Systematic Trading</a> and <a href="http://qoppac.blogspot.com">blog</a></li>
+<li><a href="https://github.com/robcarver17/pysystemtrade_examples">pysystemtrade_examples</a> - Examples using pysystemtrade for Robert Carver’s <a href="http://qoppac.blogspot.com">blog</a>.</li>
+<li><a href="https://github.com/mfrdixon/ML_Finance_Codes">ML_Finance_Codes</a> - Machine Learning in Finance: From Theory to Practice Book</li>
+<li><a href="https://github.com/packtpublishing/hands-on-machine-learning-for-algorithmic-trading">Hands-On Machine Learning for Algorithmic Trading</a> - Hands-On Machine Learning for Algorithmic Trading, published by Packt</li>
+<li><a href="https://github.com/financialnoob/misc">financialnoob-misc</a> - Codes from <span class="citation" data-cites="financialnoob">@financialnoob</span>’s posts</li>
+<li><a href="https://github.com/deltaray-io/strategy-library">MesoSim Options Trading Strategy Library</a> - Free and public Options Trading strategy library for MesoSim.</li>
+<li><a href="https://github.com/lingyixu/Quant-Finance-With-Python-Code">Quant-Finance-With-Python-Code</a> - Repo for code examples in Quantitative Finance with Python by Chris Kelliher</li>
+<li><a href="https://github.com/JoaoJungblut/QuantFinanceTraining">QuantFinanceTraining</a> - This repository contains codes that were executed during my training in the CQF (Certificate in Quantitative Finance). The codes are organized by class, facilitating navigation and reference.</li>
+<li><a href="https://github.com/YannickKae/Statistical-Learning-based-Portfolio-Optimization">Statistical-Learning-based-Portfolio-Optimization</a> - This R Shiny App utilizes the Hierarchical Equal Risk Contribution (HERC) approach, a modern portfolio optimization method developed by Raffinot (2018).</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
