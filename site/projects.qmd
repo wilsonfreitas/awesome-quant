@@ -16,13 +16,12 @@ Compilation of projects providing access to the date of last commit or publicati
 #| tbl-cap: Projects
 #| results: asis
 
-library(tidyverse)
-
-df <- readr::read_csv("projects.csv")
-dt <- df |>
-  filter(!is.na(last_commit)) |>
-  mutate(project=paste0("<a href='", url, "'>", project, "</a>")) |>
-  select(project, section, last_commit) |>
-  arrange(desc(last_commit), section)
-htmltools::tagList(DT::datatable(dt, list(pageLength = 50), escape = FALSE))
+df <- read.csv("projects.csv")
+df$last_commit <- as.Date(df$last_commit)
+df <- df[!is.na(df$last_commit),]
+df$project <- paste0("<a href='", df$url, "'>", df$project, "</a>")
+df <- df[,c("project", "section", "last_commit")]
+df <- df[order(df$last_commit, decreasing = TRUE),]
+rownames(df) <- NULL
+htmltools::tagList(DT::datatable(df, list(pageLength = 50), escape = FALSE))
 ```
