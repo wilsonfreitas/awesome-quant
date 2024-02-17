@@ -65,7 +65,7 @@ jobs:
     #       any::DT
     - name: Run quarto render
       run: |
-        quarto render ./site/
+        quarto render site/
     - name: Deploy pages
       uses: peaceiris/actions-gh-pages@v3
       with:
