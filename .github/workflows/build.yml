@@ -72,7 +72,7 @@ jobs:
       uses: quarto-dev/quarto-actions/publish@v2
       with:
         target: gh-pages
-        render: false
+        render: true
         path: "site"
     # - name: Deploy pages
     #   uses: peaceiris/actions-gh-pages@v3
