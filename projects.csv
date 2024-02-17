@@ -78,7 +78,7 @@ catalyst,Python > Trading & Backtesting,2021-09-22,https://github.com/enigmampc/
 quantstats,Python > Trading & Backtesting,2023-07-06,https://github.com/ranaroussi/quantstats,"Portfolio analytics for quants, written in Python",True,False,ranaroussi/quantstats
 qtpylib,Python > Trading & Backtesting,2021-03-24,https://github.com/ranaroussi/qtpylib,"QTPyLib, Pythonic Algorithmic Trading <http://qtpylib.io>",True,False,ranaroussi/qtpylib
 Quantdom,Python > Trading & Backtesting,2019-03-12,https://github.com/constverum/Quantdom,Python-based framework for backtesting trading strategies & analyzing financial markets [GUI :neckbeard:],True,False,constverum/Quantdom
-freqtrade,Python > Trading & Backtesting,2024-02-16,https://github.com/freqtrade/freqtrade,"Free, open source crypto trading bot",True,False,freqtrade/freqtrade
+freqtrade,Python > Trading & Backtesting,2024-02-17,https://github.com/freqtrade/freqtrade,"Free, open source crypto trading bot",True,False,freqtrade/freqtrade
 algorithmic-trading-with-python,Python > Trading & Backtesting,2021-06-01,https://github.com/chrisconlan/algorithmic-trading-with-python,"Free `pandas` and `scikit-learn` resources for trading simulation, backtesting, and machine learning on financial data.",True,False,chrisconlan/algorithmic-trading-with-python
 DeepDow,Python > Trading & Backtesting,2024-01-24,https://github.com/jankrepl/deepdow,Portfolio optimization with deep learning,True,False,jankrepl/deepdow
 Qlib,Python > Trading & Backtesting,2023-11-21,https://github.com/microsoft/qlib,"An AI-oriented Quantitative Investment Platform by Microsoft. Full ML pipeline of data processing, model training, back-testing; and covers the entire chain of quantitative investment: alpha seeking, risk modeling, portfolio optimization, and order execution.",True,False,microsoft/qlib
@@ -200,7 +200,7 @@ expy,Python > Excel Integration,,http://www.bnikolic.co.uk/expy/expy.html,"The E
 pyxll,Python > Excel Integration,,https://www.pyxll.com,PyXLL is an Excel add-in that enables you to extend Excel using nothing but Python code.,False,False,
 D-Tale,Python > Visualization,2024-01-31,https://github.com/man-group/dtale,Visualizer for pandas dataframes and xarray datasets.,True,False,man-group/dtale
 mplfinance,Python > Visualization,2024-02-08,https://github.com/matplotlib/mplfinance,"matplotlib utilities for the visualization, and visual analysis, of financial data.",True,False,matplotlib/mplfinance
-finplot,Python > Visualization,2024-02-09,https://github.com/highfestiva/finplot,Performant and effortless finance plotting for Python.,True,False,highfestiva/finplot
+finplot,Python > Visualization,2024-02-17,https://github.com/highfestiva/finplot,Performant and effortless finance plotting for Python.,True,False,highfestiva/finplot
 finvizfinance,Python > Visualization,2023-11-02,https://github.com/lit26/finvizfinance,Finviz analysis python library.,True,False,lit26/finvizfinance
 market-analy,Python > Visualization,2023-12-06,https://github.com/maread99/market_analy,Analysis and interactive charting using [market-prices](https://github.com/maread99/market_prices) and bqplot.,True,False,maread99/market_analy
 xts,R > Numerical Libraries & Data Structures,2024-02-06,https://github.com/joshuaulrich/xts,"eXtensible Time Series: Provide for uniform handling of R's different time-based data classes by extending zoo, maximizing native format information preservation and allowing for user level customization and extension, while simplifying cross-class interoperability.",True,False,joshuaulrich/xts
