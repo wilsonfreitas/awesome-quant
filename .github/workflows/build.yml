@@ -2,7 +2,7 @@ name: Update site
 
 on:
   schedule:
-    - cron: "* 1 * * *"
+    - cron: "0 1 * * *"
   push:
     branches: [ master ]
 
@@ -38,9 +38,11 @@ jobs:
       with:
         version: 1.4.550
     - name: Render site
-      uses: quarto-dev/quarto-actions/render@v2
-      with:
-        path: site
+      run: |
+        quarto render site
+      # uses: quarto-dev/quarto-actions/render@v2
+      # with:
+      #   path: site
     - name: Deploy pages
       uses: peaceiris/actions-gh-pages@v3
       with:
