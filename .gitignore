@@ -3,3 +3,4 @@ env.ps1
 /.quarto/
 github.ipynb
 build.sh
+site/docs
