@@ -39,7 +39,7 @@ jobs:
         version: 1.4.550
     - name: Render site
       run: |
-        ls -l site/docs
+        quarto render site
     - name: Check site
       run: |
         ls -l site/docs
