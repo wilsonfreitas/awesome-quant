@@ -39,7 +39,9 @@ jobs:
         version: 1.4.550
     - name: Render site
       run: |
-        quarto render site
+        ls -l site/docs
+    - name: Check site
+      run: |
         ls -l site/docs
     - name: Deploy pages
       uses: peaceiris/actions-gh-pages@v3
