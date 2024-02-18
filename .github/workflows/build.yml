@@ -2,7 +2,7 @@ name: Update site
 
 on:
   schedule:
-    - cron: "* 0 * * *"
+    - cron: "* 1 * * *"
   push:
     branches: [ master ]
 
@@ -37,9 +37,12 @@ jobs:
       uses: quarto-dev/quarto-actions/setup@v2
       with:
         version: 1.4.550
-    - name: Publish to GitHub Pages (and render)
-      uses: quarto-dev/quarto-actions/publish@v2
+    - name: Render site
+      uses: quarto-dev/quarto-actions/render@v2
       with:
-        target: gh-pages
-        render: true
-        path: "site"
+        path: site
+    - name: Deploy pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: site/docs
