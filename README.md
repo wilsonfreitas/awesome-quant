@@ -64,6 +64,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [AbsBox](https://github.com/yellowbean/AbsBox) - A Python based library to model cashflow for structured product like Asset-backed securities (ABS) and Mortgage-backed securities (MBS).
 - [Intrinsic-Value-Calculator](https://github.com/akashaero/Intrinsic-Value-Calculator) - A Python tool for quick calculations of a stock's fair value using Discounted Cash Flow analysis.
 - [Kelly-Criterion](https://github.com/deltaray-io/kelly-criterion) - Kelly Criterion implemented in Python to size portfolios based on J. L. Kelly Jr's formula.
+- [rateslib](https://github.com/attack68/rateslib) - A fixed income library for pricing bonds and bond futures, and derivatives such as IRS, cross-currency and FX swaps.
 
 ### Indicators
 
@@ -525,3 +526,4 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Quant-Finance-With-Python-Code](https://github.com/lingyixu/Quant-Finance-With-Python-Code) - Repo for code examples in Quantitative Finance with Python by Chris Kelliher
 - [QuantFinanceTraining](https://github.com/JoaoJungblut/QuantFinanceTraining) - This repository contains codes that were executed during my training in the CQF (Certificate in Quantitative Finance). The codes are organized by class, facilitating navigation and reference.
 - [Statistical-Learning-based-Portfolio-Optimization](https://github.com/YannickKae/Statistical-Learning-based-Portfolio-Optimization) - This R Shiny App utilizes the Hierarchical Equal Risk Contribution (HERC) approach, a modern portfolio optimization method developed by Raffinot (2018).
+- [book_irds3](https://github.com/attack68/book_irds3) - Code repository for Pricing and Trading Interest Rate Derivatives.
