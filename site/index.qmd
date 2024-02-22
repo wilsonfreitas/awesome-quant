@@ -288,7 +288,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ### Financial Instruments and Pricing
 
-- [RQuantLib](http://dirk.eddelbuettel.com/code/rquantlib.html) - RQuantLib connects GNU R with QuantLib.
+- [RQuantLib](https://github.com/eddelbuettel/rquantlib) - RQuantLib connects GNU R with QuantLib.
 - [quantmod](https://cran.r-project.org/web/packages/quantmod/index.html) - Quantitative Financial Modelling Framework.
 - [Rmetrics](https://www.rmetrics.org) - The premier open source software solution for teaching and training quantitative finance.
   - [fAsianOptions](https://cran.r-project.org/web/packages/fAsianOptions/index.html) - EBM and Asian Option Valuation.
@@ -388,7 +388,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Java
 
 - [Strata](http://strata.opengamma.io/) - Modern open-source analytics and market risk library designed and written in Java.
-- [JQuantLib](http://www.jquantlib.org) - JQuantLib is a free, open-source, comprehensive framework for quantitative finance, written in 100% Java.
+- [JQuantLib](https://github.com/frgomes/jquantlib) - JQuantLib is a free, open-source, comprehensive framework for quantitative finance, written in 100% Java.
 - [finmath.net](http://finmath.net) - Java library with algorithms and methodologies related to mathematical finance.
 - [quantcomponents](https://github.com/lsgro/quantcomponents) - Free Java components for Quantitative Finance and Algorithmic Trading.
 - [DRIP](https://lakshmidrip.github.io/DRIP) - Fixed Income, Asset Allocation, Transaction Cost Analysis, XVA Metrics Libraries.
@@ -440,9 +440,9 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Frameworks
 
-- [QuantLib](https://www.quantlib.org) - The QuantLib project is aimed at providing a comprehensive software framework for quantitative finance.
-  - [JQuantLib](http://www.jquantlib.org) - Java port.
-  - [RQuantLib](http://dirk.eddelbuettel.com/code/rquantlib.html) - R port.
+- [QuantLib](https://github.com/lballabio/QuantLib) - The QuantLib project is aimed at providing a comprehensive software framework for quantitative finance.
+  - [JQuantLib](https://github.com/frgomes/jquantlib) - Java port.
+  - [RQuantLib](https://github.com/eddelbuettel/rquantlib) - R port.
   - [QuantLibAddin](https://www.quantlib.org/quantlibaddin/) - Excel support.
   - [QuantLibXL](https://www.quantlib.org/quantlibxl/) - Excel support.
   - [QLNet](https://github.com/amaggiulli/qlnet) - .Net port.
