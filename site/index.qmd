@@ -370,6 +370,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Julia
 
+- [Lucky.jl](https://github.com/oliviermilla/Lucky.jl) - Modular, asynchronous trading engine in pure Julia.
 - [QuantLib.jl](https://github.com/pazzo83/QuantLib.jl) - Quantlib implementation in pure Julia.
 - [Ito.jl](https://github.com/aviks/Ito.jl) - A Julia package for quantitative finance.
 - [TALib.jl](https://github.com/femtotrader/TALib.jl) - A Julia wrapper for TA-Lib.
