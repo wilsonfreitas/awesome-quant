@@ -522,3 +522,4 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [book_irds3](https://github.com/attack68/book_irds3) - Code repository for Pricing and Trading Interest Rate Derivatives.
 - [Autoencoder-Asset-Pricing-Models](https://github.com/RichardS0268/Autoencoder-Asset-Pricing-Models) - Reimplementation of Autoencoder Asset Pricing Models ([GKX, 2019](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3335536)).
 - [Finance](https://github.com/shashankvemuri/Finance) - 150+ quantitative finance Python programs to help you gather, manipulate, and analyze stock market data.
+- [101_formulaic_alphas](https://github.com/ram-ki/101_formulaic_alphas) - Implemention of [101 formulaic alphas](https://arxiv.org/ftp/arxiv/papers/1601/1601.00991.pdf) using qstrader.
