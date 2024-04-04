@@ -246,6 +246,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pandaSDMX](https://github.com/dr-leo/pandaSDMX) - Python package that implements SDMX 2.1 (ISO 17369:2013), a format for exchange of statistical data and metadata used by national statistical agencies, central banks, and international organisations.
 - [cif](https://github.com/LenkaV/CIF) - Python package that include few composite indicators, which summarize multidimensional relationships between individual economic indicators.
 - [finagg](https://github.com/theOGognf/finagg) - finagg is a Python package that provides implementations of popular and free financial APIs, tools for aggregating historical data from those APIs into SQL databases, and tools for transforming aggregated data into features useful for analysis and AI/ML.
+- [FinanceDatabase](https://github.com/JerBouma/FinanceDatabase) - This is a database of 300.000+ symbols containing Equities, ETFs, Funds, Indices, Currencies, Cryptocurrencies and Money Markets.
 
 ### Excel Integration
 
