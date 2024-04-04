@@ -63,6 +63,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [finta](https://github.com/peerchemist/finta) - Common financial technical analysis indicators implemented in Pandas.
 - [Tulipy](https://github.com/cirla/tulipy) - Financial Technical Analysis Indicator Library (Python bindings for [tulipindicators](https://github.com/TulipCharts/tulipindicators))
 - [lppls](https://github.com/Boulder-Investment-Technologies/lppls) - A Python module for fitting the [Log-Periodic Power Law Singularity (LPPLS)](https://en.wikipedia.org/wiki/Didier_Sornette#The_JLS_and_LPPLS_models) model.
+- [talipp](https://github.com/nardew/talipp) - Incremental technical analysis library for Python.
 
 ### Trading & Backtesting
 - [skfolio](https://github.com/skfolio/skfolio) - Python library for portfolio optimization built on top of scikit-learn. It provides a unified interface and sklearn compatible tools to build, tune and cross-validate portfolio models.
