@@ -1032,6 +1032,9 @@ HTMLWidgets.widget({
         updateColsSelected();
         updateCellsSelected();
       })
+      updateRowsSelected();
+      updateColsSelected();
+      updateCellsSelected();
     }
 
     var selMode = data.selection.mode, selTarget = data.selection.target;
