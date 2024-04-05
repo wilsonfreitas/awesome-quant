@@ -456,6 +456,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Frameworks
 
 - [QuantLib](https://github.com/lballabio/QuantLib) - The QuantLib project is aimed at providing a comprehensive software framework for quantitative finance.
+  - [QuantLibRisks](https://pypi.org/project/QuantLib-Risks/) - Fast risks with QuantLib in Python
+  - [QuantLibRisksCpp](https://github.com/auto-differentiation/QuantLib-Risks-Cpp) - Fast risks with QuantLib in C++
   - [JQuantLib](https://github.com/frgomes/jquantlib) - Java port.
   - [RQuantLib](https://github.com/eddelbuettel/rquantlib) - R port.
   - [QuantLibAddin](https://www.quantlib.org/quantlibaddin/) - Excel support.
@@ -464,7 +466,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
   - [PyQL](https://github.com/enthought/pyql) - Python port.
   - [QuantLib.jl](https://github.com/pazzo83/QuantLib.jl) - Julia port.
   - [QuantLib-Python Documentation](https://quantlib-python-docs.readthedocs.io/) - Documentation for the Python bindings for the QuantLib library
-  - [QuantLib with Automatic Differention enabled](https://github.com/auto-differentiation/quantlib-xad) - Integration of Automatic Differentiation with the QuantLib library
+
 - [TA-Lib](https://ta-lib.org) - perform technical analysis of financial market data.
   - [ta-lib-python](https://github.com/TA-Lib/ta-lib-python)
   - [ta-lib](https://github.com/TA-Lib/ta-lib)
