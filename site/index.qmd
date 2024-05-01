@@ -37,10 +37,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [QuantPy](https://github.com/jsmidt/QuantPy) - A framework for quantitative finance In python.
 - [Finance-Python](https://github.com/alpha-miner/Finance-Python) - Python tools for Finance.
 - [ffn](https://github.com/pmorissette/ffn) - A financial function library for Python.
-- [pynance](https://github.com/GriffinAustin/pynance) - Lightweight Python library for assembling and analysing financial data.
+- [pynance](https://github.com/GriffinAustin/pynance) - Lightweight Python library for assembling and analyzing financial data.
 - [tia](https://github.com/bpsmith/tia) - Toolkit for integration and analysis.
-- [hasura/base-python-dash](https://platform.hasura.io/hub/projects/hasura/base-python-dash) - Hasura quickstart to deploy Dash framework. Written on top of Flask, Plotly.js, and React.js, Dash is ideal for building data visualization apps with highly custom user interfaces in pure Python.
-- [hasura/base-python-bokeh](https://platform.hasura.io/hub/projects/hasura/base-python-bokeh) - Hasura quickstart to visualize data with bokeh library.
+- [hasura/base-python-dash](https://platform.hasura.io/hub/projects/hasura/base-python-dash) - Hasura quick start to deploy Dash framework. Written on top of Flask, Plotly.js, and React.js, Dash is ideal for building data visualization apps with highly custom user interfaces in pure Python.
+- [hasura/base-python-bokeh](https://platform.hasura.io/hub/projects/hasura/base-python-bokeh) - Hasura quick start to visualize data with bokeh library.
 - [pysabr](https://github.com/ynouri/pysabr) - SABR model Python implementation.
 - [FinancePy](https://github.com/domokane/FinancePy) - A Python Finance Library that focuses on the pricing and risk-management of Financial Derivatives, including fixed-income, equity, FX and credit derivatives.
 - [gs-quant](https://github.com/goldmansachs/gs-quant) - Python toolkit for quantitative finance
@@ -123,7 +123,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [bta-lib](https://github.com/mementum/bta-lib) - Technical Analysis library in pandas for backtesting algotrading and quantitative analysis.
 - [Stock-Prediction-Models](https://github.com/huseinzol05/Stock-Prediction-Models) - Gathers machine learning and deep learning models for Stock forecasting including trading bots and simulations.
 - [TuneTA](https://github.com/jmrichardson/tuneta) - TuneTA optimizes technical indicators using a distance correlation measure to a user defined target feature such as next day return.
-- [AutoTrader](https://github.com/kieran-mackle/AutoTrader) - A Python-based development platform for automated trading systems - from backtesting to optimisation to livetrading.
+- [AutoTrader](https://github.com/kieran-mackle/AutoTrader) - A Python-based development platform for automated trading systems - from backtesting to optimization to livetrading.
 - [fast-trade](https://github.com/jrmeier/fast-trade) - A library built with backtest portability and performance in mind for backtest trading strategies.
 - [qf-lib](https://github.com/quarkfin/qf-lib) - QF-Lib is a Python library that provides high quality tools for quantitative finance.
 - [tda-api](https://github.com/alexgolec/tda-api) - Gather data and trade equities, options, and ETFs via TDAmeritrade.
@@ -134,7 +134,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pytrendseries](https://github.com/rafa-rod/pytrendseries) - Detect trend in time series, drawdown, drawdown within a constant look-back window , maximum drawdown, time underwater.
 - [PyLOB](https://github.com/DrAshBooth/PyLOB) - Fully functioning fast Limit Order Book written in Python.
 - [PyBroker](https://github.com/edtechre/pybroker) - Algorithmic Trading with Machine Learning.
-- [OctoBot Script](https://github.com/Drakkar-Software/OctoBot-Script) - A quant framework to create cryptocurrencies strategies - from backtesting to optimisation to livetrading.
+- [OctoBot Script](https://github.com/Drakkar-Software/OctoBot-Script) - A quant framework to create cryptocurrencies strategies - from backtesting to optimization to livetrading.
 - [hftbacktest](https://github.com/nkaz001/hftbacktest) - A high-frequency trading and market-making backtesting tool accounts for limit orders, queue positions, and latencies, utilizing full tick data for trades and order books.
 - [vnpy](https://github.com/vnpy/vnpy) - VeighNa is a Python-based open source quantitative trading system development framework.
 - [Intelligent Trading Bot](https://github.com/asavinov/intelligent-trading-bot) - Automatically generating signals and trading based on machine learning and feature engineering
@@ -151,7 +151,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [visualize-wealth](https://github.com/benjaminmgross/visualize-wealth) - Portfolio construction and quantitative analysis.
 - [VisualPortfolio](https://github.com/wegamekinglc/VisualPortfolio) - This tool is used to visualize the performance of a portfolio.
 - [universal-portfolios](https://github.com/Marigold/universal-portfolios) - Collection of algorithms for online portfolio selection.
-- [FinQuant](https://github.com/fmilthaler/FinQuant) - A program for financial portfolio management, analysis and optimisation.
+- [FinQuant](https://github.com/fmilthaler/FinQuant) - A program for financial portfolio management, analysis and optimization.
 - [Empyrial](https://github.com/ssantoshp/Empyrial) - Portfolio's risk and performance analytics and returns predictions.
 - [risktools](https://github.com/bbcho/risktools-dev) - Risk tools for use within the crude and crude products trading space with partial implementation of R's PerformanceAnalytics.
 - [Riskfolio-Lib](https://github.com/dcajasn/Riskfolio-Lib) - Portfolio Optimization and Quantitative Strategic Asset Allocation in Python.
