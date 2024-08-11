@@ -35,8 +35,6 @@ jobs:
           any::DT
     - name: setup Quarto
       uses: quarto-dev/quarto-actions/setup@v2
-      with:
-        version: 1.4.550
     - name: Render site
       run: |
         quarto render site
