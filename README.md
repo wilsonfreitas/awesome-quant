@@ -154,8 +154,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ### Risk Analysis
 
-- [QuantLibRisks](https://pypi.org/project/QuantLib-Risks/) - Fast risks with QuantLib
-- [XAD](https://pypi.org/project/xad/) - Automatic Differentation (AAD) Library
+- [QuantLibRisks](https://github.com/auto-differentiation/QuantLib-Risks-Py) - Fast risks with QuantLib
+- [XAD](https://github.com/auto-differentiation/xad-py) - Automatic Differentation (AAD) Library
 - [pyfolio](https://github.com/quantopian/pyfolio) - Portfolio and risk analytics in Python.
 - [empyrical](https://github.com/quantopian/empyrical) - Common financial risk and performance metrics.
 - [fecon235](https://github.com/rsvp/fecon235) - Computational tools for financial economics include: Gaussian Mixture model of leptokurtotic risk, adaptive Boltzmann portfolios.
