@@ -30,6 +30,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [numpy](https://www.numpy.org) - NumPy is the fundamental package for scientific computing with Python.
 - [scipy](https://www.scipy.org) - SciPy (pronounced “Sigh Pie”) is a Python-based ecosystem of open-source software for mathematics, science, and engineering.
 - [pandas](https://pandas.pydata.org) - pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
+- [polars](https://docs.pola.rs/) - Polars is a blazingly fast DataFrame library for manipulating structured data.
 - [quantdsl](https://github.com/johnbywater/quantdsl) - Domain specific language for quantitative analytics in finance and trading.
 - [statistics](https://docs.python.org/3/library/statistics.html) - Builtin Python library for all basic statistical calculations.
 - [sympy](https://www.sympy.org/) - SymPy is a Python library for symbolic mathematics.
@@ -149,9 +150,12 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Intelligent Trading Bot](https://github.com/asavinov/intelligent-trading-bot) - Automatically generating signals and trading based on machine learning and feature engineering
 - [fastquant](https://github.com/enzoampil/fastquant) - fastquant allows you to easily backtest investment strategies with as few as 3 lines of python code.
 - [nautilus_trader](https://github.com/nautechsystems/nautilus_trader) - A high-performance algorithmic trading platform and event-driven backtester.
+- [YABTE](https://github.com/bsdz/yabte) - Yet Another (Python) BackTesting Engine.
 
 ### Risk Analysis
 
+- [QuantLibRisks](https://pypi.org/project/QuantLib-Risks/) - Fast risks with QuantLib
+- [XAD](https://pypi.org/project/xad/) - Automatic Differentation (AAD) Library
 - [pyfolio](https://github.com/quantopian/pyfolio) - Portfolio and risk analytics in Python.
 - [empyrical](https://github.com/quantopian/empyrical) - Common financial risk and performance metrics.
 - [fecon235](https://github.com/rsvp/fecon235) - Computational tools for financial economics include: Gaussian Mixture model of leptokurtotic risk, adaptive Boltzmann portfolios.
@@ -454,11 +458,15 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## CPP
 
 - [QuantLib](https://github.com/lballabio/QuantLib) - The QuantLib project is aimed at providing a comprehensive software framework for quantitative finance.
+- [QuantLibRisks](https://github.com/auto-differentiation/QuantLib-Risks-Cpp) - Fast risks with QuantLib in C++
+- [XAD](https://github.com/auto-differentiation/xad) - Automatic Differentation (AAD) Library
 - [TradeFrame](https://github.com/rburkholder/trade-frame) - C++ 17 based framework/library (with sample applications) for testing options based automated trading ideas using DTN IQ real time data feed and Interactive Brokers (TWS API) for trade execution. Comes with built-in [Option Greeks/IV](https://github.com/rburkholder/trade-frame/tree/master/lib/TFOptions) calculation library.
 
 ## Frameworks
 
 - [QuantLib](https://github.com/lballabio/QuantLib) - The QuantLib project is aimed at providing a comprehensive software framework for quantitative finance.
+  - QuantLibRisks - Fast risks with QuantLib in [Python](https://pypi.org/project/QuantLib-Risks/) and [C++](https://github.com/auto-differentiation/QuantLib-Risks-Cpp)
+  - XAD - Automatic Differentiation (AAD) Library in [Python](https://pypi.org/project/xad/) and [C++](https://github.com/auto-differentiation/xad/)
   - [JQuantLib](https://github.com/frgomes/jquantlib) - Java port.
   - [RQuantLib](https://github.com/eddelbuettel/rquantlib) - R port.
   - [QuantLibAddin](https://www.quantlib.org/quantlibaddin/) - Excel support.
@@ -467,11 +475,12 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
   - [PyQL](https://github.com/enthought/pyql) - Python port.
   - [QuantLib.jl](https://github.com/pazzo83/QuantLib.jl) - Julia port.
   - [QuantLib-Python Documentation](https://quantlib-python-docs.readthedocs.io/) - Documentation for the Python bindings for the QuantLib library
-  - [QuantLib with Automatic Differention enabled](https://github.com/auto-differentiation/quantlib-xad) - Integration of Automatic Differentiation with the QuantLib library
+
 - [TA-Lib](https://ta-lib.org) - perform technical analysis of financial market data.
   - [ta-lib-python](https://github.com/TA-Lib/ta-lib-python)
   - [ta-lib](https://github.com/TA-Lib/ta-lib)
 - [Portfolio Optimizer](https://portfoliooptimizer.io/) - Portfolio Optimizer is a Web API for portfolio analysis and optimization.
+- XAD: Automatic Differentation (AAD) Library for [Python](https://pypi.org/project/xad/) and [C++](https://github.com/auto-differentiation/xad)
 
 
 ## CSharp
@@ -493,6 +502,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Reproducing Works, Training & Books
 
+- [Auto-Differentiation Website](https://auto-differentiation.github.io/) - Background and  resources on Automatic Differentiation (AD) / Adjoint Algorithmic Differentitation (AAD).
 - [Derman Papers](https://github.com/MarcosCarreira/DermanPapers) - Notebooks that replicate original quantitative finance papers from Emanuel Derman.
 - [ML-Quant](https://www.ml-quant.com/) - Top Quant resources like ArXiv (sanity), SSRN, RePec, Journals, Podcasts, Videos, and Blogs.
 - [volatility-trading](https://github.com/jasonstrimpel/volatility-trading) - A complete set of volatility estimators based on Euan Sinclair's Volatility Trading.
