@@ -151,6 +151,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [fastquant](https://github.com/enzoampil/fastquant) - fastquant allows you to easily backtest investment strategies with as few as 3 lines of python code.
 - [nautilus_trader](https://github.com/nautechsystems/nautilus_trader) - A high-performance algorithmic trading platform and event-driven backtester.
 - [YABTE](https://github.com/bsdz/yabte) - Yet Another (Python) BackTesting Engine.
+- [Trading-strategy](https://github.com/tradingstrategy-ai) - Algorithmic trading strategy framework for decentralised markets.
 
 ### Risk Analysis
 
