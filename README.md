@@ -200,6 +200,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [tsmoothie](https://github.com/cerlymarco/tsmoothie) - A python library for time-series smoothing and outlier detection in a vectorized way.
 - [pmdarima](https://github.com/alkaline-ml/pmdarima) - A statistical library designed to fill the void in Python's time series analysis capabilities, including the equivalent of R's auto.arima function.
 - [gluon-ts](https://github.com/awslabs/gluon-ts) - vProbabilistic time series modeling in Python.
+- [functime](https://github.com/functime-org/functime) - Time-series machine learning at scale. Built with Polars for embarrassingly parallel feature extraction and forecasts on panel data.
 
 ### Calendars
 
