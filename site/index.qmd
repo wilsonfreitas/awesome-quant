@@ -58,6 +58,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Intrinsic-Value-Calculator](https://github.com/akashaero/Intrinsic-Value-Calculator) - A Python tool for quick calculations of a stock's fair value using Discounted Cash Flow analysis.
 - [Kelly-Criterion](https://github.com/deltaray-io/kelly-criterion) - Kelly Criterion implemented in Python to size portfolios based on J. L. Kelly Jr's formula.
 - [rateslib](https://github.com/attack68/rateslib) - A fixed income library for pricing bonds and bond futures, and derivatives such as IRS, cross-currency and FX swaps.
+- [fypy](https://github.com/jkirkby3/fypy) - Vanilla and exotic option pricing library to support quantitative R&D. Focus on pricing interesting/useful models and contracts (including and beyond Black-Scholes), as well as calibration of financial models to market data.
 
 ### Indicators
 
@@ -75,6 +76,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Blankly](https://github.com/Blankly-Finance/Blankly) - Fully integrated backtesting, paper trading, and live deployment.
 - [TA-Lib](https://github.com/mrjbq7/ta-lib) - Python wrapper for TA-Lib (<http://ta-lib.org/>).
 - [zipline](https://github.com/quantopian/zipline) - Pythonic algorithmic trading library.
+- [zipline-reloaded](https://github.com/stefan-jansen/zipline-reloaded) - Zipline, a Pythonic Algorithmic Trading Library.
 - [QuantSoftware Toolkit](https://github.com/QuantSoftware/QuantSoftwareToolkit) - Python-based open source software framework designed to support portfolio construction and management.
 - [quantitative](https://github.com/jeffrey-liang/quantitative) - Quantitative finance, and backtesting library.
 - [analyzer](https://github.com/llazzaro/analyzer) - Python framework for real-time financial and backtesting trading strategies.
@@ -169,6 +171,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ### Factor Analysis
 
 - [alphalens](https://github.com/quantopian/alphalens) - Performance analysis of predictive alpha factors.
+- [alphalens-reloaded](https://github.com/stefan-jansen/alphalens-reloaded) - Performance analysis of predictive (alpha) stock factors.
 - [Spectre](https://github.com/Heerozh/spectre) - GPU-accelerated Factors analysis library and Backtester
 
 ### Sentiment Analysis
@@ -190,6 +193,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [tsmoothie](https://github.com/cerlymarco/tsmoothie) - A python library for time-series smoothing and outlier detection in a vectorized way.
 - [pmdarima](https://github.com/alkaline-ml/pmdarima) - A statistical library designed to fill the void in Python's time series analysis capabilities, including the equivalent of R's auto.arima function.
 - [gluon-ts](https://github.com/awslabs/gluon-ts) - vProbabilistic time series modeling in Python.
+- [functime](https://github.com/functime-org/functime) - Time-series machine learning at scale. Built with Polars for embarrassingly parallel feature extraction and forecasts on panel data.
 
 ### Calendars
 
@@ -272,6 +276,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [finplot](https://github.com/highfestiva/finplot) - Performant and effortless finance plotting for Python.
 - [finvizfinance](https://github.com/lit26/finvizfinance) - Finviz analysis python library.
 - [market-analy](https://github.com/maread99/market_analy) - Analysis and interactive charting using [market-prices](https://github.com/maread99/market_prices) and bqplot.
+- [QuantInvestStrats](https://github.com/ArturSepp/QuantInvestStrats) - Quantitative Investment Strategies (QIS) package implements Python analytics for visualisation of financial data, performance reporting, analysis of quantitative strategies.
 
 ## R
 
@@ -384,6 +389,7 @@ date conversion, scaling factor values, and filtering by the specified date.
 ### FrameWorks
 
 - [QUANTAXIS](https://github.com/yutiansut/quantaxis) - Integrated Quantitative Toolbox with Matlab.
+- [PROJ_Option_Pricing_Matlab](https://github.com/jkirkby3/PROJ_Option_Pricing_Matlab) - Quant Option Pricing - Exotic/Vanilla: Barrier, Asian, European, American, Parisian, Lookback, Cliquet, Variance Swap, Swing, Forward Starting, Step, Fader
 
 ## Julia
 
