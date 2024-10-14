@@ -41,6 +41,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ### Financial Instruments and Pricing
 
 - [OpenBB Terminal](https://github.com/OpenBB-finance/OpenBBTerminal) - Terminal for investment research for everyone.
+- [Fincept Terminal](https://github.com/Fincept-Corporation/FinceptTerminal) - Advance Data Based A.I Terminal for all Types of Financial Asset Research.
 - [PyQL](https://github.com/enthought/pyql) - QuantLib's Python port.
 - [pyfin](https://github.com/opendoor-labs/pyfin) - Basic options pricing in Python. *ARCHIVED*
 - [vollib](https://github.com/vollib/vollib) - vollib is a python library for calculating option prices, implied volatility and greeks.
@@ -152,6 +153,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [nautilus_trader](https://github.com/nautechsystems/nautilus_trader) - A high-performance algorithmic trading platform and event-driven backtester.
 - [YABTE](https://github.com/bsdz/yabte) - Yet Another (Python) BackTesting Engine.
 - [Trading Strategy](https://github.com/tradingstrategy-ai/getting-started) - TradingStrategy.ai is a market data, backtesting, live trading and investor management framework for decentralised finance
+- [Hikyuu](https://github.com/fasiondog/hikyuu) - A base on Python/C++ open source high-performance quant framework for faster analysis and backtesting, contains the complete trading system components for reuse and combination.
 
 ### Risk Analysis
 
@@ -307,6 +309,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [rbcb](https://github.com/wilsonfreitas/rbcb) - R interface to Brazilian Central Bank web services.
 - [rb3](https://github.com/ropensci/rb3) - A bunch of downloaders and parsers for data delivered from B3.
 - [simfinapi](https://github.com/matthiasgomolka/simfinapi) - Makes 'SimFin' data (<https://simfin.com/>) easily accessible in R.
+- [tidyfinance](https://cran.r-project.org/web/packages/tidyfinance/index.html) - Tidy Finance helper functions to download financial data and process the raw data into a structured Format (tidy data), including
+date conversion, scaling factor values, and filtering by the specified date.
 
 ### Financial Instruments and Pricing
 
@@ -463,6 +467,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [QuantLibRisks](https://github.com/auto-differentiation/QuantLib-Risks-Cpp) - Fast risks with QuantLib in C++
 - [XAD](https://github.com/auto-differentiation/xad) - Automatic Differentation (AAD) Library
 - [TradeFrame](https://github.com/rburkholder/trade-frame) - C++ 17 based framework/library (with sample applications) for testing options based automated trading ideas using DTN IQ real time data feed and Interactive Brokers (TWS API) for trade execution. Comes with built-in [Option Greeks/IV](https://github.com/rburkholder/trade-frame/tree/master/lib/TFOptions) calculation library.
+- [Hikyuu](https://github.com/fasiondog/hikyuu) - A base on Python/C++ open source high-performance quant framework for faster analysis and backtesting, contains the complete trading system components for reuse and combination. You can use python or c++ freely.
 
 ## Frameworks
 
@@ -551,3 +556,4 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Autoencoder-Asset-Pricing-Models](https://github.com/RichardS0268/Autoencoder-Asset-Pricing-Models) - Reimplementation of Autoencoder Asset Pricing Models ([GKX, 2019](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3335536)).
 - [Finance](https://github.com/shashankvemuri/Finance) - 150+ quantitative finance Python programs to help you gather, manipulate, and analyze stock market data.
 - [101_formulaic_alphas](https://github.com/ram-ki/101_formulaic_alphas) - Implementation of [101 formulaic alphas](https://arxiv.org/ftp/arxiv/papers/1601/1601.00991.pdf) using qstrader.
+- [Tidy Finance](https://www.tidy-finance.org/) - An opinionated approach to empirical research in financial economics - a fully transparent, open-source code base in multiple programming languages (Python and R) to enable the reproducible implementation of financial research projects for students and practitioners.
