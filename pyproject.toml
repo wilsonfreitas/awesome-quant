@@ -9,7 +9,7 @@ readme = "README.md"
 python = "^3.11"
 PyGithub = "^2.2.0"
 pandas = "^2.2.0"
-
+mypy = "^1.14.0"
 
 [build-system]
 requires = ["poetry-core"]
