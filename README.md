@@ -21,7 +21,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [CSharp](#csharp)
 - [Rust](#rust)
 - [Frameworks](#frameworks)
-- [Reproducing Works](#reproducing-works)
+- [Reproducing Works, Training & Books](#reproducing-works-training--books)
 
 ## Python
 
