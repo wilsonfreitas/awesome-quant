@@ -19,7 +19,7 @@ jobs:
         pip install poetry
     - name: Install dependencies
       run: |
-        poetry install
+        poetry install --no-root --no-interaction
     - name: Run parser
       run: |
         export GITHUB_ACCESS_TOKEN=${{ secrets.GITHUB_TOKEN }}
