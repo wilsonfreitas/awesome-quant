@@ -77,6 +77,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [lppls](https://github.com/Boulder-Investment-Technologies/lppls) - A Python module for fitting the [Log-Periodic Power Law Singularity (LPPLS)](https://en.wikipedia.org/wiki/Didier_Sornette#The_JLS_and_LPPLS_models) model.
 - [talipp](https://github.com/nardew/talipp) - Incremental technical analysis library for Python.
 - [streaming_indicators](https://github.com/mr-easy/streaming_indicators) - A python library for computing technical analysis indicators on streaming data.
+- [kand](https://github.com/rust-ta/kand) - Blazingly Fast Technical Analysis Library in Rust and Python.
 
 ### Trading & Backtesting
 - [skfolio](https://github.com/skfolio/skfolio) - Python library for portfolio optimization built on top of scikit-learn. It provides a unified interface and sklearn compatible tools to build, tune and cross-validate portfolio models.
@@ -514,6 +515,7 @@ date conversion, scaling factor values, and filtering by the specified date.
 - [SlidingFeatures](https://github.com/MathisWellmann/sliding_features-rs) - Chainable tree-like sliding windows for signal processing and technical analysis.
 - [RustQuant](https://github.com/avhz/RustQuant) - Quantitative finance library written in Rust.
 - [finalytics](https://github.com/Nnamdi-sys/finalytics) - A rust library for financial data analysis.
+- [kand](https://github.com/rust-ta/kand) - Kand: Pure Rust reimplementation of TA-Lib for fast financial analysis.
 
 
 ## Reproducing Works, Training & Books
