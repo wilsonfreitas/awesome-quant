@@ -39,6 +39,7 @@
 * [JoinQuant/jqdatasdk](https://github.com/JoinQuant/jqdatasdk) - jqdatasdk是提供给用户获取聚宽金融数据的SDK
 * [米筐科技的RQData数据接口](https://www.ricequant.com/introduce_rqdata) - 收费
 * [AkShare](https://github.com/jindaxiang/akshare) - 免费开源财经数据接口库，目前包含中文领域最全的数据接口
+* [Financial Data](https://financialdata.net/) - 股票市场和财务数据
 
 ## 数据库
 
