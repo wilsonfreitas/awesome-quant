@@ -156,6 +156,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [YABTE](https://github.com/bsdz/yabte) - Yet Another (Python) BackTesting Engine.
 - [Trading Strategy](https://github.com/tradingstrategy-ai/getting-started) - TradingStrategy.ai is a market data, backtesting, live trading and investor management framework for decentralised finance
 - [Hikyuu](https://github.com/fasiondog/hikyuu) - A base on Python/C++ open source high-performance quant framework for faster analysis and backtesting, contains the complete trading system components for reuse and combination.
+- [rust_bt](https://github.com/jensnesten/rust_bt) - A high performance, low-latency backtesting engine for testing quantitative trading strategies on historical and live data in Rust.
 
 ### Risk Analysis
 
@@ -267,7 +268,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [FinanceDatabase](https://github.com/JerBouma/FinanceDatabase) - This is a database of 300.000+ symbols containing Equities, ETFs, Funds, Indices, Currencies, Cryptocurrencies and Money Markets.
 - [Trading Strategy](https://github.com/tradingstrategy-ai/trading-strategy/) - download price data for decentralised exchanges and lending protocols (DeFi)
 - [datamule-python](https://github.com/john-friedman/datamule-python) - A package to work with SEC data. Incorporates datamule endpoints.
-- [Financial Data](https://financialdata.net/) - Stock Market and Financial Data API. 
+- [Financial Data](https://financialdata.net/) - Stock Market and Financial Data API.
+- [SaxoOpenAPI](https://www.developer.saxo/) - Saxo Bank financial data API.
 
 ### Excel Integration
 
