@@ -36,11 +36,8 @@
   --quarto-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+/* syntax highlight based on Pandoc's rules */
 pre > code.sourceCode > span {
-  color: #003B4F;
-}
-
-code span {
   color: #003B4F;
 }
 
@@ -53,153 +50,187 @@ div.sourceCode pre.sourceCode {
   color: #003B4F;
 }
 
-code span.ot {
+/* Normal */
+code span {
   color: #003B4F;
+}
+
+/* Alert */
+code span.al {
+  color: #AD0000;
   font-style: inherit;
 }
 
-code span.at {
-  color: #657422;
-  font-style: inherit;
-}
-
-code span.ss {
-  color: #20794D;
-  font-style: inherit;
-}
-
+/* Annotation */
 code span.an {
   color: #5E5E5E;
   font-style: inherit;
 }
 
-code span.fu {
-  color: #4758AB;
+/* Attribute */
+code span.at {
+  color: #657422;
   font-style: inherit;
 }
 
-code span.st {
-  color: #20794D;
+/* BaseN */
+code span.bn {
+  color: #AD0000;
   font-style: inherit;
 }
 
+/* BuiltIn */
+code span.bu {
+  font-style: inherit;
+}
+
+/* ControlFlow */
 code span.cf {
   color: #003B4F;
   font-weight: bold;
   font-style: inherit;
 }
 
-code span.op {
-  color: #5E5E5E;
-  font-style: inherit;
-}
-
-code span.er {
-  color: #AD0000;
-  font-style: inherit;
-}
-
-code span.bn {
-  color: #AD0000;
-  font-style: inherit;
-}
-
-code span.al {
-  color: #AD0000;
-  font-style: inherit;
-}
-
-code span.va {
-  color: #111111;
-  font-style: inherit;
-}
-
-code span.bu {
-  font-style: inherit;
-}
-
-code span.ex {
-  font-style: inherit;
-}
-
-code span.pp {
-  color: #AD0000;
-  font-style: inherit;
-}
-
-code span.in {
-  color: #5E5E5E;
-  font-style: inherit;
-}
-
-code span.vs {
-  color: #20794D;
-  font-style: inherit;
-}
-
-code span.wa {
-  color: #5E5E5E;
-  font-style: italic;
-}
-
-code span.do {
-  color: #5E5E5E;
-  font-style: italic;
-}
-
-code span.im {
-  color: #00769E;
-  font-style: inherit;
-}
-
+/* Char */
 code span.ch {
   color: #20794D;
   font-style: inherit;
 }
 
-code span.dt {
-  color: #AD0000;
-  font-style: inherit;
-}
-
-code span.fl {
-  color: #AD0000;
-  font-style: inherit;
-}
-
-code span.co {
-  color: #5E5E5E;
-  font-style: inherit;
-}
-
-code span.cv {
-  color: #5E5E5E;
-  font-style: italic;
-}
-
+/* Constant */
 code span.cn {
   color: #8f5902;
   font-style: inherit;
 }
 
-code span.sc {
+/* Comment */
+code span.co {
   color: #5E5E5E;
   font-style: inherit;
 }
 
+/* CommentVar */
+code span.cv {
+  color: #5E5E5E;
+  font-style: italic;
+}
+
+/* Documentation */
+code span.do {
+  color: #5E5E5E;
+  font-style: italic;
+}
+
+/* DataType */
+code span.dt {
+  color: #AD0000;
+  font-style: inherit;
+}
+
+/* DecVal */
 code span.dv {
   color: #AD0000;
   font-style: inherit;
 }
 
+/* Error */
+code span.er {
+  color: #AD0000;
+  font-style: inherit;
+}
+
+/* Extension */
+code span.ex {
+  font-style: inherit;
+}
+
+/* Float */
+code span.fl {
+  color: #AD0000;
+  font-style: inherit;
+}
+
+/* Function */
+code span.fu {
+  color: #4758AB;
+  font-style: inherit;
+}
+
+/* Import */
+code span.im {
+  color: #00769E;
+  font-style: inherit;
+}
+
+/* Information */
+code span.in {
+  color: #5E5E5E;
+  font-style: inherit;
+}
+
+/* Keyword */
 code span.kw {
   color: #003B4F;
   font-weight: bold;
   font-style: inherit;
 }
 
+/* Operator */
+code span.op {
+  color: #5E5E5E;
+  font-style: inherit;
+}
+
+/* Other */
+code span.ot {
+  color: #003B4F;
+  font-style: inherit;
+}
+
+/* Preprocessor */
+code span.pp {
+  color: #AD0000;
+  font-style: inherit;
+}
+
+/* SpecialChar */
+code span.sc {
+  color: #5E5E5E;
+  font-style: inherit;
+}
+
+/* SpecialString */
+code span.ss {
+  color: #20794D;
+  font-style: inherit;
+}
+
+/* String */
+code span.st {
+  color: #20794D;
+  font-style: inherit;
+}
+
+/* Variable */
+code span.va {
+  color: #111111;
+  font-style: inherit;
+}
+
+/* VerbatimString */
+code span.vs {
+  color: #20794D;
+  font-style: inherit;
+}
+
+/* Warning */
+code span.wa {
+  color: #5E5E5E;
+  font-style: italic;
+}
+
 .prevent-inlining {
   content: "</";
 }
 
-/*# sourceMappingURL=c9c5d451c23b744f9cb2c98992a0aef2.css.map */
+/*# sourceMappingURL=d398365ccb532ba00fe56d6aa1025863.css.map */
