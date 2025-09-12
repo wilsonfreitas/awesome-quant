@@ -270,6 +270,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [datamule-python](https://github.com/john-friedman/datamule-python) - A package to work with SEC data. Incorporates datamule endpoints.
 - [Financial Data](https://financialdata.net/) - Stock Market and Financial Data API.
 - [SaxoOpenAPI](https://www.developer.saxo/) - Saxo Bank financial data API.
+- [fedfred](https://nikhilxsunder.github.io/fedfred/) - FRED & GeoFRED Economic data API with preprocessed dataframe output in pandas/geopandas, polars/polars_st, and dask dataframes/geodataframes.
 
 ### Excel Integration
 
