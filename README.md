@@ -271,6 +271,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Financial Data](https://financialdata.net/) - Stock Market and Financial Data API.
 - [SaxoOpenAPI](https://www.developer.saxo/) - Saxo Bank financial data API.
 - [fedfred](https://nikhilxsunder.github.io/fedfred/) - FRED & GeoFRED Economic data API with preprocessed dataframe output in pandas/geopandas, polars/polars_st, and dask dataframes/geodataframes.
+- [edgar-sec](https://nikhilxsunder.github.io/edgar-sec/) - EDGAR Financial data API with preprocessed dataclass outputs.
 
 ### Excel Integration
 
