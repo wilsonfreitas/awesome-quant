@@ -1,6 +1,6 @@
 /*!
- * Bootstrap Icons v1.11.1 (https://icons.getbootstrap.com/)
- * Copyright 2019-2023 The Bootstrap Authors
+ * Bootstrap Icons v1.13.1 (https://icons.getbootstrap.com/)
+ * Copyright 2019-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/icons/blob/main/LICENSE)
  */
 
@@ -8,7 +8,7 @@
   font-display: block;
   font-family: "bootstrap-icons";
   src: 
-url("./bootstrap-icons.woff?2820a3852bdb9a5832199cc61cec4e65") format("woff");
+url("./bootstrap-icons.woff?e34853135f9e39acf64315236852cd5a") format("woff");
 }
 
 .bi::before,
@@ -2076,3 +2076,31 @@ url("./bootstrap-icons.woff?2820a3852bdb9a5832199cc61cec4e65") format("woff");
 .bi-suitcase2-fill::before { content: "\f901"; }
 .bi-suitcase2::before { content: "\f902"; }
 .bi-vignette::before { content: "\f903"; }
+.bi-bluesky::before { content: "\f7f9"; }
+.bi-tux::before { content: "\f904"; }
+.bi-beaker-fill::before { content: "\f905"; }
+.bi-beaker::before { content: "\f906"; }
+.bi-flask-fill::before { content: "\f907"; }
+.bi-flask-florence-fill::before { content: "\f908"; }
+.bi-flask-florence::before { content: "\f909"; }
+.bi-flask::before { content: "\f90a"; }
+.bi-leaf-fill::before { content: "\f90b"; }
+.bi-leaf::before { content: "\f90c"; }
+.bi-measuring-cup-fill::before { content: "\f90d"; }
+.bi-measuring-cup::before { content: "\f90e"; }
+.bi-unlock2-fill::before { content: "\f90f"; }
+.bi-unlock2::before { content: "\f910"; }
+.bi-battery-low::before { content: "\f911"; }
+.bi-anthropic::before { content: "\f912"; }
+.bi-apple-music::before { content: "\f913"; }
+.bi-claude::before { content: "\f914"; }
+.bi-openai::before { content: "\f915"; }
+.bi-perplexity::before { content: "\f916"; }
+.bi-css::before { content: "\f917"; }
+.bi-javascript::before { content: "\f918"; }
+.bi-typescript::before { content: "\f919"; }
+.bi-fork-knife::before { content: "\f91a"; }
+.bi-globe-americas-fill::before { content: "\f91b"; }
+.bi-globe-asia-australia-fill::before { content: "\f91c"; }
+.bi-globe-central-south-asia-fill::before { content: "\f91d"; }
+.bi-globe-europe-africa-fill::before { content: "\f91e"; }
