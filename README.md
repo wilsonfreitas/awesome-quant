@@ -268,6 +268,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [FinanceDatabase](https://github.com/JerBouma/FinanceDatabase) - This is a database of 300.000+ symbols containing Equities, ETFs, Funds, Indices, Currencies, Cryptocurrencies and Money Markets.
 - [Trading Strategy](https://github.com/tradingstrategy-ai/trading-strategy/) - download price data for decentralised exchanges and lending protocols (DeFi)
 - [datamule-python](https://github.com/john-friedman/datamule-python) - A package to work with SEC data. Incorporates datamule endpoints.
+- [Earnings Feed](https://earningsfeed.com/api) - Real-time SEC filings, insider trades, and institutional holdings API.
 - [Financial Data](https://financialdata.net/) - Stock Market and Financial Data API.
 - [SaxoOpenAPI](https://www.developer.saxo/) - Saxo Bank financial data API.
 
