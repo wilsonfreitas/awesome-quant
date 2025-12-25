@@ -270,6 +270,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [datamule-python](https://github.com/john-friedman/datamule-python) - A package to work with SEC data. Incorporates datamule endpoints.
 - [Financial Data](https://financialdata.net/) - Stock Market and Financial Data API.
 - [SaxoOpenAPI](https://www.developer.saxo/) - Saxo Bank financial data API.
+- [fsynth](https://github.com/welcra/fsynth) - Python library for high-fidelity unlimited synthetic financial data generation using Heston Stochastic Volatility and Merton Jump Diffusion.
 
 ### Excel Integration
 
