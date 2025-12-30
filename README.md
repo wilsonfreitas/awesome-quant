@@ -177,6 +177,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [empyrical-reloaded](https://github.com/stefan-jansen/empyrical-reloaded) - Common financial risk and performance metrics. [empyrical](https://github.com/quantopian/empyrical) fork.
 - [pyfolio-reloaded](https://github.com/stefan-jansen/pyfolio-reloaded) - Portfolio and risk analytics in Python. [pyfolio](https://github.com/quantopian/pyfolio) fork.
 - [fortitudo.tech](https://github.com/fortitudo-tech/fortitudo.tech) - Conditional Value-at-Risk (CVaR) portfolio optimization and Entropy Pooling views / stress-testing in Python.
+- [Quant Lab Alpha](https://github.com/husainm97/quant-lab-alpha) — Portfolio risk decomposition and Monte Carlo simulation toolkit with factor-based modeling.
 
 ### Factor Analysis
 
