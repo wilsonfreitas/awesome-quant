@@ -157,6 +157,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Trading Strategy](https://github.com/tradingstrategy-ai/getting-started) - TradingStrategy.ai is a market data, backtesting, live trading and investor management framework for decentralised finance
 - [Hikyuu](https://github.com/fasiondog/hikyuu) - A base on Python/C++ open source high-performance quant framework for faster analysis and backtesting, contains the complete trading system components for reuse and combination.
 - [rust_bt](https://github.com/jensnesten/rust_bt) - A high performance, low-latency backtesting engine for testing quantitative trading strategies on historical and live data in Rust.
+- [Gunbot Quant](https://github.com/GuntharDeNiro/gunbot-quant) - Toolkit for quantitative trading analysis. It integrates an advanced market screener, a multi-strategy, multi-asset backtesting engine. Use with built-in GUI or through CLI.
 - [StrateQueue](https://github.com/StrateQueue/StrateQueue) - An open‑source, broker‑agnostic Python library that lets you seamlessly deploy strategies from any major backtesting engine to live (or paper) trading with zero code changes and built‑in safety controls.
 
 ### Risk Analysis
