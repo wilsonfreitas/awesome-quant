@@ -1,23 +1,22 @@
-
-
 import os
 import re
 import pandas as pd
 from threading import Thread
 
-from github import Github
+from github import Auth, Github
 
 # using an access token
-g = Github(os.environ['GITHUB_ACCESS_TOKEN'])
+auth = Auth.Token(os.environ["GITHUB_ACCESS_TOKEN"])
+g = Github(auth=auth)
 
 
 def extract_repo(url):
-    reu = re.compile(r'^https://github.com/([\w-]+/[-\w\.]+)$')
+    reu = re.compile(r"^https://github.com/([\w-]+/[-\w\.]+)$")
     m = reu.match(url)
     if m:
         return m.group(1)
     else:
-        return ''
+        return ""
 
 
 def get_last_commit(repo):
@@ -25,16 +24,15 @@ def get_last_commit(repo):
         if repo:
             r = g.get_repo(repo)
             cs = r.get_commits()
-            return cs[0].commit.author.date.strftime('%Y-%m-%d')
+            return cs[0].commit.author.date.strftime("%Y-%m-%d")
         else:
-            return ''
+            return ""
     except:
-        print('ERROR ' + repo)
-        return 'error'
+        print("ERROR " + repo)
+        return "error"
 
 
 class Project(Thread):
-
     def __init__(self, match, section):
         super().__init__()
         self._match = match
@@ -43,8 +41,8 @@ class Project(Thread):
 
     def run(self):
         m = self._match
-        is_github = 'github.com' in m.group(2)
-        is_cran = 'cran.r-project.org' in m.group(2)
+        is_github = "github.com" in m.group(2)
+        is_cran = "cran.r-project.org" in m.group(2)
         repo = extract_repo(m.group(2))
         print(repo)
         last_commit = get_last_commit(repo)
@@ -56,21 +54,21 @@ class Project(Thread):
             description=m.group(3),
             github=is_github,
             cran=is_cran,
-            repo=repo
+            repo=repo,
         )
 
 
 projects = []
 
-with open('README.md', 'r', encoding='utf8') as f:
-    ret = re.compile(r'^(#+) (.*)$')
-    rex = re.compile(r'^\s*- \[(.*)\]\((.*)\) - (.*)$')
+with open("README.md", "r", encoding="utf8") as f:
+    ret = re.compile(r"^(#+) (.*)$")
+    rex = re.compile(r"^\s*- \[(.*)\]\((.*)\) - (.*)$")
     m_titles = []
     last_head_level = 0
     for line in f:
         m = rex.match(line)
         if m:
-            p = Project(m, ' > '.join(m_titles[1:]))
+            p = Project(m, " > ".join(m_titles[1:]))
             p.start()
             projects.append(p)
         else:
@@ -92,5 +90,5 @@ while True:
 
 projects = [p.regs for p in projects]
 df = pd.DataFrame(projects)
-df.to_csv('site/projects.csv', index=False)
+df.to_csv("site/projects.csv", index=False)
 # df.to_markdown('projects.md', index=False)
