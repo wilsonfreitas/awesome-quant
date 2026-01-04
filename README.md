@@ -214,7 +214,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pandas_market_calendars](https://github.com/rsheftel/pandas_market_calendars) - Exchange calendars to use with pandas for trading applications.
 
 ### Data Sources
-
+- [StockAPI](https://stockapi.com.cn) – Free real-time Chinese stock data (REST & WebSocket).
 - [yfinance](https://github.com/ranaroussi/yfinance) - Yahoo! Finance market data downloader (+faster Pandas Datareader)
 - [defeatbeta-api](https://github.com/defeat-beta/defeatbeta-api) - An open-source alternative to Yahoo Finance's market data APIs with higher reliability.
 - [findatapy](https://github.com/cuemacro/findatapy) - Python library to download market data via Bloomberg, Quandl, Yahoo etc.
