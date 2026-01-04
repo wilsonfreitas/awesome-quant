@@ -412,21 +412,30 @@ date conversion, scaling factor values, and filtering by the specified date.
 
 ## Julia
 
+- [CcyConv](https://github.com/bhftbootcamp/CcyConv.jl) - Currency conversion library for Julia
+- [CryptoExchangeAPIs.jl](https://github.com/bhftbootcamp/CryptoExchangeAPIs.jl) - A Julia library for cryptocurrency exchange APIs
+- [Fastback.jl](https://github.com/rbeeli/Fastback.jl) - Blazing fast Julia backtester.
 - [Lucky.jl](https://github.com/oliviermilla/Lucky.jl) - Modular, asynchronous trading engine in pure Julia.
 - [QuantLib.jl](https://github.com/pazzo83/QuantLib.jl) - Quantlib implementation in pure Julia.
 - [Ito.jl](https://github.com/aviks/Ito.jl) - A Julia package for quantitative finance.
+- [LightweightCharts.jl](https://github.com/bhftbootcamp/LightweightCharts.jl) - Julia wrapper for Lightweight Charts™ by TradingView.
 - [TALib.jl](https://github.com/femtotrader/TALib.jl) - A Julia wrapper for TA-Lib.
-- [IncTA.jl](https://github.com/femtotrader/IncTA.jl) - Julia Incremental Technical Analysis Indicators
 - [Miletus.jl](https://github.com/JuliaComputing/Miletus.jl) - A financial contract definition, modeling language, and valuation framework.
 - [Temporal.jl](https://github.com/dysonance/Temporal.jl) - Flexible and efficient time series class & methods.
 - [Indicators.jl](https://github.com/dysonance/Indicators.jl) - Financial market technical analysis & indicators on top of Temporal.
 - [Strategems.jl](https://github.com/dysonance/Strategems.jl) - Quantitative systematic trading strategy development and backtesting.
 - [TimeSeries.jl](https://github.com/JuliaStats/TimeSeries.jl) - Time series toolkit for Julia.
+- [TechnicalIndicatorCharts.jl](https://github.com/g-gundam/TechnicalIndicatorCharts.jl) - Visualize OnlineTechnicalIndicators.jl using LightweightCharts.jl.
 - [MarketTechnicals.jl](https://github.com/JuliaQuant/MarketTechnicals.jl) - Technical analysis of financial time series on top of TimeSeries.
 - [MarketData.jl](https://github.com/JuliaQuant/MarketData.jl) - Time series market data.
+- [OnlineTechnicalIndicators.jl](https://github.com/femtotrader/OnlineTechnicalIndicators.jl) - Julia Technical Analysis Indicators via online algorithms.
+- [OnlineTechnicalIndicators](https://github.com/femtotrader/OnlinePortfolioAnalytics.jl) - A Julia quantitative portfolio analytics (risk / performance) via online algorithms.
+- [OnlineResamplers.jl](https://github.com/femtotrader/OnlineResamplers.jl) - High-performance Julia package for real-time resampling of financial market data.
+- [RiskPerf.jl](https://github.com/rbeeli/RiskPerf.jl) - Quantitative risk and performance analysis package for financial time series powered by the Julia language.
 - [TimeFrames.jl](https://github.com/femtotrader/TimeFrames.jl) - A Julia library that defines TimeFrame (essentially for resampling TimeSeries).
 - [DataFrames.jl](https://github.com/JuliaData/DataFrames.jl) - In-memory tabular data in Julia
 - [TSFrames.jl](https://github.com/xKDR/TSFrames.jl) - Handle timeseries data on top of the powerful and mature DataFrames.jl
+- [TimeArrays.jl](https://github.com/bhftbootcamp/TimeArrays.jl) - Time series handling for Julia
 
 ## Java
 
