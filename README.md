@@ -536,6 +536,8 @@ date conversion, scaling factor values, and filtering by the specified date.
 - [SlidingFeatures](https://github.com/MathisWellmann/sliding_features-rs) - Chainable tree-like sliding windows for signal processing and technical analysis.
 - [RustQuant](https://github.com/avhz/RustQuant) - Quantitative finance library written in Rust.
 - [finalytics](https://github.com/Nnamdi-sys/finalytics) - A rust library for financial data analysis.
+- [RunMat](https://github.com/runmat-org/runmat) - Rust runtime for MATLAB-syntax array math with automatic CPU/GPU execution and fused kernels for quant simulations.
+
 
 
 ## Reproducing Works, Training & Books
