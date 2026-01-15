@@ -280,6 +280,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [fsynth](https://github.com/welcra/fsynth) - Python library for high-fidelity unlimited synthetic financial data generation using Heston Stochastic Volatility and Merton Jump Diffusion.
 - [fedfred](https://nikhilxsunder.github.io/fedfred/) - FRED & GeoFRED Economic data API with preprocessed dataframe output in pandas/geopandas, polars/polars_st, and dask dataframes/geodataframes.
 - [edgar-sec](https://nikhilxsunder.github.io/edgar-sec/) - EDGAR Financial data API with preprocessed dataclass outputs.
+- [FXMacroData](https://fxmacrodata.com/) - Real-time forex macroeconomic API for all major currency pairs sourced from central bank announcements.
 
 ### Excel Integration
 
