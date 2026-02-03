@@ -159,6 +159,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [rust_bt](https://github.com/jensnesten/rust_bt) - A high performance, low-latency backtesting engine for testing quantitative trading strategies on historical and live data in Rust.
 - [Gunbot Quant](https://github.com/GuntharDeNiro/gunbot-quant) - Toolkit for quantitative trading analysis. It integrates an advanced market screener, a multi-strategy, multi-asset backtesting engine. Use with built-in GUI or through CLI.
 - [StrateQueue](https://github.com/StrateQueue/StrateQueue) - An open‑source, broker‑agnostic Python library that lets you seamlessly deploy strategies from any major backtesting engine to live (or paper) trading with zero code changes and built‑in safety controls.
+- [DayTradingBench](https://daytradingbench.com) - Live autonomous benchmark that evaluates LLM trading performance on DAX and Nasdaq indices using identical strategies and real-time market data. API access available.
 
 ### Risk Analysis
 
