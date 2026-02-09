@@ -301,6 +301,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [finvizfinance](https://github.com/lit26/finvizfinance) - Finviz analysis python library.
 - [market-analy](https://github.com/maread99/market_analy) - Analysis and interactive charting using [market-prices](https://github.com/maread99/market_prices) and bqplot.
 - [QuantInvestStrats](https://github.com/ArturSepp/QuantInvestStrats) - Quantitative Investment Strategies (QIS) package implements Python analytics for visualisation of financial data, performance reporting, analysis of quantitative strategies.
+- [rallyplot](https://rallyplot.com) - Fast, GPU-accelerated financial plotting library
 
 ## R
 
@@ -505,7 +506,8 @@ date conversion, scaling factor values, and filtering by the specified date.
 - [TradeFrame](https://github.com/rburkholder/trade-frame) - C++ 17 based framework/library (with sample applications) for testing options based automated trading ideas using DTN IQ real time data feed and Interactive Brokers (TWS API) for trade execution. Comes with built-in [Option Greeks/IV](https://github.com/rburkholder/trade-frame/tree/master/lib/TFOptions) calculation library.
 - [Hikyuu](https://github.com/fasiondog/hikyuu) - A base on Python/C++ open source high-performance quant framework for faster analysis and backtesting, contains the complete trading system components for reuse and combination. You can use python or c++ freely.
 - [OrderMatchingEngine](https://github.com/PIYUSH-KUMAR1809/order-matching-engine) - A production-grade, lock-free, high-frequency trading matching engine achieving 150M+ orders/sec.
-
+- [rallyplot](https://rallyplot.com) - Fast, GPU-accelerated financial plotting library
+    
 ## Frameworks
 
 - [QuantLib](https://github.com/lballabio/QuantLib) - The QuantLib project is aimed at providing a comprehensive software framework for quantitative finance.
