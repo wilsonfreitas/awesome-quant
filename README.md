@@ -231,7 +231,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [wallstreet](https://github.com/mcdallas/wallstreet) - Real time stock and option data.
 - [stock_extractor](https://github.com/ZachLiuGIS/stock_extractor) - General Purpose Stock Extractors from Online Resources.
 - [Stockex](https://github.com/cttn/Stockex) - Python wrapper for Yahoo! Finance API.
-- [StockInsights](https://stockainsights.com) - AI-extracted financial statements API covering SEC filings including foreign filers (20-F, 6-K, 40-F), normalized quarterly and annual data from 2014+.
+- [StockAInsights](https://stockainsights.com) - AI-extracted financial statements API covering SEC filings including foreign filers (20-F, 6-K, 40-F), normalized quarterly and annual data from 2014+.
 - [finsymbols](https://github.com/skillachie/finsymbols) - Obtains stock symbols and relating information for SP500, AMEX, NYSE, and NASDAQ.
 - [FRB](https://github.com/avelkoski/FRB) - Python Client for FRED® API.
 - [inquisitor](https://github.com/econdb/inquisitor) - Python Interface to Econdb.com API.
