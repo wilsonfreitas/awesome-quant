@@ -181,7 +181,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [fortitudo.tech](https://github.com/fortitudo-tech/fortitudo.tech) - Conditional Value-at-Risk (CVaR) portfolio optimization and Entropy Pooling views / stress-testing in Python.
 - [Quant Lab Alpha](https://github.com/husainm97/quant-lab-alpha) — Portfolio risk decomposition and Monte Carlo simulation toolkit with factor-based modeling.
 - [quantitative-finance-tools](https://github.com/omichauhan-lgtm/quantitative-finance-tools) - Library for portfolio optimization (MVO) and rigorous risk metrics (VaR/CVaR).
-
+- [Prop Trader Compass](https://otto-ships.github.io/prop-trader-compass/) - Interactive risk and payout calculator for Futures and CFD traders; features one-time fee firm comparisons.
+  
 ### Factor Analysis
 
 - [alphalens](https://github.com/quantopian/alphalens) - Performance analysis of predictive alpha factors.
@@ -599,3 +600,4 @@ date conversion, scaling factor values, and filtering by the specified date.
 - [RoughVolatilityWorkshop](https://github.com/jgatheral/RoughVolatilityWorkshop) - 2024 QuantMind's Rough Volatility Workshop lectures.
 - [AFML](https://github.com/boyboi86/AFML) - All the answers for exercises from Advances in Financial Machine Learning by Dr Marco Lopez de Parodo.
 - [AlgoTradingLib](https://github.com/usdaud/algotradinglib.github.io) - A catalog of algorithmic trading libraries, frameworks, strategies, and educational materials.
+Add Prop Trader Compass to Risk Management tools
