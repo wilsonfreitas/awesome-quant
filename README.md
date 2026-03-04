@@ -499,6 +499,10 @@ date conversion, scaling factor values, and filtering by the specified date.
 
 - [QUANTAXIS_Webkit](https://github.com/yutiansut/QUANTAXIS_Webkit) - An awesome visualization center based on quantaxis.
 
+### Widgets & Embeddables
+
+- [igotfomo-ticker-widget](https://igotfomo.com/widgets/) - Free embeddable live stock ticker widget showing S&P 500, NASDAQ, DOW, BTC, ETH with Shadow DOM isolation and dual themes. [Demo](https://igotfomo.com/widgets/) | [Source](https://github.com/hayaiti/awesome-trading-tools)
+
 ## Haskell
 
 - [quantfin](https://github.com/boundedvariation/quantfin) - quant finance in pure haskell.
