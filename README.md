@@ -250,6 +250,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [StockAInsights](https://stockainsights.com) - AI-extracted financial statements API covering SEC filings including foreign filers (20-F, 6-K, 40-F), normalized quarterly and annual data from 2014+.
 - [finsymbols](https://github.com/skillachie/finsymbols) - Obtains stock symbols and relating information for SP500, AMEX, NYSE, and NASDAQ.
 - [FRB](https://github.com/avelkoski/FRB) - Python Client for FRED® API.
+- [Frostbyte](https://agent-gateway-kappa.vercel.app) - Real-time crypto prices for 500+ tokens via REST API with free tier, DeFi swap routing and portfolio tracking.
 - [inquisitor](https://github.com/econdb/inquisitor) - Python Interface to Econdb.com API.
 - [yfi](https://github.com/nickelkr/yfi) - Yahoo! YQL library.
 - [chinesestockapi](https://pypi.org/project/chinesestockapi/) - Python API to get Chinese stock price.
