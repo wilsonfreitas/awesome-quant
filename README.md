@@ -194,6 +194,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [quantitative-finance-tools](https://github.com/omichauhan-lgtm/quantitative-finance-tools) - Library for portfolio optimization (MVO) and rigorous risk metrics (VaR/CVaR).
 - [curistat](https://github.com/moxiespirit/MyClone/tree/main/volatility_platform) - Futures volatility forecasting platform for ES/NQ. Proprietary CVN rating (1-10), regime detection (CRC composite), 8 directional signals, economic event impact analytics. Includes MCP server for AI agent integration.
 - [Prop Trader Compass](https://otto-ships.github.io/prop-trader-compass/) - Interactive risk and payout calculator for Futures and CFD traders; features one-time fee firm comparisons.
+- [System R](https://agents.systemr.ai) - AI-native risk intelligence API for trading agents. Position sizing, risk validation, and system health in one call.
   
 ### Factor Analysis
 
