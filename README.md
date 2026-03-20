@@ -38,6 +38,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [modelx](https://docs.modelx.io/) - Python reimagination of spreadsheets as formula-centric objects that are interoperable with pandas.
 - [ArcticDB](https://github.com/man-group/ArcticDB) - High performance datastore for time series and tick data.
 - [pmxt](https://github.com/pmxt-dev/pmxt) - The CCXT for prediction markets. A unified API for trading on Polymarket, Kalshi, and more.
+- [polymarket-whales](https://github.com/al1enjesus/polymarket-whales) - Real-time whale trade tracker for Polymarket — terminal alerts + Telegram notifications when large orders hit the book.
 
 ### Financial Instruments and Pricing
 
@@ -493,6 +494,7 @@ date conversion, scaling factor values, and filtering by the specified date.
 - [ccxt](https://github.com/ccxt/ccxt) - A JavaScript / Python / PHP cryptocurrency trading API with support for more than 100 bitcoin/altcoin exchanges.
 - [PENDAX](https://github.com/CompendiumFi/PENDAX-SDK) - Javascript SDK for Trading/Data API and Websockets for FTX, FTXUS, OKX, Bybit, & More.
 - [pmxt](https://github.com/pmxt-dev/pmxt) - The CCXT for prediction markets. A unified API for trading on Polymarket, Kalshi, and more.
+- [polymarket-whales](https://github.com/al1enjesus/polymarket-whales) - Real-time whale trade tracker for Polymarket — terminal alerts + Telegram notifications when large orders hit the book.
 - [pmxt](https://github.com/qoery-com/pmxt) - A unified API for accessing prediction market data across multiple exchanges. CCXT for prediction markets.
 
 ### Data Visualization
