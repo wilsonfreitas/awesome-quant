@@ -39,6 +39,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [ArcticDB](https://github.com/man-group/ArcticDB) - High performance datastore for time series and tick data.
 - [pmxt](https://github.com/pmxt-dev/pmxt) - The CCXT for prediction markets. A unified API for trading on Polymarket, Kalshi, and more.
 - [polymarket-whales](https://github.com/al1enjesus/polymarket-whales) - Real-time whale trade tracker for Polymarket — terminal alerts + Telegram notifications when large orders hit the book.
+- [polymarket-whales](https://github.com/al1enjesus/polymarket-whales) - Real-time whale trade tracker for Polymarket — terminal alerts + Telegram notifications when large orders hit the book.
 
 ### Financial Instruments and Pricing
 
