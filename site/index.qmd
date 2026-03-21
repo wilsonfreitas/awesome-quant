@@ -128,6 +128,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [bulbea](https://github.com/achillesrasquinha/bulbea) - Deep Learning based Python Library for Stock Market Prediction and Modelling.
 - [ib_nope](https://github.com/ajhpark/ib_nope) - Automated trading system for NOPE strategy over IBKR TWS.
 - [OctoBot](https://github.com/Drakkar-Software/OctoBot) - Open source cryptocurrency trading bot for high frequency, arbitrage, TA and social trading with an advanced web interface.
+- [OpenFinClaw](https://github.com/cryptoSUN2049/openFinclaw) - AI-native hedge fund platform: natural language strategy generation, Rust backtesting engine, multi-market execution, and self-evolving strategy pipeline with community leaderboard.
 - [bta-lib](https://github.com/mementum/bta-lib) - Technical Analysis library in pandas for backtesting algotrading and quantitative analysis.
 - [Stock-Prediction-Models](https://github.com/huseinzol05/Stock-Prediction-Models) - Gathers machine learning and deep learning models for Stock forecasting including trading bots and simulations.
 - [TuneTA](https://github.com/jmrichardson/tuneta) - TuneTA optimizes technical indicators using a distance correlation measure to a user defined target feature such as next day return.
@@ -161,6 +162,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [QTradeX-AI-Agents](https://github.com/squidKid-deluxe/QTradeX-AI-Agents) - Example strategies for the QTradeX platfrom.
 - [QTradeX-Algo-Trading-SDK](https://github.com/squidKid-deluxe/QTradeX-Algo-Trading-SDK) - AI-powered SDK featuring algorithmic trading, backtesting, deployment on 100+ exchanges, and multiple optimization engines.
 - [antback](https://github.com/ts-kontakt/antback) - A lightweight, event-loop-style backtest engine that allows a function-driven imperative style using efficient stateful helper functions and data containers.
+- [VARRD](https://github.com/augiemazza/varrd) - AI-powered trading edge discovery platform that validates trading ideas with event studies, statistical tests, and real market data. Web app, MCP server, CLI (`pip install varrd`), and Python SDK.
 
 ### Risk Analysis
 
@@ -224,6 +226,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ### Data Sources
 - [goMacro.ai](https://gomacro.ai) - AI-powered economic calendar with institutional-grade insights, bull/bear/base case scenario planning for NFP, CPI, PPI and other macro data releases.
 - [StockAPI](https://stockapi.com.cn) – Free real-time Chinese stock data (REST & WebSocket).
+- [Polymarket Scanner API](https://github.com/vesper-astrena/polymarket-scanner-api) - Real-time arbitrage detection API for Polymarket prediction markets, scanning 12,000+ markets for mispricings.
 - [yfinance](https://github.com/ranaroussi/yfinance) - Yahoo! Finance market data downloader (+faster Pandas Datareader)
 - [defeatbeta-api](https://github.com/defeat-beta/defeatbeta-api) - An open-source alternative to Yahoo Finance's market data APIs with higher reliability.
 - [findatapy](https://github.com/cuemacro/findatapy) - Python library to download market data via Bloomberg, Quandl, Yahoo etc.
@@ -239,6 +242,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [stock_extractor](https://github.com/ZachLiuGIS/stock_extractor) - General Purpose Stock Extractors from Online Resources.
 - [Stockex](https://github.com/cttn/Stockex) - Python wrapper for Yahoo! Finance API.
 - [StockAInsights](https://stockainsights.com) - AI-extracted financial statements API covering SEC filings including foreign filers (20-F, 6-K, 40-F), normalized quarterly and annual data from 2014+.
+- [SwapAPI](https://swapapi.dev) - Free DEX aggregator API returning executable swap calldata across 46 EVM chains. No API key required.
 - [finsymbols](https://github.com/skillachie/finsymbols) - Obtains stock symbols and relating information for SP500, AMEX, NYSE, and NASDAQ.
 - [FRB](https://github.com/avelkoski/FRB) - Python Client for FRED® API.
 - [inquisitor](https://github.com/econdb/inquisitor) - Python Interface to Econdb.com API.
@@ -276,6 +280,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [FinanceDataReader](https://github.com/FinanceData/FinanceDataReader) - Open Source Financial data reader for U.S, Korean, Japanese, Chinese, Vietnamese Stocks
 - [pystlouisfed](https://github.com/TomasKoutek/pystlouisfed) - Python client for Federal Reserve Bank of St. Louis API - FRED, ALFRED, GeoFRED and FRASER.
 - [python-bcb](https://github.com/wilsonfreitas/python-bcb) - Python interface to Brazilian Central Bank web services.
+- [swiss-finance-data](https://github.com/EMen11/swiss-finance-data) - Python package for Swiss financial data (SNB Policy Rate, SARON, CHF FX rates, CPI, SMI equities, Confederation bond yields) from official SNB sources.
 - [brapi.dev](https://brapi.dev/) - Brazilian stock market data API for B3/Bovespa quotes, historical OHLCV, dividends, and fundamentals.
 - [market-prices](https://github.com/maread99/market_prices) - Create meaningful OHLCV datasets from knowledge of [exchange-calendars](https://github.com/gerrymanoim/exchange_calendars) (works out-the-box with data from Yahoo Finance).
 - [tardis-python](https://github.com/tardis-dev/tardis-python) - Python interface for Tardis.dev high frequency crypto market data
@@ -296,6 +301,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [edgar-sec](https://nikhilxsunder.github.io/edgar-sec/) - EDGAR Financial data API with preprocessed dataclass outputs.
 - [edgartools](https://github.com/dgunning/edgartools) - AI-native SEC EDGAR library with XBRL financials, clean text extraction, 17+ typed forms, and pandas DataFrames.
 - [FXMacroData](https://fxmacrodata.com/) - Real-time forex macroeconomic API for all major currency pairs sourced from central bank announcements.
+- [RTPR](https://rtpr.io) - Real-time press release API delivering news from Business Wire, PR Newswire, and GlobeNewswire with sub-500ms latency. REST and WebSocket APIs for financial applications. Python and Node.js SDKs available.
 - [wallstreet](https://github.com/mcdallas/wallstreet) - Real time stock and option data.
 
 ### Excel Integration
@@ -482,9 +488,12 @@ date conversion, scaling factor values, and filtering by the specified date.
 - [chart-patterns](https://github.com/focus1691/chart-patterns) - Technical analysis library for Market Profile, Volume Profile, Stacked Imbalances and High Volume Node indicators.
 - [orderflow](https://github.com/focus1691/orderflow) - Orderflow trade aggregator for building Footprint Candles from exchange websocket data.
 - [ccxt](https://github.com/ccxt/ccxt) - A JavaScript / Python / PHP cryptocurrency trading API with support for more than 100 bitcoin/altcoin exchanges.
+- [SimpleFunctions](https://github.com/spfunctions/simplefunctions-cli) - Prediction market intelligence CLI for Kalshi and Polymarket. Causal thesis models, edge detection, 24/7 orderbook monitoring, what-if scenarios, and trade execution. MCP server for AI agent integration.
 - [PENDAX](https://github.com/CompendiumFi/PENDAX-SDK) - Javascript SDK for Trading/Data API and Websockets for FTX, FTXUS, OKX, Bybit, & More.
+- [PreReason](https://github.com/PreReason/mcp) - Pre-analyzed Bitcoin and macro market briefings for AI agents. 17 contexts with trend signals, confidence scores, and regime classification via REST API and MCP.
 - [pmxt](https://github.com/pmxt-dev/pmxt) - The CCXT for prediction markets. A unified API for trading on Polymarket, Kalshi, and more.
 - [pmxt](https://github.com/qoery-com/pmxt) - A unified API for accessing prediction market data across multiple exchanges. CCXT for prediction markets.
+- [rebalance](https://github.com/cjroth/rebalance) - Interactive portfolio rebalancing tool that imports brokerage CSV data, sets target allocations, and generates trade instructions.
 
 ### Data Visualization
 
@@ -527,6 +536,7 @@ date conversion, scaling factor values, and filtering by the specified date.
 - [OrderMatchingEngine](https://github.com/PIYUSH-KUMAR1809/order-matching-engine) - A production-grade, lock-free, high-frequency trading matching engine achieving 150M+ orders/sec.
 - [rallyplot](https://rallyplot.com) - Fast, GPU-accelerated financial plotting library
 - [PandoraTrader](https://github.com/pegasusTrader/PandoraTrader) - A C++ CTP trading framework, with very clear logic
+- [NexusFix](https://github.com/SilverstreamsAI/NexusFix) - C++23 FIX protocol engine with zero-copy parsing and SIMD acceleration, 3x faster than QuickFIX.
 
 ## Frameworks
 
@@ -561,8 +571,12 @@ date conversion, scaling factor values, and filtering by the specified date.
 - [Barter](https://github.com/barter-rs/barter-rs) - Open-source Rust framework for building event-driven live-trading & backtesting systems
 - [LFEST](https://github.com/MathisWellmann/lfest-rs) - Simulated perpetual futures exchange to trade your strategy against.
 - [TradeAggregation](https://github.com/MathisWellmann/trade_aggregation-rs) - Aggregate trades into user-defined candles using information driven rules.
+- [OpenFinClaw](https://github.com/cryptoSUN2049/openFinclaw) - AI-native one-person hedge fund platform with Rust trading engine. Natural language → strategy → backtest → execution in 60s. Multi-market (US/HK/CN/Crypto), self-evolving strategy pipeline. Built on OpenClaw (68K+ stars).
 - [SlidingFeatures](https://github.com/MathisWellmann/sliding_features-rs) - Chainable tree-like sliding windows for signal processing and technical analysis.
 - [RustQuant](https://github.com/avhz/RustQuant) - Quantitative finance library written in Rust.
+- [fin-primitives](https://github.com/Mattbusel/fin-primitives) - Financial market primitives in Rust: Price/Quantity/Symbol newtypes, BTreeMap order book, OHLCV aggregation, SMA/EMA/RSI indicators, position ledger with PnL, and composable risk monitor.
+- [fin-stream](https://github.com/Mattbusel/fin-stream) - Real-time market data streaming in Rust: lock-free SPSC ring buffer, 100K+ ticks/second ingestion, multi-timeframe OHLCV construction, and Lorentz transforms on financial time series.
+- [Special-Relativity-in-Financial-Modeling](https://github.com/Mattbusel/Special-Relativity-in-Financial-Modeling) - C++20 implementation of special-relativistic geometry applied to OHLCV data: Lorentz factors, spacetime intervals, Christoffel symbols, and geodesic deviation signals from live market data. DOI: 10.5281/zenodo.18639919
 - [finalytics](https://github.com/Nnamdi-sys/finalytics) - A rust library for financial data analysis.
 - [RunMat](https://github.com/runmat-org/runmat) - Rust runtime for MATLAB-syntax array math with automatic CPU/GPU execution and fused kernels for quant simulations.
 
