@@ -538,6 +538,7 @@ date conversion, scaling factor values, and filtering by the specified date.
 - [OrderMatchingEngine](https://github.com/PIYUSH-KUMAR1809/order-matching-engine) - A production-grade, lock-free, high-frequency trading matching engine achieving 150M+ orders/sec.
 - [rallyplot](https://rallyplot.com) - Fast, GPU-accelerated financial plotting library
 - [PandoraTrader](https://github.com/pegasusTrader/PandoraTrader) - A C++ CTP trading framework, with very clear logic
+- [NexusFix](https://github.com/SilverstreamsAI/NexusFix) - C++23 FIX protocol engine with zero-copy parsing and SIMD acceleration, 3x faster than QuickFIX.
 
 ## Frameworks
 
