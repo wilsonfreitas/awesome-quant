@@ -19,7 +19,7 @@ if [ $exit_code -eq 0 ]; then
         echo "📝 Changes detected, committing..."
         git add README.md
         git commit -m "Update PyPI project last updated dates"
-        git push origin master
+        git push origin main
         echo "✅ Changes pushed to remote"
     fi
 fi

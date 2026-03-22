@@ -75,5 +75,5 @@ Stage, commit, and push the change:
 ```bash
 git add site/index.qmd
 git commit -m "Sync site/index.qmd with README.md"
-git push origin master
+git push origin main
 ```

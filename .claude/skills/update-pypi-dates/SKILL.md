@@ -51,7 +51,7 @@ If any updates were made:
 ```bash
 git add README.md non-github-urls.md
 git commit -m "Update PyPI project last updated dates"
-git push origin master
+git push origin main
 ```
 
 ## Usage
