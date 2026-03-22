@@ -22,6 +22,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Rust](#rust)
 - [Frameworks](#frameworks)
 - [Reproducing Works, Training & Books](#reproducing-works-training--books)
+- [Commercial & Proprietary Services](#commercial--proprietary-services)
+- [Related Lists](#related-lists)
 
 ## Python
 
