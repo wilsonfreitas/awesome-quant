@@ -166,6 +166,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [antback](https://github.com/ts-kontakt/antback) - A lightweight, event-loop-style backtest engine that allows a function-driven imperative style using efficient stateful helper functions and data containers.
 - [VARRD](https://github.com/augiemazza/varrd) - AI-powered trading edge discovery platform that validates trading ideas with event studies, statistical tests, and real market data. Web app, MCP server, CLI (`pip install varrd`), and Python SDK.
 
+- [polymarket-whales](https://github.com/al1enjesus/polymarket-whales) - Real-time whale trade tracker for Polymarket — terminal alerts + Telegram notifications when large orders hit the book.
+
 ### Risk Analysis
 
 - [QuantLibRisks](https://github.com/auto-differentiation/QuantLib-Risks-Py) - Fast risks with QuantLib
