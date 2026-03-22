@@ -277,7 +277,6 @@ def generate_html(entries: list[dict]) -> str:
         )
 
     total = len(entries)
-    total_stars = sum(int(e.get("stars", 0) or 0) for e in entries)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -315,8 +314,6 @@ def generate_html(entries: list[dict]) -> str:
           <span class="stat"><strong>{total}</strong> projects</span>
           <span class="stat-sep"></span>
           <span class="stat"><strong>{len(languages)}</strong> languages</span>
-          <span class="stat-sep"></span>
-          <span class="stat"><strong>{format_stars(total_stars)}</strong> total stars</span>
         </div>
         <a href="#content" class="hero-cta">Browse the List</a>
       </div>
