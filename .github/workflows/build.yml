@@ -19,38 +19,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-python@v4
+    - uses: astral-sh/setup-uv@v6
+    - uses: actions/setup-python@v5
       with:
         python-version: '3.x'
-    - name: Install Poetry
-      run: |
-        pip install poetry
     - name: Install dependencies
       run: |
-        poetry install --no-root --no-interaction
+        uv sync --no-install-project
     - name: Run parser
       run: |
         export GITHUB_ACCESS_TOKEN=${{ secrets.GITHUB_TOKEN }}
-        poetry run python parse.py
-    - uses: r-lib/actions/setup-r@v2
-      with:
-        r-version: '4.2.0' # The R version to download (if necessary) and use.
-    - uses: r-lib/actions/setup-r-dependencies@v2
-      with:
-        packages:
-          any::knitr
-          any::rmarkdown
-          any::DT
-    - name: setup Quarto
-      uses: quarto-dev/quarto-actions/setup@v2
-    - name: Render site
+        uv run python parse.py
+    - name: Generate site
       run: |
-        quarto render site
-    - name: Check site
-      run: |
-        ls -l site/docs
+        uv run python site/generate.py
     - name: Deploy pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: site/docs
+        publish_dir: site
