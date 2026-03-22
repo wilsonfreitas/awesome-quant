@@ -152,6 +152,7 @@
 * [rigtorp/awesome-modern-cpp: A collection of resources on modern C++](https://github.com/rigtorp/awesome-modern-cpp) - 现代C++库整理
 * [QuantLib: a free/open-source library for quantitative finance](http://quantlib.org/index.shtml)
 * [libtrading/libtrading: Libtrading, an ultra low-latency trading connectivity library for C and C++.](https://github.com/libtrading/libtrading)
+* [NexusFix](https://github.com/SilverstreamsAI/NexusFix) - C++23 高性能 FIX 协议引擎，零拷贝解析 + SIMD 加速，解析 ExecutionReport ~246ns（QuickFIX ~730ns）
 
 ### Julia
 #### 教程
