@@ -5,6 +5,10 @@ on:
     - cron: "0 1 * * *"
   push:
     branches: [ master ]
+    paths:
+      - 'README.md'
+      - 'parse.py'
+      - 'site/**'
 
 concurrency:
   group: build-and-deploy
