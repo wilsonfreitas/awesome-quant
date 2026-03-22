@@ -19,6 +19,16 @@ def extract_repo(url):
         return ""
 
 
+def extract_github_url(description):
+    """Extract GitHub URL from description if present."""
+    # Look for [GitHub](https://github.com/...) pattern
+    github_pattern = re.compile(r"\[GitHub\]\((https://github\.com/[\w-]+/[-\w\.]+)\)")
+    m = github_pattern.search(description)
+    if m:
+        return m.group(1)
+    return ""
+
+
 def get_last_commit(repo):
     try:
         if repo:
@@ -41,18 +51,30 @@ class Project(Thread):
 
     def run(self):
         m = self._match
-        is_github = "github.com" in m.group(2)
-        is_cran = "cran.r-project.org" in m.group(2)
-        repo = extract_repo(m.group(2))
+        primary_url = m.group(2)
+        description = m.group(3)
+
+        # Check if primary URL is GitHub
+        is_github = "github.com" in primary_url
+
+        # If not GitHub, check if there's a GitHub link in the description
+        github_url = ""
+        if not is_github:
+            github_url = extract_github_url(description)
+        else:
+            github_url = primary_url
+
+        is_cran = "cran.r-project.org" in primary_url
+        repo = extract_repo(github_url)
         print(repo)
         last_commit = get_last_commit(repo)
         self.regs = dict(
             project=m.group(1),
             section=self._section,
             last_commit=last_commit,
-            url=m.group(2),
-            description=m.group(3),
-            github=is_github,
+            url=primary_url,
+            description=description,
+            github=is_github or bool(github_url),
             cran=is_cran,
             repo=repo,
         )
