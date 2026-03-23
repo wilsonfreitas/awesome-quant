@@ -7,19 +7,21 @@ description: Review and validate pull requests that add new library entries to t
 
 Review one open pull request at a time for the awesome-quant curated list. Always start with the oldest unreviewed open PR.
 
+**IMPORTANT: Always use GitHub MCP tools for all GitHub operations.** Do not fall back to bash commands like `gh` or other tools — use the GitHub MCP interface exclusively.
+
 ## Workflow
 
 ### Step 1: Find the oldest open PR
 
-Use the GitHub MCP tools to list open pull requests sorted by creation date (ascending). Pick the oldest one. Show the user which PR you're reviewing (number, title, author, creation date).
+Use the `mcp__github__list_pull_requests` tool to list open pull requests sorted by creation date (ascending). Pick the oldest one. Show the user which PR you're reviewing (number, title, author, creation date).
 
 ### Step 2: Check for merge conflicts
 
-Use the GitHub MCP tools to read the PR details. If the PR has merge conflicts, report this to the user and stop — the contributor needs to resolve conflicts before review can proceed. Leave a polite comment asking them to rebase.
+Use the `mcp__github__pull_request_read` tool with method `get` to read the PR details. If the PR has merge conflicts, report this to the user and stop — the contributor needs to resolve conflicts before review can proceed. Use the `mcp__github__add_issue_comment` tool to leave a polite comment asking them to rebase.
 
 ### Step 3: Fetch the diff and extract added lines
 
-Read the PR diff. Focus only on changes to `README.md`. If the PR modifies files other than `README.md` (like `parse.py`, `site/`, etc.), flag this as unusual — most contributions should only touch `README.md`.
+Use the `mcp__github__pull_request_read` tool with method `get_diff` to read the PR diff. Focus only on changes to `README.md`. If the PR modifies files other than `README.md` (like `parse.py`, `site/`, etc.), flag this as unusual — most contributions should only touch `README.md`.
 
 ### Step 4: Automatic rejection checks
 
@@ -106,7 +108,7 @@ If the project doesn't fit any existing section, suggest the closest match or re
 
 #### 5d. Duplicate check
 
-Grep the current `README.md` for the project name and URL to ensure it's not already listed.
+Use the `mcp__github__get_file_contents` tool to fetch the current `README.md` from the repository, then search through it to ensure the project name and URL are not already listed.
 
 #### 5e. Quality check
 
@@ -140,13 +142,15 @@ Verdict: APPROVE / NEEDS CHANGES / REJECT
 
 ### Step 7: Take action
 
-- **If everything passes**: Ask the user for confirmation, then approve and merge the PR.
-- **If there are fixable issues**: Leave a constructive review comment on the PR listing what needs to be fixed. Be polite and specific — these are open-source contributors. Link to `CONTRIBUTING.md` for reference.
-- **If it should be rejected** (automatic rejection criteria): Close the PR with a polite explanation and link to `CONTRIBUTING.md`.
+Use GitHub MCP tools exclusively for all PR interactions:
+
+- **If everything passes**: Ask the user for confirmation, then use the `mcp__github__merge_pull_request` tool to merge the PR.
+- **If there are fixable issues**: Use the `mcp__github__add_issue_comment` tool to leave a constructive review comment on the PR listing what needs to be fixed. Be polite and specific — these are open-source contributors. Link to `CONTRIBUTING.md` for reference.
+- **If it should be rejected** (automatic rejection criteria): Use the `mcp__github__update_pull_request` tool to close the PR with a polite explanation and link to `CONTRIBUTING.md`. Then leave a comment using `mcp__github__add_issue_comment` explaining the closure reason.
 
 When leaving comments, be friendly and grateful for the contribution. Example tone:
 > Thanks for the contribution! A couple of things to address before we can merge:
 > - The description should end with a period.
 > - Consider adding a `[GitHub](url)` link so we can track activity.
 >
-> Please see our [contributing guidelines](https://github.com/wilsonfreitas/awesome-quant/blob/master/CONTRIBUTING.md) for the accepted entry formats.
+> Please see our [contributing guidelines](https://github.com/wilsonfreitas/awesome-quant/blob/main/CONTRIBUTING.md) for the accepted entry formats.

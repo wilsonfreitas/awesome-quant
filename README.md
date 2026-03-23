@@ -22,6 +22,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Rust](#rust)
 - [Frameworks](#frameworks)
 - [Reproducing Works, Training & Books](#reproducing-works-training--books)
+- [Commercial & Proprietary Services](#commercial--proprietary-services)
+- [Related Lists](#related-lists)
 
 ## Python
 
@@ -67,6 +69,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Kelly-Criterion](https://github.com/deltaray-io/kelly-criterion) - Kelly Criterion implemented in Python to size portfolios based on J. L. Kelly Jr's formula.
 - [rateslib](https://github.com/attack68/rateslib) - A fixed income library for pricing bonds and bond futures, and derivatives such as IRS, cross-currency and FX swaps.
 - [fypy](https://github.com/jkirkby3/fypy) - Vanilla and exotic option pricing library to support quantitative R&D. Focus on pricing interesting/useful models and contracts (including and beyond Black-Scholes), as well as calibration of financial models to market data.
+- [Pyderivatives](https://github.com/Julian-Beatty/Pyderivatives) - Toolkit for option pricing, implied volatility surfaces, risk-neutral densities, and pricing kernel surfaces with support for advanced models including Heston, Kou, and Bates.
 - [quantra](https://github.com/joseprupi/quantraserver) High-performance pricing engine built on QuantLib. It exposes QuantLib's functionality through gRPC and REST APIs, enabling distributed computations with FlatBuffers serialization.
 - [optionlab](https://github.com/rgaveiga/optionlab) - A Python library for evaluating option trading strategies.
 
@@ -80,6 +83,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [streaming_indicators](https://github.com/mr-easy/streaming_indicators) - A python library for computing technical analysis indicators on streaming data.
 
 ### Trading & Backtesting
+- [TradeSight](https://github.com/rmbell09-lang/tradesight) - AI-powered trading intelligence platform with paper trading, strategy optimization tournaments, 15+ technical indicators, and multi-market scanning.
 - [the0](https://github.com/alexanderwanyoike/the0) - Self-hosted execution engine for algorithmic trading bots. Write strategies in Python, TypeScript, Rust, C++, C#, Scala, or Haskell and deploy with one command. Each bot runs in an isolated container with scheduled or streaming execution.
 - [skfolio](https://github.com/skfolio/skfolio) - Python library for portfolio optimization built on top of scikit-learn. It provides a unified interface and sklearn compatible tools to build, tune and cross-validate portfolio models.
 - [Investing algorithm framework](https://github.com/coding-kitties/investing-algorithm-framework) - Framework for developing, backtesting, and deploying automated trading algorithms.
