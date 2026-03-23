@@ -149,4 +149,4 @@ When leaving comments, be friendly and grateful for the contribution. Example to
 > - The description should end with a period.
 > - Consider adding a `[GitHub](url)` link so we can track activity.
 >
-> Please see our [contributing guidelines](https://github.com/wilsonfreitas/awesome-quant/blob/master/CONTRIBUTING.md) for the accepted entry formats.
+> Please see our [contributing guidelines](https://github.com/wilsonfreitas/awesome-quant/blob/main/CONTRIBUTING.md) for the accepted entry formats.
