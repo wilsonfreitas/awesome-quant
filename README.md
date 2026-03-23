@@ -82,6 +82,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [streaming_indicators](https://github.com/mr-easy/streaming_indicators) - A python library for computing technical analysis indicators on streaming data.
 
 ### Trading & Backtesting
+- [TradeSight](https://github.com/rmbell09-lang/tradesight) - AI-powered trading intelligence platform with paper trading, strategy optimization tournaments, 15+ technical indicators, and multi-market scanning.
 - [the0](https://github.com/alexanderwanyoike/the0) - Self-hosted execution engine for algorithmic trading bots. Write strategies in Python, TypeScript, Rust, C++, C#, Scala, or Haskell and deploy with one command. Each bot runs in an isolated container with scheduled or streaming execution.
 - [skfolio](https://github.com/skfolio/skfolio) - Python library for portfolio optimization built on top of scikit-learn. It provides a unified interface and sklearn compatible tools to build, tune and cross-validate portfolio models.
 - [Investing algorithm framework](https://github.com/coding-kitties/investing-algorithm-framework) - Framework for developing, backtesting, and deploying automated trading algorithms.
