@@ -600,3 +600,4 @@ date conversion, scaling factor values, and filtering by the specified date.
 - [RoughVolatilityWorkshop](https://github.com/jgatheral/RoughVolatilityWorkshop) - 2024 QuantMind's Rough Volatility Workshop lectures.
 - [AFML](https://github.com/boyboi86/AFML) - All the answers for exercises from Advances in Financial Machine Learning by Dr Marco Lopez de Parodo.
 - [AlgoTradingLib](https://github.com/usdaud/algotradinglib.github.io) - A catalog of algorithmic trading libraries, frameworks, strategies, and educational materials.
+- [KeepRule](https://keeprule.com) - Free investment principles knowledge base with 500+ principles from Buffett, Munger, Graham and more, organized by investing scenarios.
