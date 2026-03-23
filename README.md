@@ -69,6 +69,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Kelly-Criterion](https://github.com/deltaray-io/kelly-criterion) - Kelly Criterion implemented in Python to size portfolios based on J. L. Kelly Jr's formula.
 - [rateslib](https://github.com/attack68/rateslib) - A fixed income library for pricing bonds and bond futures, and derivatives such as IRS, cross-currency and FX swaps.
 - [fypy](https://github.com/jkirkby3/fypy) - Vanilla and exotic option pricing library to support quantitative R&D. Focus on pricing interesting/useful models and contracts (including and beyond Black-Scholes), as well as calibration of financial models to market data.
+- [Pyderivatives](https://github.com/Julian-Beatty/Pyderivatives) - Toolkit for option pricing, implied volatility surfaces, risk-neutral densities, and pricing kernel surfaces with support for advanced models including Heston, Kou, and Bates.
 - [quantra](https://github.com/joseprupi/quantraserver) High-performance pricing engine built on QuantLib. It exposes QuantLib's functionality through gRPC and REST APIs, enabling distributed computations with FlatBuffers serialization.
 - [optionlab](https://github.com/rgaveiga/optionlab) - A Python library for evaluating option trading strategies.
 
