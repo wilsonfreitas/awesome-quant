@@ -207,6 +207,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ### Sentiment Analysis
 - [Asset News Sentiment Analyzer](https://github.com/KVignesh122/AssetNewsSentimentAnalyzer) - Sentiment analysis and report generation package for financial assets and securities utilizing GPT models.
+- [FinSignals](https://finsignals.ai) - Reddit-tuned NLP API that classifies financial posts across 7 dimensions (sentiment, directionality, quality, post type, relevance score, author confidence, sarcasm) in a single synchronous call. Free tier available.
 - [Social Stock Sentiment API](https://api.adanos.org/docs) - REST API analyzing Reddit and X/Twitter for stock mentions and sentiment, providing buzz scores, trending stocks, and AI-generated trend explanations.
 
 ### Quant Research Environment
