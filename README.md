@@ -234,6 +234,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pandas_market_calendars](https://github.com/rsheftel/pandas_market_calendars) - Exchange calendars to use with pandas for trading applications.
 
 ### Data Sources
+- [CoinPaprika](https://api.coinpaprika.com) - Free crypto market data API. 12,000+ coins, 350+ exchanges, tickers, OHLCV, historical prices. No API key for free tier. [Python SDK](https://github.com/coinpaprika/coinpaprika-api-python-client).
+- [DexPaprika](https://api.dexpaprika.com) - Free DEX data API. 34 blockchains, 30M+ pools, 27M+ tokens, real-time SSE streaming, OHLCV. No API key, no rate limits. [Python SDK](https://github.com/coinpaprika/dexpaprika-sdk-python).
 - [StockAPI](https://stockapi.com.cn) – Free real-time Chinese stock data (REST & WebSocket).
 - [Polymarket Scanner API](https://github.com/vesper-astrena/polymarket-scanner-api) - Real-time arbitrage detection API for Polymarket prediction markets, scanning 12,000+ markets for mispricings.
 - [yfinance](https://github.com/ranaroussi/yfinance) - Yahoo! Finance market data downloader (+faster Pandas Datareader)
