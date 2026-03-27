@@ -247,6 +247,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [yfinanceapi](https://github.com/Karthik005/yfinanceapi) - Finance API for Python.
 - [yql-finance](https://github.com/slawek87/yql-finance) - yql-finance is simple and fast. API returns stock closing prices for current period of time and current stock ticker (i.e. APPL, GOOGL).
 - [ystockquote](https://github.com/cgoldberg/ystockquote) - Retrieve stock quote data from Yahoo Finance.
+- [jugaad-data](https://github.com/jugaad-py/jugaad-data) - Download historical and live stock data from NSE (National Stock Exchange of India), BSE, and RBI.
+- [nsetools](https://github.com/vsjha18/nsetools) - Python library for extracting real-time data from National Stock Exchange (India).
+- [bsedata](https://github.com/sdrdis/bsedata) - Python library for extracting real-time data from Bombay Stock Exchange (India).
+- [nse-insights-api](https://github.com/pratik-choudhari/nse-insights) - Unofficial NSE India API for stock quotes, indices, historical data and more.
 - [wallstreet](https://github.com/mcdallas/wallstreet) - Real time stock and option data.
 - [stock_extractor](https://github.com/ZachLiuGIS/stock_extractor) - General Purpose Stock Extractors from Online Resources.
 - [Stockex](https://github.com/cttn/Stockex) - Python wrapper for Yahoo! Finance API.
@@ -303,6 +307,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [edgar-sec](https://nikhilxsunder.github.io/edgar-sec/) - EDGAR Financial data API with preprocessed dataclass outputs.
 - [edgartools](https://github.com/dgunning/edgartools) - AI-native SEC EDGAR library with XBRL financials, clean text extraction, 17+ typed forms, and pandas DataFrames.
 - [FXMacroData](https://fxmacrodata.com/) - Real-time forex macroeconomic API for all major currency pairs sourced from central bank announcements. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
+- [jugaad-data](https://github.com/jugaad-py/jugaad-data) - Download historical and live stock data from NSE (National Stock Exchange of India), BSE, and RBI.
+- [nsetools](https://github.com/vsjha18/nsetools) - Python library for extracting real-time data from National Stock Exchange (India).
+- [bsedata](https://github.com/sdrdis/bsedata) - Python library for extracting real-time data from Bombay Stock Exchange (India).
+- [nse-insights-api](https://github.com/pratik-choudhari/nse-insights) - Unofficial NSE India API for stock quotes, indices, historical data and more.
 - [wallstreet](https://github.com/mcdallas/wallstreet) - Real time stock and option data.
 
 ### Excel Integration
