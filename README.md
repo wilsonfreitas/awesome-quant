@@ -120,7 +120,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [NowTrade](https://github.com/edouardpoitras/NowTrade) - Python library for backtesting technical/mechanical strategies in the stock and currency markets.
 - [pinkfish](https://github.com/fja05680/pinkfish) - A backtester and spreadsheet library for security analysis.
 - [PRISM-INSIGHT](https://github.com/dragon1086/prism-insight) - AI-powered stock analysis system with 13 specialized agents, automated trading via KIS API, supporting Korean & US markets.
-- [FinClaw](https://github.com/NeuZhou/finclaw) - AI-powered financial intelligence engine with 8 master strategies across US, CN, and HK markets. Multi-agent architecture with +29.1% annual alpha. 227 tests.
+- [FinClaw](https://github.com/NeuZhou/finclaw) - Self-evolving trading strategies via genetic algorithm. 484 factors, walk-forward validation, MCP server for AI agents. Supports crypto, A-shares, and US stocks.
 - [aat](https://github.com/timkpaine/aat) - Async Algorithmic Trading Engine
 - [Backtesting.py](https://kernc.github.io/backtesting.py/) - Backtest trading strategies in Python
 - [catalyst](https://github.com/enigmampc/catalyst) - An Algorithmic Trading Library for Crypto-Assets in Python
