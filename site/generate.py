@@ -199,6 +199,79 @@ def build_tags_html(e: dict) -> str:
     return "\n          ".join(tags)
 
 
+def build_tag_cloud(entries: list[dict]) -> str:
+    """Build a tag cloud of popular languages and categories."""
+    from collections import Counter
+
+    # Count language frequencies
+    lang_counts = Counter()
+    for e in entries:
+        langs = [l.strip() for l in e.get("languages", e.get("language", "")).split(",") if l.strip()]
+        lang_counts.update(langs)
+
+    # Remove non-language sections
+    skip = {"Commercial & Proprietary Services", "Related Lists", "Reproducing Works, Training & Books", "Cross-Language Frameworks"}
+    for s in skip:
+        lang_counts.pop(s, None)
+
+    # Count category frequencies
+    cat_counts = Counter(e.get("category", "") for e in entries if e.get("category"))
+
+    # Get top items
+    top_langs = lang_counts.most_common(8)  # Top 8 languages
+    top_cats = cat_counts.most_common(6)    # Top 6 categories
+
+    if not top_langs and not top_cats:
+        return ""
+
+    # Combine and sort by frequency
+    all_items = []
+    for lang, count in top_langs:
+        all_items.append(("language", lang, count))
+    for cat, count in top_cats:
+        all_items.append(("category", cat, count))
+
+    # Sort by count descending
+    all_items.sort(key=lambda x: x[2], reverse=True)
+
+    # Calculate size scale (1.0 to 1.6x)
+    if all_items:
+        min_count = min(item[2] for item in all_items)
+        max_count = max(item[2] for item in all_items)
+        count_range = max_count - min_count if max_count > min_count else 1
+    else:
+        min_count = max_count = count_range = 1
+
+    tags = []
+    esc = html.escape
+    for tag_type, value, count in all_items:
+        # Calculate font size: 1.0 to 1.6
+        size = 1.0 + ((count - min_count) / count_range * 0.6) if count_range > 0 else 1.0
+
+        if tag_type == "language":
+            tags.append(
+                f'<button class="tag tag-lang tag-cloud-item" '
+                f'data-filter-type="language" data-filter-value="{esc(value)}" '
+                f'style="font-size: {size:.2f}em;">{esc(value.lower())}</button>'
+            )
+        else:  # category
+            tags.append(
+                f'<button class="tag tag-section tag-cloud-item" '
+                f'data-filter-type="category" data-filter-value="{esc(value)}" '
+                f'style="font-size: {size:.2f}em;">{esc(value)}</button>'
+            )
+
+    if not tags:
+        return ""
+
+    return f"""        <div class="tag-cloud">
+          <div class="tag-cloud-label">Popular filters:</div>
+          <div class="tag-cloud-items">
+            {chr(10).join("            " + tag for tag in tags)}
+          </div>
+        </div>"""
+
+
 def generate_html(entries: list[dict]) -> str:
     """Generate the full HTML page from project entries."""
     languages = sorted(
@@ -215,6 +288,9 @@ def generate_html(entries: list[dict]) -> str:
             }
         )
     )
+
+    # Generate tag cloud
+    tag_cloud_html = build_tag_cloud(entries)
 
     # Build table rows
     rows = []
@@ -349,6 +425,8 @@ def generate_html(entries: list[dict]) -> str:
             <kbd class="search-kbd">/</kbd>
           </div>
         </div>
+
+{tag_cloud_html}
 
         <div class="filter-bar" id="filter-bar" style="display:none">
           <span class="filter-label">Filtered by:</span>

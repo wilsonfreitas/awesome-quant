@@ -363,6 +363,36 @@ button {
   pointer-events: none;
 }
 
+/* ===== Tag Cloud ===== */
+.tag-cloud {
+  padding: 1rem 0 0.5rem 0;
+  margin-bottom: 1rem;
+}
+
+.tag-cloud-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-tertiary);
+  margin-bottom: 0.5rem;
+}
+
+.tag-cloud-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.tag-cloud-item {
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.tag-cloud-item:hover {
+  transform: scale(1.08);
+}
+
 .filter-controls select {
   padding: 0.625rem 2rem 0.625rem 0.875rem;
   font-family: var(--font);
