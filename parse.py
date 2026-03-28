@@ -138,6 +138,24 @@ def slugify(text):
     return text.strip("-")
 
 
+re_langs = re.compile(r'^((?:`[^`]+`\s*)+)-\s*(.*)$')
+
+
+def extract_languages(description: str) -> tuple[list[str], str]:
+    """Extract inline language tags from description.
+
+    Returns (languages, clean_description).
+    E.g. "`Python` `Rust` - High-performance..." -> (["Python", "Rust"], "High-performance...")
+    """
+    m = re_langs.match(description)
+    if m:
+        lang_str = m.group(1)
+        clean_desc = m.group(2)
+        langs = re.findall(r'`([^`]+)`', lang_str)
+        return langs, clean_desc
+    return [], description
+
+
 def get_repo_info(repo):
     """Fetch last commit date and star count from GitHub."""
     try:
@@ -162,11 +180,17 @@ class Project(Thread):
         self._language = language
         self._category = category
         self._section_path = section_path
+        self.languages = []
+        self.clean_description = ""
 
     def run(self):
         m = self._match
         primary_url = m.group(2)
-        description = m.group(3)
+        # Use clean_description if it was set by the parser, otherwise extract from match
+        if self.clean_description:
+            description = self.clean_description
+        else:
+            description = m.group(3)
 
         # Check if primary URL is GitHub
         is_github = "github.com" in primary_url
@@ -208,6 +232,7 @@ class Project(Thread):
         self.regs = dict(
             project=m.group(1),
             language=self._language,
+            languages=",".join(self.languages),
             category=self._category,
             section=self._section_path,
             section_slug=section_slug,
@@ -231,37 +256,33 @@ with open("README.md", "r", encoding="utf8") as f:
     re_badge = re.compile(r"\s*!\[[^\]]*\]\([^)]*\)\s*")
     m_titles = []
     last_head_level = 0
-    current_language = ""
     current_category = ""
     for line in f:
         line = re_badge.sub(" ", line)
         m = rex.match(line)
         if m:
+            raw_desc = m.group(3).strip()
+
+            # Extract language tags from description
+            languages, clean_description = extract_languages(raw_desc)
+            primary_language = languages[0] if languages else ""
+
             p = Project(
                 m,
-                current_language,
+                primary_language,
                 current_category,
-                " > ".join(m_titles[1:]),
+                current_category,
             )
+            p.languages = languages
+            p.clean_description = clean_description
             p.start()
             projects.append(p)
         else:
             m = ret.match(line)
             if m:
                 hrs = m.group(1)
-                title = m.group(2)
-                if len(hrs) > last_head_level:
-                    m_titles.append(title)
-                else:
-                    for n in range(last_head_level - len(hrs) + 1):
-                        m_titles.pop()
-                    m_titles.append(title)
-                last_head_level = len(hrs)
-
-                if len(hrs) == 2:
-                    current_language = title
-                    current_category = ""
-                elif len(hrs) == 3:
+                title = m.group(2).strip()
+                if len(hrs) == 2 and title != "Contents":
                     current_category = title
 
 while True:
