@@ -72,6 +72,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Pyderivatives](https://github.com/Julian-Beatty/Pyderivatives) - Toolkit for option pricing, implied volatility surfaces, risk-neutral densities, and pricing kernel surfaces with support for advanced models including Heston, Kou, and Bates.
 - [quantra](https://github.com/joseprupi/quantraserver) High-performance pricing engine built on QuantLib. It exposes QuantLib's functionality through gRPC and REST APIs, enabling distributed computations with FlatBuffers serialization.
 - [optionlab](https://github.com/rgaveiga/optionlab) - A Python library for evaluating option trading strategies.
+- [flashalpha](https://github.com/FlashAlpha-lab/flashalpha-python) - Python client for the FlashAlpha options analytics API. pip install flashalpha.
 
 ### Indicators
 
@@ -313,6 +314,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [bsedata](https://github.com/sdrdis/bsedata) - Python library for extracting real-time data from Bombay Stock Exchange (India).
 - [nse-insights-api](https://github.com/pratik-choudhari/nse-insights) - Unofficial NSE India API for stock quotes, indices, historical data and more.
 - [wallstreet](https://github.com/mcdallas/wallstreet) - Real time stock and option data.
+- [flashalpha](https://flashalpha.com) - Options analytics API and Python SDK for real-time gamma exposure (GEX), delta exposure, vanna, charm, implied volatility, Black-Scholes greeks, 0DTE analytics, and dealer positioning data.
 
 ### Excel Integration
 
