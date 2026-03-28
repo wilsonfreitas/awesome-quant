@@ -703,6 +703,23 @@ button {
   border-color: rgba(252, 211, 77, 0.25);
 }
 
+/* Language-specific tag colors */
+.tag-lang[data-filter-value="Python"] { background: #306998; color: #FFD43B; border: 1px solid rgba(48, 105, 152, 0.3); }
+.tag-lang[data-filter-value="R"] { background: #276DC3; color: #fff; border: 1px solid rgba(39, 109, 195, 0.3); }
+.tag-lang[data-filter-value="Julia"] { background: #9558B2; color: #fff; border: 1px solid rgba(149, 88, 178, 0.3); }
+.tag-lang[data-filter-value="JavaScript"] { background: #F7DF1E; color: #000; border: 1px solid rgba(247, 223, 30, 0.3); }
+.tag-lang[data-filter-value="Rust"] { background: #CE412B; color: #fff; border: 1px solid rgba(206, 65, 43, 0.3); }
+.tag-lang[data-filter-value="C++"] { background: #00599C; color: #fff; border: 1px solid rgba(0, 89, 156, 0.3); }
+.tag-lang[data-filter-value="C#"] { background: #68217A; color: #fff; border: 1px solid rgba(104, 33, 122, 0.3); }
+.tag-lang[data-filter-value="Java"] { background: #ED8B00; color: #fff; border: 1px solid rgba(237, 139, 0, 0.3); }
+.tag-lang[data-filter-value="Golang"] { background: #00ADD8; color: #fff; border: 1px solid rgba(0, 173, 216, 0.3); }
+.tag-lang[data-filter-value="Haskell"] { background: #5D4F85; color: #fff; border: 1px solid rgba(93, 79, 133, 0.3); }
+.tag-lang[data-filter-value="Scala"] { background: #DC322F; color: #fff; border: 1px solid rgba(220, 50, 47, 0.3); }
+.tag-lang[data-filter-value="Ruby"] { background: #CC342D; color: #fff; border: 1px solid rgba(204, 52, 45, 0.3); }
+.tag-lang[data-filter-value="Matlab"] { background: #E16737; color: #fff; border: 1px solid rgba(225, 103, 55, 0.3); }
+.tag-lang[data-filter-value="Elixir/Erlang"] { background: #4B275F; color: #fff; border: 1px solid rgba(75, 39, 95, 0.3); }
+.tag-lang[data-filter-value="PHP"] { background: #777BB4; color: #fff; border: 1px solid rgba(119, 123, 180, 0.3); }
+
 /* ===== Results ===== */
 .no-results {
   text-align: center;
