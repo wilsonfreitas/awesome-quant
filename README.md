@@ -80,6 +80,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Pyderivatives](https://github.com/Julian-Beatty/Pyderivatives) - `Python` - Toolkit for option pricing, implied volatility surfaces, risk-neutral densities, and pricing kernel surfaces with support for advanced models including Heston, Kou, and Bates.
 - [quantra](https://github.com/joseprupi/quantraserver) - `Python` - High-performance pricing engine built on QuantLib. It exposes QuantLib's functionality through gRPC and REST APIs, enabling distributed computations with FlatBuffers serialization.
 - [optionlab](https://github.com/rgaveiga/optionlab) - `Python` - A Python library for evaluating option trading strategies.
+- [flashalpha](https://github.com/FlashAlpha-lab/flashalpha-python) - `Python` - Python client for the FlashAlpha options analytics API.
 - [RQuantLib](https://github.com/eddelbuettel/rquantlib) - `R` - RQuantLib connects GNU R with QuantLib.
 - [quantmod](https://cran.r-project.org/web/packages/quantmod/index.html) - `R` - Quantitative Financial Modelling Framework. [GitHub](https://github.com/joshuaulrich/quantmod)
 - [Rmetrics](https://www.rmetrics.org) - `R` - The premier open source software solution for teaching and training quantitative finance.
@@ -243,6 +244,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Lucky.jl](https://github.com/oliviermilla/Lucky.jl) - `Julia` - Modular, asynchronous trading engine in pure Julia.
 - [Strategems.jl](https://github.com/dysonance/Strategems.jl) - `Julia` - Quantitative systematic trading strategy development and backtesting.
 - [ccxt](https://github.com/ccxt/ccxt) - `JavaScript` `Python` `PHP` - A JavaScript / Python / PHP cryptocurrency trading API with support for more than 100 bitcoin/altcoin exchanges.
+- [TradeClaw](https://github.com/naimkatiman/tradeclaw) - `JavaScript` - Open-source AI trading signal platform with RSI/MACD/EMA confluence scoring, real-time signals for 10+ assets, self-hostable with one Docker command.
 - [Jiji](https://github.com/unageanu/jiji2) - `Ruby` - Open Source Forex algorithmic trading framework using OANDA REST API.
 - [Tai](https://github.com/fremantle-capital/tai) - `Elixir/Erlang` - Open Source composable, real time, market data and trade execution toolkit.
 - [Workbench](https://github.com/fremantle-industries/workbench) - `Elixir/Erlang` - From Idea to Execution - Manage your trading operation across a globally distributed cluster
@@ -356,6 +358,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [yfinanceapi](https://github.com/Karthik005/yfinanceapi) - `Python` - Finance API for Python.
 - [yql-finance](https://github.com/slawek87/yql-finance) - `Python` - yql-finance is simple and fast. API returns stock closing prices for current period of time and current stock ticker (i.e. APPL, GOOGL).
 - [ystockquote](https://github.com/cgoldberg/ystockquote) - `Python` - Retrieve stock quote data from Yahoo Finance.
+- [jugaad-data](https://github.com/jugaad-py/jugaad-data) - `Python` - Download historical and live stock data from NSE (National Stock Exchange of India), BSE, and RBI.
+- [nsetools](https://github.com/vsjha18/nsetools) - `Python` - Python library for extracting real-time data from National Stock Exchange (India).
+- [bsedata](https://github.com/sdrdis/bsedata) - `Python` - Python library for extracting real-time data from Bombay Stock Exchange (India).
+- [nse-insights-api](https://github.com/pratik-choudhari/nse-insights) - `Python` - Unofficial NSE India API for stock quotes, indices, historical data and more.
 - [wallstreet](https://github.com/mcdallas/wallstreet) - `Python` - Real time stock and option data.
 - [stock_extractor](https://github.com/ZachLiuGIS/stock_extractor) - `Python` - General Purpose Stock Extractors from Online Resources.
 - [Stockex](https://github.com/cttn/Stockex) - `Python` - Python wrapper for Yahoo! Finance API.
@@ -370,6 +376,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pybbg](https://github.com/bpsmith/pybbg) - `Python` - Python interface to Bloomberg COM APIs.
 - [ccy](https://github.com/lsbardel/ccy) - `Python` - Python module for currencies.
 - [tushare](https://pypi.org/project/tushare/) - `Python` - A utility for crawling historical and Real-time Quotes data of China stocks. (Last updated: 2024-08-27)
+- [edinetdb](https://edinetdb.com/) - `Python` - Free API and MCP server for Japanese company financials. Normalizes EDINET XBRL across JP-GAAP, IFRS, and US-GAAP for 3,800+ listed companies with 90 metrics, screening, and securities report text.
 - [edinet-mcp](https://github.com/ajtgjmdjp/edinet-mcp) - `Python` - Parse Japanese XBRL financial statements from EDINET with 161 normalized labels, 26 financial metrics, and multi-company screening.
 - [estat-mcp](https://github.com/ajtgjmdjp/estat-mcp) - `Python` - Access Japanese government statistics (e-Stat) covering population, GDP, CPI, labor, and trade data with MCP integration and Polars export.
 - [tdnet-disclosure-mcp](https://github.com/ajtgjmdjp/tdnet-disclosure-mcp) - `Python` - Access Japanese timely disclosures (TDNet) via MCP. Retrieve earnings, dividends, forecasts, buybacks, and other filings for 4,000+ listed companies. No API key required.
