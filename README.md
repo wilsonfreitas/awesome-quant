@@ -502,8 +502,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
   - [QuantLib.jl](https://github.com/pazzo83/QuantLib.jl) - Julia port.
   - [QuantLib-Python Documentation](https://quantlib-python-docs.readthedocs.io/) - Documentation for the Python bindings for the QuantLib library.
 - [TA-Lib](https://ta-lib.org) - perform technical analysis of financial market data. [GitHub](https://github.com/TA-Lib/ta-lib)
-  - [ta-lib-python](https://github.com/TA-Lib/ta-lib-python).
-  - [ta-lib](https://github.com/TA-Lib/ta-lib).
+  - [ta-lib-python](https://github.com/TA-Lib/ta-lib-python)
+  - [ta-lib](https://github.com/TA-Lib/ta-lib)
 - [RunMat](https://github.com/runmat-org/runmat) - Rust runtime for MATLAB-syntax array math with automatic CPU/GPU execution and fused kernels for quant simulations.
 
 ## Reproducing Works, Training & Books
