@@ -27,9 +27,9 @@ Use the `mcp__github__pull_request_read` tool with method `get_diff` to read the
 
 Reject the PR immediately (close with a polite comment) if any of these apply:
 
-- **Multiple projects in one PR** — each PR should add exactly one project.
-- **Empty PR description** — the contributor must explain what they're adding.
-- **Duplicate** — the project name or URL is already in `README.md` or in a recently closed PR.
+- **Multiple unrelated projects** — multiple projects should only be submitted together if they are closely related (same market/exchange, same author, same service, or address a specific domain gap). Check the PR description for clear rationale. If unrelated, ask the contributor to split into separate PRs.
+- **Empty PR description** — the contributor must explain what they're adding and why (especially if multiple projects).
+- **Duplicate entries** — the same project name or URL appears multiple times within the PR or already in `README.md`.
 - **Archived or abandoned** — the project has no activity in 12+ months.
 
 ### Step 5: Validate each added entry
@@ -154,3 +154,5 @@ When leaving comments, be friendly and grateful for the contribution. Example to
 > - Consider adding a `[GitHub](url)` link so we can track activity.
 >
 > Please see our [contributing guidelines](https://github.com/wilsonfreitas/awesome-quant/blob/main/CONTRIBUTING.md) for the accepted entry formats.
+
+**For multiple-project PRs:** If entries have mixed results (some pass, some need fixes), list all issues together and ask the contributor to fix all at once rather than cherry-picking individual entries. If the relationship between projects isn't clear from the description, ask for clarification of why they should be grouped.

@@ -61,9 +61,21 @@ Add your entry under the correct language heading (`##`) and category subheading
 
 If no existing category fits, suggest a new one in your PR description.
 
-## One Project Per PR
+## Multiple Related Projects Per PR
 
-Submit one project per pull request. This makes review faster and keeps the git history clean.
+**Preferred:** One project per pull request for clarity and focused reviews.
+
+**Acceptable:** Multiple closely related projects in a single PR if they share a common theme or data source. Examples:
+- Multiple data sources from the same market or exchange (e.g., all NSE/BSE tools for Indian markets)
+- Multiple tools from the same author with complementary functionality
+- Multiple APIs/SDKs for the same service or data provider
+- Related packages addressing a specific domain gap (e.g., UK company identifier validators)
+
+When submitting multiple projects:
+- Explain the relationship and rationale in the PR description
+- Ensure each entry is placed in the correct section
+- Avoid creating duplicate entries within the same README file
+- All entries must meet quality and format requirements independently
 
 ## Before Submitting
 
