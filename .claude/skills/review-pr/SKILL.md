@@ -38,28 +38,33 @@ For every new line added to `README.md`, check the following:
 
 #### 5a. Entry format
 
-Each entry MUST match one of these accepted formats:
+Each entry MUST include one or more language tags and match one of these accepted formats:
 
-**GitHub project:**
+**Single language:**
 ```
-- [Project Name](https://github.com/owner/repo) - Short description ending with a period.
+- [Project Name](https://github.com/owner/repo) - `Python` - Short description ending with a period.
+```
+
+**Multiple languages:**
+```
+- [Project Name](https://github.com/owner/repo) - `Python` `Rust` - Short description ending with a period.
 ```
 
 **Project with website and GitHub repo:**
 ```
-- [Project Name](https://project-site.com) - Short description ending with a period. [GitHub](https://github.com/owner/repo)
+- [Project Name](https://project-site.com) - `Python` - Short description ending with a period. [GitHub](https://github.com/owner/repo)
 ```
 
 **CRAN project (with optional GitHub link):**
 ```
-- [Package Name](https://cran.r-project.org/package=pkgname) - Short description ending with a period.
-- [Package Name](https://cran.r-project.org/package=pkgname) - Short description ending with a period. [GitHub](https://github.com/owner/repo)
+- [Package Name](https://cran.r-project.org/package=pkgname) - `R` - Short description ending with a period.
+- [Package Name](https://cran.r-project.org/package=pkgname) - `R` - Short description ending with a period. [GitHub](https://github.com/owner/repo)
 ```
 
 **PyPI project (with optional GitHub link):**
 ```
-- [package-name](https://pypi.org/project/package-name/) - Short description ending with a period.
-- [package-name](https://pypi.org/project/package-name/) - Short description ending with a period. [GitHub](https://github.com/owner/repo)
+- [package-name](https://pypi.org/project/package-name/) - `Python` - Short description ending with a period.
+- [package-name](https://pypi.org/project/package-name/) - `Python` - Short description ending with a period. [GitHub](https://github.com/owner/repo)
 ```
 
 The core regex used by `parse.py` to extract entries is: `^\s*- \[(.*)\]\((.*)\) - (.*)$`
@@ -68,11 +73,12 @@ Specifically check:
 - Starts with `- ` (dash + space)
 - Followed by a markdown link `[Name](URL)`
 - Followed by ` - ` (space, dash, space)
+- **MUST include one or more language tags in backticks** (e.g., `` `Python` ``, `` `Python` `Rust` ``) followed by ` - `
 - Followed by a description that ends with a period `.`
 - The period must come before the optional `[GitHub](url)` link
 - The `[GitHub]` link, if present, must use the exact format `[GitHub](https://github.com/owner/repo)`
 
-If the entry doesn't match, report exactly what's wrong (missing period, wrong separator, etc.).
+If the entry doesn't match, report exactly what's wrong (missing language tags, missing period, wrong separator, etc.).
 
 #### 5b. URL validation
 
@@ -85,26 +91,34 @@ If the entry doesn't match, report exactly what's wrong (missing period, wrong s
 
 #### 5c. Section placement
 
-Look at which `##` (language) and `###` (category) heading the entry was added under. Evaluate whether the project fits that section:
+The README is now organized by **category** (not by language). Look at which `##` (category) heading the entry was added under. Evaluate whether the project fits that section:
 
-- Does the project's language match the section? (e.g., a Python library should be under `## Python`)
-- Does the project's purpose match the category? (e.g., a backtesting framework should be under `### Trading & Backtesting`, not `### Indicators`)
+- Does the project's purpose match the category? (e.g., a backtesting framework should be under `## Trading & Backtesting`, not under `## Technical Indicators`)
 - Commercial/proprietary projects must go under `## Commercial & Proprietary Services`.
 - If the placement seems wrong, suggest a better section.
 
-The current sections in the README are:
+The current category sections in the README are:
 
-**Python**: Numerical Libraries & Data Structures, Financial Instruments and Pricing, Indicators, Trading & Backtesting, Risk Analysis, Factor Analysis, Sentiment Analysis, Quant Research Environment, Time Series, Calendars, Data Sources, Excel Integration, Visualization
+1. Numerical Libraries & Data Structures
+2. Financial Instruments & Pricing
+3. Technical Indicators
+4. Trading & Backtesting
+5. Portfolio Optimization & Risk Analysis
+6. Factor Analysis
+7. Sentiment Analysis & Alternative Data
+8. Time Series Analysis
+9. Market Data & Data Sources
+10. Prediction Markets
+11. Calendars & Market Hours
+12. Visualization
+13. Excel & Spreadsheet Integration
+14. Quant Research Environments
+15. Cross-Language Frameworks
+16. Reproducing Works, Training & Books
+17. Commercial & Proprietary Services
+18. Related Lists
 
-**R**: Numerical Libraries & Data Structures, Data Sources, Financial Instruments and Pricing, Trading, Backtesting, Risk Analysis, Factor Analysis, Time Series, Calendars
-
-**Other languages**: Matlab, Julia, Java, JavaScript, Haskell, Scala, Ruby, Elixir/Erlang, Golang, CPP, CSharp, Rust
-
-**Cross-language**: Frameworks, Reproducing Works Training & Books
-
-**Commercial & Proprietary Services**
-
-If the project doesn't fit any existing section, suggest the closest match or recommend creating a new subsection (rare).
+If the project doesn't fit any existing section, suggest the closest match or recommend creating a new category section (rare).
 
 #### 5d. Duplicate check
 

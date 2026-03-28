@@ -4,12 +4,20 @@ Your contributions are always welcome! Please ensure your pull request meets the
 
 ## Entry Format
 
-Each entry must follow one of these formats:
+Each entry must include one or more language tags and follow one of these formats:
 
-### GitHub project
+### Single language
 
 ```markdown
-- [Project Name](https://github.com/owner/repo) - Short description ending with a period.
+- [Project Name](https://github.com/owner/repo) - `Python` - Short description ending with a period.
+```
+
+### Multiple languages
+
+For projects available in multiple languages, list them as backtick-delimited tags:
+
+```markdown
+- [Project Name](https://github.com/owner/repo) - `Python` `Rust` - Short description ending with a period.
 ```
 
 ### Project with website and GitHub repo
@@ -17,7 +25,7 @@ Each entry must follow one of these formats:
 For projects that have a dedicated website, link to the site and append the GitHub repo in the description:
 
 ```markdown
-- [Project Name](https://project-site.com) - Short description ending with a period. [GitHub](https://github.com/owner/repo)
+- [Project Name](https://project-site.com) - `Python` - Short description ending with a period. [GitHub](https://github.com/owner/repo)
 ```
 
 ### CRAN project
@@ -25,8 +33,8 @@ For projects that have a dedicated website, link to the site and append the GitH
 Link to the CRAN package page. If the project has a GitHub repo, append it after the description:
 
 ```markdown
-- [Package Name](https://cran.r-project.org/package=pkgname) - Short description ending with a period.
-- [Package Name](https://cran.r-project.org/package=pkgname) - Short description ending with a period. [GitHub](https://github.com/owner/repo)
+- [Package Name](https://cran.r-project.org/package=pkgname) - `R` - Short description ending with a period.
+- [Package Name](https://cran.r-project.org/package=pkgname) - `R` - Short description ending with a period. [GitHub](https://github.com/owner/repo)
 ```
 
 ### PyPI project
@@ -34,8 +42,8 @@ Link to the CRAN package page. If the project has a GitHub repo, append it after
 Link to the PyPI package page. If the project has a GitHub repo, append it after the description:
 
 ```markdown
-- [package-name](https://pypi.org/project/package-name/) - Short description ending with a period.
-- [package-name](https://pypi.org/project/package-name/) - Short description ending with a period. [GitHub](https://github.com/owner/repo)
+- [package-name](https://pypi.org/project/package-name/) - `Python` - Short description ending with a period.
+- [package-name](https://pypi.org/project/package-name/) - `Python` - Short description ending with a period. [GitHub](https://github.com/owner/repo)
 ```
 
 ### General rules
@@ -57,7 +65,28 @@ Commercial and proprietary projects are welcome. They will be placed under the *
 
 ## Section Placement
 
-Add your entry under the correct language heading (`##`) and category subheading (`###`). If the project is a Python backtesting library, it goes under `## Python` → `### Trading & Backtesting`, not under `### Indicators`.
+The README is organized by **category** (not by language). Add your entry under the appropriate category heading (`##`). The available categories are:
+
+- Numerical Libraries & Data Structures
+- Financial Instruments & Pricing
+- Technical Indicators
+- Trading & Backtesting
+- Portfolio Optimization & Risk Analysis
+- Factor Analysis
+- Sentiment Analysis & Alternative Data
+- Time Series Analysis
+- Market Data & Data Sources
+- Prediction Markets
+- Calendars & Market Hours
+- Visualization
+- Excel & Spreadsheet Integration
+- Quant Research Environments
+- Cross-Language Frameworks
+- Reproducing Works, Training & Books
+- Commercial & Proprietary Services
+- Related Lists
+
+For example, if your project is a Python backtesting library, it goes under `## Trading & Backtesting` (not under Technical Indicators or another category).
 
 If no existing category fits, suggest a new one in your PR description.
 
