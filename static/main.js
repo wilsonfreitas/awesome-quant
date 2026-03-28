@@ -73,7 +73,7 @@
         " " +
         (expand ? expand.textContent : "")
       ).toLowerCase();
-      const language = row.dataset.language || "";
+      const languages = (row.dataset.languages || "").split(" ");
       const category = row.dataset.category || "";
       const sources = row.dataset.sources || "";
 
@@ -86,7 +86,7 @@
       if (show && activeFilter.value) {
         const ft = activeFilter.type;
         const fv = activeFilter.value;
-        if (ft === "language" && language !== fv) show = false;
+        if (ft === "language" && !languages.includes(fv)) show = false;
         if (ft === "category" && category !== fv) show = false;
         if (ft === "source" && !sources.split(" ").includes(fv)) show = false;
       }
@@ -128,8 +128,8 @@
     applyFilters();
   });
 
-  // ===== Tag Click =====
-  tableBody.addEventListener("click", (e) => {
+  // ===== Tag Click Handler =====
+  function handleTagClick(e) {
     const tag = e.target.closest(".tag");
     if (tag) {
       e.stopPropagation();
@@ -145,7 +145,16 @@
       applyFilters();
       return;
     }
-  });
+  }
+
+  // Listen for tag clicks on table rows
+  tableBody.addEventListener("click", handleTagClick);
+
+  // Listen for tag clicks on tag cloud (outside table)
+  const tagCloud = $(".tag-cloud");
+  if (tagCloud) {
+    tagCloud.addEventListener("click", handleTagClick);
+  }
 
   // ===== Row Expand =====
   tableBody.addEventListener("click", (e) => {
