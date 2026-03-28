@@ -128,8 +128,8 @@
     applyFilters();
   });
 
-  // ===== Tag Click =====
-  tableBody.addEventListener("click", (e) => {
+  // ===== Tag Click Handler =====
+  function handleTagClick(e) {
     const tag = e.target.closest(".tag");
     if (tag) {
       e.stopPropagation();
@@ -145,7 +145,16 @@
       applyFilters();
       return;
     }
-  });
+  }
+
+  // Listen for tag clicks on table rows
+  tableBody.addEventListener("click", handleTagClick);
+
+  // Listen for tag clicks on tag cloud (outside table)
+  const tagCloud = $(".tag-cloud");
+  if (tagCloud) {
+    tagCloud.addEventListener("click", handleTagClick);
+  }
 
   // ===== Row Expand =====
   tableBody.addEventListener("click", (e) => {
