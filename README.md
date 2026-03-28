@@ -490,6 +490,7 @@ date conversion, scaling factor values, and filtering by the specified date.
 - [PreReason](https://github.com/PreReason/mcp) - Pre-analyzed Bitcoin and macro market briefings for AI agents. 17 contexts with trend signals, confidence scores, and regime classification via REST API and MCP.
 - [pmxt](https://github.com/pmxt-dev/pmxt) - The CCXT for prediction markets. A unified API for trading on Polymarket, Kalshi, and more.
 - [rebalance](https://github.com/cjroth/rebalance) - Interactive portfolio rebalancing tool that imports brokerage CSV data, sets target allocations, and generates trade instructions.
+- [TradeClaw](https://github.com/naimkatiman/tradeclaw) - Open-source AI trading signal platform with RSI/MACD/EMA confluence scoring, real-time signals for 10+ assets, self-hostable with one Docker command.
 
 ### Data Visualization
 
