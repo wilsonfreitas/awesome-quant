@@ -26,18 +26,15 @@ def slugify(text: str) -> str:
 def parse_readme(path: str) -> list[dict]:
     """Parse README.md and return a list of project entries (no API data)."""
     entries = []
-    current_language = ""
     current_category = ""
 
     re_h2 = re.compile(r"^## (.+)$")
-    re_h3 = re.compile(r"^### (.+)$")
     re_entry = re.compile(r"^\s*- \[(.+?)\]\((.+?)\) - (.+)$")
     re_github = re.compile(r"\[GitHub\]\((https://github\.com/[\w-]+/[-\w\.]+)\)")
-
-    skip_sections = {"Languages"}
-
-    # Strip markdown badge images before parsing
     re_badge = re.compile(r"\s*!\[[^\]]*\]\([^)]*\)\s*")
+    re_langs = re.compile(r'^((?:`[^`]+`\s*)+)-\s*(.*)$')
+
+    skip_sections = {"Contents"}
 
     with open(path, "r", encoding="utf-8") as f:
         for line in f:
@@ -45,23 +42,29 @@ def parse_readme(path: str) -> list[dict]:
 
             m = re_h2.match(line)
             if m:
-                current_language = m.group(1).strip()
-                current_category = ""
-                continue
-
-            m = re_h3.match(line)
-            if m:
                 current_category = m.group(1).strip()
                 continue
 
-            if current_language in skip_sections:
+            if current_category in skip_sections:
                 continue
 
             m = re_entry.match(line)
             if m:
                 name = m.group(1).strip()
                 url = m.group(2).strip()
-                desc = m.group(3).strip()
+                raw_desc = m.group(3).strip()
+
+                # Extract inline language tags
+                m_lang = re_langs.match(raw_desc)
+                if m_lang:
+                    lang_str = m_lang.group(1)
+                    desc = m_lang.group(2)
+                    languages = re.findall(r'`([^`]+)`', lang_str)
+                else:
+                    desc = raw_desc
+                    languages = []
+
+                primary_language = languages[0] if languages else ""
 
                 github_url = ""
                 gh_match = re_github.search(desc)
@@ -81,15 +84,15 @@ def parse_readme(path: str) -> list[dict]:
 
                 is_cran = "cran.r-project.org" in url
                 is_pypi = "pypi.org" in url or "pypi.python.org" in url
-                is_commercial = current_language == "Commercial & Proprietary Services"
-                category = current_category or current_language
-                section_slug = slugify(category)
+                is_commercial = current_category == "Commercial & Proprietary Services"
+                section_slug = slugify(current_category)
 
                 entries.append(
                     {
                         "project": name,
-                        "language": current_language,
-                        "category": category,
+                        "language": primary_language,
+                        "languages": ",".join(languages),
+                        "category": current_category,
                         "section_slug": section_slug,
                         "url": url,
                         "description": desc,
@@ -121,6 +124,8 @@ def load_csv(path: str) -> list[dict]:
             # Extract github_url and repo from CSV data
             repo = row.get("repo", "")
             row["github_url"] = f"https://github.com/{repo}" if repo else ""
+            # Ensure languages column exists
+            row["languages"] = row.get("languages", row.get("language", ""))
             # Clean description: strip [GitHub](url) if present
             desc = row.get("description", "")
             desc = re.sub(
@@ -148,25 +153,28 @@ def build_tags_html(e: dict) -> str:
     esc = html.escape
     tags = []
 
-    # Language tag
-    lang = e.get("language", "")
-    if lang and lang != "Commercial & Proprietary Services" and lang != "Related Lists":
-        lang_slug = slugify(lang)
-        tags.append(
-            f'<button class="tag tag-lang" data-filter-type="language" '
-            f'data-filter-value="{esc(lang)}">{esc(lang_slug)}</button>'
-        )
+    # Language tags (from inline backtick tags)
+    languages_str = e.get("languages", e.get("language", ""))
+    languages = [l.strip() for l in languages_str.split(",") if l.strip()]
+    skip_langs = {"Commercial & Proprietary Services", "Related Lists",
+                  "Reproducing Works, Training & Books", "Cross-Language Frameworks"}
+    for lang in languages:
+        if lang and lang not in skip_langs:
+            tags.append(
+                f'<button class="tag tag-lang" data-filter-type="language" '
+                f'data-filter-value="{esc(lang)}">{esc(lang.lower())}</button>'
+            )
 
-    # Section tag
-    section_slug = e.get("section_slug", "")
+    # Category tag
     category = e.get("category", "")
-    if section_slug and section_slug != slugify(lang):
+    section_slug = e.get("section_slug", "")
+    if section_slug:
         tags.append(
             f'<button class="tag tag-section" data-filter-type="category" '
             f'data-filter-value="{esc(category)}">{esc(section_slug)}</button>'
         )
 
-    # Source tags
+    # Source tags (unchanged)
     if e.get("github"):
         tags.append(
             '<button class="tag tag-source tag-github" '
@@ -195,9 +203,16 @@ def generate_html(entries: list[dict]) -> str:
     """Generate the full HTML page from project entries."""
     languages = sorted(
         set(
-            e["language"]
+            lang.strip()
             for e in entries
-            if e.get("language") and e["language"] != "Languages"
+            for lang in e.get("languages", e.get("language", "")).split(",")
+            if lang.strip()
+            and lang.strip() not in {
+                "Commercial & Proprietary Services",
+                "Related Lists",
+                "Reproducing Works, Training & Books",
+                "Cross-Language Frameworks",
+            }
         )
     )
 
@@ -208,7 +223,6 @@ def generate_html(entries: list[dict]) -> str:
         name = esc(e["project"])
         url = esc(e["url"])
         desc = esc(e["description"])
-        language = esc(e.get("language", ""))
         category = esc(e.get("category", ""))
         github_url = esc(e.get("github_url", ""))
         repo = esc(e.get("repo", ""))
@@ -218,6 +232,11 @@ def generate_html(entries: list[dict]) -> str:
         is_cran = e.get("cran", False)
         is_pypi = e.get("pypi", False)
         is_commercial = e.get("commercial", False)
+
+        # Languages attribute (space-separated)
+        languages_attr = esc(" ".join(
+            l.strip() for l in e.get("languages", e.get("language", "")).split(",") if l.strip()
+        ))
 
         # Stars display
         stars_html = (
@@ -250,7 +269,7 @@ def generate_html(entries: list[dict]) -> str:
         tags_html = build_tags_html(e)
 
         rows.append(
-            f"""      <tr class="row" data-language="{language}" data-category="{category}" data-sources="{sources_attr}" data-stars="{stars}">
+            f"""      <tr class="row" data-languages="{languages_attr}" data-category="{category}" data-sources="{sources_attr}" data-stars="{stars}">
         <td class="col-num">{i}</td>
         <td class="col-name">
           <a href="{url}" target="_blank" rel="noopener">{name}</a>
