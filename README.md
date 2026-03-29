@@ -1,4 +1,4 @@
-# Awesome Quant
+h# Awesome Quant
 
 A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance).
 
@@ -154,6 +154,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [fin-primitives](https://github.com/Mattbusel/fin-primitives) - `Rust` - Financial market primitives in Rust: Price/Quantity/Symbol newtypes, BTreeMap order book, OHLCV aggregation, SMA/EMA/RSI indicators, position ledger with PnL, and composable risk monitor.
 
 ## Trading & Backtesting
+- [income-desk](https://github.com/nitinblue/income-desk) - `Python` - Systematic options trading intelligence for small accounts with desk-based portfolio management, pre-trade validation, and multi-broker consolidation.
 
 - [AI Quant Agents](https://github.com/demandai/ai-quant-agents) - `Python` - Multi-agent LLM trading analysis where 12 AI agents (analysts, debaters, risk manager) debate stock picks in real-time, supporting US equities and China A-shares.
 - [TradeSight](https://github.com/rmbell09-lang/tradesight) - `Python` - AI-powered trading intelligence platform with paper trading, strategy optimization tournaments, 15+ technical indicators, and multi-market scanning.
