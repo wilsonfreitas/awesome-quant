@@ -441,6 +441,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [marketstore](https://github.com/alpacahq/marketstore) - `Golang` - DataFrame Server for Financial Timeseries Data.
 - [fin-stream](https://github.com/Mattbusel/fin-stream) - `Rust` - Real-time market data streaming in Rust: lock-free SPSC ring buffer, 100K+ ticks/second ingestion, multi-timeframe OHLCV construction, and Lorentz transforms on financial time series.
 - [finalytics](https://github.com/Nnamdi-sys/finalytics) - `Rust` - A rust library for financial data analysis.
+- [Congressional Stock Brain](https://congressionalstockbrain.com) - AI-powered tool that scores every U.S. congressional STOCK Act trade disclosure for signal strength. Real-time data on politician stock trades with free tier.
 
 ## Prediction Markets
 
