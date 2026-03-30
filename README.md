@@ -350,6 +350,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Fincept Terminal](https://github.com/Fincept-Corporation/FinceptTerminal) - `Python` - Advance Data Based A.I Terminal for all Types of Financial Asset Research.
 - [yfinance](https://github.com/ranaroussi/yfinance) - `Python` - Yahoo! Finance market data downloader (+faster Pandas Datareader).
 - [defeatbeta-api](https://github.com/defeat-beta/defeatbeta-api) - `Python` - An open-source alternative to Yahoo Finance's market data APIs with higher reliability.
+- [dexpaprika-sdk-python](https://github.com/coinpaprika/dexpaprika-sdk-python) - `Python` - Free DEX data API client. 34 blockchains, 30M+ pools, 27M+ tokens, real-time SSE streaming, OHLCV. No API key needed.
 - [findatapy](https://github.com/cuemacro/findatapy) - `Python` - Python library to download market data via Bloomberg, Quandl, Yahoo etc.
 - [googlefinance](https://github.com/hongtaocai/googlefinance) - `Python` - Python module to get real-time stock data from Google Finance API.
 - [yahoo-finance](https://github.com/lukaszbanasiak/yahoo-finance) - `Python` - Python module to get stock data from Yahoo! Finance.
