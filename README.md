@@ -85,6 +85,7 @@
 * [QUANTAXIS](https://github.com/yutiansut/QUANTAXIS) - QUANTAXIS 量化金融策略框架 - 中小型策略团队解决方案
 * [Hikyuu](http://hikyuu.org) - 基于Python/C++的开源量化交易研究框架
 * [StarQuant](https://github.com/physercoe/starquant) - 基于Python/C++的综合量化交易回测系统/平台
+* [finclaw](https://github.com/NeuZhou/finclaw) - AI驱动的量化交易引擎，484个内置alpha因子，遗传算法策略进化，walk-forward回测和模拟交易
 
 ## 交易API
 * [上海期货信息技术有限公司CTP API](http://www.sfit.com.cn/5_2_DocumentDown.htm) - 期货交易所提供的API
