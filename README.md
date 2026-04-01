@@ -207,7 +207,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ### Sentiment Analysis
 - [Asset News Sentiment Analyzer](https://github.com/KVignesh122/AssetNewsSentimentAnalyzer) - Sentiment analysis and report generation package for financial assets and securities utilizing GPT models.
-- [FinSignals](https://finsignals.ai) - Reddit-tuned NLP API that classifies financial posts across 7 dimensions (sentiment, directionality, quality, post type, relevance score, author confidence, sarcasm) in a single synchronous call. Free tier available.
 - [Social Stock Sentiment API](https://api.adanos.org/docs) - REST API analyzing Reddit and X/Twitter for stock mentions and sentiment, providing buzz scores, trending stocks, and AI-generated trend explanations.
 
 ### Quant Research Environment
@@ -636,6 +635,7 @@ date conversion, scaling factor values, and filtering by the specified date.
 - [Chartscout](https://chartscout.io) - Real-time cryptocurrency chart pattern detection with automated alerts across multiple exchanges.
 - [DayTradingBench](https://daytradingbench.com) - Live autonomous benchmark that evaluates LLM trading performance on DAX and Nasdaq indices using identical strategies and real-time market data. API access available.
 - [CoinTester](https://cointester.io) - No-code crypto backtesting platform with 100+ indicators, AI sentiment signals, and 5+ years of historical data across 1,000+ trading pairs.
+- [FinSignals](https://finsignals.ai) - `Python` - Reddit-tuned NLP API classifying financial posts across 7 dimensions: sentiment, directionality, quality, post type, relevance score, author confidence, and sarcasm. Free tier available.
 - [goMacro.ai](https://gomacro.ai) - AI-powered economic calendar with institutional-grade insights, bull/bear/base case scenario planning for NFP, CPI, PPI and other macro data releases.
 - [StockAInsights](https://stockainsights.com) - AI-extracted financial statements API covering SEC filings including foreign filers (20-F, 6-K, 40-F), normalized quarterly and annual data from 2014+.
 - [brapi.dev](https://brapi.dev/) - Brazilian stock market data API for B3/Bovespa quotes, historical OHLCV, dividends, and fundamentals.
