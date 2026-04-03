@@ -157,6 +157,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [AI Quant Agents](https://github.com/demandai/ai-quant-agents) - `Python` - Multi-agent LLM trading analysis where 12 AI agents (analysts, debaters, risk manager) debate stock picks in real-time, supporting US equities and China A-shares.
 - [TradeSight](https://github.com/rmbell09-lang/tradesight) - `Python` - AI-powered trading intelligence platform with paper trading, strategy optimization tournaments, 15+ technical indicators, and multi-market scanning.
+- [Orallexa](https://github.com/alex-jb/orallexa-ai-trading-agent) - `Python` - AI trading operating system with 9 ML models (RF, XGBoost, EMAformer, MOIRAI-2, Chronos-2, DDPM, PPO RL, GNN, LR) ranked by Sharpe ratio, Claude AI synthesis with dual-tier routing (~$0.003/analysis), real-time Next.js dashboard, Alpaca paper trading, and 277 automated tests.
 - [the0](https://github.com/alexanderwanyoike/the0) - `Python` - Self-hosted execution engine for algorithmic trading bots. Write strategies in Python, TypeScript, Rust, C++, C#, Scala, or Haskell and deploy with one command. Each bot runs in an isolated container with scheduled or streaming execution.
 - [Investing algorithm framework](https://github.com/coding-kitties/investing-algorithm-framework) - `Python` - Framework for developing, backtesting, and deploying automated trading algorithms.
 - [QSTrader](https://github.com/mhallsmoore/qstrader) - `Python` - QSTrader backtesting simulation engine.
