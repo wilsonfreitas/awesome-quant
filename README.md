@@ -262,6 +262,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Barter](https://github.com/barter-rs/barter-rs) - `Rust` - Open-source Rust framework for building event-driven live-trading & backtesting systems.
 - [LFEST](https://github.com/MathisWellmann/lfest-rs) - `Rust` - Simulated perpetual futures exchange to trade your strategy against.
 - [OpenFinClaw](https://github.com/cryptoSUN2049/openFinclaw) - `Python` `Rust` - AI-native one-person hedge fund platform with Rust trading engine. Natural language → strategy → backtest → execution in 60s. Multi-market (US/HK/CN/Crypto), self-evolving strategy pipeline. Built on OpenClaw (68K+ stars).
+- [Sextant](https://github.com/raphaub-hub/SEXTANT) - Local event-driven backtesting engine with no-code strategy builder and FRED vintage, ALFRED, yFinance support.
 
 ## Portfolio Optimization & Risk Analysis
 
