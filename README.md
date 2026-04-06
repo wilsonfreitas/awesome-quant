@@ -4,6 +4,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 [![](https://awesome.re/badge.svg)](https://awesome.re)
 
+- [guardian-agent-prompts](https://github.com/milkomida77/guardian-agent-prompts) - 49 production-tested AI agent system prompts for quantitative finance workflow orchestration, automated trading management, and multi-agent coordination. MIT licensed.
 ## Contents
 
 - [Numerical Libraries & Data Structures](#numerical-libraries-data-structures)
