@@ -593,6 +593,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [KeepRule](https://keeprule.com/) - Curated library of decision-making principles and investment wisdom from masters like Buffett and Munger, featuring mental models for better investment thinking.
 - [ML-Quant](https://www.ml-quant.com/) - Top Quant resources like ArXiv (sanity), SSRN, RePec, Journals, Podcasts, Videos, and Blogs.
 - [RealMarketAPI](https://realmarketapi.com/) - Provides ultra-low latency market data for gold, forex, crypto, and stocks via REST, WebSocket, and MCP—built for speed, reliability, and scale.
+- [Probalytics](https://probalytics.io) - Prediction market data infrastructure for Polymarket and Kalshi, with REST API, ClickHouse SQL access, 200–500M orderbook snapshots/day at 1ms resolution, and Parquet bulk exports.
 
 ## Related Lists
 
