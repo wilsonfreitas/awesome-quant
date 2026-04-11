@@ -161,6 +161,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Orallexa](https://github.com/alex-jb/orallexa-ai-trading-agent) - `Python` - AI trading operating system with 9 ML models (RF, XGBoost, EMAformer, MOIRAI-2, Chronos-2, DDPM, PPO RL, GNN, LR) ranked by Sharpe ratio, Claude AI synthesis with dual-tier routing (~$0.003/analysis), real-time Next.js dashboard, Alpaca paper trading, and 277 automated tests.
 - [the0](https://github.com/alexanderwanyoike/the0) - `Python` - Self-hosted execution engine for algorithmic trading bots. Write strategies in Python, TypeScript, Rust, C++, C#, Scala, or Haskell and deploy with one command. Each bot runs in an isolated container with scheduled or streaming execution.
 - [Investing algorithm framework](https://github.com/coding-kitties/investing-algorithm-framework) - `Python` - Framework for developing, backtesting, and deploying automated trading algorithms.
+- [Lumibot](https://github.com/Lumiwealth/lumibot) - `Python` - Algorithmic trading framework where the same code runs for backtesting and live trading across stocks, options, crypto, futures, and forex with multiple brokers including Alpaca, Interactive Brokers, Tradier, and Schwab.
 - [QSTrader](https://github.com/mhallsmoore/qstrader) - `Python` - QSTrader backtesting simulation engine.
 - [Blankly](https://github.com/Blankly-Finance/Blankly) - `Python` - Fully integrated backtesting, paper trading, and live deployment.
 - [zipline](https://github.com/quantopian/zipline) - `Python` - Pythonic algorithmic trading library.
