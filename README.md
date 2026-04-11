@@ -82,6 +82,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [quantra](https://github.com/joseprupi/quantraserver) - `Python` - High-performance pricing engine built on QuantLib. It exposes QuantLib's functionality through gRPC and REST APIs, enabling distributed computations with FlatBuffers serialization.
 - [optionlab](https://github.com/rgaveiga/optionlab) - `Python` - A Python library for evaluating option trading strategies.
 - [flashalpha](https://github.com/FlashAlpha-lab/flashalpha-python) - `Python` - Python client for the FlashAlpha options analytics API.
+- [QuantOracle](https://github.com/QuantOracledev/quantoracle) - `Python` - Free quant finance API with 63 deterministic endpoints for options pricing, risk analysis, portfolio optimization, Monte Carlo simulation, and technical indicators.
 - [RQuantLib](https://github.com/eddelbuettel/rquantlib) - `R` - RQuantLib connects GNU R with QuantLib.
 - [quantmod](https://cran.r-project.org/web/packages/quantmod/index.html) - `R` - Quantitative Financial Modelling Framework. [GitHub](https://github.com/joshuaulrich/quantmod)
 - [Rmetrics](https://www.rmetrics.org) - `R` - The premier open source software solution for teaching and training quantitative finance.
