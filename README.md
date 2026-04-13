@@ -356,6 +356,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [coinpaprika-api-python-client](https://github.com/coinpaprika/coinpaprika-api-python-client) - `Python` - Free crypto market data API client. 12,000+ coins, 350+ exchanges, tickers, OHLCV, historical prices. No API key for free tier.
 - [defeatbeta-api](https://github.com/defeat-beta/defeatbeta-api) - `Python` - An open-source alternative to Yahoo Finance's market data APIs with higher reliability.
 - [dexpaprika-sdk-python](https://github.com/coinpaprika/dexpaprika-sdk-python) - `Python` - Free DEX data API client. 34 blockchains, 30M+ pools, 27M+ tokens, real-time SSE streaming, OHLCV. No API key needed.
+- [Helium MCP](https://heliumtrades.com/mcp-page/) - `Python` - Live stock/ETF/crypto data with AI-generated bull/bear cases and price forecasts, proprietary ML options pricing with probability ITM and fair value, and news bias scoring across 5,000+ sources. Available as MCP server or API. Free tier: 50 queries, no signup. [GitHub](https://github.com/connerlambden/helium-mcp)
 - [findatapy](https://github.com/cuemacro/findatapy) - `Python` - Python library to download market data via Bloomberg, Quandl, Yahoo etc.
 - [googlefinance](https://github.com/hongtaocai/googlefinance) - `Python` - Python module to get real-time stock data from Google Finance API.
 - [yahoo-finance](https://github.com/lukaszbanasiak/yahoo-finance) - `Python` - Python module to get stock data from Yahoo! Finance.
