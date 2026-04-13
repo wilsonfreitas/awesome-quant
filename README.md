@@ -448,6 +448,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [marketstore](https://github.com/alpacahq/marketstore) - `Golang` - DataFrame Server for Financial Timeseries Data.
 - [fin-stream](https://github.com/Mattbusel/fin-stream) - `Rust` - Real-time market data streaming in Rust: lock-free SPSC ring buffer, 100K+ ticks/second ingestion, multi-timeframe OHLCV construction, and Lorentz transforms on financial time series.
 - [finalytics](https://github.com/Nnamdi-sys/finalytics) - `Rust` - A rust library for financial data analysis.
+- [Coinugget](https://coinugget.com) - `Web` - Real-time RSI signals, price action & volume spikes dashboard across multiple exchanges. Free, no sign-up required.
+
 
 ## Prediction Markets
 
