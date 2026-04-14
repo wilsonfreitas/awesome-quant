@@ -28,7 +28,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Numerical Libraries & Data Structures
 
 - [numpy](https://www.numpy.org) - `Python` - NumPy is the fundamental package for scientific computing with Python. [GitHub](https://github.com/numpy/numpy)
-- [scipy](https://www.scipy.org) - `Python` - SciPy (pronounced “Sigh Pie”) is a Python-based ecosystem of open-source software for mathematics, science, and engineering. [GitHub](https://github.com/scipy/scipy)
+- [scipy](https://www.scipy.org) - `Python` - SciPy (pronounced вЂњSigh PieвЂќ) is a Python-based ecosystem of open-source software for mathematics, science, and engineering. [GitHub](https://github.com/scipy/scipy)
 - [pandas](https://pandas.pydata.org) - `Python` - pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language. [GitHub](https://github.com/pandas-dev/pandas)
 - [polars](https://docs.pola.rs/) - `Python` - Polars is a blazingly fast DataFrame library for manipulating structured data. [GitHub](https://github.com/pola-rs/polars)
 - [quantdsl](https://github.com/johnbywater/quantdsl) - `Python` - Domain specific language for quantitative analytics in finance and trading.
@@ -229,7 +229,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Hikyuu](https://github.com/fasiondog/hikyuu) - `Python` `C++` - A base on Python/C++ open source high-performance quant framework for faster analysis and backtesting, contains the complete trading system components for reuse and combination.
 - [rust_bt](https://github.com/jensnesten/rust_bt) - `Python` - A high performance, low-latency backtesting engine for testing quantitative trading strategies on historical and live data in Rust.
 - [Gunbot Quant](https://github.com/GuntharDeNiro/gunbot-quant) - `Python` - Toolkit for quantitative trading analysis. It integrates an advanced market screener, a multi-strategy, multi-asset backtesting engine. Use with built-in GUI or through CLI.
-- [StrateQueue](https://github.com/StrateQueue/StrateQueue) - `Python` - An open‑source, broker‑agnostic Python library that lets you seamlessly deploy strategies from any major backtesting engine to live (or paper) trading with zero code changes and built‑in safety controls.
+- [StrateQueue](https://github.com/StrateQueue/StrateQueue) - `Python` - An openвЂ‘source, brokerвЂ‘agnostic Python library that lets you seamlessly deploy strategies from any major backtesting engine to live (or paper) trading with zero code changes and builtвЂ‘in safety controls.
 - [PythonTradingFramework](https://github.com/JustinGuese/python_tradingbot_framework) - `Python` - Python algorithmic trading bot framework for Kubernetes: backtesting, hyperparameter optimization, 150+ technical analysis indicators (RSI, MACD, Bollinger Bands, ADX), portfolio management, PostgreSQL integration, Helm deployment, CronJob scheduling. Minimal overhead, production-ready, Yahoo Finance data.
 - [QTradeX-AI-Agents](https://github.com/squidKid-deluxe/QTradeX-AI-Agents) - `Python` - Example strategies for the QTradeX platfrom.
 - [QTradeX-Algo-Trading-SDK](https://github.com/squidKid-deluxe/QTradeX-Algo-Trading-SDK) - `Python` - AI-powered SDK featuring algorithmic trading, backtesting, deployment on 100+ exchanges, and multiple optimization engines.
@@ -263,7 +263,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TDAmeritrade.DotNetCore](https://github.com/NVentimiglia/TDAmeritrade.DotNetCore) - `CSharp` - Free, open-source .NET Client for the TD Ameritrade Trading Platform. Helps developers integrate TD Ameritrade API into custom trading solutions.
 - [Barter](https://github.com/barter-rs/barter-rs) - `Rust` - Open-source Rust framework for building event-driven live-trading & backtesting systems.
 - [LFEST](https://github.com/MathisWellmann/lfest-rs) - `Rust` - Simulated perpetual futures exchange to trade your strategy against.
-- [OpenFinClaw](https://github.com/cryptoSUN2049/openFinclaw) - `Python` `Rust` - AI-native one-person hedge fund platform with Rust trading engine. Natural language → strategy → backtest → execution in 60s. Multi-market (US/HK/CN/Crypto), self-evolving strategy pipeline. Built on OpenClaw (68K+ stars).
+- [digdigdig3](https://github.com/ZENG3LD/digdigdig3) - `Rust` - Unified async API for 44 exchange connectors (crypto, stocks, forex). REST + WebSocket with normalized data types.
+- [OpenFinClaw](https://github.com/cryptoSUN2049/openFinclaw) - `Python` `Rust` - AI-native one-person hedge fund platform with Rust trading engine. Natural language в†’ strategy в†’ backtest в†’ execution in 60s. Multi-market (US/HK/CN/Crypto), self-evolving strategy pipeline. Built on OpenClaw (68K+ stars).
 
 - [TradeClaw](https://github.com/naimkatiman/tradeclaw) - `Node.js` `TypeScript` - Open-source self-hosted AI trading signal platform. Generates buy/sell signals using RSI, MACD, EMA, Bollinger Bands for forex, crypto and commodities. Deployable via Docker Compose. ([Demo](https://tradeclaw.win/dashboard))
 ## Portfolio Optimization & Risk Analysis
@@ -374,7 +375,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Stockex](https://github.com/cttn/Stockex) - `Python` - Python wrapper for Yahoo! Finance API.
 - [SwapAPI](https://swapapi.dev) - `Python` - Free DEX aggregator API returning executable swap calldata across 46 EVM chains. No API key required. [GitHub](https://github.com/swap-api/swap-api)
 - [finsymbols](https://github.com/skillachie/finsymbols) - `Python` - Obtains stock symbols and relating information for SP500, AMEX, NYSE, and NASDAQ.
-- [FRB](https://github.com/avelkoski/FRB) - `Python` - Python Client for FRED® API.
+- [FRB](https://github.com/avelkoski/FRB) - `Python` - Python Client for FREDВ® API.
 - [inquisitor](https://github.com/econdb/inquisitor) - `Python` - Python Interface to Econdb.com API.
 - [yfi](https://github.com/nickelkr/yfi) - `Python` - Yahoo! YQL library.
 - [chinesestockapi](https://pypi.org/project/chinesestockapi/) - `Python` - Python API to get Chinese stock price. (Last updated: 2015-03-21).
@@ -452,7 +453,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Prediction Markets
 
 - [pmxt](https://github.com/pmxt-dev/pmxt) - `Python` `JavaScript` - The CCXT for prediction markets. A unified API for trading on Polymarket, Kalshi, and more.
-- [polymarket-whales](https://github.com/al1enjesus/polymarket-whales) - `Python` - Real-time whale trade tracker for Polymarket — terminal alerts + Telegram notifications when large orders hit the book.
+- [polymarket-whales](https://github.com/al1enjesus/polymarket-whales) - `Python` - Real-time whale trade tracker for Polymarket вЂ” terminal alerts + Telegram notifications when large orders hit the book.
 - [Polymarket Scanner API](https://github.com/vesper-astrena/polymarket-scanner-api) - `Python` - Real-time arbitrage detection API for Polymarket prediction markets, scanning 12,000+ markets for mispricings.
 - [SimpleFunctions](https://github.com/spfunctions/simplefunctions-cli) - `JavaScript` - Prediction market intelligence CLI for Kalshi and Polymarket. Causal thesis models, edge detection, 24/7 orderbook monitoring, what-if scenarios, and trade execution. MCP server for AI agent integration.
 - [pmxt](https://github.com/pmxt-dev/pmxt) - `Python` `JavaScript` - The CCXT for prediction markets. A unified API for trading on Polymarket, Kalshi, and more.
@@ -473,7 +474,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [finvizfinance](https://github.com/lit26/finvizfinance) - `Python` - Finviz analysis python library.
 - [market-analy](https://github.com/maread99/market_analy) - `Python` - Analysis and interactive charting using [market-prices](https://github.com/maread99/market_prices) and bqplot.
 - [QuantInvestStrats](https://github.com/ArturSepp/QuantInvestStrats) - `Python` - Quantitative Investment Strategies (QIS) package implements Python analytics for visualisation of financial data, performance reporting, analysis of quantitative strategies.
-- [LightweightCharts.jl](https://github.com/bhftbootcamp/LightweightCharts.jl) - `Julia` - Julia wrapper for Lightweight Charts™ by TradingView.
+- [LightweightCharts.jl](https://github.com/bhftbootcamp/LightweightCharts.jl) - `Julia` - Julia wrapper for Lightweight Chartsв„ў by TradingView.
 - [QUANTAXIS_Webkit](https://github.com/yutiansut/QUANTAXIS_Webkit) - `JavaScript` - An awesome visualization center based on quantaxis.
 
 ## Excel & Spreadsheet Integration
@@ -532,7 +533,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [QuantFinance](https://github.com/PythonCharmers/QuantFinance) - Training materials in quantitative finance.
 - [IPythonScripts](https://github.com/mgroncki/IPythonScripts) - Tutorials about Quantitative Finance in Python and QuantLib: Pricing, xVAs, Hedging, Portfolio Optimisation, Machine Learning and Deep Learning.
 - [Computational-Finance-Course](https://github.com/LechGrzelak/Computational-Finance-Course) - Materials for the course of Computational Finance.
-- [Machine-Learning-for-Asset-Managers](https://github.com/emoen/Machine-Learning-for-Asset-Managers) - Implementation of code snippets, exercises and application to live data from Machine Learning for Asset Managers (Elements in Quantitative Finance) written by Prof. Marcos López de Prado.
+- [Machine-Learning-for-Asset-Managers](https://github.com/emoen/Machine-Learning-for-Asset-Managers) - Implementation of code snippets, exercises and application to live data from Machine Learning for Asset Managers (Elements in Quantitative Finance) written by Prof. Marcos LГіpez de Prado.
 - [Python-for-Finance-Cookbook](https://github.com/PacktPublishing/Python-for-Finance-Cookbook) - Python for Finance Cookbook, published by Packt.
 - [modelos_vol_derivativos](https://github.com/ysaporito/modelos_vol_derivativos) - "Modelos de Volatilidade para Derivativos" book's Jupyter notebooks.
 - [NMOF](https://github.com/enricoschumann/NMOF) - Functions, examples and data from the first and the second edition of "Numerical Methods and Optimization in Finance" by M. Gilli, D. Maringer and E. Schumann (2019, ISBN:978-0128150658).
@@ -589,10 +590,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [System R](https://agents.systemr.ai) - AI-native risk intelligence API for trading agents. Position sizing, risk validation, and system health in one call.
 - [Telonex](https://telonex.io) - Tick-level prediction market data (trades, quotes, orderbooks, on-chain fills) via REST API and Python SDK.
 - [ValueRay](https://www.valueray.com/api) - Technical, quantitative and sentiment data for stocks and ETFs with risk metrics, peer percentiles and market regime signals. Optimized for AI/LLM agents.
-- [VertData](https://vertdata.com) - Institutional-grade financial intelligence platform. Track 43K+ congressional trades (STOCK Act), SEC insider Form 4 filings, 25 superinvestor 13F portfolios, CFTC futures positioning, ARK ETF holdings, and short interest — all scored by AI for signal strength.
+- [VertData](https://vertdata.com) - Institutional-grade financial intelligence platform. Track 43K+ congressional trades (STOCK Act), SEC insider Form 4 filings, 25 superinvestor 13F portfolios, CFTC futures positioning, ARK ETF holdings, and short interest вЂ” all scored by AI for signal strength.
 - [KeepRule](https://keeprule.com/) - Curated library of decision-making principles and investment wisdom from masters like Buffett and Munger, featuring mental models for better investment thinking.
 - [ML-Quant](https://www.ml-quant.com/) - Top Quant resources like ArXiv (sanity), SSRN, RePec, Journals, Podcasts, Videos, and Blogs.
-- [RealMarketAPI](https://realmarketapi.com/) - Provides ultra-low latency market data for gold, forex, crypto, and stocks via REST, WebSocket, and MCP—built for speed, reliability, and scale.
+- [RealMarketAPI](https://realmarketapi.com/) - Provides ultra-low latency market data for gold, forex, crypto, and stocks via REST, WebSocket, and MCPвЂ”built for speed, reliability, and scale.
 
 ## Related Lists
 
