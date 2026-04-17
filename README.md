@@ -358,6 +358,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [dexpaprika-sdk-python](https://github.com/coinpaprika/dexpaprika-sdk-python) - `Python` - Free DEX data API client. 34 blockchains, 30M+ pools, 27M+ tokens, real-time SSE streaming, OHLCV. No API key needed.
 - [findatapy](https://github.com/cuemacro/findatapy) - `Python` - Python library to download market data via Bloomberg, Quandl, Yahoo etc.
 - [googlefinance](https://github.com/hongtaocai/googlefinance) - `Python` - Python module to get real-time stock data from Google Finance API.
+- [Horus Flow](https://github.com/horustechltd/horus-flow-mcp) - `Python` - Sub-second L2 orderflow intelligence MCP server for institutional-grade market microstructure analysis.
 - [yahoo-finance](https://github.com/lukaszbanasiak/yahoo-finance) - `Python` - Python module to get stock data from Yahoo! Finance.
 - [pandas-datareader](https://github.com/pydata/pandas-datareader) - `Python` - Python module to get data from various sources (Google Finance, Yahoo Finance, FRED, OECD, Fama/French, World Bank, Eurostat...) into Pandas datastructures such as DataFrame, Panel with a caching mechanism.
 - [pandas-finance](https://github.com/davidastephens/pandas-finance) - `Python` - High level API for access to and analysis of financial data.
