@@ -409,6 +409,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [oilpriceapi](https://github.com/OilpriceAPI/python-sdk) - `Python` - Python SDK for real-time oil and commodity prices (WTI, Brent, Urals, natural gas, coal) with OpenBB integration.
 - [FinanceDataReader](https://github.com/FinanceData/FinanceDataReader) - `Python` - Open Source Financial data reader for U.S, Korean, Japanese, Chinese, Vietnamese Stocks.
 - [pystlouisfed](https://github.com/TomasKoutek/pystlouisfed) - `Python` - Python client for Federal Reserve Bank of St. Louis API - FRED, ALFRED, GeoFRED and FRASER.
+- [bolsai](https://usebolsai.com) - `Python` - REST API and MCP server for Brazilian stock market data (B3). Covers 350+ stocks, 400+ FIIs with fundamentals, dividends, historical prices, financials, and macro indicators sourced from B3, CVM, and BCB.
 - [python-bcb](https://github.com/wilsonfreitas/python-bcb) - `Python` - Python interface to Brazilian Central Bank web services.
 - [swiss-finance-data](https://github.com/EMen11/swiss-finance-data) - `Python` - Python package for Swiss financial data (SNB Policy Rate, SARON, CHF FX rates, CPI, SMI equities, Confederation bond yields) from official SNB sources.
 - [market-prices](https://github.com/maread99/market_prices) - `Python` - Create meaningful OHLCV datasets from knowledge of [exchange-calendars](https://github.com/gerrymanoim/exchange_calendars) (works out-the-box with data from Yahoo Finance).
