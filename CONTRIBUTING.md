@@ -63,6 +63,14 @@ Link to the PyPI package page. If the project has a GitHub repo, append it after
 
 Commercial and proprietary projects are welcome. They will be placed under the **Commercial & Proprietary Services** section. Include a link to the product website and a brief description of what it offers.
 
+**Placement rule:** If the main URL (the first link) is a commercial website and there is no GitHub repository link (as a second URL), the entry **must** be placed in the **Commercial & Proprietary Services** section. This applies to:
+- SaaS platforms and APIs
+- Commercial data providers
+- Paid subscription services
+- Any proprietary product without open-source code
+
+Projects with GitHub repositories may be placed in other sections based on their functionality.
+
 ## Section Placement
 
 The README is organized by **category** (not by language). Add your entry under the appropriate category heading (`##`). The available categories are:
