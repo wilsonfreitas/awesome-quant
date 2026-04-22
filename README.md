@@ -308,6 +308,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Factor Analysis
 
+- [Alpha Skills](https://github.com/VernonOY/alpha-skills) - `Python` - AI skills for quantitative factor research: discover, evaluate, mine, backtest, and monitor factors through any AI coding assistant. Supports A-share, HK, and US markets.
 - [alphalens](https://github.com/quantopian/alphalens) - `Python` - Performance analysis of predictive alpha factors.
 - [alphalens-reloaded](https://github.com/stefan-jansen/alphalens-reloaded) - `Python` - Performance analysis of predictive (alpha) stock factors.
 - [Spectre](https://github.com/Heerozh/spectre) - `Python` - GPU-accelerated Factors analysis library and Backtester.
