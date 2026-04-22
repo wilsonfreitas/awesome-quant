@@ -19,11 +19,25 @@ Use the `mcp__github__list_pull_requests` tool to list open pull requests sorted
 
 Use the `mcp__github__pull_request_read` tool with method `get` to read the PR details. If the PR has merge conflicts, report this to the user and stop — the contributor needs to resolve conflicts before review can proceed. Use the `mcp__github__add_issue_comment` tool to leave a polite comment asking them to rebase.
 
-### Step 3: Fetch the diff and extract added lines
+### Step 3: Check for prior review
+
+Use `github_get_pull_request` to check for the "reviewed" label, then use `github_get_pull_request_comments` to check for comments from maintainer.
+
+Report at start of review:
+```
+Prior review: YES/NO
+- Label: "reviewed" present (if yes)
+- Comments: X new comments from maintainer (if any)
+- Status: Full revalidation proceeding
+```
+
+Always proceed with full validation regardless of prior review status.
+
+### Step 4: Fetch the diff and extract added lines
 
 Use the `mcp__github__pull_request_read` tool with method `get_diff` to read the PR diff. Focus only on changes to `README.md`. If the PR modifies files other than `README.md` (like `parse.py`, `site/`, etc.), flag this as unusual — most contributions should only touch `README.md`.
 
-### Step 4: Automatic rejection checks
+### Step 5: Automatic rejection checks
 
 Reject the PR immediately (close with a polite comment) if any of these apply:
 
@@ -32,11 +46,11 @@ Reject the PR immediately (close with a polite comment) if any of these apply:
 - **Duplicate entries** — the same project name or URL appears multiple times within the PR or already in `README.md`.
 - **Archived or abandoned** — the project has no activity in 12+ months.
 
-### Step 5: Validate each added entry
+### Step 6: Validate each added entry
 
 For every new line added to `README.md`, check the following:
 
-#### 5a. Entry format
+#### 6a. Entry format
 
 Each entry MUST include one or more language tags and match one of these accepted formats:
 
@@ -80,7 +94,7 @@ Specifically check:
 
 If the entry doesn't match, report exactly what's wrong (missing language tags, missing period, wrong separator, etc.).
 
-#### 5b. URL validation
+#### 6b. URL validation
 
 - **GitHub URLs are preferred.** If the primary URL points to `github.com`, that's ideal.
 - **CRAN URLs** (`cran.r-project.org`) are acceptable for R packages.
@@ -89,7 +103,7 @@ If the entry doesn't match, report exactly what's wrong (missing language tags, 
 - **Non-GitHub URLs without `[GitHub]` link**: Flag with a suggestion to add a `[GitHub](url)` link if one exists, since GitHub repos enable automated tracking of stars and activity.
 - All URLs must use `https://`.
 
-#### 5c. Section placement
+#### 6c. Section placement
 
 The README is now organized by **category** (not by language). Look at which `##` (category) heading the entry was added under. Evaluate whether the project fits that section:
 
@@ -120,16 +134,16 @@ The current category sections in the README are:
 
 If the project doesn't fit any existing section, suggest the closest match or recommend creating a new category section (rare).
 
-#### 5d. Duplicate check
+#### 6d. Duplicate check
 
 Use the `mcp__github__get_file_contents` tool to fetch the current `README.md` from the repository, then search through it to ensure the project name and URL are not already listed.
 
-#### 5e. Quality check
+#### 6e. Quality check
 
 - **Active**: Project should show recent activity (commits within the last 12 months).
 - **Documented**: Project should have a clear README with usage examples.
 
-### Step 6: Summarize findings
+### Step 7: Summarize findings
 
 Present a clear summary:
 
@@ -154,7 +168,7 @@ Conflicts: None / YES: Needs rebase
 Verdict: APPROVE / NEEDS CHANGES / REJECT
 ```
 
-### Step 7: Take action
+### Step 8: Take action
 
 Use GitHub MCP tools exclusively for all PR interactions:
 
