@@ -127,6 +127,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Scala Quant](https://github.com/frankcash/Scala-Quant) - `Scala` - Scala library for working with stock data from IFTTT recipes or Google Finance.
 - [QuantMath](https://github.com/MarcusRainbow/QuantMath) - `Rust` - Financial maths library for risk-neutral pricing and risk.
 - [RustQuant](https://github.com/avhz/RustQuant) - `Rust` - Quantitative finance library written in Rust.
+- [QoX](https://github.com/bboutelje/qox-python-samples) - `Python` - Finite difference pricing library written in Rust.
 
 ## Technical Indicators
 
