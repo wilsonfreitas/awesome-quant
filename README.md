@@ -568,6 +568,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [systematictradingexamples](https://github.com/robcarver17/systematictradingexamples) - Examples of code related to book [Systematic Trading](www.systematictrading.org) and [blog](http://qoppac.blogspot.com).
 - [pysystemtrade_examples](https://github.com/robcarver17/pysystemtrade_examples) - Examples using pysystemtrade for Robert Carver's [blog](http://qoppac.blogspot.com).
 - [ML_Finance_Codes](https://github.com/mfrdixon/ML_Finance_Codes) - Machine Learning in Finance: From Theory to Practice Book.
+- [cipher-starter](https://github.com/cryptomotifs/cipher-starter) — Solo crypto quant starter kit: 12 playbooks covering trading strategy, risk rails, 3-tier wallet architecture, MEV mitigation, Canadian NI 31-103 compliance, Oracle Cloud Always Free infra, and a 7-day MVP calendar for a Solana signal engine + autonomous trading bot.
 - [Hands-On Machine Learning for Algorithmic Trading](https://github.com/packtpublishing/hands-on-machine-learning-for-algorithmic-trading) - Hands-On Machine Learning for Algorithmic Trading, published by Packt.
 - [financialnoob-misc](https://github.com/financialnoob/misc) - Codes from @financialnoob's posts.
 - [MesoSim Options Trading Strategy Library](https://github.com/deltaray-io/strategy-library) - Free and public Options Trading strategy library for MesoSim.
