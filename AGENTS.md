@@ -41,3 +41,8 @@ See CLAUDE.md and CONTRIBUTING.md for full details.
 2. Check section placement (not Market Data if commercial)
 3. Check for duplicates in README
 4. Use "reviewed" label after commenting
+
+## Skill Names
+
+- `sprr` - Single PR reviewer (formerly review-pr)
+- `bprr` - Bulk PR reviewer
