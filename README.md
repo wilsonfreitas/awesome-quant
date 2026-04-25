@@ -11,7 +11,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Technical Indicators](#technical-indicators)
 - [Trading & Backtesting](#trading-backtesting)
 - [Portfolio Optimization & Risk Analysis](#portfolio-optimization-risk-analysis)
-- [Factor Analysis](#factor-analysis)
+- [Factor Analysis](#factor-analysis)h
 - [Sentiment Analysis & Alternative Data](#sentiment-analysis-alternative-data)
 - [Time Series Analysis](#time-series-analysis)
 - [Market Data & Data Sources](#market-data-data-sources)
@@ -456,7 +456,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Polymarket Scanner API](https://github.com/vesper-astrena/polymarket-scanner-api) - `Python` - Real-time arbitrage detection API for Polymarket prediction markets, scanning 12,000+ markets for mispricings.
 - [SimpleFunctions](https://github.com/spfunctions/simplefunctions-cli) - `JavaScript` - Prediction market intelligence CLI for Kalshi and Polymarket. Causal thesis models, edge detection, 24/7 orderbook monitoring, what-if scenarios, and trade execution. MCP server for AI agent integration.
 - [pmxt](https://github.com/pmxt-dev/pmxt) - `Python` `JavaScript` - The CCXT for prediction markets. A unified API for trading on Polymarket, Kalshi, and more.
-- [PolyMind](https://polyminds.netlify.app/) - Real-time Polymarket trading alerts with multi-AI analysis (Groq, Claude, Gemini). Track whale bets, volume spikes, coordinated wallets, and 12 signal types. Free tier available.
+- [PolyMind](https://polyminds.netlify.app/) - `Python` - Real-time Polymarket trading alerts with multi-AI analysis (Groq, Claude, Gemini). Track whale bets, volume spikes, coordinated wallets, and 12 signal types. Free tier available. [GitHub](https://github.com/samirasadov28-code/PolyMind)
 
 ## Calendars & Market Hours
 
