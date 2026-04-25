@@ -614,6 +614,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [ML-Quant](https://www.ml-quant.com/) - Top Quant resources like ArXiv (sanity), SSRN, RePec, Journals, Podcasts, Videos, and Blogs.
 - [RealMarketAPI](https://realmarketapi.com/) - Provides ultra-low latency market data for gold, forex, crypto, and stocks via REST, WebSocket, and MCP—built for speed, reliability, and scale.
 - [Webb Database](https://webb-database.com/) - Aggregates public financial data from HKEX, the SFC, the Hong Law Society, UK Companies House and other sources, has searchable datasets on listed companies, many in machine-readable formats.
+- [GitDealFlow](https://gitdealflow.com) - Alternative-data signal platform ranking early-stage private companies by GitHub stars-per-day, hiring velocity, and package-registry adoption. Free weekly signal report, Chrome extension overlay on Crunchbase/AngelList, and MCP server on npm for LLM agent access.
 
 ## Related Lists
 
