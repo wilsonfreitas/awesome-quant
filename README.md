@@ -274,6 +274,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Sextant](https://github.com/raphaub-hub/SEXTANT) - `Python` - Local event-driven backtesting engine with no-code strategy builder and FRED vintage, ALFRED, yFinance support.
 
 - [TradeClaw](https://github.com/naimkatiman/tradeclaw) - `Node.js` `TypeScript` - Open-source self-hosted AI trading signal platform. Generates buy/sell signals using RSI, MACD, EMA, Bollinger Bands for forex, crypto and commodities. Deployable via Docker Compose. ([Demo](https://tradeclaw.win/dashboard))
+- [Apex Quant (Parliament)](https://github.com/sst19910323/apex_parliament) - Adversarial multi-agent LLM framework for US equity decision-making, using constitutional debate between a mandated bull, a risk-focused realist, and an arbitrator to suppress overconfidence.
+- 
 ## Portfolio Optimization & Risk Analysis
 
 - [skfolio](https://github.com/skfolio/skfolio) - `Python` - Python library for portfolio optimization built on top of scikit-learn. It provides a unified interface and sklearn compatible tools to build, tune and cross-validate portfolio models.
