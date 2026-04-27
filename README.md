@@ -513,7 +513,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Cross-Language Frameworks
 
 - [RunMat](https://runmat.org) - High performance, Open Source, MATLAB syntax runtime. [GitHub](https://github.com/runmat-org/runmat)
-- [QuantLib](https://github.com/lballabio/QuantLib) - The QuantLib project is aimed at providing a comprehensive software framework for quantitative finance.
 - [QuantLibRisks](https://github.com/auto-differentiation/QuantLib-Risks-Cpp) - Fast risks with QuantLib in C++.
 - [XAD](https://github.com/auto-differentiation/xad) - Automatic Differentation (AAD) Library.
 - [QuantLib](https://github.com/lballabio/QuantLib) - The QuantLib project is aimed at providing a comprehensive software framework for quantitative finance.
