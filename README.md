@@ -10,7 +10,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Financial Instruments & Pricing](#financial-instruments-pricing)
 - [Technical Indicators](#technical-indicators)
 - [Trading & Backtesting](#trading-backtesting)
-- [Portfolio Optimization & Risk Analysis](#portfolio-optimization-risk-analysis)
+- [Portfolio Optimization & Risk Analysis](#portfolio-optimization-risk-analysihs)
 - [Factor Analysis](#factor-analysis)
 - [Sentiment Analysis & Alternative Data](#sentiment-analysis-alternative-data)
 - [Time Series Analysis](#time-series-analysis)
@@ -611,6 +611,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Telonex](https://telonex.io) - Tick-level prediction market data (trades, quotes, orderbooks, on-chain fills) via REST API and Python SDK.
 - [ValueRay](https://www.valueray.com/api) - Technical, quantitative and sentiment data for stocks and ETFs with risk metrics, peer percentiles and market regime signals. Optimized for AI/LLM agents.
 - [VertData](https://vertdata.com) - Institutional-grade financial intelligence platform. Track 43K+ congressional trades (STOCK Act), SEC insider Form 4 filings, 25 superinvestor 13F portfolios, CFTC futures positioning, ARK ETF holdings, and short interest — all scored by AI for signal strength.
+- [Congressional Stock Brain](https://congressionalstockbrain.com) - `Data` - Free AI-powered tool for scoring U.S. STOCK Act congressional trade disclosures by significance, filterable by lawmaker, ticker, and sector. No public GitHub repo.
 - [KeepRule](https://keeprule.com/) - Curated library of decision-making principles and investment wisdom from masters like Buffett and Munger, featuring mental models for better investment thinking.
 - [ML-Quant](https://www.ml-quant.com/) - Top Quant resources like ArXiv (sanity), SSRN, RePec, Journals, Podcasts, Videos, and Blogs.
 - [RealMarketAPI](https://realmarketapi.com/) - Provides ultra-low latency market data for gold, forex, crypto, and stocks via REST, WebSocket, and MCP—built for speed, reliability, and scale.
