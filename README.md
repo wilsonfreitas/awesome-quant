@@ -494,6 +494,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [QuantInvestStrats](https://github.com/ArturSepp/QuantInvestStrats) - `Python` - Quantitative Investment Strategies (QIS) package implements Python analytics for visualisation of financial data, performance reporting, analysis of quantitative strategies.
 - [LightweightCharts.jl](https://github.com/bhftbootcamp/LightweightCharts.jl) - `Julia` - Julia wrapper for Lightweight Charts™ by TradingView.
 - [QUANTAXIS_Webkit](https://github.com/yutiansut/QUANTAXIS_Webkit) - `JavaScript` - An awesome visualization center based on quantaxis.
+- [dxcharts-lite](https://github.com/devexperts/dxcharts-lite) - JavaScript - Flexible financial charting library based on HTML5 canvas.
 
 ## Excel & Spreadsheet Integration
 
