@@ -436,6 +436,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [FinanceDatabase](https://github.com/JerBouma/FinanceDatabase) - `Python` - This is a database of 300.000+ symbols containing Equities, ETFs, Funds, Indices, Currencies, Cryptocurrencies and Money Markets.
 - [Trading Strategy](https://github.com/tradingstrategy-ai/trading-strategy/) - `Python` - download price data for decentralised exchanges and lending protocols (DeFi).
 - [datamule-python](https://github.com/john-friedman/datamule-python) - `Python` - A package to work with SEC data. Incorporates datamule endpoints.
+- [Insider Alerts](https://insideralerts.io) - SEC Form 4 insider buying and selling alerts, watchlists, and searchable insider activity.
 - [fsynth](https://github.com/welcra/fsynth) - `Python` - Python library for high-fidelity unlimited synthetic financial data generation using Heston Stochastic Volatility and Merton Jump Diffusion.
 - [fedfred](https://nikhilxsunder.github.io/fedfred/) - `Python` - FRED & GeoFRED Economic data API with preprocessed dataframe output in pandas/geopandas, polars/polars_st, and dask dataframes/geodataframes.
 - [edgar-sec](https://nikhilxsunder.github.io/edgar-sec/) - `Python` - EDGAR Financial data API with preprocessed dataclass outputs.
