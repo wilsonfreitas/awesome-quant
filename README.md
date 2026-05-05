@@ -621,3 +621,4 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [awesome-sec-filings](https://github.com/vibeyclaw/awesome-sec-filings) - A curated list of tools, data sources, libraries, and resources for working with SEC filings (13F, 10-K, 10-Q, 8-K).
 - [CONVEXFI](https://github.com/convexfi) - Official GitHub organization for the convex research group at the Hong Kong University of Science and Technology (HKUST).
+- [EventTrader](https://cymetica.com) - AI prediction market platform. AI-powered financial analytics and prediction platform on Base L2. Market analysis tools, autonomous trading agents, and real-time price predictions. [Agent Card](https://cymetica.com/.well-known/agent-card.json)
