@@ -402,6 +402,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [edinet-mcp](https://github.com/ajtgjmdjp/edinet-mcp) - `Python` - Parse Japanese XBRL financial statements from EDINET with 161 normalized labels, 26 financial metrics, and multi-company screening.
 - [estat-mcp](https://github.com/ajtgjmdjp/estat-mcp) - `Python` - Access Japanese government statistics (e-Stat) covering population, GDP, CPI, labor, and trade data with MCP integration and Polars export.
 - [tdnet-disclosure-mcp](https://github.com/ajtgjmdjp/tdnet-disclosure-mcp) - `Python` - Access Japanese timely disclosures (TDNet) via MCP. Retrieve earnings, dividends, forecasts, buybacks, and other filings for 4,000+ listed companies. No API key required.
+- [bigtech-ai-stakes](https://github.com/YichengYang-Ethan/bigtech-ai-stakes) - `Python` - Open dataset of U.S. public-company equity stakes in Anthropic and OpenAI from primary 10-K / 10-Q / 8-K filings, court records, and press releases. Each row tagged with a confidence flag (V verified, P probable, S speculative).
 - [cn_stock_src](https://github.com/jealous/cn_stock_src) - `Python` - Utility for retrieving basic China stock data from different sources.
 - [coinmarketcap](https://github.com/barnumbirr/coinmarketcap) - `Python` - Python API for coinmarketcap.
 - [coinpulse](https://github.com/soutone/coinpulse-python) - `Python` - Python SDK for cryptocurrency portfolio tracking with real-time prices, P/L calculations, and price alerts. Free tier available.
