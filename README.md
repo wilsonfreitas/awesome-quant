@@ -254,6 +254,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Lucky.jl](https://github.com/oliviermilla/Lucky.jl) - `Julia` - Modular, asynchronous trading engine in pure Julia.
 - [Strategems.jl](https://github.com/dysonance/Strategems.jl) - `Julia` - Quantitative systematic trading strategy development and backtesting.
 - [ccxt](https://github.com/ccxt/ccxt) - `JavaScript` `Python` `PHP` - A JavaScript / Python / PHP cryptocurrency trading API with support for more than 100 bitcoin/altcoin exchanges.
+- [binance-fix-connector-python](https://github.com/AlexanderMerkel/binance-fix-connector-python) - `Python` - Async Python connector for Binance Spot FIX sessions with Order Entry, Market Data, and Drop Copy support.
 - [TradeClaw](https://github.com/naimkatiman/tradeclaw) - `JavaScript` - Open-source AI trading signal platform with RSI/MACD/EMA confluence scoring, real-time signals for 10+ assets, self-hostable with one Docker command.
 - [Jiji](https://github.com/unageanu/jiji2) - `Ruby` - Open Source Forex algorithmic trading framework using OANDA REST API.
 - [Tai](https://github.com/fremantle-capital/tai) - `Elixir/Erlang` - Open Source composable, real time, market data and trade execution toolkit.
