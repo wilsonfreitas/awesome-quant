@@ -209,6 +209,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [jesse](https://github.com/jesse-ai/jesse) - `Python` - An advanced crypto trading bot written in Python.
 - [rqalpha](https://github.com/ricequant/rqalpha) - `Python` - A extendable, replaceable Python algorithmic backtest && trading framework supporting multiple securities.
 - [FinRL-Library](https://github.com/AI4Finance-LLC/FinRL-Library) - `Python` - A Deep Reinforcement Learning Library for Automated Trading in Quantitative Finance. NeurIPS 2020.
+- [aurumq-rl](https://github.com/yupoet/aurumq-rl) - `Python` - Reinforcement learning stock-selection framework for the China A-share market with multi-source factor input (alpha101 + main-force flow + hot-money seats + northbound + institutional + fundamentals), board-aware price limits, and ONNX CPU inference.
 - [bulbea](https://github.com/achillesrasquinha/bulbea) - `Python` - Deep Learning based Python Library for Stock Market Prediction and Modelling.
 - [ib_nope](https://github.com/ajhpark/ib_nope) - `Python` - Automated trading system for NOPE strategy over IBKR TWS.
 - [OctoBot](https://github.com/Drakkar-Software/OctoBot) - `Python` - Open source cryptocurrency trading bot for high frequency, arbitrage, TA and social trading with an advanced web interface.
