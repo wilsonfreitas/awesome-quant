@@ -508,6 +508,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Excel & Spreadsheet Integration
 
+- [Bilig](https://github.com/proompteng/bilig) - `TypeScript` - Formula WorkPaper and XLSX recalculation runtime for Node.js services and agent tools.
 - [xlwings](https://www.xlwings.org/) - `Python` - Make Excel fly with Python. [GitHub](https://github.com/xlwings/xlwings)
 - [openpyxl](https://openpyxl.readthedocs.io/en/latest/) - `Python` - Read/Write Excel 2007 xlsx/xlsm files.
 - [xlrd](https://github.com/python-excel/xlrd) - `Python` - Library for developers to extract data from Microsoft Excel spreadsheet files.
