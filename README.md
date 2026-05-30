@@ -57,6 +57,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [PyQL](https://github.com/enthought/pyql) - `Python` - QuantLib's Python port.
 - [pyfin](https://github.com/opendoor-labs/pyfin) - `Python` - Basic options pricing in Python. *ARCHIVED*.
 - [vollib](https://github.com/vollib/vollib) - `Python` - vollib is a python library for calculating option prices, implied volatility and greeks.
+- [py_vollib](https://github.com/vollib/py_vollib) - `Python` - vollib Python implementation.
 - [QuantPy](https://github.com/jsmidt/QuantPy) - `Python` - A framework for quantitative finance In python.
 - [Finance-Python](https://github.com/alpha-miner/Finance-Python) - `Python` - Python tools for Finance.
 - [ffn](https://github.com/pmorissette/ffn) - `Python` - A financial function library for Python.
@@ -603,6 +604,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [AFML](https://github.com/boyboi86/AFML) - All the answers for exercises from Advances in Financial Machine Learning by Dr Marco Lopez de Parodo.
 - [AlgoTradingLib](https://github.com/usdaud/algotradinglib.github.io) - A catalog of algorithmic trading libraries, frameworks, strategies, and educational materials.
 - [Portfolio Optimization Book](https://portfoliooptimizationbook.com/) - Prof. Daniel Palomar's Portfolio Optimization Book. [GitHub](https://github.com/dppalomar/pob)
+- [direct_vola](https://github.com/wol-fi/direct_vola) - `Python` `R` - Demo code for direct Black-Scholes implied-volatility calculation from normalized call prices via the inverse-Gaussian quantile representation.
 
 ## Commercial & Proprietary Services
 
