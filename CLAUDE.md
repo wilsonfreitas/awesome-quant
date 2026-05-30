@@ -19,13 +19,14 @@ The pipeline works as follows:
 
 2. **`parse.py`** — Parses `README.md`, extracts language from backtick tags, fetches last commit dates and stars via the GitHub API (using `PyGithub` with multithreading), and writes `site/projects.csv` with a `languages` column (comma-separated).
 
-3. **`site/generate.py`** — Reads `projects.csv` (or parses `README.md` directly) and generates a static HTML site with search, filtering by language/category/source, sorting, and dark mode.
+3. **`site/generate.py`** — Reads `site/projects.csv` (or parses `README.md` directly) and generates a static HTML site (`site/index.html`) with search, filtering by language/category/source, sorting, and dark mode. Front-end assets live in `site/static/` (`main.js`, `style.css`).
 
-4. **CI** (`.github/workflows/build.yml`) — Runs daily and on push to `main`: runs `parse.py`, runs `site/generate.py`, and deploys to GitHub Pages via `gh-pages` branch.
+4. **CI** (`.github/workflows/build.yml`, workflow name "Update site") — Runs daily (cron `0 1 * * *`) and on push to `main` touching `README.md`, `parse.py`, or `site/**`: runs `parse.py`, runs `site/generate.py`, and deploys the `site/` directory to GitHub Pages via `peaceiris/actions-gh-pages`.
 
 Supporting scripts:
 - `cranscrape.py` — Scrapes CRAN package pages to find associated GitHub repos; writes `cran.csv`.
 - `topic.py` — Searches GitHub for repos tagged with a topic (e.g., "quant") above a star threshold.
+- `scripts/migrate_readme.py` — One-off migration that converted `README.md` from language-first to category-first organization (kept for reference).
 
 ## Commands
 
@@ -59,3 +60,16 @@ Entries are grouped under category headings (`##`), not language headings. Langu
 `parse.py` and `site/generate.py` rely on this regex to extract entries: `^\s*- \[(.*)\]\((.*)\) - (.*)$`
 
 The description text (group 3) may start with language tags in the format `` `Language1` `Language2` - `` followed by the actual description.
+
+## PR Reviews
+
+This repo receives most contributions as pull requests adding new entries. Use the **GitHub MCP tools** (e.g. `list_pull_requests`, `pull_request_read`, `merge_pull_request`, `add_issue_comment`, `update_pull_request`), **not** the `gh` CLI, for PR operations.
+
+Dedicated skills drive the review workflow:
+- `sprr` — Single PR reviewer: validate one PR's entry against the format rules.
+- `bprr` — Bulk PR reviewer: review all open PRs lacking the "reviewed" label, then present a summary for selection before merging.
+- `update-pypi-dates` — Refresh last-updated dates for PyPI entries in `README.md`.
+
+Review checklist: always ask before merging; verify section placement (commercial entries belong under "Commercial & Proprietary Services", not Market Data); check for duplicates in `README.md`; apply the "reviewed" label after commenting.
+
+See `AGENTS.md` for the agent-facing command and tool summary, and `CONTRIBUTING.md` for contributor guidelines.
