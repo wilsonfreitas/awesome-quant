@@ -227,6 +227,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [PyBroker](https://github.com/edtechre/pybroker) - `Python` - Algorithmic Trading with Machine Learning.
 - [OctoBot Script](https://github.com/Drakkar-Software/OctoBot-Script) - `Python` - A quant framework to create cryptocurrencies strategies - from backtesting to optimization to livetrading.
 - [hftbacktest](https://github.com/nkaz001/hftbacktest) - `Python` - A high-frequency trading and market-making backtesting tool accounts for limit orders, queue positions, and latencies, utilizing full tick data for trades and order books.
+- [flashalpha-fill-simulator](https://github.com/FlashAlpha-lab/flashalpha-fill-simulator) - `Python` - Realistic limit-order fill simulator for options credit/debit spreads with post-and-wait limits, stale-quote guards, deterministic same-bar tiebreaks, and a patient-then-cross exit; engine-agnostic and zero runtime dependencies.
 - [vnpy](https://github.com/vnpy/vnpy) - `Python` - VeighNa is a Python-based open source quantitative trading system development framework.
 - [Intelligent Trading Bot](https://github.com/asavinov/intelligent-trading-bot) - `Python` - Automatically generating signals and trading based on machine learning and feature engineering.
 - [fastquant](https://github.com/enzoampil/fastquant) - `Python` - fastquant allows you to easily backtest investment strategies with as few as 3 lines of python code.
