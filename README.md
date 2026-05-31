@@ -1,4 +1,4 @@
-# Awesome Quant
+[Resource from claude.ai GitHub at repo://wilsonfreitas/awesome-quant/sha/69616148bd64e27e698bf3bba00393a5f9d7c554/contents/README.md] # Awesome Quant
 
 A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance).
 
@@ -381,6 +381,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [dexpaprika-sdk-python](https://github.com/coinpaprika/dexpaprika-sdk-python) - `Python` - Free DEX data API client. 34 blockchains, 30M+ pools, 27M+ tokens, real-time SSE streaming, OHLCV. No API key needed.
 - [pricehub](https://github.com/eslazarev/pricehub) - `Python` - Unified package for collecting OHLC prices from Binance, Bybit, Coinbase, OKX, Kraken, KuCoin, and Bitget (spot & futures) into a DataFrame, with flexible timestamp inputs and a wide range of intervals.
 - [Helium MCP](https://heliumtrades.com/mcp-page/) - `Python` - Live stock/ETF/crypto data with AI-generated bull/bear cases and price forecasts, proprietary ML options pricing with probability ITM and fair value, and news bias scoring across 5,000+ sources. Available as MCP server or API. Free tier: 50 queries, no signup. [GitHub](https://github.com/connerlambden/helium-mcp)
+- [YIELD INTELLIGENCE](https://github.com/thebrierfox/intuitek-ace) - `MCP` - Hosted remote MCP server for passive income analysis — live U.S. Treasury rates, dividend ETFs, REITs, and preferred stocks; optimizes portfolio for monthly income targets. No auth required. [Live MCP](https://api.intuitek.ai/yield/mcp)
 - [findatapy](https://github.com/cuemacro/findatapy) - `Python` - Python library to download market data via Bloomberg, Quandl, Yahoo etc.
 - [googlefinance](https://github.com/hongtaocai/googlefinance) - `Python` - Python module to get real-time stock data from Google Finance API.
 - [Horus Flow](https://github.com/horustechltd/horus-flow-mcp) - `Python` - Sub-second L2 orderflow intelligence MCP server for institutional-grade market microstructure analysis.
