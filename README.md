@@ -637,6 +637,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Sharpe](https://www.sharpe.ai/) - AI-driven crypto trading intelligence terminal for derivatives positioning, DEX flow, on-chain risk, narrative rotation, token discovery, and agent-ready market data.
 - [Webb Database](https://webb-database.com/) - Aggregates public financial data from HKEX, the SFC, the Hong Law Society, UK Companies House and other sources, has searchable datasets on listed companies, many in machine-readable formats.
 - [GitDealFlow](https://gitdealflow.com) - Alternative-data signal platform ranking early-stage private companies by GitHub stars-per-day, hiring velocity, and package-registry adoption. Free weekly signal report, Chrome extension overlay on Crunchbase/AngelList, and MCP server on npm for LLM agent access.
+- [SENTINEL Research](https://sentinelresearch.app) - Hosted crypto perp factor stack scanner. Joins funding rate, open interest delta, volume participation, BTC regime, and breadth into one score per Bybit perp, with public per-tier performance and inspectable receipts (misses included).
 
 ## Related Lists
 
