@@ -369,6 +369,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [garchmodels](https://github.com/AlbertoAlmuinha/garchmodels) - `R` - A parsnip backend for GARCH models.
 - [TimeSeries.jl](https://github.com/JuliaStats/TimeSeries.jl) - `Julia` - Time series toolkit for Julia.
 - [TimeFrames.jl](https://github.com/femtotrader/TimeFrames.jl) - `Julia` - A Julia library that defines TimeFrame (essentially for resampling TimeSeries).
+- [PineForge](https://github.com/pineforge-4pass/pineforge-engine) - `C++` - Deterministic offline PineScript v6 → C++ backtest runtime, validated trade-for-trade against TradingView (245/246 strict, 0 engine bugs). Runs locally via Docker and is drivable by AI agents through a bundled MCP server.
 
 ## Market Data & Data Sources
 - [BTC Orderbook Microstructure Research](https://github.com/whoareunot/btc-orderbook-research) - `Jupyter Notebook` - statistical analysis of Binance BTC/USDT orderbook: OBI, CVD, spread.  
