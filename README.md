@@ -281,6 +281,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TradeClaw](https://github.com/naimkatiman/tradeclaw) - `Node.js` `TypeScript` - Open-source self-hosted AI trading signal platform. Generates buy/sell signals using RSI, MACD, EMA, Bollinger Bands for forex, crypto and commodities. Deployable via Docker Compose. ([Demo](https://tradeclaw.win/dashboard))
 - [ShowMe](https://github.com/nazmiefearmutcu/showMe) - `Python` `Rust` `TypeScript` - Open-source native macOS market cockpit. 12-timeframe consensus scan across 3370 symbols (crypto + equity + ETF + FX + commodity + bond), 23 technical indicators with per-market calibration, real WebSocket streaming. Tauri shell + Python sidecar (FastAPI) + React UI; 110+ exchanges via ccxt.
 - [TBV1](https://github.com/nazmiefearmutcu/TRADING-BOT) - `Python` - Crypto perpetual-futures bot with a 7-tab web dashboard and a 15-indicator consensus engine voting across 12 timeframes (1m → 1d). Paper-mode by default. Includes packaged macOS reference build and Windows distribution.
+- [analyseur-crypto](https://github.com/alexch03/analyseur-crypto) - `Python` - Multi-timeframe crypto market structure analyzer for Bitget with rule-based BOS/CHOCH/FVG/order block detection, paper trading engine, FastAPI dashboard, Telegram bot, and 206 unit tests.
+- [bitget-sma-bot](https://github.com/alexch03/bitget-sma-bot) - `Python` - Hackable Bitget USDT-M perpetuals trading bot with SMA, Bollinger Bands, and RSI strategies, supporting paper/dry/demo/live modes, Flask web UI, Telegram alerts, and a grid optimizer.
 
 ## Portfolio Optimization & Risk Analysis
 
