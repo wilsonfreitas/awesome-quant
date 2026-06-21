@@ -282,6 +282,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [ShowMe](https://github.com/nazmiefearmutcu/showMe) - `Python` `Rust` `TypeScript` - Open-source native macOS market cockpit. 12-timeframe consensus scan across 3370 symbols (crypto + equity + ETF + FX + commodity + bond), 23 technical indicators with per-market calibration, real WebSocket streaming. Tauri shell + Python sidecar (FastAPI) + React UI; 110+ exchanges via ccxt.
 - [TBV1](https://github.com/nazmiefearmutcu/TRADING-BOT) - `Python` - Crypto perpetual-futures bot with a 7-tab web dashboard and a 15-indicator consensus engine voting across 12 timeframes (1m → 1d). Paper-mode by default. Includes packaged macOS reference build and Windows distribution.
 
+- [Melaya](https://melaya.org) - `Rust` / `Python` / `TypeScript` - Hosted agentic trading platform with a Rust execution engine (310 ns ticker write, 14.4 µs end-to-end), normalized REST and WebSocket API across 65 CEX + 6 prediction markets, deterministic native backtesting, and a 7-persona AI trading crew (Macro, TA, Quant, Sentiment, Risk, Portfolio, Execution) with HITL approval on every order. 9 official SDKs (Python, Rust, TypeScript, Go, Java, Kotlin, C#, Ruby, PHP) wrap one unified API.
 ## Portfolio Optimization & Risk Analysis
 
 - [AutoHypothesis](https://github.com/arteemg/AutoHypothesis) - `Python` - An agentic framework that mimics the real quant trading pipeline to find alpha: economic hypothesis, in-sample iteration, and out-of-sample validation.
