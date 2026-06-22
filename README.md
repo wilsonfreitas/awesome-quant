@@ -607,7 +607,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [direct_vola](https://github.com/wol-fi/direct_vola) - `Python` `R` - Demo code for direct Black-Scholes implied-volatility calculation from normalized call prices via the inverse-Gaussian quantile representation.
 
 ## Commercial & Proprietary Services
-
+- [Global Markets Dashboard](https://gmdmarkets.com) - Free real-time dashboard streaming 40+ instruments across equities, crypto, FX, commodities and bonds on a single screen, plus volatility and sentiment indicators (VIX, CNN Fear & Greed). No signup.
 - [Chartscout](https://chartscout.io) - Real-time cryptocurrency chart pattern detection with automated alerts across multiple exchanges.
 - [DayTradingBench](https://daytradingbench.com) - Live autonomous benchmark that evaluates LLM trading performance on DAX and Nasdaq indices using identical strategies and real-time market data. API access available.
 - [CoinTester](https://cointester.io) - No-code crypto backtesting platform with 100+ indicators, AI sentiment signals, and 5+ years of historical data across 1,000+ trading pairs.
