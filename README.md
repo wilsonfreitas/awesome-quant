@@ -310,7 +310,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pyfolio-reloaded](https://github.com/stefan-jansen/pyfolio-reloaded) - `Python` - Portfolio and risk analytics in Python. [pyfolio](https://github.com/quantopian/pyfolio) fork.
 - [fortitudo.tech](https://github.com/fortitudo-tech/fortitudo.tech) - `Python` - Conditional Value-at-Risk (CVaR) portfolio optimization and Entropy Pooling views / stress-testing in Python.
 - [quantitative-finance-tools](https://github.com/omichauhan-lgtm/quantitative-finance-tools) - `Python` - Library for portfolio optimization (MVO) and rigorous risk metrics (VaR/CVaR).
-- [curistat](https://github.com/moxiespirit/MyClone/tree/main/volatility_platform) - `Python` - Futures volatility forecasting platform for ES/NQ. Proprietary CVN rating (1-10), regime detection (CRC composite), 8 directional signals, economic event impact analytics. Includes MCP server for AI agent integration.
+- [curistat](https://github.com/moxiespirit/MyClone/tree/main/volatility_platform) - `Python` - Futures volatility forecasting platform for ES/NQ.  CVN rating (1-10), regime detection (CRC composite), 8 directional signals, economic event impact analytics. Includes MCP server for AI agent integration.
 - [Prop Trader Compass](https://otto-ships.github.io/prop-trader-compass/) - `Python` - Interactive risk and payout calculator for Futures and CFD traders; features one-time fee firm comparisons.
 - [portfolio](https://github.com/dgerlanc/portfolio) - `R` - Analysing equity portfolios.
 - [sparseIndexTracking](https://github.com/dppalomar/sparseIndexTracking) - `R` - Portfolio design to track an index.
@@ -339,7 +339,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [Asset News Sentiment Analyzer](https://github.com/KVignesh122/AssetNewsSentimentAnalyzer) - `Python` - Sentiment analysis and report generation package for financial assets and securities utilizing GPT models.
 - [Social Stock Sentiment API](https://api.adanos.org/docs) - `Python` - REST API analyzing Reddit and X/Twitter for stock mentions and sentiment, providing buzz scores, trending stocks, and AI-generated trend explanations.
-- [CoWorker Fin-Agent](https://github.com/ZiwayZhao/agent-coworker) - `Python` - LLM-powered A-share stock analysis via P2P agent collaboration. Technical analysis (MA60, volume-price patterns, golden eye), deep research reports using proprietary methodology, and market state summaries. Analysis logic stays private via Skill-as-API protocol.
+- [CoWorker Fin-Agent](https://github.com/ZiwayZhao/agent-coworker) - `Python` - LLM-powered A-share stock analysis via P2P agent collaboration. Technical analysis (MA60, volume-price patterns, golden eye), deep research reports using  methodology, and market state summaries. Analysis logic stays private via Skill-as-API protocol.
 - [StockKit](https://stockkit.net/) - `TypeScript` - Free AI-powered stock research reports for US, China & HK using Claude Opus and multi-model AI with 20+ technical indicators. [GitHub](https://github.com/kentmswood-ui/stockkit)
 
 ## Time Series Analysis
@@ -380,7 +380,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [financekit-mcp](https://github.com/vdalhambra/financekit-mcp) - `Python` - MCP server (Model Context Protocol) exposing 17 tools for AI agents to perform quantitative analysis: real-time stock quotes, full technical analysis (RSI, MACD, Bollinger, ADX, Stochastic, ATR, OBV + pattern detection with structured verdicts), crypto prices via CoinGecko, risk metrics (VaR, Sharpe, Sortino, Beta, Max Drawdown), correlation matrix, options chains, earnings calendar, sector rotation, and portfolio analysis. Works with Claude Desktop, Cursor, Windsurf. No API keys for core tools. FastMCP 3.2.
 - [dexpaprika-sdk-python](https://github.com/coinpaprika/dexpaprika-sdk-python) - `Python` - Free DEX data API client. 34 blockchains, 30M+ pools, 27M+ tokens, real-time SSE streaming, OHLCV. No API key needed.
 - [pricehub](https://github.com/eslazarev/pricehub) - `Python` - Unified package for collecting OHLC prices from Binance, Bybit, Coinbase, OKX, Kraken, KuCoin, and Bitget (spot & futures) into a DataFrame, with flexible timestamp inputs and a wide range of intervals.
-- [Helium MCP](https://heliumtrades.com/mcp-page/) - `Python` - Live stock/ETF/crypto data with AI-generated bull/bear cases and price forecasts, proprietary ML options pricing with probability ITM and fair value, and news bias scoring across 5,000+ sources. Available as MCP server or API. Free tier: 50 queries, no signup. [GitHub](https://github.com/connerlambden/helium-mcp)
+- [Helium MCP](https://heliumtrades.com/mcp-page/) - `Python` - Live stock/ETF/crypto data with AI-generated bull/bear cases and price forecasts,  ML options pricing with probability ITM and fair value, and news bias scoring across 5,000+ sources. Available as MCP server or API. Free tier: 50 queries, no signup. [GitHub](https://github.com/connerlambden/helium-mcp)
 - [findatapy](https://github.com/cuemacro/findatapy) - `Python` - Python library to download market data via Bloomberg, Quandl, Yahoo etc.
 - [googlefinance](https://github.com/hongtaocai/googlefinance) - `Python` - Python module to get real-time stock data from Google Finance API.
 - [Horus Flow](https://github.com/horustechltd/horus-flow-mcp) - `Python` - Sub-second L2 orderflow intelligence MCP server for institutional-grade market microstructure analysis.
@@ -607,7 +607,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [direct_vola](https://github.com/wol-fi/direct_vola) - `Python` `R` - Demo code for direct Black-Scholes implied-volatility calculation from normalized call prices via the inverse-Gaussian quantile representation.
 
 ## Commercial & Proprietary Services
-- [Global Markets Dashboard](https://gmdmarkets.com) - Free real-time dashboard streaming 40+ instruments across equities, crypto, FX, commodities and bonds on a single screen, plus volatility and sentiment indicators (VIX, CNN Fear & Greed). No signup.
+- [Global Markets Dashboard](https://gmdmarkets.com) - Free real-time global markets dashboard on a single screen, plus volatility and sentiment indicators (VIX, CNN Fear & Greed). No signup.
 - [Chartscout](https://chartscout.io) - Real-time cryptocurrency chart pattern detection with automated alerts across multiple exchanges.
 - [DayTradingBench](https://daytradingbench.com) - Live autonomous benchmark that evaluates LLM trading performance on DAX and Nasdaq indices using identical strategies and real-time market data. API access available.
 - [CoinTester](https://cointester.io) - No-code crypto backtesting platform with 100+ indicators, AI sentiment signals, and 5+ years of historical data across 1,000+ trading pairs.
