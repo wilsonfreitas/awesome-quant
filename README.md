@@ -14,7 +14,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Factor Analysis](#factor-analysis)
 - [Sentiment Analysis & Alternative Data](#sentiment-analysis-alternative-data)
 - [Time Series Analysis](#time-series-analysis)
-- [Market Data & Data Sources](#market-data-data-sources)
+- [Market Data & Data Sources](#market-data--data-sources)
 - [Prediction Markets](#prediction-markets)
 - [Calendars & Market Hours](#calendars-market-hours)
 - [Visualization](#visualization)
