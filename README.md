@@ -605,7 +605,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [AlgoTradingLib](https://github.com/usdaud/algotradinglib.github.io) - A catalog of algorithmic trading libraries, frameworks, strategies, and educational materials.
 - [Portfolio Optimization Book](https://portfoliooptimizationbook.com/) - Prof. Daniel Palomar's Portfolio Optimization Book. [GitHub](https://github.com/dppalomar/pob)
 - [direct_vola](https://github.com/wol-fi/direct_vola) - `Python` `R` - Demo code for direct Black-Scholes implied-volatility calculation from normalized call prices via the inverse-Gaussian quantile representation.
-- [TradeMux Snippets](https://github.com/KVignesh122/trademux-examples) – `Python` - Code snippets for Metatrader (MT5) forex/CFD trading and data retrieval via trademux API client.
+- [TradeMux Snippets](https://github.com/KVignesh122/trademux-examples) - `Python` - Code snippets for Metatrader (MT5) forex/CFD trading and data retrieval via trademux API client.
 
 ## Commercial & Proprietary Services
 
