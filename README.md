@@ -157,6 +157,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TradeAggregation](https://github.com/MathisWellmann/trade_aggregation-rs) - `Rust` - Aggregate trades into user-defined candles using information driven rules.
 - [SlidingFeatures](https://github.com/MathisWellmann/sliding_features-rs) - `Rust` - Chainable tree-like sliding windows for signal processing and technical analysis.
 - [fin-primitives](https://github.com/Mattbusel/fin-primitives) - `Rust` - Financial market primitives in Rust: Price/Quantity/Symbol newtypes, BTreeMap order book, OHLCV aggregation, SMA/EMA/RSI indicators, position ledger with PnL, and composable risk monitor.
+- [Wickra](https://github.com/wickra-lib/wickra) - `Rust` `Python` `JavaScript` `C++` `C#` `Golang` `Java` `R` - Streaming-first technical-analysis library with a Rust core: 514 indicators updating in O(1) per tick, with bit-exact batch-vs-streaming results.
 
 ## Trading & Backtesting
 - [AlgoVault](https://github.com/AlgoVaultLabs/crypto-quant-signal-mcp) - `TypeScript` - MCP server returning composite crypto trade verdicts (direction, confidence, regime) across 5 perpetual-futures venues, with cross-venue funding-rate arbitrage and an on-chain Merkle-verified track record. Free tier.
