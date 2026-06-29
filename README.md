@@ -434,6 +434,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [yliveticker](https://github.com/yahoofinancelive/yliveticker) - `Python` - Live stream of market data from Yahoo Finance websocket.
 - [bbgbridge](https://github.com/ran404/bbgbridge) - `Python` - Easy to use Bloomberg Desktop API wrapper for Python.
 - [polygon.io](https://github.com/polygon-io/client-python) - `Python` - A python library for Polygon.io financial data APIs.
+- [SiftingIO](https://github.com/SiftingIO/sdk-python) - `Python` - A python library for Sifting.io financial market data APIs & Websocket.
 - [alpha_vantage](https://github.com/RomelTorres/alpha_vantage) - `Python` - A python wrapper for Alpha Vantage API for financial data.
 - [oilpriceapi](https://github.com/OilpriceAPI/python-sdk) - `Python` - Python SDK for real-time oil and commodity prices (WTI, Brent, Urals, natural gas, coal) with OpenBB integration.
 - [FinanceDataReader](https://github.com/FinanceData/FinanceDataReader) - `Python` - Open Source Financial data reader for U.S, Korean, Japanese, Chinese, Vietnamese Stocks.
