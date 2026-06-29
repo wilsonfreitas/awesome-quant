@@ -486,8 +486,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [marketstore](https://github.com/alpacahq/marketstore) - `Golang` - DataFrame Server for Financial Timeseries Data.
 - [fin-stream](https://github.com/Mattbusel/fin-stream) - `Rust` - Real-time market data streaming in Rust: lock-free SPSC ring buffer, 100K+ ticks/second ingestion, multi-timeframe OHLCV construction, and Lorentz transforms on financial time series.
 - [finalytics](https://github.com/Nnamdi-sys/finalytics) - `Rust` - A rust library for financial data analysis.
-- [Coinugget](https://coinugget.com) - `Web` - Real-time RSI signals, price action & volume spikes dashboard across multiple exchanges. Free, no sign-up required.
-- [Factor Weave](https://factorweave.com/) - `Python` - Factor scores, similarity search, and leak-free + survivor-free forward-return labels for 14,684 tickers across equities, ETFs, indices, FX, crypto & futures; REST + MCP, Python/TS/R SDKs, free tier.
+- [Factor Weave](https://factorweave.com/) - `Python` `TypeScript` `R` - Factor scores, similarity search, and leak-free + survivor-free forward-return labels across equities, ETFs, indices, FX, crypto, and futures; REST + MCP, Python/TypeScript/R SDKs, free tier. [GitHub](https://github.com/Blazing-Customs/factorweave-tools)
 
 
 ## Prediction Markets
@@ -650,6 +649,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Webb Database](https://webb-database.com/) - Aggregates public financial data from HKEX, the SFC, the Hong Law Society, UK Companies House and other sources, has searchable datasets on listed companies, many in machine-readable formats.
 - [GitDealFlow](https://gitdealflow.com) - Alternative-data signal platform ranking early-stage private companies by GitHub stars-per-day, hiring velocity, and package-registry adoption. Free weekly signal report, Chrome extension overlay on Crunchbase/AngelList, and MCP server on npm for LLM agent access.
 - [Finterm](https://finterm.xyz) - `TypeScript` - Browser-based, keyboard-first financial terminal. No public GitHub repo (closed source).
+- [Coinugget](https://coinugget.com) - Real-time RSI signals, price action, and volume spikes dashboard across multiple exchanges. Free, no sign-up required.
 
 ## Related Lists
 
