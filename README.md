@@ -14,7 +14,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Factor Analysis](#factor-analysis)
 - [Sentiment Analysis & Alternative Data](#sentiment-analysis-alternative-data)
 - [Time Series Analysis](#time-series-analysis)
-- [Market Data & Data Sources](#market-data-data-sources)
+- [Market Data & Data Sources](#market-data--data-sources)
 - [Prediction Markets](#prediction-markets)
 - [Calendars & Market Hours](#calendars-market-hours)
 - [Visualization](#visualization)
@@ -453,6 +453,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [cif](https://github.com/LenkaV/CIF) - `Python` - Python package that include few composite indicators, which summarize multidimensional relationships between individual economic indicators.
 - [finagg](https://github.com/theOGognf/finagg) - `Python` - finagg is a Python package that provides implementations of popular and free financial APIs, tools for aggregating historical data from those APIs into SQL databases, and tools for transforming aggregated data into features useful for analysis and AI/ML.
 - [FinanceDatabase](https://github.com/JerBouma/FinanceDatabase) - `Python` - This is a database of 300.000+ symbols containing Equities, ETFs, Funds, Indices, Currencies, Cryptocurrencies and Money Markets.
+- [FinanceToolkit](https://github.com/JerBouma/FinanceToolkit) - `Python` - Toolkit with 200+ financial metrics including 80+ financial ratios, 30+ technical indicators, 20+ risk and performance metrics and 50+ macro indicators which pulls from Financial Modeling Prep, Yahoo Finance, OECD, GMBD and more.
 - [Trading Strategy](https://github.com/tradingstrategy-ai/trading-strategy/) - `Python` - download price data for decentralised exchanges and lending protocols (DeFi).
 - [datamule-python](https://github.com/john-friedman/datamule-python) - `Python` - A package to work with SEC data. Incorporates datamule endpoints.
 - [fsynth](https://github.com/welcra/fsynth) - `Python` - Python library for high-fidelity unlimited synthetic financial data generation using Heston Stochastic Volatility and Merton Jump Diffusion.
