@@ -161,6 +161,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Trading & Backtesting
 - [AlgoVault](https://github.com/AlgoVaultLabs/crypto-quant-signal-mcp) - `TypeScript` - MCP server returning composite crypto trade verdicts (direction, confidence, regime) across 5 perpetual-futures venues, with cross-venue funding-rate arbitrage and an on-chain Merkle-verified track record. Free tier.
+- [alpha-forge-mcp](https://github.com/alforge-labs/alpha-forge-mcp) - `Python` - MCP server wrapping the AlphaForge CLI for AI-agent-native backtesting, Optuna TPE optimization, and walk-forward testing of trading strategies from Claude Desktop, Cursor, or Claude Code.
 - [capitalcom-cli](https://github.com/SimonTarara62/capitalcom-cli) - `Python` - Unofficial CLI and async SDK for the Capital.com broker API: market data, guarded order execution, and real-time streaming.
 - [income-desk](https://github.com/nitinblue/income-desk) - `Python` - Systematic options trading intelligence for small accounts with desk-based portfolio management, pre-trade validation, and multi-broker consolidation.
 
@@ -617,6 +618,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Commercial & Proprietary Services
 
+- [AlphaForge](https://alforgelabs.com) - `Python` - Local-first agent-native quant CLI with Optuna TPE optimization, walk-forward testing, anti-overfitting guards, and TradingView Pine v6 code generation. Free trial available. [GitHub](https://github.com/alforge-labs/alpha-forge-mcp)
 - [Chartscout](https://chartscout.io) - Real-time cryptocurrency chart pattern detection with automated alerts across multiple exchanges.
 - [DayTradingBench](https://daytradingbench.com) - Live autonomous benchmark that evaluates LLM trading performance on DAX and Nasdaq indices using identical strategies and real-time market data. API access available.
 - [CoinTester](https://cointester.io) - No-code crypto backtesting platform with 100+ indicators, AI sentiment signals, and 5+ years of historical data across 1,000+ trading pairs.
