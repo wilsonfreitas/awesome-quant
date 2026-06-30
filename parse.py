@@ -8,9 +8,24 @@ from urllib.request import urlopen
 import pandas as pd
 from github import Auth, Github
 
-# using an access token
-auth = Auth.Token(os.environ["GITHUB_ACCESS_TOKEN"])
-g = Github(auth=auth)
+from scripts.readme_entries import (
+    BADGE_RE,
+    ENTRY_RE,
+    HEADING_RE,
+    extract_languages,
+    slugify,
+)
+
+_github_client = None
+
+
+def get_github_client():
+    """Create the GitHub client lazily so importing this module is token-free."""
+    global _github_client
+    if _github_client is None:
+        auth = Auth.Token(os.environ["GITHUB_ACCESS_TOKEN"])
+        _github_client = Github(auth=auth)
+    return _github_client
 
 
 def extract_repo(url):
@@ -128,39 +143,11 @@ def get_pypi_last_updated(url):
         return ""
 
 
-def slugify(text):
-    """Convert text to lowercase hyphen-separated slug."""
-    text = text.lower().strip()
-    text = re.sub(r"[&/]+", "-", text)
-    text = re.sub(r"[^\w\s-]", "", text)
-    text = re.sub(r"[\s_]+", "-", text)
-    text = re.sub(r"-+", "-", text)
-    return text.strip("-")
-
-
-re_langs = re.compile(r'^((?:`[^`]+`\s*)+)-\s*(.*)$')
-
-
-def extract_languages(description: str) -> tuple[list[str], str]:
-    """Extract inline language tags from description.
-
-    Returns (languages, clean_description).
-    E.g. "`Python` `Rust` - High-performance..." -> (["Python", "Rust"], "High-performance...")
-    """
-    m = re_langs.match(description)
-    if m:
-        lang_str = m.group(1)
-        clean_desc = m.group(2)
-        langs = re.findall(r'`([^`]+)`', lang_str)
-        return langs, clean_desc
-    return [], description
-
-
 def get_repo_info(repo):
     """Fetch last commit date and star count from GitHub."""
     try:
         if repo:
-            r = g.get_repo(repo)
+            r = get_github_client().get_repo(repo)
             cs = r.get_commits()
             last_commit = cs[0].commit.author.date.strftime("%Y-%m-%d")
             stars = r.stargazers_count
@@ -204,7 +191,7 @@ class Project(Thread):
 
         is_cran = "cran.r-project.org" in primary_url
         is_pypi = "pypi.org" in primary_url or "pypi.python.org" in primary_url
-        is_commercial = self._language == "Commercial & Proprietary Services"
+        is_commercial = self._category == "Commercial & Proprietary Services"
 
         # For CRAN projects, scrape the CRAN page for GitHub URL and published date
         cran_date = ""
@@ -248,48 +235,51 @@ class Project(Thread):
         )
 
 
-projects = []
+def main():
+    projects = []
 
-with open("README.md", "r", encoding="utf8") as f:
-    ret = re.compile(r"^(#+) (.*)$")
-    rex = re.compile(r"^\s*- \[(.*)\]\((.*)\) - (.*)$")
-    re_badge = re.compile(r"\s*!\[[^\]]*\]\([^)]*\)\s*")
-    m_titles = []
-    last_head_level = 0
-    current_category = ""
-    for line in f:
-        line = re_badge.sub(" ", line)
-        m = rex.match(line)
-        if m:
-            raw_desc = m.group(3).strip()
-
-            # Extract language tags from description
-            languages, clean_description = extract_languages(raw_desc)
-            primary_language = languages[0] if languages else ""
-
-            p = Project(
-                m,
-                primary_language,
-                current_category,
-                current_category,
-            )
-            p.languages = languages
-            p.clean_description = clean_description
-            p.start()
-            projects.append(p)
-        else:
-            m = ret.match(line)
+    with open("README.md", "r", encoding="utf8") as f:
+        ret = HEADING_RE
+        rex = ENTRY_RE
+        re_badge = BADGE_RE
+        current_category = ""
+        for line in f:
+            line = re_badge.sub(" ", line)
+            m = rex.match(line)
             if m:
-                hrs = m.group(1)
-                title = m.group(2).strip()
-                if len(hrs) == 2 and title != "Contents":
-                    current_category = title
+                raw_desc = m.group(3).strip()
 
-while True:
-    checks = [not p.is_alive() for p in projects]
-    if all(checks):
-        break
+                # Extract language tags from description
+                languages, clean_description = extract_languages(raw_desc)
+                primary_language = languages[0] if languages else ""
 
-projects = [p.regs for p in projects]
-df = pd.DataFrame(projects)
-df.to_csv("site/projects.csv", index=False)
+                p = Project(
+                    m,
+                    primary_language,
+                    current_category,
+                    current_category,
+                )
+                p.languages = languages
+                p.clean_description = clean_description
+                p.start()
+                projects.append(p)
+            else:
+                m = ret.match(line)
+                if m:
+                    hrs = m.group(1)
+                    title = m.group(2).strip()
+                    if len(hrs) == 2 and title != "Contents":
+                        current_category = title
+
+    while True:
+        checks = [not p.is_alive() for p in projects]
+        if all(checks):
+            break
+
+    projects = [p.regs for p in projects]
+    df = pd.DataFrame(projects)
+    df.to_csv("site/projects.csv", index=False)
+
+
+if __name__ == "__main__":
+    main()

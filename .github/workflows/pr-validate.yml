@@ -1,0 +1,35 @@
+name: Validate PR
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+      - 'AGENTS.md'
+      - 'scripts/**'
+      - 'site/**'
+      - '.github/workflows/pr-validate.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - uses: astral-sh/setup-uv@v6
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    - name: Install dependencies
+      run: uv sync --no-install-project
+    - name: Fetch base branch
+      run: git fetch origin ${{ github.base_ref }} --depth=1
+    - name: Validate added README entries
+      run: uv run python scripts/validate_readme.py --diff-from origin/${{ github.base_ref }}
+    - name: Generate static site
+      run: uv run python site/generate.py
