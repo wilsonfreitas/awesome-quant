@@ -316,6 +316,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [quantitative-finance-tools](https://github.com/omichauhan-lgtm/quantitative-finance-tools) - `Python` - Library for portfolio optimization (MVO) and rigorous risk metrics (VaR/CVaR).
 - [curistat](https://github.com/moxiespirit/MyClone/tree/main/volatility_platform) - `Python` - Futures volatility forecasting platform for ES/NQ. Proprietary CVN rating (1-10), regime detection (CRC composite), 8 directional signals, economic event impact analytics. Includes MCP server for AI agent integration.
 - [Prop Trader Compass](https://otto-ships.github.io/prop-trader-compass/) - `Python` - Interactive risk and payout calculator for Futures and CFD traders; features one-time fee firm comparisons.
+- [riskkit](https://github.com/HasibVortex369/riskkit) - `Python` - Framework-agnostic risk-management toolkit for systematic trading — position sizing, drawdown control, a composable stop engine, correlation limits, and portfolio exposure caps, with adapters for backtesting.py, freqtrade, and vectorbt.
 - [portfolio](https://github.com/dgerlanc/portfolio) - `R` - Analysing equity portfolios.
 - [sparseIndexTracking](https://github.com/dppalomar/sparseIndexTracking) - `R` - Portfolio design to track an index.
 - [riskParityPortfolio](https://github.com/dppalomar/riskParityPortfolio) - `R` - Blazingly fast design of risk parity portfolios.
