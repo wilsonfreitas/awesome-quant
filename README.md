@@ -211,6 +211,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [freqtrade](https://github.com/freqtrade/freqtrade) - `Python` - Free, open source crypto trading bot.
 - [algorithmic-trading-with-python](https://github.com/chrisconlan/algorithmic-trading-with-python) - `Python` - Free `pandas` and `scikit-learn` resources for trading simulation, backtesting, and machine learning on financial data.
 - [Qlib](https://github.com/microsoft/qlib) - `Python` - An AI-oriented Quantitative Investment Platform by Microsoft. Full ML pipeline of data processing, model training, back-testing; and covers the entire chain of quantitative investment: alpha seeking, risk modeling, portfolio optimization, and order execution.
+- [finlab](https://pypi.org/project/finlab/) - `Python` - Python package for Taiwan stock market data, factor research, and vectorized backtesting with pandas-style strategy definitions.
 - [machine-learning-for-trading](https://github.com/stefan-jansen/machine-learning-for-trading) - `Python` - Code and resources for Machine Learning for Algorithmic Trading.
 - [AlphaPy](https://github.com/ScottfreeLLC/AlphaPy) - `Python` - Automated Machine Learning [AutoML] with Python, scikit-learn, Keras, XGBoost, LightGBM, and CatBoost.
 - [jesse](https://github.com/jesse-ai/jesse) - `Python` - An advanced crypto trading bot written in Python.
