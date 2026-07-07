@@ -69,6 +69,7 @@
 * [BigQuant](https://bigquant.com) - 专注量化投资的人工智能/机器学习平台
 * [天勤量化（TqSdk）](https://github.com/shinnytech/tqsdk-python) - 快期出品的 Python 量化开发包，免费提供期货、期权、股票数据，支持实盘交易/历史回测
 * [果仁网](https://guorn.com/) - 一个以选股+量化为主要特色的平台，不需要写代码就能完成大部分的量化和回测操作
+* [godzilla.dev](https://godzilla.dev/) - 一个开源的 C++/Python 量化交易基础设施，用于自托管的加密货币资金费率套利与做市，具备超低延迟架构，并支持企业级私有化部署
 
 ## 策略
 * [JoinQuant聚宽: 量化学习资料、经典交易策略、Python入门 - 雪球](https://xueqiu.com/8287840120/65009358)
