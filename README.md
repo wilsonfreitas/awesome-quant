@@ -44,6 +44,7 @@
 * [Adanos Market Sentiment API](https://adanos.org/) - 股票市场情绪 API，结合 Reddit、X/Twitter 和 Polymarket 信号，提供 trending tickers、buzz scores 和情绪指标。
 * [13F Insight](https://13finsight.com) - AI 驱动的美国机构持仓追踪平台，覆盖 380K+ 13F 持仓报告、480K+ 13D/G 激进投资者申报和 437万+ Form 4 内部人交易数据，内嵌 AI Agent 支持自然语言查询。
 * [finlight](https://finlight.me/) - 实时财经新闻 API，聚焦全球金融、地缘政治与市场新闻，提供 REST 和 WebSocket 接口，内置实体识别与情绪分析。[GitHub](https://github.com/jubeiargh/finlight-client-py) | [PyPI](https://pypi.org/project/finlight-client/)
+* [stock-analysis](https://github.com/AdvancingTitans/stock-analysis) - 面向 A股、港股、美股和基金的证据驱动复盘 CLI，可生成 Markdown 报告和 JSON Evidence Packs，便于 AI Agent 审计与复用。
 
 ## 数据库
 
