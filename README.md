@@ -160,6 +160,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Wickra](https://github.com/wickra-lib/wickra) - `Rust` `Python` `JavaScript` `C++` `C#` `Golang` `Java` `R` - Streaming-first technical-analysis library with a Rust core: 514 indicators updating in O(1) per tick, with bit-exact batch-vs-streaming results.
 
 ## Trading & Backtesting
+- [rulelint](https://github.com/momoddo/rulelint) - `Python` - Linter for mechanical trading-rule conditions: replays every condition over historical bars to catch look-ahead levels, dead branches that can never fire, and regime-drifted absolute thresholds before you trust a backtest.
 - [AlgoVault](https://github.com/AlgoVaultLabs/crypto-quant-signal-mcp) - `TypeScript` - MCP server returning composite crypto trade verdicts (direction, confidence, regime) across 5 perpetual-futures venues, with cross-venue funding-rate arbitrage and an on-chain Merkle-verified track record. Free tier.
 - [capitalcom-cli](https://github.com/SimonTarara62/capitalcom-cli) - `Python` - Unofficial CLI and async SDK for the Capital.com broker API: market data, guarded order execution, and real-time streaming.
 - [income-desk](https://github.com/nitinblue/income-desk) - `Python` - Systematic options trading intelligence for small accounts with desk-based portfolio management, pre-trade validation, and multi-broker consolidation.
