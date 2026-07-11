@@ -537,6 +537,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [Jupyter Quant](https://github.com/gnzsnz/jupyter-quant) - `Python` - A dockerized Jupyter quant research environment with preloaded tools for quant analysis, statsmodels, pymc, arch, py_vollib, zipline-reloaded, PyPortfolioOpt, etc.
 
+- [FinAI Research Workflow](https://github.com/csmar432/finai-research) - `Python` - End-to-end empirical-research workflow (43 data sources, 47 econometric methods, 30 journal templates) with HITL gates.
+
+
+
 ## Cross-Language Frameworks
 
 - [RunMat](https://runmat.org) - High performance, Open Source, MATLAB syntax runtime. [GitHub](https://github.com/runmat-org/runmat)
