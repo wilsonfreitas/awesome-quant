@@ -82,6 +82,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [quantra](https://github.com/joseprupi/quantraserver) - `Python` - High-performance pricing engine built on QuantLib. It exposes QuantLib's functionality through gRPC and REST APIs, enabling distributed computations with FlatBuffers serialization.
 - [optionlab](https://github.com/rgaveiga/optionlab) - `Python` - A Python library for evaluating option trading strategies.
 - [flashalpha](https://github.com/FlashAlpha-lab/flashalpha-python) - `Python` - Python client for the FlashAlpha options analytics API.
+- [Helium MCP options `prob_itm`](https://github.com/connerlambden/helium-mcp-cookbook/tree/main/calibration) - `Python` - Free ML option fair value + published `prob_itm` via REST/MCP, with a public post-hoc Brier scorecard (June 2026) and logging recipe. Author disclosure; n is small by design.
 - [RQuantLib](https://github.com/eddelbuettel/rquantlib) - `R` - RQuantLib connects GNU R with QuantLib.
 - [quantmod](https://cran.r-project.org/web/packages/quantmod/index.html) - `R` - Quantitative Financial Modelling Framework. [GitHub](https://github.com/joshuaulrich/quantmod)
 - [Rmetrics](https://www.rmetrics.org) - `R` - The premier open source software solution for teaching and training quantitative finance.
@@ -451,6 +452,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Prediction Markets
 
+- [Helium forecaster honesty board](https://connerlambden.github.io/helium-news-explorer/calibration.html) - Public Brier grades for Helium's published option `prob_itm` forecasts as contracts resolve.
 - [pmxt](https://github.com/pmxt-dev/pmxt) - `Python` `JavaScript` - The CCXT for prediction markets. A unified API for trading on Polymarket, Kalshi, and more.
 - [polymarket-whales](https://github.com/al1enjesus/polymarket-whales) - `Python` - Real-time whale trade tracker for Polymarket — terminal alerts + Telegram notifications when large orders hit the book.
 - [Polymarket Scanner API](https://github.com/vesper-astrena/polymarket-scanner-api) - `Python` - Real-time arbitrage detection API for Polymarket prediction markets, scanning 12,000+ markets for mispricings.
