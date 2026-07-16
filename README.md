@@ -122,6 +122,12 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [quantcomponents](https://github.com/lsgro/quantcomponents) - `Java` - Free Java components for Quantitative Finance and Algorithmic Trading.
 - [DRIP](https://lakshmidrip.github.io/DRIP) - `Java` - Fixed Income, Asset Allocation, Transaction Cost Analysis, XVA Metrics Libraries.
 - [finance.js](https://github.com/ebradyjobory/finance.js) - `JavaScript` - A JavaScript library for common financial calculations.
+- [hagan-sabr](https://github.com/moshejs/hagan-sabr) - `TypeScript` - SABR stochastic-volatility model (Hagan 2002 lognormal/normal expansions, Obłój correction, smile calibration); zero dependencies, matches QuantLib's sabrVolatility to 1e-9.
+- [svi-vol-surface](https://github.com/moshejs/svi-vol-surface) - `TypeScript` - Gatheral SVI volatility surface (raw/natural/jump-wings), butterfly and calendar arbitrage checks, slice calibration; zero dependencies.
+- [compounded-sofr](https://github.com/moshejs/compounded-sofr) - `TypeScript` - SOFR compounding-in-arrears per ARRC/ISDA conventions (lookback, observation shift, lockout) and the SOFR Index method; reproduces the NY Fed's published averages.
+- [day-count-conventions](https://github.com/moshejs/day-count) - `TypeScript` - ISDA 2006 day-count conventions (30/360 family, ACT/360, ACT/365F, ACT/ACT ISDA and ICMA); zero dependencies.
+- [tips-index-ratio](https://github.com/moshejs/tips-index-ratio) - `TypeScript` - US TIPS inflation math per 31 CFR 356 Appendix B (reference-CPI interpolation, index ratios); reproduces TreasuryDirect's published values.
+- [32nds](https://github.com/moshejs/32nds) - `TypeScript` - US Treasury price quote math: parse and format 32nds quotes (105-16+), ticks, and basis points; zero dependencies.
 - [quantfin](https://github.com/boundedvariation/quantfin) - `Haskell` - quant finance in pure haskell.
 - [Haxcel](https://github.com/MarcusRainbow/Haxcel) - `Haskell` - Excel Addin for Haskell.
 - [Ffinar](https://github.com/MarcusRainbow/Ffinar) - `Haskell` - A financial maths library in Haskell.
