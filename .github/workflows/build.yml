@@ -30,6 +30,38 @@ jobs:
       run: |
         export GITHUB_ACCESS_TOKEN=${{ secrets.GITHUB_TOKEN }}
         uv run python parse.py
+    - name: Sanity-check generated CSV
+      run: |
+        uv run python - <<'EOF'
+        import csv
+        import sys
+
+        sys.path.insert(0, ".")
+        from scripts.readme_entries import iter_readme_entries
+
+        readme_count = sum(1 for _ in iter_readme_entries("README.md"))
+        with open("site/projects.csv", encoding="utf-8") as handle:
+            rows = list(csv.DictReader(handle))
+        csv_count = len(rows)
+        print(f"README entries: {readme_count}, CSV rows: {csv_count}")
+        if readme_count == 0 or abs(csv_count - readme_count) > 0.10 * readme_count:
+            sys.exit(
+                f"CSV row count {csv_count} deviates more than 10% from "
+                f"README entry count {readme_count}"
+            )
+
+        with_source = [
+            r for r in rows
+            if r.get("repo") or r.get("cran") == "True" or r.get("pypi") == "True"
+        ]
+        missing = [r for r in with_source if not (r.get("last_commit") or "").strip()]
+        print(f"Rows with a lookup source: {len(with_source)}, missing dates: {len(missing)}")
+        if with_source and len(missing) > 0.10 * len(with_source):
+            sys.exit(
+                f"{len(missing)}/{len(with_source)} rows with a lookup source "
+                f"have an empty last_commit (>10%) — refusing to deploy"
+            )
+        EOF
     - name: Generate site
       run: |
         uv run python site/generate.py

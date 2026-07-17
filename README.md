@@ -176,7 +176,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Lumibot](https://github.com/Lumiwealth/lumibot) - `Python` - Algorithmic trading framework where the same code runs for backtesting and live trading across stocks, options, crypto, futures, and forex with multiple brokers including Alpaca, Interactive Brokers, Tradier, and Schwab.
 - [QSTrader](https://github.com/mhallsmoore/qstrader) - `Python` - QSTrader backtesting simulation engine.
 - [Blankly](https://github.com/Blankly-Finance/Blankly) - `Python` - Fully integrated backtesting, paper trading, and live deployment.
-- [zipline](https://github.com/quantopian/zipline) - `Python` - Pythonic algorithmic trading library.
+- [zipline](https://github.com/quantopian/zipline) - `Python` - Pythonic algorithmic trading library. *(archived after Quantopian's 2020 shutdown — see zipline-reloaded below for the maintained fork)*.
 - [zipline-reloaded](https://github.com/stefan-jansen/zipline-reloaded) - `Python` - Zipline, a Pythonic Algorithmic Trading Library.
 - [QuantSoftware Toolkit](https://github.com/QuantSoftware/QuantSoftwareToolkit) - `Python` - Python-based open source software framework designed to support portfolio construction and management.
 - [quantitative](https://github.com/jeffrey-liang/quantitative) - `Python` - Quantitative finance, and backtesting library.
@@ -206,7 +206,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [catalyst](https://github.com/enigmampc/catalyst) - `Python` - An Algorithmic Trading Library for Crypto-Assets in Python.
 - [quantstats](https://github.com/ranaroussi/quantstats) - `Python` - Portfolio analytics for quants, written in Python.
 - [jquantstats](https://github.com/Jebel-Quant/jquantstats) - `Python` - Modern variation of quantstats, with additional features and performance improvements.
-- [qtpylib](https://github.com/ranaroussi/qtpylib) - `Python` - QTPyLib, Pythonic Algorithmic Trading <http://qtpylib.io>.
+- [qtpylib](https://github.com/ranaroussi/qtpylib) - `Python` - QTPyLib, Pythonic Algorithmic Trading <http://qtpylib.io>. *(archived by author)*.
 - [Quantdom](https://github.com/constverum/Quantdom) - `Python` - Python-based framework for backtesting trading strategies & analyzing financial markets [GUI :neckbeard:.]
 - [freqtrade](https://github.com/freqtrade/freqtrade) - `Python` - Free, open source crypto trading bot.
 - [algorithmic-trading-with-python](https://github.com/chrisconlan/algorithmic-trading-with-python) - `Python` - Free `pandas` and `scikit-learn` resources for trading simulation, backtesting, and machine learning on financial data.
@@ -297,9 +297,9 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [DeepDow](https://github.com/jankrepl/deepdow) - `Python` - Portfolio optimization with deep learning.
 - [QuantLibRisks](https://github.com/auto-differentiation/QuantLib-Risks-Py) - `Python` - Fast risks with QuantLib.
 - [XAD](https://github.com/auto-differentiation/xad-py) - `Python` - Automatic Differentation (AAD) Library.
-- [pyfolio](https://github.com/quantopian/pyfolio) - `Python` - Portfolio and risk analytics in Python.
+- [pyfolio](https://github.com/quantopian/pyfolio) - `Python` - Portfolio and risk analytics in Python. *(archived after Quantopian's 2020 shutdown — see pyfolio-reloaded below for the maintained fork)*.
 - [etfray](https://github.com/alwank/etfray) - `Python` - Terminal-based ETF research and portfolio analytics application for holdings, exposure, concentration, margin, and risk workflows.
-- [empyrical](https://github.com/quantopian/empyrical) - `Python` - Common financial risk and performance metrics.
+- [empyrical](https://github.com/quantopian/empyrical) - `Python` - Common financial risk and performance metrics. *(archived after Quantopian's 2020 shutdown — see empyrical-reloaded below for the maintained fork)*.
 - [fecon235](https://github.com/rsvp/fecon235) - `Python` - Computational tools for financial economics include: Gaussian Mixture model of leptokurtotic risk, adaptive Boltzmann portfolios.
 - [finance](https://pypi.org/project/finance/) - `Python` - Financial Risk Calculations. Optimized for ease of use through class construction and operator overload.
 - [qfrm](https://pypi.org/project/qfrm/) - `Python` - Quantitative Financial Risk Management: awesome OOP tools for measuring, managing and visualizing risk of financial instruments and portfolios. (Last updated: 2015-12-12).
@@ -330,7 +330,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Factor Analysis
 
 - [Alpha Skills](https://github.com/VernonOY/alpha-skills) - `Python` - AI skills for quantitative factor research: discover, evaluate, mine, backtest, and monitor factors through any AI coding assistant. Supports A-share, HK, and US markets.
-- [alphalens](https://github.com/quantopian/alphalens) - `Python` - Performance analysis of predictive alpha factors.
+- [alphalens](https://github.com/quantopian/alphalens) - `Python` - Performance analysis of predictive alpha factors. *(archived after Quantopian's 2020 shutdown — see alphalens-reloaded below for the maintained fork)*.
 - [alphalens-reloaded](https://github.com/stefan-jansen/alphalens-reloaded) - `Python` - Performance analysis of predictive (alpha) stock factors.
 - [Spectre](https://github.com/Heerozh/spectre) - `Python` - GPU-accelerated Factors analysis library and Backtester.
 - [QuantGPT](https://github.com/Miasyster/QuantGPT) - `Python` - Agent-driven A-share factor research engine with 8 MCP tools covering hypothesis design, backtesting, scoring, and anti-overfit detection.
@@ -386,7 +386,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pricehub](https://github.com/eslazarev/pricehub) - `Python` - Unified package for collecting OHLC prices from Binance, Bybit, Coinbase, OKX, Kraken, KuCoin, and Bitget (spot & futures) into a DataFrame, with flexible timestamp inputs and a wide range of intervals.
 - [Helium MCP](https://heliumtrades.com/mcp-page/) - `Python` - Live stock/ETF/crypto data with AI-generated bull/bear cases and price forecasts, proprietary ML options pricing with probability ITM and fair value, and news bias scoring across 5,000+ sources. Available as MCP server or API. Free tier: 50 queries, no signup. [GitHub](https://github.com/connerlambden/helium-mcp)
 - [findatapy](https://github.com/cuemacro/findatapy) - `Python` - Python library to download market data via Bloomberg, Quandl, Yahoo etc.
-- [googlefinance](https://github.com/hongtaocai/googlefinance) - `Python` - Python module to get real-time stock data from Google Finance API.
+- [googlefinance](https://github.com/hongtaocai/googlefinance) - `Python` - Python module to get real-time stock data from Google Finance API. *(unmaintained; the underlying Google Finance API was discontinued)*.
 - [Horus Flow](https://github.com/horustechltd/horus-flow-mcp) - `Python` - Sub-second L2 orderflow intelligence MCP server for institutional-grade market microstructure analysis.
 - [yahoo-finance](https://github.com/lukaszbanasiak/yahoo-finance) - `Python` - Python module to get stock data from Yahoo! Finance.
 - [pandas-datareader](https://github.com/pydata/pandas-datareader) - `Python` - Python module to get data from various sources (Google Finance, Yahoo Finance, FRED, OECD, Fama/French, World Bank, Eurostat...) into Pandas datastructures such as DataFrame, Panel with a caching mechanism.
