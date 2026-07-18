@@ -487,6 +487,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [fin-stream](https://github.com/Mattbusel/fin-stream) - `Rust` - Real-time market data streaming in Rust: lock-free SPSC ring buffer, 100K+ ticks/second ingestion, multi-timeframe OHLCV construction, and Lorentz transforms on financial time series.
 - [finalytics](https://github.com/Nnamdi-sys/finalytics) - `Rust` - A rust library for financial data analysis.
 - [Factor Weave](https://factorweave.com/) - `Python` `TypeScript` `R` - Factor scores, similarity search, and leak-free + survivor-free forward-return labels across equities, ETFs, indices, FX, crypto, and futures; REST + MCP, Python/TypeScript/R SDKs, free tier. [GitHub](https://github.com/Blazing-Customs/factorweave-tools)
+- [AltData Atlas](https://altdataatlas.com) - Free, open directory of 361 alternative data providers across 20 categories, with coverage, history depth, delivery method and indicative price band per provider.
 
 
 ## Prediction Markets
