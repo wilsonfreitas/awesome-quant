@@ -689,6 +689,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Coinugget](https://coinugget.com) - Real-time RSI signals, price action, and volume spikes dashboard across multiple exchanges. Free, no sign-up required.
 - [The Stall](https://the-stall.intuitek.ai) - `JavaScript` - 277 pay-per-call tools via MCP: US stocks, crypto, DeFi analytics, Polymarket prediction markets, macro data, and sanctions screening. USDC on Base. No API key required. [GitHub](https://github.com/thebrierfox/the-stall)
 - [Market Posture Daily](https://marketpd.com) - Daily trend, regime, momentum and relative-strength data for ~90 crypto assets and US stocks/ETFs, with a cointegration pair screener. Free terminal + JSON API.
+- [StreamXLS](https://streamxls.com) - Commercial Excel RTD server for the Interactive Brokers TWS API, streaming market data, account values, positions, and open orders into Excel formulas on Windows.
 
 ## Related Lists
 
