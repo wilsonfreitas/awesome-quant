@@ -36,14 +36,22 @@ If a base ref is not locally available, apply the same checks manually from the 
 For every added entry:
 
 - It matches `^\s*- \[(.*)\]\((.*)\) - (.*)$`.
-- New non-commercial entries include backtick language tags followed by ` - `.
+- New non-commercial entries include one or more backtick tags followed by ` - `. Treat these
+  as a compact tag cloud: accept concise languages, runtimes, protocols, interfaces, data
+  types, and domain terms.
+- Separate concepts use adjacent tags, such as `` `Python` `C++` `MCP` ``; do not reject a tag
+  merely because it is not a programming language.
 - Description ends with a period before optional `[GitHub](...)`.
 - URLs use `https://`.
 - Optional GitHub link uses `[GitHub](https://github.com/owner/repo)`.
 - Section placement matches the project's purpose.
 - Commercial/proprietary projects are under `Commercial & Proprietary Services`.
 - Project name and URLs are not duplicates of existing README entries.
-- GitHub projects are active, not archived, and documented.
+- Any verifiable GitHub repository mentioned as the main URL or exact `[GitHub](...)` suffix
+  is a strong positive relevance signal.
+- GitHub projects are checked for source availability, activity, archived status,
+  documentation, and community evidence. GitHub relevance does not waive duplicate, format,
+  or quality checks.
 - Multiple projects in one PR are closely related and explained in the PR body.
 
 ## Verdicts
