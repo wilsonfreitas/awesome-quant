@@ -636,6 +636,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [brapi.dev](https://brapi.dev/) - Brazilian stock market data API for B3/Bovespa quotes, historical OHLCV, dividends, and fundamentals.
 - [Teses da Bolsa](https://tesesdabolsa.com) - Free web app for Brazilian stock and FII fundamentalist analysis on B3. Covers 350+ stocks and 400+ FIIs with 27+ indicators (P/L, DY, ROE, P/VP), 40+ years of historical data, CVM financial statements, dividend history, fair value models, and head-to-head comparisons.
 - [13F Insight](https://13finsight.com/) - Track institutional investor 13F holdings with AI-powered analysis, position change alerts, and filing summaries.
+- [PortfolioSavvy](https://portfoliosavvy.com/) - Public SEC ownership research web app for exploring 13F portfolios, insider activity, Schedule 13D/G filings, company facts, and latest filing workflows.
 - [Earnings Feed](https://earningsfeed.com/api) - Real-time SEC filings, insider trades, and institutional holdings API.
 - [EDGAR Events](https://edgarevents.com) - `REST` - SEC filing events as typed JSON: 8-K item codes with materiality flags, SC 13D/13G activist stakes (holder, target, percent of class), merger forms, and S-1/424B IPO filings, polled over REST or pushed via HMAC-signed webhooks, sourced from data.sec.gov.
 - [Financial Data](https://financialdata.net/) - Stock Market and Financial Data API.
