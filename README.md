@@ -437,6 +437,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pytdx](https://github.com/rainx/pytdx) - `Python` - Python Interface for retrieving chinese stock realtime quote data from TongDaXin Nodes.
 - [pdblp](https://github.com/matthewgilbert/pdblp) - `Python` - A simple interface to integrate pandas and the Bloomberg Open API.
 - [tiingo](https://github.com/hydrosquall/tiingo-python) - `Python` - Python interface for daily composite prices/OHLC/Volume + Real-time News Feeds, powered by the Tiingo Data Platform.
+- [finlight](https://finlight.me) - `Python` `TypeScript` - Real-time financial and geopolitical news API with sentiment analysis and entity tagging over REST and WebSocket. [GitHub](https://github.com/jubeiargh/finlight-client-py)
 - [iexfinance](https://github.com/addisonlynch/iexfinance) - `Python` - Python Interface for retrieving real-time and historical prices and equities data from The Investor's Exchange.
 - [pyEX](https://github.com/timkpaine/pyEX) - `Python` - Python interface to IEX with emphasis on pandas, support for streaming data, premium data, points data (economic, rates, commodities), and technical indicators.
 - [alpaca-trade-api](https://github.com/alpacahq/alpaca-trade-api-python) - `Python` - Python interface for retrieving real-time and historical prices from Alpaca API as well as trade execution.
