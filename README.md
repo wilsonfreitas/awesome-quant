@@ -348,6 +348,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [alphalens](https://github.com/quantopian/alphalens) - `Python` - Performance analysis of predictive alpha factors.
 - [alphalens-reloaded](https://github.com/stefan-jansen/alphalens-reloaded) - `Python` - Performance analysis of predictive (alpha) stock factors.
 - [Spectre](https://github.com/Heerozh/spectre) - `Python` - GPU-accelerated Factors analysis library and Backtester.
+- [ml-quant-trading](https://github.com/initial-d/ml-quant-trading) - `Python` - PyTorch research stack for multi-factor analysis, bias correction, portfolio optimization, and reproducible backtesting.
 - [QuantGPT](https://github.com/Miasyster/QuantGPT) - `Python` - Agent-driven A-share factor research engine with 8 MCP tools covering hypothesis design, backtesting, scoring, and anti-overfit detection.
 - [quant-lab-alpha](https://github.com/husainm97/quant-lab-alpha) - `Python` - Open-source investment analytics platform bridging academic research and retail finance.
 - [covFactorModel](https://github.com/dppalomar/covFactorModel) - `R` - Covariance matrix estimation via factor models.
