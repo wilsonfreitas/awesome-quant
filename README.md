@@ -193,6 +193,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [analyzer](https://github.com/llazzaro/analyzer) - `Python` - Python framework for real-time financial and backtesting trading strategies.
 - [bt](https://github.com/pmorissette/bt) - `Python` - Flexible Backtesting for Python.
 - [backtrader](https://github.com/backtrader/backtrader) - `Python` - Python Backtesting library for trading strategies.
+- [TrendFollowingSystems](https://github.com/ArturSepp/TrendFollowingSystems) - `Python` - Closed-form expected returns, Sharpe ratios, and skewness of trend-following systems, with complete implementations and multi-decade futures backtests.
 - [backtest-bias](https://github.com/Finance-broski/backtest-bias) - `Python` - Checks whether backtest price data is survivor-only: dead-name detection, measured bias benchmarks, CI integrity gates.
 - [pythalesians](https://github.com/thalesians/pythalesians) - `Python` - Python library to backtest trading strategies, plot charts, seamlessly download market data, analyze market patterns etc.
 - [pybacktest](https://github.com/ematvey/pybacktest) - `Python` - Vectorized backtesting framework in Python / pandas, designed to make your backtesting easier.
