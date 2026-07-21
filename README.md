@@ -137,6 +137,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [QuantMath](https://github.com/MarcusRainbow/QuantMath) - `Rust` - Financial maths library for risk-neutral pricing and risk.
 - [RustQuant](https://github.com/avhz/RustQuant) - `Rust` - Quantitative finance library written in Rust.
 - [QoX](https://github.com/bboutelje/qox-python-samples) - `Python` - Finite difference pricing library written in Rust.
+- [StochVolModels](https://github.com/ArturSepp/StochVolModels) - `Python` - Pricing analytics and Monte Carlo simulation for stochastic volatility models, including the log-normal SV model and the Heston model.
 
 ## Technical Indicators
 
@@ -299,12 +300,14 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [ShowMe](https://github.com/nazmiefearmutcu/showMe) - `Python` `Rust` `TypeScript` - Open-source native macOS market cockpit. 12-timeframe consensus scan across 3370 symbols (crypto + equity + ETF + FX + commodity + bond), 23 technical indicators with per-market calibration, real WebSocket streaming. Tauri shell + Python sidecar (FastAPI) + React UI; 110+ exchanges via ccxt.
 - [TBV1](https://github.com/nazmiefearmutcu/TRADING-BOT) - `Python` - Crypto perpetual-futures bot with a 7-tab web dashboard and a 15-indicator consensus engine voting across 12 timeframes (1m → 1d). Paper-mode by default. Includes packaged macOS reference build and Windows distribution.
 - [VerumTrade](https://github.com/muye1202/VerumTrade) - `Python` - A reasoning & decision-trace visible Multi-agent LLM trading-research framework where bull/bear analysts debate each ticker and every decision cites the evidence it rests on.
+- [TrendFollowingSystems](https://github.com/ArturSepp/TrendFollowingSystems) - `Python` - Closed-form expected returns, Sharpe ratios, and skewness of trend-following systems, with complete implementations and multi-decade futures backtests.
 
 ## Portfolio Optimization & Risk Analysis
 
 - [AutoHypothesis](https://github.com/arteemg/AutoHypothesis) - `Python` - An agentic framework that mimics the real quant trading pipeline to find alpha: economic hypothesis, in-sample iteration, and out-of-sample validation.
 - [skfolio](https://github.com/skfolio/skfolio) - `Python` - Python library for portfolio optimization built on top of scikit-learn. It provides a unified interface and sklearn compatible tools to build, tune and cross-validate portfolio models.
 - [PyPortfolioOpt](https://github.com/robertmartin8/PyPortfolioOpt) - `Python` - Financial portfolio optimization in python, including classical efficient frontier and advanced methods.
+- [OptimalPortfolios](https://github.com/ArturSepp/OptimalPortfolios) - `Python` - Optimisation analytics for constructing and backtesting optimal multi-asset portfolios: covariance estimation, rolling optimisation, and performance reporting in one pipeline.
 - [Eiten](https://github.com/tradytics/eiten) - `Python` - Eiten is an open source toolkit by Tradytics that implements various statistical and algorithmic investing strategies such as Eigen Portfolios, Minimum Variance Portfolios, Maximum Sharpe Ratio Portfolios, and Genetic Algorithms based Portfolios.
 - [riskparity.py](https://github.com/dppalomar/riskparity.py) - `Python` - fast and scalable design of risk parity portfolios with TensorFlow 2.0.
 - [mlfinlab](https://github.com/hudson-and-thames/mlfinlab) - `Python` - Implementations regarding "Advances in Financial Machine Learning" by Marcos Lopez de Prado. (Feature Engineering, Financial Data Structures, Meta-Labeling).
@@ -354,6 +357,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [covFactorModel](https://github.com/dppalomar/covFactorModel) - `R` - Covariance matrix estimation via factor models.
 - [FactorAnalytics](https://github.com/braverock/FactorAnalytics) - `R` - The FactorAnalytics package contains fitting and analysis methods for the three main types of factor models used in conjunction with portfolio construction, optimization and risk management, namely fundamental factor models, time series factor models and statistical factor models.
 - [Expected Returns](https://github.com/JustinMShea/ExpectedReturns) - `R` - Solutions for enhancing portfolio diversification and replications of seminal papers with R, most of which are discussed in one of the best investment references of the recent decade, Expected Returns: An Investors Guide to Harvesting Market Rewards by Antti Ilmanen.
+- [factorlasso](https://github.com/ArturSepp/factorlasso) - `Python` - Sparse multi-asset factor models with cell-level sign constraints, prior-centred shrinkage, and hierarchical clustering group LASSO (HCGL); scikit-learn compatible.
 
 ## Sentiment Analysis & Alternative Data
 
@@ -513,7 +517,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [finalytics](https://github.com/Nnamdi-sys/finalytics) - `Rust` - A rust library for financial data analysis.
 - [Factor Weave](https://factorweave.com/) - `Python` `TypeScript` `R` - Factor scores, similarity search, and leak-free + survivor-free forward-return labels across equities, ETFs, indices, FX, crypto, and futures; REST + MCP, Python/TypeScript/R SDKs, free tier. [GitHub](https://github.com/Blazing-Customs/factorweave-tools)
 - [Backtesting Arena](https://tradingstrategies.work/api) - `TypeScript` - REST + MCP API for point-in-time Bitcoin cycle scoring, 22 on-chain series since 2009 (MVRV, NUPL, SOPR, Mayer, Puell), macro-regime composites and look-ahead-aware backtest validation with Deflated-Sharpe-Ratio correction across crypto, stocks, ETFs, commodities and forex. Free tier. [GitHub](https://github.com/Schoasch/skill-backtesting-arena)
-
+- [BloombergFetch](https://github.com/ArturSepp/BloombergFetch) - `Python` - Bloomberg Desktop API data (prices, implied volatilities, fundamentals) as pandas DataFrames via blpapi.
+  
 
 ## Prediction Markets
 
