@@ -58,6 +58,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pyfin](https://github.com/opendoor-labs/pyfin) - `Python` - Basic options pricing in Python. *ARCHIVED*.
 - [vollib](https://github.com/vollib/vollib) - `Python` - vollib is a python library for calculating option prices, implied volatility and greeks.
 - [py_vollib](https://github.com/vollib/py_vollib) - `Python` - vollib Python implementation.
+- [StochVolModels](https://github.com/ArturSepp/StochVolModels) - `Python` - Pricing analytics and Monte Carlo simulation for stochastic volatility models, including the log-normal SV model and the Heston model.
 - [QuantPy](https://github.com/jsmidt/QuantPy) - `Python` - A framework for quantitative finance In python.
 - [Finance-Python](https://github.com/alpha-miner/Finance-Python) - `Python` - Python tools for Finance.
 - [ffn](https://github.com/pmorissette/ffn) - `Python` - A financial function library for Python.
