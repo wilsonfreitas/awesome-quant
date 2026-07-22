@@ -684,6 +684,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Agent Toolbelt](https://www.agenttoolbelt.live) - AI stock-research API returning structured analysis (investment thesis, valuation verdict, insider-signal read, earnings, bull-vs-bear, moat, watchlist ranking) for US equities from Polygon/Finnhub/FMP data. Optimized for LLM agents; free tier.
 - [ML-Quant](https://www.ml-quant.com/) - Top Quant resources like ArXiv (sanity), SSRN, RePec, Journals, Podcasts, Videos, and Blogs.
 - [RealMarketAPI](https://realmarketapi.com/) - Provides ultra-low latency market data for gold, forex, crypto, and stocks via REST, WebSocket, and MCP—built for speed, reliability, and scale.
+- [Probalytics](https://probalytics.io) - Prediction market data infrastructure for Polymarket and Kalshi, with REST API, ClickHouse SQL access, 200–500M orderbook snapshots/day at 1ms resolution, and Parquet bulk exports.
 - [The Stock Radar](https://thestockradar.com) - Daily multi-language stock movers, technical analysis, earnings recaps, and weekly research reports across 6 markets (US, Korea, Japan, Taiwan, India, Germany) published in 6 languages.
 - [Sharpe](https://www.sharpe.ai/) - AI-driven crypto trading intelligence terminal for derivatives positioning, DEX flow, on-chain risk, narrative rotation, token discovery, and agent-ready market data.
 - [Webb Database](https://webb-database.com/) - Aggregates public financial data from HKEX, the SFC, the Hong Law Society, UK Companies House and other sources, has searchable datasets on listed companies, many in machine-readable formats.
@@ -693,6 +694,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Coinugget](https://coinugget.com) - Real-time RSI signals, price action, and volume spikes dashboard across multiple exchanges. Free, no sign-up required.
 - [The Stall](https://the-stall.intuitek.ai) - `JavaScript` - 277 pay-per-call tools via MCP: US stocks, crypto, DeFi analytics, Polymarket prediction markets, macro data, and sanctions screening. USDC on Base. No API key required. [GitHub](https://github.com/thebrierfox/the-stall)
 - [Market Posture Daily](https://marketpd.com) - Daily trend, regime, momentum and relative-strength data for ~90 crypto assets and US stocks/ETFs, with a cointegration pair screener. Free terminal + JSON API.
+
 
 ## Related Lists
 
