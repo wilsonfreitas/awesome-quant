@@ -442,6 +442,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pybbg](https://github.com/bpsmith/pybbg) - `Python` - Python interface to Bloomberg COM APIs.
 - [ccy](https://github.com/lsbardel/ccy) - `Python` - Python module for currencies.
 - [tushare](https://pypi.org/project/tushare/) - `Python` - A utility for crawling historical and Real-time Quotes data of China stocks. (Last updated: 2024-08-27).
+- [twmarketdata](https://pypi.org/project/twmarketdata/) - `Python` - Client for the TW Market Data API: Taiwan stock-market data (official-source, reconciled, point-in-time safe), REST + MCP server, free trial tier. <https://twmarketdata.com>.
 - [edinetdb](https://edinetdb.com/) - `Python` - Free API and MCP server for Japanese company financials. Normalizes EDINET XBRL across JP-GAAP, IFRS, and US-GAAP for 3,800+ listed companies with 90 metrics, screening, and securities report text.
 - [edinet-mcp](https://github.com/ajtgjmdjp/edinet-mcp) - `Python` - Parse Japanese XBRL financial statements from EDINET with 161 normalized labels, 26 financial metrics, and multi-company screening.
 - [estat-mcp](https://github.com/ajtgjmdjp/estat-mcp) - `Python` - Access Japanese government statistics (e-Stat) covering population, GDP, CPI, labor, and trade data with MCP integration and Polars export.
