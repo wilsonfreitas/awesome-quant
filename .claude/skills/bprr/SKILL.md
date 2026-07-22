@@ -34,7 +34,7 @@ For each unreviewed PR, fetch in parallel:
 - `github_get_pull_request` for PR details (check mergeable status, labels)
 - Use webfetch to fetch the diff from `https://github.com/wilsonfreitas/awesome-quant/pull/{number}.diff`
 
-Then validate each entry using the logic from review-pr skill:
+Then validate each entry using the logic from sprr skill:
 
 #### Entry format check
 

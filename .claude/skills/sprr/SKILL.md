@@ -1,19 +1,39 @@
 ---
-name: review-pr
-description: Review and validate pull requests that add new library entries to the awesome-quant README.md. Use this skill whenever the user asks to review PRs, check contributions, validate submissions, triage pull requests, or mentions anything about incoming entries or additions to the curated list. Also triggers for "review pr", "check prs", "merge contributions", or any PR-related workflow in this repo.
+name: sprr
+description: Single PR reviewer. Review and validate pull requests that add new library entries to the awesome-quant README.md. Use this skill whenever the user asks to review PRs, check contributions, validate submissions, triage pull requests, or mentions anything about incoming entries or additions to the curated list. Also triggers for "review pr", "check prs", "merge contributions", "sprr", or any PR-related workflow in this repo.
 ---
 
-# Review PR Skill
+# SPRR: Single PR Reviewer
 
-Review one open pull request at a time for the awesome-quant curated list. Always start with the oldest unreviewed open PR.
+Review and validate PRs that add new library entries to the awesome-quant README.md.
+
+## CRITICAL RULES
+
+### 1. Only Review PRs You Are Asked To Review
+- **NEVER** proactively find or review other PRs on your own
+- Only review the specific PR number you are asked to review
+- If no PR number is given, ask the user which PR to review
+- Do NOT auto-select the oldest PR or any PR - wait for explicit instruction
+
+### 2. Never Modify PRs Without User Consent
+- **NEVER** comment on, merge, close, label, or take any action on a PR without explicit user approval
+- Present your findings and ask "Should I proceed?" or similar
+- Wait for user confirmation before taking any action that modifies the PR
+- The user must explicitly say "yes", "proceed", "go ahead", etc. before you act
+
+### 3. Be Strict With CONTRIBUTING.md
+- Enforce ALL format requirements from CONTRIBUTING.md
+- Do not accept requests that deviate from the established format
+- Reject entries that don't match the required format, even for small issues
+- Point contributors to CONTRIBUTING.md for exact requirements
 
 **IMPORTANT: Always use GitHub MCP tools for all GitHub operations.** Do not fall back to bash commands like `gh` or other tools — use the GitHub MCP interface exclusively.
 
 ## Workflow
 
-### Step 1: Find the oldest open PR
+### Step 1: Confirm the PR (if not given)
 
-Use the `mcp__github__list_pull_requests` tool to list open pull requests sorted by creation date (ascending). Pick the oldest one. Show the user which PR you're reviewing (number, title, author, creation date).
+If the user provides a PR number, confirm it. If not, ask the user which PR they want you to review. DO NOT auto-select a PR.
 
 ### Step 2: Check for merge conflicts
 
@@ -168,13 +188,15 @@ Conflicts: None / YES: Needs rebase
 Verdict: APPROVE / NEEDS CHANGES / REJECT
 ```
 
-### Step 8: Take action
+### Step 8: Present findings and ask for user consent
+
+**NEVER take any action that modifies the PR without user consent.** Present your findings and ask for explicit approval before proceeding.
 
 Use GitHub MCP tools exclusively for all PR interactions:
 
-- **If everything passes**: Ask the user for confirmation, then use the `mcp__github__merge_pull_request` tool to merge the PR.
-- **If there are fixable issues**: Use the `mcp__github__add_issue_comment` tool to leave a constructive review comment on the PR listing what needs to be fixed. Be polite and specific — these are open-source contributors. Link to `CONTRIBUTING.md` for reference.
-- **If it should be rejected** (automatic rejection criteria): Use the `mcp__github__update_pull_request` tool to close the PR with a polite explanation and link to `CONTRIBUTING.md`. Then leave a comment using `mcp__github__add_issue_comment` explaining the closure reason.
+- **If everything passes**: Present summary and ask "Should I merge this PR?" (or similar). ONLY merge after user explicitly says yes.
+- **If there are fixable issues**: Present summary and ask "Should I leave a comment listing these issues?" ONLY comment after user explicitly says yes.
+- **If it should be rejected** (automatic rejection criteria): Present summary and ask "Should I close this PR with a rejection reason?" ONLY close after user explicitly says yes.
 
 When leaving comments, be friendly and grateful for the contribution. Example tone:
 > Thanks for the contribution! A couple of things to address before we can merge:
