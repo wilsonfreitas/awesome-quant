@@ -395,6 +395,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Market Data & Data Sources
 - [BTC Orderbook Microstructure Research](https://github.com/whoareunot/btc-orderbook-research) - `Jupyter Notebook` - statistical analysis of Binance BTC/USDT orderbook: OBI, CVD, spread.  
+- [Superhighway](https://superhighway.walls.sh) - `Python` - Web search API for AI agents: search, news, scrape, and company research endpoints. Useful for pulling live financial news, analyst coverage, earnings previews, and scraping investor-relations data. Pay-per-call with USDC via x402 or free API key. See the [financial research agent guide](https://superhighway.walls.sh/guides/financial-research-agent).
 - [OpenBB Terminal](https://github.com/OpenBB-finance/OpenBBTerminal) - `Python` - Terminal for investment research for everyone.
 - [Fincept Terminal](https://github.com/Fincept-Corporation/FinceptTerminal) - `Python` - Advance Data Based A.I Terminal for all Types of Financial Asset Research.
 - [yfinance](https://github.com/ranaroussi/yfinance) - `Python` - Yahoo! Finance market data downloader (+faster Pandas Datareader).
