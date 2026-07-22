@@ -300,6 +300,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TBV1](https://github.com/nazmiefearmutcu/TRADING-BOT) - `Python` - Crypto perpetual-futures bot with a 7-tab web dashboard and a 15-indicator consensus engine voting across 12 timeframes (1m → 1d). Paper-mode by default. Includes packaged macOS reference build and Windows distribution.
 - [VerumTrade](https://github.com/muye1202/VerumTrade) - `Python` - A reasoning & decision-trace visible Multi-agent LLM trading-research framework where bull/bear analysts debate each ticker and every decision cites the evidence it rests on.
 
+- [Melaya](https://melaya.org) - `Rust` / `Python` / `TypeScript` - Hosted agentic trading platform with a Rust execution engine (310 ns ticker write, 14.4 µs end-to-end), normalized REST and WebSocket API across 65 CEX + 6 prediction markets, deterministic native backtesting, and a 7-persona AI trading crew (Macro, TA, Quant, Sentiment, Risk, Portfolio, Execution) with HITL approval on every order. 9 official SDKs (Python, Rust, TypeScript, Go, Java, Kotlin, C#, Ruby, PHP) wrap one unified API.
 ## Portfolio Optimization & Risk Analysis
 
 - [AutoHypothesis](https://github.com/arteemg/AutoHypothesis) - `Python` - An agentic framework that mimics the real quant trading pipeline to find alpha: economic hypothesis, in-sample iteration, and out-of-sample validation.
