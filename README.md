@@ -457,6 +457,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [bronto-python](https://pypi.org/project/bronto-python/) - `Python` - Bronto API Integration for Python. [GitHub](https://github.com/Scotts-Marketplace/bronto-python)
 - [pytdx](https://github.com/rainx/pytdx) - `Python` - Python Interface for retrieving chinese stock realtime quote data from TongDaXin Nodes.
 - [pdblp](https://github.com/matthewgilbert/pdblp) - `Python` - A simple interface to integrate pandas and the Bloomberg Open API.
+- [BloombergFetch](https://github.com/ArturSepp/BloombergFetch) - `Python` - Bloomberg Desktop API data (prices, implied volatilities, fundamentals) as pandas DataFrames via blpapi.
 - [tiingo](https://github.com/hydrosquall/tiingo-python) - `Python` - Python interface for daily composite prices/OHLC/Volume + Real-time News Feeds, powered by the Tiingo Data Platform.
 - [finlight](https://finlight.me) - `Python` `TypeScript` - Real-time financial and geopolitical news API with sentiment analysis and entity tagging over REST and WebSocket. [GitHub](https://github.com/jubeiargh/finlight-client-py)
 - [iexfinance](https://github.com/addisonlynch/iexfinance) - `Python` - Python Interface for retrieving real-time and historical prices and equities data from The Investor's Exchange.
