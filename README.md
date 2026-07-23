@@ -704,6 +704,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [NeuPortal](https://neuportal.ai) - AI forecasting-accountability lab: every forecast is locked pre-event, Bitcoin-timestamped (OpenTimestamps), and Brier-scored against prediction markets in public.
 - [AlphaAssay](https://alphaassay.com) - `REST` - Independent statistical assay office for trading signals and backtests: deflated Sharpe with cumulative trial accounting, probability of backtest overfitting (PBO/CPCV), leakage forensics, placebo tests against matched synthetic null worlds, and pre-registration with Merkle-anchored timestamps — deterministic, Ed25519-signed verdicts anyone can replay. Free demo; hosted API and MCP server. Methodology audit, not investment advice. [GitHub](https://github.com/alphaassay/mcp)
 - [Market Posture Daily](https://marketpd.com) - Daily trend, regime, momentum and relative-strength data for ~90 crypto assets and US stocks/ETFs, with a cointegration pair screener. Free terminal + JSON API.
+- [QuantLink](https://www.quantlink.ai) - AI-powered US-equity research terminal with a fundamental and technical stock screener plus backtesting, AI deep-research grounded in SEC filings, institutional 13F holder analysis, insider (Form 4) activity, congressional and politician trade tracking from STOCK Act disclosures, charting, and portfolios. Free tier available.
 
 
 ## Related Lists
