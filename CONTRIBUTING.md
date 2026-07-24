@@ -4,20 +4,29 @@ Your contributions are always welcome! Please ensure your pull request meets the
 
 ## Entry Format
 
-Each entry must include one or more language tags and follow one of these formats:
+Each non-commercial entry must include one or more backtick-delimited tags and follow one of
+these formats. Tags work like a compact tag cloud: use concise terms that help readers
+understand the project, such as programming languages, runtimes, protocols, interfaces, data
+types, or domains.
 
-### Single language
+### Single tag
 
 ```markdown
 - [Project Name](https://github.com/owner/repo) - `Python` - Short description ending with a period.
 ```
 
-### Multiple languages
-
-For projects available in multiple languages, list them as backtick-delimited tags:
+Tags are not limited to programming languages. For example:
 
 ```markdown
-- [Project Name](https://github.com/owner/repo) - `Python` `Rust` - Short description ending with a period.
+- [Project Name](https://github.com/owner/repo) - `MCP` - Short description ending with a period.
+```
+
+### Multiple tags
+
+List each tag separately in adjacent backticks:
+
+```markdown
+- [Project Name](https://github.com/owner/repo) - `Python` `Rust` `MCP` - Short description ending with a period.
 ```
 
 ### Project with website and GitHub repo
@@ -49,7 +58,16 @@ Link to the PyPI package page. If the project has a GitHub repo, append it after
 ### General rules
 
 - Use `https://` URLs only.
-- GitHub repository URLs are strongly preferred. Projects with GitHub repos get automated tracking of stars, activity, and archive status on [awesome-quant.com](https://awesome-quant.com/).
+- GitHub repository URLs are strongly preferred and are a major positive relevance signal.
+  Projects with a verifiable GitHub repository are easier to evaluate for source availability,
+  documentation, activity, maintenance, and community adoption, and they receive automated
+  tracking of stars, activity, and archive status on
+  [awesome-quant.com](https://awesome-quant.com/).
+- Include a GitHub repository either as the main project URL or as the exact
+  `[GitHub](https://github.com/owner/repo)` suffix. A valid GitHub repository mentioned in
+  either place receives the same relevance consideration.
+- Use short, meaningful tags. Each concept must have its own backtick pair; for example,
+  use `` `Python` `C++` `` rather than `` `Python, C++` ``.
 - The description must end with a period (before the `[GitHub]` link, if present).
 - Keep descriptions concise — one sentence.
 
@@ -70,6 +88,8 @@ Commercial and proprietary projects are welcome. They will be placed under the *
 - Any proprietary product without open-source code
 
 Projects with GitHub repositories may be placed in other sections based on their functionality.
+A public repository is a strong relevance signal even when the project also has a commercial
+website, but it does not by itself prove that the entire product is open source.
 
 ## Section Placement
 
@@ -124,7 +144,7 @@ When submitting multiple projects:
 
 PRs will be closed if:
 
-- Multiple projects added in a single PR.
+- Multiple unrelated projects added in a single PR without a clear grouping rationale.
 - Entry format does not match the required pattern.
 - Duplicate of an existing entry or a recently closed PR.
 - Project is archived or abandoned.

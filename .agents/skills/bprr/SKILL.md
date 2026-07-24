@@ -29,14 +29,20 @@ Review multiple open pull requests for README entry contributions.
 For each added entry, check:
 
 - Parser regex match.
-- Required language tags for new non-commercial entries.
+- Required backtick tags for new non-commercial entries. Treat them as a compact tag cloud:
+  accept concise languages, runtimes, protocols, interfaces, data types, and domain terms.
+- Separate concepts must use adjacent tags, such as `` `Python` `C++` `MCP` ``; do not require
+  every tag to be a programming language.
 - Description period before optional `[GitHub](...)`.
 - `https://` URLs.
 - Exact optional `[GitHub](https://github.com/owner/repo)` format.
 - Correct category section.
 - Commercial placement under `Commercial & Proprietary Services`.
 - Duplicate project names or URLs.
-- Activity, archived status, and basic documentation for GitHub repos.
+- Treat any verifiable GitHub repository mentioned as the main URL or exact `[GitHub](...)`
+  suffix as a strong positive relevance signal.
+- For GitHub repos, check source availability, activity, archived status, documentation, and
+  community evidence. GitHub relevance does not waive duplicate, format, or quality checks.
 - Clear rationale for multiple related projects in one PR.
 
 ## Summary Output

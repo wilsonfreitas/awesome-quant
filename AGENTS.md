@@ -7,7 +7,8 @@ and resources. The source of truth is `README.md`; the static website is
 generated into `site/index.html`.
 
 The README is organized by category headings (`##`), not by language headings.
-Language support is stored in inline backtick tags inside each entry.
+Project metadata is stored in inline backtick tags inside each entry. Tags commonly identify
+languages, but may also identify runtimes, protocols, interfaces, data types, or domains.
 
 ## Architecture
 
@@ -58,12 +59,16 @@ Accepted entry examples:
 
 Rules:
 
-- New non-commercial entries must include one or more backtick language tags
-  followed by ` - `.
+- New non-commercial entries must include one or more concise backtick tags followed by ` - `.
+  Tags form a compact tag cloud and are not restricted to programming languages.
+- Each tag must use its own backtick pair, for example `` `Python` `C++` `MCP` ``.
 - Descriptions must end with a period before the optional `[GitHub](...)` link.
 - URLs in new entries must use `https://`.
+- A valid GitHub repository used as the main URL or exact `[GitHub](...)` suffix is a strong
+  positive relevance signal. Review its activity and documentation rather than treating
+  non-language tags as format errors.
 - Commercial/proprietary projects belong in `## Commercial & Proprietary Services`.
-- Language tags are optional only for commercial services and other non-language
+- Backtick tags are optional only for commercial services and other metadata-free
   sections such as `Related Lists`.
 - Use `CONTRIBUTING.md` as the user-facing source for contribution rules.
 
@@ -83,7 +88,8 @@ Review requirements:
 3. Present findings before any PR-modifying action.
 4. Always ask the user before commenting, labeling, closing, or merging.
 5. Check section placement, duplicates in `README.md`, entry format, URL format,
-   and project activity/documentation.
+   and project activity/documentation. Give substantial positive weight to a verifiable
+   GitHub repository mentioned as either the main URL or exact suffix.
 6. Use the `reviewed` label only after the user approves a review comment.
 
 ## GitHub MCP Tools
