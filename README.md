@@ -528,6 +528,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Prediction Markets
 
+- [DepthFeed Prediction Market Liquidity Benchmark](https://depthfeed.com/arena/liquidity) - `CSV` `JSON` `CC BY 4.0` - Reproducible 34,560-observation order-book study of BTC 15-minute markets across Polymarket, Kalshi, Predict.fun via Binance Wallet, and Limitless. [GitHub](https://github.com/vcorp-dev/prediction-market-liquidity-benchmark)
 - [pmxt](https://github.com/pmxt-dev/pmxt) - `Python` `JavaScript` - The CCXT for prediction markets. A unified API for trading on Polymarket, Kalshi, and more.
 - [polymarket-whales](https://github.com/al1enjesus/polymarket-whales) - `Python` - Real-time whale trade tracker for Polymarket — terminal alerts + Telegram notifications when large orders hit the book.
 - [Polymarket Scanner API](https://github.com/vesper-astrena/polymarket-scanner-api) - `Python` - Real-time arbitrage detection API for Polymarket prediction markets, scanning 12,000+ markets for mispricings.
