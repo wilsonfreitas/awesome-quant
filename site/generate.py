@@ -12,100 +12,68 @@ import re
 import sys
 from pathlib import Path
 
+# Make the shared README parsing helpers importable when this script is run
+# directly (e.g. `python site/generate.py`), matching scripts/validate_readme.py.
+ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
-def slugify(text: str) -> str:
-    """Convert text to lowercase hyphen-separated slug."""
-    text = text.lower().strip()
-    text = re.sub(r"[&/]+", "-", text)
-    text = re.sub(r"[^\w\s-]", "", text)
-    text = re.sub(r"[\s_]+", "-", text)
-    text = re.sub(r"-+", "-", text)
-    return text.strip("-")
+from scripts.readme_entries import GITHUB_LINK_RE, iter_readme_entries, slugify
 
 
 def parse_readme(path: str) -> list[dict]:
     """Parse README.md and return a list of project entries (no API data)."""
     entries = []
-    current_category = ""
 
-    re_h2 = re.compile(r"^## (.+)$")
-    re_entry = re.compile(r"^\s*- \[(.+?)\]\((.+?)\) - (.+)$")
-    re_github = re.compile(r"\[GitHub\]\((https://github\.com/[\w-]+/[-\w\.]+)\)")
-    re_badge = re.compile(r"\s*!\[[^\]]*\]\([^)]*\)\s*")
-    re_langs = re.compile(r'^((?:`[^`]+`\s*)+)-\s*(.*)$')
+    for entry in iter_readme_entries(path):
+        name = entry.name
+        url = entry.url
+        desc = entry.description
+        languages = entry.languages
+        current_category = entry.section
 
-    skip_sections = {"Contents"}
+        primary_language = languages[0] if languages else ""
 
-    with open(path, "r", encoding="utf-8") as f:
-        for line in f:
-            line = re_badge.sub(" ", line).rstrip("\n")
+        github_url = ""
+        gh_match = GITHUB_LINK_RE.search(desc)
+        if gh_match:
+            github_url = gh_match.group(1)
+            desc = GITHUB_LINK_RE.sub("", desc).rstrip(". ").rstrip() + "."
+        elif "github.com" in url:
+            github_url = url
 
-            m = re_h2.match(line)
-            if m:
-                current_category = m.group(1).strip()
-                continue
+        repo = ""
+        if github_url:
+            repo_match = re.match(
+                r"https://github\.com/([\w-]+/[-\w\.]+)", github_url
+            )
+            if repo_match:
+                repo = repo_match.group(1)
 
-            if current_category in skip_sections:
-                continue
+        is_cran = "cran.r-project.org" in url
+        is_pypi = "pypi.org" in url or "pypi.python.org" in url
+        is_commercial = current_category == "Commercial & Proprietary Services"
+        section_slug = slugify(current_category)
 
-            m = re_entry.match(line)
-            if m:
-                name = m.group(1).strip()
-                url = m.group(2).strip()
-                raw_desc = m.group(3).strip()
-
-                # Extract inline language tags
-                m_lang = re_langs.match(raw_desc)
-                if m_lang:
-                    lang_str = m_lang.group(1)
-                    desc = m_lang.group(2)
-                    languages = re.findall(r'`([^`]+)`', lang_str)
-                else:
-                    desc = raw_desc
-                    languages = []
-
-                primary_language = languages[0] if languages else ""
-
-                github_url = ""
-                gh_match = re_github.search(desc)
-                if gh_match:
-                    github_url = gh_match.group(1)
-                    desc = re_github.sub("", desc).rstrip(". ").rstrip() + "."
-                elif "github.com" in url:
-                    github_url = url
-
-                repo = ""
-                if github_url:
-                    repo_match = re.match(
-                        r"https://github\.com/([\w-]+/[-\w\.]+)", github_url
-                    )
-                    if repo_match:
-                        repo = repo_match.group(1)
-
-                is_cran = "cran.r-project.org" in url
-                is_pypi = "pypi.org" in url or "pypi.python.org" in url
-                is_commercial = current_category == "Commercial & Proprietary Services"
-                section_slug = slugify(current_category)
-
-                entries.append(
-                    {
-                        "project": name,
-                        "language": primary_language,
-                        "languages": ",".join(languages),
-                        "category": current_category,
-                        "section_slug": section_slug,
-                        "url": url,
-                        "description": desc,
-                        "github": bool(github_url),
-                        "cran": is_cran,
-                        "pypi": is_pypi,
-                        "commercial": is_commercial,
-                        "github_url": github_url,
-                        "repo": repo,
-                        "stars": 0,
-                        "last_commit": "",
-                    }
-                )
+        entries.append(
+            {
+                "project": name,
+                "language": primary_language,
+                "languages": ",".join(languages),
+                "category": current_category,
+                "section_slug": section_slug,
+                "url": url,
+                "description": desc,
+                "github": bool(github_url),
+                "cran": is_cran,
+                "pypi": is_pypi,
+                "commercial": is_commercial,
+                "github_url": github_url,
+                "repo": repo,
+                "stars": 0,
+                "last_commit": "",
+            }
+        )
 
     return entries
 

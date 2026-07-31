@@ -31,5 +31,19 @@ jobs:
       run: git fetch origin ${{ github.base_ref }} --depth=1
     - name: Validate added README entries
       run: uv run python scripts/validate_readme.py --diff-from origin/${{ github.base_ref }}
+    - name: Check full README warning count against baseline
+      run: |
+        # Full validation stays non-blocking for the legacy warnings, but the
+        # total count must not increase past the checked-in baseline.
+        count=$(uv run python scripts/validate_readme.py | grep -c '^WARNING' || true)
+        baseline=$(tr -d '[:space:]' < scripts/validation_baseline.txt)
+        echo "Full README validation warnings: $count (baseline: $baseline)"
+        if [ "$count" -gt "$baseline" ]; then
+          echo "::error::Full README warning count increased from $baseline to $count. Fix the new warnings (see scripts/validate_readme.py output) or, if intentional, update scripts/validation_baseline.txt."
+          exit 1
+        fi
+        if [ "$count" -lt "$baseline" ]; then
+          echo "::notice::Warning count dropped ($baseline -> $count). Consider lowering scripts/validation_baseline.txt to lock in the improvement."
+        fi
     - name: Generate static site
       run: uv run python site/generate.py

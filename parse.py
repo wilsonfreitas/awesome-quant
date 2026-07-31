@@ -1,9 +1,11 @@
 import json
 import os
 import re
+import sys
+from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
-from threading import Thread
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 
 import pandas as pd
 from github import Auth, Github
@@ -16,6 +18,14 @@ from scripts.readme_entries import (
     slugify,
 )
 
+USER_AGENT = "awesome-quant-parser (+https://github.com/wilsonfreitas/awesome-quant)"
+REQUEST_TIMEOUT = 10
+# MAX_WORKERS bounds concurrency and doubles as a modest rate limit: at most
+# 8 lookups are in flight at any time (against GitHub, CRAN, and PyPI).
+MAX_WORKERS = 8
+# Entries whose last commit is older than this are flagged as stale in the CSV.
+STALE_AFTER = timedelta(days=730)  # 24 months
+
 _github_client = None
 
 
@@ -26,6 +36,13 @@ def get_github_client():
         auth = Auth.Token(os.environ["GITHUB_ACCESS_TOKEN"])
         _github_client = Github(auth=auth)
     return _github_client
+
+
+def _fetch_url(url):
+    """urlopen with a User-Agent header and timeout; returns decoded body."""
+    request = Request(url, headers={"User-Agent": USER_AGENT})
+    with urlopen(request, timeout=REQUEST_TIMEOUT) as resp:
+        return resp.read().decode("utf-8", errors="replace")
 
 
 def extract_repo(url):
@@ -52,15 +69,15 @@ def get_cran_info(url):
     Returns (published_date, github_url) — either may be empty string.
     """
     try:
-        m = re.search(r"package=(\w+)", url) or re.search(
-            r"/packages/(\w+)", url
+        # [\w.] so dotted package names like data.table resolve correctly.
+        m = re.search(r"package=([\w.]+)", url) or re.search(
+            r"/packages/([\w.]+)", url
         )
         if not m:
             return "", ""
         pkg = m.group(1)
         page_url = f"https://cran.r-project.org/web/packages/{pkg}/index.html"
-        with urlopen(page_url, timeout=10) as resp:
-            page_html = resp.read().decode("utf-8", errors="replace")
+        page_html = _fetch_url(page_url)
 
         class CranParser(HTMLParser):
             def __init__(self):
@@ -108,7 +125,7 @@ def get_cran_info(url):
             gh = gh[:-4]
         return parser.date, gh
     except Exception as e:
-        print(f"CRAN ERROR {url}: {e}")
+        print(f"CRAN ERROR {url}: {e}", file=sys.stderr)
         return "", ""
 
 
@@ -123,8 +140,7 @@ def get_pypi_last_updated(url):
             return ""
         pkg = m.group(1).rstrip("/")
         api_url = f"https://pypi.org/pypi/{pkg}/json"
-        with urlopen(api_url, timeout=10) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
+        data = json.loads(_fetch_url(api_url))
 
         releases = data.get("releases", {})
         if not releases:
@@ -139,113 +155,125 @@ def get_pypi_last_updated(url):
                     return upload_time.split("T")[0]
         return ""
     except Exception as e:
-        print(f"PYPI ERROR {url}: {e}")
+        print(f"PYPI ERROR {url}: {e}", file=sys.stderr)
         return ""
 
 
 def get_repo_info(repo):
-    """Fetch last commit date and star count from GitHub."""
+    """Fetch last commit date and star count from GitHub.
+
+    Returns (last_commit, stars). last_commit is None when the lookup failed
+    (as opposed to "", which means there was no repo to look up).
+    """
+    if not repo:
+        return "", 0
     try:
-        if repo:
-            r = get_github_client().get_repo(repo)
-            cs = r.get_commits()
-            last_commit = cs[0].commit.author.date.strftime("%Y-%m-%d")
-            stars = r.stargazers_count
-            return last_commit, stars
-        else:
-            return "", 0
-    except Exception:
-        print("ERROR " + repo)
-        return "error", 0
+        r = get_github_client().get_repo(repo)
+        cs = r.get_commits()
+        last_commit = cs[0].commit.author.date.strftime("%Y-%m-%d")
+        stars = r.stargazers_count
+        return last_commit, stars
+    except Exception as e:
+        print(f"ERROR {repo}: {e!r}", file=sys.stderr)
+        return None, 0
 
 
-class Project(Thread):
-    def __init__(self, match, language, category, section_path):
-        super().__init__()
-        self._match = match
-        self.regs = None
-        self._language = language
-        self._category = category
-        self._section_path = section_path
-        self.languages = []
-        self.clean_description = ""
-
-    def run(self):
-        m = self._match
-        primary_url = m.group(2)
-        # Use clean_description if it was set by the parser, otherwise extract from match
-        if self.clean_description:
-            description = self.clean_description
-        else:
-            description = m.group(3)
-
-        # Check if primary URL is GitHub
-        is_github = "github.com" in primary_url
-
-        # If not GitHub, check if there's a GitHub link in the description
-        github_url = ""
-        if not is_github:
-            github_url = extract_github_url(description)
-        else:
-            github_url = primary_url
-
-        is_cran = "cran.r-project.org" in primary_url
-        is_pypi = "pypi.org" in primary_url or "pypi.python.org" in primary_url
-        is_commercial = self._category == "Commercial & Proprietary Services"
-
-        # For CRAN projects, scrape the CRAN page for GitHub URL and published date
-        cran_date = ""
-        if is_cran:
-            cran_date, cran_github = get_cran_info(primary_url)
-            if cran_github and not github_url:
-                github_url = cran_github
-
-        repo = extract_repo(github_url)
-        print(repo or primary_url)
-        last_commit, stars = get_repo_info(repo)
-
-        # Fallback: use CRAN/PyPI dates when no GitHub data
-        if not last_commit or last_commit == "error":
-            if is_cran and cran_date:
-                last_commit = cran_date
-            elif is_pypi:
-                pypi_date = get_pypi_last_updated(primary_url)
-                if pypi_date:
-                    last_commit = pypi_date
-
-        # Build section slug from category or language
-        section_slug = slugify(self._category or self._language)
-
-        self.regs = dict(
-            project=m.group(1),
-            language=self._language,
-            languages=",".join(self.languages),
-            category=self._category,
-            section=self._section_path,
-            section_slug=section_slug,
-            last_commit=last_commit,
-            stars=stars,
-            url=primary_url,
-            description=description,
-            github=is_github or bool(github_url),
-            cran=is_cran,
-            pypi=is_pypi,
-            commercial=is_commercial,
-            repo=repo,
+def is_stale(last_commit, now=None):
+    """True when last_commit (YYYY-MM-DD) is older than STALE_AFTER."""
+    if not last_commit:
+        return False
+    try:
+        commit_date = datetime.strptime(last_commit, "%Y-%m-%d").replace(
+            tzinfo=timezone.utc
         )
+    except ValueError:
+        return False
+    now = now or datetime.now(timezone.utc)
+    return now - commit_date > STALE_AFTER
+
+
+def fetch_project(match, language, languages, clean_description, category):
+    """Enrich one README entry with GitHub/CRAN/PyPI metadata.
+
+    Returns (record, attempted, failed): record is the CSV row dict,
+    attempted is True when a metadata lookup was possible for the entry,
+    failed is True when a lookup was attempted but no date was obtained.
+    """
+    m = match
+    primary_url = m.group(2)
+    description = clean_description if clean_description else m.group(3)
+
+    # Check if primary URL is GitHub
+    is_github = "github.com" in primary_url
+
+    # If not GitHub, check if there's a GitHub link in the description
+    if is_github:
+        github_url = primary_url
+    else:
+        github_url = extract_github_url(description)
+
+    is_cran = "cran.r-project.org" in primary_url
+    is_pypi = "pypi.org" in primary_url or "pypi.python.org" in primary_url
+    is_commercial = category == "Commercial & Proprietary Services"
+
+    # For CRAN projects, scrape the CRAN page for GitHub URL and published date
+    cran_date = ""
+    if is_cran:
+        cran_date, cran_github = get_cran_info(primary_url)
+        if cran_github and not github_url:
+            github_url = cran_github
+
+    repo = extract_repo(github_url)
+    print(repo or primary_url)
+    last_commit, stars = get_repo_info(repo)
+    if last_commit is None:
+        # Lookup failed: emit an empty value rather than a fake date.
+        last_commit = ""
+
+    # Fallback: use CRAN/PyPI dates when no GitHub data
+    if not last_commit:
+        if is_cran and cran_date:
+            last_commit = cran_date
+        elif is_pypi:
+            pypi_date = get_pypi_last_updated(primary_url)
+            if pypi_date:
+                last_commit = pypi_date
+
+    attempted = bool(repo) or is_cran or is_pypi
+    failed = attempted and not last_commit
+
+    # Build section slug from category or language
+    section_slug = slugify(category or language)
+
+    record = dict(
+        project=m.group(1),
+        language=language,
+        languages=",".join(languages),
+        category=category,
+        section=category,
+        section_slug=section_slug,
+        last_commit=last_commit,
+        stars=stars,
+        url=primary_url,
+        description=description,
+        github=is_github or bool(github_url),
+        cran=is_cran,
+        pypi=is_pypi,
+        commercial=is_commercial,
+        repo=repo,
+        stale=is_stale(last_commit),
+    )
+    return record, attempted, failed
 
 
 def main():
-    projects = []
+    tasks = []
 
     with open("README.md", "r", encoding="utf8") as f:
-        ret = HEADING_RE
-        rex = ENTRY_RE
-        re_badge = BADGE_RE
         current_category = ""
         for line in f:
-            line = re_badge.sub(" ", line)
-            m = rex.match(line)
+            line = BADGE_RE.sub(" ", line)
+            m = ENTRY_RE.match(line)
             if m:
                 raw_desc = m.group(3).strip()
 
@@ -253,32 +281,39 @@ def main():
                 languages, clean_description = extract_languages(raw_desc)
                 primary_language = languages[0] if languages else ""
 
-                p = Project(
-                    m,
-                    primary_language,
-                    current_category,
-                    current_category,
+                tasks.append(
+                    (m, primary_language, languages, clean_description, current_category)
                 )
-                p.languages = languages
-                p.clean_description = clean_description
-                p.start()
-                projects.append(p)
             else:
-                m = ret.match(line)
+                m = HEADING_RE.match(line)
                 if m:
                     hrs = m.group(1)
                     title = m.group(2).strip()
                     if len(hrs) == 2 and title != "Contents":
                         current_category = title
 
-    while True:
-        checks = [not p.is_alive() for p in projects]
-        if all(checks):
-            break
+    # Bounded thread pool instead of one unbounded thread per entry. Futures
+    # are collected in submission order so the CSV keeps the README order.
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        futures = [executor.submit(fetch_project, *task) for task in tasks]
+        results = [future.result() for future in futures]
 
-    projects = [p.regs for p in projects]
-    df = pd.DataFrame(projects)
+    records = [record for record, _, _ in results]
+    attempted = sum(1 for _, was_attempted, _ in results if was_attempted)
+    failures = sum(1 for _, _, failed in results if failed)
+
+    df = pd.DataFrame(records)
     df.to_csv("site/projects.csv", index=False)
+
+    total = len(records)
+    print(f"{failures}/{attempted} lookups failed ({total} entries)")
+    if total and failures > 0.10 * total:
+        print(
+            f"ERROR: more than 10% of entries failed metadata lookup "
+            f"({failures}/{total})",
+            file=sys.stderr,
+        )
+        sys.exit(1)
 
 
 if __name__ == "__main__":

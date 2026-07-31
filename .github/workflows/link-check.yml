@@ -1,0 +1,46 @@
+name: Link check
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"  # weekly, Monday 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Check README links
+      id: lychee
+      uses: lycheeverse/lychee-action@v2
+      with:
+        # Exclude domains that are known to block or rate-limit bots.
+        args: >-
+          --no-progress
+          --exclude 'twitter\.com'
+          --exclude '(^|\.)x\.com'
+          --exclude 'linkedin\.com'
+          --exclude 'reddit\.com'
+          --exclude 'ssrn\.com'
+          --exclude 'sciencedirect\.com'
+          README.md
+        output: ./lychee/out.md
+        fail: false
+    - name: Upload link check report
+      uses: actions/upload-artifact@v4
+      with:
+        name: link-check-report
+        path: ./lychee/out.md
+    - name: Open issue with broken links
+      if: steps.lychee.outputs.exit_code != 0
+      uses: peter-evans/create-issue-from-file@v5
+      with:
+        title: Broken links in README
+        content-filepath: ./lychee/out.md
+        labels: |
+          report
+          automated issue
