@@ -524,6 +524,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [finalytics](https://github.com/Nnamdi-sys/finalytics) - `Rust` - A rust library for financial data analysis.
 - [Factor Weave](https://factorweave.com/) - `Python` `TypeScript` `R` - Factor scores, similarity search, and leak-free + survivor-free forward-return labels across equities, ETFs, indices, FX, crypto, and futures; REST + MCP, Python/TypeScript/R SDKs, free tier. [GitHub](https://github.com/Blazing-Customs/factorweave-tools)
 - [Backtesting Arena](https://tradingstrategies.work/api) - `TypeScript` - REST + MCP API for point-in-time Bitcoin cycle scoring, 22 on-chain series since 2009 (MVRV, NUPL, SOPR, Mayer, Puell), macro-regime composites and look-ahead-aware backtest validation with Deflated-Sharpe-Ratio correction across crypto, stocks, ETFs, commodities and forex. Free tier. [GitHub](https://github.com/Schoasch/skill-backtesting-arena)
+- [market-data-sanity-checker](https://github.com/pacocartones/market-data-sanity-checker) - `TypeScript` - Trust layer for market data: validates, scores (0-100) and explains anomalies in OHLCV, dividends, splits and fundamentals before they break your product. 36 rules with real-incident references, CLI + SDK.
+
 
 
 ## Prediction Markets
