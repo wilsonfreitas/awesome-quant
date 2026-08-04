@@ -303,6 +303,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [ShowMe](https://github.com/nazmiefearmutcu/showMe) - `Python` `Rust` `TypeScript` - Open-source native macOS market cockpit. 12-timeframe consensus scan across 3370 symbols (crypto + equity + ETF + FX + commodity + bond), 23 technical indicators with per-market calibration, real WebSocket streaming. Tauri shell + Python sidecar (FastAPI) + React UI; 110+ exchanges via ccxt.
 - [TBV1](https://github.com/nazmiefearmutcu/TRADING-BOT) - `Python` - Crypto perpetual-futures bot with a 7-tab web dashboard and a 15-indicator consensus engine voting across 12 timeframes (1m → 1d). Paper-mode by default. Includes packaged macOS reference build and Windows distribution.
 - [VerumTrade](https://github.com/muye1202/VerumTrade) - `Python` - A reasoning & decision-trace visible Multi-agent LLM trading-research framework where bull/bear analysts debate each ticker and every decision cites the evidence it rests on.
+- [nse-swing-trading-bot](https://github.com/tanmaykaper/Paper-Trading-Bot) - Free-data NSE paper-trading system with cross-sectional alpha scoring, Loughran-McDonald news sentiment, and A/B/C backtest validation.
 
 ## Portfolio Optimization & Risk Analysis
 
@@ -360,6 +361,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [covFactorModel](https://github.com/dppalomar/covFactorModel) - `R` - Covariance matrix estimation via factor models.
 - [FactorAnalytics](https://github.com/braverock/FactorAnalytics) - `R` - The FactorAnalytics package contains fitting and analysis methods for the three main types of factor models used in conjunction with portfolio construction, optimization and risk management, namely fundamental factor models, time series factor models and statistical factor models.
 - [Expected Returns](https://github.com/JustinMShea/ExpectedReturns) - `R` - Solutions for enhancing portfolio diversification and replications of seminal papers with R, most of which are discussed in one of the best investment references of the recent decade, Expected Returns: An Investors Guide to Harvesting Market Rewards by Antti Ilmanen.
+-  [nse-swing-trading-bot](https://github.com/tanmaykaper/Paper-Trading-Bot) - Free-data NSE paper-trading system with cross-sectional alpha scoring, Loughran-McDonald news sentiment, and A/B/C backtest validation.
+
 
 ## Sentiment Analysis & Alternative Data
 
@@ -368,6 +371,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [CoWorker Fin-Agent](https://github.com/ZiwayZhao/agent-coworker) - `Python` - LLM-powered A-share stock analysis via P2P agent collaboration. Technical analysis (MA60, volume-price patterns, golden eye), deep research reports using proprietary methodology, and market state summaries. Analysis logic stays private via Skill-as-API protocol.
 - [StockKit](https://stockkit.net/) - `TypeScript` - Free AI-powered stock research reports for US, China & HK using Claude Opus and multi-model AI with 20+ technical indicators. [GitHub](https://github.com/kentmswood-ui/stockkit)
 - [AlphaAI](https://alphai.io/developers) - `Python` - Pre-analyzed financial news via REST API and MCP for AI agents: per-ticker impact and sentiment, a category, and a 1-10 relevance score on every story, plus structured SEC Form 4 insider data. Free tier, no card. [GitHub](https://github.com/makeev/alphai-mcp)
+- [nse-swing-trading-bot](https://github.com/tanmaykaper/Paper-Trading-Bot) - Free-data NSE paper-trading system with cross-sectional alpha scoring, Loughran-McDonald news sentiment, and A/B/C backtest validation.
 
 ## Time Series Analysis
 
