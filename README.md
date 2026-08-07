@@ -256,6 +256,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Intelligent Trading Bot](https://github.com/asavinov/intelligent-trading-bot) - `Python` - Automatically generating signals and trading based on machine learning and feature engineering.
 - [fastquant](https://github.com/enzoampil/fastquant) - `Python` - fastquant allows you to easily backtest investment strategies with as few as 3 lines of python code.
 - [nautilus_trader](https://github.com/nautechsystems/nautilus_trader) - `Python` `Rust` - A high-performance algorithmic trading platform and event-driven backtester.
+- [NoEdge-Bench](https://github.com/nexusfinancial-dev/noedge-bench) - `Python` - Reproducible negative-result benchmark: no model beats a memoryless synthetic binary-options feed (AUC ≈ 0.50), with permutation-null tests and a look-ahead-leak case study.
 - [YABTE](https://github.com/bsdz/yabte) - `Python` - Yet Another (Python) BackTesting Engine.
 - [Trading Strategy](https://github.com/tradingstrategy-ai/getting-started) - `Python` - TradingStrategy.ai is a market data, backtesting, live trading and investor management framework for decentralised finance.
 - [Hikyuu](https://github.com/fasiondog/hikyuu) - `Python` `C++` - A base on Python/C++ open source high-performance quant framework for faster analysis and backtesting, contains the complete trading system components for reuse and combination.
