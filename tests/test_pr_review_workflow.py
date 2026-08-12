@@ -26,7 +26,7 @@ jobs:
         steps:
             - uses: actions/checkout@v4
               with:
-                  ref: ${{ github.event.pull_request.base.sha }}
+                  ref: ${{ github.event.pull_request.base.ref }}
                   fetch-depth: 1
                   persist-credentials: false
             - uses: astral-sh/setup-uv@v6
