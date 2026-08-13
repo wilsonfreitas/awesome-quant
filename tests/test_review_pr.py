@@ -1,5 +1,6 @@
 import io
 import unittest
+import warnings
 from contextlib import redirect_stderr, redirect_stdout
 from datetime import datetime, timedelta, timezone
 from types import SimpleNamespace
@@ -787,6 +788,27 @@ class MainTests(unittest.TestCase):
         self.assertEqual(result, 0)
         self.assertIn("description: pass", stdout)
         self.assertIn("duplicates: pass", stdout)
+
+    def test_authentication_does_not_emit_a_deprecation_warning(self):
+        stdout = io.StringIO()
+        stderr = io.StringIO()
+        environment = {
+            "GITHUB_TOKEN": "token",
+            "GITHUB_REPOSITORY": "owner/list",
+            "PR_NUMBER": "10",
+        }
+        with (
+            patch.dict("os.environ", environment, clear=True),
+            patch("sys.argv", ["review_pr.py"]),
+            patch("scripts.review_pr.review_pr", return_value=([], "Add Fresh")),
+            redirect_stdout(stdout),
+            redirect_stderr(stderr),
+            warnings.catch_warnings(),
+        ):
+            warnings.simplefilter("error", DeprecationWarning)
+            result = main()
+
+        self.assertEqual(result, 0)
 
     def test_failure_reports_failed_check_and_nonzero_status(self):
         finding = Finding("description", "PR body is empty")

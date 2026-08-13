@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import Any, Callable
 from urllib.parse import urlsplit, urlunsplit
 
-from github import Github, GithubException
+from github import Auth, Github, GithubException
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
@@ -605,7 +605,7 @@ def main() -> int:
         repository_name = env("GITHUB_REPOSITORY")
         if not repository_name:
             return fail("GITHUB_REPOSITORY is required")
-        client = Github(token)
+        client = Github(auth=Auth.Token(token))
         findings, title = review_pr(repository_name, pr_number, client)
     except Exception as exc:
         return fail(str(exc))
