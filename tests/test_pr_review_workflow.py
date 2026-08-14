@@ -40,7 +40,7 @@ jobs:
                   GITHUB_TOKEN: ${{ github.token }}
                   GITHUB_REPOSITORY: ${{ github.repository }}
                   PR_NUMBER: ${{ github.event.pull_request.number }}
-              run: uv run python scripts/review_pr.py
+              run: uv run python scripts/review_pr.py --skip-pull-request-duplicates
 """
 
 

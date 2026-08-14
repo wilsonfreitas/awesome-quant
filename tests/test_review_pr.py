@@ -10,6 +10,7 @@ from github import GithubException
 
 from scripts.review_pr import (
     Finding,
+    PinnedHTTPSConnection,
     main,
     readme_has_duplicate,
     review_pr,
@@ -373,6 +374,36 @@ class PullRequestDuplicateTests(unittest.TestCase):
 
         self.assertIn("duplicates", {finding.check for finding in findings})
 
+    def test_unrelated_candidates_require_only_one_readme_request_each(self):
+        unrelated_patch = """@@ -1,1 +1,2 @@
+ ## Trading & Backtesting
++- [Other](https://github.com/example/other) - `Python` - Other project.
+"""
+        candidates = [
+            FakePull(
+                number,
+                files=[SimpleNamespace(filename="README.md", patch=unrelated_patch)],
+            )
+            for number in range(100, 200)
+        ]
+
+        findings, _title, client = self.review(other_pulls=candidates)
+
+        self.assertEqual(findings, [])
+        self.assertEqual(len(client.repository.content_refs), 102)
+        candidate_base_refs = {f"base-{number}" for number in range(100, 200)}
+        self.assertTrue(
+            candidate_base_refs.isdisjoint(client.repository.content_refs)
+        )
+
+    def test_reuses_the_current_base_readme_when_confirming_a_duplicate(self):
+        duplicate = FakePull(9, base_sha="base-sha")
+
+        findings, _title, client = self.review(other_pulls=[duplicate])
+
+        self.assertIn("duplicates", {finding.check for finding in findings})
+        self.assertEqual(client.repository.content_refs.count("base-sha"), 1)
+
     def test_ignores_old_closed_pull_request(self):
         old_duplicate = FakePull(
             7,
@@ -448,6 +479,45 @@ class PullRequestDuplicateTests(unittest.TestCase):
         findings, _title, _client = self.review(other_pulls=[unrelated])
 
         self.assertEqual(findings, [])
+
+    def test_can_skip_cross_pull_request_duplicate_scanning(self):
+        candidates = [
+            FakePull(number, content_error=True)
+            for number in range(100, 200)
+        ]
+        repository = FakeBaseRepository(FakePull(10), other_pulls=candidates)
+        client = FakeClient(repository)
+
+        with patch("scripts.review_pr.url_reachable", return_value=True):
+            findings, _title = review_pr(
+                "owner/list",
+                10,
+                client,
+                now=NOW,
+                check_pull_request_duplicates=False,
+            )
+
+        self.assertEqual(findings, [])
+        self.assertEqual(repository.content_refs, ["base-sha", "head-sha"])
+
+    def test_skip_still_rejects_a_duplicate_in_the_base_readme(self):
+        base_readme = (
+            "## Trading & Backtesting\n"
+            "- [Fresh](https://github.com/example/old) - `Python` - Existing project.\n"
+        )
+        repository = FakeBaseRepository(FakePull(10), base_readme=base_readme)
+        client = FakeClient(repository)
+
+        with patch("scripts.review_pr.url_reachable", return_value=True):
+            findings, _title = review_pr(
+                "owner/list",
+                10,
+                client,
+                now=NOW,
+                check_pull_request_duplicates=False,
+            )
+
+        self.assertIn("duplicates", {finding.check for finding in findings})
 
     def test_pull_request_search_errors_fail_closed(self):
         repository = FakeBaseRepository(FakePull(10))
@@ -529,6 +599,41 @@ class ValidationPipelineTests(unittest.TestCase):
         self.assertIn("base-sha", repository.content_refs)
         self.assertIn("head-sha", repository.content_refs)
         self.assertNotIn("main", repository.content_refs)
+
+    def test_does_not_probe_a_github_primary_url_after_api_validation(self):
+        repository = FakeBaseRepository(FakePull(10))
+        client = FakeClient(repository)
+
+        with patch("scripts.review_pr.url_reachable") as url_checker:
+            findings, _title = review_pr("owner/list", 10, client, now=NOW)
+
+        self.assertEqual(findings, [])
+        url_checker.assert_not_called()
+
+    def test_still_probes_an_external_primary_url(self):
+        patch_text = """@@ -1,1 +1,2 @@
+ ## Trading & Backtesting
++- [Fresh](https://example.com/fresh) - `Python` - Fresh project. [GitHub](https://github.com/example/fresh)
+"""
+        base_readme = "# awesome-quant\n\n## Trading & Backtesting\n"
+        head_readme = base_readme + patch_text.splitlines()[-1][1:] + "\n"
+        repository = FakeBaseRepository(
+            FakePull(10, files=[SimpleNamespace(filename="README.md", patch=patch_text)]),
+            base_readme=base_readme,
+            head_readme=head_readme,
+        )
+        client = FakeClient(repository)
+
+        with patch("scripts.review_pr.url_reachable", return_value=True) as url_checker:
+            findings, _title = review_pr("owner/list", 10, client, now=NOW)
+
+        self.assertEqual(findings, [])
+        url_checker.assert_called_once_with("https://example.com/fresh")
+
+    def test_url_connections_use_a_short_timeout(self):
+        connection = PinnedHTTPSConnection("example.com", "93.184.216.34", 443)
+
+        self.assertEqual(connection.timeout, 5)
 
     def test_accepts_entry_when_heading_is_outside_patch_context(self):
         patch_text = """@@ -20,0 +21,1 @@
@@ -748,7 +853,15 @@ class ValidationPipelineTests(unittest.TestCase):
             self.review(configure_project=fail_readme_lookup)
 
     def test_rejects_unreachable_primary_url(self):
-        self.assertIn("reachability", self.review(reachable=False))
+        patch_text = """@@ -1,1 +1,2 @@
+ ## Trading & Backtesting
++- [Fresh](https://example.com/fresh) - `Python` - Fresh project. [GitHub](https://github.com/example/fresh)
+"""
+
+        self.assertIn(
+            "reachability",
+            self.review(patch_text=patch_text, reachable=False),
+        )
 
     def test_rejects_duplicate_in_base_readme(self):
         base_readme = (
@@ -788,6 +901,40 @@ class MainTests(unittest.TestCase):
         self.assertEqual(result, 0)
         self.assertIn("description: pass", stdout)
         self.assertIn("duplicates: pass", stdout)
+
+    def test_skip_flag_is_reported_and_forwarded(self):
+        stdout = io.StringIO()
+        stderr = io.StringIO()
+        environment = {
+            "GITHUB_TOKEN": "token",
+            "GITHUB_REPOSITORY": "owner/list",
+            "PR_NUMBER": "10",
+        }
+        with (
+            patch.dict("os.environ", environment, clear=True),
+            patch(
+                "sys.argv",
+                ["review_pr.py", "--skip-pull-request-duplicates"],
+            ),
+            patch("scripts.review_pr.Github"),
+            patch(
+                "scripts.review_pr.review_pr",
+                return_value=([], "Add Fresh"),
+            ) as reviewer,
+            redirect_stdout(stdout),
+            redirect_stderr(stderr),
+        ):
+            result = main()
+
+        self.assertEqual(result, 0)
+        self.assertIn("Cross-PR duplicate check: skipped", stdout.getvalue())
+        self.assertIn(
+            "duplicates: pass (existing README only)",
+            stdout.getvalue(),
+        )
+        self.assertFalse(
+            reviewer.call_args.kwargs["check_pull_request_duplicates"]
+        )
 
     def test_authentication_does_not_emit_a_deprecation_warning(self):
         stdout = io.StringIO()

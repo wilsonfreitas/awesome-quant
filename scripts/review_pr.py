@@ -71,6 +71,11 @@ def parse_args() -> argparse.Namespace:
         description="Review one awesome-quant pull request."
     )
     parser.add_argument("--pr-number", type=int, default=None)
+    parser.add_argument(
+        "--skip-pull-request-duplicates",
+        action="store_true",
+        help="skip duplicate checks against open and recently closed PRs",
+    )
     return parser.parse_args()
 
 
@@ -252,7 +257,7 @@ class PinnedHTTPSConnection(http.client.HTTPSConnection):
         super().__init__(
             hostname,
             port=port,
-            timeout=10,
+            timeout=5,
             context=context,
         )
         self.ip_address = ip_address
@@ -382,9 +387,21 @@ def pull_request_has_duplicate(
     pull_request: Any,
     name: str,
     urls: list[str],
+    *,
+    readme_cache: dict[str, str] | None = None,
 ) -> bool:
-    base_readme = read_readme(repository, pull_request.base.sha)
-    head_readme = read_readme(repository, pull_request.head.sha)
+    cache = readme_cache if readme_cache is not None else {}
+
+    def cached_readme(ref: str) -> str:
+        if ref not in cache:
+            cache[ref] = read_readme(repository, ref)
+        return cache[ref]
+
+    head_readme = cached_readme(pull_request.head.sha)
+    if not readme_has_duplicate(head_readme, name, urls):
+        return False
+
+    base_readme = cached_readme(pull_request.base.sha)
     added_lines, _removed_lines = readme_changed_lines(base_readme, head_readme)
     return any(
         entry_line_has_duplicate(line, name, urls)
@@ -400,7 +417,9 @@ def repository_has_pull_request_duplicate(
     urls: list[str],
     *,
     now: datetime,
+    readme_cache: dict[str, str] | None = None,
 ) -> bool:
+    cache = readme_cache if readme_cache is not None else {}
     cutoff = now - timedelta(days=RECENT_CLOSED_PULL_DAYS)
     for state in ("open", "closed"):
         pulls = repository.get_pulls(
@@ -417,7 +436,13 @@ def repository_has_pull_request_duplicate(
                 closed_at = pull_request.closed_at
                 if closed_at is None or closed_at < cutoff:
                     continue
-            if pull_request_has_duplicate(repository, pull_request, name, urls):
+            if pull_request_has_duplicate(
+                repository,
+                pull_request,
+                name,
+                urls,
+                readme_cache=cache,
+            ):
                 return True
     return False
 
@@ -428,6 +453,7 @@ def review_pr(
     client: Github,
     *,
     now: datetime | None = None,
+    check_pull_request_duplicates: bool = True,
 ) -> tuple[list[Finding], str]:
     current_time = now or datetime.now(timezone.utc)
 
@@ -558,19 +584,23 @@ def review_pr(
                     )
                 )
 
-    if not url_reachable(url):
+    if not primary_github and not url_reachable(url):
         findings.append(Finding("reachability", f"primary URL is not reachable: {url}"))
 
     if readme_has_duplicate(base_readme, name, [url, *github_urls]):
         findings.append(
             Finding("duplicates", "project name or URL already exists in README.md")
         )
-    elif repository_has_pull_request_duplicate(
+    elif check_pull_request_duplicates and repository_has_pull_request_duplicate(
         repository,
         pr_number,
         name,
         [url, *github_urls],
         now=current_time,
+        readme_cache={
+            pull_request.base.sha: base_readme,
+            pull_request.head.sha: head_readme,
+        },
     ):
         findings.append(
             Finding(
@@ -606,15 +636,25 @@ def main() -> int:
         if not repository_name:
             return fail("GITHUB_REPOSITORY is required")
         client = Github(auth=Auth.Token(token))
-        findings, title = review_pr(repository_name, pr_number, client)
+        findings, title = review_pr(
+            repository_name,
+            pr_number,
+            client,
+            check_pull_request_duplicates=not args.skip_pull_request_duplicates,
+        )
     except Exception as exc:
         return fail(str(exc))
 
     print(f"PR #{pr_number}: {title}")
     print("Entries reviewed: 1")
+    if args.skip_pull_request_duplicates:
+        print("Cross-PR duplicate check: skipped")
     if not findings:
         for check in CHECK_ORDER:
-            print(f"- {check}: pass")
+            if check == "duplicates" and args.skip_pull_request_duplicates:
+                print("- duplicates: pass (existing README only)")
+            else:
+                print(f"- {check}: pass")
         print("Verdict: APPROVE")
         print("Recommended action: merge")
         return 0
