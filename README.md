@@ -606,6 +606,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
   - [ta-lib](https://github.com/TA-Lib/ta-lib)
 - [RunMat](https://github.com/runmat-org/runmat) - Rust runtime for MATLAB-syntax array math with automatic CPU/GPU execution and fused kernels for quant simulations.
 - [godzilla.dev](https://godzilla.dev) - `C++` `Python` - Open-source framework for crypto quant trading, funding rate arbitrage and ultra-low-latency market making. [GitHub](https://github.com/godzilla-foundation/godzilla-community)
+- [PineTS](https://github.com/LuxAlgo/PineTS) - `TypeScript` `JavaScript` `Pine Script` - Open-source transpiler and runtime that executes Pine Script logic in Node.js and the browser with 1:1 syntax compatibility, for running indicators and strategies on your own infrastructure.
 
 ## Reproducing Works, Training & Books
 - [Wyckoff Method Course](https://arapov.trade/en/freestudying/wyckoff-method) - Free course on volume analysis and the Wyckoff method: market phases, spring/upthrust, order flow reading.
