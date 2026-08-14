@@ -172,6 +172,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Wickra](https://github.com/wickra-lib/wickra) - `Rust` `Python` `JavaScript` `C++` `C#` `Golang` `Java` `R` - Streaming-first technical-analysis library with a Rust core: 514 indicators updating in O(1) per tick, with bit-exact batch-vs-streaming results.
 
 ## Trading & Backtesting
+- [Manifold-BT](https://github.com/manifoldbt/manifoldbt) - `Python` `Rust` - High-performance Rust-powered backtesting engine for quantitative research with parameter sweeps, walk-forward and Monte Carlo.
 - [mkt-alerts](https://github.com/dzianisv/mkt-alerts) - `TypeScript` - Self-hosted market-alert daemon: price, RSI/MACD/SMA conditions, and full Pine Script v5 custom indicators evaluated off-TradingView, on crypto (Coinbase) and stocks (Yahoo Finance) with no API key, delivered via ntfy push, email, or Telegram.
 - [pyhood](https://github.com/jamestford/pyhood) - `Python` - Robinhood API client for unattended automation: after the first approved login, sessions renew from a stored refresh token with no password or device approval prompt. Covers stocks, equity and index options with Greeks, futures, IRA accounts, and the official Crypto Trading API.
 - [honest-signals](https://github.com/MarvinRey7879/honest-signals) - `Python` - Scores detected chart patterns against the pattern-free baseline for the same market, timeframe and horizon, reporting lift with cluster-robust confidence intervals instead of a hit rate against 50%.
