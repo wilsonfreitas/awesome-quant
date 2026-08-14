@@ -1,185 +1,92 @@
 ---
 name: bprr
-description: Bulk review all unreviewed pull requests for the awesome-quant curated list. Review all open PRs without the "reviewed" label in one session, then present a summary table for user selection before merging. Use this skill when asked to "bulk review", "review all prs", "bprr", or "review unreviewed".
+description: Bulk PR reviewer for awesome-quant. Use when the user asks to review all open PRs, review unreviewed PRs, bulk review, or mentions "bprr". Reviews open PRs lacking the reviewed label and presents a summary before any merge/comment/label action.
 ---
 
-# Bulk PR Reviewer (bprr)
+# BPRR: Bulk PR Reviewer
 
-Review all open pull requests at once for the awesome-quant curated list, then present a summary and merge selected PRs.
+Review multiple open pull requests for README entry contributions.
 
-**IMPORTANT: Always use GitHub MCP tools for all GitHub operations.** Do not fall back to bash commands like `gh` or other tools — use the GitHub MCP interface exclusively.
+## Hard Rules
+
+1. Use GitHub MCP tools for PR operations. Do not use `gh` for PR review, comments, labels, closing, or merging.
+2. Filter out PRs with the `reviewed` label unless the user asks to re-review them.
+3. Do not comment, label, close, or merge until the user explicitly approves each action.
+4. Do not auto-merge all approved PRs unless the user explicitly selects that option.
+5. If GitHub MCP tools are unavailable, report the blocker and point to `docs/codex-setup.md`.
 
 ## Workflow
 
-### Step 1: Fetch and filter PRs
+1. List open PRs sorted oldest first.
+2. Filter to unreviewed PRs by default.
+3. Fetch the default-branch `README.md` once for duplicate checks.
+4. For each PR, fetch details, current head SHA, labels, files, body, diff, and the latest `Validate PR` workflow/check attempt for that SHA.
+5. Review only added `README.md` entries unless the PR changes other files; flag other file changes as unusual.
+6. Apply the CI evidence rules below, then perform the remaining `$sprr` checks. Use `scripts/validate_readme.py --diff-from <base-ref>` only when current-head CI does not establish mechanical validity and the PR branch is available locally; otherwise apply the validator's rules manually from the MCP diff.
 
-1. Use `github_list_pull_requests` with `state=open`, `sort=created`, `direction=asc`, `per_page=30` to get all open PRs.
+## CI Evidence Rules
 
-2. Filter out PRs that have the "reviewed" label (these were already commented on and are waiting for contributor response).
+Evaluate each PR independently. Use only the latest attempt for the current head SHA; a newer
+queued or pending attempt supersedes an older success for that SHA. A result for one PR or
+commit never applies to another.
 
-3. Report the count:
-```
-Found X open PRs total, Y unreviewed (no "reviewed" label)
-```
+| Current-head result | Review behavior |
+|---|---|
+| `success` | Accept parser format, tag syntax, separators, the required final period, HTTPS, GitHub-link syntax, recognized section, and base-README duplicate checks as passed. Do not repeat those mechanical checks. |
+| `failure` | Inspect the failing job or step. Use `NEEDS CHANGES` when validation failed; if another step failed or details are unavailable, reproduce mechanical validation before deciding. |
+| queued, pending, awaiting approval | Mark the review incomplete and do not return `APPROVE`. |
+| skipped, cancelled, missing | Treat mechanical validation as unverified and reproduce it before deciding. |
+| success only on an older SHA | Report `STALE`, ignore it, and reproduce mechanical validation for the current head SHA. |
 
-### Step 2: Fetch current README (cache for duplicate checks)
+For every PR, still inspect the diff and manually review tag meaning and concision, description
+quality, relevance, semantic section suitability, commercial classification, repository
+activity/archive/documentation/community evidence, duplicates in open PRs and PRs closed
+within the last 365 days, and multi-project relatedness.
 
-1. Use `github_get_file_contents` owner=wilsonfreitas, repo=awesome-quant, path=README.md to fetch current README once.
+## Validation Checklist
 
-2. Cache this for all duplicate checks during review.
+For each added entry, check:
 
-### Step 3: Parallel PR review
+- Parser regex match.
+- Required backtick tags for new non-commercial entries. Treat them as a compact tag cloud:
+  accept concise languages, runtimes, protocols, interfaces, data types, and domain terms.
+- Separate concepts must use adjacent tags, such as `` `Python` `C++` `MCP` ``; do not require
+  every tag to be a programming language.
+- Description period before optional `[GitHub](...)`.
+- `https://` URLs.
+- Exact optional `[GitHub](https://github.com/owner/repo)` format.
+- Correct category section.
+- Commercial placement under `Commercial & Proprietary Services`.
+- Duplicate project names or URLs.
+- Treat any verifiable GitHub repository mentioned as the main URL or exact `[GitHub](...)`
+  suffix as a strong positive relevance signal.
+- For GitHub repos, check source availability, activity, archived status, documentation, and
+  community evidence. GitHub relevance does not waive duplicate, format, or quality checks.
+- Clear rationale for multiple related projects in one PR.
 
-For each unreviewed PR, fetch in parallel:
-- `github_get_pull_request` for PR details (check mergeable status, labels)
-- Use webfetch to fetch the diff from `https://github.com/wilsonfreitas/awesome-quant/pull/{number}.diff`
+## Summary Output
 
-Then validate each entry using the logic from sprr skill:
+Present a table:
 
-#### Entry format check
-
-Each entry MUST include one or more language tags and match one of these accepted formats:
-
-**Single language:**
-```
-- [Project Name](https://github.com/owner/repo) - `Python` - Short description ending with a period.
-```
-
-**Multiple languages:**
-```
-- [Project Name](https://github.com/owner/repo) - `Python` `Rust` - Short description ending with a period.
-```
-
-**Project with website and GitHub repo:**
-```
-- [Project Name](https://project-site.com) - `Python` - Short description ending with a period. [GitHub](https://github.com/owner/repo)
-```
-
-**CRAN project:**
-```
-- [Package Name](https://cran.r-project.org/package=pkgname) - `R` - Short description ending with a period.
-```
-
-**PyPI project:**
-```
-- [package-name](https://pypi.org/project/package-name/) - `Python` - Short description ending with a period.
-```
-
-The core regex: `^\s*- \[(.*)\]\((.*)\) - (.*)$`
-
-Specifically check:
-- Starts with `- ` (dash + space)
-- Followed by markdown link `[Name](URL)`
-- Followed by ` - ` (space, dash, space)
-- **MUST include language tags in backticks** (e.g., `` `Python` ``) followed by ` - `
-- Description ends with a period `.`
-- The optional `[GitHub]` link comes after the period
-
-#### URL validation check
-
-- **GitHub URLs preferred**
-- **CRAN URLs** (`cran.r-project.org`) acceptable for R packages
-- **PyPI URLs** (`pypi.org`) acceptable for Python packages
-- Non-GitHub URLs should have `[GitHub]` link in description
-- All URLs must use `https://`
-
-#### Section placement check
-
-The README categories are:
-1. Numerical Libraries & Data Structures
-2. Financial Instruments & Pricing
-3. Technical Indicators
-4. Trading & Backtesting
-5. Portfolio Optimization & Risk Analysis
-6. Factor Analysis
-7. Sentiment Analysis & Alternative Data
-8. Time Series Analysis
-9. Market Data & Data Sources
-10. Prediction Markets
-11. Calendars & Market Hours
-12. Visualization
-13. Excel & Spreadsheet Integration
-14. Quant Research Environments
-15. Cross-Language Frameworks
-16. Reproducing Works, Training & Books
-17. Commercial & Proprietary Services
-18. Related Lists
-
-#### Duplicate check
-
-Search the cached README for the project name and URL to ensure not already listed.
-
-#### Quality check
-
-- Active: Recent commits within 12 months
-- Documented: Clear README with examples
-
-### Step 4: Present summary table
-
-Format the results as:
-
-```
-## Bulk Review Summary
-
-| # | Title | Author | Entries | Format | URL | Section | Duplicate | Verdict |
-|---|-------|--------|---------|--------|-----|---------|-----------|---------|
-| 335 | Apex Quant | sst19910323 | 1 | ISSUE | GitHub | Trading | No | NEEDS CHANGES |
-| 336 | Alpha Skills | VernonOY | 1 | OK | GitHub | Factor | No | APPROVE |
-...
+```text
+| PR | Title | Author | Head | Validate PR | Entries | Format/URL | Section | Duplicate | Verdict |
+|----|-------|--------|------|-------------|---------|------------|---------|-----------|---------|
 ```
 
-For each PR, show:
-- **Number** and title
-- Author
-- Entry count
-- Format status (OK / ISSUE: details)
-- URL type (GitHub / CRAN / PyPI / WARNING)
-- Section placement (OK / SUGGESTION: move to X)
-- Duplicate status (No / YES: line N)
-- Overall verdict
+Use the entry count in `Entries`. Use `PASS`, `FAIL`, `PENDING`, `UNVERIFIED`, or
+`STALE` in `Validate PR`. Use `CI PASS`, `CI FAIL`, `REPRODUCED PASS`,
+`REPRODUCED FAIL`, or `INCOMPLETE` in `Format/URL`. `Section` remains a manual
+semantic judgment. In `Duplicate`, report both `README PASS|FAIL` and
+`PR SEARCH PASS|FAIL`.
 
-After the table, ask:
-```
-Which PRs would you like to merge? (e.g., "336, 340" or "all approved")
-```
+After the table, list any PRs that need detailed notes, including the failing workflow step or the reason CI evidence was not accepted.
 
-### Step 5: User selection
+Ask what to do next. Accept selections like:
 
-Parse user response. Options:
-- Specific PR numbers: "336, 340"
-- "all approved" - merge all with APPROVE verdict
-- "all" - merge all regardless of verdict
-- "none" - skip merging
+- `merge 123, 124`
+- `comment 125`
+- `close 126`
+- `all approved`
+- `none`
 
-If user asks about a specific PR, provide details before asking novamente.
-
-### Step 6: Merge selected PRs (confirm-each)
-
-For each PR to merge:
-
-1. Ask confirmation: "Merge PR #336? (Alpha Skills)"
-2. Wait for user "yes"/"no"
-3. If yes: use `github_merge_pull_request` with merge_method="squash"
-4. Report success/failure
-
-**Note:** Do NOT auto-merge without explicit user confirmation for each PR.
-
-### Automatic rejection criteria
-
-Reject immediately (close with polite comment) if:
-- Multiple unrelated projects without clear rationale
-- Empty PR description
-- Duplicate entry already in README
-- Archived/abandoned project (no commits in 12+ months)
-
-For fixable issues (missing language tag, wrong section), comment and add "reviewed" label instead.
-
-## GitHub MCP Tool Reference
-
-Key tools:
-- `github_list_pull_requests` - list open PRs
-- `github_get_pull_request` - get PR details
-- `github_add_issue_comment` - comment on PR
-- `github_merge_pull_request` - merge PR
-- `github_update_issue` - add label / close PR
-- `github_get_file_contents` - fetch README for duplicate check
+Confirm each merge before executing it.
