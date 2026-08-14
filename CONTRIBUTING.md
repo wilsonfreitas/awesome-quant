@@ -62,7 +62,7 @@ Link to the PyPI package page. If the project has a GitHub repo, append it after
   Projects with a verifiable GitHub repository are easier to evaluate for source availability,
   documentation, activity, maintenance, and community adoption, and they receive automated
   tracking of stars, activity, and archive status on
-  [awesome-quant.com](https://awesome-quant.com/).
+  [the awesome-quant site](https://wilsonfreitas.github.io/awesome-quant/).
 - Include a GitHub repository either as the main project URL or as the exact
   `[GitHub](https://github.com/owner/repo)` suffix. A valid GitHub repository mentioned in
   either place receives the same relevance consideration.
