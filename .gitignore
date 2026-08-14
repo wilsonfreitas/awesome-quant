@@ -2,3 +2,4 @@ env.ps1
 .vscode
 github.ipynb
 build.sh
+*.pyc
