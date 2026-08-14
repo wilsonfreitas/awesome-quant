@@ -177,15 +177,36 @@ def read_readme(repository: Any, ref: str) -> str:
     return content.decoded_content.decode("utf-8")
 
 
+def entries_represent_same_project(old_line: str, new_line: str) -> bool:
+    old_match = ENTRY_RE.match(old_line)
+    new_match = ENTRY_RE.match(new_line)
+    if old_match is None or new_match is None:
+        return False
+
+    if normalize(old_match.group(1)) == normalize(new_match.group(1)):
+        return True
+
+    old_urls = {
+        canonicalize_url(url) for url in MARKDOWN_URL_RE.findall(old_line)
+    }
+    new_urls = {
+        canonicalize_url(url) for url in MARKDOWN_URL_RE.findall(new_line)
+    }
+    return bool(old_urls & new_urls)
+
+
 def analyze_readme_change(
     base_readme: str,
     head_readme: str,
-) -> tuple[str | None, list[Finding]]:
+) -> tuple[str | None, str | None, list[Finding]]:
     added_lines, removed_lines = readme_changed_lines(base_readme, head_readme)
     substantive_added = [line for line in added_lines if line.strip()]
     substantive_removed = [line for line in removed_lines if line.strip()]
     entry_lines = [
         line for line in substantive_added if line.strip().startswith("- ")
+    ]
+    removed_entry_lines = [
+        line for line in substantive_removed if line.strip().startswith("- ")
     ]
     findings: list[Finding] = []
     if len(entry_lines) != 1:
@@ -195,19 +216,39 @@ def analyze_readme_change(
                 "expected exactly one added README entry line",
             )
         )
-        return None, findings
+        return None, None, findings
 
     unauthorized_additions = [
         line for line in substantive_added if line != entry_lines[0]
     ]
-    if substantive_removed or unauthorized_additions:
+    unauthorized_removals = [
+        line for line in substantive_removed if line not in removed_entry_lines
+    ]
+    removed_entry_line = (
+        removed_entry_lines[0] if len(removed_entry_lines) == 1 else None
+    )
+    invalid_update = bool(substantive_removed) and (
+        removed_entry_line is None
+        or bool(unauthorized_removals)
+        or not entries_represent_same_project(removed_entry_line, entry_lines[0])
+    )
+    if unauthorized_additions or invalid_update:
         findings.append(
             Finding(
                 "content",
-                "README changes must add one entry without other substantive edits",
+                "README changes must add one entry or update the same project "
+                "without other substantive edits",
             )
         )
-    return entry_lines[0], findings
+    return entry_lines[0], removed_entry_line, findings
+
+
+def remove_entry_line(readme_text: str, entry_line: str | None) -> str:
+    if entry_line is None:
+        return readme_text
+    lines = readme_text.splitlines()
+    lines.remove(entry_line)
+    return "\n".join(lines)
 
 
 def readme_changed_lines(
@@ -474,7 +515,10 @@ def review_pr(
 
     base_readme = read_readme(repository, pull_request.base.sha)
     head_readme = read_readme(repository, pull_request.head.sha)
-    entry_line, change_findings = analyze_readme_change(base_readme, head_readme)
+    entry_line, removed_entry_line, change_findings = analyze_readme_change(
+        base_readme,
+        head_readme,
+    )
     findings.extend(change_findings)
     if entry_line is None:
         return findings, pull_request.title
@@ -545,9 +589,13 @@ def review_pr(
     github_urls.extend(GITHUB_LINK_RE.findall(line))
     github_urls = list(dict.fromkeys(github_urls))
     if not github_urls:
-        findings.append(
-            Finding("github", "no GitHub repository URL found; cannot verify activity")
-        )
+        if section != "Commercial & Proprietary Services":
+            findings.append(
+                Finding(
+                    "github",
+                    "no GitHub repository URL found; cannot verify activity",
+                )
+            )
     else:
         repository_parts = parse_github_repository_url(github_urls[0])
         if not repository_parts:
@@ -587,7 +635,8 @@ def review_pr(
     if not primary_github and not url_reachable(url):
         findings.append(Finding("reachability", f"primary URL is not reachable: {url}"))
 
-    if readme_has_duplicate(base_readme, name, [url, *github_urls]):
+    duplicate_base_readme = remove_entry_line(base_readme, removed_entry_line)
+    if readme_has_duplicate(duplicate_base_readme, name, [url, *github_urls]):
         findings.append(
             Finding("duplicates", "project name or URL already exists in README.md")
         )

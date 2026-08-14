@@ -662,6 +662,90 @@ class ValidationPipelineTests(unittest.TestCase):
             ),
         )
 
+    def test_accepts_description_update_for_the_same_project(self):
+        base_readme = (
+            "# awesome-quant\n\n## Trading & Backtesting\n"
+            "- [Fresh](https://github.com/example/fresh) - `Python` - Old description.\n"
+        )
+        head_readme = base_readme.replace("Old description.", "New description.")
+
+        self.assertEqual(
+            self.review(base_readme=base_readme, head_readme=head_readme),
+            set(),
+        )
+
+    def test_accepts_tag_update_for_the_same_project(self):
+        base_readme = (
+            "# awesome-quant\n\n## Trading & Backtesting\n"
+            "- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.\n"
+        )
+        head_readme = base_readme.replace("`Python`", "`Python` `Rust`")
+
+        self.assertEqual(
+            self.review(base_readme=base_readme, head_readme=head_readme),
+            set(),
+        )
+
+    def test_accepts_url_update_when_the_name_is_unchanged(self):
+        base_readme = (
+            "# awesome-quant\n\n## Trading & Backtesting\n"
+            "- [Fresh](https://old.example.com/fresh) - `Python` - Fresh project. "
+            "[GitHub](https://github.com/example/fresh)\n"
+        )
+        head_readme = base_readme.replace(
+            "https://old.example.com/fresh",
+            "https://new.example.com/fresh",
+        )
+
+        self.assertEqual(
+            self.review(base_readme=base_readme, head_readme=head_readme),
+            set(),
+        )
+
+    def test_accepts_rename_when_the_repository_is_unchanged(self):
+        base_readme = (
+            "# awesome-quant\n\n## Trading & Backtesting\n"
+            "- [Old Name](https://github.com/example/fresh) - `Python` - Fresh project.\n"
+        )
+        head_readme = base_readme.replace("[Old Name]", "[Fresh]")
+
+        self.assertEqual(
+            self.review(base_readme=base_readme, head_readme=head_readme),
+            set(),
+        )
+
+    def test_accepts_section_move_for_the_same_project(self):
+        base_readme = (
+            "# awesome-quant\n\n## Trading & Backtesting\n"
+            "- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.\n"
+            "\n## Portfolio Optimization & Risk Analysis\n"
+        )
+        head_readme = (
+            "# awesome-quant\n\n## Trading & Backtesting\n"
+            "\n## Portfolio Optimization & Risk Analysis\n"
+            "- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.\n"
+        )
+
+        self.assertEqual(
+            self.review(base_readme=base_readme, head_readme=head_readme),
+            set(),
+        )
+
+    def test_rejects_replacing_an_entry_with_an_unrelated_project(self):
+        base_readme = (
+            "# awesome-quant\n\n## Trading & Backtesting\n"
+            "- [Old](https://github.com/example/old) - `Python` - Old project.\n"
+        )
+        head_readme = (
+            "# awesome-quant\n\n## Trading & Backtesting\n"
+            "- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.\n"
+        )
+
+        self.assertIn(
+            "content",
+            self.review(base_readme=base_readme, head_readme=head_readme),
+        )
+
     def test_rejects_deleting_an_existing_entry(self):
         base_readme = (
             "# awesome-quant\n\n"
@@ -789,6 +873,19 @@ class ValidationPipelineTests(unittest.TestCase):
             ),
         )
         self.assertIn("github-link", self.review(patch_text=patch_text))
+
+    def test_accepts_commercial_entry_without_github_repository(self):
+        patch_text = """@@ -1,1 +1,2 @@
+ ## Commercial & Proprietary Services
++- [Fresh](https://example.com/fresh) - Commercial risk calculator.
+"""
+
+        base_readme = "# awesome-quant\n\n## Commercial & Proprietary Services\n"
+
+        self.assertEqual(
+            self.review(patch_text=patch_text, base_readme=base_readme),
+            set(),
+        )
 
     def test_rejects_entry_without_github_repository(self):
         patch_text = VALID_PATCH.replace(
