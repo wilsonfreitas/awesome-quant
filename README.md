@@ -171,6 +171,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Wickra](https://github.com/wickra-lib/wickra) - `Rust` `Python` `JavaScript` `C++` `C#` `Golang` `Java` `R` - Streaming-first technical-analysis library with a Rust core: 514 indicators updating in O(1) per tick, with bit-exact batch-vs-streaming results.
 
 ## Trading & Backtesting
+- [pyhood](https://github.com/jamestford/pyhood) - `Python` - Robinhood API client for unattended automation: after the first approved login, sessions renew from a stored refresh token with no password or device approval prompt. Covers stocks, equity and index options with Greeks, futures, IRA accounts, and the official Crypto Trading API.
 - [honest-signals](https://github.com/MarvinRey7879/honest-signals) - `Python` - Scores detected chart patterns against the pattern-free baseline for the same market, timeframe and horizon, reporting lift with cluster-robust confidence intervals instead of a hit rate against 50%.
 - [rulelint](https://github.com/momoddo/rulelint) - `Python` - Linter for mechanical trading-rule conditions: replays every condition over historical bars to catch look-ahead levels, dead branches that can never fire, and regime-drifted absolute thresholds before you trust a backtest.
 - [FAIG](https://github.com/tg12/FAIG) - `Python` - Fully automated trading bot for the IG Index platform (spread betting and CFDs), supporting demo and live accounts.
