@@ -680,7 +680,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Commercial & Proprietary Services
 - [Prop Firm Risk Calculator](https://prop-firm-risk-calculator.vercel.app) - Free web app for position sizing, stop-loss and max-drawdown on funded accounts, with real tick/pip values for futures, forex, crypto and gold.
-
 - [AlphaForge](https://alforgelabs.com) - `Python` - Local-first agent-native quant CLI with Optuna TPE optimization, walk-forward testing, anti-overfitting guards, and TradingView Pine v6 code generation. Free trial available. [GitHub](https://github.com/alforge-labs/alpha-forge-mcp)
 - [TradeMux](https://trademux.io) - Unified forex trading API gateway to Metatrader (MT4/MT5), Oanda and cTrader.
 - [Chartscout](https://chartscout.io) - Real-time cryptocurrency chart pattern detection with automated alerts across multiple exchanges.
@@ -728,6 +727,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [NeuPortal](https://neuportal.ai) - AI forecasting-accountability lab: every forecast is locked pre-event, Bitcoin-timestamped (OpenTimestamps), and Brier-scored against prediction markets in public.
 - [AlphaAssay](https://alphaassay.com) - `REST` - Independent statistical assay office for trading signals and backtests: deflated Sharpe with cumulative trial accounting, probability of backtest overfitting (PBO/CPCV), leakage forensics, placebo tests against matched synthetic null worlds, and pre-registration with Merkle-anchored timestamps — deterministic, Ed25519-signed verdicts anyone can replay. Free demo; hosted API and MCP server. Methodology audit, not investment advice. [GitHub](https://github.com/alphaassay/mcp)
 - [Market Posture Daily](https://marketpd.com) - Daily trend, regime, momentum and relative-strength data for ~90 crypto assets and US stocks/ETFs, with a cointegration pair screener. Free terminal + JSON API.
+- [AtlasYield](https://atlasyield.club) - Independent rating and allocation layer for on-chain yield: scores every DeFi vault 0-100 across 16 factors, with a public read-only scores API. [GitHub](https://github.com/gveshk/atlasyield-score-history)
 - [Katana](https://katanascreener.com) - Free Japan stock screener built on EDINET filings. 160+ fundamentals, custom formula metrics, Graham/Piotroski/Kiyohara presets. No sign-up.
 - [Disclosed Capitol](https://www.disclosedcapitol.com/data-files/api) - US congressional and executive-branch stock trade disclosures API. STOCK Act filings plus OGE executive data (~6,743 transactions across 106 officials), with trade-level returns and alpha. Free tier: 500 credits, no card.
 
