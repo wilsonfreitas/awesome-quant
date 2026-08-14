@@ -1,208 +1,114 @@
 ---
 name: sprr
-description: Single PR reviewer. Review and validate pull requests that add new library entries to the awesome-quant README.md. Use this skill whenever the user asks to review PRs, check contributions, validate submissions, triage pull requests, or mentions anything about incoming entries or additions to the curated list. Also triggers for "review pr", "check prs", "merge contributions", "sprr", or any PR-related workflow in this repo.
+description: Single PR reviewer for awesome-quant. Use when the user asks to review, validate, comment on, label, close, or merge one specific pull request that adds README.md entries. Triggers include "sprr", "review PR", "check PR", and "validate contribution".
 ---
 
 # SPRR: Single PR Reviewer
 
-Review and validate PRs that add new library entries to the awesome-quant README.md.
+Review one pull request that adds entries to `README.md`.
 
-## CRITICAL RULES
+## Hard Rules
 
-### 1. Only Review PRs You Are Asked To Review
-- **NEVER** proactively find or review other PRs on your own
-- Only review the specific PR number you are asked to review
-- If no PR number is given, ask the user which PR to review
-- Do NOT auto-select the oldest PR or any PR - wait for explicit instruction
+1. Review only the PR number the user requested. If no PR number is given, ask for one.
+2. Use GitHub MCP tools for PR operations. Do not use `gh` for PR review, comments, labels, closing, or merging.
+3. Do not modify the PR until the user explicitly approves that action.
+4. Always present findings before asking whether to comment, label, close, or merge.
+5. Always ask before merging.
+6. Enforce `CONTRIBUTING.md` and `AGENTS.md` strictly for new entries.
 
-### 2. Never Modify PRs Without User Consent
-- **NEVER** comment on, merge, close, label, or take any action on a PR without explicit user approval
-- Present your findings and ask "Should I proceed?" or similar
-- Wait for user confirmation before taking any action that modifies the PR
-- The user must explicitly say "yes", "proceed", "go ahead", etc. before you act
-
-### 3. Be Strict With CONTRIBUTING.md
-- Enforce ALL format requirements from CONTRIBUTING.md
-- Do not accept requests that deviate from the established format
-- Reject entries that don't match the required format, even for small issues
-- Point contributors to CONTRIBUTING.md for exact requirements
-
-**IMPORTANT: Always use GitHub MCP tools for all GitHub operations.** Do not fall back to bash commands like `gh` or other tools — use the GitHub MCP interface exclusively.
+If GitHub MCP tools are unavailable, report that PR operations are blocked and point the user to `docs/codex-setup.md`.
 
 ## Workflow
 
-### Step 1: Confirm the PR (if not given)
+1. Fetch PR details, current head SHA, files changed, labels, comments, and diff with GitHub MCP.
+2. Confirm whether the `reviewed` label or prior maintainer comments exist, then proceed with full validation anyway.
+3. Fetch the latest `Validate PR` workflow/check attempt for the current head SHA and apply the CI evidence rules below.
+4. Focus on added lines in `README.md`. Flag any other changed files as unusual for a normal contribution.
+5. When mechanical validation is not established by current-head CI, save or reconstruct the PR diff locally only if needed, then validate added README entries with:
 
-If the user provides a PR number, confirm it. If not, ask the user which PR they want you to review. DO NOT auto-select a PR.
-
-### Step 2: Check for merge conflicts
-
-Use the `mcp__github__pull_request_read` tool with method `get` to read the PR details. If the PR has merge conflicts, report this to the user and stop — the contributor needs to resolve conflicts before review can proceed. Use the `mcp__github__add_issue_comment` tool to leave a polite comment asking them to rebase.
-
-### Step 3: Check for prior review
-
-Use `github_get_pull_request` to check for the "reviewed" label, then use `github_get_pull_request_comments` to check for comments from maintainer.
-
-Report at start of review:
-```
-Prior review: YES/NO
-- Label: "reviewed" present (if yes)
-- Comments: X new comments from maintainer (if any)
-- Status: Full revalidation proceeding
+```bash
+uv run python scripts/validate_readme.py --diff-from <base-ref>
 ```
 
-Always proceed with full validation regardless of prior review status.
+If a base ref is not locally available, apply the same checks manually from the fetched diff.
 
-### Step 4: Fetch the diff and extract added lines
+## CI Evidence Rules
 
-Use the `mcp__github__pull_request_read` tool with method `get_diff` to read the PR diff. Focus only on changes to `README.md`. If the PR modifies files other than `README.md` (like `parse.py`, `site/`, etc.), flag this as unusual — most contributions should only touch `README.md`.
+Use only the latest attempt whose commit SHA exactly matches the PR's current head SHA. A newer
+queued or pending attempt supersedes an older successful attempt for the same SHA.
 
-### Step 5: Automatic rejection checks
+| Current-head result | Review behavior |
+|---|---|
+| `success` | Accept parser format, tag syntax, separators, the required final period, HTTPS, GitHub-link syntax, recognized section, and base-README duplicate checks as passed. Do not rerun those mechanical checks. |
+| `failure` | Inspect the failing job or step. Return `NEEDS CHANGES` when validation failed; if another step failed or details are unavailable, reproduce mechanical validation before deciding. |
+| queued, pending, awaiting approval | Report the review as incomplete and do not return `APPROVE`. |
+| skipped, cancelled, missing | Treat mechanical validation as unverified and reproduce it before deciding. |
+| success on an older SHA | Ignore it and evaluate the current SHA using these rules. |
 
-Reject the PR immediately (close with a polite comment) if any of these apply:
+CI never replaces inspection of the diff or the manual checks below. A successful check confirms
+only mechanical rules; it does not establish tag meaning or concision, description quality,
+relevance, semantic section suitability, commercial classification, repository quality,
+cross-PR uniqueness, or multi-project relatedness. Search open PRs and PRs closed within the
+last 365 days for duplicate names and URLs.
 
-- **Multiple unrelated projects** — multiple projects should only be submitted together if they are closely related (same market/exchange, same author, same service, or address a specific domain gap). Check the PR description for clear rationale. If unrelated, ask the contributor to split into separate PRs.
-- **Empty PR description** — the contributor must explain what they're adding and why (especially if multiple projects).
-- **Duplicate entries** — the same project name or URL appears multiple times within the PR or already in `README.md`.
-- **Archived or abandoned** — the project has no activity in 12+ months.
+## Validation Checklist
 
-### Step 6: Validate each added entry
+For every added entry:
 
-For every new line added to `README.md`, check the following:
+- It matches `^\s*- \[(.*)\]\((.*)\) - (.*)$`.
+- New non-commercial entries include one or more backtick tags followed by ` - `. Treat these
+  as a compact tag cloud: accept concise languages, runtimes, protocols, interfaces, data
+  types, and domain terms.
+- Separate concepts use adjacent tags, such as `` `Python` `C++` `MCP` ``; do not reject a tag
+  merely because it is not a programming language.
+- Description ends with a period before optional `[GitHub](...)`.
+- URLs use `https://`.
+- Optional GitHub link uses `[GitHub](https://github.com/owner/repo)`.
+- Section placement matches the project's purpose.
+- Commercial/proprietary projects are under `Commercial & Proprietary Services`.
+- Project name and URLs are not duplicates of existing README entries.
+- Any verifiable GitHub repository mentioned as the main URL or exact `[GitHub](...)` suffix
+  is a strong positive relevance signal.
+- GitHub projects are checked for source availability, activity, archived status,
+  documentation, and community evidence. GitHub relevance does not waive duplicate, format,
+  or quality checks.
+- Multiple projects in one PR are closely related and explained in the PR body.
 
-#### 6a. Entry format
+## Verdicts
 
-Each entry MUST include one or more language tags and match one of these accepted formats:
+Use these verdicts:
 
-**Single language:**
-```
-- [Project Name](https://github.com/owner/repo) - `Python` - Short description ending with a period.
-```
+- `APPROVE`: entry is ready to merge.
+- `NEEDS CHANGES`: fixable format, section, URL, description, or documentation issue.
+- `REJECT`: duplicate, unrelated multi-project PR, empty PR description, archived/abandoned project, or other hard rejection.
 
-**Multiple languages:**
-```
-- [Project Name](https://github.com/owner/repo) - `Python` `Rust` - Short description ending with a period.
-```
+## Output Shape
 
-**Project with website and GitHub repo:**
-```
-- [Project Name](https://project-site.com) - `Python` - Short description ending with a period. [GitHub](https://github.com/owner/repo)
-```
+Report:
 
-**CRAN project (with optional GitHub link):**
-```
-- [Package Name](https://cran.r-project.org/package=pkgname) - `R` - Short description ending with a period.
-- [Package Name](https://cran.r-project.org/package=pkgname) - `R` - Short description ending with a period. [GitHub](https://github.com/owner/repo)
-```
-
-**PyPI project (with optional GitHub link):**
-```
-- [package-name](https://pypi.org/project/package-name/) - `Python` - Short description ending with a period.
-- [package-name](https://pypi.org/project/package-name/) - `Python` - Short description ending with a period. [GitHub](https://github.com/owner/repo)
-```
-
-The core regex used by `parse.py` to extract entries is: `^\s*- \[(.*)\]\((.*)\) - (.*)$`
-
-Specifically check:
-- Starts with `- ` (dash + space)
-- Followed by a markdown link `[Name](URL)`
-- Followed by ` - ` (space, dash, space)
-- **MUST include one or more language tags in backticks** (e.g., `` `Python` ``, `` `Python` `Rust` ``) followed by ` - `
-- Followed by a description that ends with a period `.`
-- The period must come before the optional `[GitHub](url)` link
-- The `[GitHub]` link, if present, must use the exact format `[GitHub](https://github.com/owner/repo)`
-
-If the entry doesn't match, report exactly what's wrong (missing language tags, missing period, wrong separator, etc.).
-
-#### 6b. URL validation
-
-- **GitHub URLs are preferred.** If the primary URL points to `github.com`, that's ideal.
-- **CRAN URLs** (`cran.r-project.org`) are acceptable for R packages.
-- **PyPI URLs** (`pypi.org`) are acceptable for Python packages.
-- **Non-GitHub URLs with `[GitHub]` link**: If the primary URL is a project website but includes a `[GitHub](url)` link in the description, that's the preferred format for non-GitHub projects.
-- **Non-GitHub URLs without `[GitHub]` link**: Flag with a suggestion to add a `[GitHub](url)` link if one exists, since GitHub repos enable automated tracking of stars and activity.
-- All URLs must use `https://`.
-
-#### 6c. Section placement
-
-The README is now organized by **category** (not by language). Look at which `##` (category) heading the entry was added under. Evaluate whether the project fits that section:
-
-- Does the project's purpose match the category? (e.g., a backtesting framework should be under `## Trading & Backtesting`, not under `## Technical Indicators`)
-- Commercial/proprietary projects must go under `## Commercial & Proprietary Services`.
-- If the placement seems wrong, suggest a better section.
-
-The current category sections in the README are:
-
-1. Numerical Libraries & Data Structures
-2. Financial Instruments & Pricing
-3. Technical Indicators
-4. Trading & Backtesting
-5. Portfolio Optimization & Risk Analysis
-6. Factor Analysis
-7. Sentiment Analysis & Alternative Data
-8. Time Series Analysis
-9. Market Data & Data Sources
-10. Prediction Markets
-11. Calendars & Market Hours
-12. Visualization
-13. Excel & Spreadsheet Integration
-14. Quant Research Environments
-15. Cross-Language Frameworks
-16. Reproducing Works, Training & Books
-17. Commercial & Proprietary Services
-18. Related Lists
-
-If the project doesn't fit any existing section, suggest the closest match or recommend creating a new category section (rare).
-
-#### 6d. Duplicate check
-
-Use the `mcp__github__get_file_contents` tool to fetch the current `README.md` from the repository, then search through it to ensure the project name and URL are not already listed.
-
-#### 6e. Quality check
-
-- **Active**: Project should show recent activity (commits within the last 12 months).
-- **Documented**: Project should have a clear README with usage examples.
-
-### Step 7: Summarize findings
-
-Present a clear summary:
-
-```
+```text
 PR #<number>: <title>
 Author: <author>
-Created: <date>
-
+Prior review: YES/NO
+Files changed: <files>
 Entries reviewed: <count>
 
-<For each entry>
-  - [Name](URL) - Description
-    Format: OK / ISSUE: <details>
-    URL: GitHub / CRAN / PyPI / WARNING: <details>
-    Section: OK (<section>) / SUGGESTION: Move to <section>
-    Duplicate: No / YES: Already listed at line <N>
-    Quality: OK / WARNING: <details>
-</For each entry>
+Automated validation:
+- Validate PR: PASS | FAIL | PENDING | UNVERIFIED
+- Commit: <checked-sha> (CURRENT | STALE)
+- Mechanical checks: accepted from CI | reproduced manually | incomplete
 
-Conflicts: None / YES: Needs rebase
+Findings:
+- <entry>: <status and reason>
 
-Verdict: APPROVE / NEEDS CHANGES / REJECT
+Verdict: APPROVE | NEEDS CHANGES | REJECT
+Recommended action: <merge/comment/close/no action>
 ```
 
-### Step 8: Present findings and ask for user consent
+Then ask for explicit approval before doing the recommended action.
 
-**NEVER take any action that modifies the PR without user consent.** Present your findings and ask for explicit approval before proceeding.
+## Approved Actions After User Consent
 
-Use GitHub MCP tools exclusively for all PR interactions:
-
-- **If everything passes**: Present summary and ask "Should I merge this PR?" (or similar). ONLY merge after user explicitly says yes.
-- **If there are fixable issues**: Present summary and ask "Should I leave a comment listing these issues?" ONLY comment after user explicitly says yes.
-- **If it should be rejected** (automatic rejection criteria): Present summary and ask "Should I close this PR with a rejection reason?" ONLY close after user explicitly says yes.
-
-When leaving comments, be friendly and grateful for the contribution. Example tone:
-> Thanks for the contribution! A couple of things to address before we can merge:
-> - The description should end with a period.
-> - Consider adding a `[GitHub](url)` link so we can track activity.
->
-> Please see our [contributing guidelines](https://github.com/wilsonfreitas/awesome-quant/blob/main/CONTRIBUTING.md) for the accepted entry formats.
-
-**For multiple-project PRs:** If entries have mixed results (some pass, some need fixes), list all issues together and ask the contributor to fix all at once rather than cherry-picking individual entries. If the relationship between projects isn't clear from the description, ask for clarification of why they should be grouped.
+- If approved and user says to merge: merge with squash unless user requests otherwise.
+- If needs changes and user says to comment: leave one concise comment with all requested fixes, then add `reviewed` if available.
+- If rejected and user says to close: leave a polite rejection comment and close the PR.
