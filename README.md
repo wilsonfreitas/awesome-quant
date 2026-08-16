@@ -342,6 +342,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Riskfolio-Lib](https://github.com/dcajasn/Riskfolio-Lib) - `Python` - Portfolio Optimization and Quantitative Strategic Asset Allocation in Python.
 - [empyrical-reloaded](https://github.com/stefan-jansen/empyrical-reloaded) - `Python` - Common financial risk and performance metrics. [empyrical](https://github.com/quantopian/empyrical) fork.
 - [pyfolio-reloaded](https://github.com/stefan-jansen/pyfolio-reloaded) - `Python` - Portfolio and risk analytics in Python. [pyfolio](https://github.com/quantopian/pyfolio) fork.
+- [fincore](https://github.com/cloudQuant/fincore) - `Python` - Quantitative performance and risk analytics with 150+ metrics, portfolio optimization, Monte Carlo simulation, and attribution; actively maintained successor to [empyrical](https://github.com/quantopian/empyrical)/[pyfolio](https://github.com/quantopian/pyfolio).
 - [fortitudo.tech](https://github.com/fortitudo-tech/fortitudo.tech) - `Python` - Conditional Value-at-Risk (CVaR) portfolio optimization and Entropy Pooling views / stress-testing in Python.
 - [quantitative-finance-tools](https://github.com/omichauhan-lgtm/quantitative-finance-tools) - `Python` - Library for portfolio optimization (MVO) and rigorous risk metrics (VaR/CVaR).
 - [Prop Trader Compass](https://otto-ships.github.io/prop-trader-compass/) - `Python` - Interactive risk and payout calculator for Futures and CFD traders; features one-time fee firm comparisons.
