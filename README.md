@@ -553,6 +553,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [marketlens](https://github.com/marketlenstrade/marketlens-python) - `Python` `MCP` - Tick-level Polymarket order book history with replay and a backtesting engine simulating queue priority, latency, and slippage.
 - [polymarket-bot-lab](https://github.com/oraclemangle/polymarket-bot-lab) - `Python` - Open-sourced research lab of 11 candidate Polymarket trading bots (weather, sports, longshot fades, maker, whale-flow) with a shared CLOB/backtest framework, ADR decision log, and honest paper/live results. Companion free dataset: [polymarket-canary-tape](https://huggingface.co/datasets/oraclemangle/polymarket-canary-tape) (300M+ events, CC-BY-4.0).
 - [Live Tennis API](https://livetennisapi.com) - `REST` `WebSocket` `MCP` - Real-time tennis scores, serving and break-point state, and model win probabilities for pricing tennis event markets, plus H2H, rankings and a 1968-2022 point-by-point archive; free tier. [GitHub](https://github.com/livetennisapi/livetennisapi-mcp)
+- [polymm](https://github.com/kachence/polymm) - `Python` `Polymarket` - Market-making and arbitrage bot for Polymarket sports and esports markets, pricing from de-vigged sportsbook odds.
+
 
 ## Calendars & Market Hours
 
