@@ -62,8 +62,9 @@ For each added entry, check:
 - Hosted proprietary products without substantive public source belong under
   `Commercial & Proprietary Services`, even when a thin repository exists.
 - For repository-less commercial entries, verify a useful permanent free tier for quantitative
-  finance that requires no payment information and is not a trial, demo, or waitlist. Treat a
-  hosted service with only a thin repository as repository-less for this check.
+  finance that requires no payment information and is not a trial, demo, or waitlist.
+- Treat a commercial service with only a thin SDK, integration, examples, generated-data, or
+  marketing repository as repository-less for every eligibility check.
 - Verify that these commercial entries publish pricing and free-tier limits plus public
   documentation, methodology, or usage examples; use a stable HTTPS URL without affiliate or
   tracking parameters; and have a concise, factual, non-promotional description.
@@ -76,9 +77,10 @@ For each added entry, check:
 
 Apply verdict rules independently to every PR:
 
-- `REJECT` paid-only proprietary submissions without substantive public source.
-- Use `NEEDS CHANGES` for correctable disclosure, wording, placement, URL, or documentation
-  problems.
+- Commercial submissions without a qualifying permanent free tier—including paid-only,
+  trial-only, demo-only, and waitlist-only offerings—are `REJECT`.
+- Reserve `NEEDS CHANGES` for correctable evidence or disclosure, wording, URL, documentation, or
+  placement defects when the underlying offering can qualify.
 
 ## Summary Output
 

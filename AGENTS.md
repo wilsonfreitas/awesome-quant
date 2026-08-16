@@ -65,13 +65,15 @@ Rules:
 - Descriptions must end with a period before the optional `[GitHub](...)` link.
 - URLs in new entries must use `https://`.
 - A valid GitHub repository used as the main URL or exact `[GitHub](...)` suffix is preferred
-  and is a strong positive relevance signal, but it is not universally required. Functional-
+  and is a strong positive relevance signal, but it is not universally required. Functional
   section placement requires a repository containing substantive implementation; a thin SDK,
   integration, examples, generated-data, or marketing repository does not qualify.
 - Hosted commercial/proprietary products without substantive public source belong in
   `## Commercial & Proprietary Services`, even when a thin repository exists. Repository-less
   services qualify only under the permanent free tier and transparency rules in
   `CONTRIBUTING.md`.
+- Treat a commercial service with only a thin SDK, integration, examples, generated-data, or
+  marketing repository as repository-less for every eligibility check.
 - Backtick tags are optional only for commercial services and other metadata-free
   sections such as `Related Lists`.
 - Use `CONTRIBUTING.md` as the user-facing source for contribution rules.
@@ -98,7 +100,11 @@ Review requirements:
 6. Manually assess commercial entries for free-tier usefulness, payment information,
    public pricing and limits, public documentation/methodology/examples, stable non-tracking
    URLs, concise factual description tone, and repository substance.
-7. Use the `reviewed` label only after the user approves a review comment.
+7. Commercial submissions without a qualifying permanent free tier—including paid-only,
+   trial-only, demo-only, and waitlist-only offerings—are `REJECT`. Reserve `NEEDS CHANGES` for
+   correctable evidence or disclosure, wording, URL, documentation, or placement defects when
+   the underlying offering can qualify.
+8. Use the `reviewed` label only after the user approves a review comment.
 
 ## GitHub MCP Tools
 

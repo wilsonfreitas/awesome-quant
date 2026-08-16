@@ -89,19 +89,23 @@ proprietary project without such a repository qualifies only when it has a meani
 free tier that provides useful quantitative-finance functionality without requiring payment
 information. Trials, demos, waitlists, and paid-only products do not qualify.
 
-Repository-less commercial services must publish pricing and free-tier limits, as well as public
-documentation, methodology, or usage examples. Their entries must use a stable HTTPS URL without
-affiliate or tracking parameters, have a concise, factual, non-promotional description, and be
-placed in the **Commercial & Proprietary Services** section. Backtick tags are optional in that
-section. For example:
+Commercial services without substantive public source—including those with only a thin SDK,
+integration, examples, generated-data, or marketing repository—are repository-less for every
+eligibility check. They must publish pricing and free-tier limits, as well as public documentation,
+methodology, or usage examples. Their entries must use a stable HTTPS URL without affiliate or
+tracking parameters, have a concise, factual, non-promotional description, and be placed in the
+**Commercial & Proprietary Services** section. Backtick tags are optional in that section. For
+example:
 
 ```markdown
 - [Project Name](https://project.example) - Concise factual description ending with a period.
 ```
 
-A thin SDK, integration, examples, generated-data, or marketing repository does not make the
-hosted product open source; only a repository containing substantive implementation supports
-placement in a functional section.
+Only a repository containing substantive implementation supports placement in a functional
+section. Commercial submissions without a qualifying permanent free tier—including paid-only,
+trial-only, demo-only, and waitlist-only offerings—are `REJECT`. Reserve `NEEDS CHANGES` for
+correctable evidence or disclosure, wording, URL, documentation, or placement defects when the
+underlying offering can qualify.
 
 ## Section Placement
 

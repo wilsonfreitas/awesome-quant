@@ -48,8 +48,8 @@ queued or pending attempt supersedes an older successful attempt for the same SH
 CI never replaces inspection of the diff or the manual checks below. A successful check confirms
 only mechanical rules; it does not establish tag meaning or concision, description quality,
 relevance, semantic section suitability, commercial classification, repository quality,
-commercial free-tier eligibility or transparency, URL tracking, cross-PR uniqueness, or multi-
-project relatedness. CI cannot establish any of these manual criteria. Search open PRs and PRs
+commercial free-tier eligibility or transparency, URL tracking, cross-PR uniqueness, or
+multi-project relatedness. CI cannot establish any of these manual criteria. Search open PRs and PRs
 closed within the last 365 days for duplicate names and URLs.
 
 ## Validation Checklist
@@ -71,8 +71,9 @@ For every added entry:
 - Hosted proprietary products without substantive public source are under
   `Commercial & Proprietary Services`, even when a thin repository exists.
 - For repository-less commercial entries, verify a useful permanent free tier for quantitative
-  finance that requires no payment information and is not a trial, demo, or waitlist. Treat a
-  hosted service with only a thin repository as repository-less for this check.
+  finance that requires no payment information and is not a trial, demo, or waitlist.
+- Treat a commercial service with only a thin SDK, integration, examples, generated-data, or
+  marketing repository as repository-less for every eligibility check.
 - Verify that these commercial entries publish pricing and free-tier limits plus public
   documentation, methodology, or usage examples; use a stable HTTPS URL without affiliate or
   tracking parameters; and have a concise, factual, non-promotional description.
@@ -89,10 +90,12 @@ For every added entry:
 Use these verdicts:
 
 - `APPROVE`: entry is ready to merge.
-- `NEEDS CHANGES`: fixable format, disclosure, wording, placement, URL, or documentation issue.
-- `REJECT`: paid-only proprietary submission without substantive public source, duplicate,
-  unrelated multi-project PR, empty PR description, archived/abandoned project, or other hard
-  rejection.
+- Commercial submissions without a qualifying permanent free tier—including paid-only,
+  trial-only, demo-only, and waitlist-only offerings—are `REJECT`.
+- Reserve `NEEDS CHANGES` for correctable evidence or disclosure, wording, URL, documentation, or
+  placement defects when the underlying offering can qualify.
+- Other `REJECT` cases include duplicates, unrelated multi-project PRs, empty PR descriptions,
+  archived or abandoned projects, and other hard rejections.
 
 ## Output Shape
 
