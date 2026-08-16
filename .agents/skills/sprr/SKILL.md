@@ -20,16 +20,37 @@ If GitHub MCP tools are unavailable, report that PR operations are blocked and p
 
 ## Workflow
 
-1. Fetch PR details, files changed, labels, comments, and diff with GitHub MCP.
+1. Fetch PR details, current head SHA, files changed, labels, comments, and diff with GitHub MCP.
 2. Confirm whether the `reviewed` label or prior maintainer comments exist, then proceed with full validation anyway.
-3. Focus on added lines in `README.md`. Flag any other changed files as unusual for a normal contribution.
-4. Save or reconstruct the PR diff locally only if needed, then validate added README entries with:
+3. Fetch the latest `Validate PR` workflow/check attempt for the current head SHA and apply the CI evidence rules below.
+4. Focus on added lines in `README.md`. Flag any other changed files as unusual for a normal contribution.
+5. When mechanical validation is not established by current-head CI, save or reconstruct the PR diff locally only if needed, then validate added README entries with:
 
 ```bash
 uv run python scripts/validate_readme.py --diff-from <base-ref>
 ```
 
 If a base ref is not locally available, apply the same checks manually from the fetched diff.
+
+## CI Evidence Rules
+
+Use only the latest attempt whose commit SHA exactly matches the PR's current head SHA. A newer
+queued or pending attempt supersedes an older successful attempt for the same SHA.
+
+| Current-head result | Review behavior |
+|---|---|
+| `success` | Accept parser format, tag syntax, separators, the required final period, HTTPS, GitHub-link syntax, recognized section, and base-README duplicate checks as passed. Do not rerun those mechanical checks. |
+| `failure` | Inspect the failing job or step. Return `NEEDS CHANGES` when validation failed; if another step failed or details are unavailable, reproduce mechanical validation before deciding. |
+| queued, pending, awaiting approval | Report the review as incomplete and do not return `APPROVE`. |
+| skipped, cancelled, missing | Treat mechanical validation as unverified and reproduce it before deciding. |
+| success on an older SHA | Ignore it and evaluate the current SHA using these rules. |
+
+CI never replaces inspection of the diff or the manual checks below. A successful check confirms
+only mechanical rules; it does not establish tag meaning or concision, description quality,
+relevance, semantic section suitability, commercial classification, repository quality,
+commercial free-tier eligibility or transparency, URL tracking, cross-PR uniqueness, or
+multi-project relatedness. CI cannot establish any of these manual criteria. Search open PRs and PRs
+closed within the last 365 days for duplicate names and URLs.
 
 ## Validation Checklist
 
@@ -45,7 +66,17 @@ For every added entry:
 - URLs use `https://`.
 - Optional GitHub link uses `[GitHub](https://github.com/owner/repo)`.
 - Section placement matches the project's purpose.
-- Commercial/proprietary projects are under `Commercial & Proprietary Services`.
+- Distinguish repositories containing substantive implementation from thin SDK, integration,
+  examples, generated-data, or marketing repositories.
+- Hosted proprietary products without substantive public source are under
+  `Commercial & Proprietary Services`, even when a thin repository exists.
+- For repository-less commercial entries, verify a useful permanent free tier for quantitative
+  finance that requires no payment information and is not a trial, demo, or waitlist.
+- Treat a commercial service with only a thin SDK, integration, examples, generated-data, or
+  marketing repository as repository-less for every eligibility check.
+- Verify that these commercial entries publish pricing and free-tier limits plus public
+  documentation, methodology, or usage examples; use a stable HTTPS URL without affiliate or
+  tracking parameters; and have a concise, factual, non-promotional description.
 - Project name and URLs are not duplicates of existing README entries.
 - Any verifiable GitHub repository mentioned as the main URL or exact `[GitHub](...)` suffix
   is a strong positive relevance signal.
@@ -59,8 +90,12 @@ For every added entry:
 Use these verdicts:
 
 - `APPROVE`: entry is ready to merge.
-- `NEEDS CHANGES`: fixable format, section, URL, description, or documentation issue.
-- `REJECT`: duplicate, unrelated multi-project PR, empty PR description, archived/abandoned project, or other hard rejection.
+- Commercial submissions without a qualifying permanent free tier—including paid-only,
+  trial-only, demo-only, and waitlist-only offerings—are `REJECT`.
+- Reserve `NEEDS CHANGES` for correctable evidence or disclosure, wording, URL, documentation, or
+  placement defects when the underlying offering can qualify.
+- Other `REJECT` cases include duplicates, unrelated multi-project PRs, empty PR descriptions,
+  archived or abandoned projects, and other hard rejections.
 
 ## Output Shape
 
@@ -72,6 +107,11 @@ Author: <author>
 Prior review: YES/NO
 Files changed: <files>
 Entries reviewed: <count>
+
+Automated validation:
+- Validate PR: PASS | FAIL | PENDING | UNVERIFIED
+- Commit: <checked-sha> (CURRENT | STALE)
+- Mechanical checks: accepted from CI | reproduced manually | incomplete
 
 Findings:
 - <entry>: <status and reason>

@@ -62,10 +62,12 @@ Link to the PyPI package page. If the project has a GitHub repo, append it after
   Projects with a verifiable GitHub repository are easier to evaluate for source availability,
   documentation, activity, maintenance, and community adoption, and they receive automated
   tracking of stars, activity, and archive status on
-  [awesome-quant.com](https://awesome-quant.com/).
-- Include a GitHub repository either as the main project URL or as the exact
-  `[GitHub](https://github.com/owner/repo)` suffix. A valid GitHub repository mentioned in
-  either place receives the same relevance consideration.
+  [the awesome-quant site](https://wilsonfreitas.github.io/awesome-quant/).
+- A public GitHub repository containing the substantive implementation is preferred. Use it
+  as the main URL, or append the exact `[GitHub](https://github.com/owner/repo)` suffix when
+  the project has a separate website. Repository-less commercial services are considered only
+  under the eligibility rules below. A valid GitHub repository mentioned in either place
+  receives the same relevance consideration.
 - Use short, meaningful tags. Each concept must have its own backtick pair; for example,
   use `` `Python` `C++` `` rather than `` `Python, C++` ``.
 - The description must end with a period (before the `[GitHub]` link, if present).
@@ -73,23 +75,37 @@ Link to the PyPI package page. If the project has a GitHub repo, append it after
 
 ## Quality Requirements
 
-- **Active**: Project must show recent activity (commits within the last 12 months).
-- **Documented**: Clear README with usage examples.
+- **Source-backed projects**: Projects backed by substantive source must show recent
+  repository activity (commits within the last 12 months) and provide a clear README with
+  usage examples.
+- **Repository-less commercial services**: See the permanent-free-tier, public-documentation,
+  and transparency rules in the commercial section below.
 
 
 ## Commercial & Proprietary Projects
 
-Commercial and proprietary projects are welcome. They will be placed under the **Commercial & Proprietary Services** section. Include a link to the product website and a brief description of what it offers.
+Public repositories containing substantive implementation remain preferred. A commercial or
+proprietary project without such a repository qualifies only when it has a meaningful permanent
+free tier that provides useful quantitative-finance functionality without requiring payment
+information. Trials, demos, waitlists, and paid-only products do not qualify.
 
-**Placement rule:** If the main URL (the first link) is a commercial website and there is no GitHub repository link (as a second URL), the entry **must** be placed in the **Commercial & Proprietary Services** section. This applies to:
-- SaaS platforms and APIs
-- Commercial data providers
-- Paid subscription services
-- Any proprietary product without open-source code
+Commercial services without substantive public source—including those with only a thin SDK,
+integration, examples, generated-data, or marketing repository—are repository-less for every
+eligibility check. They must publish pricing and free-tier limits, as well as public documentation,
+methodology, or usage examples. Their entries must use a stable HTTPS URL without affiliate or
+tracking parameters, have a concise, factual, non-promotional description, and be placed in the
+**Commercial & Proprietary Services** section. Backtick tags are optional in that section. For
+example:
 
-Projects with GitHub repositories may be placed in other sections based on their functionality.
-A public repository is a strong relevance signal even when the project also has a commercial
-website, but it does not by itself prove that the entire product is open source.
+```markdown
+- [Project Name](https://project.example) - Concise factual description ending with a period.
+```
+
+Only a repository containing substantive implementation supports placement in a functional
+section. Commercial submissions without a qualifying permanent free tier—including paid-only,
+trial-only, demo-only, and waitlist-only offerings—are `REJECT`. Reserve `NEEDS CHANGES` for
+correctable evidence or disclosure, wording, URL, documentation, or placement defects when the
+underlying offering can qualify.
 
 ## Section Placement
 
