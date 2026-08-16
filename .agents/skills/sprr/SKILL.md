@@ -48,8 +48,9 @@ queued or pending attempt supersedes an older successful attempt for the same SH
 CI never replaces inspection of the diff or the manual checks below. A successful check confirms
 only mechanical rules; it does not establish tag meaning or concision, description quality,
 relevance, semantic section suitability, commercial classification, repository quality,
-cross-PR uniqueness, or multi-project relatedness. Search open PRs and PRs closed within the
-last 365 days for duplicate names and URLs.
+commercial free-tier eligibility or transparency, URL tracking, cross-PR uniqueness, or multi-
+project relatedness. CI cannot establish any of these manual criteria. Search open PRs and PRs
+closed within the last 365 days for duplicate names and URLs.
 
 ## Validation Checklist
 
@@ -65,7 +66,16 @@ For every added entry:
 - URLs use `https://`.
 - Optional GitHub link uses `[GitHub](https://github.com/owner/repo)`.
 - Section placement matches the project's purpose.
-- Commercial/proprietary projects are under `Commercial & Proprietary Services`.
+- Distinguish repositories containing substantive implementation from thin SDK, integration,
+  examples, generated-data, or marketing repositories.
+- Hosted proprietary products without substantive public source are under
+  `Commercial & Proprietary Services`, even when a thin repository exists.
+- For repository-less commercial entries, verify a useful permanent free tier for quantitative
+  finance that requires no payment information and is not a trial, demo, or waitlist. Treat a
+  hosted service with only a thin repository as repository-less for this check.
+- Verify that these commercial entries publish pricing and free-tier limits plus public
+  documentation, methodology, or usage examples; use a stable HTTPS URL without affiliate or
+  tracking parameters; and have a concise, factual, non-promotional description.
 - Project name and URLs are not duplicates of existing README entries.
 - Any verifiable GitHub repository mentioned as the main URL or exact `[GitHub](...)` suffix
   is a strong positive relevance signal.
@@ -79,8 +89,10 @@ For every added entry:
 Use these verdicts:
 
 - `APPROVE`: entry is ready to merge.
-- `NEEDS CHANGES`: fixable format, section, URL, description, or documentation issue.
-- `REJECT`: duplicate, unrelated multi-project PR, empty PR description, archived/abandoned project, or other hard rejection.
+- `NEEDS CHANGES`: fixable format, disclosure, wording, placement, URL, or documentation issue.
+- `REJECT`: paid-only proprietary submission without substantive public source, duplicate,
+  unrelated multi-project PR, empty PR description, archived/abandoned project, or other hard
+  rejection.
 
 ## Output Shape
 

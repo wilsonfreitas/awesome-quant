@@ -41,7 +41,8 @@ commit never applies to another.
 For every PR, still inspect the diff and manually review tag meaning and concision, description
 quality, relevance, semantic section suitability, commercial classification, repository
 activity/archive/documentation/community evidence, duplicates in open PRs and PRs closed
-within the last 365 days, and multi-project relatedness.
+within the last 365 days, and multi-project relatedness. CI cannot establish commercial free-tier
+eligibility or transparency, URL tracking, repository substance, or any other manual criterion.
 
 ## Validation Checklist
 
@@ -56,13 +57,28 @@ For each added entry, check:
 - `https://` URLs.
 - Exact optional `[GitHub](https://github.com/owner/repo)` format.
 - Correct category section.
-- Commercial placement under `Commercial & Proprietary Services`.
+- Distinguish repositories containing substantive implementation from thin SDK, integration,
+  examples, generated-data, or marketing repositories.
+- Hosted proprietary products without substantive public source belong under
+  `Commercial & Proprietary Services`, even when a thin repository exists.
+- For repository-less commercial entries, verify a useful permanent free tier for quantitative
+  finance that requires no payment information and is not a trial, demo, or waitlist. Treat a
+  hosted service with only a thin repository as repository-less for this check.
+- Verify that these commercial entries publish pricing and free-tier limits plus public
+  documentation, methodology, or usage examples; use a stable HTTPS URL without affiliate or
+  tracking parameters; and have a concise, factual, non-promotional description.
 - Duplicate project names or URLs.
 - Treat any verifiable GitHub repository mentioned as the main URL or exact `[GitHub](...)`
   suffix as a strong positive relevance signal.
 - For GitHub repos, check source availability, activity, archived status, documentation, and
   community evidence. GitHub relevance does not waive duplicate, format, or quality checks.
 - Clear rationale for multiple related projects in one PR.
+
+Apply verdict rules independently to every PR:
+
+- `REJECT` paid-only proprietary submissions without substantive public source.
+- Use `NEEDS CHANGES` for correctable disclosure, wording, placement, URL, or documentation
+  problems.
 
 ## Summary Output
 
@@ -79,7 +95,9 @@ Use the entry count in `Entries`. Use `PASS`, `FAIL`, `PENDING`, `UNVERIFIED`, o
 semantic judgment. In `Duplicate`, report both `README PASS|FAIL` and
 `PR SEARCH PASS|FAIL`.
 
-After the table, list any PRs that need detailed notes, including the failing workflow step or the reason CI evidence was not accepted.
+After the table, list any PRs that need detailed notes, including the failing workflow step or the
+reason CI evidence was not accepted. When repository-less commercial eligibility affects a
+verdict, explain the free-tier and transparency evidence in those detailed notes.
 
 Ask what to do next. Accept selections like:
 
