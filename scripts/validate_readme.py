@@ -51,17 +51,18 @@ def normalize_url(url: str) -> str:
 
 def read_added_line_numbers(diff_from: str, readme_path: Path) -> set[int]:
     path_arg = str(readme_path)
-    commands = [
-        ["git", "diff", "--unified=0", f"{diff_from}...HEAD", "--", path_arg],
-        ["git", "diff", "--unified=0", diff_from, "--", path_arg],
+    command = [
+        "git",
+        "diff",
+        "--unified=0",
+        f"{diff_from}...HEAD",
+        "--",
+        path_arg,
     ]
-    last_error = ""
-    for command in commands:
-        proc = subprocess.run(command, text=True, capture_output=True, check=False)
-        if proc.returncode == 0:
-            return parse_added_lines_from_diff(proc.stdout)
-        last_error = proc.stderr.strip()
-    raise RuntimeError(f"git diff failed for {diff_from}: {last_error}")
+    proc = subprocess.run(command, text=True, capture_output=True, check=False)
+    if proc.returncode != 0:
+        raise RuntimeError(f"git diff failed for {diff_from}: {proc.stderr.strip()}")
+    return parse_added_lines_from_diff(proc.stdout)
 
 
 def parse_added_lines_from_diff(diff_text: str) -> set[int]:
@@ -91,7 +92,9 @@ def parse_added_lines_from_diff(diff_text: str) -> set[int]:
     return added
 
 
-def build_duplicate_indexes(entries: list[ReadmeEntry]) -> tuple[dict[str, list[ReadmeEntry]], dict[str, list[ReadmeEntry]]]:
+def build_duplicate_indexes(
+    entries: list[ReadmeEntry],
+) -> tuple[dict[str, list[ReadmeEntry]], dict[str, list[ReadmeEntry]]]:
     names: dict[str, list[ReadmeEntry]] = defaultdict(list)
     urls: dict[str, list[ReadmeEntry]] = defaultdict(list)
     for entry in entries:
@@ -114,58 +117,124 @@ def validate_entry(
     line = entry.line_number
 
     if entry.section not in VALID_SECTIONS:
-        issues.append(Issue("error", line, "section", f"entry is under unknown section {entry.section!r}"))
+        issues.append(
+            Issue(
+                "error",
+                line,
+                "section",
+                f"entry is under unknown section {entry.section!r}",
+            )
+        )
 
     format_severity = "error" if strict_format else "warning"
 
     if entry.section not in NO_LANGUAGE_REQUIRED_SECTIONS and not entry.languages:
-        issues.append(Issue(format_severity, line, "language", "missing required backtick language tag prefix"))
+        issues.append(
+            Issue(
+                format_severity,
+                line,
+                "language",
+                "missing required backtick language tag prefix",
+            )
+        )
 
     if entry.languages:
         _languages, clean_description = extract_languages(entry.tail)
         if clean_description == entry.tail:
-            issues.append(Issue(format_severity, line, "language", "language tags must be followed by ' - '"))
+            issues.append(
+                Issue(
+                    format_severity,
+                    line,
+                    "language",
+                    "language tags must be followed by ' - '",
+                )
+            )
 
     github_label_count = entry.description.count("[GitHub](")
     if github_label_count and not GITHUB_LINK_RE.search(entry.description):
-        issues.append(Issue(format_severity, line, "github-link", "optional GitHub link must use [GitHub](https://github.com/owner/repo)"))
+        issues.append(
+            Issue(
+                format_severity,
+                line,
+                "github-link",
+                "optional GitHub link must use [GitHub](https://github.com/owner/repo)",
+            )
+        )
 
     github_match = GITHUB_LINK_RE.search(entry.description)
-    description_to_check = entry.description[: github_match.start()].rstrip() if github_match else entry.description.rstrip()
+    description_to_check = (
+        entry.description[: github_match.start()].rstrip()
+        if github_match
+        else entry.description.rstrip()
+    )
     # Allow trailing reference links after the sentence, e.g. [GitHub], [Website], or ([Demo](...)).
     previous = None
     while previous != description_to_check:
         previous = description_to_check
-        description_to_check = re.sub(r"\s*\[[^\]]+\]\([^)]+\)\s*$", "", description_to_check).rstrip()
-        description_to_check = re.sub(r"\s*\(\[[^\]]+\]\([^)]+\)\)\s*$", "", description_to_check).rstrip()
+        description_to_check = re.sub(
+            r"\s*\[[^\]]+\]\([^)]+\)\s*$", "", description_to_check
+        ).rstrip()
+        description_to_check = re.sub(
+            r"\s*\(\[[^\]]+\]\([^)]+\)\)\s*$", "", description_to_check
+        ).rstrip()
     if description_to_check and not description_to_check.endswith("."):
-        issues.append(Issue(format_severity, line, "period", "description must end with a period before optional trailing link"))
+        issues.append(
+            Issue(
+                format_severity,
+                line,
+                "period",
+                "description must end with a period before optional trailing link",
+            )
+        )
 
     for url in entry.markdown_urls:
         if not url.startswith("https://"):
             severity = "error" if strict_urls else "warning"
-            issues.append(Issue(severity, line, "url", f"URL should use https://: {url}"))
+            issues.append(
+                Issue(severity, line, "url", f"URL should use https://: {url}")
+            )
 
-    duplicate_name_entries = [item for item in duplicate_names[normalize_name(entry.name)] if item.line_number != line]
+    duplicate_name_entries = [
+        item
+        for item in duplicate_names[normalize_name(entry.name)]
+        if item.line_number != line
+    ]
     if duplicate_name_entries:
         severity = "error" if strict_duplicates else "warning"
         lines = ", ".join(str(item.line_number) for item in duplicate_name_entries)
-        issues.append(Issue(severity, line, "duplicate-name", f"project name duplicates line(s): {lines}"))
+        issues.append(
+            Issue(
+                severity,
+                line,
+                "duplicate-name",
+                f"project name duplicates line(s): {lines}",
+            )
+        )
 
     seen_duplicate_url_lines: set[int] = set()
     for url in entry.markdown_urls:
-        duplicate_url_entries = [item for item in duplicate_urls[normalize_url(url)] if item.line_number != line]
+        duplicate_url_entries = [
+            item
+            for item in duplicate_urls[normalize_url(url)]
+            if item.line_number != line
+        ]
         for item in duplicate_url_entries:
             seen_duplicate_url_lines.add(item.line_number)
     if seen_duplicate_url_lines:
         severity = "error" if strict_duplicates else "warning"
-        lines = ", ".join(str(line_number) for line_number in sorted(seen_duplicate_url_lines))
-        issues.append(Issue(severity, line, "duplicate-url", f"URL duplicates line(s): {lines}"))
+        lines = ", ".join(
+            str(line_number) for line_number in sorted(seen_duplicate_url_lines)
+        )
+        issues.append(
+            Issue(severity, line, "duplicate-url", f"URL duplicates line(s): {lines}")
+        )
 
     return issues
 
 
-def validate_malformed_added_lines(readme_path: Path, added_lines: set[int]) -> list[Issue]:
+def validate_malformed_added_lines(
+    readme_path: Path, added_lines: set[int]
+) -> list[Issue]:
     issues: list[Issue] = []
     lines = readme_path.read_text(encoding="utf-8").splitlines()
     for line_number in sorted(added_lines):
@@ -176,7 +245,14 @@ def validate_malformed_added_lines(readme_path: Path, added_lines: set[int]) -> 
         if not stripped or HEADING_RE.match(stripped):
             continue
         if stripped.startswith("- ") and not ENTRY_RE.match(line):
-            issues.append(Issue("error", line_number, "format", "added README bullet does not match entry regex"))
+            issues.append(
+                Issue(
+                    "error",
+                    line_number,
+                    "format",
+                    "added README bullet does not match entry regex",
+                )
+            )
     return issues
 
 
@@ -186,11 +262,23 @@ def format_issue(issue: Issue) -> str:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Validate awesome-quant README entries.")
+    parser = argparse.ArgumentParser(
+        description="Validate awesome-quant README entries."
+    )
     parser.add_argument("--readme", default="README.md", help="README path to validate")
-    parser.add_argument("--diff-from", help="validate only README lines added relative to this git ref")
-    parser.add_argument("--strict-duplicates", action="store_true", help="treat duplicate names/URLs as errors in full validation")
-    parser.add_argument("--strict-urls", action="store_true", help="treat non-https URLs as errors in full validation")
+    parser.add_argument(
+        "--diff-from", help="validate only README lines added relative to this git ref"
+    )
+    parser.add_argument(
+        "--strict-duplicates",
+        action="store_true",
+        help="treat duplicate names/URLs as errors in full validation",
+    )
+    parser.add_argument(
+        "--strict-urls",
+        action="store_true",
+        help="treat non-https URLs as errors in full validation",
+    )
     return parser.parse_args()
 
 
@@ -211,7 +299,9 @@ def main() -> int:
         except RuntimeError as exc:
             print(f"ERROR {exc}", file=sys.stderr)
             return 2
-        selected_entries = [entry for entry in entries if entry.line_number in added_lines]
+        selected_entries = [
+            entry for entry in entries if entry.line_number in added_lines
+        ]
         strict_duplicates = True
         strict_urls = True
         strict_format = True
@@ -240,9 +330,15 @@ def main() -> int:
     errors = [issue for issue in issues if issue.severity == "error"]
     warnings = [issue for issue in issues if issue.severity == "warning"]
 
-    scope = f"added README lines relative to {args.diff_from}" if args.diff_from else "full README"
+    scope = (
+        f"added README lines relative to {args.diff_from}"
+        if args.diff_from
+        else "full README"
+    )
     print(f"Validated {len(selected_entries)} entries in {scope}.")
-    for issue in sorted(issues, key=lambda item: (item.line_number, item.severity, item.code)):
+    for issue in sorted(
+        issues, key=lambda item: (item.line_number, item.severity, item.code)
+    ):
         print(format_issue(issue))
 
     if errors:
