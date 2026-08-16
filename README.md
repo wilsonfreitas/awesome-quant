@@ -171,6 +171,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Wickra](https://github.com/wickra-lib/wickra) - `Rust` `Python` `JavaScript` `C++` `C#` `Golang` `Java` `R` - Streaming-first technical-analysis library with a Rust core: 514 indicators updating in O(1) per tick, with bit-exact batch-vs-streaming results.
 
 ## Trading & Backtesting
+- [AlgoDeploy](https://algo-deploy.com) - `Python` - Self-hosted framework to backtest, risk-manage, and go live on your own Alpaca or Interactive Brokers account (US equities, single-leg options, crypto); build strategies in a no-code UI, YAML, or Python. Commercial, one-time license.
 - [midas-core](https://github.com/w2ur/midas-core) - `Python` - Multi-agent paper-trading framework where LLM agents author orders and a separate broker process enforces fifteen fill-time safety rails; each fill is stamped with the git commit it executed against for reproducibility.
 - [Manifold-BT](https://github.com/manifoldbt/manifoldbt) - `Python` `Rust` - High-performance Rust-powered backtesting engine for quantitative research with parameter sweeps, walk-forward and Monte Carlo.
 - [mkt-alerts](https://github.com/dzianisv/mkt-alerts) - `TypeScript` - Self-hosted market-alert daemon: price, RSI/MACD/SMA conditions, and full Pine Script v5 custom indicators evaluated off-TradingView, on crypto (Coinbase) and stocks (Yahoo Finance) with no API key, delivered via ntfy push, email, or Telegram.
