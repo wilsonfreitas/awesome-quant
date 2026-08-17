@@ -169,6 +169,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [SlidingFeatures](https://github.com/MathisWellmann/sliding_features-rs) - `Rust` - Chainable tree-like sliding windows for signal processing and technical analysis.
 - [fin-primitives](https://github.com/Mattbusel/fin-primitives) - `Rust` - Financial market primitives in Rust: Price/Quantity/Symbol newtypes, BTreeMap order book, OHLCV aggregation, SMA/EMA/RSI indicators, position ledger with PnL, and composable risk monitor.
 - [Wickra](https://github.com/wickra-lib/wickra) - `Rust` `Python` `JavaScript` `C++` `C#` `Golang` `Java` `R` - Streaming-first technical-analysis library with a Rust core: 514 indicators updating in O(1) per tick, with bit-exact batch-vs-streaming results.
+- [wickworks](https://github.com/psyb0t/docker-wickworks) - `REST` `MCP` - Stateless OHLC analyzer: POST bars and requested indicators, get back RSI/MACD/Bollinger/ADX/ATR/VWAP/Ichimoku plus smart-money-concept primitives (order blocks, FVGs, BOS/CHoCH, swing structure). No database, no AI signals.
 
 ## Trading & Backtesting
 - [midas-core](https://github.com/w2ur/midas-core) - `Python` - Multi-agent paper-trading framework where LLM agents author orders and a separate broker process enforces fifteen fill-time safety rails; each fill is stamped with the git commit it executed against for reproducibility.
@@ -314,6 +315,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TBV1](https://github.com/nazmiefearmutcu/TRADING-BOT) - `Python` - Crypto perpetual-futures bot with a 7-tab web dashboard and a 15-indicator consensus engine voting across 12 timeframes (1m → 1d). Paper-mode by default. Includes packaged macOS reference build and Windows distribution.
 - [TraderHarness](https://github.com/HephaestLab/TraderHarness) - `Python` - Contamination-resistant A-share backtesting environment for LLM trading agents with point-in-time masking, entity/date anonymization, fingerprinted replay, and trajectory (SFT) export.
 - [VerumTrade](https://github.com/muye1202/VerumTrade) - `Python` - A reasoning & decision-trace visible Multi-agent LLM trading-research framework where bull/bear analysts debate each ticker and every decision cites the evidence it rests on.
+- [mt5-httpapi](https://github.com/psyb0t/mt5-httpapi) - `Python` `REST` `MCP` - MetaTrader 5 in a Windows VM (Docker + QEMU/KVM) over REST and MCP: market data, order/position/history management for automated trading and bots, the strategy-tester (backtesting) API, and server-side indicators (RSI/MACD/Bollinger/ADX/VWAP/Ichimoku, order blocks, FVGs). Multi-broker, multi-account.
+- [ibkr-httpapi](https://github.com/psyb0t/ibkr-httpapi) - `Python` `REST` `MCP` - Interactive Brokers over REST and MCP (FastAPI + ib_async over a Linux-native IB Gateway): market data (quotes, historical bars) plus order/position/execution management for automated trading across stocks, options, futures, forex, crypto and CFDs.
 
 ## Portfolio Optimization & Risk Analysis
 
