@@ -631,6 +631,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Reproducing Works, Training & Books
 - [Quant Sprint](https://lambdia.com/play) - `Training` `Interviews` - Free timed drill of first round quant interview questions on options and the Greeks, two sided quoting, probability and mental arithmetic.
+- [QuantVault](https://quantvault.org) - `Training` `Interviews` - Quant interview prep with 391 free problems with full worked solutions, per-firm online-assessment guides, and free playable replicas of real trading-firm OAs (Optiver, SIG, IMC).
 - [Wyckoff Method Course](https://arapov.trade/en/freestudying/wyckoff-method) - Free course on volume analysis and the Wyckoff method: market phases, spring/upthrust, order flow reading.
 - [Special-Relativity-in-Financial-Modeling](https://github.com/Mattbusel/Special-Relativity-in-Financial-Modeling) - C++20 implementation of special-relativistic geometry applied to OHLCV data: Lorentz factors, spacetime intervals, Christoffel symbols, and geodesic deviation signals from live market data. DOI: 10.5281/zenodo.18639919.
 - [Auto-Differentiation Website](https://auto-differentiation.github.io/) - Background and  resources on Automatic Differentiation (AD) / Adjoint Algorithmic Differentitation (AAD).
