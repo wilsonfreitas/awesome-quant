@@ -423,6 +423,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [BTC Orderbook Microstructure Research](https://github.com/whoareunot/btc-orderbook-research) - `Jupyter Notebook` - statistical analysis of Binance BTC/USDT orderbook: OBI, CVD, spread.  
 - [OpenBB Terminal](https://github.com/OpenBB-finance/OpenBBTerminal) - `Python` - Terminal for investment research for everyone.
 - [Fincept Terminal](https://github.com/Fincept-Corporation/FinceptTerminal) - `Python` - Advance Data Based A.I Terminal for all Types of Financial Asset Research.
+- [TerminalFin](https://terminalfin.com) - Free web terminal: central-bank rate-move probabilities computed from CFTC Swap Data Repository trades (BOJ/Fed/ECB/BOE/RBA, with a live published track record), swaption vol surfaces, FX-intervention tracking, cross-country macro, and Japan equity filings analytics (EDINET/JPX).
 - [yfinance](https://github.com/ranaroussi/yfinance) - `Python` - Yahoo! Finance market data downloader (+faster Pandas Datareader).
 - [treasurydirect](https://github.com/moshejs/treasurydirect) - `TypeScript` - Zero-dependency client for the US TreasuryDirect API: auction results, upcoming auctions, CUSIP lookups, and Debt to the Penny; no API key required.
 - [treasury-fiscaldata](https://github.com/moshejs/treasury-fiscaldata) - `TypeScript` - Typed client for the US Treasury FiscalData API (debt, average interest rates, exchange rates) with pagination and filtering; no API key required.
