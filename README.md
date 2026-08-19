@@ -419,6 +419,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [PineForge](https://github.com/pineforge-4pass/pineforge-engine) - `C++` - Deterministic offline PineScript v6 → C++ backtest runtime, validated trade-for-trade against TradingView (245/246 strict, 0 engine bugs). Runs locally via Docker and is drivable by AI agents through a bundled MCP server.
 
 ## Market Data & Data Sources
+- [biquote](https://biquote.io) - Free real-time forex, gold, crypto and index CFD market data API (REST + WebSocket): live quotes for ~280 instruments, OHLC candles and an economic calendar covering 54 countries. No API key or signup, 15,000 requests/min.
 - [Korea Stock Data](https://github.com/na77tech-creator/aikstockdata) - `Data` - Free Korean equity data: KOSPI/KOSDAQ settled closes with 250 trading days of per-stock history, DART regulatory filings and earnings, published every trading day as JSON/CSV. No signup or API key, CORS open. OpenAPI 3.1 spec and MCP server included.
 - [BTC Orderbook Microstructure Research](https://github.com/whoareunot/btc-orderbook-research) - `Jupyter Notebook` - statistical analysis of Binance BTC/USDT orderbook: OBI, CVD, spread.  
 - [OpenBB Terminal](https://github.com/OpenBB-finance/OpenBBTerminal) - `Python` - Terminal for investment research for everyone.
