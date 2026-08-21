@@ -420,6 +420,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [PineForge](https://github.com/pineforge-4pass/pineforge-engine) - `C++` - Deterministic offline PineScript v6 → C++ backtest runtime, validated trade-for-trade against TradingView (245/246 strict, 0 engine bugs). Runs locally via Docker and is drivable by AI agents through a bundled MCP server.
 
 ## Market Data & Data Sources
+- [Wiseek Filing Impact](https://wiseek.ai/datasets/) - `Data` - Free monthly statistics on how SEC filings move US stocks: importance scores (1-10) assigned in real time before the market reacts vs measured next-session excess moves, by filing type, sentiment and market cap, with a per-event archive and a written reproduction recipe. CC BY 4.0, DOI, no signup. [GitHub](https://github.com/WiseekAI/wiseek-datasets)
 - [Korea Stock Data](https://github.com/na77tech-creator/aikstockdata) - `Data` - Free Korean equity data: KOSPI/KOSDAQ settled closes with 250 trading days of per-stock history, DART regulatory filings and earnings, published every trading day as JSON/CSV. No signup or API key, CORS open. OpenAPI 3.1 spec and MCP server included.
 - [BTC Orderbook Microstructure Research](https://github.com/whoareunot/btc-orderbook-research) - `Jupyter Notebook` - statistical analysis of Binance BTC/USDT orderbook: OBI, CVD, spread.  
 - [OpenBB Terminal](https://github.com/OpenBB-finance/OpenBBTerminal) - `Python` - Terminal for investment research for everyone.
