@@ -172,6 +172,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [wickworks](https://github.com/psyb0t/docker-wickworks) - `REST` `MCP` - Stateless OHLC analyzer: POST bars and requested indicators, get back RSI/MACD/Bollinger/ADX/ATR/VWAP/Ichimoku plus smart-money-concept primitives (order blocks, FVGs, BOS/CHoCH, swing structure). No database, no AI signals.
 
 ## Trading & Backtesting
+- [orderbook](https://github.com/intrepidkarthi/orderbook) - `Go` `WebAssembly` - Embeddable limit order book and matching engine with integer-exact pricing, a single-writer core and write-ahead-log crash recovery, plus a microstructure research harness whose order-flow-imbalance, Kyle's lambda and CVD studies are measured against simulator ground truth.
 - [ERN-WO Options Backtester](https://github.com/Javier-Garzo/ern-wo-options-backtester) - `Java` `Spring Boot` - Streaming backtesting engine for short-duration index options with conservative five-minute execution modeling and reproducible Early Retirement Now and WealthyOption strategy replication results.
 - [midas-core](https://github.com/w2ur/midas-core) - `Python` - Multi-agent paper-trading framework where LLM agents author orders and a separate broker process enforces fifteen fill-time safety rails; each fill is stamped with the git commit it executed against for reproducibility.
 - [Manifold-BT](https://github.com/manifoldbt/manifoldbt) - `Python` `Rust` - High-performance Rust-powered backtesting engine for quantitative research with parameter sweeps, walk-forward and Monte Carlo.
