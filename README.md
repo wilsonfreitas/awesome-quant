@@ -420,7 +420,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [PineForge](https://github.com/pineforge-4pass/pineforge-engine) - `C++` - Deterministic offline PineScript v6 → C++ backtest runtime, validated trade-for-trade against TradingView (245/246 strict, 0 engine bugs). Runs locally via Docker and is drivable by AI agents through a bundled MCP server.
 
 ## Market Data & Data Sources
-- [Wiseek Filing Impact](https://wiseek.ai/datasets/) - `Data` - Free monthly statistics on how SEC filings move US stocks: importance scores (1-10) assigned in real time before the market reacts vs measured next-session excess moves, by filing type, sentiment and market cap, with a per-event archive and a written reproduction recipe. CC BY 4.0, DOI, no signup. [GitHub](https://github.com/WiseekAI/wiseek-datasets)
 - [Korea Stock Data](https://github.com/na77tech-creator/aikstockdata) - `Data` - Free Korean equity data: KOSPI/KOSDAQ settled closes with 250 trading days of per-stock history, DART regulatory filings and earnings, published every trading day as JSON/CSV. No signup or API key, CORS open. OpenAPI 3.1 spec and MCP server included.
 - [BTC Orderbook Microstructure Research](https://github.com/whoareunot/btc-orderbook-research) - `Jupyter Notebook` - statistical analysis of Binance BTC/USDT orderbook: OBI, CVD, spread.  
 - [OpenBB Terminal](https://github.com/OpenBB-finance/OpenBBTerminal) - `Python` - Terminal for investment research for everyone.
@@ -752,6 +751,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Shingou](https://shingou.io) - `REST` `MCP` - Hourly crypto news sentiment and typed market events (hack, regulation, listing, delisting, legal) for 30 pairs, served as point-in-time buckets whose SHA-256 hash is committed to a public append-only log at publish time, so a backtester can check the history was never rewritten. Paid plans are $24, $79 and $249 a month before VAT; the permanent free tier is 1,000 requests a day with BTC, ETH and SOL live, the other 27 pairs delayed 24h, 1 day of history depth, no card, non-commercial use. [GitHub](https://github.com/shingou-io/shingou-integrations)
 - [0xArchive](https://0xarchive.io) - Real-time and historical Hyperliquid and Lighter market data through REST, WebSocket, MCP, SDKs, CLI, and replay, with a permanent free tier.
 - [TickerAll](https://tickerall.com) - Hosted MetaTrader 5 & MT4 broker API (REST + WebSocket) to connect broker accounts, stream live ticks, fetch historical candles, and place or manage trades from code without a local terminal; permanent free tier with no card, real-time market data, and demo trading, with paid plans for live trading and higher limits. [Docs](https://tickerall.com/docs)
+- [Wiseek Filing Impact](https://wiseek.ai/datasets/) - Monthly statistics relating proprietary SEC-filing importance scores to next-session excess stock moves, with per-event data, reproduction metadata, and a CC BY 4.0 license. [GitHub](https://github.com/WiseekAI/wiseek-datasets)
 
 
 ## Related Lists
