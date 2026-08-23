@@ -751,6 +751,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Shingou](https://shingou.io) - `REST` `MCP` - Hourly crypto news sentiment and typed market events (hack, regulation, listing, delisting, legal) for 30 pairs, served as point-in-time buckets whose SHA-256 hash is committed to a public append-only log at publish time, so a backtester can check the history was never rewritten. Paid plans are $24, $79 and $249 a month before VAT; the permanent free tier is 1,000 requests a day with BTC, ETH and SOL live, the other 27 pairs delayed 24h, 1 day of history depth, no card, non-commercial use. [GitHub](https://github.com/shingou-io/shingou-integrations)
 - [0xArchive](https://0xarchive.io) - Real-time and historical Hyperliquid and Lighter market data through REST, WebSocket, MCP, SDKs, CLI, and replay, with a permanent free tier.
 - [TickerAll](https://tickerall.com) - Hosted MetaTrader 5 & MT4 broker API (REST + WebSocket) to connect broker accounts, stream live ticks, fetch historical candles, and place or manage trades from code without a local terminal; permanent free tier with no card, real-time market data, and demo trading, with paid plans for live trading and higher limits. [Docs](https://tickerall.com/docs)
+- [Wiseek Filing Impact](https://wiseek.ai/datasets/) - Monthly statistics relating proprietary SEC-filing importance scores to next-session excess stock moves, with per-event data, reproduction metadata, and a CC BY 4.0 license. [GitHub](https://github.com/WiseekAI/wiseek-datasets)
 
 
 ## Related Lists
