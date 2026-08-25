@@ -171,7 +171,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Wickra](https://github.com/wickra-lib/wickra) - `Rust` `Python` `JavaScript` `C++` `C#` `Golang` `Java` `R` - Streaming-first technical-analysis library with a Rust core: 514 indicators updating in O(1) per tick, with bit-exact batch-vs-streaming results.
 
 ## Trading & Backtesting
-- [AlgoDeploy](https://algo-deploy.com) - `Python` - Self-hosted framework to backtest, risk-manage, and go live on your own Alpaca or Interactive Brokers account (US equities, single-leg options, crypto); build strategies in a no-code UI, YAML, or Python. Commercial, one-time license.
 - [midas-core](https://github.com/w2ur/midas-core) - `Python` - Multi-agent paper-trading framework where LLM agents author orders and a separate broker process enforces fifteen fill-time safety rails; each fill is stamped with the git commit it executed against for reproducibility.
 - [Manifold-BT](https://github.com/manifoldbt/manifoldbt) - `Python` `Rust` - High-performance Rust-powered backtesting engine for quantitative research with parameter sweeps, walk-forward and Monte Carlo.
 - [mkt-alerts](https://github.com/dzianisv/mkt-alerts) - `TypeScript` - Self-hosted market-alert daemon: price, RSI/MACD/SMA conditions, and full Pine Script v5 custom indicators evaluated off-TradingView, on crypto (Coinbase) and stocks (Yahoo Finance) with no API key, delivered via ntfy push, email, or Telegram.
@@ -678,6 +677,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TradeMux Snippets](https://github.com/KVignesh122/trademux-examples) - `Python` - Code snippets for Metatrader (MT5) forex/CFD trading and data retrieval via trademux API client.
 
 ## Commercial & Proprietary Services
+- [AlgoDeploy](https://algo-deploy.com) - `Python` - Self-hosted framework to backtest, risk-manage, and live-trade your own strategies on your Alpaca or Interactive Brokers account (US equities, single-leg options, crypto); no-code UI, YAML, or Python. Proprietary, one-time license (Starter $99, Pro $249, Quant $499). Permanent free tier requires a valid `.edu` email and is limited to 3 strategies and backtesting only; live trading and advanced tooling are paid, with a 7-day trial. [Pricing](https://algo-deploy.com/#pricing)
 - [Prop Firm Risk Calculator](https://prop-firm-risk-calculator.vercel.app) - Free web app for position sizing, stop-loss and max-drawdown on funded accounts, with real tick/pip values for futures, forex, crypto and gold.
 - [AlphaForge](https://alforgelabs.com) - `Python` - Local-first agent-native quant CLI with Optuna TPE optimization, walk-forward testing, anti-overfitting guards, and TradingView Pine v6 code generation. Free trial available. [GitHub](https://github.com/alforge-labs/alpha-forge-mcp)
 - [TradeMux](https://trademux.io) - Unified forex trading API gateway to Metatrader (MT4/MT5), Oanda and cTrader.
