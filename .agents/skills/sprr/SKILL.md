@@ -14,7 +14,8 @@ Review one pull request that adds entries to `README.md`.
 3. Do not modify the PR until the user explicitly approves that action.
 4. Always present findings before asking whether to comment, label, close, or merge.
 5. Always ask before merging.
-6. Enforce `CONTRIBUTING.md` and `AGENTS.md` strictly for new entries.
+6. Enforce `CONTRIBUTING.md` and `AGENTS.md` strictly for new entries, using the
+   sentence-count interpretation in the Validation Checklist below.
 
 If GitHub MCP tools are unavailable, report that PR operations are blocked and point the user to `docs/codex-setup.md`.
 
@@ -63,6 +64,11 @@ For every added entry:
 - Separate concepts use adjacent tags, such as `` `Python` `C++` `MCP` ``; do not reject a tag
   merely because it is not a programming language.
 - Description ends with a period before optional `[GitHub](...)`.
+- Treat `CONTRIBUTING.md`'s "one sentence" wording as concision guidance, not a sentence-count
+  gate. Accept two or more short sentences when the overall description remains concise, factual,
+  relevant, and non-promotional. Never return `NEEDS CHANGES` solely because of sentence count;
+  request wording changes only for actual quality problems such as verbosity, repetition,
+  unsupported claims, promotional language, or poor readability.
 - URLs use `https://`.
 - Optional GitHub link uses `[GitHub](https://github.com/owner/repo)`.
 - Section placement matches the project's purpose.
@@ -90,6 +96,8 @@ For every added entry:
 Use these verdicts:
 
 - `APPROVE`: entry is ready to merge.
+- Sentence count alone does not affect the verdict; evaluate description quality using the criteria
+  in the Validation Checklist.
 - Commercial submissions without a qualifying permanent free tier—including paid-only,
   trial-only, demo-only, and waitlist-only offerings—are `REJECT`.
 - Reserve `NEEDS CHANGES` for correctable evidence or disclosure, wording, URL, documentation, or
