@@ -27,8 +27,6 @@ jobs:
         python-version: '3.11'
     - name: Install dependencies
       run: uv sync --no-install-project
-    - name: Fetch base branch
-      run: git fetch origin ${{ github.base_ref }} --depth=1
     - name: Validate added README entries
       run: uv run python scripts/validate_readme.py --diff-from origin/${{ github.base_ref }}
     - name: Generate static site
