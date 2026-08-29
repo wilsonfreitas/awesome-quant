@@ -424,7 +424,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [BTC Orderbook Microstructure Research](https://github.com/whoareunot/btc-orderbook-research) - `Jupyter Notebook` - statistical analysis of Binance BTC/USDT orderbook: OBI, CVD, spread.  
 - [OpenBB Terminal](https://github.com/OpenBB-finance/OpenBBTerminal) - `Python` - Terminal for investment research for everyone.
 - [Fincept Terminal](https://github.com/Fincept-Corporation/FinceptTerminal) - `Python` - Advance Data Based A.I Terminal for all Types of Financial Asset Research.
-- [PairBook](https://github.com/vj88-coder/pairbook) - `Data` - Free correlation, covariance, beta, volatility and ETF holdings-overlap data for 4,700+ US stocks and ETFs, refreshed every trading day. Served at www.pairbook.io as a JSON API with no key, CORS enabled, OpenAPI 3.1 spec.
+- [PairBook](https://github.com/pairbook-io/pairbook) - `Data` - Free correlation, covariance, beta, volatility and ETF holdings-overlap data for 4,700+ US stocks and ETFs, refreshed every trading day. Served at www.pairbook.io as a JSON API with no key, CORS enabled, OpenAPI 3.1 spec.
 - [yfinance](https://github.com/ranaroussi/yfinance) - `Python` - Yahoo! Finance market data downloader (+faster Pandas Datareader).
 - [treasurydirect](https://github.com/moshejs/treasurydirect) - `TypeScript` - Zero-dependency client for the US TreasuryDirect API: auction results, upcoming auctions, CUSIP lookups, and Debt to the Penny; no API key required.
 - [treasury-fiscaldata](https://github.com/moshejs/treasury-fiscaldata) - `TypeScript` - Typed client for the US Treasury FiscalData API (debt, average interest rates, exchange rates) with pagination and filtering; no API key required.
