@@ -197,10 +197,17 @@ def entries_represent_same_project(old_line: str, new_line: str) -> bool:
 
 
 def analyze_readme_change(
-    base_readme: str,
-    head_readme: str,
+    patch: str | None,
 ) -> tuple[list[str], list[str], list[Finding]]:
-    added_lines, removed_lines = readme_changed_lines(base_readme, head_readme)
+    added_lines: list[str] = []
+    removed_lines: list[str] = []
+    for raw_line in (patch or "").splitlines():
+        if raw_line.startswith(("@@", "+++", "---")):
+            continue
+        if raw_line.startswith("+"):
+            added_lines.append(raw_line[1:])
+        elif raw_line.startswith("-"):
+            removed_lines.append(raw_line[1:])
     substantive_added = [line for line in added_lines if line.strip()]
     substantive_removed = [line for line in removed_lines if line.strip()]
     entry_lines = [
@@ -681,8 +688,7 @@ def review_pr(
     base_readme = read_readme(repository, pull_request.base.sha)
     head_readme = read_readme(repository, pull_request.head.sha)
     entry_lines, removed_entry_lines, change_findings = analyze_readme_change(
-        base_readme,
-        head_readme,
+        files[0].patch,
     )
     findings.extend(change_findings)
     if not entry_lines:

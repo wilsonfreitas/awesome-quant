@@ -688,9 +688,17 @@ class ValidationPipelineTests(unittest.TestCase):
             "- [Fresh](https://github.com/example/fresh) - `Python` - Old description.\n"
         )
         head_readme = base_readme.replace("Old description.", "New description.")
+        patch_text = """@@ -1,2 +1,2 @@
+-- [Fresh](https://github.com/example/fresh) - `Python` - Old description.
++- [Fresh](https://github.com/example/fresh) - `Python` - New description.
+"""
 
         self.assertEqual(
-            self.review(base_readme=base_readme, head_readme=head_readme),
+            self.review(
+                patch_text=patch_text,
+                base_readme=base_readme,
+                head_readme=head_readme,
+            ),
             set(),
         )
 
@@ -700,9 +708,17 @@ class ValidationPipelineTests(unittest.TestCase):
             "- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.\n"
         )
         head_readme = base_readme.replace("`Python`", "`Python` `Rust`")
+        patch_text = """@@ -1,2 +1,2 @@
+-- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.
++- [Fresh](https://github.com/example/fresh) - `Python` `Rust` - Fresh project.
+"""
 
         self.assertEqual(
-            self.review(base_readme=base_readme, head_readme=head_readme),
+            self.review(
+                patch_text=patch_text,
+                base_readme=base_readme,
+                head_readme=head_readme,
+            ),
             set(),
         )
 
@@ -716,9 +732,17 @@ class ValidationPipelineTests(unittest.TestCase):
             "https://old.example.com/fresh",
             "https://new.example.com/fresh",
         )
+        patch_text = """@@ -1,2 +1,2 @@
+-- [Fresh](https://old.example.com/fresh) - `Python` - Fresh project. [GitHub](https://github.com/example/fresh)
++- [Fresh](https://new.example.com/fresh) - `Python` - Fresh project. [GitHub](https://github.com/example/fresh)
+"""
 
         self.assertEqual(
-            self.review(base_readme=base_readme, head_readme=head_readme),
+            self.review(
+                patch_text=patch_text,
+                base_readme=base_readme,
+                head_readme=head_readme,
+            ),
             set(),
         )
 
@@ -728,9 +752,17 @@ class ValidationPipelineTests(unittest.TestCase):
             "- [Old Name](https://github.com/example/fresh) - `Python` - Fresh project.\n"
         )
         head_readme = base_readme.replace("[Old Name]", "[Fresh]")
+        patch_text = """@@ -1,2 +1,2 @@
+-- [Old Name](https://github.com/example/fresh) - `Python` - Fresh project.
++- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.
+"""
 
         self.assertEqual(
-            self.review(base_readme=base_readme, head_readme=head_readme),
+            self.review(
+                patch_text=patch_text,
+                base_readme=base_readme,
+                head_readme=head_readme,
+            ),
             set(),
         )
 
@@ -745,9 +777,17 @@ class ValidationPipelineTests(unittest.TestCase):
             "\n## Portfolio Optimization & Risk Analysis\n"
             "- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.\n"
         )
+        patch_text = """@@ -1,4 +1,4 @@
+-- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.
++- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.
+"""
 
         self.assertEqual(
-            self.review(base_readme=base_readme, head_readme=head_readme),
+            self.review(
+                patch_text=patch_text,
+                base_readme=base_readme,
+                head_readme=head_readme,
+            ),
             set(),
         )
 
@@ -760,10 +800,18 @@ class ValidationPipelineTests(unittest.TestCase):
             "# awesome-quant\n\n## Trading & Backtesting\n"
             "- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.\n"
         )
+        patch_text = """@@ -1,2 +1,2 @@
+-- [Old](https://github.com/example/old) - `Python` - Old project.
++- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.
+"""
 
         self.assertIn(
             "content",
-            self.review(base_readme=base_readme, head_readme=head_readme),
+            self.review(
+                patch_text=patch_text,
+                base_readme=base_readme,
+                head_readme=head_readme,
+            ),
         )
 
     def test_rejects_deleting_an_existing_entry(self):
@@ -779,10 +827,15 @@ class ValidationPipelineTests(unittest.TestCase):
             "- [Fresh](https://github.com/example/fresh) - "
             "`Python` - Fresh project.\n"
         )
+        patch_text = """@@ -1,2 +1,2 @@
+-- [Existing](https://github.com/example/existing) - `Python` - Existing project.
++- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.
+"""
 
         self.assertIn(
             "content",
             self.review(
+                patch_text=patch_text,
                 base_readme=base_readme,
                 head_readme=head_readme,
             ),
@@ -803,6 +856,31 @@ class ValidationPipelineTests(unittest.TestCase):
 
     def test_accepts_two_entries(self):
         self.assertEqual(self.review(patch_text=TWO_ENTRY_PATCH), set())
+
+    def test_accepts_additions_from_a_stale_branch_using_the_pr_patch(self):
+        base_readme = (
+            "# awesome-quant\n\n"
+            "## Trading & Backtesting\n"
+            "- [Merged Later](https://github.com/example/merged-later) - "
+            "`Python` - Added to main after the PR branch was created.\n"
+        )
+        head_readme = (
+            "# awesome-quant\n\n"
+            "## Trading & Backtesting\n"
+            "- [Fresh One](https://github.com/example/fresh-one) - "
+            "`Python` - Fresh project one.\n"
+            "- [Fresh Two](https://github.com/example/fresh-two) - "
+            "`Python` - Fresh project two.\n"
+        )
+
+        self.assertEqual(
+            self.review(
+                patch_text=TWO_ENTRY_PATCH,
+                base_readme=base_readme,
+                head_readme=head_readme,
+            ),
+            set(),
+        )
 
     def test_accepts_five_entries(self):
         self.assertEqual(self.review(patch_text=FIVE_ENTRY_PATCH), set())
