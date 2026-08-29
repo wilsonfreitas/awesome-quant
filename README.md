@@ -756,6 +756,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [0xArchive](https://0xarchive.io) - Real-time and historical Hyperliquid and Lighter market data through REST, WebSocket, MCP, SDKs, CLI, and replay, with a permanent free tier.
 - [TickerAll](https://tickerall.com) - Hosted MetaTrader 5 & MT4 broker API (REST + WebSocket) to connect broker accounts, stream live ticks, fetch historical candles, and place or manage trades from code without a local terminal; permanent free tier with no card, real-time market data, and demo trading, with paid plans for live trading and higher limits. [Docs](https://tickerall.com/docs)
 - [Wiseek Filing Impact](https://wiseek.ai/datasets/) - Monthly statistics relating proprietary SEC-filing importance scores to next-session excess stock moves, with per-event data, reproduction metadata, and a CC BY 4.0 license. [GitHub](https://github.com/WiseekAI/wiseek-datasets)
+- [Algorier](https://algorier.com) - `AI` `Vibe-Trading` - Natural-language strategy builder that generates, backtests and forward-tests an algorithm from a plain-English description, deploys it to the user's own broker account across forex, crypto, metals, indices, CFDs and equities on 15 brokers (Interactive Brokers, Binance, Bybit, Oanda, Coinbase, IC Markets, Pepperstone and others), and lets creators sell strategies on its AlgoNetwork marketplace without revealing the underlying logic. Permanent free tier: 2 backtests and 40 assistant messages a month, no payment details required.
 
 
 ## Related Lists
