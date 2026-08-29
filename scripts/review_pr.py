@@ -41,6 +41,7 @@ NO_TAG_SECTIONS = {
 }
 
 RECENT_CLOSED_PULL_DAYS = 365
+MAX_README_ENTRIES_PER_PR = 5
 CHECK_ORDER = (
     "description",
     "files",
@@ -198,7 +199,7 @@ def entries_represent_same_project(old_line: str, new_line: str) -> bool:
 def analyze_readme_change(
     base_readme: str,
     head_readme: str,
-) -> tuple[str | None, str | None, list[Finding]]:
+) -> tuple[list[str], list[str], list[Finding]]:
     added_lines, removed_lines = readme_changed_lines(base_readme, head_readme)
     substantive_added = [line for line in added_lines if line.strip()]
     substantive_removed = [line for line in removed_lines if line.strip()]
@@ -209,45 +210,54 @@ def analyze_readme_change(
         line for line in substantive_removed if line.strip().startswith("- ")
     ]
     findings: list[Finding] = []
-    if len(entry_lines) != 1:
+    if not 1 <= len(entry_lines) <= MAX_README_ENTRIES_PER_PR:
         findings.append(
             Finding(
                 "entry-count",
-                "expected exactly one added README entry line",
+                "expected between one and five added README entry lines",
             )
         )
-        return None, None, findings
+        return [], [], findings
 
     unauthorized_additions = [
-        line for line in substantive_added if line != entry_lines[0]
+        line for line in substantive_added if line not in entry_lines
     ]
     unauthorized_removals = [
         line for line in substantive_removed if line not in removed_entry_lines
     ]
-    removed_entry_line = (
-        removed_entry_lines[0] if len(removed_entry_lines) == 1 else None
-    )
+    unmatched_entry_lines = list(entry_lines)
+    unmatched_removal = False
+    for removed_entry_line in removed_entry_lines:
+        matching_index = next(
+            (
+                index
+                for index, entry_line in enumerate(unmatched_entry_lines)
+                if entries_represent_same_project(removed_entry_line, entry_line)
+            ),
+            None,
+        )
+        if matching_index is None:
+            unmatched_removal = True
+            break
+        unmatched_entry_lines.pop(matching_index)
     invalid_update = bool(substantive_removed) and (
-        removed_entry_line is None
-        or bool(unauthorized_removals)
-        or not entries_represent_same_project(removed_entry_line, entry_lines[0])
+        bool(unauthorized_removals) or unmatched_removal
     )
     if unauthorized_additions or invalid_update:
         findings.append(
             Finding(
                 "content",
-                "README changes must add one entry or update the same project "
+                "README changes must add up to five entries or update the same projects "
                 "without other substantive edits",
             )
         )
-    return entry_lines[0], removed_entry_line, findings
+    return entry_lines, removed_entry_lines, findings
 
 
-def remove_entry_line(readme_text: str, entry_line: str | None) -> str:
-    if entry_line is None:
-        return readme_text
+def remove_entry_lines(readme_text: str, entry_lines: list[str]) -> str:
     lines = readme_text.splitlines()
-    lines.remove(entry_line)
+    for entry_line in entry_lines:
+        lines.remove(entry_line)
     return "\n".join(lines)
 
 
@@ -488,48 +498,26 @@ def repository_has_pull_request_duplicate(
     return False
 
 
-def review_pr(
-    repository_name: str,
-    pr_number: int,
+def review_entry(
+    repository: Any,
     client: Github,
+    pr_number: int,
+    line: str,
     *,
-    now: datetime | None = None,
-    check_pull_request_duplicates: bool = True,
-) -> tuple[list[Finding], str]:
-    current_time = now or datetime.now(timezone.utc)
-
-    repository = client.get_repo(repository_name)
-    pull_request = repository.get_pull(pr_number)
+    current_time: datetime,
+    head_readme: str,
+    duplicate_base_readme: str,
+    other_entry_lines: list[str],
+    check_pull_request_duplicates: bool,
+    readme_cache: dict[str, str],
+) -> list[Finding]:
     findings: list[Finding] = []
-
-    if not (pull_request.body or "").strip():
-        findings.append(Finding("description", "PR body is empty"))
-
-    files = list(pull_request.get_files())
-    if len(files) != 1 or files[0].filename != "README.md":
-        changed = ", ".join(file.filename for file in files) or "none"
-        findings.append(
-            Finding("files", f"only README.md may change, found: {changed}")
-        )
-        return findings, pull_request.title
-
-    base_readme = read_readme(repository, pull_request.base.sha)
-    head_readme = read_readme(repository, pull_request.head.sha)
-    entry_line, removed_entry_line, change_findings = analyze_readme_change(
-        base_readme,
-        head_readme,
-    )
-    findings.extend(change_findings)
-    if entry_line is None:
-        return findings, pull_request.title
-
-    line = entry_line
     match = ENTRY_RE.match(line)
     if not match:
         findings.append(
             Finding("format", "added README bullet does not match the entry regex")
         )
-        return findings, pull_request.title
+        return findings
 
     section = find_entry_section(head_readme, line)
     name = match.group(1).strip()
@@ -635,21 +623,25 @@ def review_pr(
     if not primary_github and not url_reachable(url):
         findings.append(Finding("reachability", f"primary URL is not reachable: {url}"))
 
-    duplicate_base_readme = remove_entry_line(base_readme, removed_entry_line)
-    if readme_has_duplicate(duplicate_base_readme, name, [url, *github_urls]):
+    entry_urls = [url, *github_urls]
+    if readme_has_duplicate(duplicate_base_readme, name, entry_urls):
         findings.append(
             Finding("duplicates", "project name or URL already exists in README.md")
+        )
+    elif any(
+        entry_line_has_duplicate(other_line, name, entry_urls)
+        for other_line in other_entry_lines
+    ):
+        findings.append(
+            Finding("duplicates", "project name or URL is duplicated within this PR")
         )
     elif check_pull_request_duplicates and repository_has_pull_request_duplicate(
         repository,
         pr_number,
         name,
-        [url, *github_urls],
+        entry_urls,
         now=current_time,
-        readme_cache={
-            pull_request.base.sha: base_readme,
-            pull_request.head.sha: head_readme,
-        },
+        readme_cache=readme_cache,
     ):
         findings.append(
             Finding(
@@ -658,7 +650,66 @@ def review_pr(
             )
         )
 
-    return findings, pull_request.title
+    return findings
+
+
+def review_pr(
+    repository_name: str,
+    pr_number: int,
+    client: Github,
+    *,
+    now: datetime | None = None,
+    check_pull_request_duplicates: bool = True,
+) -> tuple[list[Finding], str, int]:
+    current_time = now or datetime.now(timezone.utc)
+
+    repository = client.get_repo(repository_name)
+    pull_request = repository.get_pull(pr_number)
+    findings: list[Finding] = []
+
+    if not (pull_request.body or "").strip():
+        findings.append(Finding("description", "PR body is empty"))
+
+    files = list(pull_request.get_files())
+    if len(files) != 1 or files[0].filename != "README.md":
+        changed = ", ".join(file.filename for file in files) or "none"
+        findings.append(
+            Finding("files", f"only README.md may change, found: {changed}")
+        )
+        return findings, pull_request.title, 0
+
+    base_readme = read_readme(repository, pull_request.base.sha)
+    head_readme = read_readme(repository, pull_request.head.sha)
+    entry_lines, removed_entry_lines, change_findings = analyze_readme_change(
+        base_readme,
+        head_readme,
+    )
+    findings.extend(change_findings)
+    if not entry_lines:
+        return findings, pull_request.title, 0
+
+    duplicate_base_readme = remove_entry_lines(base_readme, removed_entry_lines)
+    readme_cache = {
+        pull_request.base.sha: base_readme,
+        pull_request.head.sha: head_readme,
+    }
+    for index, entry_line in enumerate(entry_lines):
+        findings.extend(
+            review_entry(
+                repository,
+                client,
+                pr_number,
+                entry_line,
+                current_time=current_time,
+                head_readme=head_readme,
+                duplicate_base_readme=duplicate_base_readme,
+                other_entry_lines=entry_lines[:index] + entry_lines[index + 1 :],
+                check_pull_request_duplicates=check_pull_request_duplicates,
+                readme_cache=readme_cache,
+            )
+        )
+
+    return findings, pull_request.title, len(entry_lines)
 
 
 def main() -> int:
@@ -685,7 +736,7 @@ def main() -> int:
         if not repository_name:
             return fail("GITHUB_REPOSITORY is required")
         client = Github(auth=Auth.Token(token))
-        findings, title = review_pr(
+        findings, title, entries_reviewed = review_pr(
             repository_name,
             pr_number,
             client,
@@ -695,7 +746,7 @@ def main() -> int:
         return fail(str(exc))
 
     print(f"PR #{pr_number}: {title}")
-    print("Entries reviewed: 1")
+    print(f"Entries reviewed: {entries_reviewed}")
     if args.skip_pull_request_duplicates:
         print("Cross-PR duplicate check: skipped")
     if not findings:

@@ -25,6 +25,26 @@ VALID_PATCH = """@@ -1,1 +1,2 @@
 +- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.
 """
 
+TWO_ENTRY_PATCH = """@@ -1,1 +1,3 @@
+ ## Trading & Backtesting
++- [Fresh One](https://github.com/example/fresh-one) - `Python` - Fresh project one.
++- [Fresh Two](https://github.com/example/fresh-two) - `Python` - Fresh project two.
+"""
+
+FIVE_ENTRY_PATCH = """@@ -1,1 +1,6 @@
+ ## Trading & Backtesting
++- [Fresh One](https://github.com/example/fresh-one) - `Python` - Fresh project one.
++- [Fresh Two](https://github.com/example/fresh-two) - `Python` - Fresh project two.
++- [Fresh Three](https://github.com/example/fresh-three) - `Python` - Fresh project three.
++- [Fresh Four](https://github.com/example/fresh-four) - `Python` - Fresh project four.
++- [Fresh Five](https://github.com/example/fresh-five) - `Python` - Fresh project five.
+"""
+
+SIX_ENTRY_PATCH = FIVE_ENTRY_PATCH + (
+    "+- [Fresh Six](https://github.com/example/fresh-six) - "
+    "`Python` - Fresh project six.\n"
+)
+
 
 class FakePull:
     def __init__(
@@ -176,7 +196,7 @@ class FakeClient:
         self.requested_repositories.append(name)
         if name == "owner/list":
             return self.repository
-        if name == "example/fresh":
+        if name.startswith("example/"):
             return self.project_repository
         raise AssertionError(f"unexpected repository: {name}")
 
@@ -337,7 +357,7 @@ class PullRequestDuplicateTests(unittest.TestCase):
         )
         client = FakeClient(repository)
         with patch("scripts.review_pr.url_reachable", return_value=True):
-            findings, title = review_pr(
+            findings, title, _entry_count = review_pr(
                 "owner/list",
                 10,
                 client,
@@ -489,7 +509,7 @@ class PullRequestDuplicateTests(unittest.TestCase):
         client = FakeClient(repository)
 
         with patch("scripts.review_pr.url_reachable", return_value=True):
-            findings, _title = review_pr(
+            findings, _title, _entry_count = review_pr(
                 "owner/list",
                 10,
                 client,
@@ -509,7 +529,7 @@ class PullRequestDuplicateTests(unittest.TestCase):
         client = FakeClient(repository)
 
         with patch("scripts.review_pr.url_reachable", return_value=True):
-            findings, _title = review_pr(
+            findings, _title, _entry_count = review_pr(
                 "owner/list",
                 10,
                 client,
@@ -581,7 +601,7 @@ class ValidationPipelineTests(unittest.TestCase):
             "scripts.review_pr.url_reachable",
             return_value=reachable,
         ):
-            findings, _title = review_pr(
+            findings, _title, _entry_count = review_pr(
                 "owner/list",
                 10,
                 client,
@@ -605,7 +625,7 @@ class ValidationPipelineTests(unittest.TestCase):
         client = FakeClient(repository)
 
         with patch("scripts.review_pr.url_reachable") as url_checker:
-            findings, _title = review_pr("owner/list", 10, client, now=NOW)
+            findings, _title, _entry_count = review_pr("owner/list", 10, client, now=NOW)
 
         self.assertEqual(findings, [])
         url_checker.assert_not_called()
@@ -625,7 +645,7 @@ class ValidationPipelineTests(unittest.TestCase):
         client = FakeClient(repository)
 
         with patch("scripts.review_pr.url_reachable", return_value=True) as url_checker:
-            findings, _title = review_pr("owner/list", 10, client, now=NOW)
+            findings, _title, _entry_count = review_pr("owner/list", 10, client, now=NOW)
 
         self.assertEqual(findings, [])
         url_checker.assert_called_once_with("https://example.com/fresh")
@@ -781,12 +801,35 @@ class ValidationPipelineTests(unittest.TestCase):
         ]
         self.assertIn("files", self.review(files=files))
 
-    def test_rejects_multiple_entries(self):
-        patch_text = VALID_PATCH + (
-            "+- [Other](https://github.com/example/other) - "
-            "`Python` - Other project.\n"
+    def test_accepts_two_entries(self):
+        self.assertEqual(self.review(patch_text=TWO_ENTRY_PATCH), set())
+
+    def test_accepts_five_entries(self):
+        self.assertEqual(self.review(patch_text=FIVE_ENTRY_PATCH), set())
+
+    def test_rejects_more_than_five_entries(self):
+        self.assertIn("entry-count", self.review(patch_text=SIX_ENTRY_PATCH))
+
+    def test_validates_every_entry_in_a_multi_entry_pr(self):
+        patch_text = TWO_ENTRY_PATCH.replace(
+            "Fresh project two.",
+            "Fresh project two",
         )
-        self.assertIn("entry-count", self.review(patch_text=patch_text))
+
+        findings = self.review(patch_text=patch_text)
+
+        self.assertIn("period", findings)
+        self.assertNotIn("entry-count", findings)
+
+    def test_rejects_duplicate_entries_within_a_multi_entry_pr(self):
+        patch_text = TWO_ENTRY_PATCH.replace(
+            "https://github.com/example/fresh-two",
+            "https://github.com/example/fresh-one",
+        )
+
+        findings = self.review(patch_text=patch_text)
+
+        self.assertIn("duplicates", findings)
 
     def test_rejects_malformed_entry(self):
         patch_text = """@@ -1,1 +1,2 @@
@@ -993,11 +1036,46 @@ class MainTests(unittest.TestCase):
         return result, stdout.getvalue(), stderr.getvalue()
 
     def test_success_reports_passed_checks(self):
-        result, stdout, _stderr = self.run_main(([], "Add Fresh"))
+        result, stdout, _stderr = self.run_main(([], "Add Fresh", 1))
 
         self.assertEqual(result, 0)
         self.assertIn("description: pass", stdout)
         self.assertIn("duplicates: pass", stdout)
+
+    def test_success_reports_actual_entry_count(self):
+        changed_files = [
+            SimpleNamespace(filename="README.md", patch=FIVE_ENTRY_PATCH)
+        ]
+        base_readme = "# awesome-quant\n\n## Trading & Backtesting\n"
+        head_readme = base_readme + "\n".join(
+            line[1:]
+            for line in FIVE_ENTRY_PATCH.splitlines()
+            if line.startswith("+- ")
+        ) + "\n"
+        repository = FakeBaseRepository(
+            FakePull(10, files=changed_files),
+            base_readme=base_readme,
+            head_readme=head_readme,
+        )
+        client = FakeClient(repository)
+        stdout = io.StringIO()
+        stderr = io.StringIO()
+        environment = {
+            "GITHUB_TOKEN": "token",
+            "GITHUB_REPOSITORY": "owner/list",
+            "PR_NUMBER": "10",
+        }
+        with (
+            patch.dict("os.environ", environment, clear=True),
+            patch("sys.argv", ["review_pr.py"]),
+            patch("scripts.review_pr.Github", return_value=client),
+            redirect_stdout(stdout),
+            redirect_stderr(stderr),
+        ):
+            result = main()
+
+        self.assertEqual(result, 0)
+        self.assertIn("Entries reviewed: 5", stdout.getvalue())
 
     def test_skip_flag_is_reported_and_forwarded(self):
         stdout = io.StringIO()
@@ -1016,7 +1094,7 @@ class MainTests(unittest.TestCase):
             patch("scripts.review_pr.Github"),
             patch(
                 "scripts.review_pr.review_pr",
-                return_value=([], "Add Fresh"),
+                return_value=([], "Add Fresh", 1),
             ) as reviewer,
             redirect_stdout(stdout),
             redirect_stderr(stderr),
@@ -1044,7 +1122,7 @@ class MainTests(unittest.TestCase):
         with (
             patch.dict("os.environ", environment, clear=True),
             patch("sys.argv", ["review_pr.py"]),
-            patch("scripts.review_pr.review_pr", return_value=([], "Add Fresh")),
+            patch("scripts.review_pr.review_pr", return_value=([], "Add Fresh", 1)),
             redirect_stdout(stdout),
             redirect_stderr(stderr),
             warnings.catch_warnings(),
@@ -1057,7 +1135,7 @@ class MainTests(unittest.TestCase):
     def test_failure_reports_failed_check_and_nonzero_status(self):
         finding = Finding("description", "PR body is empty")
 
-        result, stdout, _stderr = self.run_main(([finding], "Add Fresh"))
+        result, stdout, _stderr = self.run_main(([finding], "Add Fresh", 1))
 
         self.assertEqual(result, 1)
         self.assertIn("description: fail - PR body is empty", stdout)
