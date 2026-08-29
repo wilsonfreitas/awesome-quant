@@ -24,8 +24,9 @@ If GitHub MCP tools are unavailable, report that PR operations are blocked and p
 1. Fetch PR details, current head SHA, files changed, labels, comments, and diff with GitHub MCP.
 2. Confirm whether the `reviewed` label or prior maintainer comments exist, then proceed with full validation anyway.
 3. Fetch the latest `Validate PR` workflow/check attempt for the current head SHA and apply the CI evidence rules below.
-4. Focus on added lines in `README.md`. Flag any other changed files as unusual for a normal contribution.
-5. When mechanical validation is not established by current-head CI, save or reconstruct the PR diff locally only if needed, then validate added README entries with:
+4. Fetch the latest `PR Review` workflow/check attempt for the pull request and record its status. Treat it as supplementary evidence; it does not replace the current-head `Validate PR` result or manual review.
+5. Focus on added lines in `README.md`. Flag any other changed files as unusual for a normal contribution.
+6. When mechanical validation is not established by current-head CI, save or reconstruct the PR diff locally only if needed, then validate added README entries with:
 
 ```bash
 uv run python scripts/validate_readme.py --diff-from <base-ref>
@@ -52,6 +53,11 @@ relevance, semantic section suitability, commercial classification, repository q
 commercial free-tier eligibility or transparency, URL tracking, cross-PR uniqueness, or
 multi-project relatedness. CI cannot establish any of these manual criteria. Search open PRs and PRs
 closed within the last 365 days for duplicate names and URLs.
+
+`PR Review` runs on `pull_request_target`, so report the latest attempt associated with the pull
+request without applying the current-head SHA rule used for `Validate PR`. Inspect its failing job
+or step when useful, but never treat a successful `PR Review` attempt as proof that current-head
+mechanical validation passed.
 
 ## Validation Checklist
 
@@ -118,6 +124,7 @@ Entries reviewed: <count>
 
 Automated validation:
 - Validate PR: PASS | FAIL | PENDING | UNVERIFIED
+- PR Review: PASS | FAIL | PENDING | UNVERIFIED
 - Commit: <checked-sha> (CURRENT | STALE)
 - Mechanical checks: accepted from CI | reproduced manually | incomplete
 
