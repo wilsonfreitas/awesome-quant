@@ -291,7 +291,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [PROJ_Option_Pricing_Matlab](https://github.com/jkirkby3/PROJ_Option_Pricing_Matlab) - `Matlab` - Quant Option Pricing - Exotic/Vanilla: Barrier, Asian, European, American, Parisian, Lookback, Cliquet, Variance Swap, Swing, Forward Starting, Step, Fader.
 - [Fastback.jl](https://github.com/rbeeli/Fastback.jl) - `Julia` - Blazing fast Julia backtester.
 - [Lucky.jl](https://github.com/oliviermilla/Lucky.jl) - `Julia` - Modular, asynchronous trading engine in pure Julia.
-- [Planar.jl](https://github.com/BubbleParticles/Planar.jl) - `Julia` - Advanced trading bot framework built around CCXT (100+ exchanges) with Zarr-backed OHLCV persistence, contiguity-checked data feeds, isolated/cross margin support, and a functional loop backtester with by-simulation and unified sim/paper/live strategy code.
+- [Planar.jl](https://github.com/BubbleParticles/Planar.jl) - `Julia` - Trading framework built around CCXT with Zarr-backed OHLCV persistence, contiguity-checked data feeds, isolated-margin position management, and a loop-based backtester sharing strategy code across simulation, paper, and live modes.
 - [Strategems.jl](https://github.com/dysonance/Strategems.jl) - `Julia` - Quantitative systematic trading strategy development and backtesting.
 - [ccxt](https://github.com/ccxt/ccxt) - `JavaScript` `Python` `PHP` - A JavaScript / Python / PHP cryptocurrency trading API with support for more than 100 bitcoin/altcoin exchanges.
 - [binance-fix-connector-python](https://github.com/AlexanderMerkel/binance-fix-connector-python) - `Python` - Async Python connector for Binance Spot FIX sessions with Order Entry, Market Data, and Drop Copy support.
