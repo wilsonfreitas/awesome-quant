@@ -555,7 +555,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [EarningsCall](https://github.com/EarningsCall/earningscall-python) - `Python` - REST API and Python/JavaScript SDK for earnings call transcripts, audio files, and slide decks for 9,000+ public companies. Includes speaker-level data, Q&A segmentation, and earnings calendar.
 - [Korean Market Data](https://github.com/james-brand/korea-market-data) - `Data` - Daily foreign and institutional net flows for every KOSPI/KOSDAQ common stock plus all 44 KRX sector indices with returns and excess return vs market, in English CSV/JSON under CC BY 4.0 with a Zenodo DOI, rebuilt each trading day.
 - [AgentServices](https://agentservices.to) - `Python` - x402-paid crypto and market data API platform: 54 services, 97 endpoints, 37 MCP tools. Real-time prices, technical indicators, on-chain data, and market intelligence with on-chain USDC payments on Base. [GitHub](https://github.com/vbkotecha/aiservices-api)
-
+-[disclosure-alpha](https://github.com/vhedgpeth/disclosure-alpha) - `Python` - SEC EDGAR financial disclosures search engine.
+-[edgar-geo-revenue](https://github.com/metricshour-netizen/edgar-geo-revenue) - `Python` - Extracts geographic revenue segments from SEC EDGAR filings.
 
 ## Prediction Markets
 
