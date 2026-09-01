@@ -1,9 +1,13 @@
+import importlib.util
 import tempfile
 import unittest
 from pathlib import Path
 
 from scripts.readme_entries import HISTORICAL_SECTION, iter_readme_entries
 from scripts.validate_readme import build_duplicate_indexes, validate_entry
+
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 class HistoricalProjectContractTests(unittest.TestCase):
@@ -45,3 +49,35 @@ class HistoricalProjectContractTests(unittest.TestCase):
             "`Historical` - Archived example retained for its early design."
         )
         self.assertIn("language", {issue.code for issue in issues})
+
+    def test_readme_and_site_parser_include_historical_projects(self):
+        spec = importlib.util.spec_from_file_location(
+            "site_generate", ROOT / "site" / "generate.py"
+        )
+        module = importlib.util.module_from_spec(spec)
+        assert spec.loader is not None
+        spec.loader.exec_module(module)
+
+        entries = module.parse_readme(ROOT / "README.md")
+        historical = [
+            entry
+            for entry in entries
+            if entry["category"] == "Historical & Archived Projects"
+        ]
+
+        self.assertEqual(
+            {entry["project"] for entry in historical},
+            {"fooltrader", "pipeline-live", "pybacktest"},
+        )
+        self.assertTrue(all("Historical" in entry["languages"] for entry in historical))
+
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.assertIn(
+            "- [Historical & Archived Projects](#historical-archived-projects)",
+            readme,
+        )
+        self.assertLess(
+            readme.index("## Historical & Archived Projects"),
+            readme.index("## Related Lists"),
+        )
+        self.assertNotIn("pythalesians", readme)
