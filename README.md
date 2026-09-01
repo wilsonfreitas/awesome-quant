@@ -23,6 +23,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Cross-Language Frameworks](#cross-language-frameworks)
 - [Reproducing Works, Training & Books](#reproducing-works-training-books)
 - [Commercial & Proprietary Services](#commercial-proprietary-services)
+- [Historical & Archived Projects](#historical-archived-projects)
 - [Related Lists](#related-lists)
 
 ## Numerical Libraries & Data Structures
@@ -213,17 +214,13 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TrendFollowingSystems](https://github.com/ArturSepp/TrendFollowingSystems) - `Python` - Closed-form expected returns, Sharpe ratios, and skewness of trend-following systems, with complete implementations and multi-decade futures backtests.
 - [backtest-bias](https://github.com/Finance-broski/backtest-bias) - `Python` - Checks whether backtest price data is survivor-only: dead-name detection, measured bias benchmarks, CI integrity gates.
 - [falsification-ledger](https://github.com/foolproof-labs/falsification-ledger) - `Python` - Hash-chained pre-registration and falsification ledger for research claims: write down what evidence would kill your claim before seeing the data; append-only JSONL with a sha256 chain (`fl verify` detects any edit), Wilson-CI hit-rate vs the random baseline, fail-closed falsification report contracts. [PyPI](https://pypi.org/project/falsification-ledger/)
-- [pythalesians](https://github.com/thalesians/pythalesians) - `Python` - Python library to backtest trading strategies, plot charts, seamlessly download market data, analyze market patterns etc.
-- [pybacktest](https://github.com/ematvey/pybacktest) - `Python` - Vectorized backtesting framework in Python / pandas, designed to make your backtesting easier.
 - [pyalgotrade](https://github.com/gbeced/pyalgotrade) - `Python` - Python Algorithmic Trading Library.
 - [basana](https://github.com/gbeced/basana) - `Python` - A Python async and event driven framework for algorithmic trading, with a focus on crypto currencies.
 - [algobroker](https://github.com/joequant/algobroker) - `Python` - This is an execution engine for algo trading.
 - [finmarketpy](https://github.com/cuemacro/finmarketpy) - `Python` - Python library for backtesting trading strategies and analyzing financial markets.
 - [binary-martingale](https://github.com/metaperl/binary-martingale) - `Python` - Computer program to automatically trade binary options martingale style.
-- [fooltrader](https://github.com/foolcage/fooltrader) - `Python` - the project using big-data technology to provide an uniform way to analyze the whole market.
 - [zvt](https://github.com/zvtvz/zvt) - `Python` - the project using sql, pandas to provide an uniform and extendable way to record data, computing factors, select securities, backtesting, realtime trading and it could show all of them in clearly charts in realtime.
 - [pylivetrader](https://github.com/alpacahq/pylivetrader) - `Python` - zipline-compatible live trading library.
-- [pipeline-live](https://github.com/alpacahq/pipeline-live) - `Python` - zipline's pipeline capability with IEX for live trading.
 - [zipline-extensions](https://github.com/quantrocket-llc/zipline-extensions) - `Python` - Zipline extensions and adapters for QuantRocket.
 - [moonshot](https://github.com/quantrocket-llc/moonshot) - `Python` - Vectorized backtester and trading engine for QuantRocket based on Pandas.
 - [pyqstrat](https://github.com/abbass2/pyqstrat) - `Python` - A fast, extensible, transparent python library for backtesting quantitative strategies.
@@ -767,6 +764,12 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Wiseek Filing Impact](https://wiseek.ai/datasets/) - Monthly statistics relating proprietary SEC-filing importance scores to next-session excess stock moves, with per-event data, reproduction metadata, and a CC BY 4.0 license. [GitHub](https://github.com/WiseekAI/wiseek-datasets)
 - [Algorier](https://algorier.com) - `AI` `Vibe-Trading` - Natural-language strategy builder that generates, backtests and forward-tests an algorithm from a plain-English description, deploys it to the user's own broker account across forex, crypto, metals, indices, CFDs and equities on 15 brokers (Interactive Brokers, Binance, Bybit, Oanda, Coinbase, IC Markets, Pepperstone and others), and lets creators sell strategies on its AlgoNetwork marketplace without revealing the underlying logic. Permanent free tier: 2 backtests and 40 assistant messages a month, no payment details required.
 
+
+## Historical & Archived Projects
+
+- [fooltrader](https://github.com/foolcage/fooltrader) - `Python` `Historical` - Archived big-data quantitative-analysis and trading system retained as an early unified market-data and backtesting framework.
+- [pipeline-live](https://github.com/alpacahq/pipeline-live) - `Python` `Historical` - Deprecated Zipline Pipeline extension retained as an early reference for pipeline-based live trading.
+- [pybacktest](https://github.com/ematvey/pybacktest) - `Python` `Historical` - Unmaintained vectorized pandas backtesting framework retained as an early research-oriented design.
 
 ## Related Lists
 
