@@ -10,3 +10,6 @@ dependencies = [
     "pandas>=2.2.0",
     "mypy>=1.14.0",
 ]
+
+[tool.mypy]
+explicit_package_bases = true
