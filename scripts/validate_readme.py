@@ -24,6 +24,8 @@ from scripts.readme_entries import (
     ENTRY_RE,
     GITHUB_LINK_RE,
     HEADING_RE,
+    HISTORICAL_SECTION,
+    HISTORICAL_TAG,
     MARKDOWN_URL_RE,
     NO_LANGUAGE_REQUIRED_SECTIONS,
     VALID_SECTIONS,
@@ -137,6 +139,26 @@ def validate_entry(
                 "missing required backtick language tag prefix",
             )
         )
+
+    if entry.section == HISTORICAL_SECTION:
+        if HISTORICAL_TAG not in entry.languages:
+            issues.append(
+                Issue(
+                    "error",
+                    line,
+                    "historical-tag",
+                    "Historical & Archived Projects entries must include the `Historical` tag",
+                )
+            )
+        if not any(tag != HISTORICAL_TAG for tag in entry.languages):
+            issues.append(
+                Issue(
+                    "error",
+                    line,
+                    "language",
+                    "Historical & Archived Projects entries require a language or runtime tag",
+                )
+            )
 
     if entry.languages:
         _languages, clean_description = extract_languages(entry.tail)

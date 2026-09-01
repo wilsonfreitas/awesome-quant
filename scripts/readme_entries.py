@@ -13,6 +13,8 @@ BADGE_RE = re.compile(r"\s*!\[[^\]]*\]\([^)]*\)\s*")
 LANGUAGE_PREFIX_RE = re.compile(r"^((?:`[^`]+`\s*)+)-\s*(.*)$")
 GITHUB_LINK_RE = re.compile(r"\[GitHub\]\((https://github\.com/[\w-]+/[-\w.]+)\)")
 MARKDOWN_URL_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+HISTORICAL_SECTION = "Historical & Archived Projects"
+HISTORICAL_TAG = "Historical"
 
 NO_LANGUAGE_REQUIRED_SECTIONS = {
     "Commercial & Proprietary Services",
@@ -39,6 +41,7 @@ VALID_SECTIONS = [
     "Cross-Language Frameworks",
     "Reproducing Works, Training & Books",
     "Commercial & Proprietary Services",
+    HISTORICAL_SECTION,
     "Related Lists",
 ]
 
