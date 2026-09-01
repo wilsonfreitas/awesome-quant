@@ -89,6 +89,9 @@ Rules:
   marketing repository as repository-less for every eligibility check.
 - Backtick tags are optional only for commercial services and other metadata-free
   sections such as `Related Lists`.
+- `Historical & Archived Projects` is the documented exception to normal activity and
+  archive-state requirements. Entries still require substantive, reachable, documented source
+  and the `Historical` tag; use `CONTRIBUTING.md` for eligibility.
 - Use `CONTRIBUTING.md` as the user-facing source for contribution rules.
 
 ## PR Review Workflow

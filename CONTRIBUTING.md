@@ -75,9 +75,15 @@ Link to the PyPI package page. If the project has a GitHub repo, append it after
 
 ## Quality Requirements
 
-- **Source-backed projects**: Projects backed by substantive source must show recent
-  repository activity (commits within the last 12 months) and provide a clear README with
-  usage examples.
+- **Active source-backed projects**: Projects backed by substantive source in the active
+  categories must show recent repository activity (commits within the last 12 months) and
+  provide a clear README with usage examples.
+- **Historical & Archived Projects**: This category is the narrow exception to the active
+  activity and archive-state requirements. An entry must use `Historical` plus a language or
+  runtime tag, link to reachable substantive source or documentation, state a specific
+  historical, educational, or foundational reason to retain the project, and clearly disclose
+  that it is archived or unmaintained. It is not for thin wrappers, tutorials, generated data,
+  marketing material, unsupported SDKs, or duplicate implementations.
 - **Repository-less commercial services**: See the permanent-free-tier, public-documentation,
   and transparency rules in the commercial section below.
 
@@ -128,6 +134,7 @@ The README is organized by **category** (not by language). Add your entry under 
 - Cross-Language Frameworks
 - Reproducing Works, Training & Books
 - Commercial & Proprietary Services
+- Historical & Archived Projects
 - Related Lists
 
 For example, if your project is a Python backtesting library, it goes under `## Trading & Backtesting` (not under Technical Indicators or another category).
@@ -183,5 +190,6 @@ PRs will be closed if:
 - Multiple unrelated projects added in a single PR without a clear grouping rationale.
 - Entry format does not match the required pattern.
 - Duplicate of an existing entry or a recently closed PR.
-- Project is archived or abandoned.
+- Project is archived or abandoned, unless it meets the documented
+  **Historical & Archived Projects** eligibility criteria.
 - Empty PR description.

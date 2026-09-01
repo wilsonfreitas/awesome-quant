@@ -27,6 +27,8 @@ if str(ROOT) not in sys.path:
 from scripts.readme_entries import (
     ENTRY_RE,
     GITHUB_LINK_RE,
+    HISTORICAL_SECTION,
+    HISTORICAL_TAG,
     MARKDOWN_URL_RE,
     VALID_SECTIONS,
     extract_languages,
@@ -531,6 +533,7 @@ def review_entry(
     url = match.group(2).strip()
     tail = match.group(3).strip()
     tags, clean_description = extract_languages(tail)
+    is_historical = section == HISTORICAL_SECTION
 
     if section not in VALID_SECTIONS:
         findings.append(
@@ -539,6 +542,22 @@ def review_entry(
 
     if section not in NO_TAG_SECTIONS and not tags:
         findings.append(Finding("tags", "missing required backtick tag prefix"))
+
+    if is_historical and HISTORICAL_TAG not in tags:
+        findings.append(
+            Finding(
+                "historical-tag",
+                "Historical & Archived Projects entries must include the `Historical` tag",
+            )
+        )
+
+    if is_historical and not any(tag != HISTORICAL_TAG for tag in tags):
+        findings.append(
+            Finding(
+                "tags",
+                "Historical & Archived Projects entries require a language or runtime tag",
+            )
+        )
 
     github_label_count = clean_description.count("[GitHub](")
     github_marker = clean_description.rfind("[GitHub](")
@@ -602,10 +621,10 @@ def review_entry(
         else:
             owner, repo_name = repository_parts
             github_repo = client.get_repo(f"{owner}/{repo_name}")
-            if github_repo.archived:
+            if github_repo.archived and not is_historical:
                 findings.append(Finding("activity", "repository is archived"))
             pushed_at = github_repo.pushed_at
-            if (
+            if not is_historical and (
                 pushed_at is None
                 or pushed_at < current_time - timedelta(days=365)
             ):

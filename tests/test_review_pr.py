@@ -1040,6 +1040,40 @@ class ValidationPipelineTests(unittest.TestCase):
             self.review(configure_project=make_stale),
         )
 
+    def test_accepts_archived_stale_historical_repository(self):
+        def make_historical(repository):
+            repository.archived = True
+            repository.pushed_at = NOW - timedelta(days=366)
+
+        patch_text = VALID_PATCH.replace(
+            "Trading & Backtesting",
+            "Historical & Archived Projects",
+        ).replace(
+            "`Python` - Fresh project.",
+            "`Python` `Historical` - Archived reference retained for its early design.",
+        )
+
+        self.assertNotIn(
+            "activity",
+            self.review(patch_text=patch_text, configure_project=make_historical),
+        )
+
+    def test_requires_historical_tag_for_historical_repository(self):
+        patch_text = VALID_PATCH.replace(
+            "Trading & Backtesting",
+            "Historical & Archived Projects",
+        )
+
+        self.assertIn("historical-tag", self.review(patch_text=patch_text))
+
+    def test_requires_non_status_tag_for_historical_repository(self):
+        patch_text = VALID_PATCH.replace(
+            "Trading & Backtesting",
+            "Historical & Archived Projects",
+        ).replace("`Python` - Fresh project.", "`Historical` - Historical project.")
+
+        self.assertIn("tags", self.review(patch_text=patch_text))
+
     def test_rejects_repository_without_readme(self):
         def remove_readme(repository):
             repository.has_root_readme = False
