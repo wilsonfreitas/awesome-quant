@@ -16,6 +16,7 @@ Review one pull request that adds entries to `README.md`.
 5. Always ask before merging.
 6. Enforce `CONTRIBUTING.md` and `AGENTS.md` strictly for new entries, using the
    sentence-count interpretation in the Validation Checklist below.
+7. Both `Validate PR` and `PR Review` must pass before returning `APPROVE`.
 
 If GitHub MCP tools are unavailable, report that PR operations are blocked and point the user to `docs/codex-setup.md`.
 
@@ -24,7 +25,8 @@ If GitHub MCP tools are unavailable, report that PR operations are blocked and p
 1. Fetch PR details, current head SHA, files changed, labels, comments, and diff with GitHub MCP.
 2. Confirm whether the `reviewed` label or prior maintainer comments exist, then proceed with full validation anyway.
 3. Fetch the latest `Validate PR` workflow/check attempt for the current head SHA and apply the CI evidence rules below.
-4. Fetch the latest `PR Review` workflow/check attempt for the pull request and record its status. Treat it as supplementary evidence; it does not replace the current-head `Validate PR` result or manual review.
+4. Fetch the latest `PR Review` workflow/check attempt associated with the pull request and apply
+   the required workflow rules below.
 5. Focus on added lines in `README.md`. Flag any other changed files as unusual for a normal contribution.
 6. When mechanical validation is not established by current-head CI, save or reconstruct the PR diff locally only if needed, then validate added README entries with:
 
@@ -44,8 +46,8 @@ queued or pending attempt supersedes an older successful attempt for the same SH
 | `success` | Accept parser format, tag syntax, separators, the required final period, HTTPS, GitHub-link syntax, recognized section, and base-README duplicate checks as passed. Do not rerun those mechanical checks. |
 | `failure` | Inspect the failing job or step. Return `NEEDS CHANGES` when validation failed; if another step failed or details are unavailable, reproduce mechanical validation before deciding. |
 | queued, pending, awaiting approval | Report the review as incomplete and do not return `APPROVE`. |
-| skipped, cancelled, missing | Treat mechanical validation as unverified and reproduce it before deciding. |
-| success on an older SHA | Ignore it and evaluate the current SHA using these rules. |
+| skipped, cancelled, missing | Report the review as incomplete and do not return `APPROVE`; reproduce mechanical validation only to provide useful findings. |
+| success on an older SHA | Report the result as stale and do not return `APPROVE`; require a successful attempt for the current SHA. |
 
 CI never replaces inspection of the diff or the manual checks below. A successful check confirms
 only mechanical rules; it does not establish tag meaning or concision, description quality,
@@ -54,10 +56,12 @@ commercial free-tier eligibility or transparency, URL tracking, cross-PR uniquen
 multi-project relatedness. CI cannot establish any of these manual criteria. Search open PRs and PRs
 closed within the last 365 days for duplicate names and URLs.
 
-`PR Review` runs on `pull_request_target`, so report the latest attempt associated with the pull
-request without applying the current-head SHA rule used for `Validate PR`. Inspect its failing job
-or step when useful, but never treat a successful `PR Review` attempt as proof that current-head
-mechanical validation passed.
+`PR Review` runs on `pull_request_target`, so use the latest attempt associated with the pull
+request without applying the current-head SHA rule used for `Validate PR`. A successful attempt is
+required but does not prove that current-head mechanical validation passed. If the latest attempt
+fails, inspect its failing job or step. Return `NEEDS CHANGES` when the review reports a PR defect;
+otherwise report the review as incomplete. If it is queued, pending, cancelled, skipped, or
+missing, report the review as incomplete and do not return `APPROVE`.
 
 ## Validation Checklist
 
@@ -101,7 +105,7 @@ For every added entry:
 
 Use these verdicts:
 
-- `APPROVE`: entry is ready to merge.
+- `APPROVE`: both required workflows pass and the entry is ready to merge after manual review.
 - Sentence count alone does not affect the verdict; evaluate description quality using the criteria
   in the Validation Checklist.
 - Commercial submissions without a qualifying permanent free tier—including paid-only,

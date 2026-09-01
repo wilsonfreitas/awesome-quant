@@ -156,6 +156,26 @@ When submitting multiple projects:
 2. Search previous Pull Requests (open and closed) to avoid duplicates.
 3. Make sure the entry format matches exactly — our parser relies on it.
 
+## Required Pull Request Workflows
+
+Every pull request that adds or updates a README entry must pass both required GitHub Actions
+workflows:
+
+- **`Validate PR`** checks the added README entries against the parser and formatting rules,
+  then verifies that the static site can be generated.
+- **`PR Review`** runs the repository's read-only automated review, including contribution,
+  project-quality, URL, repository, activity, documentation, and existing-README duplicate
+  checks.
+
+Both workflows must pass on the latest pull request revision before the project can be accepted.
+A success from an older revision does not count. If either workflow is failed, pending, cancelled,
+missing, or stale, the pull request is not eligible for approval or merge. Fix any reported issues
+and push a new revision so the required workflows run again.
+
+Passing both workflows is necessary but not sufficient. Maintainers also review relevance,
+description quality, section placement, repository substance, commercial eligibility, and
+duplicates in other open or recently closed pull requests.
+
 ## Automatic Rejection
 
 PRs will be closed if:
