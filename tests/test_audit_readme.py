@@ -1,11 +1,16 @@
+import io
+import os
+import subprocess
+import sys
 import tempfile
 import threading
 import time
 import unittest
+from contextlib import redirect_stdout
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from types import SimpleNamespace
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 from github import GithubException
 
@@ -18,6 +23,8 @@ from scripts.audit_readme import (
     TRACKING_TITLE,
     audit_readme,
     collect_targets,
+    main,
+    parse_args,
     render_report,
     sync_tracking_issue,
 )
@@ -129,6 +136,208 @@ class FakeTrackingRepository:
         issue = FakeIssue(kwargs["title"], kwargs["body"], "open")
         self.issues.append(issue)
         return issue
+
+
+class AuditReadmeMainTests(unittest.TestCase):
+    def test_direct_cli_help_works_without_github_environment(self):
+        environment = os.environ.copy()
+        environment.pop("GITHUB_TOKEN", None)
+        environment.pop("GITHUB_REPOSITORY", None)
+
+        result = subprocess.run(
+            [sys.executable, "scripts/audit_readme.py", "--help"],
+            cwd=Path(__file__).parents[1],
+            env=environment,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("--readme", result.stdout)
+        self.assertEqual(result.stderr, "")
+
+    def test_parse_args_defaults_to_readme(self):
+        with patch("sys.argv", ["audit_readme.py"]):
+            args = parse_args()
+
+        self.assertEqual(args.readme, "README.md")
+
+    def test_parse_args_accepts_readme_path(self):
+        with patch("sys.argv", ["audit_readme.py", "--readme", "docs/list.md"]):
+            args = parse_args()
+
+        self.assertEqual(args.readme, "docs/list.md")
+
+    def test_main_rejects_missing_or_blank_environment_variables(self):
+        cases = (
+            ({"GITHUB_REPOSITORY": "owner/list"}, "GITHUB_TOKEN is required"),
+            (
+                {"GITHUB_TOKEN": " \t", "GITHUB_REPOSITORY": "owner/list"},
+                "GITHUB_TOKEN is required",
+            ),
+            ({"GITHUB_TOKEN": "secret"}, "GITHUB_REPOSITORY is required"),
+            (
+                {"GITHUB_TOKEN": "secret", "GITHUB_REPOSITORY": "  "},
+                "GITHUB_REPOSITORY is required",
+            ),
+        )
+        for environment, message in cases:
+            with self.subTest(message=message, environment=environment):
+                with (
+                    patch.dict("os.environ", environment, clear=True),
+                    patch("scripts.audit_readme.parse_args"),
+                    patch("scripts.audit_readme.Github") as github,
+                ):
+                    with self.assertRaisesRegex(RuntimeError, f"^{message}$"):
+                        main()
+
+                github.assert_not_called()
+
+    def test_main_publishes_findings_and_returns_zero_with_one_repo_lookup(self):
+        token = "do-not-print-this-token"
+        repository = object()
+        client = SimpleNamespace(get_repo=Mock(return_value=repository))
+        finding = SimpleNamespace()
+        checked_at = datetime(2026, 9, 7, 9, 0, tzinfo=timezone.utc)
+        stdout = io.StringIO()
+
+        with (
+            patch.dict(
+                "os.environ",
+                {
+                    "GITHUB_TOKEN": f"  {token}  ",
+                    "GITHUB_REPOSITORY": "  owner/list  ",
+                },
+                clear=True,
+            ),
+            patch(
+                "scripts.audit_readme.parse_args",
+                return_value=SimpleNamespace(readme="custom.md"),
+            ),
+            patch("scripts.audit_readme.Auth.Token", return_value="auth") as auth_token,
+            patch("scripts.audit_readme.Github", return_value=client) as github,
+            patch(
+                "scripts.audit_readme.audit_readme",
+                return_value=[finding],
+            ) as audit,
+            patch(
+                "scripts.audit_readme.render_report",
+                return_value="report body",
+            ) as render,
+            patch(
+                "scripts.audit_readme.sync_tracking_issue",
+                return_value="created",
+            ) as sync,
+            patch("scripts.audit_readme.datetime") as clock,
+            redirect_stdout(stdout),
+        ):
+            clock.now.return_value = checked_at
+            result = main()
+
+        self.assertEqual(result, 0)
+        auth_token.assert_called_once_with(token)
+        github.assert_called_once_with(auth="auth")
+        client.get_repo.assert_called_once_with("owner/list")
+        audit.assert_called_once_with("custom.md", client)
+        clock.now.assert_called_once_with(timezone.utc)
+        render.assert_called_once_with([finding], checked_at=checked_at)
+        sync.assert_called_once_with(repository, [finding], "report body")
+        self.assertEqual(stdout.getvalue(), "README audit: 1 finding(s); issue action: created\n")
+        self.assertNotIn(token, stdout.getvalue())
+
+    def test_main_returns_zero_for_multiple_findings_after_publication(self):
+        findings = [SimpleNamespace(), SimpleNamespace()]
+        client = SimpleNamespace(get_repo=lambda _name: object())
+        stdout = io.StringIO()
+        with (
+            patch.dict(
+                "os.environ",
+                {"GITHUB_TOKEN": "token", "GITHUB_REPOSITORY": "owner/list"},
+                clear=True,
+            ),
+            patch(
+                "scripts.audit_readme.parse_args",
+                return_value=SimpleNamespace(readme="README.md"),
+            ),
+            patch("scripts.audit_readme.Github", return_value=client),
+            patch("scripts.audit_readme.audit_readme", return_value=findings),
+            patch("scripts.audit_readme.render_report", return_value="body"),
+            patch("scripts.audit_readme.sync_tracking_issue", return_value="updated"),
+            redirect_stdout(stdout),
+        ):
+            result = main()
+
+        self.assertEqual(result, 0)
+        self.assertEqual(
+            stdout.getvalue(),
+            "README audit: 2 finding(s); issue action: updated\n",
+        )
+
+    def test_main_propagates_repository_lookup_error(self):
+        api_error = RuntimeError("API failed")
+        client = SimpleNamespace(get_repo=Mock(side_effect=api_error))
+        with (
+            patch.dict(
+                "os.environ",
+                {"GITHUB_TOKEN": "token", "GITHUB_REPOSITORY": "owner/list"},
+                clear=True,
+            ),
+            patch(
+                "scripts.audit_readme.parse_args",
+                return_value=SimpleNamespace(readme="README.md"),
+            ),
+            patch("scripts.audit_readme.Github", return_value=client),
+            patch("scripts.audit_readme.audit_readme") as audit,
+        ):
+            with self.assertRaises(RuntimeError) as caught:
+                main()
+
+        self.assertIs(caught.exception, api_error)
+        client.get_repo.assert_called_once_with("owner/list")
+        audit.assert_not_called()
+
+    def test_main_propagates_audit_and_publication_errors(self):
+        audit_error = RuntimeError("audit failed")
+        publication_error = RuntimeError("publication failed")
+        cases = (
+            ("audit", audit_error, None),
+            ("publication", None, publication_error),
+        )
+        for name, audit_side_effect, sync_side_effect in cases:
+            with self.subTest(name=name):
+                client = SimpleNamespace(get_repo=lambda _name: object())
+                with (
+                    patch.dict(
+                        "os.environ",
+                        {
+                            "GITHUB_TOKEN": "token",
+                            "GITHUB_REPOSITORY": "owner/list",
+                        },
+                        clear=True,
+                    ),
+                    patch(
+                        "scripts.audit_readme.parse_args",
+                        return_value=SimpleNamespace(readme="README.md"),
+                    ),
+                    patch("scripts.audit_readme.Github", return_value=client),
+                    patch(
+                        "scripts.audit_readme.audit_readme",
+                        return_value=[] if audit_side_effect is None else None,
+                        side_effect=audit_side_effect,
+                    ),
+                    patch("scripts.audit_readme.render_report", return_value="body"),
+                    patch(
+                        "scripts.audit_readme.sync_tracking_issue",
+                        return_value="clean",
+                        side_effect=sync_side_effect,
+                    ),
+                ):
+                    expected = audit_side_effect or sync_side_effect
+                    with self.assertRaises(RuntimeError) as caught:
+                        main()
+
+                self.assertIs(caught.exception, expected)
 
 
 class AuditReadmeTests(unittest.TestCase):

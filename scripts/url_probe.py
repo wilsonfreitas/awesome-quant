@@ -58,12 +58,16 @@ class _PinnedHTTPSConnection(http.client.HTTPSConnection):
         self._server_hostname = server_hostname
 
     def connect(self) -> None:
-        self.sock = self._create_connection(
-            (self.host, self.port), self.timeout, self.source_address
+        self.sock = self._create_connection(  # type: ignore[attr-defined]
+            (self.host, self.port),
+            self.timeout,
+            self.source_address,  # type: ignore[attr-defined]
         )
-        if self._tunnel_host:
-            self._tunnel()
-        self.sock = self._context.wrap_socket(self.sock, server_hostname=self._server_hostname)
+        if self._tunnel_host:  # type: ignore[attr-defined]
+            self._tunnel()  # type: ignore[attr-defined]
+        self.sock = self._context.wrap_socket(  # type: ignore[attr-defined]
+            self.sock, server_hostname=self._server_hostname
+        )
 
 
 class _PinnedHTTPConnection(http.client.HTTPConnection):
@@ -130,6 +134,7 @@ def _single_request(
     address: str,
     timeout: float,
 ) -> RawResponse:
+    connection: http.client.HTTPConnection
     if parsed.scheme.lower() == "https":
         connection = _PinnedHTTPSConnection(address, port, hostname, timeout)
     else:

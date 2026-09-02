@@ -2,8 +2,11 @@
 
 from __future__ import annotations
 
+import argparse
+import os
 import re
 import string
+import sys
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -13,7 +16,11 @@ from pathlib import Path
 from typing import Any, Callable, Iterable
 from urllib.parse import urlsplit
 
-from github import GithubException
+from github import Auth, Github, GithubException
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from scripts.readme_entries import (
     HISTORICAL_SECTION,
@@ -488,3 +495,33 @@ def audit_readme(
         )
     )
     return findings
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Audit awesome-quant README links and repositories."
+    )
+    parser.add_argument("--readme", default="README.md")
+    return parser.parse_args()
+
+
+def main() -> int:
+    args = parse_args()
+    token = os.environ.get("GITHUB_TOKEN", "").strip()
+    if not token:
+        raise RuntimeError("GITHUB_TOKEN is required")
+    repository_name = os.environ.get("GITHUB_REPOSITORY", "").strip()
+    if not repository_name:
+        raise RuntimeError("GITHUB_REPOSITORY is required")
+
+    github_client = Github(auth=Auth.Token(token))
+    repository = github_client.get_repo(repository_name)
+    findings = audit_readme(args.readme, github_client)
+    body = render_report(findings, checked_at=datetime.now(timezone.utc))
+    action = sync_tracking_issue(repository, findings, body)
+    print(f"README audit: {len(findings)} finding(s); issue action: {action}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
