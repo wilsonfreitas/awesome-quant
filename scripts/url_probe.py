@@ -94,10 +94,7 @@ def validate_public_url(url: str) -> tuple[str, int, str]:
         raise UnsafeUrlError("port zero is not allowed")
 
     port = explicit_port or (443 if scheme == "https" else 80)
-    try:
-        results = socket.getaddrinfo(hostname, port, type=socket.SOCK_STREAM)
-    except OSError as error:
-        raise UnsafeUrlError("hostname did not resolve") from error
+    results = socket.getaddrinfo(hostname, port, type=socket.SOCK_STREAM)
 
     addresses: list[str] = []
     for _family, _socktype, _protocol, _canonname, sockaddr in results:
@@ -349,5 +346,15 @@ def probe_url(
                     (),
                     f"transport error: {last_transport_error}",
                 )
+        except UnsafeUrlError as error:
+            prefix = "unsafe URL" if current_url == requested_url else "unsafe redirect target"
+            return _http_error(
+                requested_url,
+                current_url,
+                None,
+                attempt,
+                redirects,
+                f"{prefix}: {error}",
+            )
 
     raise AssertionError("retry loop exhausted unexpectedly")

@@ -106,6 +106,43 @@ class UrlProbeTests(unittest.TestCase):
             ):
                 validate_public_url(PUBLIC_URL)
 
+    def test_dns_resolution_failures_are_retried_as_transient(self):
+        delays = []
+
+        with patch(
+            "scripts.url_probe.socket.getaddrinfo",
+            side_effect=socket.gaierror("no dns"),
+        ) as getaddrinfo:
+            observation = probe_url(PUBLIC_URL, sleeper=delays.append)
+
+        self.assertEqual(observation.outcome, Outcome.TRANSIENT)
+        self.assertEqual(observation.attempts, 3)
+        self.assertEqual(observation.error, "transport error: gaierror")
+        self.assertEqual(delays, [0, 1, 2])
+        self.assertEqual(getaddrinfo.call_count, 3)
+
+    def test_default_requester_revalidation_failure_is_an_http_error(self):
+        public_answer = [
+            (socket.AF_INET, socket.SOCK_STREAM, 6, "", ("8.8.8.8", 443))
+        ]
+        private_answer = [
+            (socket.AF_INET, socket.SOCK_STREAM, 6, "", ("127.0.0.1", 443))
+        ]
+
+        with patch(
+            "scripts.url_probe.socket.getaddrinfo",
+            side_effect=[public_answer, private_answer],
+        ) as getaddrinfo:
+            observation = probe_url(PUBLIC_URL, sleeper=lambda _: None)
+
+        self.assertEqual(observation.outcome, Outcome.HTTP_ERROR)
+        self.assertEqual(observation.attempts, 1)
+        self.assertEqual(
+            observation.error,
+            "unsafe URL: resolved address is not globally routable",
+        )
+        self.assertEqual(getaddrinfo.call_count, 2)
+
     def test_missing_redirect_location_is_an_http_error(self):
         with patch("scripts.url_probe.validate_public_url", side_effect=public_validation):
             observation = probe_url(
