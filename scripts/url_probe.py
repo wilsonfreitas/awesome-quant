@@ -18,6 +18,7 @@ RETRYABLE_STATUSES = {408, 425, 500, 502, 503, 504}
 REDIRECT_STATUSES = {300, 301, 302, 303, 307, 308}
 PERMANENT_REDIRECT_STATUSES = {301, 308}
 TRANSPORT_ERRORS = (OSError, ssl.SSLError, socket.gaierror, TimeoutError)
+NAT64_WELL_KNOWN_NETWORK = ipaddress.IPv6Network("64:ff9b::/96")
 
 
 class Outcome(StrEnum):
@@ -74,6 +75,38 @@ class _PinnedHTTPConnection(http.client.HTTPConnection):
     """HTTP connection using an already-validated address as its TCP peer."""
 
 
+def _embedded_ipv4_addresses(
+    address: ipaddress.IPv4Address | ipaddress.IPv6Address,
+) -> tuple[ipaddress.IPv4Address, ...]:
+    if not isinstance(address, ipaddress.IPv6Address):
+        return ()
+
+    embedded = [
+        candidate
+        for candidate in (address.ipv4_mapped, address.sixtofour)
+        if candidate is not None
+    ]
+    if address.teredo is not None:
+        embedded.extend(address.teredo)
+    if address in NAT64_WELL_KNOWN_NETWORK:
+        embedded.append(ipaddress.IPv4Address(int(address) & 0xFFFFFFFF))
+    return tuple(embedded)
+
+
+def _is_public_address(
+    address: ipaddress.IPv4Address | ipaddress.IPv6Address,
+) -> bool:
+    embedded_addresses_are_public = all(
+        embedded.is_global and not embedded.is_multicast
+        for embedded in _embedded_ipv4_addresses(address)
+    )
+    return (
+        address.is_global
+        and not address.is_multicast
+        and embedded_addresses_are_public
+    )
+
+
 def validate_public_url(url: str) -> tuple[str, int, str]:
     """Validate an HTTP(S) URL and return hostname, effective port, and pinned IP."""
     try:
@@ -106,7 +139,7 @@ def validate_public_url(url: str) -> tuple[str, int, str]:
             address = ipaddress.ip_address(sockaddr[0])
         except (IndexError, ValueError) as error:
             raise UnsafeUrlError("invalid resolved address") from error
-        if not address.is_global:
+        if not _is_public_address(address):
             raise UnsafeUrlError("resolved address is not globally routable")
         addresses.append(str(address))
     if not addresses:
@@ -267,7 +300,17 @@ def probe_url(
                 current_canonical = _canonical_url(current_url)
                 seen.add(current_canonical)
 
-                response = requester(current_url, timeout)
+                try:
+                    response = requester(current_url, timeout)
+                except http.client.InvalidURL:
+                    return _http_error(
+                        requested_url,
+                        current_url,
+                        None,
+                        attempt,
+                        redirects,
+                        "invalid request URL",
+                    )
                 if response.status not in REDIRECT_STATUSES:
                     if response.status in RETRYABLE_STATUSES:
                         if attempt == 3:
@@ -309,7 +352,17 @@ def probe_url(
                         "redirect limit exceeded",
                     )
 
-                target_url = urljoin(current_url, response.location)
+                try:
+                    target_url = urljoin(current_url, response.location)
+                except ValueError:
+                    return _http_error(
+                        requested_url,
+                        current_url,
+                        response.status,
+                        attempt,
+                        redirects,
+                        "invalid redirect location",
+                    )
                 try:
                     validate_public_url(target_url)
                 except UnsafeUrlError as error:

@@ -14,7 +14,7 @@ from enum import StrEnum
 from itertools import islice
 from pathlib import Path
 from typing import Any, Callable, Iterable
-from urllib.parse import urlsplit
+from urllib.parse import quote, urlsplit
 
 from github import Auth, Github, GithubException
 
@@ -71,7 +71,8 @@ _REPORT_SECTION_ORDER = {
     for kind in kinds
 }
 _MARKDOWN_CONTROLS = frozenset(string.punctuation)
-_URL_RE = re.compile(r"(?<!<)https?://[^\s<>]+")
+_URL_RE = re.compile(r"https?://\S+")
+_URL_SAFE_CHARACTERS = ":/?#[]@!$&'()*+,;=%"
 
 
 @dataclass(frozen=True)
@@ -134,15 +135,25 @@ def _escape_markdown(text: str) -> str:
     )
 
 
+def _render_url(url: str) -> str:
+    encoded_url = quote(url, safe=_URL_SAFE_CHARACTERS)
+    return f"<{encoded_url}>"
+
+
 def _render_text(text: str) -> str:
     text = " ".join(text.split())
-
-    def angle_link(match: re.Match[str]) -> str:
+    parts = []
+    offset = 0
+    for match in _URL_RE.finditer(text):
+        parts.append(_escape_markdown(text[offset : match.start()]))
         value = match.group(0)
         url = value.rstrip(".,;:!?")
-        return f"<{url}>{value[len(url):]}"
+        parts.append(_render_url(url))
+        parts.append(_escape_markdown(value[len(url) :]))
+        offset = match.end()
 
-    return _URL_RE.sub(angle_link, text)
+    parts.append(_escape_markdown(text[offset:]))
+    return "".join(parts)
 
 
 def render_report(findings: Iterable[Finding], *, checked_at: datetime) -> str:
@@ -178,14 +189,15 @@ def render_report(findings: Iterable[Finding], *, checked_at: datetime) -> str:
                 f"- **Entry:** {_escape_markdown(finding.entry_name)}; "
                 f"**README line:** {finding.line_number}; "
                 f"**Section:** {_escape_markdown(finding.section)}; "
-                f"**Checked URL:** <{finding.url}>; "
+                f"**Checked URL:** {_render_url(finding.url)}; "
                 f"**Evidence:** {_render_text(finding.evidence)}; "
                 f"**Manual suggestion:** {_render_text(finding.suggestion)}"
             )
             for index, candidate in enumerate(_sorted_candidates(finding), start=1):
                 lines.append(
-                    f"  - **Candidate {index}:** {candidate.full_name} — "
-                    f"<{candidate.url}> — {candidate.stars} stars"
+                    f"  - **Candidate {index}:** "
+                    f"{_escape_markdown(candidate.full_name)} — "
+                    f"{_render_url(candidate.url)} — {candidate.stars} stars"
                 )
         lines.append("")
     return "\n".join(lines)

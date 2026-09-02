@@ -432,35 +432,35 @@ Entries are reported for manual review; this automation did not modify README.md
 
 ## Confirmed dead links
 
-- **Entry:** A\_B \[tool\]; **README line:** 10; **Section:** Alpha \& Beta; **Checked URL:** <https://dead.example/a>; **Evidence:** Confirmed HTTP 404 response.; **Manual suggestion:** Manually verify, then remove or replace this link.
-- **Entry:** Zed; **README line:** 11; **Section:** Alpha \& Beta; **Checked URL:** <https://dead.example/z>; **Evidence:** Confirmed HTTP 410 response.; **Manual suggestion:** Manually verify, then remove or replace this link.
+- **Entry:** A\_B \[tool\]; **README line:** 10; **Section:** Alpha \& Beta; **Checked URL:** <https://dead.example/a>; **Evidence:** Confirmed HTTP 404 response\.; **Manual suggestion:** Manually verify\, then remove or replace this link\.
+- **Entry:** Zed; **README line:** 11; **Section:** Alpha \& Beta; **Checked URL:** <https://dead.example/z>; **Evidence:** Confirmed HTTP 410 response\.; **Manual suggestion:** Manually verify\, then remove or replace this link\.
 
 ## Repeated transient failures
 
-- **Entry:** Retry; **README line:** 20; **Section:** Transient; **Checked URL:** <https://retry.example>; **Evidence:** Transient failure after 3 attempts; last status 503.; **Manual suggestion:** Retry this link on the next audit run.
+- **Entry:** Retry; **README line:** 20; **Section:** Transient; **Checked URL:** <https://retry.example>; **Evidence:** Transient failure after 3 attempts\; last status 503\.; **Manual suggestion:** Retry this link on the next audit run\.
 
 ## Access-restricted links
 
-- **Entry:** Restricted; **README line:** 30; **Section:** Access; **Checked URL:** <https://restricted.example>; **Evidence:** Automated access was restricted by HTTP 403.; **Manual suggestion:** Perform manual browser verification before changing the link.
+- **Entry:** Restricted; **README line:** 30; **Section:** Access; **Checked URL:** <https://restricted.example>; **Evidence:** Automated access was restricted by HTTP 403\.; **Manual suggestion:** Perform manual browser verification before changing the link\.
 
 ## Other HTTP failures
 
-- **Entry:** Broken; **README line:** 40; **Section:** HTTP; **Checked URL:** <https://error.example>; **Evidence:** HTTP probe failed; last error unsafe URL.; **Manual suggestion:** Perform manual diagnosis before changing the link.
+- **Entry:** Broken; **README line:** 40; **Section:** HTTP; **Checked URL:** <https://error.example>; **Evidence:** HTTP probe failed\; last error unsafe URL\.; **Manual suggestion:** Perform manual diagnosis before changing the link\.
 
 ## Permanent redirects
 
-- **Entry:** Moved; **README line:** 50; **Section:** Redirects; **Checked URL:** <https://old.example/path>; **Evidence:** The link permanently redirects to <https://new.example/path>.; **Manual suggestion:** Update the link to <https://new.example/path>.
+- **Entry:** Moved; **README line:** 50; **Section:** Redirects; **Checked URL:** <https://old.example/path>; **Evidence:** The link permanently redirects to <https://new.example/path>\.; **Manual suggestion:** Update the link to <https://new.example/path>\.
 
 ## GitHub repository findings
 
-- **Entry:** Archive; **README line:** 60; **Section:** Repositories; **Checked URL:** <https://github.com/owner/archive>; **Evidence:** GitHub marks the repository as archived.; **Manual suggestion:** Manually verify whether to replace it or move it to the historical section.
+- **Entry:** Archive; **README line:** 60; **Section:** Repositories; **Checked URL:** <https://github.com/owner/archive>; **Evidence:** GitHub marks the repository as archived\.; **Manual suggestion:** Manually verify whether to replace it or move it to the historical section\.
 
 ## Candidate replacements
 
-- **Entry:** Replacement \*Tool\* \~\~Gone\~\~ \&copy\;; **README line:** 80; **Section:** Zeta \[Section\] \#1 \| Top; **Checked URL:** <https://dead.example/tool>; **Evidence:** The original primary URL returned confirmed HTTP 404.; **Manual suggestion:** Manual verification of these candidate repositories is required.
-  - **Candidate 1:** alpha/tool — <https://github.com/alpha/tool> — 9 stars
-  - **Candidate 2:** beta/tool — <https://github.com/beta/tool> — 9 stars
-  - **Candidate 3:** zeta/tool — <https://github.com/zeta/tool> — 2 stars
+- **Entry:** Replacement \*Tool\* \~\~Gone\~\~ \&copy\;; **README line:** 80; **Section:** Zeta \[Section\] \#1 \| Top; **Checked URL:** <https://dead.example/tool>; **Evidence:** The original primary URL returned confirmed HTTP 404\.; **Manual suggestion:** Manual verification of these candidate repositories is required\.
+  - **Candidate 1:** alpha\/tool — <https://github.com/alpha/tool> — 9 stars
+  - **Candidate 2:** beta\/tool — <https://github.com/beta/tool> — 9 stars
+  - **Candidate 3:** zeta\/tool — <https://github.com/zeta/tool> — 2 stars
 """
 
         self.assertEqual(render_report(findings, checked_at=checked_at), expected)
@@ -486,6 +486,67 @@ Entries are reported for manual review; this automation did not modify README.md
 No findings.
 """,
         )
+
+    def test_redirect_url_cannot_escape_angle_link_and_create_a_mention(self):
+        source_url = "https://redirect.example/old"
+        readme = (
+            "## Trading & Backtesting\n"
+            f"- [Redirect]({source_url}) - `Python` - Entry.\n"
+        )
+        findings = self.audit(
+            readme,
+            FakeGithubClient(),
+            {
+                source_url: observation(
+                    source_url,
+                    Outcome.PERMANENT_REDIRECT,
+                    final_url="https://redirect.example/new>@octocat",
+                )
+            },
+        )
+
+        report = render_report(
+            findings,
+            checked_at=datetime(2026, 9, 2, 12, 45, tzinfo=timezone.utc),
+        )
+
+        self.assertIn("<https://redirect.example/new%3E@octocat>", report)
+        self.assertNotIn(">@octocat", report)
+
+    def test_checked_and_candidate_urls_are_rendered_safely(self):
+        finding = Finding(
+            FindingKind.CANDIDATES,
+            "Section",
+            "Entry",
+            10,
+            "https://checked.example/a b>@checked",
+            "Candidate replacement found.",
+            "Verify manually.",
+            (
+                Candidate(
+                    "@octocat/repo",
+                    "https://candidate.example/a b>@candidate",
+                    1,
+                ),
+            ),
+        )
+
+        report = render_report(
+            [finding],
+            checked_at=datetime(2026, 9, 2, 12, 45, tzinfo=timezone.utc),
+        )
+
+        self.assertIn(
+            "**Checked URL:** <https://checked.example/a%20b%3E@checked>",
+            report,
+        )
+        self.assertIn(
+            r"**Candidate 1:** \@octocat\/repo — "
+            "<https://candidate.example/a%20b%3E@candidate>",
+            report,
+        )
+        self.assertNotIn(">@checked", report)
+        self.assertNotIn(">@candidate", report)
 
     def test_sync_tracking_issue_follows_the_full_lifecycle_matrix(self):
         findings = [SimpleNamespace()]

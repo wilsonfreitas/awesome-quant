@@ -1,3 +1,4 @@
+import http.client
 import socket
 import unittest
 from unittest.mock import patch
@@ -187,6 +188,82 @@ class UrlProbeTests(unittest.TestCase):
         self.assertEqual(observation.attempts, 3)
         self.assertEqual(delays, [0, 1, 2])
         self.assertEqual(observation.error, "transport error: TimeoutError")
+
+    def test_invalid_request_url_is_an_http_error_without_retry(self):
+        requester = SequenceRequester(
+            [http.client.InvalidURL("URL can't contain control characters")]
+        )
+        delays = []
+
+        with patch("scripts.url_probe.validate_public_url", side_effect=public_validation):
+            observation = probe_url(
+                "https://example.test/a path",
+                requester=requester,
+                sleeper=delays.append,
+            )
+
+        self.assertEqual(observation.outcome, Outcome.HTTP_ERROR)
+        self.assertEqual(observation.attempts, 1)
+        self.assertEqual(observation.error, "invalid request URL")
+        self.assertEqual(delays, [0])
+        self.assertEqual(len(requester.urls), 1)
+
+    def test_malformed_redirect_location_is_an_http_error_without_retry(self):
+        requester = SequenceRequester([RawResponse(302, "http://[::1")])
+        delays = []
+
+        with patch("scripts.url_probe.validate_public_url", side_effect=public_validation):
+            observation = probe_url(
+                PUBLIC_URL,
+                requester=requester,
+                sleeper=delays.append,
+            )
+
+        self.assertEqual(observation.outcome, Outcome.HTTP_ERROR)
+        self.assertEqual(observation.status, 302)
+        self.assertEqual(observation.attempts, 1)
+        self.assertEqual(observation.error, "invalid redirect location")
+        self.assertEqual(delays, [0])
+        self.assertEqual(len(requester.urls), 1)
+
+    def test_multicast_resolved_addresses_are_rejected(self):
+        for family, address in (
+            (socket.AF_INET, "224.0.0.1"),
+            (socket.AF_INET6, "ff0e::1"),
+        ):
+            with self.subTest(address=address):
+                answers = [(family, socket.SOCK_STREAM, 6, "", (address, 443))]
+                with patch("scripts.url_probe.socket.getaddrinfo", return_value=answers):
+                    with self.assertRaisesRegex(
+                        UnsafeUrlError, "resolved address is not globally routable"
+                    ):
+                        validate_public_url(PUBLIC_URL)
+
+    def test_non_public_embedded_ipv4_addresses_are_rejected(self):
+        for address in ("64:ff9b::127.0.0.1", "2002:7f00:1::"):
+            with self.subTest(address=address):
+                answers = [
+                    (socket.AF_INET6, socket.SOCK_STREAM, 6, "", (address, 443))
+                ]
+                with patch("scripts.url_probe.socket.getaddrinfo", return_value=answers):
+                    with self.assertRaisesRegex(
+                        UnsafeUrlError, "resolved address is not globally routable"
+                    ):
+                        validate_public_url(PUBLIC_URL)
+
+    def test_public_unicast_and_public_nat64_addresses_are_allowed(self):
+        for family, address, expected in (
+            (socket.AF_INET, "8.8.8.8", "8.8.8.8"),
+            (socket.AF_INET6, "2606:4700:4700::1111", "2606:4700:4700::1111"),
+            (socket.AF_INET6, "64:ff9b::8.8.8.8", "64:ff9b::808:808"),
+        ):
+            with self.subTest(address=address):
+                answers = [(family, socket.SOCK_STREAM, 6, "", (address, 443))]
+                with patch("scripts.url_probe.socket.getaddrinfo", return_value=answers):
+                    self.assertEqual(
+                        validate_public_url(PUBLIC_URL),
+                        ("example.test", 443, expected),
+                    )
 
     def test_request_once_falls_back_to_get_for_unsupported_head(self):
         calls = []
