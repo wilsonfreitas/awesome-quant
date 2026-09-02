@@ -91,13 +91,16 @@ class FakeGithubClient:
 
 
 class FakeIssue:
-    def __init__(self, title, body, state):
+    def __init__(self, title, body, state, *, edit_error=None):
         self.title = title
         self.body = body
         self.state = state
+        self.edit_error = edit_error
         self.edits = []
 
     def edit(self, **kwargs):
+        if self.edit_error is not None:
+            raise self.edit_error
         self.edits.append(kwargs)
         if "body" in kwargs:
             self.body = kwargs["body"]
@@ -106,16 +109,22 @@ class FakeIssue:
 
 
 class FakeTrackingRepository:
-    def __init__(self, issues=()):
+    def __init__(self, issues=(), *, get_issues_error=None, create_issue_error=None):
         self.issues = list(issues)
+        self.get_issues_error = get_issues_error
+        self.create_issue_error = create_issue_error
         self.get_issues_calls = []
         self.create_issue_calls = []
 
     def get_issues(self, **kwargs):
+        if self.get_issues_error is not None:
+            raise self.get_issues_error
         self.get_issues_calls.append(kwargs)
         return iter(self.issues)
 
     def create_issue(self, **kwargs):
+        if self.create_issue_error is not None:
+            raise self.create_issue_error
         self.create_issue_calls.append(kwargs)
         issue = FakeIssue(kwargs["title"], kwargs["body"], "open")
         self.issues.append(issue)
@@ -127,8 +136,8 @@ class AuditReadmeTests(unittest.TestCase):
         findings = [
             Finding(
                 FindingKind.CANDIDATES,
-                "Zeta [Section]",
-                "Replacement *Tool*",
+                "Zeta [Section] #1 | Top",
+                "Replacement *Tool* ~~Gone~~ &copy;",
                 80,
                 "https://dead.example/tool",
                 "The original primary URL returned confirmed HTTP 404.",
@@ -214,8 +223,8 @@ Entries are reported for manual review; this automation did not modify README.md
 
 ## Confirmed dead links
 
-- **Entry:** A\_B \[tool\]; **README line:** 10; **Section:** Alpha & Beta; **Checked URL:** <https://dead.example/a>; **Evidence:** Confirmed HTTP 404 response.; **Manual suggestion:** Manually verify, then remove or replace this link.
-- **Entry:** Zed; **README line:** 11; **Section:** Alpha & Beta; **Checked URL:** <https://dead.example/z>; **Evidence:** Confirmed HTTP 410 response.; **Manual suggestion:** Manually verify, then remove or replace this link.
+- **Entry:** A\_B \[tool\]; **README line:** 10; **Section:** Alpha \& Beta; **Checked URL:** <https://dead.example/a>; **Evidence:** Confirmed HTTP 404 response.; **Manual suggestion:** Manually verify, then remove or replace this link.
+- **Entry:** Zed; **README line:** 11; **Section:** Alpha \& Beta; **Checked URL:** <https://dead.example/z>; **Evidence:** Confirmed HTTP 410 response.; **Manual suggestion:** Manually verify, then remove or replace this link.
 
 ## Repeated transient failures
 
@@ -239,7 +248,7 @@ Entries are reported for manual review; this automation did not modify README.md
 
 ## Candidate replacements
 
-- **Entry:** Replacement \*Tool\*; **README line:** 80; **Section:** Zeta \[Section\]; **Checked URL:** <https://dead.example/tool>; **Evidence:** The original primary URL returned confirmed HTTP 404.; **Manual suggestion:** Manual verification of these candidate repositories is required.
+- **Entry:** Replacement \*Tool\* \~\~Gone\~\~ \&copy\;; **README line:** 80; **Section:** Zeta \[Section\] \#1 \| Top; **Checked URL:** <https://dead.example/tool>; **Evidence:** The original primary URL returned confirmed HTTP 404.; **Manual suggestion:** Manual verification of these candidate repositories is required.
   - **Candidate 1:** alpha/tool — <https://github.com/alpha/tool> — 9 stars
   - **Candidate 2:** beta/tool — <https://github.com/beta/tool> — 9 stars
   - **Candidate 3:** zeta/tool — <https://github.com/zeta/tool> — 2 stars
@@ -357,6 +366,45 @@ No findings.
         )
         with self.assertRaisesRegex(RuntimeError, "multiple tracking issues"):
             sync_tracking_issue(duplicate_repository, [], body)
+
+    def test_sync_tracking_issue_propagates_repository_and_issue_errors(self):
+        body = f"{TRACKING_MARKER}\nreport"
+        get_error = RuntimeError("get failed")
+        create_error = RuntimeError("create failed")
+        edit_error = RuntimeError("edit failed")
+        cases = (
+            (
+                "get issues",
+                FakeTrackingRepository(get_issues_error=get_error),
+                get_error,
+            ),
+            (
+                "create issue",
+                FakeTrackingRepository(create_issue_error=create_error),
+                create_error,
+            ),
+            (
+                "edit issue",
+                FakeTrackingRepository(
+                    (
+                        FakeIssue(
+                            TRACKING_TITLE,
+                            f"{TRACKING_MARKER}\nold report",
+                            "open",
+                            edit_error=edit_error,
+                        ),
+                    )
+                ),
+                edit_error,
+            ),
+        )
+
+        for name, repository, expected_error in cases:
+            with self.subTest(name=name):
+                with self.assertRaises(RuntimeError) as caught:
+                    sync_tracking_issue(repository, [SimpleNamespace()], body)
+
+                self.assertIs(caught.exception, expected_error)
 
     def test_collect_targets_uses_one_parser_pass_and_preserves_entry_and_url_order(self):
         first = entry(

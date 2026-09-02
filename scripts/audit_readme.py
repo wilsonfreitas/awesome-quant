@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+import string
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -62,7 +63,7 @@ _REPORT_SECTION_ORDER = {
     for index, (_heading, kinds) in enumerate(_REPORT_SECTIONS)
     for kind in kinds
 }
-_MARKDOWN_CONTROLS = frozenset(r"\`*_[\]{}()#+-.!|<>")
+_MARKDOWN_CONTROLS = frozenset(string.punctuation)
 _URL_RE = re.compile(r"(?<!<)https?://[^\s<>]+")
 
 
