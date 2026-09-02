@@ -2,12 +2,14 @@
 
 from __future__ import annotations
 
+import re
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from enum import StrEnum
 from itertools import islice
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any, Callable, Iterable
 from urllib.parse import urlsplit
 
 from github import GithubException
@@ -18,6 +20,9 @@ from scripts.readme_entries import (
     iter_readme_entries,
 )
 from scripts.url_probe import Outcome, UrlObservation, probe_url
+
+TRACKING_TITLE = "Weekly README audit report"
+TRACKING_MARKER = "<!-- awesome-quant-readme-audit -->"
 
 
 class FindingKind(StrEnum):
@@ -34,6 +39,31 @@ class FindingKind(StrEnum):
 
 
 FINDING_ORDER = {kind: index for index, kind in enumerate(FindingKind)}
+
+_REPORT_SECTIONS = (
+    ("Confirmed dead links", (FindingKind.DEAD,)),
+    ("Repeated transient failures", (FindingKind.TRANSIENT,)),
+    ("Access-restricted links", (FindingKind.RESTRICTED,)),
+    ("Other HTTP failures", (FindingKind.HTTP_ERROR,)),
+    ("Permanent redirects", (FindingKind.PERMANENT_REDIRECT,)),
+    (
+        "GitHub repository findings",
+        (
+            FindingKind.GITHUB_MOVED,
+            FindingKind.GITHUB_ARCHIVED,
+            FindingKind.GITHUB_DISABLED,
+            FindingKind.GITHUB_PARENT,
+        ),
+    ),
+    ("Candidate replacements", (FindingKind.CANDIDATES,)),
+)
+_REPORT_SECTION_ORDER = {
+    kind: index
+    for index, (_heading, kinds) in enumerate(_REPORT_SECTIONS)
+    for kind in kinds
+}
+_MARKDOWN_CONTROLS = frozenset(r"\`*_[\]{}()#+-.!|<>")
+_URL_RE = re.compile(r"(?<!<)https?://[^\s<>]+")
 
 
 @dataclass(frozen=True)
@@ -60,6 +90,134 @@ class Finding:
     evidence: str
     suggestion: str
     candidates: tuple[Candidate, ...] = ()
+
+
+def _candidate_sort_key(candidate: Candidate) -> tuple[Any, ...]:
+    return (
+        -candidate.stars,
+        candidate.full_name.casefold(),
+        candidate.full_name,
+        candidate.url,
+    )
+
+
+def _sorted_candidates(finding: Finding) -> tuple[Candidate, ...]:
+    return tuple(sorted(finding.candidates, key=_candidate_sort_key)[:3])
+
+
+def _report_sort_key(finding: Finding) -> tuple[Any, ...]:
+    return (
+        _REPORT_SECTION_ORDER[finding.kind],
+        finding.section,
+        finding.entry_name,
+        finding.line_number,
+        finding.url,
+        finding.evidence,
+        finding.suggestion,
+        tuple(_candidate_sort_key(candidate) for candidate in _sorted_candidates(finding)),
+    )
+
+
+def _escape_markdown(text: str) -> str:
+    text = " ".join(text.splitlines())
+    return "".join(
+        f"\\{character}" if character in _MARKDOWN_CONTROLS else character
+        for character in text
+    )
+
+
+def _render_text(text: str) -> str:
+    text = " ".join(text.split())
+
+    def angle_link(match: re.Match[str]) -> str:
+        value = match.group(0)
+        url = value.rstrip(".,;:!?")
+        return f"<{url}>{value[len(url):]}"
+
+    return _URL_RE.sub(angle_link, text)
+
+
+def render_report(findings: Iterable[Finding], *, checked_at: datetime) -> str:
+    """Render findings as stable Markdown suitable for the tracking issue body."""
+    ordered_findings = sorted(findings, key=_report_sort_key)
+    checked_at_utc = checked_at.astimezone(timezone.utc)
+    lines = [
+        TRACKING_MARKER,
+        f"# {TRACKING_TITLE}",
+        "",
+        f"Checked: {checked_at_utc:%Y-%m-%d %H:%M} UTC",
+        "Entries are reported for manual review; this automation did not modify README.md.",
+        "",
+    ]
+    if not ordered_findings:
+        return "\n".join((*lines, "No findings.", ""))
+
+    findings_by_kind: dict[FindingKind, list[Finding]] = {
+        kind: [] for kind in FindingKind
+    }
+    for finding in ordered_findings:
+        findings_by_kind[finding.kind].append(finding)
+
+    for heading, kinds in _REPORT_SECTIONS:
+        section_findings = [
+            finding for kind in kinds for finding in findings_by_kind[kind]
+        ]
+        if not section_findings:
+            continue
+        lines.extend((f"## {heading}", ""))
+        for finding in section_findings:
+            lines.append(
+                f"- **Entry:** {_escape_markdown(finding.entry_name)}; "
+                f"**README line:** {finding.line_number}; "
+                f"**Section:** {_escape_markdown(finding.section)}; "
+                f"**Checked URL:** <{finding.url}>; "
+                f"**Evidence:** {_render_text(finding.evidence)}; "
+                f"**Manual suggestion:** {_render_text(finding.suggestion)}"
+            )
+            for index, candidate in enumerate(_sorted_candidates(finding), start=1):
+                lines.append(
+                    f"  - **Candidate {index}:** {candidate.full_name} — "
+                    f"<{candidate.url}> — {candidate.stars} stars"
+                )
+        lines.append("")
+    return "\n".join(lines)
+
+
+def sync_tracking_issue(
+    repository: Any,
+    findings: Iterable[Finding],
+    body: str,
+) -> str:
+    """Create or transition the single marked README audit tracking issue."""
+    has_findings = bool(tuple(findings))
+    matches = [
+        issue
+        for issue in repository.get_issues(state="all")
+        if issue.title == TRACKING_TITLE and TRACKING_MARKER in (issue.body or "")
+    ]
+    if len(matches) > 1:
+        raise RuntimeError("multiple tracking issues found")
+    if not matches:
+        if not has_findings:
+            return "clean"
+        repository.create_issue(title=TRACKING_TITLE, body=body)
+        return "created"
+
+    issue = matches[0]
+    desired_state = "open" if has_findings else "closed"
+    changes = {}
+    if issue.body != body:
+        changes["body"] = body
+    if issue.state != desired_state:
+        changes["state"] = desired_state
+    if not changes:
+        return "unchanged"
+
+    state_changed = "state" in changes
+    issue.edit(**changes)
+    if state_changed:
+        return "reopened" if has_findings else "closed"
+    return "updated"
 
 
 def collect_targets(readme_path: str | Path) -> list[AuditTarget]:

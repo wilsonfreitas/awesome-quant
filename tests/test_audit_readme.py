@@ -2,6 +2,7 @@ import tempfile
 import threading
 import time
 import unittest
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
@@ -11,9 +12,14 @@ from github import GithubException
 from scripts.audit_readme import (
     AuditTarget,
     Candidate,
+    Finding,
     FindingKind,
+    TRACKING_MARKER,
+    TRACKING_TITLE,
     audit_readme,
     collect_targets,
+    render_report,
+    sync_tracking_issue,
 )
 from scripts.readme_entries import ReadmeEntry
 from scripts.url_probe import Outcome, UrlObservation
@@ -84,7 +90,274 @@ class FakeGithubClient:
         return iter(self.searches.get(kwargs["query"], ()))
 
 
+class FakeIssue:
+    def __init__(self, title, body, state):
+        self.title = title
+        self.body = body
+        self.state = state
+        self.edits = []
+
+    def edit(self, **kwargs):
+        self.edits.append(kwargs)
+        if "body" in kwargs:
+            self.body = kwargs["body"]
+        if "state" in kwargs:
+            self.state = kwargs["state"]
+
+
+class FakeTrackingRepository:
+    def __init__(self, issues=()):
+        self.issues = list(issues)
+        self.get_issues_calls = []
+        self.create_issue_calls = []
+
+    def get_issues(self, **kwargs):
+        self.get_issues_calls.append(kwargs)
+        return iter(self.issues)
+
+    def create_issue(self, **kwargs):
+        self.create_issue_calls.append(kwargs)
+        issue = FakeIssue(kwargs["title"], kwargs["body"], "open")
+        self.issues.append(issue)
+        return issue
+
+
 class AuditReadmeTests(unittest.TestCase):
+    def test_render_report_is_a_complete_deterministic_markdown_document(self):
+        findings = [
+            Finding(
+                FindingKind.CANDIDATES,
+                "Zeta [Section]",
+                "Replacement *Tool*",
+                80,
+                "https://dead.example/tool",
+                "The original primary URL returned confirmed HTTP 404.",
+                "Manual verification of these candidate repositories is required.",
+                (
+                    Candidate("zeta/tool", "https://github.com/zeta/tool", 2),
+                    Candidate("beta/tool", "https://github.com/beta/tool", 9),
+                    Candidate("alpha/tool", "https://github.com/alpha/tool", 9),
+                ),
+            ),
+            Finding(
+                FindingKind.PERMANENT_REDIRECT,
+                "Redirects",
+                "Moved",
+                50,
+                "https://old.example/path",
+                "The link permanently redirects to https://new.example/path.",
+                "Update the link to https://new.example/path.",
+            ),
+            Finding(
+                FindingKind.HTTP_ERROR,
+                "HTTP",
+                "Broken",
+                40,
+                "https://error.example",
+                "HTTP probe failed; last error unsafe URL.",
+                "Perform manual diagnosis before changing the link.",
+            ),
+            Finding(
+                FindingKind.DEAD,
+                "Alpha & Beta",
+                "A_B [tool]",
+                10,
+                "https://dead.example/a",
+                "Confirmed HTTP 404 response.",
+                "Manually verify, then remove or replace this link.",
+            ),
+            Finding(
+                FindingKind.GITHUB_ARCHIVED,
+                "Repositories",
+                "Archive",
+                60,
+                "https://github.com/owner/archive",
+                "GitHub marks the repository as archived.",
+                "Manually verify whether to replace it or move it to the historical section.",
+            ),
+            Finding(
+                FindingKind.RESTRICTED,
+                "Access",
+                "Restricted",
+                30,
+                "https://restricted.example",
+                "Automated access was restricted by HTTP 403.",
+                "Perform manual browser verification before changing the link.",
+            ),
+            Finding(
+                FindingKind.TRANSIENT,
+                "Transient",
+                "Retry",
+                20,
+                "https://retry.example",
+                "Transient failure after 3 attempts; last status 503.",
+                "Retry this link on the next audit run.",
+            ),
+            Finding(
+                FindingKind.DEAD,
+                "Alpha & Beta",
+                "Zed",
+                11,
+                "https://dead.example/z",
+                "Confirmed HTTP 410 response.",
+                "Manually verify, then remove or replace this link.",
+            ),
+        ]
+        checked_at = datetime(
+            2026, 9, 2, 9, 45, tzinfo=timezone(timedelta(hours=-3))
+        )
+        expected = r"""<!-- awesome-quant-readme-audit -->
+# Weekly README audit report
+
+Checked: 2026-09-02 12:45 UTC
+Entries are reported for manual review; this automation did not modify README.md.
+
+## Confirmed dead links
+
+- **Entry:** A\_B \[tool\]; **README line:** 10; **Section:** Alpha & Beta; **Checked URL:** <https://dead.example/a>; **Evidence:** Confirmed HTTP 404 response.; **Manual suggestion:** Manually verify, then remove or replace this link.
+- **Entry:** Zed; **README line:** 11; **Section:** Alpha & Beta; **Checked URL:** <https://dead.example/z>; **Evidence:** Confirmed HTTP 410 response.; **Manual suggestion:** Manually verify, then remove or replace this link.
+
+## Repeated transient failures
+
+- **Entry:** Retry; **README line:** 20; **Section:** Transient; **Checked URL:** <https://retry.example>; **Evidence:** Transient failure after 3 attempts; last status 503.; **Manual suggestion:** Retry this link on the next audit run.
+
+## Access-restricted links
+
+- **Entry:** Restricted; **README line:** 30; **Section:** Access; **Checked URL:** <https://restricted.example>; **Evidence:** Automated access was restricted by HTTP 403.; **Manual suggestion:** Perform manual browser verification before changing the link.
+
+## Other HTTP failures
+
+- **Entry:** Broken; **README line:** 40; **Section:** HTTP; **Checked URL:** <https://error.example>; **Evidence:** HTTP probe failed; last error unsafe URL.; **Manual suggestion:** Perform manual diagnosis before changing the link.
+
+## Permanent redirects
+
+- **Entry:** Moved; **README line:** 50; **Section:** Redirects; **Checked URL:** <https://old.example/path>; **Evidence:** The link permanently redirects to <https://new.example/path>.; **Manual suggestion:** Update the link to <https://new.example/path>.
+
+## GitHub repository findings
+
+- **Entry:** Archive; **README line:** 60; **Section:** Repositories; **Checked URL:** <https://github.com/owner/archive>; **Evidence:** GitHub marks the repository as archived.; **Manual suggestion:** Manually verify whether to replace it or move it to the historical section.
+
+## Candidate replacements
+
+- **Entry:** Replacement \*Tool\*; **README line:** 80; **Section:** Zeta \[Section\]; **Checked URL:** <https://dead.example/tool>; **Evidence:** The original primary URL returned confirmed HTTP 404.; **Manual suggestion:** Manual verification of these candidate repositories is required.
+  - **Candidate 1:** alpha/tool — <https://github.com/alpha/tool> — 9 stars
+  - **Candidate 2:** beta/tool — <https://github.com/beta/tool> — 9 stars
+  - **Candidate 3:** zeta/tool — <https://github.com/zeta/tool> — 2 stars
+"""
+
+        self.assertEqual(render_report(findings, checked_at=checked_at), expected)
+        self.assertEqual(
+            render_report(reversed(findings), checked_at=checked_at),
+            expected,
+        )
+
+    def test_render_report_clean_body_has_no_finding_headings(self):
+        report = render_report(
+            [],
+            checked_at=datetime(2026, 9, 2, 12, 45, tzinfo=timezone.utc),
+        )
+
+        self.assertEqual(
+            report,
+            """<!-- awesome-quant-readme-audit -->
+# Weekly README audit report
+
+Checked: 2026-09-02 12:45 UTC
+Entries are reported for manual review; this automation did not modify README.md.
+
+No findings.
+""",
+        )
+
+    def test_sync_tracking_issue_follows_the_full_lifecycle_matrix(self):
+        findings = [SimpleNamespace()]
+        new_body = f"{TRACKING_MARKER}\nnew report"
+        old_body = f"{TRACKING_MARKER}\nold report"
+        cases = (
+            ("none with findings", (), findings, "created", None),
+            (
+                "open with findings",
+                (FakeIssue(TRACKING_TITLE, old_body, "open"),),
+                findings,
+                "updated",
+                {"body": new_body},
+            ),
+            (
+                "closed with findings",
+                (FakeIssue(TRACKING_TITLE, old_body, "closed"),),
+                findings,
+                "reopened",
+                {"body": new_body, "state": "open"},
+            ),
+            (
+                "open clean",
+                (FakeIssue(TRACKING_TITLE, old_body, "open"),),
+                [],
+                "closed",
+                {"body": new_body, "state": "closed"},
+            ),
+            (
+                "closed clean",
+                (FakeIssue(TRACKING_TITLE, old_body, "closed"),),
+                [],
+                "updated",
+                {"body": new_body},
+            ),
+            ("none clean", (), [], "clean", None),
+        )
+
+        for name, issues, case_findings, expected, edit in cases:
+            with self.subTest(name=name):
+                repository = FakeTrackingRepository(issues)
+
+                result = sync_tracking_issue(repository, case_findings, new_body)
+
+                self.assertEqual(result, expected)
+                self.assertEqual(repository.get_issues_calls, [{"state": "all"}])
+                if issues:
+                    self.assertEqual(issues[0].edits, [edit] if edit else [])
+                    self.assertEqual(repository.create_issue_calls, [])
+                elif case_findings:
+                    self.assertEqual(
+                        repository.create_issue_calls,
+                        [{"title": TRACKING_TITLE, "body": new_body}],
+                    )
+                else:
+                    self.assertEqual(repository.create_issue_calls, [])
+
+    def test_sync_tracking_issue_does_nothing_when_body_and_state_are_current(self):
+        body = f"{TRACKING_MARKER}\ncurrent report"
+        for findings, state in (([SimpleNamespace()], "open"), ([], "closed")):
+            with self.subTest(state=state):
+                issue = FakeIssue(TRACKING_TITLE, body, state)
+                repository = FakeTrackingRepository((issue,))
+
+                result = sync_tracking_issue(repository, findings, body)
+
+                self.assertEqual(result, "unchanged")
+                self.assertEqual(issue.edits, [])
+                self.assertEqual(repository.create_issue_calls, [])
+
+    def test_sync_tracking_issue_ignores_unmarked_issues_and_rejects_duplicates(self):
+        body = f"{TRACKING_MARKER}\nreport"
+        unmarked = FakeIssue(TRACKING_TITLE, "human issue", "open")
+        wrong_title = FakeIssue("Another report", body, "open")
+        repository = FakeTrackingRepository((unmarked, wrong_title))
+
+        self.assertEqual(
+            sync_tracking_issue(repository, [SimpleNamespace()], body),
+            "created",
+        )
+
+        duplicate_repository = FakeTrackingRepository(
+            (
+                FakeIssue(TRACKING_TITLE, body, "open"),
+                FakeIssue(TRACKING_TITLE, f"prefix\n{body}", "closed"),
+            )
+        )
+        with self.assertRaisesRegex(RuntimeError, "multiple tracking issues"):
+            sync_tracking_issue(duplicate_repository, [], body)
+
     def test_collect_targets_uses_one_parser_pass_and_preserves_entry_and_url_order(self):
         first = entry(
             3,
