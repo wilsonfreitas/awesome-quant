@@ -13,6 +13,7 @@ BADGE_RE = re.compile(r"\s*!\[[^\]]*\]\([^)]*\)\s*")
 LANGUAGE_PREFIX_RE = re.compile(r"^((?:`[^`]+`\s*)+)-\s*(.*)$")
 GITHUB_LINK_RE = re.compile(r"\[GitHub\]\((https://github\.com/[\w-]+/[-\w.]+)\)")
 MARKDOWN_URL_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+AUTOLINK_URL_RE = re.compile(r"<(https?://[^>\s]+)>")
 HISTORICAL_SECTION = "Historical & Archived Projects"
 HISTORICAL_TAG = "Historical"
 
@@ -60,6 +61,14 @@ class ReadmeEntry:
     @property
     def markdown_urls(self) -> list[str]:
         return MARKDOWN_URL_RE.findall(self.raw_line)
+
+    @property
+    def external_urls(self) -> list[str]:
+        urls = [
+            *MARKDOWN_URL_RE.findall(self.raw_line),
+            *AUTOLINK_URL_RE.findall(self.raw_line),
+        ]
+        return list(dict.fromkeys(urls))
 
     @property
     def github_url(self) -> str:
