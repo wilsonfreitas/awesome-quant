@@ -6,23 +6,23 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Contents
 
-- [Numerical Libraries & Data Structures](#numerical-libraries-data-structures)
-- [Financial Instruments & Pricing](#financial-instruments-pricing)
+- [Numerical Libraries & Data Structures](#numerical-libraries--data-structures)
+- [Financial Instruments & Pricing](#financial-instruments--pricing)
 - [Technical Indicators](#technical-indicators)
-- [Trading & Backtesting](#trading-backtesting)
-- [Portfolio Optimization & Risk Analysis](#portfolio-optimization-risk-analysis)
+- [Trading & Backtesting](#trading--backtesting)
+- [Portfolio Optimization & Risk Analysis](#portfolio-optimization--risk-analysis)
 - [Factor Analysis](#factor-analysis)
-- [Sentiment Analysis & Alternative Data](#sentiment-analysis-alternative-data)
+- [Sentiment Analysis & Alternative Data](#sentiment-analysis--alternative-data)
 - [Time Series Analysis](#time-series-analysis)
 - [Market Data & Data Sources](#market-data--data-sources)
 - [Prediction Markets](#prediction-markets)
-- [Calendars & Market Hours](#calendars-market-hours)
+- [Calendars & Market Hours](#calendars--market-hours)
 - [Visualization](#visualization)
-- [Excel & Spreadsheet Integration](#excel-spreadsheet-integration)
+- [Excel & Spreadsheet Integration](#excel--spreadsheet-integration)
 - [Quant Research Environments](#quant-research-environments)
 - [Cross-Language Frameworks](#cross-language-frameworks)
-- [Reproducing Works, Training & Books](#reproducing-works-training-books)
-- [Commercial & Proprietary Services](#commercial-proprietary-services)
+- [Reproducing Works, Training & Books](#reproducing-works-training--books)
+- [Commercial & Proprietary Services](#commercial--proprietary-services)
 - [Related Lists](#related-lists)
 
 ## Numerical Libraries & Data Structures
