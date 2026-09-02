@@ -199,6 +199,35 @@ class AuditReadmeTests(unittest.TestCase):
 
         self.assertEqual(findings, [])
 
+    def test_empty_query_and_fragment_delimiters_are_not_github_repository_urls(self):
+        urls = [
+            "https://github.com/owner/query?",
+            "https://github.com/owner/fragment#",
+            "https://github.com/owner/slash-query/?",
+            "https://github.com/owner/slash-fragment/#",
+        ]
+        readme = "## Trading & Backtesting\n" + "".join(
+            f"- [Project {index}]({url}) - `Python` - Entry.\n"
+            for index, url in enumerate(urls)
+        )
+        client = FakeGithubClient(
+            {
+                "owner/query": FakeRepository("owner/query"),
+                "owner/fragment": FakeRepository("owner/fragment"),
+                "owner/slash-query": FakeRepository("owner/slash-query"),
+                "owner/slash-fragment": FakeRepository("owner/slash-fragment"),
+            }
+        )
+
+        findings = self.audit(
+            readme,
+            client,
+            {url: observation(url) for url in urls},
+        )
+
+        self.assertEqual(findings, [])
+        self.assertEqual(client.repo_calls, [])
+
     def test_github_404_adds_no_metadata_finding_and_other_api_errors_escape(self):
         missing_url = "https://github.com/owner/missing"
         broken_url = "https://github.com/owner/broken"
@@ -288,6 +317,38 @@ class AuditReadmeTests(unittest.TestCase):
             client.search_calls,
             [{"query": "Dead Tool in:name", "sort": "stars", "order": "desc"}],
         )
+
+    def test_equal_star_case_variant_candidates_are_independent_of_api_order(self):
+        url = "https://dead.example/tool"
+        readme = (
+            "## Trading & Backtesting\n"
+            f"- [Dead Tool]({url}) - `Python` - Entry.\n"
+        )
+        upper = FakeRepository("OWNER/Dead-Tool", name="dead-tool", stars=40)
+        lower = FakeRepository("owner/dead-tool", name="dead-tool", stars=40)
+
+        selections = []
+        for repositories in ((lower, upper), (upper, lower)):
+            client = FakeGithubClient(
+                searches={"Dead Tool in:name": repositories}
+            )
+            findings = self.audit(
+                readme,
+                client,
+                {url: observation(url, Outcome.DEAD, status=404)},
+            )
+            selections.append(
+                next(
+                    finding.candidates
+                    for finding in findings
+                    if finding.kind == FindingKind.CANDIDATES
+                )
+            )
+
+        expected = (
+            Candidate("OWNER/Dead-Tool", "https://github.com/OWNER/Dead-Tool", 40),
+        )
+        self.assertEqual(selections, [expected, expected])
 
     def test_all_finding_kinds_are_mapped_and_sorted_deterministically(self):
         urls = {

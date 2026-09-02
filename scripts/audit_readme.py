@@ -72,6 +72,8 @@ def collect_targets(readme_path: str | Path) -> list[AuditTarget]:
 
 
 def _parse_github_repository_url(url: str) -> str | None:
+    if "?" in url or "#" in url:
+        return None
     try:
         parsed = urlsplit(url)
         port = parsed.port
@@ -247,7 +249,14 @@ def _candidate_repositories(entry: ReadmeEntry, github_client: Any) -> tuple[Can
                 )
             )
 
-    matches.sort(key=lambda candidate: (-candidate.stars, candidate.full_name.casefold()))
+    matches.sort(
+        key=lambda candidate: (
+            -candidate.stars,
+            candidate.full_name.casefold(),
+            candidate.full_name,
+            candidate.url,
+        )
+    )
     unique = []
     seen = set()
     for candidate in matches:
