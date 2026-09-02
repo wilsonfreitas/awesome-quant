@@ -323,6 +323,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [VerumTrade](https://github.com/muye1202/VerumTrade) - `Python` - A reasoning & decision-trace visible Multi-agent LLM trading-research framework where bull/bear analysts debate each ticker and every decision cites the evidence it rests on.
 - [mt5-httpapi](https://github.com/psyb0t/mt5-httpapi) - `Python` `REST` `MCP` - MetaTrader 5 in a Windows VM (Docker + QEMU/KVM) over REST and MCP: market data, order/position/history management for automated trading and bots, the strategy-tester (backtesting) API, and server-side indicators (RSI/MACD/Bollinger/ADX/VWAP/Ichimoku, order blocks, FVGs). Multi-broker, multi-account.
 - [ibkr-httpapi](https://github.com/psyb0t/ibkr-httpapi) - `Python` `REST` `MCP` - Interactive Brokers over REST and MCP (FastAPI + ib_async over a Linux-native IB Gateway): market data (quotes, historical bars) plus order/position/execution management for automated trading across stocks, options, futures, forex, crypto and CFDs.
+- [codemyedge](https://codemyedge.com) - Hosted tool that writes TradingView Pine Script from a plain-English strategy and runs it on real market data to catch repainting/lookahead bugs before you trust it live.
 
 ## Portfolio Optimization & Risk Analysis
 
