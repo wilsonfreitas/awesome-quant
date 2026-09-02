@@ -10,8 +10,8 @@ class ReadmeEntryUrlTests(unittest.TestCase):
         readme = (
             "## Trading & Backtesting\n\n"
             "- [Primary](https://example.com/primary) - `Python` - "
-            "Suffix [Docs](https://example.com/suffix) and "
-            "<https://example.com/autolink> repeated "
+            "<https://example.com/autolink> then Suffix "
+            "[Docs](https://example.com/suffix) repeated "
             "[Again](https://example.com/suffix).\n"
         )
 
@@ -25,8 +25,8 @@ class ReadmeEntryUrlTests(unittest.TestCase):
             entry.external_urls,
             [
                 "https://example.com/primary",
-                "https://example.com/suffix",
                 "https://example.com/autolink",
+                "https://example.com/suffix",
             ],
         )
 

@@ -64,10 +64,12 @@ class ReadmeEntry:
 
     @property
     def external_urls(self) -> list[str]:
-        urls = [
-            *MARKDOWN_URL_RE.findall(self.raw_line),
-            *AUTOLINK_URL_RE.findall(self.raw_line),
+        matches = [
+            (match.start(), match.group(1))
+            for pattern in (MARKDOWN_URL_RE, AUTOLINK_URL_RE)
+            for match in pattern.finditer(self.raw_line)
         ]
+        urls = [url for _, url in sorted(matches)]
         return list(dict.fromkeys(urls))
 
     @property
