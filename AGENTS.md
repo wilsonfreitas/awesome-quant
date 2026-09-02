@@ -20,6 +20,19 @@ languages, but may also identify runtimes, protocols, interfaces, data types, or
 4. `.github/workflows/build.yml` runs the parser and generator, then deploys
    `site/` to GitHub Pages.
 
+## Work Tracking and Planning
+
+- Linear is the system of record for issues, prioritization, specifications,
+  designs, and implementation plans.
+- Manage GitHub-originated issues through their synced Linear issues. Do not
+  create a second internal tracker for the same work.
+- Store each specification, design, and implementation plan as a Linear
+  document attached to the corresponding Linear issue. Do not add task-specific
+  planning documents to the repository.
+- Keep repository documentation for durable project and user documentation only.
+- GitHub remains the public contribution surface for pull requests and public
+  issue discussion; use Linear for internal status, priority, and planning.
+
 ## Commands
 
 ```bash
