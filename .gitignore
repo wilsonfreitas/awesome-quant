@@ -3,3 +3,4 @@ env.ps1
 github.ipynb
 build.sh
 *.pyc
+.worktrees/
