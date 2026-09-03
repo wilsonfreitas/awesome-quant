@@ -500,6 +500,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [alpha_vantage](https://github.com/RomelTorres/alpha_vantage) - `Python` - A python wrapper for Alpha Vantage API for financial data.
 - [oilpriceapi](https://github.com/OilpriceAPI/python-sdk) - `Python` - Python SDK for real-time oil and commodity prices (WTI, Brent, Urals, natural gas, coal) with OpenBB integration.
 - [FinanceDataReader](https://github.com/FinanceData/FinanceDataReader) - `Python` - Open Source Financial data reader for U.S, Korean, Japanese, Chinese, Vietnamese Stocks.
+- [SEFCON API](https://api.sefcon.kr) - REST API for Korean stock fundamentals — 1,200+ KOSPI/KOSDAQ companies, 10-year financials parsed directly from DART XBRL. Includes SCI quality scores, sector cycle detection, and macro crisis index (AUROC 0.927).
 - [pystlouisfed](https://github.com/TomasKoutek/pystlouisfed) - `Python` - Python client for Federal Reserve Bank of St. Louis API - FRED, ALFRED, GeoFRED and FRASER.
 - [python-bcb](https://github.com/wilsonfreitas/python-bcb) - `Python` - Python interface to Brazilian Central Bank web services.
 - [Dados B3](https://dadosb3.com) - `REST/MCP` - Fundamental data API for Brazilian listed companies and real-estate funds (FIIs) on B3: ROIC, ROE, margins, point-in-time multiples, FII P/BV and dividend yield, public methodology, free tier.
