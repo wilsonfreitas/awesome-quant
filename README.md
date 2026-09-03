@@ -763,6 +763,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TickerLayer](https://tickerlayer.com) - Multi-asset market data API for stocks, forex, crypto, indices, ETFs, commodities, and bonds via REST, WebSocket, and MCP, with real-time and historical data. Free tier: 3,000 REST requests/month, no payment required. [Docs](https://tickerlayer.com/docs)
 - [Wiseek Filing Impact](https://wiseek.ai/datasets/) - Monthly statistics relating proprietary SEC-filing importance scores to next-session excess stock moves, with per-event data, reproduction metadata, and a CC BY 4.0 license. [GitHub](https://github.com/WiseekAI/wiseek-datasets)
 - [Algorier](https://algorier.com) - `AI` `Vibe-Trading` - Natural-language strategy builder that generates, backtests and forward-tests an algorithm from a plain-English description, deploys it to the user's own broker account across forex, crypto, metals, indices, CFDs and equities on 15 brokers (Interactive Brokers, Binance, Bybit, Oanda, Coinbase, IC Markets, Pepperstone and others), and lets creators sell strategies on its AlgoNetwork marketplace without revealing the underlying logic. Permanent free tier: 2 backtests and 40 assistant messages a month, no payment details required.
+- [SPZCO](https://spzco.com) - Equity research terminal with a permanent free tier covering US congressional and executive-branch trade disclosures, 13F institutional filings, Form 4 insider activity, screeners and portfolio backtesting.
 
 
 ## Historical & Archived Projects
