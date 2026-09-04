@@ -57,6 +57,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Financial Instruments & Pricing
 
 - [PyQL](https://github.com/enthought/pyql) - `Python` - QuantLib's Python port.
+- [DefiTier](https://defitier.com) - Real-time perpetual DEX screener, multi-chain funding rate arbitrage matrix, and airdrop points valuation calculator across crypto protocols.
 - [pyfin](https://github.com/opendoor-labs/pyfin) - `Python` - Basic options pricing in Python. *ARCHIVED*.
 - [vollib](https://github.com/vollib/vollib) - `Python` - vollib is a python library for calculating option prices, implied volatility and greeks.
 - [py_vollib](https://github.com/vollib/py_vollib) - `Python` - vollib Python implementation.
