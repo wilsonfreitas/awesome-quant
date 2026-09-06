@@ -422,6 +422,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [PineForge](https://github.com/pineforge-4pass/pineforge-engine) - `C++` - Deterministic offline PineScript v6 → C++ backtest runtime, validated trade-for-trade against TradingView (245/246 strict, 0 engine bugs). Runs locally via Docker and is drivable by AI agents through a bundled MCP server.
 
 ## Market Data & Data Sources
+- [Cambio Uruguay](https://cambio-uruguay.com) - `TypeScript` `REST` `MCP` - Collectors and public API for Uruguayan retail buy/sell exchange rates and historical series by source and quote type. [GitHub](https://github.com/eduair94/cambio-uruguay)
 - [perp-funding-collector](https://github.com/donnywin85/perp-funding-collector) - `Python` - Collects and stores funding-rate snapshots from five decentralized perpetual-futures exchanges, normalizing rates hourly and flagging markets with less than $2 million in open interest. Intended for historical analysis and cross-venue comparisons; it does not trade.
 - [Korea Stock Data](https://github.com/na77tech-creator/aikstockdata) - `Data` - Free Korean equity data: KOSPI/KOSDAQ settled closes with 250 trading days of per-stock history, DART regulatory filings and earnings, published every trading day as JSON/CSV. No signup or API key, CORS open. OpenAPI 3.1 spec and MCP server included.
 - [BTC Orderbook Microstructure Research](https://github.com/whoareunot/btc-orderbook-research) - `Jupyter Notebook` - statistical analysis of Binance BTC/USDT orderbook: OBI, CVD, spread.  
