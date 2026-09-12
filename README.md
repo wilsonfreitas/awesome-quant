@@ -174,6 +174,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Trading & Backtesting
 
+- [Crypto Pump Scanner](https://github.com/stefanoviana/crypto-pump-scanner) - `Python` - Bybit perpetual-futures trading bot with volume-spike detection, new-listing monitoring, staged take profits, and trailing stops.
 - [SHORTLIST](https://github.com/zc6503204-collab/stock-strategy-dashboard) - `Python` - Local-first macOS workbench for A-share and US stock strategy screening, paper trading, position sizing, and risk alerts with read-only broker integrations.
 - [AgentQuant](https://github.com/OnePunchMonk/AgentQuant) - `Python` - Trading-strategy research framework with iterative proposal generation, backtesting, SQLite memory, holdout evaluation, walk-forward experiments, and experimental genetic-algorithm and differential-evolution optimizers.
 - [exitkit](https://github.com/charlieyanhx/exitkit) - `Python` - Catalogue of twenty-seven position-exit policies (stop-loss, take-profit, time, volatility, signal-reversal and convergence) behind one interface, with a drop-in adapter for backtesting.py.
