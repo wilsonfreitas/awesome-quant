@@ -174,6 +174,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Trading & Backtesting
 - [SHORTLIST](https://github.com/zc6503204-collab/stock-strategy-dashboard) - `Python` - Local-first macOS workbench for A-share and US stock strategy screening, paper trading, position sizing, and risk alerts with read-only broker integrations.
+- [AgentQuant](https://github.com/OnePunchMonk/AgentQuant) - `Python` - Trading-strategy research framework with iterative proposal generation, backtesting, SQLite memory, holdout evaluation, walk-forward experiments, and experimental genetic-algorithm and differential-evolution optimizers.
 - [exitkit](https://github.com/charlieyanhx/exitkit) - `Python` - Catalogue of twenty-seven position-exit policies (stop-loss, take-profit, time, volatility, signal-reversal and convergence) behind one interface, with a drop-in adapter for backtesting.py.
 - [lesson-book](https://github.com/holdout-labs/lesson-book) - `Python` - Local-first deterministic tuition memory for traders: pattern-matched reminders, no LLM, overridable rule tables.
 - [cl-lp-rotation-scanner](https://github.com/donnywin85/cl-lp-rotation-scanner) - `Python` - Estimates fees and impermanent loss for concentrated-liquidity pools whose volatile assets can be hedged, then backtests whether rotating capital among pools outperforms remaining in one pool. It does not execute trades or manage liquidity.
@@ -583,7 +584,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Live Tennis API](https://livetennisapi.com) - `REST` `WebSocket` `MCP` - Real-time tennis scores, serving and break-point state, and model win probabilities for pricing tennis event markets, plus H2H, rankings and a 1968-2022 point-by-point archive; free tier. [GitHub](https://github.com/livetennisapi/livetennisapi-mcp)
 - [polymm](https://github.com/kachence/polymm) - `Python` `Polymarket` - Market-making and arbitrage bot for Polymarket sports and esports markets, pricing from de-vigged sportsbook odds.
 
-- [QuantRank500](https://github.com/quantrank500/quantrank500) - `Python` - Open-source public record of stock predictions: commit-reveal before the open, automatic settlement against exchange data, tamper-evident hash-chained ledger. Live at [quantrank500.com](https://quantrank500.com).
+- [QuantRank500](https://github.com/RusUsf/quantrank500) - `Python` - Open-source public record of stock predictions: commit-reveal before the open, automatic settlement against exchange data, tamper-evident hash-chained ledger. Live at [quantrank500.com](https://quantrank500.com).
 - [outcometick](https://outcometick.com) - `Python` `JavaScript` - Tick-level history for Polymarket and Predict.fun crypto Up/Down markets, including the full-precision Chainlink settlement feeds and each market's strike and settled outcome, with a sandboxed runner that replays a submitted strategy against the same archive. [GitHub](https://github.com/outcometick/outcometick-sdk-ts)
 
 ## Calendars & Market Hours
@@ -778,6 +779,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TickerLayer](https://tickerlayer.com) - Multi-asset market data API for stocks, forex, crypto, indices, ETFs, commodities, and bonds via REST, WebSocket, and MCP, with real-time and historical data. Free tier: 3,000 REST requests/month, no payment required. [Docs](https://tickerlayer.com/docs)
 - [Wiseek Filing Impact](https://wiseek.ai/datasets/) - Monthly statistics relating proprietary SEC-filing importance scores to next-session excess stock moves, with per-event data, reproduction metadata, and a CC BY 4.0 license. [GitHub](https://github.com/WiseekAI/wiseek-datasets)
 - [Algorier](https://algorier.com) - `AI` `Vibe-Trading` - Natural-language strategy builder that generates, backtests and forward-tests an algorithm from a plain-English description, deploys it to the user's own broker account across forex, crypto, metals, indices, CFDs and equities on 15 brokers (Interactive Brokers, Binance, Bybit, Oanda, Coinbase, IC Markets, Pepperstone and others), and lets creators sell strategies on its AlgoNetwork marketplace without revealing the underlying logic. Permanent free tier: 2 backtests and 40 assistant messages a month, no payment details required.
+- [SPZCO](https://spzco.com) - Stock research terminal with free access to facts, standard ratios, universe-wide screening, 13F top holdings, three saved portfolios, a 25-name watchlist and three-year backtests; Pro adds valuation and full portfolio analytics.
+
 - [Futures Clock](https://futuresclock.com/en/) - `Web` `JSON` - Free live open/closed clock and reference for 69 futures products across 14 exchanges with DST-aware session windows, night sessions, 2026 holiday calendars, contract specifications sourced from official exchange publications, bilingual EN/ZH, and an open CORS JSON endpoint.
 
 ## Historical & Archived Projects
