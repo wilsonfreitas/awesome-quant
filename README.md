@@ -173,6 +173,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [wickworks](https://github.com/psyb0t/docker-wickworks) - `REST` `MCP` - Stateless OHLC analyzer: POST bars and requested indicators, get back RSI/MACD/Bollinger/ADX/ATR/VWAP/Ichimoku plus smart-money-concept primitives (order blocks, FVGs, BOS/CHoCH, swing structure). No database, no AI signals.
 
 ## Trading & Backtesting
+
 - [SHORTLIST](https://github.com/zc6503204-collab/stock-strategy-dashboard) - `Python` - Local-first macOS workbench for A-share and US stock strategy screening, paper trading, position sizing, and risk alerts with read-only broker integrations.
 - [AgentQuant](https://github.com/OnePunchMonk/AgentQuant) - `Python` - Trading-strategy research framework with iterative proposal generation, backtesting, SQLite memory, holdout evaluation, walk-forward experiments, and experimental genetic-algorithm and differential-evolution optimizers.
 - [exitkit](https://github.com/charlieyanhx/exitkit) - `Python` - Catalogue of twenty-seven position-exit policies (stop-loss, take-profit, time, volatility, signal-reversal and convergence) behind one interface, with a drop-in adapter for backtesting.py.
@@ -374,6 +375,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [rebalance](https://github.com/cjroth/rebalance) - `JavaScript` - Interactive portfolio rebalancing tool that imports brokerage CSV data, sets target allocations, and generates trade instructions.
 
 ## Factor Analysis
+
 - [factor-qc](https://github.com/holdout-labs/factor-qc) - `Python` - Fail-closed quality gate for backtests and factor evidence: DSR/PBO/haircut/MinTRL plus a probability-calibration companion gate.
 - [lookahead-free](https://github.com/holdout-labs/lookahead-free) - `Python` - Verifiable look-ahead freedom for the value-independent fragment of data pipelines, with a heuristic companion scanner for research code.
 
@@ -586,7 +588,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [polymarket-bot-lab](https://github.com/oraclemangle/polymarket-bot-lab) - `Python` - Open-sourced research lab of 11 candidate Polymarket trading bots (weather, sports, longshot fades, maker, whale-flow) with a shared CLOB/backtest framework, ADR decision log, and honest paper/live results. Companion free dataset: [polymarket-canary-tape](https://huggingface.co/datasets/oraclemangle/polymarket-canary-tape) (300M+ events, CC-BY-4.0).
 - [Live Tennis API](https://livetennisapi.com) - `REST` `WebSocket` `MCP` - Real-time tennis scores, serving and break-point state, and model win probabilities for pricing tennis event markets, plus H2H, rankings and a 1968-2022 point-by-point archive; free tier. [GitHub](https://github.com/livetennisapi/livetennisapi-mcp)
 - [polymm](https://github.com/kachence/polymm) - `Python` `Polymarket` - Market-making and arbitrage bot for Polymarket sports and esports markets, pricing from de-vigged sportsbook odds.
-
 - [QuantRank500](https://github.com/RusUsf/quantrank500) - `Python` - Open-source public record of stock predictions: commit-reveal before the open, automatic settlement against exchange data, tamper-evident hash-chained ledger. Live at [quantrank500.com](https://quantrank500.com).
 - [outcometick](https://outcometick.com) - `Python` `JavaScript` - Tick-level history for Polymarket and Predict.fun crypto Up/Down markets, including the full-precision Chainlink settlement feeds and each market's strike and settled outcome, with a sandboxed runner that replays a submitted strategy against the same archive. [GitHub](https://github.com/outcometick/outcometick-sdk-ts)
 
