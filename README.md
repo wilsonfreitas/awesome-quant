@@ -712,6 +712,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TradeMux Snippets](https://github.com/KVignesh122/trademux-examples) - `Python` - Code snippets for Metatrader (MT5) forex/CFD trading and data retrieval via trademux API client.
 
 ## Commercial & Proprietary Services
+- [AlphaPilot Tools](https://www.alphapilot.tech/tools) - Free browser calculators for perpetual-futures position sizing, liquidation, and funding arbitrage, with documented assumptions and no account required.
 - [AxionQuant](https://axionquant.com) - Unified financial data API covering market prices, fundamentals, disclosures, macroeconomic, and alternative data for long-horizon research and quantitative modeling. Free tier: 1,000 monthly API calls. [PyPI](https://pypi.org/project/axionquant-sdk/)
 - [Prop Firm Risk Calculator](https://prop-firm-risk-calculator.vercel.app) - Free web app for position sizing, stop-loss and max-drawdown on funded accounts, with real tick/pip values for futures, forex, crypto and gold.
 - [RektCalc](https://rektcalc.com) - Free web app for crypto liquidation price, position sizing, PnL and funding-rate calculations across major exchanges, with documented formulas on the site's Learn hub.
