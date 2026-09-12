@@ -783,6 +783,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [SPZCO](https://spzco.com) - Stock research terminal with free access to facts, standard ratios, universe-wide screening, 13F top holdings, three saved portfolios, a 25-name watchlist and three-year backtests; Pro adds valuation and full portfolio analytics.
 
 - [Futures Clock](https://futuresclock.com/en/) - `Web` `JSON` - Free live open/closed clock and reference for 69 futures products across 14 exchanges with DST-aware session windows, night sessions, 2026 holiday calendars, contract specifications sourced from official exchange publications, bilingual EN/ZH, and an open CORS JSON endpoint.
+- [CoinBeacon](https://coinbeacon.io) - Crypto market alerting and scanning service: 19 alert types on 6,000+ coins across 50+ exchanges, delivered to email, Telegram, Discord or webhook, plus a 78-metric screener over 700+ coins and indicator-performance and chart-pattern boards on Binance spot and futures. Permanent free tier of 5 active alerts and 10 notifications a day; the screener, setup and detector boards are readable without an account.
+
 
 ## Historical & Archived Projects
 
