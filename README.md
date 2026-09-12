@@ -173,6 +173,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [wickworks](https://github.com/psyb0t/docker-wickworks) - `REST` `MCP` - Stateless OHLC analyzer: POST bars and requested indicators, get back RSI/MACD/Bollinger/ADX/ATR/VWAP/Ichimoku plus smart-money-concept primitives (order blocks, FVGs, BOS/CHoCH, swing structure). No database, no AI signals.
 
 ## Trading & Backtesting
+- [AgentQuant](https://github.com/OnePunchMonk/AgentQuant) - `Python` - Trading-strategy research framework with iterative proposal generation, backtesting, SQLite memory, holdout evaluation, walk-forward experiments, and experimental genetic-algorithm and differential-evolution optimizers.
 - [exitkit](https://github.com/charlieyanhx/exitkit) - `Python` - Catalogue of twenty-seven position-exit policies (stop-loss, take-profit, time, volatility, signal-reversal and convergence) behind one interface, with a drop-in adapter for backtesting.py.
 - [lesson-book](https://github.com/holdout-labs/lesson-book) - `Python` - Local-first deterministic tuition memory for traders: pattern-matched reminders, no LLM, overridable rule tables.
 - [cl-lp-rotation-scanner](https://github.com/donnywin85/cl-lp-rotation-scanner) - `Python` - Estimates fees and impermanent loss for concentrated-liquidity pools whose volatile assets can be hedged, then backtests whether rotating capital among pools outperforms remaining in one pool. It does not execute trades or manage liquidity.
