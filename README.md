@@ -461,10 +461,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [yahoo-finance](https://github.com/lukaszbanasiak/yahoo-finance) - `Python` - Python module to get stock data from Yahoo! Finance.
 - [pandas-datareader](https://github.com/pydata/pandas-datareader) - `Python` - Python module to get data from various sources (Google Finance, Yahoo Finance, FRED, OECD, Fama/French, World Bank, Eurostat...) into Pandas datastructures such as DataFrame, Panel with a caching mechanism.
 - [pandas-finance](https://github.com/davidastephens/pandas-finance) - `Python` - High level API for access to and analysis of financial data.
-- [pyhoofinance](https://github.com/innes213/pyhoofinance) - `Python` - Rapidly queries Yahoo Finance for multiple tickers and returns typed data for analysis.
 - [yfinanceapi](https://github.com/Karthik005/yfinanceapi) - `Python` - Finance API for Python.
 - [yql-finance](https://github.com/slawek87/yql-finance) - `Python` - yql-finance is simple and fast. API returns stock closing prices for current period of time and current stock ticker (i.e. APPL, GOOGL).
-- [ystockquote](https://github.com/cgoldberg/ystockquote) - `Python` - Retrieve stock quote data from Yahoo Finance.
 - [jugaad-data](https://github.com/jugaad-py/jugaad-data) - `Python` - Download historical and live stock data from NSE (National Stock Exchange of India), BSE, and RBI.
 - [nsetools](https://github.com/vsjha18/nsetools) - `Python` - Python library for extracting real-time data from National Stock Exchange (India).
 - [wallstreet](https://github.com/mcdallas/wallstreet) - `Python` - Real time stock and option data.
@@ -490,17 +488,12 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [tdnet-disclosure-mcp](https://github.com/ajtgjmdjp/tdnet-disclosure-mcp) - `Python` - Access Japanese timely disclosures (TDNet) via MCP. Retrieve earnings, dividends, forecasts, buybacks, and other filings for 4,000+ listed companies. No API key required.
 - [bigtech-ai-stakes](https://github.com/YichengYang-Ethan/bigtech-ai-stakes) - `Python` - Open dataset of U.S. public-company equity stakes in Anthropic and OpenAI from primary 10-K / 10-Q / 8-K filings, court records, and press releases. Each row tagged with a confidence flag (V verified, P probable, S speculative).
 - [cn_stock_src](https://github.com/jealous/cn_stock_src) - `Python` - Utility for retrieving basic China stock data from different sources.
-- [coinmarketcap](https://github.com/barnumbirr/coinmarketcap) - `Python` - Python API for coinmarketcap.
 - [coinpulse](https://github.com/soutone/coinpulse-python) - `Python` - Python SDK for cryptocurrency portfolio tracking with real-time prices, P/L calculations, and price alerts. Free tier available.
-- [after-hours](https://github.com/datawrestler/after-hours) - `Python` - Obtain pre market and after hours stock prices for a given symbol.
 - [bronto-python](https://pypi.org/project/bronto-python/) - `Python` - Bronto API Integration for Python.
 - [pdblp](https://github.com/matthewgilbert/pdblp) - `Python` - A simple interface to integrate pandas and the Bloomberg Open API.
 - [BloombergFetch](https://github.com/ArturSepp/BloombergFetch) - `Python` - Bloomberg Desktop API data (prices, implied volatilities, fundamentals) as pandas DataFrames via blpapi.
 - [tiingo](https://github.com/hydrosquall/tiingo-python) - `Python` - Python interface for daily composite prices/OHLC/Volume + Real-time News Feeds, powered by the Tiingo Data Platform.
 - [finlight](https://finlight.me) - `Python` `TypeScript` - Real-time financial and geopolitical news API with sentiment analysis and entity tagging over REST and WebSocket. [GitHub](https://github.com/jubeiargh/finlight-client-py)
-- [iexfinance](https://github.com/addisonlynch/iexfinance) - `Python` - Python Interface for retrieving real-time and historical prices and equities data from The Investor's Exchange.
-- [pyEX](https://github.com/timkpaine/pyEX) - `Python` - Python interface to IEX with emphasis on pandas, support for streaming data, premium data, points data (economic, rates, commodities), and technical indicators.
-- [alpaca-trade-api](https://github.com/alpacahq/alpaca-trade-api-python) - `Python` - Python interface for retrieving real-time and historical prices from Alpaca API as well as trade execution.
 - [metatrader5](https://pypi.org/project/MetaTrader5/) - `Python` - API Connector to MetaTrader 5 Terminal. (Last updated: 2026-02-20).
 - [akshare](https://github.com/jindaxiang/akshare) - `Python` - AkShare is an elegant and simple financial data interface library for Python, built for human beings! <https://akshare.readthedocs.io>.
 - [yahooquery](https://github.com/dpguthrie/yahooquery) - `Python` - Python interface for retrieving data through unofficial Yahoo Finance API.
@@ -546,9 +539,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [lse-data](https://github.com/londonstrategicedge/lse-data) - `Python` - Live ticks over WebSocket plus historical ticks and candles for stocks, FX, crypto, commodities, indices, ETFs and futures, with options chains and greeks, economics series and government bond yields, across 118,000+ datasets. US stocks from 2003, FX from 2009, options from 2014, economics back to 1900. Free, no subscription tiers. [PyPI](https://pypi.org/project/lse-data/)
 - [IBrokers](https://cran.r-project.org/web/packages/IBrokers/index.html) - `R` - Provides native R access to Interactive Brokers Trader Workstation API.
 - [Rblpapi](https://github.com/Rblp/Rblpapi) - `R` - An R Interface to 'Bloomberg' is provided via the 'Blp API'.
-- [Rbitcoin](https://github.com/jangorecki/Rbitcoin) - `R` - Unified markets API interface (bitstamp, kraken, btce, bitmarket).
 - [GetTDData](https://github.com/msperlin/GetTDData) - `R` - Downloads and aggregates data for Brazilian government issued bonds directly from the website of Tesouro Direto.
-- [GetHFData](https://github.com/msperlin/GetHFData) - `R` - Downloads and aggregates high frequency trading data for Brazilian instruments directly from Bovespa ftp site.
 - [td](https://github.com/eddelbuettel/td) - `R` - Interfaces the 'twelvedata' API for stocks and (digital and standard) currencies.
 - [rbcb](https://github.com/wilsonfreitas/rbcb) - `R` - R interface to Brazilian Central Bank web services.
 - [rb3](https://github.com/ropensci/rb3) - `R` - A bunch of downloaders and parsers for data delivered from B3.
@@ -793,6 +784,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pytdx](https://github.com/rainx/pytdx) - `Python` `Historical` - Archived [protocol implementation](https://github.com/rainx/pytdx/tree/master) retained for studying TongDaXin binary market-data protocols and local quotation-file formats.
 - [TuneTA](https://github.com/jmrichardson/tuneta) - `Python` `Historical` - Archived research implementation of technical-indicator selection using distance correlation, clustered parameter tuning, and feature pruning.
 - [dynts](https://github.com/quantmind/dynts) - `Python` `Historical` - Archived reference implementation of a financial time-series expression language with NumPy and R backends.
+- [GetHFData](https://github.com/msperlin/GetHFData) - `R` `Historical` - Archived reference implementation for parsing and aggregating local Bovespa tick and order files after public FTP access ended.
+- [Rbitcoin](https://github.com/jangorecki/Rbitcoin) - `R` `Historical` - Archived toolkit retained as an early reference for cryptocurrency wallet valuation, cross-currency conversion, and historical balance tracking.
 
 ## Related Lists
 
