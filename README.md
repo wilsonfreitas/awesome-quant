@@ -426,7 +426,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [ashare-data-immunity](https://github.com/holdout-labs/ashare-data-immunity) - `Python` - A-share daily-bar data immunity: cleaning, board-aware price limits (ST date-aware), suspensions, audits, SHA-256 snapshots and evidence-tracked repair.
 - [pit-adjuster](https://github.com/holdout-labs/pit-adjuster) - `Python` - Point-in-time fixed-basis back-adjustment for A-share daily prices: corporate-action factor chains, convention-drift detection, snapshot-equivalence gates and a full-window drift checker.
 - [perp-funding-collector](https://github.com/donnywin85/perp-funding-collector) - `Python` - Collects and stores funding-rate snapshots from five decentralized perpetual-futures exchanges, normalizing rates hourly and flagging markets with less than $2 million in open interest. Intended for historical analysis and cross-venue comparisons; it does not trade.
-- [Korea Stock Data](https://github.com/na77tech-creator/aikstockdata) - `Data` - Free Korean equity data: KOSPI/KOSDAQ settled closes with 250 trading days of per-stock history, DART regulatory filings and earnings, published every trading day as JSON/CSV. No signup or API key, CORS open. OpenAPI 3.1 spec and MCP server included.
 - [BTC Orderbook Microstructure Research](https://github.com/mznowhere/btc-orderbook-research) - `Jupyter Notebook` - statistical analysis of Binance BTC/USDT orderbook: OBI, CVD, spread.
 - [itch-book](https://github.com/groovg/itch-book) - `Python` - NASDAQ TotalView-ITCH 5.0 day files to Parquet: BBO, trades, order-by-order messages with the resting side already resolved, and MBP depth; downloads and verifies the free emi.nasdaq.com samples.
 - [OpenBB](https://github.com/OpenBB-finance/OpenBB) - `Python` - Open-source financial data platform with extensible provider integrations, a Python interface, a command-line interface, and a local REST API.
@@ -535,7 +534,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [PENDAX](https://github.com/CompendiumFi/PENDAX-SDK) - `JavaScript` - Javascript SDK for Trading/Data API and Websockets for FTX, FTXUS, OKX, Bybit, & More.
 - [fin-stream](https://github.com/Mattbusel/fin-stream) - `Rust` - Real-time market data streaming in Rust: lock-free SPSC ring buffer, 100K+ ticks/second ingestion, multi-timeframe OHLCV construction, and Lorentz transforms on financial time series.
 - [finalytics](https://github.com/Nnamdi-sys/finalytics) - `Rust` - A rust library for financial data analysis.
-- [Korean Market Data](https://github.com/james-brand/korea-market-data) - `Data` - Daily foreign and institutional net flows for every KOSPI/KOSDAQ common stock plus all 44 KRX sector indices with returns and excess return vs market, in English CSV/JSON under CC BY 4.0 with a Zenodo DOI, rebuilt each trading day.
 - [AgentServices](https://github.com/vbkotecha/agentservices-api) - `Python` - API server for crypto and market data with technical indicators, on-chain analytics, and MCP access; includes x402 payment support for hosted endpoints.
 - [The Stall](https://github.com/thebrierfox/the-stall) - `JavaScript` `MCP` - Self-hostable data and analytics service with equity technical indicators, multi-chain portfolio valuation, market-data adapters, and MCP interfaces.
 
@@ -680,6 +678,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Commercial & Proprietary Services
 
+- [Korea Stock Data](https://aikstockdata.com/) - `Data` - Free Korean equity settled closes with 250 trading days of per-stock history, DART filings and earnings as JSON/CSV, without signup, an API key or request quotas. [GitHub](https://github.com/na77tech-creator/aikstockdata)
+- [Korean Market Data](https://kexportstars.com/tools/) - `Data` - Free Korean investor-flow and sector-index datasets in English CSV/JSON, updated each trading day under CC BY 4.0 without signup. [GitHub](https://github.com/james-brand/korea-market-data)
 - [CoinPaprika](https://coinpaprika.com/api/) - `Python` - Cryptocurrency market data API with 20,000 free calls per month for personal use, including one year of daily price history, without an API key. [GitHub](https://github.com/coinpaprika/coinpaprika-api-python-client)
 - [FillBench](https://fillbench.com) - Free crypto-exchange API latency benchmarks with p50/p95/p99 measurements, separate TLS timing and downloadable CC BY datasets. [GitHub](https://github.com/sircharli3/fillbench-data)
 - [DexPaprika](https://dexpaprika.com/) - `Python` - DEX pool, token and OHLCV data API with 50,000 free monthly credits without signup and up to 60-second data delays. [GitHub](https://github.com/coinpaprika/dexpaprika-sdk-python)
