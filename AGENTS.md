@@ -102,6 +102,7 @@ Use Codex repo skills for repeatable review workflows:
 - `$sprr` - single PR reviewer.
 - `$bprr` - bulk PR reviewer.
 - `$update-pypi-dates` - refresh tracked PyPI last-updated dates.
+- `$create-entry` - draft or add README entries from a URL, GitHub issue, or Linear issue.
 
 Review requirements:
 

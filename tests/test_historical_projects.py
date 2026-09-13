@@ -65,9 +65,14 @@ class HistoricalProjectContractTests(unittest.TestCase):
             if entry["category"] == "Historical & Archived Projects"
         ]
 
+        expected_projects = {
+            entry.name
+            for entry in iter_readme_entries(ROOT / "README.md")
+            if entry.section == HISTORICAL_SECTION
+        }
+        self.assertTrue(expected_projects)
         self.assertEqual(
-            {entry["project"] for entry in historical},
-            {"fooltrader", "pipeline-live", "pybacktest"},
+            {entry["project"] for entry in historical}, expected_projects
         )
         self.assertTrue(all("Historical" in entry["languages"] for entry in historical))
 
