@@ -12,6 +12,7 @@ import re
 import socket
 import ssl
 import sys
+from collections import Counter
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from functools import cache
@@ -33,6 +34,7 @@ from scripts.readme_entries import (
     MARKDOWN_URL_RE,
     VALID_SECTIONS,
     extract_languages,
+    nested_reference_repairs,
 )
 
 
@@ -780,8 +782,37 @@ def review_pr(
 
     base_readme = read_readme(repository, pull_request.base.sha)
     head_readme = read_readme(repository, pull_request.head.sha)
+    patch_text = files[0].patch
+    verified_lines: Counter[str] = Counter()
+    reference_repairs = nested_reference_repairs(base_readme, head_readme)
+    for old_index, new_index, old_url, new_url in reference_repairs:
+        old_id, new_id = repository_id(old_url), repository_id(new_url)
+        if old_id is None or old_id != new_id:
+            findings.append(Finding(
+                "reference", "nested reference must retain its verified GitHub repository identity"
+            ))
+            continue
+        verified_lines["-" + base_readme.splitlines()[old_index]] += 1
+        verified_lines["+" + head_readme.splitlines()[new_index]] += 1
+    if verified_lines:
+        remaining_patch = []
+        for line in (patch_text or "").splitlines():
+            if verified_lines[line]:
+                verified_lines[line] -= 1
+            else:
+                remaining_patch.append(line)
+        patch_text = "\n".join(remaining_patch)
+        if any(verified_lines.values()):
+            findings.append(Finding(
+                "reference", "nested reference repair missing from PR patch"
+            ))
+        elif not any(
+            line.startswith(("+", "-")) and not line.startswith(("+++", "---"))
+            for line in remaining_patch
+        ):
+            return findings, pull_request.title, 0
     entry_lines, removed_entry_lines, change_findings = analyze_readme_change(
-        files[0].patch, repository_id,
+        patch_text, repository_id,
     )
     findings.extend(change_findings)
     if not entry_lines:
