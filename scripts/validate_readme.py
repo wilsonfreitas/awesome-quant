@@ -32,6 +32,7 @@ from scripts.readme_entries import (
     ReadmeEntry,
     extract_languages,
     iter_readme_entries,
+    nested_reference_repairs,
 )
 
 
@@ -255,11 +256,15 @@ def validate_entry(
 
 
 def validate_malformed_added_lines(
-    readme_path: Path, added_lines: set[int]
+    readme_path: Path, added_lines: set[int], *, base_readme: str = ""
 ) -> list[Issue]:
     issues: list[Issue] = []
-    lines = readme_path.read_text(encoding="utf-8").splitlines()
-    for line_number in sorted(added_lines):
+    head_readme = readme_path.read_text(encoding="utf-8")
+    lines = head_readme.splitlines()
+    repaired_lines = {
+        new + 1 for _, new, _, _ in nested_reference_repairs(base_readme, head_readme)
+    }
+    for line_number in sorted(added_lines - repaired_lines):
         if line_number < 1 or line_number > len(lines):
             continue
         line = lines[line_number - 1]
@@ -315,10 +320,21 @@ def main() -> int:
     duplicate_names, duplicate_urls = build_duplicate_indexes(entries)
 
     added_lines: set[int] | None = None
+    base_readme = ""
     if args.diff_from:
         try:
             added_lines = read_added_line_numbers(args.diff_from, readme_path)
-        except RuntimeError as exc:
+            merge_base = subprocess.check_output(
+                ["git", "merge-base", args.diff_from, "HEAD"], text=True
+            ).strip()
+            root = subprocess.check_output(
+                ["git", "rev-parse", "--show-toplevel"], text=True
+            ).strip()
+            relative_path = readme_path.resolve().relative_to(Path(root))
+            base_readme = subprocess.check_output(
+                ["git", "show", f"{merge_base}:{relative_path}"], text=True
+            )
+        except (RuntimeError, subprocess.CalledProcessError, ValueError) as exc:
             print(f"ERROR {exc}", file=sys.stderr)
             return 2
         selected_entries = [
@@ -335,7 +351,9 @@ def main() -> int:
 
     issues: list[Issue] = []
     if added_lines is not None:
-        issues.extend(validate_malformed_added_lines(readme_path, added_lines))
+        issues.extend(validate_malformed_added_lines(
+            readme_path, added_lines, base_readme=base_readme
+        ))
 
     for entry in selected_entries:
         issues.extend(
