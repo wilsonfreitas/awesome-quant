@@ -465,14 +465,12 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [yfi](https://github.com/nickelkr/yfi) - `Python` - Yahoo! YQL library.
 - [chinesestockapi](https://pypi.org/project/chinesestockapi/) - `Python` - Python API to get Chinese stock price. (Last updated: 2015-03-21).
 - [exchange](https://github.com/akarat/exchange) - `Python` - Get current exchange rate.
-- [unirate-api](https://github.com/UniRate-API/unirate-api-python) - `Python` - Client for UniRateAPI providing real-time and historical exchange rates for 170+ fiat and crypto currencies plus VAT rates, with a free tier and no credit card required.
 - [Chart Library](https://github.com/grahammccain/chart-library-mcp) - `Python` - Historical chart pattern similarity search API. 24M+ pre-computed embeddings across 15K+ symbols and 10 years of data using pgvector. Returns forward returns, regime analysis, and pattern detection. Also available as MCP server. [Website](https://chartlibrary.io)
 - [ticks](https://github.com/jamescnowell/ticks) - `Python` - Simple command line tool to get stock ticker data.
 - [pybbg](https://github.com/bpsmith/pybbg) - `Python` - Python interface to Bloomberg COM APIs.
 - [ccy](https://github.com/quantmind/ccy) - `Python` - Python module for currencies.
 - [tushare](https://pypi.org/project/tushare/) - `Python` - A utility for crawling historical and Real-time Quotes data of China stocks. (Last updated: 2024-08-27).
-- [twmarketdata](https://pypi.org/project/twmarketdata/) - `Python` - Client for the TW Market Data API: Taiwan stock-market data (official-source, reconciled, point-in-time safe), REST + MCP server, free trial tier. <https://twmarketdata.com>.
-- [edinetdb](https://edinetdb.com/) - `Python` - Free API and MCP server for Japanese company financials. Normalizes EDINET XBRL across JP-GAAP, IFRS, and US-GAAP for 3,800+ listed companies with 90 metrics, screening, and securities report text.
+- [twmarketdata](https://pypi.org/project/twmarketdata/) - `Python` - Client for Taiwan market data with local disclosure-date filtering, replay diagnostics and missing-session detection. [GitHub](https://github.com/TW-Market-Data/twmarketdata)
 - [SECfinAPI](https://www.secfinapi.com) - `TypeScript` - Standardized SEC EDGAR financials (income statement, balance sheet, cash flow, 40+ ratios) for ~19,000 US public companies, normalized from XBRL. REST API + MCP server for Claude/Cursor. Free tier. [GitHub](https://github.com/michalperni11-gif/secfinapi-mcp)
 - [edinet-mcp](https://github.com/ajtgjmdjp/edinet-mcp) - `Python` - Parse Japanese XBRL financial statements from EDINET with 161 normalized labels, 26 financial metrics, and multi-company screening.
 - [estat-mcp](https://github.com/ajtgjmdjp/estat-mcp) - `Python` - Access Japanese government statistics (e-Stat) covering population, GDP, CPI, labor, and trade data with MCP integration and Polars export.
@@ -721,6 +719,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Portfolio Optimizer](https://portfoliooptimizer.io/) - Portfolio analysis and optimization API with anonymous free access to selected endpoints for up to 20 assets, subject to a shared one-request-per-second limit.
 - [Reddit WallstreetBets API](https://tradestie.com/apps/reddit/api/) - Free WallstreetBets ticker mentions and sentiment API with historical date queries and a limit of 20 requests per minute per IP, without an API key.
 - [Telonex](https://telonex.io) - Prediction-market data service with free market metadata and tag datasets without an account, while tick-level data requires paid access after five trial file downloads.
+- [UniRateAPI](https://unirateapi.com) - `Python` - Currency exchange rates, conversion and VAT data with a permanent free tier of 200 requests per day and no credit card; historical data require a paid plan. [GitHub](https://github.com/UniRate-API/unirate-api-python)
+- [EDINET DB](https://edinetdb.com/) - `Python` - Japanese company financials normalized from EDINET filings, with free web screening and a permanent free API/MCP tier of 100 requests per day without a credit card.
 - [ValueRay](https://www.valueray.com/api) - Technical, quantitative and sentiment data for stocks and ETFs with risk metrics, peer percentiles and market regime signals. Optimized for AI/LLM agents.
 - [VantageGrid](https://vantagegrid.pro/) - Trade-review workspace with a permanent free tier for 25 trades per month, CSV imports and P&L, win-rate and R-multiple analytics without payment information.
 - [VertData](https://vertdata.com) - Institutional-grade financial intelligence platform. Track 43K+ congressional trades (STOCK Act), SEC insider Form 4 filings, 25 superinvestor 13F portfolios, CFTC futures positioning, ARK ETF holdings, and short interest — all scored by AI for signal strength.
