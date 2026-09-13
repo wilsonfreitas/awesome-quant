@@ -691,6 +691,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Commercial & Proprietary Services
 
+- [SnowSignals TrendVane](https://snowsignals.io) - `REST` `MCP` - Crypto market-phase (regime) API: classifies each currency/timeframe into one of 12 phase states, plus a BTC-derived model of how each phase historically resolves (transition probabilities, MFE/MAE, with sample counts). Reports market state, not trade signals. Free no-auth metadata and resolution stats; live phase reads metered, prepaid in stablecoin. [GitHub](https://github.com/snowkidind/snowsignals-mcp)
 - [Massive](https://massive.com/) - Financial market data API with a permanent free personal-use tier offering two years of US stock history, end-of-day prices, and reference data at five requests per minute, with no credit card required. [GitHub](https://github.com/massive-com/client-python)
 - [SimpleFunctions](https://simplefunctions.dev/) - `REST` `CLI` `MCP` - Hosted Kalshi and Polymarket data and analysis service with a free tier of 1,000 requests/month and 60 requests/minute, without payment information.
 - [Trends MCP](https://www.trendsmcp.ai/) - `MCP` `REST` - Search, social, commerce, and news-sentiment data for alternative-data research, with a permanent free tier of 100 requests/month, 90 days of history, and top-10 trend boards delayed 24 hours. [GitHub](https://github.com/trendsmcp-ai/Trends-MCP)
