@@ -693,6 +693,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Commercial & Proprietary Services
 
+- [FinBridge](https://www.gronox.kr) - Financial statements for Korean, US, Japanese and Taiwanese companies via MCP and REST, with valuation and adjusted daily prices for KR/US/TW. Free tier: 200 calls/day, up to four fiscal years and 130 trading sessions; live upstream lookups limited to 20/day. No payment details required.
 - [SimpleFunctions](https://simplefunctions.dev/) - `REST` `CLI` `MCP` - Hosted Kalshi and Polymarket data and analysis service with a free tier of 1,000 requests/month and 60 requests/minute, without payment information.
 - [Trends MCP](https://www.trendsmcp.ai/) - `MCP` `REST` - Search, social, commerce, and news-sentiment data for alternative-data research, with a permanent free tier of 100 requests/month, 90 days of history, and top-10 trend boards delayed 24 hours. [GitHub](https://github.com/trendsmcp-ai/Trends-MCP)
 - [AxionQuant](https://axionquant.com) - Unified financial data API covering market prices, fundamentals, disclosures, macroeconomic, and alternative data for long-horizon research and quantitative modeling. Free tier: 1,000 monthly API calls. [PyPI](https://pypi.org/project/axionquant-sdk/)
