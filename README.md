@@ -698,7 +698,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TradeMux Snippets](https://github.com/KVignesh122/trademux-examples) - `Python` - Code snippets for Metatrader (MT5) forex/CFD trading and data retrieval via trademux API client.
 
 ## Commercial & Proprietary Services
-- [FinBridge](https://www.gronox.kr) - Official-source fundamentals, business segments, valuation, peer sets and adjusted daily prices for Korean (DART/KRX), US (SEC/Databento), Japanese (EDINET) and Taiwanese (TWSE/TPEx) listed companies on one schema, served as an MCP server and a REST API with an OpenAPI 3.1 spec. Free tier: 200 calls per day, no payment details.
+- [FinBridge](https://www.gronox.kr) - Financial statements for Korean, US, Japanese and Taiwanese companies via MCP and REST, with valuation and adjusted daily prices for KR/US/TW. Free tier: 200 calls/day, up to four fiscal years and 130 trading sessions; live upstream lookups limited to 20/day. No payment details required.
 - [AxionQuant](https://axionquant.com) - Unified financial data API covering market prices, fundamentals, disclosures, macroeconomic, and alternative data for long-horizon research and quantitative modeling. Free tier: 1,000 monthly API calls. [PyPI](https://pypi.org/project/axionquant-sdk/)
 - [Prop Firm Risk Calculator](https://prop-firm-risk-calculator.vercel.app) - Free web app for position sizing, stop-loss and max-drawdown on funded accounts, with real tick/pip values for futures, forex, crypto and gold.
 - [RektCalc](https://rektcalc.com) - Free web app for crypto liquidation price, position sizing, PnL and funding-rate calculations across major exchanges, with documented formulas on the site's Learn hub.
