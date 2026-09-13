@@ -614,7 +614,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [QuantLibAAD](https://github.com/auto-differentiation/QuantLibAAD) - Fast risks with QuantLib in C++.
 - [XAD](https://github.com/auto-differentiation/xad) - Automatic Differentation (AAD) Library.
 - [QuantLib](https://github.com/lballabio/QuantLib) - The QuantLib project is aimed at providing a comprehensive software framework for quantitative finance.
-  - QuantLibRisks - Fast risks with QuantLib in [Python](https://pypi.org/project/QuantLib-Risks/) and [C++](https://github.com/auto-differentiation/QuantLib-Risks-Cpp)
+  - QuantLibRisks - Fast risks with QuantLib in [Python](https://pypi.org/project/QuantLib-Risks/) and [C++](https://github.com/auto-differentiation/QuantLibAAD)
   - XAD - Automatic Differentiation (AAD) Library in [Python](https://pypi.org/project/xad/) and [C++](https://github.com/auto-differentiation/xad/)
   - [JQuantLib](https://github.com/frgomes/jquantlib) - Java port.
   - [RQuantLib](https://github.com/eddelbuettel/rquantlib) - R port.
