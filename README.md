@@ -734,7 +734,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [ML-Quant](https://www.ml-quant.com/) - Top Quant resources like ArXiv (sanity), SSRN, RePec, Journals, Podcasts, Videos, and Blogs.
 - [RealMarketAPI](https://realmarketapi.com/en-US) - Market-data service with a free REST tier of 5,000 requests per month for six symbols and M1, M5, and H1 timeframes, without a credit card.
 - [Sharpe](https://www.sharpe.ai/) - Cryptocurrency research terminal with free access without signup and a personal API tier allowing 10,000 requests per month and 30 requests per minute.
-- [Webb Database](https://webb-database.com/) - Freely accessible research database covering Hong Kong companies, securities, ownership, regulatory records, and related public datasets, independently continuing David Webb’s data collection work.
+- [Webb Database](https://webb-database.com/dbpub/) - Freely accessible research database covering Hong Kong companies, securities, ownership, regulatory records, and related public datasets, independently continuing David Webb’s data collection work.
 - [GitDealFlow](https://gitdealflow.com) - Alternative-data research on private companies using GitHub commit velocity and contributor growth, with a permanently free weekly digest covering five startups and basic MCP read tools. [GitHub](https://github.com/kindrat86/vc-deal-flow-signal)
 - [Clear Street API](https://docs.clearstreet.com/) - REST API for US equities & options: reference & fundamental data, multi-year financial statements, corporate events, analyst consensus, a screener, and order execution.
 - [Finterm](https://finterm.xyz) - `TypeScript` - Browser-based, keyboard-first financial terminal. No public GitHub repo (closed source).
