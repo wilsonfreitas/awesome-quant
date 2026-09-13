@@ -78,7 +78,7 @@ class HistoricalProjectContractTests(unittest.TestCase):
 
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn(
-            "- [Historical & Archived Projects](#historical-archived-projects)",
+            "- [Historical & Archived Projects](#historical--archived-projects)",
             readme,
         )
         self.assertLess(
