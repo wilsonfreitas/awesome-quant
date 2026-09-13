@@ -168,6 +168,27 @@ When submitting multiple projects:
 - Avoid creating duplicate entries within the same README file
 - All entries must meet quality and format requirements independently
 
+### Audit cleanup pull requests
+
+Keep cleanup batches focused on existing entries and explain each update, move, or removal
+with supporting evidence in the PR description. A cleanup batch may change more than five
+entries or only remove entries. The reviewer identifies cleanup from the diff: every added
+entry line must correspond one-to-one to a removed entry for the same project. Unrelated new
+projects belong in a separate contribution PR; ordinary contributions retain the limit of
+five added entry lines. Non-entry prose or heading changes are outside cleanup scope.
+
+Changed entries still undergo format, section, HTTPS, duplicate, primary-link reachability,
+and repository/documentation checks. Within the same section, cleanup does not reapply the
+new-project activity/archive requirements to an unchanged repository, or require a previously
+repository-less entry to acquire a repository. Replacement repositories and section moves
+receive the normal source and activity checks. These limited exceptions allow legacy links
+to be repaired; they do not establish that the entry meets every current eligibility rule.
+
+Removed entries receive structural checks, without probing the unavailable resources being
+removed. Maintainers must verify the removal evidence, replacement searches, historical
+eligibility, and commercial status as applicable. A passing automated review reports
+`CHECKS PASSED` and requires maintainer review; it does not approve or merge a cleanup.
+
 ## Before Submitting
 
 1. Search the existing list to make sure the project is not already included.
@@ -176,7 +197,7 @@ When submitting multiple projects:
 
 ## Required Pull Request Workflows
 
-Every pull request that adds or updates a README entry must pass both required GitHub Actions
+Every pull request that adds, updates, or removes a README entry must pass both required GitHub Actions
 workflows:
 
 - **`Validate PR`** checks the added README entries against the parser and formatting rules,
