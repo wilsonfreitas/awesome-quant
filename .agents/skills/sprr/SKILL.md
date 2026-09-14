@@ -94,12 +94,49 @@ For every added entry:
   documentation, methodology, or usage examples; use a stable HTTPS URL without affiliate or
   tracking parameters; and have a concise, factual, non-promotional description.
 - Project name and URLs are not duplicates of existing README entries.
-- Any verifiable GitHub repository mentioned as the main URL or exact `[GitHub](...)` suffix
-  is a strong positive relevance signal.
+- A verifiable GitHub repository containing substantive implementation, mentioned as the main URL
+  or exact `[GitHub](...)` suffix, is a strong positive relevance signal. Repository existence
+  alone does not establish commercial eligibility or functional-section placement.
 - GitHub projects are checked for source availability, activity, archived status,
   documentation, and community evidence. GitHub relevance does not waive duplicate, format,
   or quality checks.
 - Multiple projects in one PR are closely related and explained in the PR body.
+
+## Repository Substance and Linked Services
+
+For every added entry with a repository, investigate what the public source actually provides:
+
+1. Inspect representative implementation files behind the advertised functionality. A README,
+   license, tests, file count, or stars alone do not establish substance.
+2. Trace whether core functionality is implemented publicly or depends on a proprietary service.
+   Identify code that only calls a vendor API, integrates a service, downloads generated output,
+   or provides examples or marketing. External dependencies alone do not make a project thin;
+   assess where the advertised functionality is implemented.
+3. Follow linked service websites, public documentation, and pricing/free-tier pages. Establish
+   the repository's relationship to the service and verify eligibility under `CONTRIBUTING.md`,
+   including useful permanent free access without payment information.
+4. Report concrete evidence: representative source-file links, API dependencies, and relevant
+   service/pricing/documentation links. State unavailable or inconclusive evidence explicitly.
+   Small size, few stars, or recent creation alone do not imply poor quality or commercial status.
+
+When a repository mainly supports a qualifying commercial service, place the entry in
+`Commercial & Proprietary Services`. Use the service name and stable service website as the main
+link, and retain the repository only as the exact `[GitHub](...)` suffix:
+
+```markdown
+- [Service Name](https://service.example) - Factual service description with relevant free-tier limits. [GitHub](https://github.com/owner/client)
+```
+
+Describe the service, not merely its SDK. An open-source client license does not make the hosted
+service open source. Substantive public implementation can qualify for a functional section even
+when its maintainers also sell a hosted service.
+
+- Qualifying service with incorrect placement or a thin repository as its main link:
+  `NEEDS CHANGES`, with a proposed corrected README entry.
+- Confirmed paid-only, trial-only, demo-only, waitlist-only, or otherwise non-qualifying free
+  access: `REJECT`; moving the entry does not fix eligibility.
+- Insufficient evidence of repository substance or service eligibility: `NEEDS CHANGES`, naming
+  the missing evidence without claiming that the service qualifies.
 
 ## Verdicts
 

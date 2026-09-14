@@ -9,9 +9,28 @@ This repo is ready for Codex through `AGENTS.md` and repo-scoped skills in
 - `.agents/skills/sprr` reviews one PR.
 - `.agents/skills/bprr` reviews open PRs in bulk.
 - `.agents/skills/update-pypi-dates` refreshes tracked PyPI dates.
+- `.agents/skills/create-entry` drafts or adds README entries from project URLs,
+  GitHub issues, or Linear issues, checking `CONTRIBUTING.md` for eligibility.
 
 Restart Codex after adding or changing skills if they do not appear in skill
 selection.
+
+## Creating Entries
+
+Example requests:
+
+```text
+$create-entry suggest an entry for https://github.com/owner/project
+$create-entry draft an entry from GitHub issue #123
+$create-entry add the project from Linear issue TEAM-123 to README.md
+```
+
+The skill recommends the entry text, tags, and category with supporting evidence.
+Suggestion requests leave the README untouched; requests to add an eligible project
+apply and validate the local edit. GitHub issue lookup and PR duplicate searches use
+GitHub MCP; Linear issue lookup requires a connected Linear tool. If issue access is
+unavailable, provide the issue text or project URL to continue with a provisional
+proposal until any required checks can be completed.
 
 ## GitHub MCP Requirement
 

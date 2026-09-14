@@ -51,6 +51,10 @@ relevance, semantic section suitability, commercial classification, repository q
 cross-PR uniqueness, or multi-project relatedness. Search open PRs and PRs closed within the
 last 365 days for duplicate names and URLs.
 
+For repository substance and linked commercial services, apply the **Repository Substance and
+Linked Services** investigation in `.agents/skills/sprr/SKILL.md`, including its evidence,
+service-first link, and eligibility verdict rules.
+
 ## Validation Checklist
 
 For every added entry:
@@ -67,8 +71,8 @@ For every added entry:
 - Section placement matches the project's purpose.
 - Commercial/proprietary projects are under `Commercial & Proprietary Services`.
 - Project name and URLs are not duplicates of existing README entries.
-- Any verifiable GitHub repository mentioned as the main URL or exact `[GitHub](...)` suffix
-  is a strong positive relevance signal.
+- A verifiable GitHub repository containing substantive implementation, mentioned as the main URL
+  or exact `[GitHub](...)` suffix, is a strong positive relevance signal.
 - GitHub projects are checked for source availability, activity, archived status,
   documentation, and community evidence. GitHub relevance does not waive duplicate, format,
   or quality checks.
