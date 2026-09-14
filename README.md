@@ -757,6 +757,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [ETF Copilot](https://etf-copilot.com) - `Web` - Holdings-level analysis of 1,000+ US equity ETFs: pairwise overlap by weight, look-through sector and single-stock exposure, concentration, and each fund's valuation against its own history. Permanent free tier, no payment details required: the overlap, concentration, exposure pages are open with no account and no view limit; a free account adds 5 ETF/insight views, 3 fund comparisons, and 3 searches per day.
 
 ## Historical & Archived Projects
 
