@@ -679,6 +679,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [CoinPaprika](https://coinpaprika.com/api/) - `Python` - Cryptocurrency market data API with 20,000 free calls per month for personal use, including one year of daily price history, without an API key. [GitHub](https://github.com/coinpaprika/coinpaprika-api-python-client)
 - [FillBench](https://fillbench.com) - Free crypto-exchange API latency benchmarks with p50/p95/p99 measurements, separate TLS timing and downloadable CC BY datasets. [GitHub](https://github.com/sircharli3/fillbench-data)
 - [DexPaprika](https://dexpaprika.com/) - `Python` - DEX pool, token and OHLCV data API with 50,000 free monthly credits without signup and up to 60-second data delays. [GitHub](https://github.com/coinpaprika/dexpaprika-sdk-python)
+- [HostDeFi](https://hostdefi.com) - `REST` `MCP` - Free token-safety scanner grading crypto tokens A+–F from on-chain checks (mint/freeze authority, liquidity depth, holder concentration) across Solana and 7 EVM chains; keyless API with 100 checks/day per IP.
 - [Tradevo Data](https://tradevodata.com) - `Python` - Point-in-time US equity fundamentals from SEC EDGAR with filing dates and restatement flags; free API access includes 250 requests per day without a credit card, and a 40-company CC0 annual dataset is available without signup. [GitHub](https://github.com/christianpichichero-max/pit-fundamentals)
 - [Massive](https://massive.com/) - Financial market data API with a permanent free personal-use tier offering two years of US stock history, end-of-day prices, and reference data at five requests per minute, with no credit card required. [GitHub](https://github.com/massive-com/client-python)
 - [SimpleFunctions](https://simplefunctions.dev/) - `REST` `CLI` `MCP` - Hosted Kalshi and Polymarket data and analysis service with a free tier of 1,000 requests/month and 60 requests/minute, without payment information.
@@ -774,6 +775,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [catalyst](https://github.com/scrtlabs/catalyst) - `Python` `Historical` - Archived crypto-asset trading engine preserving an early adaptation of Zipline for exchange backtesting and live execution.
 - [pyalgotrade](https://github.com/gbeced/pyalgotrade) - `Python` `Historical` - Archived event-driven trading library retained for studying its original backtesting broker and order-execution models.
 - [qtpylib](https://github.com/ranaroussi/qtpylib) - `Python` `Historical` - Archived trading framework retained for studying shared market-data capture and multiple-strategy execution using ZeroMQ.
+
 
 ## Related Lists
 
