@@ -125,6 +125,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [finmath.net](https://www.finmath.net/) - `Java` - Java library with algorithms and methodologies related to mathematical finance. [GitHub](https://github.com/finmath/finmath-lib)
 - [quantcomponents](https://github.com/lsgro/quantcomponents) - `Java` - Free Java components for Quantitative Finance and Algorithmic Trading.
 - [DRIP](https://lakshmidrip.github.io/DRIP/) - `Java` - Fixed Income, Asset Allocation, Transaction Cost Analysis, XVA Metrics Libraries.
+- [nablatensor](https://github.com/nablatensor-dev/nablatensor) - `Java` - Adjoint automatic differentiation library for quantitative finance: records a valuation once and replays the tape for a price and every Greek from one reverse sweep, on CPU, SIMD, or GPU.
 - [finance.js](https://github.com/ebradyjobory/finance.js) - `JavaScript` - A JavaScript library for common financial calculations.
 - [hagan-sabr](https://github.com/moshejs/hagan-sabr) - `TypeScript` - SABR stochastic-volatility model (Hagan 2002 lognormal/normal expansions, Obłój correction, smile calibration); zero dependencies, matches QuantLib's sabrVolatility to 1e-9.
 - [svi-vol-surface](https://github.com/moshejs/svi-vol-surface) - `TypeScript` - Gatheral SVI volatility surface (raw/natural/jump-wings), butterfly and calendar arbitrage checks, slice calibration; zero dependencies.
