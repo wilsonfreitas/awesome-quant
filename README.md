@@ -774,6 +774,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [catalyst](https://github.com/scrtlabs/catalyst) - `Python` `Historical` - Archived crypto-asset trading engine preserving an early adaptation of Zipline for exchange backtesting and live execution.
 - [pyalgotrade](https://github.com/gbeced/pyalgotrade) - `Python` `Historical` - Archived event-driven trading library retained for studying its original backtesting broker and order-execution models.
 - [qtpylib](https://github.com/ranaroussi/qtpylib) - `Python` `Historical` - Archived trading framework retained for studying shared market-data capture and multiple-strategy execution using ZeroMQ.
+- [HostDeFi](https://hostdefi.com) - Token-safety scanner and multi-chain DEX front-end: free A+–F risk grades on Solana and 8 EVM chains plus a keyless REST API.
+
 
 ## Related Lists
 
