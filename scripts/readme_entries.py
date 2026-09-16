@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import difflib
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -129,3 +130,75 @@ def iter_readme_entries(path: str | Path) -> Iterable[ReadmeEntry]:
                 languages=languages,
                 description=description.strip(),
             )
+
+
+def nested_reference_repairs(base: str, head: str) -> list[tuple[int, int, str, str]]:
+    """Find existing nested references with only one repository URL changed.
+
+    Results contain zero-based old/new line indexes and URLs. This checks
+    structure only; the authenticated reviewer must verify repository identity.
+    """
+    before, after = base.splitlines(), head.splitlines()
+
+    def contexts(lines: list[str]) -> list[tuple[str, int | None]]:
+        section = ""
+        parent = None
+        result = []
+        for index, line in enumerate(lines):
+            if line.startswith("## "):
+                section, parent = line, None
+            elif line.startswith("- "):
+                parent = index if ENTRY_RE.match(line) else None
+            result.append((section, parent))
+        return result
+
+    old_context, new_context = contexts(before), contexts(after)
+    operations = difflib.SequenceMatcher(
+        a=before, b=after, autojunk=False
+    ).get_opcodes()
+    unchanged_lines = {
+        old: new
+        for operation, a, b, c, d in operations if operation == "equal"
+        for old, new in zip(range(a, b), range(c, d))
+    }
+    repairs = []
+    repository_url = re.compile(
+        r"https://github\.com/[A-Za-z0-9_-]+/[A-Za-z0-9_.-]+/?"
+    )
+    for operation, a, b, c, d in operations:
+        if operation != "replace" or b - a != d - c:
+            continue
+        for old_index, new_index in zip(range(a, b), range(c, d)):
+            old, new = before[old_index], after[new_index]
+            if not re.match(r"^[ \t]+- ", new) or ENTRY_RE.match(new):
+                continue
+            old_section, old_parent = old_context[old_index]
+            new_section, new_parent = new_context[new_index]
+            if (ENTRY_RE.match(old) or not old_section or old_section != new_section
+                    or old_parent is None or new_parent is None):
+                continue
+            # Anchor to the same unchanged parent occurrence, not merely its text.
+            # A URL repair cannot change the reference's position below that parent.
+            if (unchanged_lines.get(old_parent) != new_parent
+                    or old_index - old_parent != new_index - new_parent):
+                continue
+            old_links = list(MARKDOWN_URL_RE.finditer(old))
+            new_links = list(MARKDOWN_URL_RE.finditer(new))
+            if len(old_links) != len(new_links):
+                continue
+            changed = [
+                (a, b) for a, b in zip(old_links, new_links)
+                if a.group(1) != b.group(1)
+            ]
+            if len(changed) != 1:
+                continue
+            old_link, new_link = changed[0]
+            old_url, new_url = old_link.group(1), new_link.group(1)
+            if not all(repository_url.fullmatch(url) for url in (old_url, new_url)):
+                continue
+            if (old[:old_link.start(1)], old[old_link.end(1):]) != (
+                new[:new_link.start(1)], new[new_link.end(1):]
+            ):
+                continue
+            repairs.append((old_index, new_index, old_url, new_url))
+    return repairs

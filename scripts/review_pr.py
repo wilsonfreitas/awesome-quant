@@ -12,8 +12,10 @@ import re
 import socket
 import ssl
 import sys
+from collections import Counter
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
+from functools import cache
 from pathlib import Path
 from typing import Any, Callable
 from urllib.parse import urlsplit, urlunsplit
@@ -32,6 +34,7 @@ from scripts.readme_entries import (
     MARKDOWN_URL_RE,
     VALID_SECTIONS,
     extract_languages,
+    nested_reference_repairs,
 )
 
 
@@ -180,7 +183,20 @@ def read_readme(repository: Any, ref: str) -> str:
     return content.decoded_content.decode("utf-8")
 
 
-def entries_represent_same_project(old_line: str, new_line: str) -> bool:
+def entry_github_urls(line: str) -> set[str]:
+    match = ENTRY_RE.match(line)
+    if match is None:
+        return set()
+    urls = set(GITHUB_LINK_RE.findall(line))
+    if parse_github_repository_url(match.group(2).strip()):
+        urls.add(match.group(2).strip())
+    return urls
+
+
+def entries_represent_same_project(
+    old_line: str, new_line: str,
+    repository_id: Callable[[str], int | None] | None = None,
+) -> bool:
     old_match = ENTRY_RE.match(old_line)
     new_match = ENTRY_RE.match(new_line)
     if old_match is None or new_match is None:
@@ -195,11 +211,18 @@ def entries_represent_same_project(old_line: str, new_line: str) -> bool:
     new_urls = {
         canonicalize_url(url) for url in MARKDOWN_URL_RE.findall(new_line)
     }
-    return bool(old_urls & new_urls)
+    if old_urls & new_urls:
+        return True
+    if repository_id is None:
+        return False
+    old_ids = {repository_id(url) for url in entry_github_urls(old_line)} - {None}
+    new_ids = {repository_id(url) for url in entry_github_urls(new_line)} - {None}
+    return bool(old_ids & new_ids)
 
 
 def analyze_readme_change(
     patch: str | None,
+    repository_id: Callable[[str], int | None] | None = None,
 ) -> tuple[list[str], list[str], list[Finding]]:
     added_lines: list[str] = []
     removed_lines: list[str] = []
@@ -219,7 +242,13 @@ def analyze_readme_change(
         line for line in substantive_removed if line.strip().startswith("- ")
     ]
     findings: list[Finding] = []
-    if not 1 <= len(entry_lines) <= MAX_README_ENTRIES_PER_PR:
+    previous_entries = match_existing_entries(
+        entry_lines, removed_entry_lines, repository_id
+    )
+    maintenance = bool(removed_entry_lines) and all(
+        previous is not None for previous in previous_entries
+    )
+    if not maintenance and not 1 <= len(entry_lines) <= MAX_README_ENTRIES_PER_PR:
         findings.append(
             Finding(
                 "entry-count",
@@ -234,33 +263,42 @@ def analyze_readme_change(
     unauthorized_removals = [
         line for line in substantive_removed if line not in removed_entry_lines
     ]
-    unmatched_entry_lines = list(entry_lines)
-    unmatched_removal = False
-    for removed_entry_line in removed_entry_lines:
-        matching_index = next(
-            (
-                index
-                for index, entry_line in enumerate(unmatched_entry_lines)
-                if entries_represent_same_project(removed_entry_line, entry_line)
-            ),
-            None,
-        )
-        if matching_index is None:
-            unmatched_removal = True
-            break
-        unmatched_entry_lines.pop(matching_index)
+    unmatched_removal = sum(previous is not None for previous in previous_entries) < len(
+        removed_entry_lines
+    )
     invalid_update = bool(substantive_removed) and (
-        bool(unauthorized_removals) or unmatched_removal
+        bool(unauthorized_removals)
+        or any(ENTRY_RE.match(line) is None for line in removed_entry_lines)
+        or (unmatched_removal and not maintenance)
     )
     if unauthorized_additions or invalid_update:
         findings.append(
             Finding(
                 "content",
-                "README changes must add up to five entries or update the same projects "
-                "without other substantive edits",
+                "README changes must add up to five entries, update the same projects, "
+                "or only update/remove existing entries; no other substantive edits",
             )
         )
     return entry_lines, removed_entry_lines, findings
+
+
+def match_existing_entries(
+    added: list[str], removed: list[str],
+    repository_id: Callable[[str], int | None] | None = None,
+) -> list[str | None]:
+    """Pair updates one-to-one; an extra copy is still a new entry."""
+    unmatched = list(removed)
+    previous_entries: list[str | None] = []
+    for line in added:
+        index = next(
+            (
+                i for i, old in enumerate(unmatched)
+                if entries_represent_same_project(old, line, repository_id)
+            ),
+            None,
+        )
+        previous_entries.append(unmatched.pop(index) if index is not None else None)
+    return previous_entries
 
 
 def remove_entry_lines(readme_text: str, entry_lines: list[str]) -> str:
@@ -291,7 +329,9 @@ def readme_changed_lines(
     return added_lines, removed_lines
 
 
-def find_entry_section(readme_text: str, entry_line: str) -> str:
+def find_entry_section(
+    readme_text: str, entry_line: str, *, require_unique: bool = True
+) -> str:
     current_section = ""
     matches = 0
     matched_section = ""
@@ -303,6 +343,8 @@ def find_entry_section(readme_text: str, entry_line: str) -> str:
             matches += 1
             matched_section = current_section
     if matches != 1:
+        if not require_unique:
+            return ""
         raise RuntimeError(
             "added README entry could not be located uniquely in the PR head"
         )
@@ -519,6 +561,9 @@ def review_entry(
     other_entry_lines: list[str],
     check_pull_request_duplicates: bool,
     readme_cache: dict[str, str],
+    previous_line: str | None = None,
+    previous_section: str = "",
+    repository_id: Callable[[str], int | None] | None = None,
 ) -> list[Finding]:
     findings: list[Finding] = []
     match = ENTRY_RE.match(line)
@@ -602,8 +647,27 @@ def review_entry(
         )
     github_urls.extend(GITHUB_LINK_RE.findall(line))
     github_urls = list(dict.fromkeys(github_urls))
+    previous_match = ENTRY_RE.match(previous_line or "")
+    previous_github_urls: list[str] = []
+    if previous_match:
+        previous_url = previous_match.group(2).strip()
+        if parse_github_repository_url(previous_url):
+            previous_github_urls.append(previous_url)
+        previous_github_urls.extend(GITHUB_LINK_RE.findall(previous_line or ""))
+    same_section_update = previous_match is not None and previous_section == section
+    unchanged_source = same_section_update and {
+        canonicalize_url(item) for item in github_urls
+    } == {canonicalize_url(item) for item in previous_github_urls}
+
+    if same_section_update and not unchanged_source and repository_id is not None:
+        previous_ids = {repository_id(item) for item in previous_github_urls}
+        current_ids = {repository_id(item) for item in github_urls}
+        unchanged_source = bool(current_ids) and None not in current_ids and (
+            current_ids == previous_ids
+        )
+
     if not github_urls:
-        if section != "Commercial & Proprietary Services":
+        if section != "Commercial & Proprietary Services" and not unchanged_source:
             findings.append(
                 Finding(
                     "github",
@@ -621,10 +685,10 @@ def review_entry(
         else:
             owner, repo_name = repository_parts
             github_repo = client.get_repo(f"{owner}/{repo_name}")
-            if github_repo.archived and not is_historical:
+            if github_repo.archived and not is_historical and not unchanged_source:
                 findings.append(Finding("activity", "repository is archived"))
             pushed_at = github_repo.pushed_at
-            if not is_historical and (
+            if not is_historical and not unchanged_source and (
                 pushed_at is None
                 or pushed_at < current_time - timedelta(days=365)
             ):
@@ -704,10 +768,51 @@ def review_pr(
         )
         return findings, pull_request.title, 0
 
+    @cache
+    def repository_id(url: str) -> int | None:
+        parts = parse_github_repository_url(url)
+        if parts is None:
+            return None
+        try:
+            identity = getattr(client.get_repo("/".join(parts)), "id", None)
+        except GithubException:
+            # Unverified identities cannot grant a cleanup exemption.
+            return None
+        return identity if type(identity) is int and identity > 0 else None
+
     base_readme = read_readme(repository, pull_request.base.sha)
     head_readme = read_readme(repository, pull_request.head.sha)
+    patch_text = files[0].patch
+    verified_lines: Counter[str] = Counter()
+    reference_repairs = nested_reference_repairs(base_readme, head_readme)
+    for old_index, new_index, old_url, new_url in reference_repairs:
+        old_id, new_id = repository_id(old_url), repository_id(new_url)
+        if old_id is None or old_id != new_id:
+            findings.append(Finding(
+                "reference", "nested reference must retain its verified GitHub repository identity"
+            ))
+            continue
+        verified_lines["-" + base_readme.splitlines()[old_index]] += 1
+        verified_lines["+" + head_readme.splitlines()[new_index]] += 1
+    if verified_lines:
+        remaining_patch = []
+        for line in (patch_text or "").splitlines():
+            if verified_lines[line]:
+                verified_lines[line] -= 1
+            else:
+                remaining_patch.append(line)
+        patch_text = "\n".join(remaining_patch)
+        if any(verified_lines.values()):
+            findings.append(Finding(
+                "reference", "nested reference repair missing from PR patch"
+            ))
+        elif not any(
+            line.startswith(("+", "-")) and not line.startswith(("+++", "---"))
+            for line in remaining_patch
+        ):
+            return findings, pull_request.title, 0
     entry_lines, removed_entry_lines, change_findings = analyze_readme_change(
-        files[0].patch,
+        patch_text, repository_id,
     )
     findings.extend(change_findings)
     if not entry_lines:
@@ -718,7 +823,14 @@ def review_pr(
         pull_request.base.sha: base_readme,
         pull_request.head.sha: head_readme,
     }
+    previous_entries = match_existing_entries(
+        entry_lines, removed_entry_lines, repository_id
+    )
+    maintenance = bool(removed_entry_lines) and all(
+        previous is not None for previous in previous_entries
+    )
     for index, entry_line in enumerate(entry_lines):
+        previous_line = previous_entries[index] if maintenance else None
         findings.extend(
             review_entry(
                 repository,
@@ -731,6 +843,13 @@ def review_pr(
                 other_entry_lines=entry_lines[:index] + entry_lines[index + 1 :],
                 check_pull_request_duplicates=check_pull_request_duplicates,
                 readme_cache=readme_cache,
+                previous_line=previous_line,
+                repository_id=repository_id,
+                previous_section=(
+                    find_entry_section(base_readme, previous_line, require_unique=False)
+                    if previous_line
+                    else ""
+                ),
             )
         )
 
@@ -780,8 +899,8 @@ def main() -> int:
                 print("- duplicates: pass (existing README only)")
             else:
                 print(f"- {check}: pass")
-        print("Verdict: APPROVE")
-        print("Recommended action: merge")
+        print("Verdict: CHECKS PASSED")
+        print("Recommended action: maintainer review")
         return 0
 
     print("Findings:")

@@ -1,3 +1,4 @@
+import difflib
 import io
 import unittest
 import warnings
@@ -12,6 +13,7 @@ from scripts.review_pr import (
     Finding,
     PinnedHTTPSConnection,
     main,
+    match_existing_entries,
     readme_has_duplicate,
     review_pr,
     url_reachable,
@@ -552,6 +554,223 @@ class PullRequestDuplicateTests(unittest.TestCase):
 
 
 class ValidationPipelineTests(unittest.TestCase):
+    def review_cleanup(self, old_entries, new_entries, **kwargs):
+        base = "# awesome-quant\n\n## Trading & Backtesting\n" + old_entries
+        head = "# awesome-quant\n\n## Trading & Backtesting\n" + new_entries
+        patch_text = "".join(difflib.unified_diff(
+            base.splitlines(keepends=True), head.splitlines(keepends=True)
+        ))
+        return self.review(
+            patch_text=patch_text, base_readme=base, head_readme=head, **kwargs
+        )
+
+    def test_cleanup_accepts_six_updates_and_a_removal(self):
+        old = "".join(
+            f"- [Existing {i}](https://github.com/example/existing-{i}) - `Python` - Old description.\n"
+            for i in range(6)
+        )
+        removed = "- [Dead](https://github.com/example/dead) - `Python` - Dead project.\n"
+        self.assertEqual(self.review_cleanup(old + removed, old.replace("Old", "New")), set())
+
+    def test_cleanup_accepts_removal_only_without_live_project_checks(self):
+        old = "- [Dead](https://github.com/example/dead) - `Python` - Dead project.\n"
+        def unavailable(project):
+            project.archived = True
+            project.has_readme = False
+        self.assertEqual(
+            self.review_cleanup(old, "", reachable=False, configure_project=unavailable), set()
+        )
+
+    def test_cleanup_rejects_malformed_removal(self):
+        self.assertIn("content", self.review_cleanup("- malformed entry\n", ""))
+
+    def test_cleanup_rejects_prose_removal(self):
+        old = "- [Dead](https://github.com/example/dead) - `Python` - Dead project.\n"
+        self.assertIn("content", self.review_cleanup(old + "Important policy.\n", ""))
+
+    def test_cleanup_rejects_new_projects_mixed_with_removal(self):
+        old = "- [Dead](https://github.com/example/dead) - `Python` - Dead project.\n"
+        new = "- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.\n"
+        self.assertIn("content", self.review_cleanup(old, new))
+
+    def test_cleanup_still_checks_changed_entry_fields(self):
+        old = "- [Fresh](https://github.com/example/fresh) - `Python` - Old description.\n"
+        cases = [
+            (old.replace("Old description.", "No period"), "period"),
+            (old.replace("`Python` - ", ""), "tags"),
+            (old.replace("https://", "http://"), "url"),
+        ]
+        for new, expected in cases:
+            with self.subTest(expected=expected):
+                self.assertIn(expected, self.review_cleanup(old, new))
+
+    def test_cleanup_does_not_readmit_unchanged_stale_archived_repository(self):
+        old = "- [Fresh](https://github.com/example/fresh) - `Python` - Old description.\n"
+        def legacy(project):
+            project.archived = True
+            project.pushed_at = NOW - timedelta(days=800)
+        self.assertEqual(
+            self.review_cleanup(old, old.replace("Old", "New"), configure_project=legacy), set()
+        )
+
+    def test_cleanup_still_checks_unchanged_repository_documentation(self):
+        old = "- [Fresh](https://github.com/example/fresh) - `Python` - Old description.\n"
+        def missing_docs(project):
+            project.has_readme = False
+        self.assertIn("documentation", self.review_cleanup(
+            old, old.replace("Old", "New"), configure_project=missing_docs
+        ))
+
+    def test_cleanup_same_id_rename_preserves_legacy_exemption(self):
+        old = "- [Fresh](https://github.com/example/old) - `Python` - Research tool.\n"
+        def legacy(project):
+            project.id = 123
+            project.archived = True
+            project.pushed_at = NOW - timedelta(days=800)
+        self.assertEqual(self.review_cleanup(
+            old, old.replace("example/old", "example/fresh"), configure_project=legacy
+        ), set())
+
+    def test_cleanup_six_name_and_url_renames_match_same_ids(self):
+        old = "".join(
+            f"- [Old {i}](https://github.com/example/old-{i}) - `Python` - Tool.\n"
+            for i in range(6)
+        )
+        new = old.replace("[Old", "[New").replace("/old-", "/new-")
+        original = FakeClient.get_repo
+        requested = []
+        def lookup(client, name):
+            requested.append(name)
+            project = original(client, name)
+            if name.startswith("example/"):
+                project.id = int(name.rsplit("-", 1)[1]) + 1
+            return project
+        with patch.object(FakeClient, "get_repo", lookup):
+            self.assertEqual(self.review_cleanup(old, new), set())
+        for i in range(6):
+            self.assertEqual(requested.count(f"example/old-{i}"), 1)
+
+    def test_cleanup_rename_does_not_pair_extra_copy(self):
+        old = "- [Old](https://github.com/example/old) - `Python` - Tool.\n"
+        new = old.replace("[Old]", "[New]").replace("/old)", "/new)")
+        def identity(project):
+            project.id = 123
+        self.assertEqual(
+            match_existing_entries([new, new], [old], lambda url: 123),
+            [old, None],
+        )
+        self.assertIn("duplicates", self.review_cleanup(
+            old, new + new.replace("Tool.", "Second copy."), configure_project=identity
+        ))
+
+    def test_cleanup_different_ids_still_check_activity(self):
+        old = "- [Fresh](https://github.com/example/old) - `Python` - Tool.\n"
+        original = FakeClient.get_repo
+        def lookup(client, name):
+            project = original(client, name)
+            if name.startswith("example/"):
+                project.id = 1 if name.endswith("/old") else 2
+                project.pushed_at = NOW - timedelta(days=800)
+            return project
+        with patch.object(FakeClient, "get_repo", lookup):
+            self.assertIn("activity", self.review_cleanup(
+                old, old.replace("/old)", "/new)")
+            ))
+
+    def test_cleanup_same_id_rename_section_move_checks_activity(self):
+        old = "- [Old](https://github.com/example/old) - `Python` - Tool.\n"
+        new = old.replace("[Old]", "[New]").replace("/old)", "/new)")
+        def archived(project):
+            project.id = 123
+            project.archived = True
+        self.assertIn("activity", self.review_cleanup(
+            old + "\n## Portfolio Optimization & Risk Analysis\n",
+            "\n## Portfolio Optimization & Risk Analysis\n" + new,
+            configure_project=archived,
+        ))
+
+    def test_cleanup_failed_old_identity_lookup_does_not_grant_exemption(self):
+        old = "- [Fresh](https://github.com/example/old) - `Python` - Tool.\n"
+        original = FakeClient.get_repo
+        def lookup(client, name):
+            if name == "example/old":
+                raise GithubException(404, {"message": "Not Found"})
+            project = original(client, name)
+            if name.startswith("example/"):
+                project.id = 123
+                project.pushed_at = NOW - timedelta(days=800)
+            return project
+        with patch.object(FakeClient, "get_repo", lookup):
+            self.assertIn("activity", self.review_cleanup(
+                old, old.replace("/old)", "/new)")
+            ))
+
+    def test_cleanup_rechecks_replacement_repository_activity(self):
+        old = "- [Fresh](https://github.com/example/old) - `Python` - Old description.\n"
+        def stale(project):
+            project.pushed_at = NOW - timedelta(days=800)
+        self.assertIn("activity", self.review_cleanup(
+            old, old.replace("example/old", "example/fresh"), configure_project=stale
+        ))
+
+    def test_cleanup_section_move_rechecks_activity(self):
+        old = "- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.\n"
+        def archived(project):
+            project.archived = True
+        self.assertIn("activity", self.review_cleanup(
+            old + "\n## Portfolio Optimization & Risk Analysis\n",
+            "\n## Portfolio Optimization & Risk Analysis\n" + old,
+            configure_project=archived,
+        ))
+
+    def test_cleanup_can_repair_existing_repositoryless_link(self):
+        old = "- [Legacy](https://example.com/docs) - `Python` - Documentation.\n"
+        new = old.replace("/docs)", "/docs/)")
+        self.assertEqual(self.review_cleanup(old, new), set())
+        self.assertIn("reachability", self.review_cleanup(old, new, reachable=False))
+
+    def test_cleanup_cannot_remove_source_from_functional_entry(self):
+        old = "- [Fresh](https://example.com/) - `Python` - Fresh project. [GitHub](https://github.com/example/fresh)\n"
+        new = old.replace(" [GitHub](https://github.com/example/fresh)", "")
+        self.assertIn("github", self.review_cleanup(old, new))
+
+    def test_cleanup_empty_diff_is_not_accepted(self):
+        self.assertIn("entry-count", self.review_cleanup("", ""))
+
+    def test_cleanup_cannot_add_policy_text(self):
+        old = "- [Fresh](https://github.com/example/fresh) - `Python` - Old description.\n"
+        self.assertIn("content", self.review_cleanup(
+            old, old.replace("Old", "New") + "Changed policy.\n"
+        ))
+
+    def test_mixed_new_submission_does_not_get_legacy_activity_exception(self):
+        old = "- [Fresh](https://github.com/example/fresh) - `Python` - Old description.\n"
+        new = old.replace("Old", "New") + "- [Extra](https://github.com/example/extra) - `Python` - Extra project.\n"
+        def stale(project):
+            project.pushed_at = NOW - timedelta(days=800)
+        self.assertIn("activity", self.review_cleanup(old, new, configure_project=stale))
+
+    def test_cleanup_section_move_does_not_grandfather_missing_source(self):
+        old = "- [Legacy](https://example.com/) - `Python` - Legacy project.\n"
+        self.assertIn("github", self.review_cleanup(
+            old + "\n## Portfolio Optimization & Risk Analysis\n",
+            "\n## Portfolio Optimization & Risk Analysis\n" + old,
+        ))
+
+    def test_cleanup_consolidates_duplicate_old_entries(self):
+        old = "- [Fresh](https://github.com/example/fresh) - `Python` - Old description.\n"
+        self.assertEqual(self.review_cleanup(old + old, old.replace("Old", "New")), set())
+
+    def test_cleanup_ambiguous_previous_section_receives_full_checks(self):
+        old = "- [Fresh](https://github.com/example/fresh) - `Python` - Old description.\n"
+        def stale(project):
+            project.pushed_at = NOW - timedelta(days=800)
+        self.assertIn("activity", self.review_cleanup(
+            old + "\n## Portfolio Optimization & Risk Analysis\n" + old,
+            old.replace("Old", "New") + "\n## Portfolio Optimization & Risk Analysis\n",
+            configure_project=stale,
+        ))
+
     def review(
         self,
         *,
@@ -1153,6 +1372,14 @@ class MainTests(unittest.TestCase):
         self.assertEqual(result, 0)
         self.assertIn("description: pass", stdout)
         self.assertIn("duplicates: pass", stdout)
+
+    def test_success_requires_maintainer_review_including_removal_only(self):
+        for count in (0, 1, 6):
+            with self.subTest(entries=count):
+                result, stdout, _stderr = self.run_main(([], "Audit cleanup", count))
+                self.assertEqual(result, 0)
+                self.assertIn("Recommended action: maintainer review", stdout)
+                self.assertNotIn("Verdict: APPROVE", stdout)
 
     def test_success_reports_actual_entry_count(self):
         changed_files = [
