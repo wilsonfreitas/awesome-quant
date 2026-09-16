@@ -167,6 +167,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [fin-primitives](https://github.com/Mattbusel/fin-primitives) - `Rust` - Financial market primitives in Rust: Price/Quantity/Symbol newtypes, BTreeMap order book, OHLCV aggregation, SMA/EMA/RSI indicators, position ledger with PnL, and composable risk monitor.
 - [Wickra](https://github.com/wickra-lib/wickra) - `Rust` `Python` `JavaScript` `C++` `C#` `Golang` `Java` `R` - Streaming-first technical-analysis library with a Rust core: 514 indicators updating in O(1) per tick, with bit-exact batch-vs-streaming results.
 - [wickworks](https://github.com/psyb0t/docker-wickworks) - `REST` `MCP` - Stateless OHLC analyzer: POST bars and requested indicators, get back RSI/MACD/Bollinger/ADX/ATR/VWAP/Ichimoku plus smart-money-concept primitives (order blocks, FVGs, BOS/CHoCH, swing structure). No database, no AI signals.
+- [gamma-seed](https://github.com/Timonkru/gamma-seed) - `Python` `Pine` `Options` - Daily dealer-gamma levels (gamma flip, call and put walls, max pain, expected move) for DAX, Nasdaq, Dow and gold, computed from options open interest (Eurex ODAX for the DAX, ETF proxies for the US) and written into a TradingView Pine v6 indicator; the method is documented in open studies on the author's site. [Website](https://kruegeralgorithms.com/en/research)
 
 ## Trading & Backtesting
 
@@ -621,7 +622,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Special-Relativity-in-Financial-Modeling](https://github.com/Mattbusel/Special-Relativity-in-Financial-Modeling) - C++20 implementation of special-relativistic geometry applied to OHLCV data: Lorentz factors, spacetime intervals, Christoffel symbols, and geodesic deviation signals from live market data. DOI: 10.5281/zenodo.18639919.
 - [Auto-Differentiation Website](https://auto-differentiation.github.io/) - Background and  resources on Automatic Differentiation (AD) / Adjoint Algorithmic Differentitation (AAD).
 - [Derman Papers](https://github.com/MarcosCarreira/DermanPapers) - Notebooks that replicate original quantitative finance papers from Emanuel Derman.
-- [KruegerAlgorithms Research](https://kruegeralgorithms.com/en/research) - `Studies` `Replication` `Intraday` - Open empirical studies on intraday market mechanics (DAX, FTSE, Nasdaq, Dow) on minute data since 2015, each with sample size, period, cost assumptions and a random-walk benchmark; negative results are published, and the series includes a replication of the Zarattini & Aziz opening-range breakout paper net of costs.
 - [volatility-trading](https://github.com/jasonstrimpel/volatility-trading) - A complete set of volatility estimators based on Euan Sinclair's Volatility Trading.
 - [quant](https://github.com/paulperry/quant) - Quantitative Finance and Algorithmic Trading exhaust; mostly ipython notebooks based on Quantopian, Zipline, or Pandas.
 - [fecon235](https://github.com/rsvp/fecon235) - Open source project for software tools in financial economics. Many jupyter notebook to verify theoretical ideas and practical methods interactively.
