@@ -421,6 +421,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Market Data & Data Sources
 
+- [xaudaily](https://xaudaily.com) - `JSON` `REST` - Free, source-linked gold and macro readings: COMEX and SHFE gold, CPI, core PCE, payrolls, Treasury yields, oil, VIX and central-bank gold flows, published twice daily with CSV snapshots and a dependency-free Python client. [GitHub](https://github.com/Wangxian111/xaudaily-data)
 - [Dividend Data Toolkit](https://github.com/holaclea/dividend-data-toolkit) - `Python` `Data` - Dated SCHD payment and holdings snapshots with source URLs, data dictionaries, and Python tools for split-aware dividend windows and ETF company-exposure checks. [Website](https://dividendsteps.com/)
 - [Market Brief](https://github.com/beepboop2025/market-brief) - `Python` `JavaScript` - Source-linked money-market, capital-market, and liquidity briefs with local snapshot comparisons and explicit missing-data states.
 - [Cambio Uruguay](https://cambio-uruguay.com) - `TypeScript` `REST` `MCP` - Collectors and public API for Uruguayan retail buy/sell exchange rates and historical series by source and quote type. [GitHub](https://github.com/eduair94/cambio-uruguay)
