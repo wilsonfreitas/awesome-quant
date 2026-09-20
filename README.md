@@ -757,6 +757,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [MarketCrash](https://www.marketcrash.net) - Market-risk dashboard covering the Buffett indicator, Shiller PE, yield curve, VIX and M2 with a composite crash-risk score, weekly S&P 500 screeners, daily oil-chokepoint tanker transits from IMF PortWatch, and BDC price versus SEC-filed NAV; every page is free without an account or key, and the formulas, source series and thresholds are published at [methodology](https://www.marketcrash.net/methodology).
 
 ## Historical & Archived Projects
 
