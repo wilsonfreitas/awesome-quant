@@ -59,6 +59,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [PyQL](https://github.com/enthought/pyql) - `Python` - QuantLib's Python port.
 - [vollib](https://github.com/vollib/vollib) - `Python` - vollib is a python library for calculating option prices, implied volatility and greeks.
 - [py_vollib](https://github.com/vollib/py_vollib) - `Python` - vollib Python implementation.
+- [vanna](https://github.com/heykav/vanna) - `Python` - Black-Scholes and CRR-binomial options pricing with Greek-attributed backtest P&L, decomposing each trade into delta, gamma, theta, vega, vanna, and volga via a second-order Taylor expansion.
 - [vanilla-option-pricers](https://github.com/ArturSepp/VanillaOptionPricers) - `Python` - Fast, vectorised Black-Scholes-Merton and Bachelier pricers and implied volatility fitters, including inverse options for crypto derivatives.
 - [StochVolModels](https://github.com/ArturSepp/StochVolModels) - `Python` - Pricing analytics and Monte Carlo simulation for stochastic volatility models, including the log-normal SV model and the Heston model.
 - [QuantPy](https://github.com/jsmidt/QuantPy) - `Python` - A framework for quantitative finance In python.
