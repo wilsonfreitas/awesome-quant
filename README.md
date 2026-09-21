@@ -671,6 +671,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Portfolio Optimization Book](https://portfoliooptimizationbook.com/) - Prof. Daniel Palomar's Portfolio Optimization Book. [GitHub](https://github.com/dppalomar/pob)
 - [direct_vola](https://github.com/wol-fi/direct_vola) - `Python` `R` - Demo code for direct Black-Scholes implied-volatility calculation from normalized call prices via the inverse-Gaussian quantile representation.
 - [TradeMux Snippets](https://github.com/KVignesh122/trademux-examples) - `Python` - Code snippets for Metatrader (MT5) forex/CFD trading and data retrieval via trademux API client.
+- [QuantTrainer Stochastic Calculus Labs](https://quanttrainer.com.br) - `Python` `Training` `Interviews` - Step-by-step derivations in Portuguese of Itô's lemma, Girsanov's theorem and the Black-Scholes to heat equation reduction, with free browser simulators and Python scripts that verify each result numerically. [GitHub](https://github.com/JPAurelio-creator/stochastic-calculus-labs) 
 
 ## Commercial & Proprietary Services
 
