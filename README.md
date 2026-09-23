@@ -675,7 +675,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Commercial & Proprietary Services
 
 - [Korea Stock Data](https://aikstockdata.com/) - `Data` - Free Korean equity settled closes with 250 trading days of per-stock history, DART filings and earnings as JSON/CSV, without signup, an API key or request quotas. [GitHub](https://github.com/na77tech-creator/aikstockdata)
-- [Korean Market Data](https://kexportstars.com/tools/) - `Data` - Free Korean investor-flow and sector-index datasets in English CSV/JSON, updated each trading day under CC BY 4.0 without signup. [GitHub](https://github.com/james-brand/korea-market-data)
+- [Korean Market Data](https://kexportstars.com/tools/) - `Data` - Free Korean investor-flow and sector-index datasets in English CSV/JSON, updated each trading day under CC BY 4.0 without signup. Versioned Zenodo archive, DOI: 10.5281/zenodo.21833374. [GitHub](https://github.com/james-brand/korea-market-data)
 - [CoinPaprika](https://coinpaprika.com/api/) - `Python` - Cryptocurrency market data API with 20,000 free calls per month for personal use, including one year of daily price history, without an API key. [GitHub](https://github.com/coinpaprika/coinpaprika-api-python-client)
 - [FillBench](https://fillbench.com) - Free crypto-exchange API latency benchmarks with p50/p95/p99 measurements, separate TLS timing and downloadable CC BY datasets. [GitHub](https://github.com/sircharli3/fillbench-data)
 - [DexPaprika](https://dexpaprika.com/) - `Python` - DEX pool, token and OHLCV data API with 50,000 free monthly credits without signup and up to 60-second data delays. [GitHub](https://github.com/coinpaprika/dexpaprika-sdk-python)
