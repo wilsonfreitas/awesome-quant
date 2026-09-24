@@ -757,6 +757,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [AlgoDeploy](https://algo-deploy.com) - `Python` - Self-hosted framework to backtest, risk-manage, and live-trade your own strategies on your Alpaca or Interactive Brokers account (US equities, single-leg options, crypto); no-code UI, YAML, or Python. Proprietary, one-time license (Starter $99, Pro $249, Quant $499). Permanent free tier requires a valid `.edu` email and is limited to 3 strategies and backtesting only; live trading and advanced tooling are paid, with a 7-day trial. [Pricing](https://algo-deploy.com/#pricing)
 
 ## Historical & Archived Projects
 
