@@ -170,6 +170,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Trading & Backtesting
 
+- [canli-backtest](https://github.com/arhancanli/canli-backtest) - `Python` - Backtester that raises on look-ahead (decide at close, fill at next open), replays funding and corporate actions point-in-time, and reports deflated Sharpe against the full trial count.
+- [ALPHAC](https://github.com/arhancanli/alphac) - `Python` - Cross-asset research and paper-trading engine with point-in-time data, walk-forward validation, multiple-testing accounting and a published forward record.
 - [Crypto Pump Scanner](https://github.com/stefanoviana/crypto-pump-scanner) - `Python` - Bybit perpetual-futures trading bot with volume-spike detection, new-listing monitoring, staged take profits, and trailing stops.
 - [SHORTLIST](https://github.com/zc6503204-collab/stock-strategy-dashboard) - `Python` - Local-first macOS workbench for A-share and US stock strategy screening, paper trading, position sizing, and risk alerts with read-only broker integrations.
 - [AgentQuant](https://github.com/OnePunchMonk/AgentQuant) - `Python` - Trading-strategy research framework with iterative proposal generation, backtesting, SQLite memory, holdout evaluation, walk-forward experiments, and experimental genetic-algorithm and differential-evolution optimizers.
@@ -421,6 +423,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Market Data & Data Sources
 
+- [canli-pit-lake](https://github.com/arhancanli/canli-pit-lake) - `Python` `DuckDB` `Parquet` - Point-in-time market-data lake where every read takes an explicit as-of, corporate actions filter on when they became knowable, and delisted names are kept.
 - [Dividend Data Toolkit](https://github.com/holaclea/dividend-data-toolkit) - `Python` `Data` - Dated SCHD payment and holdings snapshots with source URLs, data dictionaries, and Python tools for split-aware dividend windows and ETF company-exposure checks. [Website](https://dividendsteps.com/)
 - [Market Brief](https://github.com/beepboop2025/market-brief) - `Python` `JavaScript` - Source-linked money-market, capital-market, and liquidity briefs with local snapshot comparisons and explicit missing-data states.
 - [Cambio Uruguay](https://cambio-uruguay.com) - `TypeScript` `REST` `MCP` - Collectors and public API for Uruguayan retail buy/sell exchange rates and historical series by source and quote type. [GitHub](https://github.com/eduair94/cambio-uruguay)
