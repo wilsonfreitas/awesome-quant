@@ -170,6 +170,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Trading & Backtesting
 
+- [Blave Agent](https://github.com/Blave-TW/blave-agent) - `Python` `JavaScript` `Electron` - macOS desktop workspace where your own Claude Code or Codex writes a trading strategy, backtests it with a Monte Carlo permutation test, a parameter-plateau scan and walk-forward, and runs it live through deterministic scheduled code with no LLM in the order loop (Binance, OKX, BingX, Gate.io, Bybit, paper trading).
 - [Crypto Pump Scanner](https://github.com/stefanoviana/crypto-pump-scanner) - `Python` - Bybit perpetual-futures trading bot with volume-spike detection, new-listing monitoring, staged take profits, and trailing stops.
 - [SHORTLIST](https://github.com/zc6503204-collab/stock-strategy-dashboard) - `Python` - Local-first macOS workbench for A-share and US stock strategy screening, paper trading, position sizing, and risk alerts with read-only broker integrations.
 - [AgentQuant](https://github.com/OnePunchMonk/AgentQuant) - `Python` - Trading-strategy research framework with iterative proposal generation, backtesting, SQLite memory, holdout evaluation, walk-forward experiments, and experimental genetic-algorithm and differential-evolution optimizers.
