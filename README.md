@@ -589,6 +589,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [QFO Quant Platform](https://www.qfo-quant-platform.com/) - `Python` `React` `A-shares` - Local-first quantitative research and backtesting platform with data synchronization, multi-asset screening, factor analysis, portfolio optimization, risk analysis, and optional LLM-assisted news analysis. [GitHub](https://github.com/yeh2017/QFO-Quant-Platform)
 - [dsh-quant](https://github.com/pengpengyi92/dsh-quant) - `TypeScript` `DeepSeek Harness` - Agent-native quantitative research toolkit for DeepSeek Harness: 46 tools across data, alpha, ML, risk, execution and ecosystem domains, with an end-to-end research pipeline.
 - [Jupyter Quant](https://github.com/quantbelt/jupyter-quant) - `Python` - A dockerized Jupyter quant research environment with preloaded tools for quant analysis, statsmodels, pymc, arch, py_vollib, zipline-reloaded, PyPortfolioOpt, etc.
+- [SmartMoney-Cub](https://github.com/myc0576/SmartMoney-Cub) - `Python` `CLI` - Read-only trading journal and review harness with point-in-time evidence packs and deterministic replay. Does not place trades or connect to a broker.
 
 ## Cross-Language Frameworks
 
