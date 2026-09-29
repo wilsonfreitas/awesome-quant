@@ -547,6 +547,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [polymm](https://github.com/kachence/polymm) - `Python` `Polymarket` - Market-making and arbitrage bot for Polymarket sports and esports markets, pricing from de-vigged sportsbook odds.
 - [QuantRank500](https://github.com/RusUsf/quantrank500) - `Python` - Open-source public record of stock predictions: commit-reveal before the open, automatic settlement against exchange data, tamper-evident hash-chained ledger. Live at [quantrank500.com](https://quantrank500.com).
 - [outcometick](https://outcometick.com) - `Python` `JavaScript` - Tick-level history for Polymarket and Predict.fun crypto Up/Down markets, including the full-precision Chainlink settlement feeds and each market's strike and settled outcome, with a sandboxed runner that replays a submitted strategy against the same archive. [GitHub](https://github.com/outcometick/outcometick-sdk-ts)
+- [resolvedkit](https://pypi.org/project/resolvedkit/) - `Python` `Polymarket` - Backtester that fills Polymarket orders by walking the historical order book level by level, with Polymarket's taker-fee curve, order latency, settlement at the real resolution and a bundled sample dataset that runs without an API key. [GitHub](https://github.com/resolvedmarkets/resolvedkit)
 
 ## Calendars & Market Hours
 
@@ -757,6 +758,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Resolved Markets](https://resolvedmarkets.com) - `REST` `WebSocket` `MCP` - Polymarket historical order-book snapshots, trades and settlement results since March 2026, with a permanent free tier of 5,000 credits a month for crypto up/down markets that needs no payment information.
 
 ## Historical & Archived Projects
 
