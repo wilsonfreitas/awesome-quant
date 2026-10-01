@@ -757,6 +757,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Aperiodic](https://aperiodic.io/) - `Python` `CLI` `REST` - Point-in-time crypto microstructure, liquidity and order-flow metrics (220 metrics, 19 datasets) and raw trades, quotes and derivatives data for crypto perpetuals on venues including Binance, OKX and Hyperliquid, as parquet, with a permanent free preview of one month of BTC perp data per dataset that needs no signup. [GitHub](https://github.com/aperiodic-io/cli)
 
 ## Historical & Archived Projects
 
