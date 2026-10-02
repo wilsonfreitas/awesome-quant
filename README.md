@@ -757,6 +757,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [SweetValueLab](https://sweetvaluelab.com) - Free US equity valuation research using SEC EDGAR filings: DCF and sector-specific models for 518 S&P 500 and Nasdaq-100 stocks with every assumption shown, a reverse DCF, bank, REIT and software boards, 13F holdings history for 82 managers back to 2013, and CC BY 4.0 datasets, without an account.
 
 ## Historical & Archived Projects
 
