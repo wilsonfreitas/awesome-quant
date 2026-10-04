@@ -584,6 +584,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Quant Research Environments
 
+- [AxonX](https://github.com/FlowLLM-AI/AxonX) - `Python` `MCP` - Agent-native quantitative research harness with plugin-based tasks for data processing, factor analysis, model training, and backtesting, traceable artifacts, and CLI and web interfaces.
 - [TradingAgents](https://github.com/TauricResearch/TradingAgents) - `Python` `LLM` - Multi-agent financial research framework combining fundamental, technical, news, and sentiment analysis with structured investment debates and risk assessment.
 - [Nova-TradingAgent](https://github.com/rufeng0411/Nova-TradingAgent) - `Python` `A-shares` - Self-hosted 15-agent research desk (debate graph, optional Tushare L2 and Qlib). Does not place trades.
 - [QFO Quant Platform](https://www.qfo-quant-platform.com/) - `Python` `React` `A-shares` - Local-first quantitative research and backtesting platform with data synchronization, multi-asset screening, factor analysis, portfolio optimization, risk analysis, and optional LLM-assisted news analysis. [GitHub](https://github.com/yeh2017/QFO-Quant-Platform)
