@@ -482,6 +482,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [tiingo](https://github.com/hydrosquall/tiingo-python) - `Python` - Python interface for daily composite prices/OHLC/Volume + Real-time News Feeds, powered by the Tiingo Data Platform.
 - [metatrader5](https://pypi.org/project/metatrader5/) - `Python` - API Connector to MetaTrader 5 Terminal. (Last updated: 2026-02-20).
 - [akshare](https://github.com/akfamily/akshare) - `Python` - AkShare is an elegant and simple financial data interface library for Python, built for human beings! <https://akshare.readthedocs.io>.
+- [CNEquity](https://github.com/rootSunc/CNEquity) - `Python` `MCP` `A-shares` - Self-hosted China A-share data lake that keeps 55 datasets (prices, financials, capital flows, corporate events, futures and options) in local Parquet with incremental updates, point-in-time queries, delisted-stock retention, DuckDB SQL and a read-only MCP server.
 - [yahooquery](https://github.com/dpguthrie/yahooquery) - `Python` - Python interface for retrieving data through unofficial Yahoo Finance API.
 - [investpy](https://github.com/alvarobartt/investpy) - `Python` - Financial Data Extraction from Investing.com with Python! <https://investpy.readthedocs.io/>.
 - [yliveticker](https://github.com/yahoofinancelive/yliveticker) - `Python` - Live stream of market data from Yahoo Finance websocket.
