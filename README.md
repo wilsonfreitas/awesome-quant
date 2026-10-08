@@ -170,6 +170,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Trading & Backtesting
 
+- [TokIO](https://github.com/Kuzi-DEV/Tokio-ai) - `Python` `Pine Script` - Backtest significance checker with published false-positive rates: dependence-robust tests corrected for every variant tried (Romano-Wolf), deflated and probabilistic Sharpe ratios, probability of backtest overfitting, breakeven costs and a one-bar lookahead check, taking vectorbt portfolios, backtesting.py results and TradingView trade exports directly.
 - [Crypto Pump Scanner](https://github.com/stefanoviana/crypto-pump-scanner) - `Python` - Bybit perpetual-futures trading bot with volume-spike detection, new-listing monitoring, staged take profits, and trailing stops.
 - [SHORTLIST](https://github.com/zc6503204-collab/stock-strategy-dashboard) - `Python` - Local-first macOS workbench for A-share and US stock strategy screening, paper trading, position sizing, and risk alerts with read-only broker integrations.
 - [AgentQuant](https://github.com/OnePunchMonk/AgentQuant) - `Python` - Trading-strategy research framework with iterative proposal generation, backtesting, SQLite memory, holdout evaluation, walk-forward experiments, and experimental genetic-algorithm and differential-evolution optimizers.
