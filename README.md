@@ -757,6 +757,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Tapetide](https://tapetide.com/mcp) - `MCP` `TypeScript` `Python` - Hosted MCP server for NSE and BSE equity research covering about 8,200 listed companies, with 55 tools for quotes, financial statements, a 326-ratio fundamental screener and a technical screener, shareholding, FII/DII flows, option chains and IV, analyst ratings, and parsed annual reports and concall transcripts; the free plan allows 50 successful tool calls per day and 1,000 per month, with paid plans for higher limits. [GitHub](https://github.com/Tapetide-hq/nse-bse-indian-stock-market-data-mcp)
 
 ## Historical & Archived Projects
 
