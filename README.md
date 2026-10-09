@@ -757,6 +757,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [ta-lib-takt](https://pypi.org/project/ta-lib-takt/) - `Python` - Free drop-in build of TA-Lib 0.8.1 for Python: the official wrapper with a proprietary C core whose outputs match the official library bit for bit and which runs seven indicators 2-6x faster in a published benchmark, with no account or usage limits (Linux x86-64 only). [GitHub](https://github.com/abx-takt/ta-lib-takt)
 
 ## Historical & Archived Projects
 
