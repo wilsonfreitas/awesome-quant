@@ -389,6 +389,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [CoWorker Fin-Agent](https://github.com/ZiwayZhao/agent-coworker) - `Python` - LLM-powered A-share stock analysis via P2P agent collaboration. Technical analysis (MA60, volume-price patterns, golden eye), deep research reports using proprietary methodology, and market state summaries. Analysis logic stays private via Skill-as-API protocol.
 - [StockKit](https://stockkit.net/) - `TypeScript` - Free AI-powered stock research reports for US, China & HK using Claude Opus and multi-model AI with 20+ technical indicators. [GitHub](https://github.com/kentmswood-ui/stockkit)
 - [AlphaAI](https://alphai.io/developers) - `Python` - Pre-analyzed financial news via REST API and MCP for AI agents: per-ticker impact and sentiment, a category, and a 1-10 relevance score on every story, plus structured SEC Form 4 insider data. Free tier, no card. [GitHub](https://github.com/makeev/alphai-mcp)
+- [Free Crypto News API](https://github.com/nirholas/cryptocurrency.cv) - `TypeScript` `REST` `MCP` - Free, keyless crypto news feed from 300+ sources with full-text search, a historical article archive, sentiment scoring, and market and DeFi data.
 
 ## Time Series Analysis
 
