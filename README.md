@@ -361,6 +361,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [portfolio-allocation](https://github.com/lequant40/portfolio_allocation_js) - `JavaScript` - PortfolioAllocation is a JavaScript library designed to help constructing financial portfolios made of several assets: bonds, commodities, cryptocurrencies, currencies, exchange traded funds (ETFs), mutual funds, stocks...
 - [Ghostfolio](https://github.com/ghostfolio/ghostfolio) - `JavaScript` - Wealth management software to keep track of financial assets like stocks, ETFs or cryptocurrencies and make solid, data-driven investment decisions.
 - [rebalance](https://github.com/cjroth/rebalance) - `JavaScript` - Interactive portfolio rebalancing tool that imports brokerage CSV data, sets target allocations, and generates trade instructions.
+- [dca-ladder-calculator](https://github.com/BlitzTrading/dca-ladder-calculator) - `JavaScript` `Crypto` - Zero-dependency calculator for DCA order ladders on crypto perpetual futures that gives the average entry, take-profit, break-even and liquidation price (isolated or cross margin) after every order.
 
 ## Factor Analysis
 
