@@ -674,6 +674,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Commercial & Proprietary Services
 
+- [Invokely](https://invokely.ai) - Hosted MCP and REST API for source-cited official economic statistics, with 500 MCP calls/month on the no-card Free plan; REST data queries require Builder (€19/month), Pro (€79/month), or prepaid credits (€5/1,000 calls, €10 minimum), and publisher reuse terms vary.
 - [Korea Stock Data](https://aikstockdata.com/) - `Data` - Free Korean equity settled closes with 250 trading days of per-stock history, DART filings and earnings as JSON/CSV, without signup, an API key or request quotas. [GitHub](https://github.com/na77tech-creator/aikstockdata)
 - [Korean Market Data](https://kexportstars.com/tools/) - `Data` - Free Korean investor-flow and sector-index datasets in English CSV/JSON, updated each trading day under CC BY 4.0 without signup. [GitHub](https://github.com/james-brand/korea-market-data)
 - [CoinPaprika](https://coinpaprika.com/api/) - `Python` - Cryptocurrency market data API with 20,000 free calls per month for personal use, including one year of daily price history, without an API key. [GitHub](https://github.com/coinpaprika/coinpaprika-api-python-client)
