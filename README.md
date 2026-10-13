@@ -422,6 +422,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 ## Market Data & Data Sources
 
 - [Dividend Data Toolkit](https://github.com/holaclea/dividend-data-toolkit) - `Python` `Data` - Dated SCHD payment and holdings snapshots with source URLs, data dictionaries, and Python tools for split-aware dividend windows and ETF company-exposure checks. [Website](https://dividendsteps.com/)
+- [finzdata](https://github.com/FinzData/finzdata-python) - `Python` - yfinance-style client for survivorship-free US stock history (delisted names included), CFTC COT, point-in-time SEC fundamentals, macro vintages and 13F holdings.
 - [Market Brief](https://github.com/beepboop2025/market-brief) - `Python` `JavaScript` - Source-linked money-market, capital-market, and liquidity briefs with local snapshot comparisons and explicit missing-data states.
 - [Cambio Uruguay](https://cambio-uruguay.com) - `TypeScript` `REST` `MCP` - Collectors and public API for Uruguayan retail buy/sell exchange rates and historical series by source and quote type. [GitHub](https://github.com/eduair94/cambio-uruguay)
 - [ashare-data-immunity](https://github.com/holdout-labs/ashare-data-immunity) - `Python` - A-share daily-bar data immunity: cleaning, board-aware price limits (ST date-aware), suspensions, audits, SHA-256 snapshots and evidence-tracked repair.
