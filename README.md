@@ -570,6 +570,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [dxcharts-lite](https://github.com/devexperts/dxcharts-lite) - `JavaScript` - Flexible financial charting library based on HTML5 canvas.
 - [Exeria Charts](https://github.com/efixdata/exeria-charts) - `JavaScript` - High-performance, native Canvas/WebGL financial charting library for self-hosted applications without iframe limits.
 - [MyLinedChart](https://mylinedchart.com) - `Desktop` - Technical-analysis charting app for Interactive Brokers (IBKR) that exports drawings, notes, indicators and OHLCV as JSON/XLSX/CSV, and exposes chart context to AI agents over MCP.
+- [Flowdepth](https://github.com/Niketion/flowdepth) - `Rust` `Desktop` - Open-source crypto order-flow terminal with footprint charts, historical L2 liquidity heatmaps, volume bubbles, CVD, and BTC/ETH/SOL options GEX analytics.
 
 ## Excel & Spreadsheet Integration
 
