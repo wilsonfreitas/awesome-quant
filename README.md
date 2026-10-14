@@ -547,6 +547,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [polymm](https://github.com/kachence/polymm) - `Python` `Polymarket` - Market-making and arbitrage bot for Polymarket sports and esports markets, pricing from de-vigged sportsbook odds.
 - [QuantRank500](https://github.com/RusUsf/quantrank500) - `Python` - Open-source public record of stock predictions: commit-reveal before the open, automatic settlement against exchange data, tamper-evident hash-chained ledger. Live at [quantrank500.com](https://quantrank500.com).
 - [outcometick](https://outcometick.com) - `Python` `JavaScript` - Tick-level history for Polymarket and Predict.fun crypto Up/Down markets, including the full-precision Chainlink settlement feeds and each market's strike and settled outcome, with a sandboxed runner that replays a submitted strategy against the same archive. [GitHub](https://github.com/outcometick/outcometick-sdk-ts)
+- [polymarket-avellaneda-stoikov-market-maker](https://github.com/polytutor-ai/polymarket-avellaneda-stoikov-market-maker) - `Python` `Polymarket` - Market maker for Polymarket BTC binary options using Black-Scholes fair value, Avellaneda-Stoikov quoting, Hyperliquid delta hedging, and a PPO reinforcement-learning variant.
+- [polymarket-black-scholes-hft-bot](https://github.com/polytutor-ai/polymarket-black-scholes-hft-bot) - `Python` `Polymarket` - High-frequency bot for Polymarket crypto Up/Down markets using Black-Scholes and TWAP probability models, Chainlink and multi-exchange price feeds, and fee-aware EV.
 
 ## Calendars & Market Hours
 
