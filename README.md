@@ -532,6 +532,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [finalytics](https://github.com/Nnamdi-sys/finalytics) - `Rust` - A rust library for financial data analysis.
 - [AgentServices](https://github.com/vbkotecha/agentservices-api) - `Python` - API server for crypto and market data with technical indicators, on-chain analytics, and MCP access; includes x402 payment support for hosted endpoints.
 - [The Stall](https://github.com/thebrierfox/the-stall) - `JavaScript` `MCP` - Self-hostable data and analytics service with equity technical indicators, multi-chain portfolio valuation, market-data adapters, and MCP interfaces.
+- [S&P 500 Drawdowns Since 1999](https://github.com/coopermb-glitch/sp500-drawdowns-since-1999) - `Data` - Worst fall, peak, trough and recovery dates for the 343 current S&P 500 members that traded in 1999, plus all 500 stocks in the January 1999 index with the failures kept in, as two CC BY 4.0 CSV files with a data dictionary.
 
 
 ## Prediction Markets
