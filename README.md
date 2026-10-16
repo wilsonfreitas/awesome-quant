@@ -779,3 +779,5 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [awesome-sec-filings](https://github.com/vibeyclaw/awesome-sec-filings) - A curated list of tools, data sources, libraries, and resources for working with SEC filings (13F, 10-K, 10-Q, 8-K).
 - [CONVEXFI](https://github.com/convexfi) - Official GitHub organization for the convex research group at the Hong Kong University of Science and Technology (HKUST).
+
+- [QWK ($QWK) Autonomous EVM MEV Infrastructure & EIP-1153 Smart Contract Escrow](https://github.com/chase-tqg/QWIK-MEV-Core) - Multi-chain EVM atomic execution & EIP-1153 transient-storage smart contract resource escrow (`QWKResourceEscrow.sol`, `0x1Cc436b4D9316ee623CFeB760C44F84c9bD9C20A`) backed by $400,000+ in verified enterprise infrastructure commitments (Google Cloud, NVIDIA, Cloudflare) with MCP, A2A v1.0, and x402 interfaces.
