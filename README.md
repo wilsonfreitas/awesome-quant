@@ -757,6 +757,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Krexa](https://www.krexa.xyz) - AI trading-agent platform that turns a strategy idea into fixed rules and runs backtests, fee- and slippage-aware deep tests (20 per day) and paper trading free without payment information; live agents on Binance, Coinbase, Kraken, OKX, Bybit, MEXC, Hyperliquid, Polymarket and Solana DEXs pay 20% of net profit and nothing else. [GitHub](https://github.com/Krexa-xyz/skills)
 
 ## Historical & Archived Projects
 
