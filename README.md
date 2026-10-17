@@ -570,6 +570,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [dxcharts-lite](https://github.com/devexperts/dxcharts-lite) - `JavaScript` - Flexible financial charting library based on HTML5 canvas.
 - [Exeria Charts](https://github.com/efixdata/exeria-charts) - `JavaScript` - High-performance, native Canvas/WebGL financial charting library for self-hosted applications without iframe limits.
 - [MyLinedChart](https://mylinedchart.com) - `Desktop` - Technical-analysis charting app for Interactive Brokers (IBKR) that exports drawings, notes, indicators and OHLCV as JSON/XLSX/CSV, and exposes chart context to AI agents over MCP.
+- [Kandle](https://kernel-hunter.github.io/kandle/) - `TypeScript` `MCP` - Browser charting app for crypto, stocks and forex with indicators, a scripting language with strategy backtests, alerts, bar replay and an MCP server for AI agents. [GitHub](https://github.com/Kernel-Hunter/kandle)
 
 ## Excel & Spreadsheet Integration
 
