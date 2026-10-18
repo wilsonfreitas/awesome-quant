@@ -589,6 +589,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [QFO Quant Platform](https://www.qfo-quant-platform.com/) - `Python` `React` `A-shares` - Local-first quantitative research and backtesting platform with data synchronization, multi-asset screening, factor analysis, portfolio optimization, risk analysis, and optional LLM-assisted news analysis. [GitHub](https://github.com/yeh2017/QFO-Quant-Platform)
 - [dsh-quant](https://github.com/pengpengyi92/dsh-quant) - `TypeScript` `DeepSeek Harness` - Agent-native quantitative research toolkit for DeepSeek Harness: 46 tools across data, alpha, ML, risk, execution and ecosystem domains, with an end-to-end research pipeline.
 - [Jupyter Quant](https://github.com/quantbelt/jupyter-quant) - `Python` - A dockerized Jupyter quant research environment with preloaded tools for quant analysis, statsmodels, pymc, arch, py_vollib, zipline-reloaded, PyPortfolioOpt, etc.
+- [AlphaLattice](https://github.com/xinglin-li/alphalattice) - `Python` `Claude Code` `Codex` - Local research workbench that a coding agent drives from one sentence: dated US large-cap research positions bounded by each date's information cutoff, SEC-filing evidence review, and an investment committee that changes no numbers.
 
 ## Cross-Language Frameworks
 
