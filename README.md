@@ -818,6 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Radikabunavi](https://radikabunavi.com/mcp-service) - `MCP` `Data` - Hosted MCP server for Japanese listed-company data built from EDINET annual reports and TDnet disclosures (about 3,700 companies, up to 10 years), with split-adjusted per-share data, forecast revisions with before/after figures and screening on 120+ metrics; the permanent free tier allows 100 calls per day after Google or Apple sign-in, without a credit card. [GitHub](https://github.com/Sulgraphica/radikabunavi-mcp)
 
 ## Historical & Archived Projects
 
