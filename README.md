@@ -112,6 +112,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [OptHedging](https://cran.r-project.org/web/packages/OptHedging/index.html) - `R` - Estimation of value and hedging strategy of call and put options.
 - [tvm](https://cran.r-project.org/web/packages/tvm/index.html) - `R` - Time Value of Money Functions.
 - [OptionPricing](https://cran.r-project.org/web/packages/OptionPricing/index.html) - `R` - Option Pricing with Efficient Simulation Algorithms.
+- [CustomDerivative](https://cran.r-project.org/package=CustomDerivative) - `R` - Black-Scholes-Merton pricing, Monte Carlo with antithetic and control variates and confidence intervals, path-dependent payoffs and finite-difference Greeks. [GitHub](https://github.com/AIM-IT4/CustomDerivative)
 - [credule](https://github.com/blenezet/credule) - `R` - Credit Default Swap Functions.
 - [derivmkts](https://cran.r-project.org/web/packages/derivmkts/index.html) - `R` - Functions and R Code to Accompany Derivatives Markets. [GitHub](https://github.com/rmcd1024/derivmkts)
 - [FinCal](https://github.com/felixfan/FinCal) - `R` - Package for time value of money calculation, time series analysis and computational finance.
