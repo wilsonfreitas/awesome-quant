@@ -74,6 +74,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [financial-engineering](https://github.com/federicomariamassari/financial-engineering) - `Python` - Applications of Monte Carlo methods to financial engineering projects, in Python.
 - [optlib](https://github.com/dbrojas/optlib) - `Python` - A library for financial options pricing written in Python.
 - [tf-quant-finance](https://github.com/google/tf-quant-finance) - `Python` - High-performance TensorFlow library for quantitative finance.
+- [stochPathSim](https://github.com/AIM-IT4/stochPathSim) - `Python` - Stochastic path simulation (Heston, rough Bergomi, Kou, curve-fitted Hull-White and G2++, CIR, commodity and credit models) with Monte Carlo pricing, exposure/CVA, risk-factor backtesting and a model-validation lab producing interactive Plotly HTML reports.
 - [Q-Fin](https://github.com/RomanMichaelPaolucci/Q-Fin) - `Python` - A Python library for mathematical finance.
 - [Quantsbin](https://github.com/quantsbin/Quantsbin) - `Python` - Tools for pricing and plotting of vanilla option prices, greeks and various other analysis around them.
 - [finoptions](https://github.com/bbcho/finoptions-dev) - `Python` - Complete python implementation of R package fOptions with partial implementation of fExoticOptions for pricing various options.
