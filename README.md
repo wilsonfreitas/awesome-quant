@@ -818,6 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Rigor](https://rigorscore.com/en) - Independent statistical audit of backtests and track records uploaded from MT4/MT5, TradingView, NinjaTrader, QuantConnect, Myfxbook, FX Blue or CSV: significance, deflated Sharpe ratio for the trials counted, break-even cost, in-sample versus out-of-sample and data-quality checks, with every figure tagged as measured or declared. Free without sign-up: a preview of any uploaded file with its A to D class and red flags, plus a luck calculator, a figure reader and prop-challenge and risk-of-ruin calculators; the full report with every figure and the PDF costs USD 29 (USD 69 for three).
 
 ## Historical & Archived Projects
 
