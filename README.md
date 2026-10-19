@@ -606,6 +606,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [mplfinance](https://github.com/matplotlib/mplfinance) - `Python` - matplotlib utilities for the visualization, and visual analysis, of financial data.
 - [finplot](https://github.com/highfestiva/finplot) - `Python` - Performant and effortless finance plotting for Python.
 - [finvizfinance](https://github.com/lit26/finvizfinance) - `Python` - Finviz analysis python library.
+- [Flowdepth](https://github.com/Niketion/flowdepth) - `Rust` `Desktop` - Open-source crypto order-flow terminal with footprint charts, historical L2 liquidity heatmaps, volume bubbles, CVD, and BTC/ETH/SOL options GEX analytics.
 - [market-analy](https://github.com/maread99/market_analy) - `Python` - Analysis and interactive charting using [market-prices](https://github.com/maread99/market_prices) and bqplot.
 - [LightweightCharts.jl](https://github.com/bhftbootcamp/LightweightCharts.jl) - `Julia` - Julia wrapper for Lightweight Charts™ by TradingView.
 - [dxcharts-lite](https://github.com/devexperts/dxcharts-lite) - `JavaScript` - Flexible financial charting library based on HTML5 canvas.
