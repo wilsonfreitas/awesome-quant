@@ -387,6 +387,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Deadlatch](https://github.com/Diabloluo/deadlatch) - `Python` `MCP` - Local, advisory-only pre-trade risk gate for trading agents with 12 deterministic fail-closed rules and a local audit log.
 - [portfolio](https://github.com/dgerlanc/portfolio) - `R` - Analysing equity portfolios.
 - [sparseIndexTracking](https://github.com/dppalomar/sparseIndexTracking) - `R` - Portfolio design to track an index.
+- [stochastly-calculators](https://github.com/Stochastly/stochastly-calculators) - `TypeScript` - Tested implementations of the probabilistic and deflated Sharpe ratios, minimum track record length, probability of backtest overfitting (CSCV) and a seeded prop-firm challenge simulator, each folder giving the formula and its source paper.
 - [riskParityPortfolio](https://github.com/dppalomar/riskParityPortfolio) - `R` - Blazingly fast design of risk parity portfolios.
 - [PortfolioAnalytics](https://github.com/braverock/PortfolioAnalytics) - `R` - Portfolio Analysis, Including Numerical Methods for Optimizationof Portfolios.
 - [PerformanceAnalytics](https://github.com/braverock/PerformanceAnalytics) - `R` - Econometric tools for performance and risk analysis.
