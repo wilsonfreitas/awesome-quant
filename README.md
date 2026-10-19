@@ -306,6 +306,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [PROJ_Option_Pricing_Matlab](https://github.com/jkirkby3/PROJ_Option_Pricing_Matlab) - `Matlab` - Quant Option Pricing - Exotic/Vanilla: Barrier, Asian, European, American, Parisian, Lookback, Cliquet, Variance Swap, Swing, Forward Starting, Step, Fader.
 - [Fastback.jl](https://github.com/rbeeli/Fastback.jl) - `Julia` - Blazing fast Julia backtester.
 - [Lucky.jl](https://github.com/oliviermilla/Lucky.jl) - `Julia` - Modular, asynchronous trading engine in pure Julia.
+- [Lumina Capital](https://github.com/ramuza0113-sketch/lumina-ai-hedge-fund) - `Python` - Autonomous multi-agent quantitative hedge fund engine powered by LangGraph, Qlib Alpha158, and Google TimesFM.
 - [Planar.jl](https://github.com/BubbleParticles/Planar.jl) - `Julia` - Trading framework built around CCXT with Zarr-backed OHLCV persistence, contiguity-checked data feeds, isolated-margin position management, and a loop-based backtester sharing strategy code across simulation, paper, and live modes.
 - [Strategems.jl](https://github.com/JTAmos/Strategems.jl) - `Julia` - Quantitative systematic trading strategy development and backtesting.
 - [ccxt](https://github.com/ccxt/ccxt) - `JavaScript` `Python` `PHP` - A JavaScript / Python / PHP cryptocurrency trading API with support for more than 100 bitcoin/altcoin exchanges.
