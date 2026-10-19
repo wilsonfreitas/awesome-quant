@@ -214,6 +214,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Lumibot](https://github.com/Lumiwealth/lumibot) - `Python` - Algorithmic trading framework where the same code runs for backtesting and live trading across stocks, options, crypto, futures, and forex with multiple brokers including Alpaca, Interactive Brokers, Tradier, and Schwab.
 - [QSTrader](https://github.com/mhallsmoore/qstrader) - `Python` - QSTrader backtesting simulation engine.
 - [Blankly](https://github.com/Blankly-Finance/Blankly) - `Python` - Fully integrated backtesting, paper trading, and live deployment.
+- [Blave Agent](https://github.com/Blave-TW/blave-agent) - `Python` `JavaScript` `Electron` - macOS desktop workspace where your own Claude Code or Codex writes a trading strategy, backtests it with a Monte Carlo permutation test, a parameter-plateau scan and walk-forward, and runs it live through deterministic scheduled code with no LLM in the order loop (Binance, OKX, BingX, Gate.io, Bybit, paper trading).
 - [zipline](https://github.com/quantopian/zipline) - `Python` - Pythonic algorithmic trading library.
 - [zipline-reloaded](https://github.com/stefan-jansen/zipline-reloaded) - `Python` - Zipline, a Pythonic Algorithmic Trading Library.
 - [QuantSoftware Toolkit](https://github.com/QuantSoftware/QuantSoftwareToolkit) - `Python` - Python-based open source software framework designed to support portfolio construction and management.
