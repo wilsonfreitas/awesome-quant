@@ -264,6 +264,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [fast-trade](https://github.com/jrmeier/fast-trade) - `Python` - A library built with backtest portability and performance in mind for backtest trading strategies.
 - [qf-lib](https://github.com/quarkfin/qf-lib) - `Python` - QF-Lib is a Python library that provides high quality tools for quantitative finance.
 - [tda-api](https://github.com/alexgolec/tda-api) - `Python` - Gather data and trade equities, options, and ETFs via TDAmeritrade.
+- [tilt-check](https://github.com/ssap-pa/tilt-check) - `Python` `TabPFN` `Gemma` - Pre-trade check and written audit from your own NinjaTrader trade history: sessions in market time, first trades of the day, re-entries after a loss, exit replay on minute bars, and written rules checked against the chart without look-ahead; never places orders.
 - [vectorbt](https://github.com/polakowo/vectorbt) - `Python` - Find your trading edge, using a powerful toolkit for backtesting, algorithmic trading, and research.
 - [Lean](https://github.com/QuantConnect/Lean) - `Python` `C#` - Lean Algorithmic Trading Engine by QuantConnect (Python, C#).
 - [pysystemtrade](https://github.com/pst-group/pysystemtrade) - `Python` - pysystemtrade is the open source version of Robert Carver's backtesting and trading engine that implements systems according to the framework outlined in his book "Systematic Trading", which is further developed on his blog.
