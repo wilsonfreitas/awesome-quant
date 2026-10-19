@@ -59,6 +59,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [PyQL](https://github.com/enthought/pyql) - `Python` - QuantLib's Python port.
 - [vollib](https://github.com/vollib/vollib) - `Python` - vollib is a python library for calculating option prices, implied volatility and greeks.
 - [py_vollib](https://github.com/vollib/py_vollib) - `Python` - vollib Python implementation.
+- [vanna](https://github.com/heykav/vanna) - `Python` - Black-Scholes and CRR-binomial options pricing with Greek-attributed backtest P&L, decomposing each trade into delta, gamma, theta, vega, vanna, and volga via a second-order Taylor expansion.
 - [vanilla-option-pricers](https://github.com/ArturSepp/VanillaOptionPricers) - `Python` - Fast, vectorised Black-Scholes-Merton and Bachelier pricers and implied volatility fitters, including inverse options for crypto derivatives.
 - [StochVolModels](https://github.com/ArturSepp/StochVolModels) - `Python` - Pricing analytics and Monte Carlo simulation for stochastic volatility models, including the log-normal SV model and the Heston model.
 - [QuantPy](https://github.com/jsmidt/QuantPy) - `Python` - A framework for quantitative finance In python.
@@ -73,6 +74,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [financial-engineering](https://github.com/federicomariamassari/financial-engineering) - `Python` - Applications of Monte Carlo methods to financial engineering projects, in Python.
 - [optlib](https://github.com/dbrojas/optlib) - `Python` - A library for financial options pricing written in Python.
 - [tf-quant-finance](https://github.com/google/tf-quant-finance) - `Python` - High-performance TensorFlow library for quantitative finance.
+- [stochPathSim](https://github.com/AIM-IT4/stochPathSim) - `Python` - Stochastic path simulation (Heston, rough Bergomi, Kou, curve-fitted Hull-White and G2++, CIR, commodity and credit models) with Monte Carlo pricing, exposure/CVA, risk-factor backtesting and a model-validation lab producing interactive Plotly HTML reports.
 - [Q-Fin](https://github.com/RomanMichaelPaolucci/Q-Fin) - `Python` - A Python library for mathematical finance.
 - [Quantsbin](https://github.com/quantsbin/Quantsbin) - `Python` - Tools for pricing and plotting of vanilla option prices, greeks and various other analysis around them.
 - [finoptions](https://github.com/bbcho/finoptions-dev) - `Python` - Complete python implementation of R package fOptions with partial implementation of fExoticOptions for pricing various options.
@@ -111,6 +113,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [OptHedging](https://cran.r-project.org/web/packages/OptHedging/index.html) - `R` - Estimation of value and hedging strategy of call and put options.
 - [tvm](https://cran.r-project.org/web/packages/tvm/index.html) - `R` - Time Value of Money Functions.
 - [OptionPricing](https://cran.r-project.org/web/packages/OptionPricing/index.html) - `R` - Option Pricing with Efficient Simulation Algorithms.
+- [CustomDerivative](https://cran.r-project.org/package=CustomDerivative) - `R` - Black-Scholes-Merton pricing, Monte Carlo with antithetic and control variates and confidence intervals, path-dependent payoffs and finite-difference Greeks. [GitHub](https://github.com/AIM-IT4/CustomDerivative)
 - [credule](https://github.com/blenezet/credule) - `R` - Credit Default Swap Functions.
 - [derivmkts](https://cran.r-project.org/web/packages/derivmkts/index.html) - `R` - Functions and R Code to Accompany Derivatives Markets. [GitHub](https://github.com/rmcd1024/derivmkts)
 - [FinCal](https://github.com/felixfan/FinCal) - `R` - Package for time value of money calculation, time series analysis and computational finance.
@@ -139,9 +142,12 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Scala Quant](https://github.com/frankcash/Scala-Quant) - `Scala` - Scala library for working with stock data from IFTTT recipes or Google Finance.
 - [QuantMath](https://github.com/MarcusRainbow/QuantMath) - `Rust` - Financial maths library for risk-neutral pricing and risk.
 - [RustQuant](https://github.com/avhz/RustQuant) - `Rust` - Quantitative finance library written in Rust.
+- [stochastic-rs](https://stochastic.rust-dd.com) - `Rust` `Python` - Quantitative finance library with 130+ stochastic processes, option pricing and calibration, volatility surfaces and copulas, SIMD/GPU accelerated with Python bindings. [GitHub](https://github.com/rust-dd/stochastic-rs)
 - [QoX](https://github.com/bboutelje/qox-python-samples) - `Python` - Finite difference pricing library written in Rust.
 
 ## Technical Indicators
+
+- [Repaint Check](https://github.com/arnjesix/stratcorealpha-pine-repaint-check) - `Pine` - Records an EMA-cross signal during realtime bars and marks signals absent at the confirmed close.
 
 - [pandas_talib](https://github.com/femtotrader/pandas_talib) - `Python` - A Python Pandas implementation of technical analysis indicators.
 - [Tulipy](https://github.com/cirla/tulipy) - `Python` - Financial Technical Analysis Indicator Library (Python bindings for [tulipindicators](https://github.com/TulipCharts/tulipindicators)).
@@ -152,6 +158,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TA-Lib Python](https://github.com/TA-Lib/ta-lib-python) - `Python` - Python wrapper for TA-Lib (<https://ta-lib.org/>).
 - [ta](https://github.com/bukosabino/ta) - `Python` - Technical Analysis Library using Pandas (Python).
 - [bta-lib](https://github.com/mementum/bta-lib) - `Python` - Technical Analysis library in pandas for backtesting algotrading and quantitative analysis.
+- [yfinance-ta-patterns](https://github.com/eminsk/yfinance-ta-patterns) - `Python` - Candlestick and chart pattern recognition library for Yahoo Finance OHLCV market data.
 - [TTR](https://github.com/joshuaulrich/TTR) - `R` - Technical Trading Rules.
 - [TALib.jl](https://github.com/femtotrader/TALib.jl) - `Julia` - A Julia wrapper for TA-Lib.
 - [Indicators.jl](https://github.com/JTAmos/Indicators.jl) - `Julia` - Financial market technical analysis & indicators on top of Temporal.
@@ -160,6 +167,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [OnlineTechnicalIndicators.jl](https://github.com/femtotrader/OnlineTechnicalIndicators.jl) - `Julia` - Julia Technical Analysis Indicators via online algorithms.
 - [ta4j](https://github.com/ta4j/ta4j) - `Java` - A Java library for technical analysis.
 - [IndicatorTS](https://github.com/cinar/indicatorts) - `JavaScript` - Indicator is a TypeScript module providing various stock technical analysis indicators, strategies, and a backtest framework for trading.
+- [technical-indicators](https://github.com/Pinxitu/technical-indicators) - `TypeScript` - Dependency-free technical indicators (RSI, MACD, Bollinger, ATR, ADX, Ichimoku, SuperTrend…) with hand-verifiable tests, open datasets with provenance and reproducible behaviour reports.
 - [orderflow](https://github.com/tiagosiebler/orderflow) - `JavaScript` - Orderflow trade aggregator for building Footprint Candles from exchange websocket data.
 - [IndicatorGo](https://github.com/cinar/indicator) - `Golang` - IndicatorGo is a Golang module providing various stock technical analysis indicators, strategies, and a backtest framework for trading.
 - [TradeAggregation](https://github.com/MathisWellmann/trade_aggregation-rs) - `Rust` - Aggregate trades into user-defined candles using information driven rules.
@@ -167,9 +175,11 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [fin-primitives](https://github.com/Mattbusel/fin-primitives) - `Rust` - Financial market primitives in Rust: Price/Quantity/Symbol newtypes, BTreeMap order book, OHLCV aggregation, SMA/EMA/RSI indicators, position ledger with PnL, and composable risk monitor.
 - [Wickra](https://github.com/wickra-lib/wickra) - `Rust` `Python` `JavaScript` `C++` `C#` `Golang` `Java` `R` - Streaming-first technical-analysis library with a Rust core: 514 indicators updating in O(1) per tick, with bit-exact batch-vs-streaming results.
 - [wickworks](https://github.com/psyb0t/docker-wickworks) - `REST` `MCP` - Stateless OHLC analyzer: POST bars and requested indicators, get back RSI/MACD/Bollinger/ADX/ATR/VWAP/Ichimoku plus smart-money-concept primitives (order blocks, FVGs, BOS/CHoCH, swing structure). No database, no AI signals.
+- [gamma-seed](https://github.com/Timonkru/gamma-seed) - `Python` `Pine` `Options` - Daily dealer-gamma levels (gamma flip, call and put walls, max pain, expected move) for DAX, Nasdaq, Dow and gold, computed from options open interest (Eurex ODAX for the DAX, ETF proxies for the US) and written into a TradingView Pine v6 indicator; the method is documented in open studies on the author's site. [Website](https://kruegeralgorithms.com/en/research)
 
 ## Trading & Backtesting
 
+- [QuantDinger](https://github.com/OpenByteInc/QuantDinger) - `Python` - Self-hosted platform for AI-assisted Python strategy development, backtesting, and paper and live trading across crypto exchanges and traditional brokers.
 - [Crypto Pump Scanner](https://github.com/stefanoviana/crypto-pump-scanner) - `Python` - Bybit perpetual-futures trading bot with volume-spike detection, new-listing monitoring, staged take profits, and trailing stops.
 - [SHORTLIST](https://github.com/zc6503204-collab/stock-strategy-dashboard) - `Python` - Local-first macOS workbench for A-share and US stock strategy screening, paper trading, position sizing, and risk alerts with read-only broker integrations.
 - [AgentQuant](https://github.com/OnePunchMonk/AgentQuant) - `Python` - Trading-strategy research framework with iterative proposal generation, backtesting, SQLite memory, holdout evaluation, walk-forward experiments, and experimental genetic-algorithm and differential-evolution optimizers.
@@ -213,6 +223,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [backtrader (cloudQuant fork)](https://github.com/cloudQuant/backtrader) - `Python` - Actively maintained, high-performance backtesting and live trading framework with AI-assisted strategy tooling (MCP server, skills, agent, web platform). Fork of backtrader.
 - [TrendFollowingSystems](https://github.com/ArturSepp/TrendFollowingSystems) - `Python` - Closed-form expected returns, Sharpe ratios, and skewness of trend-following systems, with complete implementations and multi-decade futures backtests.
 - [backtest-bias](https://github.com/Finance-broski/backtest-bias) - `Python` - Checks whether backtest price data is survivor-only: dead-name detection, measured bias benchmarks, CI integrity gates.
+- [Evidence Deflator](https://github.com/Beltran12138/evidence-deflator) - `Python` `MCP` - Checks how much of an LLM trading backtest falls on or before the model's training cutoff and how many clean months a claimed Sharpe needs once the number of attempts is counted, with an MCP server and an evidence-adjusted leaderboard of public AI trading competitions.
 - [falsification-ledger](https://github.com/holdout-labs/falsification-ledger) - `Python` - Hash-chained pre-registration and falsification ledger for research claims: write down what evidence would kill your claim before seeing the data; append-only JSONL with a sha256 chain (`fl verify` detects any edit), Wilson-CI hit-rate vs the random baseline, fail-closed falsification report contracts. [PyPI](https://pypi.org/project/falsification-ledger/)
 - [basana](https://github.com/gbeced/basana) - `Python` - A Python async and event driven framework for algorithmic trading, with a focus on crypto currencies.
 - [algobroker](https://github.com/joequant/algobroker) - `Python` - This is an execution engine for algo trading.
@@ -305,6 +316,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TDAmeritrade.DotNetCore](https://github.com/NVentimiglia/TDAmeritrade.DotNetCore) - `CSharp` - Free, open-source .NET Client for the TD Ameritrade Trading Platform. Helps developers integrate TD Ameritrade API into custom trading solutions.
 - [Barter](https://github.com/barter-rs/barter-rs) - `Rust` - Open-source Rust framework for building event-driven live-trading & backtesting systems.
 - [LFEST](https://github.com/MathisWellmann/lfest-rs) - `Rust` - Simulated perpetual futures exchange to trade your strategy against.
+- [matching-engine](https://rekurt.github.io/matching-engine/) - `Rust` - Single-node spot order matching with price-time priority, fixed-point prices and quantities, and optional write-ahead-log recovery. [GitHub](https://github.com/rekurt/matching-engine)
 - [Sextant](https://github.com/raphaub-hub/SEXTANT) - `Python` - Local event-driven backtesting engine with no-code strategy builder and FRED vintage, ALFRED, yFinance support.
 
 - [TradeClaw](https://github.com/naimkatiman/tradeclaw) - `Node.js` `TypeScript` - Open-source self-hosted AI trading signal platform. Generates buy/sell signals using RSI, MACD, EMA, Bollinger Bands for forex, crypto and commodities. Deployable via Docker Compose. ([Demo](https://tradeclaw.win/dashboard))
@@ -315,9 +327,11 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [mt5-httpapi](https://github.com/psyb0t/mt5-httpapi) - `Python` `REST` `MCP` - MetaTrader 5 in a Windows VM (Docker + QEMU/KVM) over REST and MCP: market data, order/position/history management for automated trading and bots, the strategy-tester (backtesting) API, and server-side indicators (RSI/MACD/Bollinger/ADX/VWAP/Ichimoku, order blocks, FVGs). Multi-broker, multi-account.
 - [ibkr-httpapi](https://github.com/psyb0t/ibkr-httpapi) - `Python` `REST` `MCP` - Interactive Brokers over REST and MCP (FastAPI + ib_async over a Linux-native IB Gateway): market data (quotes, historical bars) plus order/position/execution management for automated trading across stocks, options, futures, forex, crypto and CFDs.
 - [Algo-Trading-Skills](https://github.com/HimanshuJ16/Algo-Trading-Skills) - `Python` `AI` `Agent-Skills` - Library of 501 agentskills.io-format skills giving AI coding agents trading-infrastructure playbooks for order idempotency, look-ahead-bias elimination, kill switches, execution algorithms and point-in-time data, each with a standalone Python reference implementation and its own unittest suite.
+- [nt8-mcp](https://github.com/tbraman-dev/nt8-mcp) - `C#` `Python` `MCP` - MCP server and NinjaTrader 8 AddOn that give an AI coding assistant a build loop for NinjaScript: offline and in-platform compile with structured errors, chart and log reads, headless backtests, optimization and walk-forward; read-only by default.
 
 ## Portfolio Optimization & Risk Analysis
 
+- [portfolio-risk-lab](https://github.com/garroshub/portfolio-risk-lab) - `Python` - Uncertainty-aware portfolio optimization: compare covariance estimates, test allocations across risk scenarios, and see the cost of tighter constraints.
 - [Multi-Axis Robust Portfolio Optimization](https://github.com/Viraj-Nigwekar/multi-axis-robust-portfolio-optimization) - `Python` - Portfolio optimization framework combining covariance shrinkage, bootstrap aggregation, and parametric scenario modeling, with reproducible notebooks and an accompanying SSRN paper.
 - [AutoHypothesis](https://github.com/arteemg/AutoHypothesis) - `Python` - An agentic framework that mimics the real quant trading pipeline to find alpha: economic hypothesis, in-sample iteration, and out-of-sample validation.
 - [skfolio](https://github.com/skfolio/skfolio) - `Python` - Python library for portfolio optimization built on top of scikit-learn. It provides a unified interface and sklearn compatible tools to build, tune and cross-validate portfolio models.
@@ -351,6 +365,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [quantitative-finance-tools](https://github.com/omichauhan-lgtm/quantitative-finance-tools) - `Python` - Library for portfolio optimization (MVO) and rigorous risk metrics (VaR/CVaR).
 - [Prop Trader Compass](https://otto-ships.github.io/prop-trader-compass/) - `Python` - Interactive risk and payout calculator for Futures and CFD traders; features one-time fee firm comparisons.
 - [riskkit](https://github.com/HasibVortex369/riskkit) - `Python` - Framework-agnostic risk-management toolkit for systematic trading — position sizing, drawdown control, a composable stop engine, correlation limits, and portfolio exposure caps, with adapters for backtesting.py, freqtrade, and vectorbt.
+- [Deadlatch](https://github.com/Diabloluo/deadlatch) - `Python` `MCP` - Local, advisory-only pre-trade risk gate for trading agents with 12 deterministic fail-closed rules and a local audit log.
 - [portfolio](https://github.com/dgerlanc/portfolio) - `R` - Analysing equity portfolios.
 - [sparseIndexTracking](https://github.com/dppalomar/sparseIndexTracking) - `R` - Portfolio design to track an index.
 - [riskParityPortfolio](https://github.com/dppalomar/riskParityPortfolio) - `R` - Blazingly fast design of risk parity portfolios.
@@ -361,6 +376,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [portfolio-allocation](https://github.com/lequant40/portfolio_allocation_js) - `JavaScript` - PortfolioAllocation is a JavaScript library designed to help constructing financial portfolios made of several assets: bonds, commodities, cryptocurrencies, currencies, exchange traded funds (ETFs), mutual funds, stocks...
 - [Ghostfolio](https://github.com/ghostfolio/ghostfolio) - `JavaScript` - Wealth management software to keep track of financial assets like stocks, ETFs or cryptocurrencies and make solid, data-driven investment decisions.
 - [rebalance](https://github.com/cjroth/rebalance) - `JavaScript` - Interactive portfolio rebalancing tool that imports brokerage CSV data, sets target allocations, and generates trade instructions.
+- [position-sizing-data](https://github.com/tk25719/position-sizing-data) - `Data` - Reference data and worked arithmetic for position sizing across forex, stocks and crypto futures: contract specifications (pip size, contract size, minimum step) for 131 instruments, pip value and 20-pip loss by lot size, losing-streak equity decay and drawdown-recovery tables, plus the risk-to-units formulas with two worked examples.
 
 ## Factor Analysis
 
@@ -421,6 +437,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Market Data & Data Sources
 
+- [prop-firm-rules](https://github.com/kburrus64-max/prop-firm-rules) - `Python` `JavaScript` `Data` - Sourced, dated dataset of prop-trading-firm daily-loss and max-drawdown rules (static and trailing, lock levels, reset times) for 9 firms and 13 programs, with a zero-dependency JS/Python drawdown calculator.
 - [Dividend Data Toolkit](https://github.com/holaclea/dividend-data-toolkit) - `Python` `Data` - Dated SCHD payment and holdings snapshots with source URLs, data dictionaries, and Python tools for split-aware dividend windows and ETF company-exposure checks. [Website](https://dividendsteps.com/)
 - [Market Brief](https://github.com/beepboop2025/market-brief) - `Python` `JavaScript` - Source-linked money-market, capital-market, and liquidity briefs with local snapshot comparisons and explicit missing-data states.
 - [Cambio Uruguay](https://cambio-uruguay.com) - `TypeScript` `REST` `MCP` - Collectors and public API for Uruguayan retail buy/sell exchange rates and historical series by source and quote type. [GitHub](https://github.com/eduair94/cambio-uruguay)
@@ -431,6 +448,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [itch-book](https://github.com/groovg/itch-book) - `Python` - NASDAQ TotalView-ITCH 5.0 day files to Parquet: BBO, trades, order-by-order messages with the resting side already resolved, and MBP depth; downloads and verifies the free emi.nasdaq.com samples.
 - [OpenBB](https://github.com/OpenBB-finance/OpenBB) - `Python` - Open-source financial data platform with extensible provider integrations, a Python interface, a command-line interface, and a local REST API.
 - [Fincept Terminal](https://github.com/Fincept-Corporation/FinceptTerminal) - `Python` - Advance Data Based A.I Terminal for all Types of Financial Asset Research.
+- [Gloomberb](https://github.com/gloom-sh/gloomberb) - `TypeScript` `Bun` - Open-source finance terminal for quotes, charts, news, filings and portfolios, as a terminal UI, desktop app and web app.
 - [yfinance](https://github.com/ranaroussi/yfinance) - `Python` - Yahoo! Finance market data downloader (+faster Pandas Datareader).
 - [treasurydirect](https://github.com/moshejs/treasurydirect) - `TypeScript` - Zero-dependency client for the US TreasuryDirect API: auction results, upcoming auctions, CUSIP lookups, and Debt to the Penny; no API key required.
 - [treasury-fiscaldata](https://github.com/moshejs/treasury-fiscaldata) - `TypeScript` - Typed client for the US Treasury FiscalData API (debt, average interest rates, exchange rates) with pagination and filtering; no API key required.
@@ -482,6 +500,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [tiingo](https://github.com/hydrosquall/tiingo-python) - `Python` - Python interface for daily composite prices/OHLC/Volume + Real-time News Feeds, powered by the Tiingo Data Platform.
 - [metatrader5](https://pypi.org/project/metatrader5/) - `Python` - API Connector to MetaTrader 5 Terminal. (Last updated: 2026-02-20).
 - [akshare](https://github.com/akfamily/akshare) - `Python` - AkShare is an elegant and simple financial data interface library for Python, built for human beings! <https://akshare.readthedocs.io>.
+- [CNEquity](https://github.com/rootSunc/CNEquity) - `Python` `MCP` `A-shares` - Self-hosted China A-share data lake that keeps 55 datasets (prices, financials, capital flows, corporate events, futures and options) in local Parquet with incremental updates, point-in-time queries, delisted-stock retention, DuckDB SQL and a read-only MCP server.
 - [yahooquery](https://github.com/dpguthrie/yahooquery) - `Python` - Python interface for retrieving data through unofficial Yahoo Finance API.
 - [investpy](https://github.com/alvarobartt/investpy) - `Python` - Financial Data Extraction from Investing.com with Python! <https://investpy.readthedocs.io/>.
 - [yliveticker](https://github.com/yahoofinancelive/yliveticker) - `Python` - Live stream of market data from Yahoo Finance websocket.
@@ -492,9 +511,11 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pystlouisfed](https://github.com/TomasKoutek/pystlouisfed) - `Python` - Python client for Federal Reserve Bank of St. Louis API - FRED, ALFRED, GeoFRED and FRASER.
 - [python-bcb](https://github.com/wilsonfreitas/python-bcb) - `Python` - Python interface to Brazilian Central Bank web services.
 - [swiss-finance-data](https://github.com/EMen11/swiss-finance-data) - `Python` - Python package for Swiss financial data (SNB Policy Rate, SARON, CHF FX rates, CPI, SMI equities, Confederation bond yields) from official SNB sources.
+- [yfinance-ir](https://github.com/Fazel94/yfinance-ir) - `Python` - yfinance-shaped market data for Iranian markets: TSETMC equities, ETFs, indices and option chains, Codal financial statements, TGJU FX and gold, SCI CPI and Iranian crypto exchanges.
 - [market-prices](https://github.com/maread99/market_prices) - `Python` - Create meaningful OHLCV datasets from knowledge of [exchange-calendars](https://github.com/gerrymanoim/exchange_calendars) (works out-the-box with data from Yahoo Finance).
 - [tardis-python](https://github.com/tardis-dev/tardis-python) - `Python` - Python interface for Tardis.dev high frequency crypto market data.
 - [lake-api](https://github.com/crypto-lake/lake-api) - `Python` - Python interface for Crypto Lake high frequency crypto market data.
+- [ws-wire-audit](https://github.com/Robin1987China/ws-wire-audit) - `Python` - WebSocket wire-level measurement tool for exchange market-data feeds: frame and control-frame accounting, payload-vs-wire byte ratios, compression negotiation checks, and a documented API-contract audit.
 - [tessa](https://github.com/ymyke/tessa) - `Python` - simple, hassle-free access to price information of financial assets (currently based on yfinance and pycoingecko), including search and a symbol class.
 - [pandaSDMX](https://github.com/dr-leo/pandaSDMX) - `Python` - Python package that implements SDMX 2.1 (ISO 17369:2013), a format for exchange of statistical data and metadata used by national statistical agencies, central banks, and international organisations.
 - [cif](https://github.com/LenkaV/CIF) - `Python` - Python package that include few composite indicators, which summarize multidimensional relationships between individual economic indicators.
@@ -507,6 +528,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [fedfred](https://nikhilxsunder.github.io/fedfred/) - `Python` - FRED & GeoFRED Economic data API with preprocessed dataframe output in pandas/geopandas, polars/polars_st, and dask dataframes/geodataframes.
 - [edgar-sec](https://github.com/toros-dev/edgar-sec) - `Python` - EDGAR Financial data API with preprocessed dataclass outputs.
 - [edgartools](https://github.com/dgunning/edgartools) - `Python` - AI-native SEC EDGAR library with XBRL financials, clean text extraction, 17+ typed forms, and pandas DataFrames.
+- [edgar-full-text-search-examples](https://github.com/svitury/edgar-full-text-search-examples) - `Python` `SEC EDGAR` - Stdlib-only EDGAR full-text search to CSV that splits date ranges to get past the 10,000-result cap.
 - [edgar-geo-revenue](https://pypi.org/project/edgar-geo-revenue/) - `Python` - Extract geographic revenue breakdowns from SEC EDGAR 10-K filings with no API key. [GitHub](https://github.com/Metricshour/edgar-geo-revenue)
 - [filingrail-mcp](https://pypi.org/project/filingrail-mcp/) - `Python` `MCP` - MCP server and Python SDK for a SEC EDGAR REST API covering XBRL fundamentals, Form 4 insider trades, 8-K events, 13F holdings and filings, where every record carries the source sec.gov filing URL it came from. [GitHub](https://github.com/adamhudson777/filingrail-mcp)
 - [disclosure-alpha](https://github.com/alwank/disclosure-alpha) - `Python` - Deterministic SEC filing analytics for 10-K/10-Q: section extraction, tone and boilerplate metrics, year-over-year diff, and reproducible disclosure risk scores. CLI, Python SDK, HTTP panel screener, and MCP — no LLM required.
@@ -532,6 +554,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [finalytics](https://github.com/Nnamdi-sys/finalytics) - `Rust` - A rust library for financial data analysis.
 - [AgentServices](https://github.com/vbkotecha/agentservices-api) - `Python` - API server for crypto and market data with technical indicators, on-chain analytics, and MCP access; includes x402 payment support for hosted endpoints.
 - [The Stall](https://github.com/thebrierfox/the-stall) - `JavaScript` `MCP` - Self-hostable data and analytics service with equity technical indicators, multi-chain portfolio valuation, market-data adapters, and MCP interfaces.
+- [ninjatrader-to-parquet](https://github.com/tbraman-dev/ninjatrader-to-parquet) - `Python` - NinjaTrader 8 .ncd tick and minute history files to Parquet without NinjaTrader running; row-exact against NinjaTrader's own export, incremental re-runs.
 
 
 ## Prediction Markets
@@ -540,13 +563,14 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [polymarket-whales](https://github.com/al1enjesus/polymarket-whales) - `Python` - Real-time whale trade tracker for Polymarket — terminal alerts + Telegram notifications when large orders hit the book.
 - [PolyMind](https://polyminds.netlify.app/) - `Python` - Real-time Polymarket trading alerts with multi-AI analysis (Groq, Claude, Gemini). Track whale bets, volume spikes, coordinated wallets, and 12 signal types. Free tier available. [GitHub](https://github.com/samirasadov28-code/PolyMind)
 - [prediction-market-maker](https://github.com/octavi42/prediction-market-maker) - `Python` - Open-source market-making strategy that placed #2 in Paradigm's prediction market challenge, with full strategy evolution and analysis.
-- [Oracle3](https://github.com/YichengYang-Ethan/oracle3) - `Python` - Autonomous trading agent for Kalshi, Polymarket, and Solana — Wang Transform pricing (calibrated on 291k resolved contracts) drives eight constraint-based arbitrage strategies and Kelly-sized model trades.
+- [oracle3](https://github.com/YichengYang-Ethan/oracle3-prediction-market-agent) - `Python` `MCP` - Trading engine and MCP server for prediction markets with fee-aware no-arbitrage checks across related event contracts, statistical arbitrage, and live or paper execution on Kalshi, Polymarket, and Solana.
 - [marketlens](https://github.com/marketlenstrade/marketlens-python) - `Python` `MCP` - Tick-level Polymarket order book history with replay and a backtesting engine simulating queue priority, latency, and slippage.
 - [polymarket-bot-lab](https://github.com/oraclemangle/polymarket-bot-lab) - `Python` - Open-sourced research lab of 11 candidate Polymarket trading bots (weather, sports, longshot fades, maker, whale-flow) with a shared CLOB/backtest framework, ADR decision log, and honest paper/live results. Companion free dataset: [polymarket-canary-tape](https://huggingface.co/datasets/oraclemangle/polymarket-canary-tape) (300M+ events, CC-BY-4.0).
 - [Live Tennis API](https://livetennisapi.com) - `REST` `WebSocket` `MCP` - Real-time tennis scores, serving and break-point state, and model win probabilities for pricing tennis event markets, plus H2H, rankings and a 1968-2022 point-by-point archive; free tier. [GitHub](https://github.com/livetennisapi/livetennisapi-mcp)
 - [polymm](https://github.com/kachence/polymm) - `Python` `Polymarket` - Market-making and arbitrage bot for Polymarket sports and esports markets, pricing from de-vigged sportsbook odds.
 - [QuantRank500](https://github.com/RusUsf/quantrank500) - `Python` - Open-source public record of stock predictions: commit-reveal before the open, automatic settlement against exchange data, tamper-evident hash-chained ledger. Live at [quantrank500.com](https://quantrank500.com).
 - [outcometick](https://outcometick.com) - `Python` `JavaScript` - Tick-level history for Polymarket and Predict.fun crypto Up/Down markets, including the full-precision Chainlink settlement feeds and each market's strike and settled outcome, with a sandboxed runner that replays a submitted strategy against the same archive. [GitHub](https://github.com/outcometick/outcometick-sdk-ts)
+- [pm-hftbacktest](https://github.com/mileswangs/pm-hftbacktest) - `Rust` `Python` - High-frequency trading and market-making backtesting for Polymarket, written in Rust, with queue position, latency and maker/taker fee models applied to tick-level L2 order book and trade data.
 
 ## Calendars & Market Hours
 
@@ -570,6 +594,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [dxcharts-lite](https://github.com/devexperts/dxcharts-lite) - `JavaScript` - Flexible financial charting library based on HTML5 canvas.
 - [Exeria Charts](https://github.com/efixdata/exeria-charts) - `JavaScript` - High-performance, native Canvas/WebGL financial charting library for self-hosted applications without iframe limits.
 - [MyLinedChart](https://mylinedchart.com) - `Desktop` - Technical-analysis charting app for Interactive Brokers (IBKR) that exports drawings, notes, indicators and OHLCV as JSON/XLSX/CSV, and exposes chart context to AI agents over MCP.
+- [OpenKline](https://rekurt.github.io/openkline/) - `TypeScript` - Canvas-based OHLCV charting engine with technical indicators, drawing tools, and streaming-data support. [GitHub](https://github.com/rekurt/openkline)
 
 ## Excel & Spreadsheet Integration
 
@@ -584,12 +609,14 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Quant Research Environments
 
+- [AxonX](https://github.com/FlowLLM-AI/AxonX) - `Python` `MCP` - Agent-native quantitative research harness with plugin-based tasks for data processing, factor analysis, model training, and backtesting, traceable artifacts, and CLI and web interfaces.
 - [TradingAgents](https://github.com/TauricResearch/TradingAgents) - `Python` `LLM` - Multi-agent financial research framework combining fundamental, technical, news, and sentiment analysis with structured investment debates and risk assessment.
 - [Nova-TradingAgent](https://github.com/rufeng0411/Nova-TradingAgent) - `Python` `A-shares` - Self-hosted 15-agent research desk (debate graph, optional Tushare L2 and Qlib). Does not place trades.
 - [QFO Quant Platform](https://www.qfo-quant-platform.com/) - `Python` `React` `A-shares` - Local-first quantitative research and backtesting platform with data synchronization, multi-asset screening, factor analysis, portfolio optimization, risk analysis, and optional LLM-assisted news analysis. [GitHub](https://github.com/yeh2017/QFO-Quant-Platform)
 - [dsh-quant](https://github.com/pengpengyi92/dsh-quant) - `TypeScript` `DeepSeek Harness` - Agent-native quantitative research toolkit for DeepSeek Harness: 46 tools across data, alpha, ML, risk, execution and ecosystem domains, with an end-to-end research pipeline.
 - [Jupyter Quant](https://github.com/quantbelt/jupyter-quant) - `Python` - A dockerized Jupyter quant research environment with preloaded tools for quant analysis, statsmodels, pymc, arch, py_vollib, zipline-reloaded, PyPortfolioOpt, etc.
 - [AlphaLattice](https://github.com/xinglin-li/alphalattice) - `Python` `Claude Code` `Codex` - Local research workbench that a coding agent drives from one sentence: dated US large-cap research positions bounded by each date's information cutoff, SEC-filing evidence review, and an investment committee that changes no numbers.
+- [SmartMoney-Cub](https://github.com/myc0576/SmartMoney-Cub) - `Python` `LLM` - Local-first, agent-agnostic trading journal and review harness that freezes point-in-time run envelopes and evidence packs, replays them deterministically, and evaluates rule candidates against a frozen 240-case finance benchmark, with no order or broker access.
 
 ## Cross-Language Frameworks
 
@@ -629,6 +656,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [FinanceHub](https://github.com/Finance-Hub/FinanceHub) - Resources for Quantitative Finance.
 - [Python_Option_Pricing](https://github.com/dedwards25/Python_Option_Pricing) - An library to price financial options written in Python. Includes: Black Scholes, Black 76, Implied Volatility, American, European, Asian, Spread Options.
 - [python-training](https://github.com/jpmorganchase/python-training) - J.P. Morgan's Python training for business analysts and traders.
+- [cfa-frm-formula-sheets](https://github.com/marfa77/cfa-frm-formula-sheets) - `Training` `Data` - Machine-readable CFA Level I/II and FRM Part I formula reference in LaTeX and JSON/CSV with variable definitions and official topic weights.
 - [Stock_Analysis_For_Quant](https://github.com/LastAncientOne/Stock_Analysis_For_Quant) - Different Types of Stock Analysis in Excel, Matlab, Power BI, Python, R, and Tableau.
 - [algorithmic-trading-with-python](https://github.com/chrisconlan/algorithmic-trading-with-python) - Source code for Algorithmic Trading with Python (2020) by Chris Conlan.
 - [MEDIUM_NoteBook](https://github.com/cerlymarco/MEDIUM_NoteBook) - Repository containing notebooks of [cerlymarco](https://github.com/cerlymarco)'s posts on Medium.
@@ -672,6 +700,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Portfolio Optimization Book](https://portfoliooptimizationbook.com/) - Prof. Daniel Palomar's Portfolio Optimization Book. [GitHub](https://github.com/dppalomar/pob)
 - [direct_vola](https://github.com/wol-fi/direct_vola) - `Python` `R` - Demo code for direct Black-Scholes implied-volatility calculation from normalized call prices via the inverse-Gaussian quantile representation.
 - [TradeMux Snippets](https://github.com/KVignesh122/trademux-examples) - `Python` - Code snippets for Metatrader (MT5) forex/CFD trading and data retrieval via trademux API client.
+- [EPSILON](https://epsilonfield.space/) - `Python` - Open-source backtesting simulator with a 25-minute Assumption Clinic worksheet that teaches students to inspect backtest assumptions using published failed cases. [GitHub](https://github.com/DresdenGman/EPSILON-trading-simulator)
 
 ## Commercial & Proprietary Services
 
