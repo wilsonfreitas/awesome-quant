@@ -249,6 +249,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Quantdom](https://github.com/constverum/Quantdom) - `Python` - Python-based framework for backtesting trading strategies & analyzing financial markets [GUI :neckbeard:.]
 - [freqtrade](https://github.com/freqtrade/freqtrade) - `Python` - Free, open source crypto trading bot.
 - [algorithmic-trading-with-python](https://github.com/chrisconlan/algorithmic-trading-with-python) - `Python` - Free `pandas` and `scikit-learn` resources for trading simulation, backtesting, and machine learning on financial data.
+- [AlphaFinch](https://github.com/shloksobti/alphafinch) - `Python` `LLM` - AlphaEvolve-style search in which an LLM invents and evolves trading strategies as Python code, judged on sealed holdouts and a pre-registered multi-market exam whose bar corrects for every attempt.
 - [Qlib](https://github.com/microsoft/qlib) - `Python` - An AI-oriented Quantitative Investment Platform by Microsoft. Full ML pipeline of data processing, model training, back-testing; and covers the entire chain of quantitative investment: alpha seeking, risk modeling, portfolio optimization, and order execution.
 - [finlab](https://pypi.org/project/finlab/) - `Python` - Python package for Taiwan stock market data, factor research, and vectorized backtesting with pandas-style strategy definitions.
 - [machine-learning-for-trading](https://github.com/stefan-jansen/machine-learning-for-trading) - `Python` - Code and resources for Machine Learning for Algorithmic Trading.
