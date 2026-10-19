@@ -735,6 +735,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Commercial & Proprietary Services
 
+- [Crypto Futures Fee Index](https://loweef.io/en/crypto-futures-fee-index/) - `Data` - Free CC BY 4.0 dataset of standard maker/taker fees on USDT perpetuals at 8 exchanges, with a check date and an official source link per row, published as fees-only CSV/JSON and monthly dated snapshots without signup or API key. [GitHub](https://github.com/loweef/crypto-futures-fees)
 - [Korea Stock Data](https://aikstockdata.com/) - `Data` - Free Korean equity settled closes with 250 trading days of per-stock history, DART filings and earnings as JSON/CSV, without signup, an API key or request quotas. [GitHub](https://github.com/na77tech-creator/aikstockdata)
 - [Korean Market Data](https://kexportstars.com/tools/) - `Data` - Free Korean investor-flow and sector-index datasets in English CSV/JSON, updated each trading day under CC BY 4.0 without signup. [GitHub](https://github.com/james-brand/korea-market-data)
 - [CoinPaprika](https://coinpaprika.com/api/) - `Python` - Cryptocurrency market data API with 20,000 free calls per month for personal use, including one year of daily price history, without an API key. [GitHub](https://github.com/coinpaprika/coinpaprika-api-python-client)
