@@ -440,6 +440,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [timetk](https://github.com/business-science/timetk) - `R` - A toolkit for working with time series in R.
 - [tibbletime](https://github.com/business-science/tibbletime) - `R` - Built on top of the tidyverse, tibbletime is an extension that allows for the creation of time aware tibbles through the setting of a time index.
 - [matrixprofile](https://github.com/matrix-profile-foundation/matrixprofile) - `R` - Time series data mining library built on top of the novel Matrix Profile data structure and algorithms.
+- [NoiseFloor](https://github.com/beepboop2025/noisefloor) - `Python` `MCP` - Offline financial time-series diagnostics, correlation spectra, change detection, and forecast evaluation with explicit coverage and input-data rights checks.
 - [garchmodels](https://github.com/AlbertoAlmuinha/garchmodels) - `R` - A parsnip backend for GARCH models.
 - [TimeSeries.jl](https://github.com/JuliaStats/TimeSeries.jl) - `Julia` - Time series toolkit for Julia.
 - [TimeFrames.jl](https://github.com/femtotrader/TimeFrames.jl) - `Julia` - A Julia library that defines TimeFrame (essentially for resampling TimeSeries).
@@ -499,6 +500,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [twmarketdata](https://pypi.org/project/twmarketdata/) - `Python` - Client for Taiwan market data with local disclosure-date filtering, replay diagnostics and missing-session detection. [GitHub](https://github.com/TW-Market-Data/twmarketdata)
 - [edinetdb](https://edinetdb.com/) - `Python` - Free API and MCP server for Japanese company financials. Normalizes EDINET XBRL across JP-GAAP, IFRS, and US-GAAP for 3,800+ listed companies with 90 metrics, screening, and securities report text.
 - [SECfinAPI](https://www.secfinapi.com) - `TypeScript` - Standardized SEC EDGAR financials (income statement, balance sheet, cash flow, 40+ ratios) for ~19,000 US public companies, normalized from XBRL. REST API + MCP server for Claude/Cursor. Free tier. [GitHub](https://github.com/michalperni11-gif/secfinapi-mcp)
+- [Seiche](https://github.com/beepboop2025/seiche) - `Python` `REST` `MCP` - Money-market and dollar-funding research with public-source collectors, historical observations, separate release and retrieval clocks, and explicit coverage gaps.
 - [edinet-mcp](https://github.com/ajtgjmdjp/edinet-mcp) - `Python` - Parse Japanese XBRL financial statements from EDINET with 161 normalized labels, 26 financial metrics, and multi-company screening.
 - [estat-mcp](https://github.com/ajtgjmdjp/estat-mcp) - `Python` - Access Japanese government statistics (e-Stat) covering population, GDP, CPI, labor, and trade data with MCP integration and Polars export.
 - [tdnet-disclosure-mcp](https://github.com/ajtgjmdjp/tdnet-disclosure-mcp) - `Python` - Access Japanese timely disclosures (TDNet) via MCP. Retrieve earnings, dividends, forecasts, buybacks, and other filings for 4,000+ listed companies. No API key required.
