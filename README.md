@@ -313,6 +313,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TDAmeritrade.DotNetCore](https://github.com/NVentimiglia/TDAmeritrade.DotNetCore) - `CSharp` - Free, open-source .NET Client for the TD Ameritrade Trading Platform. Helps developers integrate TD Ameritrade API into custom trading solutions.
 - [Barter](https://github.com/barter-rs/barter-rs) - `Rust` - Open-source Rust framework for building event-driven live-trading & backtesting systems.
 - [LFEST](https://github.com/MathisWellmann/lfest-rs) - `Rust` - Simulated perpetual futures exchange to trade your strategy against.
+- [matching-engine](https://rekurt.github.io/matching-engine/) - `Rust` - Single-node spot order matching with price-time priority, fixed-point prices and quantities, and optional write-ahead-log recovery. [GitHub](https://github.com/rekurt/matching-engine)
 - [Sextant](https://github.com/raphaub-hub/SEXTANT) - `Python` - Local event-driven backtesting engine with no-code strategy builder and FRED vintage, ALFRED, yFinance support.
 
 - [TradeClaw](https://github.com/naimkatiman/tradeclaw) - `Node.js` `TypeScript` - Open-source self-hosted AI trading signal platform. Generates buy/sell signals using RSI, MACD, EMA, Bollinger Bands for forex, crypto and commodities. Deployable via Docker Compose. ([Demo](https://tradeclaw.win/dashboard))
