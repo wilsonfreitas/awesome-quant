@@ -160,6 +160,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [OnlineTechnicalIndicators.jl](https://github.com/femtotrader/OnlineTechnicalIndicators.jl) - `Julia` - Julia Technical Analysis Indicators via online algorithms.
 - [ta4j](https://github.com/ta4j/ta4j) - `Java` - A Java library for technical analysis.
 - [IndicatorTS](https://github.com/cinar/indicatorts) - `JavaScript` - Indicator is a TypeScript module providing various stock technical analysis indicators, strategies, and a backtest framework for trading.
+- [technical-indicators](https://github.com/Pinxitu/technical-indicators) - `TypeScript` - Dependency-free technical indicators (RSI, MACD, Bollinger, ATR, ADX, Ichimoku, SuperTrend…) with hand-verifiable tests, open datasets with provenance and reproducible behaviour reports.
 - [orderflow](https://github.com/tiagosiebler/orderflow) - `JavaScript` - Orderflow trade aggregator for building Footprint Candles from exchange websocket data.
 - [IndicatorGo](https://github.com/cinar/indicator) - `Golang` - IndicatorGo is a Golang module providing various stock technical analysis indicators, strategies, and a backtest framework for trading.
 - [TradeAggregation](https://github.com/MathisWellmann/trade_aggregation-rs) - `Rust` - Aggregate trades into user-defined candles using information driven rules.
