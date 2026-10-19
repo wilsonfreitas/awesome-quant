@@ -238,6 +238,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [moonshot](https://github.com/quantrocket-llc/moonshot) - `Python` - Vectorized backtester and trading engine for QuantRocket based on Pandas.
 - [pyqstrat](https://github.com/abbass2/pyqstrat) - `Python` - A fast, extensible, transparent python library for backtesting quantitative strategies.
 - [NowTrade](https://github.com/edouardpoitras/NowTrade) - `Python` - Python library for backtesting technical/mechanical strategies in the stock and currency markets.
+- [OpenBacktesting](https://github.com/lucidcog/openbacktesting) - `Python` - Historical single-asset backtesting with pandas-based statistics, technical indicators, and grid or SAMBO parameter optimization.
 - [pinkfish](https://github.com/fja05680/pinkfish) - `Python` - A backtester and spreadsheet library for security analysis.
 - [PRISM-INSIGHT](https://github.com/dragon1086/prism-insight) - `Python` - AI-powered stock analysis system with 13 specialized agents, automated trading via KIS API, supporting Korean & US markets.
 - [FinClaw](https://github.com/IlyasFardaouix/finclaw) - `Python` - Community fork of NeuZhou's quantitative finance toolkit with backtesting, paper trading, and command-line tools.
