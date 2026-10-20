@@ -144,6 +144,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [RustQuant](https://github.com/avhz/RustQuant) - `Rust` - Quantitative finance library written in Rust.
 - [stochastic-rs](https://stochastic.rust-dd.com) - `Rust` `Python` - Quantitative finance library with 130+ stochastic processes, option pricing and calibration, volatility surfaces and copulas, SIMD/GPU accelerated with Python bindings. [GitHub](https://github.com/rust-dd/stochastic-rs)
 - [QoX](https://github.com/bboutelje/qox-python-samples) - `Python` - Finite difference pricing library written in Rust.
+- [InFine.QuantFinance](https://github.com/infineco/quant-finance-library) - `C#` `.NET` - Quantitative finance library for derivatives pricing, Greeks, volatility calibration and risk analysis, with optional NVIDIA GPU acceleration via Hybridizer.
 
 ## Technical Indicators
 
