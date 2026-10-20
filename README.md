@@ -818,6 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Ryufin](https://ryufin.com/developers) - `MCP` - Free US equity research data from SEC EDGAR filings and IEX end-of-day prices for about 3,100 companies, served through a remote MCP server with six read-only tools (verdicts with their underlying checks, reported financial series, 8-K events) without signup, payment information or an API key, limited to 60 requests a minute per address.
 
 ## Historical & Archived Projects
 
