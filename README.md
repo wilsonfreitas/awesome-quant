@@ -649,6 +649,10 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [AlphaLattice](https://github.com/xinglin-li/alphalattice) - `Python` `Claude Code` `Codex` - Local research workbench that a coding agent drives from one sentence: dated US large-cap research positions bounded by each date's information cutoff, SEC-filing evidence review, and an investment committee that changes no numbers.
 - [SmartMoney-Cub](https://github.com/myc0576/SmartMoney-Cub) - `Python` `LLM` - Local-first, agent-agnostic trading journal and review harness that freezes point-in-time run envelopes and evidence packs, replays them deterministically, and evaluates rule candidates against a frozen 240-case finance benchmark, with no order or broker access.
 
+- [FinAI Research Workflow](https://github.com/csmar432/finai-research) - `Python` - End-to-end empirical-research workflow (43 data sources, 47 econometric methods, 30 journal templates) with HITL gates.
+
+
+
 ## Cross-Language Frameworks
 
 - [RunMat](https://runmat.com/) - `Rust` - Runtime for MATLAB-syntax array math with automatic CPU/GPU execution and fused kernels for quantitative simulations. [GitHub](https://github.com/runmat-org/runmat)
