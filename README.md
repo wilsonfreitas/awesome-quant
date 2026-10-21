@@ -608,6 +608,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [sifma-holidays](https://github.com/moshejs/sifma-holidays) - `TypeScript` - US bond-market (SIFMA) holidays, early closes, and T+1 settlement-date math; zero dependencies.
 - [us-equity-market-calendar](https://github.com/moshejs/us-equity-market-calendar) - `TypeScript` - NYSE/NASDAQ trading calendar: holidays, 1pm early closes, trading-day navigation, and DST-aware is-market-open; zero dependencies.
 - [fx-value-date](https://github.com/moshejs/fx-value-date) - `TypeScript` - FX spot/forward value-date calculation across two currency holiday calendars, with the USD-lag and end-of-month rules; zero dependencies.
+- [futuresclock](https://futuresclock.com/en/data/) - `Python` `JavaScript` `Data` - Open futures reference data (CC BY 4.0): trading hours, contract specifications, expiry dates and China market access for 75 contracts on Chinese and international exchanges, with a source per field; `pip install futuresclock`, `npm i futuresclock`.
+- [Markets Open](https://marketsopen.today) - `REST` `Data` - Trading-day and holiday calendars for 24 market scopes, including China's six futures exchanges, the Shanghai, Shenzhen and Beijing stock exchanges and Stock Connect, each date tied to the exchange notice; JSON/CSV under CC BY 4.0.
 
 ## Visualization
 
