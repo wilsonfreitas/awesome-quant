@@ -397,6 +397,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Ghostfolio](https://github.com/ghostfolio/ghostfolio) - `JavaScript` - Wealth management software to keep track of financial assets like stocks, ETFs or cryptocurrencies and make solid, data-driven investment decisions.
 - [rebalance](https://github.com/cjroth/rebalance) - `JavaScript` - Interactive portfolio rebalancing tool that imports brokerage CSV data, sets target allocations, and generates trade instructions.
 - [position-sizing-data](https://github.com/tk25719/position-sizing-data) - `Data` - Reference data and worked arithmetic for position sizing across forex, stocks and crypto futures: contract specifications (pip size, contract size, minimum step) for 131 instruments, pip value and 20-pip loss by lot size, losing-streak equity decay and drawdown-recovery tables, plus the risk-to-units formulas with two worked examples.
+- [trading-risk-math](https://yuratrading.com/tools/risk-of-ruin-calculator) - `TypeScript` - Seeded fixed-fractional risk-of-ruin simulation with an exact simulation-free solver, plus bootstrap and order-permutation Monte Carlo of a trade P&L list, with tests pinning outputs to the free web calculators. [GitHub](https://github.com/dakshalraijada/trading-risk-math)
 
 ## Factor Analysis
 
