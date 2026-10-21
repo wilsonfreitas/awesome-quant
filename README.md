@@ -455,6 +455,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [TimeSeries.jl](https://github.com/JuliaStats/TimeSeries.jl) - `Julia` - Time series toolkit for Julia.
 - [TimeFrames.jl](https://github.com/femtotrader/TimeFrames.jl) - `Julia` - A Julia library that defines TimeFrame (essentially for resampling TimeSeries).
 - [PineForge](https://github.com/pineforge-4pass/pineforge-engine) - `C++` - Deterministic offline PineScript v6 → C++ backtest runtime, validated trade-for-trade against TradingView (245/246 strict, 0 engine bugs). Runs locally via Docker and is drivable by AI agents through a bundled MCP server.
+- [Dense-Armor](https://github.com/tatopenn-cell/Dense-Armor) - `Python` `JAX` - Online learning on streams: changepoint and regime detection, shrinkage covariance and portfolio weights, order flow imbalance, one sample at a time.
 
 ## Market Data & Data Sources
 
