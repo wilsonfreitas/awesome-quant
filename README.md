@@ -159,6 +159,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [ta](https://github.com/bukosabino/ta) - `Python` - Technical Analysis Library using Pandas (Python).
 - [bta-lib](https://github.com/mementum/bta-lib) - `Python` - Technical Analysis library in pandas for backtesting algotrading and quantitative analysis.
 - [yfinance-ta-patterns](https://github.com/eminsk/yfinance-ta-patterns) - `Python` - Candlestick and chart pattern recognition library for Yahoo Finance OHLCV market data.
+- [polars-anta](https://github.com/huuan26/polars-anta) - `Python` `Polars` - Ultra-fast, zero-C technical analysis and factor library with 100+ indicators powered natively by Polars expressions.
 - [TTR](https://github.com/joshuaulrich/TTR) - `R` - Technical Trading Rules.
 - [TALib.jl](https://github.com/femtotrader/TALib.jl) - `Julia` - A Julia wrapper for TA-Lib.
 - [Indicators.jl](https://github.com/JTAmos/Indicators.jl) - `Julia` - Financial market technical analysis & indicators on top of Temporal.
