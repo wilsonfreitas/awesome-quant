@@ -178,7 +178,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [gamma-seed](https://github.com/Timonkru/gamma-seed) - `Python` `Pine` `Options` - Daily dealer-gamma levels (gamma flip, call and put walls, max pain, expected move) for DAX, Nasdaq, Dow and gold, computed from options open interest (Eurex ODAX for the DAX, ETF proxies for the US) and written into a TradingView Pine v6 indicator; the method is documented in open studies on the author's site. [Website](https://kruegeralgorithms.com/en/research)
 
 ## Trading & Backtesting
-
+- [Lumina AI](https://github.com/ramuza0113-sketch/lumina-ai-hedge-fund) - `Python` - Autonomous multi-agent AI hedge fund combining Qlib Alpha158 statistical machine learning with LangGraph consensus deliberation, OpenBB data, and a deterministic 10-second fast watchdog sentinel.
 - [QuantDinger](https://github.com/OpenByteInc/QuantDinger) - `Python` - Self-hosted platform for AI-assisted Python strategy development, backtesting, and paper and live trading across crypto exchanges and traditional brokers.
 - [Crypto Pump Scanner](https://github.com/stefanoviana/crypto-pump-scanner) - `Python` - Bybit perpetual-futures trading bot with volume-spike detection, new-listing monitoring, staged take profits, and trailing stops.
 - [SHORTLIST](https://github.com/zc6503204-collab/stock-strategy-dashboard) - `Python` - Local-first macOS workbench for A-share and US stock strategy screening, paper trading, position sizing, and risk alerts with read-only broker integrations.
