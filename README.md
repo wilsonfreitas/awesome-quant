@@ -179,6 +179,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Trading & Backtesting
 
+- [futu_algo](https://github.com/billpwchan/futu_algo) - `Python` - Hong Kong equities on Futu OpenAPI: Parquet K-line cache, TDX-exact indicators, a backtester with whole board lots and dated HK stamp duty, and paper trading that shares the strategy code and matches the backtest fill for fill, with a web console.
 - [QuantDinger](https://github.com/OpenByteInc/QuantDinger) - `Python` - Self-hosted platform for AI-assisted Python strategy development, backtesting, and paper and live trading across crypto exchanges and traditional brokers.
 - [Crypto Pump Scanner](https://github.com/stefanoviana/crypto-pump-scanner) - `Python` - Bybit perpetual-futures trading bot with volume-spike detection, new-listing monitoring, staged take profits, and trailing stops.
 - [SHORTLIST](https://github.com/zc6503204-collab/stock-strategy-dashboard) - `Python` - Local-first macOS workbench for A-share and US stock strategy screening, paper trading, position sizing, and risk alerts with read-only broker integrations.
@@ -458,6 +459,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Market Data & Data Sources
 
+- [futu_tick_downloader](https://github.com/billpwchan/futu_tick_downloader) - `Python` - Records Hong Kong tick-by-tick trades from Futu OpenD into daily SQLite files, with data-quality reports, verified zstd end-of-day archives and systemd/Telegram monitoring.
 - [prop-firm-rules](https://github.com/kburrus64-max/prop-firm-rules) - `Python` `JavaScript` `Data` - Sourced, dated dataset of prop-trading-firm daily-loss and max-drawdown rules (static and trailing, lock levels, reset times) for 9 firms and 13 programs, with a zero-dependency JS/Python drawdown calculator.
 - [Dividend Data Toolkit](https://github.com/holaclea/dividend-data-toolkit) - `Python` `Data` - Dated SCHD payment and holdings snapshots with source URLs, data dictionaries, and Python tools for split-aware dividend windows and ETF company-exposure checks. [Website](https://dividendsteps.com/)
 - [Market Brief](https://github.com/beepboop2025/market-brief) - `Python` `JavaScript` - Source-linked money-market, capital-market, and liquidity briefs with local snapshot comparisons and explicit missing-data states.
