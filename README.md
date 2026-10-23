@@ -757,8 +757,9 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
-- [ta-lib-takt](https://pypi.org/project/ta-lib-takt/) - `Python` - Free drop-in replacement for the TA-Lib 0.8.1 Python package with a proprietary C library that returns bit-identical results and speeds up seven indicators on long series, for Linux x86-64 only. [GitHub](https://github.com/abx-takt/ta-lib-takt)
+- [ta-lib-takt](https://pypi.org/project/ta-lib-takt/) - `Python` - Free drop-in replacement for the TA-Lib 0.8.2 Python package with a proprietary C library that returns bit-identical results and speeds up seven indicators on long series, for Linux x86-64 only. [GitHub](https://github.com/abx-takt/ta-lib-takt)
 - [quantlib-takt](https://pypi.org/project/quantlib-takt/) - `Python` - Free drop-in replacement for the QuantLib 1.43 Python package with a proprietary C++ library that returns bit-identical results, whose free tier speeds up only European-option Monte Carlo on Linux x86-64 while other engines require a paid licence. [GitHub](https://github.com/abx-takt/quantlib-takt)
+- [lightgbm-takt](https://pypi.org/project/lightgbm-takt/) - `Python` - Free drop-in replacement for the LightGBM 4.7.0 Python package with a proprietary library that returns bit-identical results and speeds up repeated-call analyses (permutation importance, partial dependence, what-if) on models up to 300 trees, for Linux x86-64 only. [GitHub](https://github.com/abx-takt/lightgbm-takt)
 
 ## Historical & Archived Projects
 
