@@ -757,8 +757,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
-- [MarketParquet](https://marketparquet.com) - `Data` - Split-adjusted US stock, ETF and futures OHLCV shipped as one Apache Parquet file per trading day, 1-minute to daily bars back to 2000 (futures from December 2007), with delisted tickers retained so backtests are survivorship-bias-free. Permanent free tier: the last year of daily bars for all three asset classes, unlimited downloads and a 60 requests/minute API, no card; the complete archive is a one-time $79 purchase. [GitHub](https://github.com/marketparquet-data/marketparquet-examples)
-
+- [MarketParquet](https://marketparquet.com) - `Data` - US stock, ETF and futures OHLCV as daily Apache Parquet files with delisted tickers kept, plus a permanent free tier with the last year of daily bars and no card required. [GitHub](https://github.com/marketparquet-data/marketparquet-examples)
 ## Historical & Archived Projects
 
 - [fooltrader](https://github.com/foolcage/fooltrader) - `Python` `Historical` - Archived big-data quantitative-analysis and trading system retained as an early unified market-data and backtesting framework.
