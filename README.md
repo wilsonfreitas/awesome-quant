@@ -291,7 +291,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [JIT-Optimization-Engine](https://github.com/cloudsealed/JIT-Optimization-Engine) - `Python` - High-performance analytical core using LLVM JIT (Numba) to process large-scale telemetry for quant diagnostics.
 - [backtester-mcp](https://pypi.org/project/backtester-mcp/) - `Python` - Local-first backtesting engine with built-in overfitting checks (PBO, deflated Sharpe, bootstrap CI, walk-forward) and a native MCP server for AI agents. [GitHub](https://github.com/bcosm/backtester-mcp)
 - [backtest](https://cran.r-project.org/web/packages/backtest/index.html) - `R` - Exploring Portfolio-Based Conjectures About Financial Instruments.
-- [backtest-audit-kit](https://github.com/rytjy/backtest-audit-kit) - `Python` - Dependency-free audit toolkit for backtests (no numpy/pandas): detects look-ahead, checks cash/position ledger conservation, flags fee and funding double-counting, and mutation-tests your own suite for blind spots.
 - [pa](https://cran.r-project.org/web/packages/pa/index.html) - `R` - Performance Attribution for Equity Portfolios.
 - [QuantTools](https://quanttools.bitbucket.io/_site/index.html) - `R` - Enhanced Quantitative Trading Modelling.
 - [blotter](https://github.com/braverock/blotter) - `R` - Transaction infrastructure for defining instruments, transactions, portfolios and accounts for trading systems and simulation. Provides portfolio support for multi-asset class and multi-currency portfolios. Actively maintained and developed.
