@@ -349,6 +349,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Portfolio Optimization & Risk Analysis
 
+- [FinTwin](https://spiliosdimakopoulos.github.io/fintwin/) - `Python` `TypeScript` - Digital twin of public companies' finances built from SEC XBRL filings, with Monte Carlo stress tests of cash, debt and credit quality and an out-of-sample backtest on 5,000+ SEC filers. [GitHub](https://github.com/SpiliosDimakopoulos/fintwin)
 - [portfolio-risk-lab](https://github.com/garroshub/portfolio-risk-lab) - `Python` - Uncertainty-aware portfolio optimization: compare covariance estimates, test allocations across risk scenarios, and see the cost of tighter constraints.
 - [Multi-Axis Robust Portfolio Optimization](https://github.com/Viraj-Nigwekar/multi-axis-robust-portfolio-optimization) - `Python` - Portfolio optimization framework combining covariance shrinkage, bootstrap aggregation, and parametric scenario modeling, with reproducible notebooks and an accompanying SSRN paper.
 - [AutoHypothesis](https://github.com/arteemg/AutoHypothesis) - `Python` - An agentic framework that mimics the real quant trading pipeline to find alpha: economic hypothesis, in-sample iteration, and out-of-sample validation.
