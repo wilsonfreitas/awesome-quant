@@ -648,6 +648,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Jupyter Quant](https://github.com/quantbelt/jupyter-quant) - `Python` - A dockerized Jupyter quant research environment with preloaded tools for quant analysis, statsmodels, pymc, arch, py_vollib, zipline-reloaded, PyPortfolioOpt, etc.
 - [AlphaLattice](https://github.com/xinglin-li/alphalattice) - `Python` `Claude Code` `Codex` - Local research workbench that a coding agent drives from one sentence: dated US large-cap research positions bounded by each date's information cutoff, SEC-filing evidence review, and an investment committee that changes no numbers.
 - [SmartMoney-Cub](https://github.com/myc0576/SmartMoney-Cub) - `Python` `LLM` - Local-first, agent-agnostic trading journal and review harness that freezes point-in-time run envelopes and evidence packs, replays them deterministically, and evaluates rule candidates against a frozen 240-case finance benchmark, with no order or broker access.
+- [Prismind](https://getprismind.com) - `Python` `Vue` `A-shares` - Open-source A-share research workbench whose AI stock readings cite the local data behind every point, with no-code strategies built from a form or a single sentence, stock screening that backtests in one click, and backtests that account for real taxes, commissions, slippage, dividends and bonus shares, followed by credibility audits and trade-by-trade verification. [GitHub](https://github.com/FelixZhang028/Prismind)
 
 ## Cross-Language Frameworks
 
