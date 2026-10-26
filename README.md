@@ -581,6 +581,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [The Stall](https://github.com/thebrierfox/the-stall) - `JavaScript` `MCP` - Self-hostable data and analytics service with equity technical indicators, multi-chain portfolio valuation, market-data adapters, and MCP interfaces.
 - [ninjatrader-to-parquet](https://github.com/tbraman-dev/ninjatrader-to-parquet) - `Python` - NinjaTrader 8 .ncd tick and minute history files to Parquet without NinjaTrader running; row-exact against NinjaTrader's own export, incremental re-runs.
 - [Central Bank Exchange Rates](https://github.com/AllRates-Today/central-bank-exchange-rates) - `Python` `TypeScript` `Data` `REST` `MCP` - Daily official exchange rates as published by 121 central banks and 3 tax authorities (ECB, Fed, BoE, RBI, PBoC, HMRC), one CSV/JSON file per institution with per-day history, no API key; mirrored on Hugging Face and Kaggle.
+
 ## Prediction Markets
 
 - [pmxt](https://github.com/pmxt-dev/pmxt) - `Python` `JavaScript` - The CCXT for prediction markets. A unified API for trading on Polymarket, Kalshi, and more.
