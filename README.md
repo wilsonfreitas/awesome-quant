@@ -425,7 +425,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [CoWorker Fin-Agent](https://github.com/ZiwayZhao/agent-coworker) - `Python` - LLM-powered A-share stock analysis via P2P agent collaboration. Technical analysis (MA60, volume-price patterns, golden eye), deep research reports using proprietary methodology, and market state summaries. Analysis logic stays private via Skill-as-API protocol.
 - [StockKit](https://stockkit.net/) - `TypeScript` - Free AI-powered stock research reports for US, China & HK using Claude Opus and multi-model AI with 20+ technical indicators. [GitHub](https://github.com/kentmswood-ui/stockkit)
 - [AlphaAI](https://alphai.io/developers) - `Python` - Pre-analyzed financial news via REST API and MCP for AI agents: per-ticker impact and sentiment, a category, and a 1-10 relevance score on every story, plus structured SEC Form 4 insider data. Free tier, no card. [GitHub](https://github.com/makeev/alphai-mcp)
-  * [The Trade Economy Index & Level Financial Benchmarks](https://tradesindex.org) - Open alternative dataset covering 9,084,887 US commercial properties, 241,694 municipal building permits ($76.1B), 366 MSA wage/employment series, and public commercial contractor financial benchmarks ([GitHub](https://github.com/levelcfo/trade-economy-index-data) | [Benchmarks](https://levelcfo.com/benchmarks/)).
+- [The Trade Economy Index](https://tradesindex.org) - `Python` - Open alternative dataset covering 9,084,887 US commercial properties, 241,694 municipal building permits ($76.1B), 366 MSA wage/employment series, and [Level SMB Financial Benchmarks](https://levelcfo.com/benchmarks/). [GitHub](https://github.com/levelcfo/trade-economy-index-data)
 
 ## Time Series Analysis
 
