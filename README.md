@@ -673,6 +673,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Reproducing Works, Training & Books
 
+- [Alphanume Strategy Lab](https://github.com/alphanume-markets/Alphanume-Strategy-Lab) - `Python` - Strategy research code for event-driven equities, cross-sectional trading, and risk-regime modeling that requires Alphanume API access.
+
 - [Goldman Sachs Quantitative Strategies Research Notes](https://github.com/s0ap/gs-quantitative-strategies-research-notes) - `Papers` `Derivatives` - Collection of 1990s research papers on derivatives pricing, volatility modeling, hedging, and model risk.
 - [Quant Sprint](https://lambdia.com/play) - `Training` `Interviews` - Free timed drill of first round quant interview questions on options and the Greeks, two sided quoting, probability and mental arithmetic.
 - [QuantVault](https://quantvault.org) - `Training` `Interviews` - Quant interview prep with 391 free problems with full worked solutions, per-firm online-assessment guides, and free playable replicas of real trading-firm OAs (Optiver, SIG, IMC).
