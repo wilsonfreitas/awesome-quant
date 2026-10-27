@@ -179,6 +179,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Trading & Backtesting
 
+- [earnings-session](https://github.com/lizhuojunx86/earnings-session) - `Python` `SEC EDGAR` - Checks event backtests for look-ahead: times each earnings release from its SEC EDGAR 8-K acceptance time against the backtest entry, and flags trades priced from bars that are not on their target days.
 - [QuantDinger](https://github.com/OpenByteInc/QuantDinger) - `Python` - Self-hosted platform for AI-assisted Python strategy development, backtesting, and paper and live trading across crypto exchanges and traditional brokers.
 - [Crypto Pump Scanner](https://github.com/stefanoviana/crypto-pump-scanner) - `Python` - Bybit perpetual-futures trading bot with volume-spike detection, new-listing monitoring, staged take profits, and trailing stops.
 - [SHORTLIST](https://github.com/zc6503204-collab/stock-strategy-dashboard) - `Python` - Local-first macOS workbench for A-share and US stock strategy screening, paper trading, position sizing, and risk alerts with read-only broker integrations.
