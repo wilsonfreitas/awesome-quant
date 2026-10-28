@@ -624,6 +624,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [MyLinedChart](https://mylinedchart.com) - `Desktop` - Technical-analysis charting app for Interactive Brokers (IBKR) that exports drawings, notes, indicators and OHLCV as JSON/XLSX/CSV, and exposes chart context to AI agents over MCP.
 - [OpenKline](https://rekurt.github.io/openkline/) - `TypeScript` - Canvas-based OHLCV charting engine with technical indicators, drawing tools, and streaming-data support. [GitHub](https://github.com/rekurt/openkline)
 - [TradeCanvas](https://github.com/bonguynvan/tradecanvas) - `TypeScript` - Financial charting library for the web, drawn with Canvas 2D or WebGL: 18 chart types, 111 indicators, drawing tools, live exchange feeds, orders on the chart, replay and backtesting.
+- [HTS for Mac](https://github.com/duct-tape2/hts-for-mac) - `TypeScript` `Python` `macOS` - Read-only Korean and US stock workspace with a 10-level order book, multi-chart layouts built on Lightweight Charts and saved workspaces, using the user's own Kiwoom REST API key or a synthetic-data mode.
 
 ## Excel & Spreadsheet Integration
 
