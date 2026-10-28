@@ -818,6 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Wealthnow](https://wealthnow.io/api) - `REST` `MCP` - Real-time and historical stock and crypto prices, fundamentals, SEC filings, insider and 13F data, with a permanent free plan of 1,000 credits a month at 30 requests a minute for prices, fundamentals and SEC filings, without a credit card. [GitHub](https://github.com/Hlobo-dev/wealthnow-mcp)
 
 ## Historical & Archived Projects
 
