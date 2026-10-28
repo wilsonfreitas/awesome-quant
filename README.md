@@ -818,7 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
-- [Wave Radar](https://waveradar.us) - Web research workstation for US, China A-share and Hong Kong stocks that scans for 75 technical signals with each signal's historical win rate per stock, plus gamma exposure, fair-value bands, 13F data and AI analysis of macro and breaking news; the permanent free account needs no payment information and includes the screener, chart overlays for any symbol, a 30-symbol watchlist and 3 AI questions a day, with all limits published on the pricing page.
+- [Wave Radar](https://waveradar.us) - Web research workstation for US, China and Hong Kong stocks that scans for 75 technical signals with each signal's historical win rate per stock, plus gamma exposure, fair-value bands, 13F data and AI analysis of macro and breaking news; the permanent free account needs no payment information and includes the screener, chart overlays for any symbol, a 30-symbol watchlist and 3 AI questions a day, with all limits published on the pricing page.
 
 ## Historical & Archived Projects
 
