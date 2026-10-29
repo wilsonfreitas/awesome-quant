@@ -818,6 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [OptionsCone](https://optionscone.com) - `Windows` - Desktop app that maps option chains onto the price chart: touch and expiry probabilities from each contract's implied volatility, compared with models built on the stock's realized moves, plus premium, liquidity and GEX heatmaps, with a permanent free tier.
 
 ## Historical & Archived Projects
 
