@@ -838,5 +838,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Related Lists
 
+- [awesome-finance-ai-tools](https://github.com/skyboundropship-code/awesome-finance-ai-tools) - `MCP` `AI Agents` - Curated list of MCP servers, agent skills and APIs for finance and trading, with weekly activity and archive checks.
 - [awesome-sec-filings](https://github.com/vibeyclaw/awesome-sec-filings) - A curated list of tools, data sources, libraries, and resources for working with SEC filings (13F, 10-K, 10-Q, 8-K).
 - [CONVEXFI](https://github.com/convexfi) - Official GitHub organization for the convex research group at the Hong Kong University of Science and Technology (HKUST).
