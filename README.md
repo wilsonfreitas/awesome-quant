@@ -580,6 +580,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [AgentServices](https://github.com/vbkotecha/agentservices-api) - `Python` - API server for crypto and market data with technical indicators, on-chain analytics, and MCP access; includes x402 payment support for hosted endpoints.
 - [The Stall](https://github.com/thebrierfox/the-stall) - `JavaScript` `MCP` - Self-hostable data and analytics service with equity technical indicators, multi-chain portfolio valuation, market-data adapters, and MCP interfaces.
 - [ninjatrader-to-parquet](https://github.com/tbraman-dev/ninjatrader-to-parquet) - `Python` - NinjaTrader 8 .ncd tick and minute history files to Parquet without NinjaTrader running; row-exact against NinjaTrader's own export, incremental re-runs.
+- [CFD loss-rate series](https://tradinglookup.com/brokers/cfd-loss-rates/) - `CSV` `Dataset` - Mandated "% of retail accounts that lose money" for 31 UK/EU CFD providers, plus quarterly archived history from 2018-Q3 (open CSV, CC BY 4.0).
 
 
 ## Prediction Markets
