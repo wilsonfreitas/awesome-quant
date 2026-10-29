@@ -818,6 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [StockMap](https://stockmap.io) - US stock market map with a model's two-week call or lean on each of about 4,200 stocks after every trading day, its daily reads graded against the sector median return in a public record that includes misses; the permanent free account needs no payment information and includes the map, the graded record, one watchlist and 40 assistant questions a day. [Method](https://stockmap.io/track-record) [GitHub](https://github.com/yojowa/stockmap-plugin)
 
 ## Historical & Archived Projects
 
