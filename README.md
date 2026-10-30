@@ -818,6 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [CoworkingView](https://coworkingview.com/en/developers) - `REST` `MCP` `Data` - Free coworking and flex office price data API for European and UAE cities (spaces, operators and city price medians) without signup or an API key, at 120 requests per minute, with the Price Index under CC BY 4.0. [GitHub](https://github.com/coworkingview/flex-office-data)
 
 ## Historical & Archived Projects
 
