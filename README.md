@@ -819,6 +819,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
 
+- [Qanvo](https://qanvo.app) - `MCP` - Stock, ETF and crypto screener that turns plain-English questions into inspectable filters over 300+ daily-validated metrics across 51 exchanges, including options analytics such as IV rank and 30-delta put yields; a permanent free plan includes 5,000 AI credits per month, free reruns of saved screens and 3 email alerts.
+
 ## Historical & Archived Projects
 
 - [fooltrader](https://github.com/foolcage/fooltrader) - `Python` `Historical` - Archived big-data quantitative-analysis and trading system retained as an early unified market-data and backtesting framework.
