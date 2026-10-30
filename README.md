@@ -818,6 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Windmill](https://windmill.markets/) - Hosted service that turns a plain-English trading rule into an AI agent that trades Kalshi event contracts on a schedule, with a free plan of 34 agent runs a day during the beta (8 after) that paper-trades against Kalshi's live order books with Kalshi's fees, without payment information.
 
 ## Historical & Archived Projects
 
