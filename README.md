@@ -818,6 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [TILLA](https://tillacrypto.com) - `REST` `MCP` `Python` - Market data API for crypto spot and derivatives, US stocks and ETFs, FX, rates, macro, fund-by-fund Bitcoin and Ether spot ETF flows and Bitcoin node data on one UTC clock from 1-minute to quarterly bars, with a permanent free tier covering BTC, ETH, S&P 500, gold, DXY, VIX and Fear & Greed with 30 days of history at 100 requests per minute without a credit card. [GitHub](https://github.com/TillaCrypto/tilla)
 
 ## Historical & Archived Projects
 
