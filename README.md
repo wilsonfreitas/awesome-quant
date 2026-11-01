@@ -579,7 +579,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [bybit-api](https://siebly.io/sdk/bybit/javascript) - `TypeScript` `JavaScript` `Node.js` - Typed SDK for the Bybit V5 REST API, WebSocket streams and WebSocket order entry, linked from Bybit's own API documentation. [GitHub](https://github.com/sieblyio/bybit-api)
 - [okx-api](https://siebly.io/sdk/okx/javascript) - `TypeScript` `JavaScript` `Node.js` - Typed SDK for the OKX V5 REST API and WebSockets, including the WebSocket API for order entry and automatic reconnects. [GitHub](https://github.com/sieblyio/okx-api)
 - [@siebly/kraken-api](https://siebly.io/sdk/kraken/javascript) - `TypeScript` `JavaScript` `Node.js` - Typed SDK for Kraken Spot and Futures REST APIs, WebSocket v2 streams and the Spot WebSocket API. [GitHub](https://github.com/sieblyio/kraken-api)
-- [bitget-api](https://siebly.io/sdk/bitget/javascript) - `TypeScript` `JavaScript` `Node.js` - Typed SDK for the Bitget REST APIs and WebSockets, with automatic reconnects and resubscription. [GitHub](https://github.com/sieblyio/bitget-api)
+- [bitget-api](https://siebly.io/sdk/bitget/javascript) - `TypeScript` `JavaScript` `Node.js` - Typed SDK for the Bitget REST APIs and WebSockets, with automatic reconnects and resubscription. [GitHub]s://github.com/sieblyio/bitget-api)
 
 
 
