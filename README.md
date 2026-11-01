@@ -818,6 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [AlphaYou](https://alphayou.net/developers) - REST API and MCP server for SEC Form 4 insider trades and clusters, 13F fund holdings and changes, 8-K disclosures and Hyperliquid top-trader positions, with a permanent free plan of 4 tools and 100 requests per day and no card required.
 
 ## Historical & Archived Projects
 
