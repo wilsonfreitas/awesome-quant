@@ -347,6 +347,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [Algo-Trading-Skills](https://github.com/HimanshuJ16/Algo-Trading-Skills) - `Python` `AI` `Agent-Skills` - Library of 501 agentskills.io-format skills giving AI coding agents trading-infrastructure playbooks for order idempotency, look-ahead-bias elimination, kill switches, execution algorithms and point-in-time data, each with a standalone Python reference implementation and its own unittest suite.
 - [nt8-mcp](https://github.com/tbraman-dev/nt8-mcp) - `C#` `Python` `MCP` - MCP server and NinjaTrader 8 AddOn that give an AI coding assistant a build loop for NinjaScript: offline and in-platform compile with structured errors, chart and log reads, headless backtests, optimization and walk-forward; read-only by default.
 
+- [Crypto-Strategies](https://github.com/CacheCarti/Crypto-Strategies) - `Python` - Open corpus of 748 crypto trading strategies with per-stage validation report cards; new batches released weekly.
 ## Portfolio Optimization & Risk Analysis
 
 - [portfolio-risk-lab](https://github.com/garroshub/portfolio-risk-lab) - `Python` - Uncertainty-aware portfolio optimization: compare covariance estimates, test allocations across risk scenarios, and see the cost of tighter constraints.
