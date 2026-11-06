@@ -81,6 +81,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [pypme](https://github.com/ymyke/pypme) - `Python` - PME (Public Market Equivalent) calculation.
 - [AbsBox](https://github.com/yellowbean/AbsBox) - `Python` - A Python based library to model cashflow for structured product like Asset-backed securities (ABS) and Mortgage-backed securities (MBS).
 - [mortgagemath](https://github.com/murraystokely/mortgagemath) - `Python` - Cent-accurate mortgage amortization schedules with Decimal arithmetic and published-source validation across six countries.
+- [proof-engine](https://github.com/MarianMortgage/proof-engine) - `Python` - Open-source Monte Carlo model for pricing down-only (rate-only-goes-down) mortgage designs against a standard fixed-rate loan.
 - [Intrinsic-Value-Calculator](https://github.com/akashaero/Intrinsic-Value-Calculator) - `Python` - A Python tool for quick calculations of a stock's fair value using Discounted Cash Flow analysis.
 - [Kelly-Criterion](https://github.com/deltaray-io/kelly-criterion) - `Python` - Kelly Criterion implemented in Python to size portfolios based on J. L. Kelly Jr's formula.
 - [rateslib](https://github.com/attack68/rateslib) - `Python` - A fixed income library for pricing bonds and bond futures, and derivatives such as IRS, cross-currency and FX swaps.
