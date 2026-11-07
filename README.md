@@ -818,6 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Swiftedge](https://swiftedge.uk) - `REST` `MCP` - Browser order flow charts (live order book heatmap, trades drawn as bubbles, footprint, CVD, volume profile and TPO) and a JSON API for nine crypto, metals, oil and 24/7 index markets, free without an account, key or payment information under a fair-use limit with responses cached for 15 seconds, while an optional $9/month club adds replay. [GitHub](https://github.com/stangenberg295-spec/swiftedge-api-examples)
 
 ## Historical & Archived Projects
 
