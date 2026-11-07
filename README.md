@@ -635,6 +635,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [xlloop](https://xlloop.sourceforge.net/) - `Python` - XLLoop is an open source framework for implementing Excel user-defined functions (UDFs) on a centralised server (a function server). [GitHub](https://github.com/poidasmith/xlloop)
 - [expy](https://bnikolic.co.uk/expy/expy.html) - `Python` - The ExPy add-in allows easy use of Python directly from within an Microsoft Excel spreadsheet, both to execute arbitrary code and to define new Excel functions.
 - [pyxll](https://www.pyxll.com) - `Python` - PyXLL is an Excel add-in that enables you to extend Excel using nothing but Python code.
+- [tracemodel](https://github.com/datayoga-io/tracemodel) - `Python` `Excel` `AI Agents` - Financial models in Python where every value has a source, formulas are traced and checks run per period, with Excel export.
 
 ## Quant Research Environments
 
