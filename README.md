@@ -818,6 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Quotelinks API](https://www.quotelinks.com/api/) - `REST` - Standardized SEC EDGAR financial statements (annual, quarterly and TTM) and filings for 21,000+ US-listed companies by ticker or CIK, plus ECB exchange rates since 1999, with a permanent free tier of 2 requests per second without an API key or 10 with a free key, for personal, non-commercial use.
 
 ## Historical & Archived Projects
 
