@@ -818,6 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [XRPL.to](https://xrpl.to/docs) - `Data` - XRP Ledger market data API: token prices, OHLC candles, DEX and AMM trades, holders and NFT sales over REST and WebSocket. Most read endpoints work without a key (333 requests a day); a free key, created with a wallet signature and no payment details, gives 1M credits a month at 10 requests a second.
 
 ## Historical & Archived Projects
 
