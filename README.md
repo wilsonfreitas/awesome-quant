@@ -820,7 +820,6 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
 - [Redstone Markets](https://redstonemarkets.com) - Free return and risk analytics for about 2,900 US stocks and 1,200 ETFs. [GitHub](https://github.com/mihaitv/redstone-mcp)
 
-
 ## Historical & Archived Projects
 
 - [fooltrader](https://github.com/foolcage/fooltrader) - `Python` `Historical` - Archived big-data quantitative-analysis and trading system retained as an early unified market-data and backtesting framework.
