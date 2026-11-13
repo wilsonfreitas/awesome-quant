@@ -818,6 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Hunt4Coin](https://hunt4coin.com) - `Web` - Free crypto web app with candle charts from 23 exchanges and 71 indicators, a top-100 screener on 15m, 1h, 4h and 1d, up to 200 price and indicator alerts, paper trading, and backtesting that includes exchange fees; no paid plans or card, and an optional email-only account. [Docs](https://hunt4coin.com/docs)
 
 ## Historical & Archived Projects
 
