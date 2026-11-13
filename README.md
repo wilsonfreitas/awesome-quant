@@ -818,6 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [COT Data](https://www.cotdata.net) - Free CFTC Commitments of Traders dashboard for 51 futures markets with weekly net positions, 3-year COT Index and Z-scores across Legacy, TFF and Disaggregated reports, without signup or payment information.
 
 ## Historical & Archived Projects
 
