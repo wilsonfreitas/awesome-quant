@@ -818,6 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Trading Signals Toolkit](https://signals.incomefather.com) - `REST` `MCP` - Futures event-risk gate and session brief from US macro releases, Treasury yields and CFTC positioning, macro event studies, SEC Form 4 insider buys and cluster buys, and VWAP, opening-range and ATR calculators, with a permanent free tier of 100 calls per month without a credit card. [GitHub](https://github.com/gdietsch/trading-signals-examples)
 
 ## Historical & Archived Projects
 
