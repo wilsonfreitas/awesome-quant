@@ -97,3 +97,22 @@ uv run python site/generate.py
 
 This repository uses Codex only. `AGENTS.md` and `.agents/skills` are the
 canonical workflow surfaces.
+
+## Operational Map
+
+- Automated core: `parse.py` enriches catalogue metadata, `site/generate.py`
+  builds the site, and the PR validation/review and README audit workflows
+  perform their documented checks. The audit CLI can update a GitHub issue;
+  do not run it as an offline test.
+- Manual catalogue maintenance: use the four Codex skills listed above. The
+  PyPI updater edits README dates but never commits or pushes automatically.
+- Manual CRAN discovery: `uv run python cranscrape.py` fetches its fixed package
+  list and writes ignored `cran.csv` in the working directory. This file is
+  not a site input. No credentials are needed.
+- Manual topic discovery: `uv run python topic.py` requires
+  `GITHUB_ACCESS_TOKEN` and prints GitHub quant-topic candidates. Its existing
+  discovery heuristic is not an admission policy. It writes no catalogue files.
+- Optional developer tooling: `uv run mypy <paths>` is available for manual
+  checks; this cleanup does not introduce a strict typing requirement.
+
+Importing the manual discovery modules performs no network calls or file writes.

@@ -4,3 +4,4 @@ github.ipynb
 build.sh
 *.pyc
 .worktrees/
+/cran.csv
