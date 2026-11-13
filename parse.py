@@ -1,4 +1,3 @@
-import json
 import os
 import re
 from html.parser import HTMLParser
@@ -7,6 +6,7 @@ from urllib.request import urlopen
 
 import pandas as pd
 from github import Auth, Github
+from scripts import pypi_metadata
 
 from scripts.readme_entries import (
     BADGE_RE,
@@ -105,34 +105,11 @@ def get_cran_info(url):
 
 
 def get_pypi_last_updated(url):
-    """Fetch the last release date from PyPI JSON API."""
-    try:
-        # Extract package name from URL like https://pypi.org/project/tushare/
-        m = re.search(r"pypi\.org/project/([\w.-]+)", url) or re.search(
-            r"pypi\.python\.org/pypi/([\w.-]+)", url
-        )
-        if not m:
-            return ""
-        pkg = m.group(1).rstrip("/")
-        api_url = f"https://pypi.org/pypi/{pkg}/json"
-        with urlopen(api_url, timeout=10) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
-
-        releases = data.get("releases", {})
-        if not releases:
-            return ""
-
-        # Find the latest release with an upload time
-        for version in sorted(releases.keys(), reverse=True):
-            release_data = releases[version]
-            if release_data:
-                upload_time = release_data[0].get("upload_time_iso_8601")
-                if upload_time:
-                    return upload_time.split("T")[0]
-        return ""
-    except Exception as e:
-        print(f"PYPI ERROR {url}: {e}")
-        return ""
+    """Adapt a supported package URL to the shared latest-upload lookup."""
+    match = re.search(r"pypi\.org/project/([\w.-]+)", url) or re.search(
+        r"pypi\.python\.org/pypi/([\w.-]+)", url
+    )
+    return (pypi_metadata.get_pypi_last_updated(match.group(1)) or "") if match else ""
 
 
 def get_repo_info(repo):
