@@ -150,7 +150,8 @@ Use these verdicts:
 - Reserve `NEEDS CHANGES` for correctable evidence or disclosure, wording, URL, documentation, or
   placement defects when the underlying offering can qualify.
 - Other `REJECT` cases include duplicates, unrelated multi-project PRs, empty PR descriptions,
-  archived or abandoned projects, and other hard rejections.
+  archived or abandoned projects unless they qualify under CONTRIBUTING.md's
+  `Historical & Archived Projects` exception, and other hard rejections.
 
 ## Output Shape
 

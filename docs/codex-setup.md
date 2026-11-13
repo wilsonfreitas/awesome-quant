@@ -93,7 +93,7 @@ data or parse `README.md` directly:
 uv run python site/generate.py
 ```
 
-## Claude Files
+## Agent Instructions
 
-The existing `.claude/` files and `CLAUDE.md` are kept for compatibility. Codex
-uses `AGENTS.md` and `.agents/skills` as the canonical workflow surfaces.
+This repository uses Codex only. `AGENTS.md` and `.agents/skills` are the
+canonical workflow surfaces.
