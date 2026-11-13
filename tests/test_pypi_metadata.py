@@ -2,6 +2,7 @@ import contextlib
 import importlib
 import io
 import json
+from http.client import IncompleteRead
 import unittest
 from unittest.mock import Mock, patch
 
@@ -51,4 +52,13 @@ class PyPIMetadataTests(unittest.TestCase):
     def test_fetch_failure_returns_none(self):
         helper = self.helper()
         with patch.object(helper, 'urlopen', side_effect=OSError('offline')), contextlib.redirect_stderr(io.StringIO()):
+            self.assertIsNone(helper.get_pypi_last_updated('example'))
+
+    def test_truncated_response_returns_none(self):
+        helper = self.helper()
+        response = Mock()
+        response.__enter__ = Mock(return_value=response)
+        response.__exit__ = Mock(return_value=False)
+        response.read.side_effect = IncompleteRead(b'{"releases":', 100)
+        with patch.object(helper, 'urlopen', return_value=response), contextlib.redirect_stderr(io.StringIO()):
             self.assertIsNone(helper.get_pypi_last_updated('example'))

@@ -1,6 +1,7 @@
 """Shared PyPI distribution-upload metadata, independent of version ordering."""
 
 from datetime import datetime, timezone
+from http.client import HTTPException
 import json
 import sys
 from urllib.parse import quote
@@ -39,6 +40,6 @@ def get_pypi_last_updated(package_name: str) -> str | None:
         with urlopen(url, timeout=10) as response:
             payload = json.loads(response.read().decode('utf-8'))
         return latest_upload_date(payload) if isinstance(payload, dict) else None
-    except (OSError, ValueError) as exc:
+    except (OSError, ValueError, HTTPException) as exc:
         print(f'PyPI metadata unavailable for {package_name}: {type(exc).__name__}', file=sys.stderr)
         return None
