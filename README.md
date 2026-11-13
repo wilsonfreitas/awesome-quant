@@ -670,6 +670,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
   - [ta-lib](https://github.com/TA-Lib/ta-lib)
 - [godzilla.dev](https://godzilla.dev) - `C++` `Python` - Open-source framework for crypto quant trading, funding rate arbitrage and ultra-low-latency market making. [GitHub](https://github.com/godzilla-foundation/godzilla-community)
 - [PineTS](https://github.com/LuxAlgo/PineTS) - `TypeScript` `JavaScript` `Pine Script` - Open-source transpiler and runtime that executes Pine Script logic in Node.js and the browser with 1:1 syntax compatibility, for running indicators and strategies on your own infrastructure.
+- [OpenPineScript](https://github.com/be-thomas/OpenPineScript) - `TypeScript` `JavaScript` `Python` `Pine Script` - Compiler and runtime for Pine Script v1–v6 that runs indicators and strategy backtests on your own OHLCV data in Node.js, the browser or Python, with outputs checked against TradingView.
 
 ## Reproducing Works, Training & Books
 
