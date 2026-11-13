@@ -9,6 +9,7 @@ Can run in two modes:
 import argparse
 import csv
 import html
+import json
 import re
 import sys
 from pathlib import Path
@@ -241,10 +242,10 @@ def generate_html(entries: list[dict]) -> str:
         is_pypi = e.get("pypi", False)
         is_commercial = e.get("commercial", False)
 
-        # Languages attribute (space-separated)
-        languages_attr = esc(" ".join(
+        # Exact tag strings, including spaces and HTML-sensitive characters.
+        tags_attr = esc(json.dumps([
             l.strip() for l in e.get("languages", e.get("language", "")).split(",") if l.strip()
-        ))
+        ]))
 
         # Stars display
         stars_html = (
@@ -277,7 +278,7 @@ def generate_html(entries: list[dict]) -> str:
         tags_html = build_tags_html(e)
 
         rows.append(
-            f"""      <tr class="row" data-languages="{languages_attr}" data-category="{category}" data-sources="{sources_attr}" data-stars="{stars}">
+            f"""      <tr class="row" data-tags="{tags_attr}" data-category="{category}" data-sources="{sources_attr}" data-stars="{stars}">
         <td class="col-num">{i}</td>
         <td class="col-name">
           <a href="{url}" target="_blank" rel="noopener">{name}</a>
@@ -340,7 +341,7 @@ def generate_html(entries: list[dict]) -> str:
         <div class="hero-stats">
           <span class="stat"><strong>{total}</strong> projects</span>
           <span class="stat-sep"></span>
-          <span class="stat"><strong>{len(languages)}</strong> languages</span>
+          <span class="stat"><strong>{len(languages)}</strong> tags</span>
         </div>
         <a href="#content" class="hero-cta">Browse the List</a>
       </div>

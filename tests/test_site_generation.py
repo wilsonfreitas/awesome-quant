@@ -1,5 +1,7 @@
 import csv
 import importlib.util
+from html.parser import HTMLParser
+import json
 from pathlib import Path
 import subprocess
 import sys
@@ -25,6 +27,26 @@ FIXTURE = '''## Trading & Backtesting
 
 
 class SiteGenerationTests(unittest.TestCase):
+    def test_tags_round_trip_as_complete_strings(self):
+        tags = ['Python', 'Spring Boot', 'SEC EDGAR', 'Pine Script', 'C++', 'Risk & Return', 'A "quoted" tag']
+        rows, buttons = [], []
+
+        class Collector(HTMLParser):
+            def handle_starttag(self, tag, attrs):
+                attrs = dict(attrs)
+                if tag == 'tr' and attrs.get('class') == 'row':
+                    rows.append(attrs)
+                if tag == 'button' and attrs.get('data-filter-type') == 'language':
+                    buttons.append(attrs['data-filter-value'])
+
+        rendered = site.generate_html([dict(project='Example', url='https://example.org',
+            description='Example.', languages=','.join(tags))])
+        Collector().feed(rendered)
+        self.assertIn('data-tags', rows[0])
+        self.assertEqual(json.loads(rows[0]['data-tags']), tags)
+        self.assertEqual(set(buttons), set(tags))
+        self.assertIn('</strong> tags</span>', rendered)
+
     def test_current_readme_membership_matches_shared_parser(self):
         actual = site.parse_readme(ROOT / 'README.md')
         expected = list(iter_readme_entries(ROOT / 'README.md'))
