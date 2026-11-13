@@ -19,7 +19,6 @@
   --bg-surface: #f8fafc;
   --bg-surface-hover: #f1f5f9;
   --bg-hero: #0f172a;
-  --bg-hero-accent: #1e293b;
   --ink: #0f172a;
   --ink-secondary: #475569;
   --ink-tertiary: #94a3b8;
@@ -39,8 +38,6 @@
   --badge-bg: #fef3c7;
   --badge-ink: #92400e;
   --expand-bg: #f8fafc;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
 }
 
 [data-theme="dark"] {
@@ -48,7 +45,6 @@
   --bg-surface: #1e293b;
   --bg-surface-hover: #334155;
   --bg-hero: #020617;
-  --bg-hero-accent: #0f172a;
   --ink: #f1f5f9;
   --ink-secondary: #94a3b8;
   --ink-tertiary: #64748b;
@@ -66,8 +62,6 @@
   --badge-bg: rgba(251, 191, 36, 0.15);
   --badge-ink: #fcd34d;
   --expand-bg: #1e293b;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
 }
 
 html {
@@ -391,27 +385,6 @@ button {
 
 .tag-cloud-item:hover {
   transform: scale(1.08);
-}
-
-.filter-controls select {
-  padding: 0.625rem 2rem 0.625rem 0.875rem;
-  font-family: var(--font);
-  font-size: 0.875rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
-  background: var(--bg-surface);
-  color: var(--ink);
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2394a3b8' fill='none' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.75rem center;
-  cursor: pointer;
-  outline: none;
-  transition: border-color var(--transition);
-}
-
-.filter-controls select:focus {
-  border-color: var(--accent);
 }
 
 /* ===== Filter Bar ===== */

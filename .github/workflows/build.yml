@@ -9,6 +9,11 @@ on:
       - 'README.md'
       - 'parse.py'
       - 'site/**'
+      - 'scripts/readme_entries.py'
+      - 'scripts/pypi_metadata.py'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - '.github/workflows/build.yml'
 
 concurrency:
   group: build-and-deploy
@@ -32,7 +37,7 @@ jobs:
         uv run python parse.py
     - name: Generate site
       run: |
-        uv run python site/generate.py
+        uv run python site/generate.py --source csv
     - name: Deploy pages
       uses: peaceiris/actions-gh-pages@v3
       with:

@@ -31,6 +31,11 @@ class ReviewDocumentationContractTests(unittest.TestCase):
             self.sprr,
         )
 
+    def test_sprr_preserves_historical_exception_to_rejection(self):
+        verdicts = self.sprr.split("## Verdicts", 1)[1].split("## Output Shape", 1)[0]
+        self.assertIn("Historical & Archived Projects", verdicts)
+        self.assertIn("CONTRIBUTING.md", verdicts)
+
     def test_bprr_uses_sprr_as_the_canonical_per_pr_policy(self):
         self.assertIn("**REQUIRED SUB-SKILL:** Use `sprr`", self.bprr)
         self.assertIn("Apply `sprr` independently to every PR", self.bprr)
