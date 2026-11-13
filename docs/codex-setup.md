@@ -78,6 +78,19 @@ uv run python scripts/validate_readme.py
 Full validation reports legacy duplicate, URL, and format issues as warnings by
 default. PR-added entries treat those issues as errors.
 
+Run the offline regression suite:
+
+```bash
+uv run python -m unittest discover -s tests -q
+```
+
+The `Tests` workflow runs this suite on pull requests, pushes to main, and manual
+dispatch. It has read-only permissions and no persisted checkout credentials.
+Tests mock external services and use temporary outputs; do not substitute live
+metadata refreshes or the issue-writing audit CLI. `PR Review` retains trusted-base
+execution. The existing two-workflow admission policy and branch protection are
+unchanged by the additional test workflow.
+
 ## Parser And Site Commands
 
 `parse.py` needs a GitHub token because it enriches entries with GitHub metadata:

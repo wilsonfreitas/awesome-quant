@@ -9,6 +9,11 @@ on:
       - 'README.md'
       - 'parse.py'
       - 'site/**'
+      - 'scripts/readme_entries.py'
+      - 'scripts/pypi_metadata.py'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - '.github/workflows/build.yml'
 
 concurrency:
   group: build-and-deploy

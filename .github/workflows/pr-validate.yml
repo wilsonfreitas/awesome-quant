@@ -9,7 +9,14 @@ on:
       - 'AGENTS.md'
       - 'scripts/**'
       - 'site/**'
+      - 'parse.py'
+      - 'tests/**'
+      - '.agents/**'
+      - 'pyproject.toml'
+      - 'uv.lock'
       - '.github/workflows/pr-validate.yml'
+      - '.github/workflows/tests.yml'
+      - '.github/workflows/build.yml'
 
 permissions:
   contents: read
