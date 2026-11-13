@@ -67,18 +67,12 @@ def get_cran_info(url):
                 super().__init__()
                 self._in_td = False
                 self._found_published = False
-                self._in_github_span = False
                 self.date = ""
                 self.github_url = ""
 
             def handle_starttag(self, tag, attrs):
                 if tag == "td":
                     self._in_td = True
-                # GitHub links are wrapped in <span class="GitHub">
-                if tag == "span":
-                    classes = dict(attrs).get("class", "")
-                    if "GitHub" in classes:
-                        self._in_github_span = True
                 # Also check <a href> for github.com links
                 if tag == "a" and not self.github_url:
                     href = dict(attrs).get("href", "")
@@ -88,8 +82,6 @@ def get_cran_info(url):
             def handle_endtag(self, tag):
                 if tag == "td":
                     self._in_td = False
-                if tag == "span":
-                    self._in_github_span = False
 
             def handle_data(self, data):
                 if self._in_td:

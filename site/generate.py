@@ -235,18 +235,15 @@ def build_tag_cloud(entries: list[dict]) -> str:
     all_items.sort(key=lambda x: x[2], reverse=True)
 
     # Calculate size scale (1.0 to 1.6x)
-    if all_items:
-        min_count = min(item[2] for item in all_items)
-        max_count = max(item[2] for item in all_items)
-        count_range = max_count - min_count if max_count > min_count else 1
-    else:
-        min_count = max_count = count_range = 1
+    min_count = min(item[2] for item in all_items)
+    max_count = max(item[2] for item in all_items)
+    count_range = max_count - min_count if max_count > min_count else 1
 
     tags = []
     esc = html.escape
     for tag_type, value, count in all_items:
         # Calculate font size: 1.0 to 1.6
-        size = 1.0 + ((count - min_count) / count_range * 0.6) if count_range > 0 else 1.0
+        size = 1.0 + ((count - min_count) / count_range * 0.6)
 
         if tag_type == "language":
             tags.append(
@@ -260,9 +257,6 @@ def build_tag_cloud(entries: list[dict]) -> str:
                 f'data-filter-type="category" data-filter-value="{esc(value)}" '
                 f'style="font-size: {size:.2f}em;">{esc(value)}</button>'
             )
-
-    if not tags:
-        return ""
 
     return f"""        <div class="tag-cloud">
           <div class="tag-cloud-label">Popular filters:</div>
@@ -301,7 +295,6 @@ def generate_html(entries: list[dict]) -> str:
         desc = esc(e["description"])
         category = esc(e.get("category", ""))
         github_url = esc(e.get("github_url", ""))
-        repo = esc(e.get("repo", ""))
         stars = int(e.get("stars", 0) or 0)
         last_commit = e.get("last_commit", "") or ""
         is_github = e.get("github", False)
