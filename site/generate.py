@@ -2,10 +2,11 @@
 """Parse README.md and generate a static HTML site for awesome-quant.
 
 Can run in two modes:
-1. With projects.csv (produced by parse.py) — includes stars, last commit, etc.
-2. Without CSV — parses README.md directly for a quick local preview.
+1. Default README preview — always reflects the current catalogue.
+2. Explicit --source csv — uses enriched data produced by parse.py.
 """
 
+import argparse
 import csv
 import html
 import re
@@ -13,100 +14,38 @@ import sys
 from pathlib import Path
 
 
-def slugify(text: str) -> str:
-    """Convert text to lowercase hyphen-separated slug."""
-    text = text.lower().strip()
-    text = re.sub(r"[&/]+", "-", text)
-    text = re.sub(r"[^\w\s-]", "", text)
-    text = re.sub(r"[\s_]+", "-", text)
-    text = re.sub(r"-+", "-", text)
-    return text.strip("-")
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+from scripts.readme_entries import GITHUB_LINK_RE, iter_readme_entries, slugify
 
 
 def parse_readme(path: str) -> list[dict]:
-    """Parse README.md and return a list of project entries (no API data)."""
+    """Adapt the shared catalogue parser to the site's existing entry schema."""
     entries = []
-    current_category = ""
-
-    re_h2 = re.compile(r"^## (.+)$")
-    re_entry = re.compile(r"^\s*- \[(.+?)\]\((.+?)\) - (.+)$")
-    re_github = re.compile(r"\[GitHub\]\((https://github\.com/[\w-]+/[-\w\.]+)\)")
-    re_badge = re.compile(r"\s*!\[[^\]]*\]\([^)]*\)\s*")
-    re_langs = re.compile(r'^((?:`[^`]+`\s*)+)-\s*(.*)$')
-
-    skip_sections = {"Contents"}
-
-    with open(path, "r", encoding="utf-8") as f:
-        for line in f:
-            line = re_badge.sub(" ", line).rstrip("\n")
-
-            m = re_h2.match(line)
-            if m:
-                current_category = m.group(1).strip()
-                continue
-
-            if current_category in skip_sections:
-                continue
-
-            m = re_entry.match(line)
-            if m:
-                name = m.group(1).strip()
-                url = m.group(2).strip()
-                raw_desc = m.group(3).strip()
-
-                # Extract inline language tags
-                m_lang = re_langs.match(raw_desc)
-                if m_lang:
-                    lang_str = m_lang.group(1)
-                    desc = m_lang.group(2)
-                    languages = re.findall(r'`([^`]+)`', lang_str)
-                else:
-                    desc = raw_desc
-                    languages = []
-
-                primary_language = languages[0] if languages else ""
-
-                github_url = ""
-                gh_match = re_github.search(desc)
-                if gh_match:
-                    github_url = gh_match.group(1)
-                    desc = re_github.sub("", desc).rstrip(". ").rstrip() + "."
-                elif "github.com" in url:
-                    github_url = url
-
-                repo = ""
-                if github_url:
-                    repo_match = re.match(
-                        r"https://github\.com/([\w-]+/[-\w\.]+)", github_url
-                    )
-                    if repo_match:
-                        repo = repo_match.group(1)
-
-                is_cran = "cran.r-project.org" in url
-                is_pypi = "pypi.org" in url or "pypi.python.org" in url
-                is_commercial = current_category == "Commercial & Proprietary Services"
-                section_slug = slugify(current_category)
-
-                entries.append(
-                    {
-                        "project": name,
-                        "language": primary_language,
-                        "languages": ",".join(languages),
-                        "category": current_category,
-                        "section_slug": section_slug,
-                        "url": url,
-                        "description": desc,
-                        "github": bool(github_url),
-                        "cran": is_cran,
-                        "pypi": is_pypi,
-                        "commercial": is_commercial,
-                        "github_url": github_url,
-                        "repo": repo,
-                        "stars": 0,
-                        "last_commit": "",
-                    }
-                )
-
+    for entry in iter_readme_entries(path):
+        desc = entry.description
+        github_match = GITHUB_LINK_RE.search(desc)
+        github_url = github_match.group(1) if github_match else entry.github_url
+        if github_match:
+            desc = GITHUB_LINK_RE.sub("", desc).rstrip(". ").rstrip() + "."
+        repo_match = re.match(r"https://github\.com/([\w-]+/[-\w\.]+)", github_url)
+        entries.append({
+            "project": entry.name,
+            "language": entry.languages[0] if entry.languages else "",
+            "languages": ",".join(entry.languages),
+            "category": entry.section,
+            "section_slug": slugify(entry.section),
+            "url": entry.url,
+            "description": desc,
+            "github": bool(github_url),
+            "cran": "cran.r-project.org" in entry.url,
+            "pypi": "pypi.org" in entry.url or "pypi.python.org" in entry.url,
+            "commercial": entry.section == "Commercial & Proprietary Services",
+            "github_url": github_url,
+            "repo": repo_match.group(1) if repo_match else "",
+            "stars": 0,
+            "last_commit": "",
+        })
     return entries
 
 
@@ -477,28 +416,24 @@ def generate_html(entries: list[dict]) -> str:
 </html>"""
 
 
-def main():
-    root = Path(__file__).resolve().parent.parent
-    readme = root / "README.md"
-    csv_path = root / "site" / "projects.csv"
-    output = root / "site" / "index.html"
-
-    # Prefer CSV if it exists (has stars, last commit from API)
-    if csv_path.exists():
-        print(f"Loading from {csv_path}")
-        entries = load_csv(str(csv_path))
-    elif readme.exists():
-        print(f"Parsing {readme} (no CSV — stars/dates will be empty)")
-        entries = parse_readme(str(readme))
-    else:
-        print(f"ERROR: neither {csv_path} nor {readme} found", file=sys.stderr)
-        sys.exit(1)
-
-    print(f"Loaded {len(entries)} projects")
-    html_content = generate_html(entries)
-    output.write_text(html_content, encoding="utf-8")
-    print(f"Generated {output}")
+def main(argv=None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source", choices=("readme", "csv"), default="readme")
+    parser.add_argument("--readme", type=Path, default=ROOT / "README.md")
+    parser.add_argument("--csv", type=Path, default=ROOT / "site/projects.csv")
+    parser.add_argument("--output", type=Path, default=ROOT / "site/index.html")
+    args = parser.parse_args(argv)
+    source = args.csv if args.source == "csv" else args.readme
+    try:
+        entries = load_csv(source) if args.source == "csv" else parse_readme(source)
+        args.output.write_text(generate_html(entries), encoding="utf-8")
+    except (OSError, ValueError, csv.Error) as exc:
+        print(f"ERROR generating site from {source}: {exc}", file=sys.stderr)
+        return 1
+    print(f"Loaded {len(entries)} projects from {source}")
+    print(f"Generated {args.output}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

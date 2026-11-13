@@ -15,8 +15,8 @@ languages, but may also identify runtimes, protocols, interfaces, data types, or
 1. `README.md` contains curated entries.
 2. `parse.py` parses `README.md`, enriches GitHub/CRAN/PyPI metadata, and writes
    `site/projects.csv`.
-3. `site/generate.py` reads `site/projects.csv` when present, otherwise parses
-   `README.md` directly for local previews, then writes `site/index.html`.
+3. `site/generate.py` parses `README.md` for local previews by default. Explicit
+   `--source csv` reads enriched `site/projects.csv`; both write `site/index.html`.
 4. `.github/workflows/build.yml` runs the parser and generator, then deploys
    `site/` to GitHub Pages.
 
@@ -48,8 +48,11 @@ uv run python scripts/validate_readme.py
 # Run parser (requires GitHub token)
 GITHUB_ACCESS_TOKEN=<token> uv run python parse.py
 
-# Generate static site
+# Generate a preview from the current README (no token required)
 uv run python site/generate.py
+
+# Generate production HTML after parse.py has written enriched CSV
+uv run python site/generate.py --source csv
 ```
 
 ## Entry Format
@@ -145,6 +148,6 @@ user to configure the MCP server.
   for those additions.
 - `scripts/validate_readme.py` validates the full README. Legacy format, duplicate, and
   URL problems are reported as warnings unless strict flags are used.
-- `parse.py` requires `GITHUB_ACCESS_TOKEN`; `site/generate.py` can run without
-  the token if `site/projects.csv` already exists or if it falls back to direct
-  README parsing.
+- `parse.py` requires `GITHUB_ACCESS_TOKEN`; `site/generate.py` requires no token.
+  Default previews always read README. Explicit CSV mode fails if its input is
+  missing. Generated `site/projects.csv` and `site/index.html` are not tracked.

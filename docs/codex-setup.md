@@ -86,12 +86,18 @@ default. PR-added entries treat those issues as errors.
 GITHUB_ACCESS_TOKEN=<token> uv run python parse.py
 ```
 
-The site generator can run locally without a token when it can use existing CSV
-data or parse `README.md` directly:
+The token-free default preview always reads the current README, even when an old
+CSV is present:
 
 ```bash
 uv run python site/generate.py
 ```
+
+Production runs the parser first, then `uv run python site/generate.py --source csv`.
+Explicit CSV mode fails if the CSV is unavailable; it never falls back to README.
+Use `--readme PATH`, `--csv PATH`, and `--output PATH` for isolated previews.
+The generated `site/projects.csv` and `site/index.html` are ignored source-tree
+outputs, rebuilt for deployment. Source assets and `site/.nojekyll` remain tracked.
 
 ## Agent Instructions
 

@@ -32,7 +32,7 @@ jobs:
         uv run python parse.py
     - name: Generate site
       run: |
-        uv run python site/generate.py
+        uv run python site/generate.py --source csv
     - name: Deploy pages
       uses: peaceiris/actions-gh-pages@v3
       with:

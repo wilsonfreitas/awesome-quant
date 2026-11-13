@@ -30,4 +30,4 @@ jobs:
     - name: Validate added README entries
       run: uv run python scripts/validate_readme.py --diff-from origin/${{ github.base_ref }}
     - name: Generate static site
-      run: uv run python site/generate.py
+      run: uv run python site/generate.py --source readme
