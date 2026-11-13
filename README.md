@@ -56,6 +56,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Financial Instruments & Pricing
 
+- [P-Curve](https://github.com/pengpengyi92/p-curve) - `Python` - Experimental yield-curve functions, cashflow valuation and finite-difference DV01 with explicit conventions and synthetic tests.
 - [PyQL](https://github.com/enthought/pyql) - `Python` - QuantLib's Python port.
 - [vollib](https://github.com/vollib/vollib) - `Python` - vollib is a python library for calculating option prices, implied volatility and greeks.
 - [py_vollib](https://github.com/vollib/py_vollib) - `Python` - vollib Python implementation.
