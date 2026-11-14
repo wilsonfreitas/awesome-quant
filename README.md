@@ -818,6 +818,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [KontragentPro](https://kontragentpro.ru/developers) - `REST` `MCP` - Russian company data API with registry details, financial statements since 2011, bankruptcy and state inspection records from official open registries; a free key gives 100 requests per day and 60 per minute without payment information. [GitHub](https://github.com/kontragentpro/kontragentpro-mcp)
 
 ## Historical & Archived Projects
 
