@@ -78,6 +78,19 @@ uv run python scripts/validate_readme.py
 Full validation reports legacy duplicate, URL, and format issues as warnings by
 default. PR-added entries treat those issues as errors.
 
+Run the offline regression suite:
+
+```bash
+uv run python -m unittest discover -s tests -q
+```
+
+The `Tests` workflow runs this suite on pull requests, pushes to main, and manual
+dispatch. It has read-only permissions and no persisted checkout credentials.
+Tests mock external services and use temporary outputs; do not substitute live
+metadata refreshes or the issue-writing audit CLI. `PR Review` retains trusted-base
+execution. The existing two-workflow admission policy and branch protection are
+unchanged by the additional test workflow.
+
 ## Parser And Site Commands
 
 `parse.py` needs a GitHub token because it enriches entries with GitHub metadata:
@@ -86,14 +99,39 @@ default. PR-added entries treat those issues as errors.
 GITHUB_ACCESS_TOKEN=<token> uv run python parse.py
 ```
 
-The site generator can run locally without a token when it can use existing CSV
-data or parse `README.md` directly:
+The token-free default preview always reads the current README, even when an old
+CSV is present:
 
 ```bash
 uv run python site/generate.py
 ```
 
-## Claude Files
+Production runs the parser first, then `uv run python site/generate.py --source csv`.
+Explicit CSV mode fails if the CSV is unavailable; it never falls back to README.
+Use `--readme PATH`, `--csv PATH`, and `--output PATH` for isolated previews.
+The generated `site/projects.csv` and `site/index.html` are ignored source-tree
+outputs, rebuilt for deployment. Source assets and `site/.nojekyll` remain tracked.
 
-The existing `.claude/` files and `CLAUDE.md` are kept for compatibility. Codex
-uses `AGENTS.md` and `.agents/skills` as the canonical workflow surfaces.
+## Agent Instructions
+
+This repository uses Codex only. `AGENTS.md` and `.agents/skills` are the
+canonical workflow surfaces.
+
+## Operational Map
+
+- Automated core: `parse.py` enriches catalogue metadata, `site/generate.py`
+  builds the site, and the PR validation/review and README audit workflows
+  perform their documented checks. The audit CLI can update a GitHub issue;
+  do not run it as an offline test.
+- Manual catalogue maintenance: use the four Codex skills listed above. The
+  PyPI updater edits README dates but never commits or pushes automatically.
+- Manual CRAN discovery: `uv run python cranscrape.py` fetches its fixed package
+  list and writes ignored `cran.csv` in the working directory. This file is
+  not a site input. No credentials are needed.
+- Manual topic discovery: `uv run python topic.py` requires
+  `GITHUB_ACCESS_TOKEN` and prints GitHub quant-topic candidates. Its existing
+  discovery heuristic is not an admission policy. It writes no catalogue files.
+- Optional developer tooling: `uv run mypy <paths>` is available for manual
+  checks; this cleanup does not introduce a strict typing requirement.
+
+Importing the manual discovery modules performs no network calls or file writes.
