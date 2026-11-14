@@ -178,6 +178,8 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [gamma-seed](https://github.com/Timonkru/gamma-seed) - `Python` `Pine` `Options` - Daily dealer-gamma levels (gamma flip, call and put walls, max pain, expected move) for DAX, Nasdaq, Dow and gold, computed from options open interest (Eurex ODAX for the DAX, ETF proxies for the US) and written into a TradingView Pine v6 indicator; the method is documented in open studies on the author's site. [Website](https://kruegeralgorithms.com/en/research)
 
 ## Trading & Backtesting
+
+- [TriDomainMoE](https://primeclub-quant.vercel.app/) - `Python` `PyTorch` `MetaTrader 5` - Institutional multi-domain Mixture of Experts (MoE) trading architecture with Continuous Softmax CAW routing, zero-forgetting ReCAP continual adaptation, and sub-20ms MetaTrader 5 live execution. [GitHub](https://github.com/ElMoorish/TriDomainMoE)
 - [QuantVibe](https://github.com/Ax3lsk3r3/QuantVibe) - `Python` `TypeScript` - Qlib-based trading research platform with Alpha158 and LightGBM models, model-quality checks, SHA-256 signal checksums, a read-only MCP server, and MetaTrader 5 execution integration.
 - [QuantDinger](https://github.com/OpenByteInc/QuantDinger) - `Python` - Self-hosted platform for AI-assisted Python strategy development, backtesting, and paper and live trading across crypto exchanges and traditional brokers.
 - [Crypto Pump Scanner](https://github.com/stefanoviana/crypto-pump-scanner) - `Python` - Bybit perpetual-futures trading bot with volume-spike detection, new-listing monitoring, staged take profits, and trailing stops.
