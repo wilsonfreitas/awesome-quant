@@ -175,7 +175,13 @@ with supporting evidence in the PR description. A cleanup batch may change more 
 entries or only remove entries. The reviewer identifies cleanup from the diff: every added
 entry line must correspond one-to-one to a removed entry for the same project. Unrelated new
 projects belong in a separate contribution PR; ordinary contributions retain the limit of
-five added entry lines. Non-entry prose or heading changes are outside cleanup scope.
+five added entry lines. Existing indented non-entry references may receive a canonical
+GitHub repository URL repair only: exactly one HTTPS repository link may change, the old and new links must
+resolve to the same immutable GitHub repository ID, and all surrounding text, indentation,
+category, parent entry occurrence, and relative position must remain unchanged. Pair each repair with its existing
+reference; new references, extra copies, removals, and other non-entry prose or heading
+changes are outside cleanup scope. Offline validation checks the repair structure;
+`PR Review` additionally verifies repository identity.
 
 Changed entries still undergo format, section, HTTPS, duplicate, primary-link reachability,
 and repository/documentation checks. Within the same section, cleanup does not reapply the

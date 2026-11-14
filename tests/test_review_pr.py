@@ -13,6 +13,7 @@ from scripts.review_pr import (
     Finding,
     PinnedHTTPSConnection,
     main,
+    match_existing_entries,
     readme_has_duplicate,
     review_pr,
     url_reachable,
@@ -619,6 +620,90 @@ class ValidationPipelineTests(unittest.TestCase):
         self.assertIn("documentation", self.review_cleanup(
             old, old.replace("Old", "New"), configure_project=missing_docs
         ))
+
+    def test_cleanup_same_id_rename_preserves_legacy_exemption(self):
+        old = "- [Fresh](https://github.com/example/old) - `Python` - Research tool.\n"
+        def legacy(project):
+            project.id = 123
+            project.archived = True
+            project.pushed_at = NOW - timedelta(days=800)
+        self.assertEqual(self.review_cleanup(
+            old, old.replace("example/old", "example/fresh"), configure_project=legacy
+        ), set())
+
+    def test_cleanup_six_name_and_url_renames_match_same_ids(self):
+        old = "".join(
+            f"- [Old {i}](https://github.com/example/old-{i}) - `Python` - Tool.\n"
+            for i in range(6)
+        )
+        new = old.replace("[Old", "[New").replace("/old-", "/new-")
+        original = FakeClient.get_repo
+        requested = []
+        def lookup(client, name):
+            requested.append(name)
+            project = original(client, name)
+            if name.startswith("example/"):
+                project.id = int(name.rsplit("-", 1)[1]) + 1
+            return project
+        with patch.object(FakeClient, "get_repo", lookup):
+            self.assertEqual(self.review_cleanup(old, new), set())
+        for i in range(6):
+            self.assertEqual(requested.count(f"example/old-{i}"), 1)
+
+    def test_cleanup_rename_does_not_pair_extra_copy(self):
+        old = "- [Old](https://github.com/example/old) - `Python` - Tool.\n"
+        new = old.replace("[Old]", "[New]").replace("/old)", "/new)")
+        def identity(project):
+            project.id = 123
+        self.assertEqual(
+            match_existing_entries([new, new], [old], lambda url: 123),
+            [old, None],
+        )
+        self.assertIn("duplicates", self.review_cleanup(
+            old, new + new.replace("Tool.", "Second copy."), configure_project=identity
+        ))
+
+    def test_cleanup_different_ids_still_check_activity(self):
+        old = "- [Fresh](https://github.com/example/old) - `Python` - Tool.\n"
+        original = FakeClient.get_repo
+        def lookup(client, name):
+            project = original(client, name)
+            if name.startswith("example/"):
+                project.id = 1 if name.endswith("/old") else 2
+                project.pushed_at = NOW - timedelta(days=800)
+            return project
+        with patch.object(FakeClient, "get_repo", lookup):
+            self.assertIn("activity", self.review_cleanup(
+                old, old.replace("/old)", "/new)")
+            ))
+
+    def test_cleanup_same_id_rename_section_move_checks_activity(self):
+        old = "- [Old](https://github.com/example/old) - `Python` - Tool.\n"
+        new = old.replace("[Old]", "[New]").replace("/old)", "/new)")
+        def archived(project):
+            project.id = 123
+            project.archived = True
+        self.assertIn("activity", self.review_cleanup(
+            old + "\n## Portfolio Optimization & Risk Analysis\n",
+            "\n## Portfolio Optimization & Risk Analysis\n" + new,
+            configure_project=archived,
+        ))
+
+    def test_cleanup_failed_old_identity_lookup_does_not_grant_exemption(self):
+        old = "- [Fresh](https://github.com/example/old) - `Python` - Tool.\n"
+        original = FakeClient.get_repo
+        def lookup(client, name):
+            if name == "example/old":
+                raise GithubException(404, {"message": "Not Found"})
+            project = original(client, name)
+            if name.startswith("example/"):
+                project.id = 123
+                project.pushed_at = NOW - timedelta(days=800)
+            return project
+        with patch.object(FakeClient, "get_repo", lookup):
+            self.assertIn("activity", self.review_cleanup(
+                old, old.replace("/old)", "/new)")
+            ))
 
     def test_cleanup_rechecks_replacement_repository_activity(self):
         old = "- [Fresh](https://github.com/example/old) - `Python` - Old description.\n"
