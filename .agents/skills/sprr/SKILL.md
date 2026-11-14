@@ -218,8 +218,9 @@ Solo and pseudonymous maintainers need no legal-name verification, old issues or
 Use fixes, development, documented limitations and a support route as maintenance evidence,
 including initial implementation for new projects. Do not infer authenticity from identity,
 avatars or apparent AI use. Useful standalone data clients and open cores are assessed by their
-actual public functionality; API use alone does not make implementation thin. Retain the current
-12-month activity rule from CONTRIBUTING.md; maintenance eligibility is unchanged here.
+actual public functionality; API use alone does not make implementation thin. Apply the
+meaningful-maintenance and documented exceptions in CONTRIBUTING.md, using the focused
+evidence assessment above rather than treating a timestamp as proof.
 
 When a repository mainly supports a qualifying commercial service, place the entry in
 `Commercial & Proprietary Services`. Use the service name and stable service website as the main

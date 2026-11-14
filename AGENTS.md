@@ -148,7 +148,13 @@ Review requirements:
     editorial priority and readiness separate; checkable evidence is distinct from claims.
 12. Protect small, new, solo and pseudonymous projects; inspect actual implementation and
     dependencies rather than identity or popularity. Preserve the published permanent-free
-    rules and 12-month activity requirement. Classification labels never imply approval.
+    rules and CONTRIBUTING.md's meaningful-maintenance, low-change software and educational
+    criteria. Classification labels never imply approval.
+13. Default-branch committer dates are preliminary screening observations. Old or unknown
+    dates require manual evidence assessment; recent dates do not establish meaningful work.
+    Record compatibility/stewardship evidence and any exception rationale before approval.
+    Archived source remains subject to historical/cleanup rules. Books and papers may use
+    reachable authoritative sources; do not require them to manufacture repository activity.
 
 ## GitHub MCP Tools
 

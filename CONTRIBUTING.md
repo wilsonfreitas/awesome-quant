@@ -16,8 +16,8 @@ Links to existing documentation are enough; do not duplicate it or run code for 
   or other maintenance artifact; a stable maintainer handle/team and a public support route.
   A new solo project can link its initial implementation, documented limitations and support
   arrangements. No old issues, response quota, legal name, minimum stars, or minimum project
-  age is required. Pseudonymous maintainers are welcome. The existing activity requirement
-  below still applies; this evidence request does not change it.
+  age is required. Pseudonymous maintainers are welcome. Apply the meaningful-maintenance,
+  low-change software and educational-resource criteria below.
 - **Dependencies and access:** license, external services/data, credentials, payment or other
   restrictions, and what useful workflow is available from the public project itself.
 - **Affiliation and duplicates:** your relationship to the project (or none), related existing
@@ -93,8 +93,8 @@ PRs. For those PRs, reuse supplied evidence and request **only missing evidence*
 the submission; absence of the new template is not a rejection reason. There is no mass re-review,
 mass rejection or purge of existing listings. Correction requests remain in the correction queue
 regardless of category. Existing duplicate rules, historical exceptions, cleanup rules, permanent
-free-tier requirements and the 12-month activity requirement remain in force. Maintenance
-eligibility is unchanged by this process policy.
+free-tier requirements and the maintenance criteria below remain authoritative. An old commit
+date is a review lead, not a reason for a mass reclassification or removal.
 
 ## Entry Format
 
@@ -379,8 +379,9 @@ including:
 
 - Multiple unrelated projects added in a single PR without a clear grouping rationale.
 - Duplicate of an existing entry or a recently closed PR.
-- Project is archived or abandoned, unless it meets the documented
-  **Historical & Archived Projects** eligibility criteria.
+- Source is archived outside the **Historical & Archived Projects** category, except the
+  documented same-section cleanup cases. Missing or old commit dates alone do not establish
+  abandonment; apply the maintenance and educational criteria before deciding eligibility.
 - Empty PR description.
 
 Correctable format, wording, placement or missing-evidence defects receive a focused change
