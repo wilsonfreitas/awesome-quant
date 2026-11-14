@@ -580,6 +580,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [AgentServices](https://github.com/vbkotecha/agentservices-api) - `Python` - API server for crypto and market data with technical indicators, on-chain analytics, and MCP access; includes x402 payment support for hosted endpoints.
 - [The Stall](https://github.com/thebrierfox/the-stall) - `JavaScript` `MCP` - Self-hostable data and analytics service with equity technical indicators, multi-chain portfolio valuation, market-data adapters, and MCP interfaces.
 - [ninjatrader-to-parquet](https://github.com/tbraman-dev/ninjatrader-to-parquet) - `Python` - NinjaTrader 8 .ncd tick and minute history files to Parquet without NinjaTrader running; row-exact against NinjaTrader's own export, incremental re-runs.
+- [Congress Trade Alerts](https://congresstradealerts.com) - `TypeScript` `MCP` `Parquet` `CSV` `Atom` - Free congressional stock-trade disclosures from House and Senate periodic transaction reports, with each filing's lateness measured against the STOCK Act 45-day window, published as Atom feeds, weekly Parquet/CSV files, and a hosted MCP endpoint. [GitHub](https://github.com/freshcod3s/cta-pipeline)
 
 
 ## Prediction Markets
