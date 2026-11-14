@@ -75,6 +75,26 @@ CHECK_ORDER = (
 class Finding:
     check: str
     detail: str
+    severity: str = "error"
+
+
+def maintenance_screen(repository: Any, current_time: datetime) -> list[Finding]:
+    """Report a bounded recency observation; humans assess actual stewardship."""
+    try:
+        commit = repository.get_commit(sha=repository.default_branch)
+        committed_at = commit.commit.committer.date
+        if not isinstance(committed_at, datetime) or committed_at.tzinfo is None:
+            raise ValueError("missing timezone-aware commit date")
+        if committed_at > current_time:
+            raise ValueError("future commit date")
+    except Exception:
+        return [Finding("activity", "default-branch commit date is unverified; "
+                        "manual review requires maintenance or compatibility evidence", "review")]
+    if committed_at < current_time - timedelta(days=365):
+        return [Finding("activity", "default-branch commit is older than 365 days; "
+                        "manual review requires meaningful maintenance or a documented "
+                        "low-change/educational exception", "review")]
+    return []
 
 
 @dataclass(frozen=True)
@@ -720,7 +740,8 @@ def review_entry(
         )
 
     if not github_urls:
-        if section != "Commercial & Proprietary Services" and not unchanged_source:
+        if section not in {"Commercial & Proprietary Services",
+                           "Reproducing Works, Training & Books"} and not unchanged_source:
             findings.append(
                 Finding(
                     "github",
@@ -740,17 +761,8 @@ def review_entry(
             github_repo = client.get_repo(f"{owner}/{repo_name}")
             if github_repo.archived and not is_historical and not unchanged_source:
                 findings.append(Finding("activity", "repository is archived"))
-            pushed_at = github_repo.pushed_at
-            if not is_historical and not unchanged_source and (
-                pushed_at is None
-                or pushed_at < current_time - timedelta(days=365)
-            ):
-                findings.append(
-                    Finding(
-                        "activity",
-                        "repository has not been updated within the last 365 days",
-                    )
-                )
+            if not is_historical and not unchanged_source:
+                findings.extend(maintenance_screen(github_repo, current_time))
             try:
                 github_repo.get_readme()
             except GithubException as exc:
@@ -1028,19 +1040,29 @@ def main() -> int:
     print(f"Entries reviewed: {entries_reviewed}")
     if args.skip_pull_request_duplicates:
         print("Cross-PR duplicate check: skipped")
-    if not findings:
+    errors = [finding for finding in findings if finding.severity != "review"]
+    if not errors:
+        manual_checks = {finding.check for finding in findings}
         for check in CHECK_ORDER:
-            if check == "duplicates" and args.skip_pull_request_duplicates:
+            if check in manual_checks:
+                continue
+            if check == "activity":
+                print("- activity: screening complete; meaningful maintenance requires manual review")
+            elif check == "duplicates" and args.skip_pull_request_duplicates:
                 print("- duplicates: pass (existing README only)")
             else:
                 print(f"- {check}: pass")
+        for finding in findings:
+            print(f"- {finding.check}: manual review - {finding.detail}")
         print("Verdict: CHECKS PASSED")
         print("Recommended action: maintainer review")
+        print("Deterministic checks only; not eligibility or merge approval.")
         return 0
 
     print("Findings:")
     for finding in findings:
-        print(f"- {finding.check}: fail - {finding.detail}")
+        status = "manual review" if finding.severity == "review" else "fail"
+        print(f"- {finding.check}: {status} - {finding.detail}")
     print("Verdict: NEEDS CHANGES")
     print("Recommended action: no action")
     return 1

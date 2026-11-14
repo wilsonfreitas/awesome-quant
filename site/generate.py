@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from scripts.readme_entries import GITHUB_LINK_RE, iter_readme_entries, slugify
+from scripts.metadata import FIELDS, checked_at_value, date_value, stars_value
 
 
 def parse_readme(path: str) -> list[dict]:
@@ -44,7 +45,7 @@ def parse_readme(path: str) -> list[dict]:
             "commercial": entry.section == "Commercial & Proprietary Services",
             "github_url": github_url,
             "repo": repo_match.group(1) if repo_match else "",
-            "stars": 0,
+            "stars": None,
             "last_commit": "",
         })
     return entries
@@ -60,7 +61,7 @@ def load_csv(path: str) -> list[dict]:
             for key in ("github", "cran", "pypi", "commercial"):
                 row[key] = row.get(key, "").lower() in ("true", "1", "yes")
             # Normalize numbers
-            row["stars"] = int(float(row.get("stars", 0) or 0))
+            row["stars"] = stars_value(row.get("stars"))
             # Extract github_url and repo from CSV data
             repo = row.get("repo", "")
             row["github_url"] = f"https://github.com/{repo}" if repo else ""
@@ -85,7 +86,47 @@ def format_stars(n: int) -> str:
     """Format star count for display."""
     if n >= 1000:
         return f"{n / 1000:.1f}k".replace(".0k", "k")
-    return str(n) if n > 0 else ""
+    return str(n)
+
+
+def metadata_observation(entry: dict, field: str) -> dict:
+    """Interpret additive provenance fields; legacy dates have no known meaning."""
+    source, label = FIELDS[field]
+    value = stars_value(entry.get(field)) if field == "stars" else date_value(entry.get(field))
+    checked = checked_at_value(entry.get(field + "_checked_at"))
+    attributed = entry.get(field + "_source") == source
+    status = entry.get(field + "_status") if checked and attributed else "unknown"
+    if status not in ("fresh", "stale"):
+        status = "unknown"
+    if not attributed and value not in (None, ""):
+        label = ("Stars" if field == "stars" else "Date") + " (source unknown)"
+    if not attributed or value in (None, ""):
+        checked, status = "", "unknown"
+    note = {"fresh": "fresh", "stale": "stale (reused)", "unknown": "freshness unknown"}[status]
+    note = f"Checked {checked or 'unknown'} · {note}"
+    return dict(value=value, label=label, note=note, status=status)
+
+
+def build_metadata_details(entry: dict) -> str:
+    """Expose each field's successful check separately, including on mobile."""
+    details = []
+    for field, flag in (("last_commit", "github"), ("stars", "github"),
+                        ("pypi_upload", "pypi"), ("cran_published", "cran")):
+        observation = metadata_observation(entry, field)
+        value = observation["value"]
+        if not entry.get(flag) and value in (None, ""):
+            continue
+        display = "Unknown" if value in (None, "") else str(value)
+        details.append(
+            f'<p><strong>{html.escape(observation["label"])}</strong>: {html.escape(display)} '
+            f'<span class="metadata-note">{html.escape(observation["note"])}</span></p>'
+        )
+    attempted = checked_at_value(entry.get("metadata_attempted_at"))
+    if not details:
+        return ""
+    if attempted:
+        details.append(f'<p>Last metadata attempt: {html.escape(attempted)}</p>')
+    return '<div class="metadata-details">' + "".join(details) + '</div>'
 
 
 def build_tags_html(e: dict) -> str:
@@ -235,8 +276,13 @@ def generate_html(entries: list[dict]) -> str:
         desc = esc(e["description"])
         category = esc(e.get("category", ""))
         github_url = esc(e.get("github_url", ""))
-        stars = int(e.get("stars", 0) or 0)
-        last_commit = e.get("last_commit", "") or ""
+        stars_observation = metadata_observation(e, "stars")
+        stars = stars_observation["value"]
+        dates = [(metadata_observation(e, field), e.get(flag)) for field, flag in
+                 (("last_commit", "github"), ("pypi_upload", "pypi"), ("cran_published", "cran"))]
+        update = next((observation for observation, _ in dates if observation["value"]),
+                      next((observation for observation, applies in dates if applies), dates[0][0]))
+        update_date = update["value"] or ""
         is_github = e.get("github", False)
         is_cran = e.get("cran", False)
         is_pypi = e.get("pypi", False)
@@ -249,19 +295,23 @@ def generate_html(entries: list[dict]) -> str:
 
         # Stars display
         stars_html = (
-            f'<span class="stars" title="{stars:,} stars">'
+            f'<span class="stars" title="{stars:,} stars; {esc(stars_observation["note"])}">'
             f'<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'
             f" {format_stars(stars)}</span>"
-            if stars > 0
-            else ""
+            if stars is not None
+            else '<span class="metadata-unknown">Unknown</span>'
         )
+        if stars is not None and stars_observation["status"] != "fresh":
+            stars_html += f'<span class="metadata-label">{esc("stale (reused)" if stars_observation["status"] == "stale" else "source / check date unknown")}</span>'
 
-        # Last update display
+        # A registry date never acquires the label or provenance of a commit.
         last_update_html = (
-            f'<span class="last-update" title="Last commit: {esc(last_commit)}">{esc(last_commit)}</span>'
-            if last_commit and last_commit != "error"
-            else ""
+            f'<span class="last-update" title="{esc(update["note"])}">{esc(update_date) or "Unknown"}</span>'
+            f'<span class="metadata-label">{esc(update["label"]) if update_date or any(applies for _, applies in dates) else "No date available"}</span>'
         )
+        if update_date and update["status"] == "stale":
+            last_update_html += '<span class="metadata-label">stale (reused)</span>'
+        metadata_details = build_metadata_details(e)
 
         # Source flags for data attributes
         sources = []
@@ -278,7 +328,7 @@ def generate_html(entries: list[dict]) -> str:
         tags_html = build_tags_html(e)
 
         rows.append(
-            f"""      <tr class="row" data-tags="{tags_attr}" data-category="{category}" data-sources="{sources_attr}" data-stars="{stars}">
+            f"""      <tr class="row" data-tags="{tags_attr}" data-category="{category}" data-sources="{sources_attr}" data-stars="{stars if stars is not None else -1}" data-update="{esc(update_date)}">
         <td class="col-num">{i}</td>
         <td class="col-name">
           <a href="{url}" target="_blank" rel="noopener">{name}</a>
@@ -295,6 +345,7 @@ def generate_html(entries: list[dict]) -> str:
         <td colspan="6">
           <div class="expand-content">
             <p class="expand-desc">{desc}</p>
+            {metadata_details}
             <div class="expand-links">
               <a href="{url}" target="_blank" rel="noopener">{url}</a>
               {f'<a href="{github_url}" target="_blank" rel="noopener">{github_url}</a>' if github_url and github_url != url else ''}
@@ -326,7 +377,8 @@ def generate_html(entries: list[dict]) -> str:
       <nav class="nav">
         <span class="nav-brand">awesome-quant</span>
         <div class="nav-links">
-          <a href="https://github.com/wilsonfreitas/awesome-quant/blob/master/CONTRIBUTING.md" class="nav-submit">Submit a Project</a>
+          <a href="https://github.com/wilsonfreitas/awesome-quant/blob/main/CONTRIBUTING.md" class="nav-submit">Submit a Project</a>
+          <a href="https://github.com/wilsonfreitas/awesome-quant/blob/main/docs/choosing-backtesting.md">Choosing a backtester</a>
           <a href="https://github.com/wilsonfreitas/awesome-quant">GitHub</a>
           <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
             <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>

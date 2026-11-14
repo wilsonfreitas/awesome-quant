@@ -203,7 +203,7 @@
       return parseInt(row.dataset.stars || "0", 10);
     }
     if (key === "update") {
-      return ($(".last-update", row)?.textContent || "").trim();
+      return row.dataset.update || "";
     }
     return "";
   }
