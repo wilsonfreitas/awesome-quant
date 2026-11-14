@@ -1,12 +1,17 @@
 import csv
+import contextlib
 import importlib.util
 from html.parser import HTMLParser
+import io
 import json
 from pathlib import Path
 import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
+
+import parse
 
 from scripts.readme_entries import iter_readme_entries
 
@@ -124,3 +129,133 @@ class SiteGenerationTests(unittest.TestCase):
             result, output = self.generate(Path(tmp), '--source', 'csv')
             self.assertNotEqual(result.returncode, 0)
             self.assertFalse(output.exists())
+
+
+class MetadataDisplayTests(unittest.TestCase):
+    def test_trading_strategy_primary_trailing_slash_keeps_enrichment_and_github_filter(self):
+        preview = next(entry for entry in site.parse_readme(ROOT / 'README.md')
+                       if entry['project'] == 'Trading Strategy'
+                       and entry['url'].endswith('/trading-strategy/'))
+        self.assertEqual(preview['url'], 'https://github.com/tradingstrategy-ai/trading-strategy/')
+        match = parse.ENTRY_RE.match(f'- [Trading Strategy]({preview["url"]}) - `Python` - DeFi data.')
+        worker = parse.Project(match, 'Python', preview['category'], preview['category'])
+
+        def repository_info(repo):
+            return ('2026-01-02', 42) if repo == 'tradingstrategy-ai/trading-strategy' else ('', None)
+
+        with patch.object(parse, 'get_repo_info', side_effect=repository_info), contextlib.redirect_stdout(io.StringIO()):
+            worker.run()
+        enriched = worker.regs
+        self.assertEqual(enriched['repo'], preview['repo'])
+        self.assertEqual(enriched['github'], preview['github'])
+        self.assertEqual(enriched['stars'], 42)
+        self.assertEqual(enriched['last_commit'], '2026-01-02')
+        rendered = site.generate_html([enriched])
+        self.assertIn('data-sources="github"', rendered)
+        self.assertIn('data-filter-value="github"', rendered)
+
+    def entry(self, **values):
+        return dict(project='Engine', url='https://example.org', description='Engine.', **values)
+
+    def text(self, rendered):
+        chunks = []
+
+        class Collector(HTMLParser):
+            def handle_data(self, data):
+                chunks.append(data)
+
+        Collector().feed(rendered)
+        return ' '.join(chunks)
+
+    def test_source_labels_checks_and_stale_status_are_visible(self):
+        rendered = site.generate_html([self.entry(last_commit='2026-01-01',
+            last_commit_source='github_commit', last_commit_checked_at='2026-11-13T12:00:00+00:00',
+            last_commit_status='stale', stars=42, stars_source='github', stars_status='stale',
+            stars_checked_at='2026-11-12T12:00:00+00:00',
+            pypi_upload='2026-02-03', pypi_upload_source='pypi_upload', pypi_upload_status='fresh',
+            pypi_upload_checked_at='2026-11-14T12:00:00+00:00',
+            cran_published='2026-03-04', cran_published_source='cran_publication',
+            cran_published_status='fresh', cran_published_checked_at='2026-11-14T12:00:00+00:00')])
+        text = self.text(rendered)
+        for label in ('GitHub commit', 'PyPI upload', 'CRAN publication', 'Checked',
+                      '2026-11-13', '2026-11-12', 'stale', 'reused'):
+            self.assertIn(label, text)
+        self.assertIn('data-update="2026-01-01"', rendered)
+
+    def test_registry_fallback_is_labelled_upload_not_commit(self):
+        rendered = site.generate_html([self.entry(last_commit='', pypi_upload='2026-02-03',
+            pypi_upload_source='pypi_upload', pypi_upload_status='fresh',
+            pypi_upload_checked_at='2026-11-14T12:00:00+00:00')])
+        text = self.text(rendered)
+        self.assertIn('PyPI upload', text)
+        self.assertNotIn('Last commit: 2026-02-03', rendered)
+        self.assertIn('data-update="2026-02-03"', rendered)
+
+    def test_unknown_and_zero_stars_are_distinct_and_legacy_is_unattributed(self):
+        rendered = site.generate_html([self.entry(stars=None, last_commit='2020-01-01')])
+        text = self.text(rendered)
+        self.assertIn('Unknown', text)
+        self.assertIn('source unknown', text)
+        self.assertNotIn('Last commit:', rendered)
+        rendered = site.generate_html([self.entry(stars=0, stars_source='github',
+            stars_status='fresh', stars_checked_at='2026-11-14T12:00:00+00:00')])
+        self.assertIn('0 stars', rendered)
+
+    def test_metadata_escaping(self):
+        hostile = '\"><script>alert(1)</script>'
+        rendered = site.generate_html([self.entry(last_commit=hostile, last_commit_source=hostile,
+            last_commit_checked_at=hostile, last_commit_status=hostile,
+            metadata_attempted_at=hostile, stars=1, stars_checked_at=hostile)])
+        self.assertNotIn('<script>alert(1)</script>', rendered)
+        self.assertNotIn('title="Last commit:', rendered)
+
+    def test_empty_and_malformed_csv_metadata_remains_unknown(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'projects.csv'
+            with path.open('w', newline='') as handle:
+                writer = csv.DictWriter(handle, fieldnames=['project', 'url', 'description',
+                    'stars', 'last_commit', 'last_commit_source', 'last_commit_checked_at'])
+                writer.writeheader()
+                for stars in ('', 'NaN', 'inf', '-2', 'bad'):
+                    writer.writerow(dict(project='Engine', url='https://example.org', description='Engine.',
+                        stars=stars, last_commit='2026-02-30', last_commit_source='github_commit',
+                        last_commit_checked_at='bad'))
+            entries = site.load_csv(path)
+        for entry in entries:
+            self.assertIsNone(entry['stars'])
+        self.assertNotIn('2026-02-30', self.text(site.generate_html(entries)))
+
+    def test_preview_is_token_free_and_has_no_observed_stars(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'README.md'
+            path.write_text(FIXTURE)
+            entries = site.parse_readme(path)
+        self.assertTrue(all(e['stars'] is None for e in entries))
+        self.assertIn('Unknown', self.text(site.generate_html(entries)))
+
+    def test_guide_navigation_uses_main_branch(self):
+        rendered = site.generate_html([])
+        self.assertIn('href="https://github.com/wilsonfreitas/awesome-quant/blob/main/docs/choosing-backtesting.md"', rendered)
+        self.assertIn('>Choosing a backtester</a>', rendered)
+        self.assertIn('blob/main/CONTRIBUTING.md', rendered)
+        self.assertNotIn('blob/master/CONTRIBUTING.md', rendered)
+
+    def test_details_include_only_applicable_sources_and_actual_legacy_values(self):
+        rendered = site.build_metadata_details(self.entry(github=True, stars=None, last_commit=''))
+        text = self.text(rendered)
+        self.assertIn('GitHub commit', text)
+        self.assertIn('GitHub stars', text)
+        self.assertNotIn('PyPI', text)
+        self.assertNotIn('CRAN', text)
+        self.assertNotIn('Date (', text)
+        rendered = site.build_metadata_details(self.entry(pypi=True))
+        text = self.text(rendered)
+        self.assertIn('PyPI upload', text)
+        self.assertNotIn('GitHub', text)
+        self.assertNotIn('CRAN', text)
+        self.assertEqual(site.build_metadata_details(self.entry()), '')
+        text = self.text(site.build_metadata_details(self.entry(last_commit='2020-01-01', stars=42)))
+        self.assertIn('Date (source unknown)', text)
+        self.assertIn('2020-01-01', text)
+        self.assertIn('42', text)
+        self.assertNotIn('commit', text)

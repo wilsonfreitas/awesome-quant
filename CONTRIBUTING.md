@@ -16,8 +16,8 @@ Links to existing documentation are enough; do not duplicate it or run code for 
   or other maintenance artifact; a stable maintainer handle/team and a public support route.
   A new solo project can link its initial implementation, documented limitations and support
   arrangements. No old issues, response quota, legal name, minimum stars, or minimum project
-  age is required. Pseudonymous maintainers are welcome. The existing activity requirement
-  below still applies; this evidence request does not change it.
+  age is required. Pseudonymous maintainers are welcome. Apply the meaningful-maintenance,
+  low-change software and educational-resource criteria below.
 - **Dependencies and access:** license, external services/data, credentials, payment or other
   restrictions, and what useful workflow is available from the public project itself.
 - **Affiliation and duplicates:** your relationship to the project (or none), related existing
@@ -93,8 +93,8 @@ PRs. For those PRs, reuse supplied evidence and request **only missing evidence*
 the submission; absence of the new template is not a rejection reason. There is no mass re-review,
 mass rejection or purge of existing listings. Correction requests remain in the correction queue
 regardless of category. Existing duplicate rules, historical exceptions, cleanup rules, permanent
-free-tier requirements and the 12-month activity requirement remain in force. Maintenance
-eligibility is unchanged by this process policy.
+free-tier requirements and the maintenance criteria below remain authoritative. An old commit
+date is a review lead, not a reason for a mass reclassification or removal.
 
 ## Entry Format
 
@@ -171,9 +171,28 @@ Link to the PyPI package page. If the project has a GitHub repo, append it after
 
 ## Quality Requirements
 
-- **Active source-backed projects**: Projects backed by substantive source in the active
-  categories must show recent repository activity (commits within the last 12 months) and
-  provide a clear README with usage examples.
+- **Active source-backed projects**: Provide substantive implementation, a clear README with
+  usage examples, and evidence of meaningful maintenance within the preceding 12 months.
+  Examples include a relevant fix, compatibility update, release, substantive documentation
+  improvement, or engagement that resolves a reported problem. Link one representative
+  artifact and identify the responsible maintainer or team through a stable public handle
+  and support route. A recent push, bot commit, license, or README alone is not proof.
+- **Mature, low-change software**: A project without recent development may still qualify
+  when the contribution supplies current compatibility or reproducibility evidence, known
+  limitations, and an accountable support route. The reviewer records the specific evidence
+  and exception rationale; a submitter's claim alone does not grant an exception. If that
+  evidence is missing, request it or consider historical placement rather than automatically
+  rejecting or removing the project because of its age.
+- **History and identity**: Public development and release history provide context; there is
+  no minimum repository age, star count, team size, or legal-name requirement. A young or
+  migrated repository is not evidence of immaturity. Solo and pseudonymous maintainers can
+  demonstrate responsibility through their work and engagement.
+- **Educational resources**: In Reproducing Works, Training & Books, evaluate the concrete
+  learning/reproduction purpose, provenance, instructions, and documented environment and
+  limitations. Fixed research artifacts need not receive continuous commits. Executable
+  examples need reproducibility evidence for the stated environment; a book or paper needs
+  a reachable authoritative source. This does not exempt ordinary active software from
+  maintenance assessment or allow archived repositories outside the historical category.
 - **Historical & Archived Projects**: This category is the narrow exception to the active
   activity and archive-state requirements. An entry must use `Historical` plus a language or
   runtime tag, link to reachable substantive source or documentation, state a specific
@@ -182,6 +201,31 @@ Link to the PyPI package page. If the project has a GitHub repo, append it after
   marketing material, unsupported SDKs, or duplicate implementations.
 - **Repository-less commercial services**: See the permanent-free-tier, public-documentation,
   and transparency rules in the commercial section below.
+
+The automated reviewer reports the latest default-branch **committer** date as a preliminary
+recency screen. An old or unavailable date triggers a manual evidence assessment; a recent
+date does not verify that the work was meaningful. Check relevant releases, fixes, examples
+or support when making the editorial decision. Archived source still requires historical
+placement, apart from the documented same-section cleanup exception. Passing deterministic
+checks never approves a maintenance exception or establishes merge readiness.
+
+### Editorial quality and upkeep
+
+Describe the quantitative task and concrete capability in factual language. For a benchmark
+claim, provide the compared versions, workload/data, metric, environment and reproducible
+methodology; otherwise use a factual capability description without the unsupported number
+or superiority claim. Reviewers do not need to reproduce an exhaustive benchmark suite.
+
+Use the weekly audit as leads for focused correction batches. Recheck changed or genuinely
+unresolved evidence, retaining attributable prior decisions; HTTP restrictions and temporary
+errors alone do not justify removal. Review work for corrections and guide updates belongs
+in the same weekly PR review budget, not an additional mandatory deep audit. A relevant
+upstream change or reported error can trigger a guide update. Broader catalogue maintenance
+and engineering have separately scheduled effort.
+
+The [backtesting selection guide](docs/choosing-backtesting.md) illustrates task-oriented
+comparison and records its sources and limits. It is a starting point, not a ranking or a
+guarantee of suitability.
 
 
 ## Commercial & Proprietary Projects
@@ -335,8 +379,9 @@ including:
 
 - Multiple unrelated projects added in a single PR without a clear grouping rationale.
 - Duplicate of an existing entry or a recently closed PR.
-- Project is archived or abandoned, unless it meets the documented
-  **Historical & Archived Projects** eligibility criteria.
+- Source is archived outside the **Historical & Archived Projects** category, except the
+  documented same-section cleanup cases. Missing or old commit dates alone do not establish
+  abandonment; apply the maintenance and educational criteria before deciding eligibility.
 - Empty PR description.
 
 Correctable format, wording, placement or missing-evidence defects receive a focused change

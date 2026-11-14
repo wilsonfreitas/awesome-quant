@@ -548,6 +548,25 @@ button {
   font-variant-numeric: tabular-nums;
 }
 
+.metadata-label,
+.metadata-note {
+  display: block;
+  white-space: normal;
+  font-size: 0.7rem;
+  color: var(--ink-secondary);
+}
+
+.metadata-unknown {
+  font-size: 0.8rem;
+  color: var(--ink-secondary);
+}
+
+.metadata-details {
+  margin: 0.75rem 0;
+  font-size: 0.8rem;
+  overflow-wrap: anywhere;
+}
+
 .col-tags {
   width: auto;
 }
@@ -828,6 +847,12 @@ button {
 
   .nav {
     margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
   }
 
   .hero-content h1 {

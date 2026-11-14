@@ -183,6 +183,13 @@ attributable unchanged evidence and preserve the cleanup exceptions above:
 - GitHub projects are checked for source availability, activity, archived status,
   documentation, and community evidence. GitHub relevance does not waive duplicate, format,
   or quality checks.
+- Apply CONTRIBUTING.md's meaningful-maintenance, mature low-change software, and educational
+  resource criteria. A recent default-branch commit is a screening signal only. An old or
+  unverified date requires a focused evidence assessment, not an automatic rejection. Inspect
+  one relevant fix, release, compatibility example, substantive documentation change or support
+  interaction. Record the evidence and any exception rationale; missing evidence blocks manual
+  approval even when deterministic CI passes. Repository age, stars, team size and legal names
+  are not eligibility gates. Archived source retains the historical/cleanup restrictions.
 - Multiple projects in one PR are closely related and explained in the PR body.
 
 ## Repository Substance and Linked Services
@@ -211,8 +218,9 @@ Solo and pseudonymous maintainers need no legal-name verification, old issues or
 Use fixes, development, documented limitations and a support route as maintenance evidence,
 including initial implementation for new projects. Do not infer authenticity from identity,
 avatars or apparent AI use. Useful standalone data clients and open cores are assessed by their
-actual public functionality; API use alone does not make implementation thin. Retain the current
-12-month activity rule from CONTRIBUTING.md; maintenance eligibility is unchanged here.
+actual public functionality; API use alone does not make implementation thin. Apply the
+meaningful-maintenance and documented exceptions in CONTRIBUTING.md, using the focused
+evidence assessment above rather than treating a timestamp as proof.
 
 When a repository mainly supports a qualifying commercial service, place the entry in
 `Commercial & Proprietary Services`. Use the service name and stable service website as the main
@@ -250,8 +258,10 @@ Use these verdicts:
   A precise missing-evidence request may use this verdict while eligibility remains
   `NEEDS EVIDENCE`; it does not assert that the service qualifies.
 - Other `REJECT` cases include duplicates, unrelated multi-project PRs, empty PR descriptions,
-  archived or abandoned projects unless they qualify under CONTRIBUTING.md's
-  `Historical & Archived Projects` exception, and other hard rejections.
+  archived projects outside CONTRIBUTING.md's `Historical & Archived Projects` or documented
+  cleanup exceptions, and other demonstrated hard failures. Old or missing commit dates alone
+  do not establish abandonment: assess the documented low-change and educational criteria,
+  requesting missing evidence before deciding eligibility.
 - Cleanup follows CONTRIBUTING.md's limited exceptions, with manual review still required.
 
 ## Output Shape
