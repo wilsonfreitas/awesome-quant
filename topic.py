@@ -1,25 +1,25 @@
 
+"""Manual GitHub quant-topic discovery; importing this module performs no search."""
+
 import os
-from github import Github
+import sys
+from github import Auth, Github
 
-# using an access token
-g = Github(os.environ['GITHUB_ACCESS_TOKEN'])
 
-# ts = g.search_topics('trading')
+def main() -> int:
+    token = os.environ.get('GITHUB_ACCESS_TOKEN')
+    if not token:
+        print('GITHUB_ACCESS_TOKEN is required', file=sys.stderr)
+        return 1
+    with Github(auth=Auth.Token(token)) as client:
+        repos = client.search_repositories(query='topic:quant')
+        for repo in repos:
+            if repo.stargazers_count < 1000:
+                break
+            print(repo.name, repo.stargazers_count, repo.language, repo.html_url,
+                  repo.description, repo.updated_at, repo.archived)
+    return 0
 
-# for t in ts:
-#     print(t)
 
-# t = ts[0]
-# print(t)
-# print(t.name)
-# print(t.updated_at)
-# print(t.score)
-
-topic = 'quant'
-repos = g.search_repositories(query=f'topic:{topic}')
-for repo in repos:
-    if repo.stargazers_count < 1000:
-        break
-    print(repo.name, repo.stargazers_count, repo.language, repo.html_url,
-          repo.description, repo.updated_at, repo.archived)
+if __name__ == '__main__':
+    raise SystemExit(main())
