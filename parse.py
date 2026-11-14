@@ -33,8 +33,8 @@ def get_github_client():
 
 
 def extract_repo(url):
-    reu = re.compile(r"^https://github.com/([\w-]+/[-\w\.]+)$")
-    m = reu.match(url)
+    reu = re.compile(r"https://github\.com/([\w-]+/[-\w\.]+)")
+    m = reu.fullmatch(url.rstrip("/"))
     if m:
         return m.group(1)
     else:
@@ -72,12 +72,14 @@ def get_cran_info(url):
                 super().__init__()
                 self._in_td = False
                 self._found_published = False
+                self._cell_text = ""
                 self.date = ""
                 self.github_url = ""
 
             def handle_starttag(self, tag, attrs):
                 if tag == "td":
                     self._in_td = True
+                    self._cell_text = ""
                 # Also check <a href> for github.com links
                 if tag == "a" and not self.github_url:
                     href = dict(attrs).get("href", "")
@@ -86,20 +88,19 @@ def get_cran_info(url):
 
             def handle_endtag(self, tag):
                 if tag == "td":
+                    cell = self._cell_text.strip()
+                    if self._in_td and self._found_published and not self.date:
+                        self.date = date_value(cell)
+                    self._found_published = cell == "Published:"
                     self._in_td = False
 
             def handle_data(self, data):
                 if self._in_td:
-                    if data.strip() == "Published:":
-                        self._found_published = True
-                    elif self._found_published and not self.date:
-                        d = data.strip()
-                        if re.match(r"\d{4}-\d{2}-\d{2}", d):
-                            self.date = d
+                    self._cell_text += data
 
         parser = CranParser()
         parser.feed(page_html)
-        if not parser._found_published:
+        if not parser.date:
             return None
         # Clean trailing slashes or .git from GitHub URL
         gh = parser.github_url.rstrip("/")

@@ -37,7 +37,8 @@ jobs:
         published_ref="$(git ls-remote --heads origin refs/heads/gh-pages)"
         if [ -n "$published_ref" ]; then
           git fetch --no-tags --depth=1 origin refs/heads/gh-pages
-          if git cat-file -e FETCH_HEAD:projects.csv 2>/dev/null; then
+          published_csv="$(git ls-tree --name-only FETCH_HEAD -- projects.csv)"
+          if [ "$published_csv" = projects.csv ]; then
             git show FETCH_HEAD:projects.csv > "$RUNNER_TEMP/prior-projects.csv"
             cp "$RUNNER_TEMP/prior-projects.csv" site/projects.csv
           else

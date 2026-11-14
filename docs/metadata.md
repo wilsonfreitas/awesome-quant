@@ -64,9 +64,11 @@ tag, and category edits do not invalidate observations of the same project.
 When CRAN previously supplied the repository, a failed discovery can reuse that
 repository for the unchanged entry. A successful package page that removes or
 changes its repository link invalidates the previous observations. A response
-without the CRAN publication marker is treated as unavailable, not as evidence
-of repository removal. Only observations with the expected source, a valid
-value, and a valid successful-check timestamp can be reused.
+without a complete, valid CRAN publication-date cell is treated as unavailable,
+not as evidence of repository removal. Only observations with the expected source, a valid
+value, and a valid successful-check timestamp can be reused. Trailing slashes in
+GitHub repository URLs are normalized for repository lookup; the identity still
+retains the exact primary URL and never carries observations to another repository.
 
 Older CSV columns remain supported by the site. A legacy `last_commit` may have
 been a registry date, so it is shown as **Date (source unknown)**. Legacy
@@ -89,8 +91,9 @@ The enriched CSV is deployed alongside the site and restored by the next clean
 build. No separate cache service or expiry policy is required.
 
 A missing branch or missing CSV permits the first build with unknown values for
-failed lookups. A transport failure restoring an existing publication stops the
-build before deployment, protecting the published history. Locally the parser
-reads its existing destination CSV before enrichment and replaces it atomically
+failed lookups. A failed tree listing, corrupt Git object, or transport failure
+restoring an existing publication stops the build before deployment, protecting
+the published history. Locally the parser reads its existing destination CSV
+before enrichment and replaces it atomically
 afterward. The CSV is generated data and stays untracked. An absent, unreadable,
 or legacy local cache degrades to unknown fields when enrichment fails.

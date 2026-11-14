@@ -36,7 +36,11 @@ case "$1" in
     [ "$SCENARIO" = first ] || echo 'abc refs/heads/gh-pages'
     ;;
   fetch) [ "$SCENARIO" != fetch-failed ] || exit 1 ;;
-  cat-file) [ "$SCENARIO" != no-csv ] || exit 1 ;;
+  ls-tree)
+    [ "$*" = 'ls-tree --name-only FETCH_HEAD -- projects.csv' ] || exit 99
+    [ "$SCENARIO" != inspection-failed ] || exit 128
+    [ "$SCENARIO" = no-csv ] || echo 'projects.csv'
+    ;;
   show)
     [ "$SCENARIO" != show-failed ] || exit 1
     cat "$PUBLISHED_CSV"
@@ -73,3 +77,8 @@ exit 0
                 result, content = self.restore(scenario)
                 self.assertNotEqual(result.returncode, 0)
                 self.assertIsNone(content)
+
+    def test_tree_inspection_failure_stops_build_instead_of_losing_cache(self):
+        result, content = self.restore('inspection-failed')
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIsNone(content)

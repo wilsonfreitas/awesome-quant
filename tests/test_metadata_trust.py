@@ -110,6 +110,27 @@ class MetadataTrustTests(unittest.TestCase):
                 self.assertIsNone(row['stars'])
                 self.assertEqual(row['pypi_upload'], '')
 
+    def test_trailing_slash_repository_is_enriched_without_inheriting_another_repository(self):
+        old = self.observe(url='https://github.com/example/engine/', suffix='')
+        self.assertEqual(old['repo'], 'example/engine')
+        self.assertTrue(old['github'])
+        row = self.observe(url='https://github.com/example/replacement/', suffix='',
+                           github=('', None), prior=old, checked_at=LATER)
+        self.assertEqual(row['repo'], 'example/replacement')
+        self.assertTrue(row['github'])
+        self.assertEqual(row['last_commit'], '')
+        self.assertIsNone(row['stars'])
+        self.assertEqual(row['last_commit_status'], 'unknown')
+        self.assertNotEqual(row['metadata_identity'], old['metadata_identity'])
+
+    def test_repository_normalization_does_not_accept_other_hosts_or_subpaths(self):
+        for url in ('https://githubXcom/example/engine/',
+                    'https://github.com/example/engine/issues/',
+                    'https://github.com/example/engine/?next=other',
+                    'https://github.com/example/engine/#other'):
+            with self.subTest(url=url):
+                self.assertEqual(parse.extract_repo(url), '')
+
     def test_legacy_cache_and_malformed_observations_are_not_trusted(self):
         legacy = dict(project='Engine', url='https://pypi.org/project/engine/',
                       repo='example/engine', last_commit='2020-01-01', stars=0)
@@ -143,7 +164,7 @@ class MetadataTrustTests(unittest.TestCase):
         self.assertEqual(row['repo'], 'example/r')
         self.assertEqual(row['cran_published_checked_at'], NOW)
         self.assertEqual(row['cran_published_status'], 'stale')
-        with patch.object(parse, 'get_cran_info', return_value=('', 'https://github.com/example/new')), \
+        with patch.object(parse, 'get_cran_info', return_value=('2026-11-01', 'https://github.com/example/new')), \
              patch.object(parse, 'get_repo_info', return_value=('', None)), \
              contextlib.redirect_stdout(io.StringIO()):
             row = project(url='https://cran.r-project.org/package=engine', suffix='', prior=old)
@@ -232,3 +253,29 @@ class MetadataTrustTests(unittest.TestCase):
                 row = next(csv.DictReader(handle))
             self.assertEqual(row['stars'], '')
             self.assertEqual(row['last_commit_status'], 'unknown')
+
+    def test_incomplete_or_invalid_cran_publication_preserves_cached_observations(self):
+        with patch.object(parse, 'get_cran_info', return_value=('2026-03-04', 'https://github.com/example/r')), \
+             patch.object(parse, 'get_repo_info', return_value=('2026-01-02', 3)), \
+             contextlib.redirect_stdout(io.StringIO()):
+            old = project(url='https://cran.r-project.org/package=engine', suffix='')
+        for page in (b'<td>Published:</td>',
+                     b'<td>Published:</td><td></td>',
+                     b'<td>Published:</td><td>2026-02-30</td>',
+                     b'<td>Published:</td><td>2026-11-01',
+                     b'<td>Published:</td><td>unknown</td><td>2026-11-01</td>'):
+            with self.subTest(page=page):
+                response = Mock()
+                response.__enter__ = Mock(return_value=response)
+                response.__exit__ = Mock(return_value=False)
+                response.read.return_value = page
+                with patch.object(parse, 'urlopen', return_value=response), \
+                     patch.object(parse, 'get_repo_info', return_value=('', None)), \
+                     contextlib.redirect_stdout(io.StringIO()):
+                    row = project(url='https://cran.r-project.org/package=engine', suffix='',
+                                  prior=old, checked_at=LATER)
+                self.assertEqual(row['repo'], 'example/r')
+                for field, value in (('last_commit', '2026-01-02'), ('stars', 3), ('cran_published', '2026-03-04')):
+                    self.assertEqual(row[field], value)
+                    self.assertEqual(row[field + '_checked_at'], NOW)
+                    self.assertEqual(row[field + '_status'], 'stale')

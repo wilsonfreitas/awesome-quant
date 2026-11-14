@@ -1,12 +1,17 @@
 import csv
+import contextlib
 import importlib.util
 from html.parser import HTMLParser
+import io
 import json
 from pathlib import Path
 import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
+
+import parse
 
 from scripts.readme_entries import iter_readme_entries
 
@@ -127,6 +132,28 @@ class SiteGenerationTests(unittest.TestCase):
 
 
 class MetadataDisplayTests(unittest.TestCase):
+    def test_trading_strategy_primary_trailing_slash_keeps_enrichment_and_github_filter(self):
+        preview = next(entry for entry in site.parse_readme(ROOT / 'README.md')
+                       if entry['project'] == 'Trading Strategy'
+                       and entry['url'].endswith('/trading-strategy/'))
+        self.assertEqual(preview['url'], 'https://github.com/tradingstrategy-ai/trading-strategy/')
+        match = parse.ENTRY_RE.match(f'- [Trading Strategy]({preview["url"]}) - `Python` - DeFi data.')
+        worker = parse.Project(match, 'Python', preview['category'], preview['category'])
+
+        def repository_info(repo):
+            return ('2026-01-02', 42) if repo == 'tradingstrategy-ai/trading-strategy' else ('', None)
+
+        with patch.object(parse, 'get_repo_info', side_effect=repository_info), contextlib.redirect_stdout(io.StringIO()):
+            worker.run()
+        enriched = worker.regs
+        self.assertEqual(enriched['repo'], preview['repo'])
+        self.assertEqual(enriched['github'], preview['github'])
+        self.assertEqual(enriched['stars'], 42)
+        self.assertEqual(enriched['last_commit'], '2026-01-02')
+        rendered = site.generate_html([enriched])
+        self.assertIn('data-sources="github"', rendered)
+        self.assertIn('data-filter-value="github"', rendered)
+
     def entry(self, **values):
         return dict(project='Engine', url='https://example.org', description='Engine.', **values)
 
