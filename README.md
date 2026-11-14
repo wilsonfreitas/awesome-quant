@@ -597,6 +597,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [QuantRank500](https://github.com/RusUsf/quantrank500) - `Python` - Open-source public record of stock predictions: commit-reveal before the open, automatic settlement against exchange data, tamper-evident hash-chained ledger. Live at [quantrank500.com](https://quantrank500.com).
 - [outcometick](https://outcometick.com) - `Python` `JavaScript` - Tick-level history for Polymarket and Predict.fun crypto Up/Down markets, including the full-precision Chainlink settlement feeds and each market's strike and settled outcome, with a sandboxed runner that replays a submitted strategy against the same archive. [GitHub](https://github.com/outcometick/outcometick-sdk-ts)
 - [pm-hftbacktest](https://github.com/mileswangs/pm-hftbacktest) - `Rust` `Python` - High-frequency trading and market-making backtesting for Polymarket, written in Rust, with queue position, latency and maker/taker fee models applied to tick-level L2 order book and trade data.
+- [kalshi-fees](https://github.com/Div770770/kalshi-fees) - `Python` `MCP` - Kalshi taker and maker fees in exact integer arithmetic under Kalshi's documented rounding, with fee-inclusive break-even and Kelly sizing, a scan of which series charge makers, Polymarket US taker and combo fees by volume tier, and an MCP server over the same functions.
 
 ## Calendars & Market Hours
 
