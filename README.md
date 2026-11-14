@@ -458,6 +458,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Market Data & Data Sources
 
+- [US Bank Data](https://github.com/anshuman-pandey/us-bank-data) - `Python` - U.S. bank financial panels from FDIC with explicit reporting quarters, normalized units, archived source evidence and portable exports.
 - [prop-firm-rules](https://github.com/kburrus64-max/prop-firm-rules) - `Python` `JavaScript` `Data` - Sourced, dated dataset of prop-trading-firm daily-loss and max-drawdown rules (static and trailing, lock levels, reset times) for 9 firms and 13 programs, with a zero-dependency JS/Python drawdown calculator.
 - [Dividend Data Toolkit](https://github.com/holaclea/dividend-data-toolkit) - `Python` `Data` - Dated SCHD payment and holdings snapshots with source URLs, data dictionaries, and Python tools for split-aware dividend windows and ETF company-exposure checks. [Website](https://dividendsteps.com/)
 - [Market Brief](https://github.com/beepboop2025/market-brief) - `Python` `JavaScript` - Source-linked money-market, capital-market, and liquidity briefs with local snapshot comparisons and explicit missing-data states.
