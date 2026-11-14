@@ -54,6 +54,10 @@ checklist, verdicts, output fields, and action/freshness contract.
    findings after changes; request only missing evidence for already-open PRs. Stop at a decisive
    published-rule failure or the 10–15 minute investigation boundary. Uncertain/failed retrieval
    produces one decisive evidence question or explicit deferral, not unsupported rejection.
+   Apply `sprr`'s Mechanical Conflict Preparation to selected integration candidates: prepare
+   and verify simple resolutions locally, retain unaffected editorial findings, and include the
+   exact patch and publication conditions in the digest. Do not request an author rebase merely
+   because unrelated entries landed in the base.
 6. Summarize unchanged/waiting-on-author/pending-CI work as counts unless a concrete action is
    needed. Changed prior submissions compete for the same slots; they do not expand the batch.
    At the time/weekly limit, carry overflow forward with no automatic acceptance/rejection and
@@ -61,6 +65,9 @@ checklist, verdicts, output fields, and action/freshness contract.
    then displace planned work. Agent compute/preparation and human verification remain visible.
 7. Present the digest below and one exact action bundle for selection. Execute only that scope
    under `sprr`; a stale action is held for affected review, not silently corrected and executed.
+   Publish resolutions and integrate PRs sequentially against a freshly checked base. An exact
+   resolution may include conditional merge consent under `sprr`; its verified, approved head
+   transition does not require repeat consent. Unexpected changes still hold affected actions.
    Follow-ups, reapproval and result verification consume the same weekly allowance.
 
 ## Summary Output
@@ -84,8 +91,11 @@ Keep notes to decisive evidence and missing questions; do not reproduce a full a
 waiting PR. Include exact comment text, label changes, closure effects and merge SHA/method for
 every proposed action. Apply `sprr`'s Legacy CI Transition to successful runs from checkers
 predating snapshots; identify manual reconciliation in the digest rather than blocking solely
-on the missing stamp. Other missing/untrustworthy snapshots remain unverified. Pending CI cannot
-authorize merge. Resolve CI provenance gaps as maintainer work, without automatic author requests
+on the missing stamp. Other missing/untrustworthy snapshots remain unverified. Pending CI blocks
+merge execution and an `APPROVE` verdict, but an explicitly selected exact mechanical-resolution
+bundle may authorize a conditional merge under `sprr`. Include the resolution proof, target branch,
+permission status and remaining checks; never present preparation as readiness.
+Resolve CI provenance gaps as maintainer work, without automatic author requests
 or a backlog-wide rerun.
 
 Ask once for selection of the listed action IDs/PR bundles, or `none`. For example:

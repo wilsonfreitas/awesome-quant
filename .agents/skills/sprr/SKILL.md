@@ -49,6 +49,8 @@ If GitHub MCP tools are unavailable, report that PR operations are blocked and p
    with their source links, date and limits. Refresh live facts when stale, changed, unavailable,
    or needed for an action. No fixed age expiry is introduced. Stop at a decisive published-rule
    failure; do not research pricing after an independently confirmed duplicate, for example.
+   For a selected candidate blocked by a README conflict, prepare the mechanical resolution
+   below before presenting actions; do not automatically send integration work to the author.
 6. For new, changed, stale or missing source findings in selected candidates, inspect one
    implementation path, one example/test and one maintenance artifact as relevant to those
    findings. Reuse attributable unaffected evidence. Record checked/claimed/unresolved.
@@ -77,6 +79,7 @@ candidates save retrieval, not per-entry judgment; incomplete coverage is unreso
 | Main/repository URL, implementation or hosted dependency | Substance, relevance, source/service classification, access eligibility, duplicates and reachability. |
 | Section move or historical status | Semantic placement and applicable source/activity/historical rules. |
 | Base README or checker/policy | Affected duplicate/mechanical/policy findings and required workflow evidence. |
+| Mechanical conflict caused by base advancement | Preservation of base content and the reviewed contribution, duplicates, section and new-revision CI; retain unaffected editorial evidence. |
 | Unchanged evidence waiting on author/CI | Summarize blocker; no repeated full review. |
 
 Historical entries use CONTRIBUTING.md's `Historical & Archived Projects` exception rather
@@ -87,6 +90,42 @@ exceptions; replacement repositories and section moves receive normal checks. Ve
 evidence, replacement searches and historical/commercial status manually. `CHECKS PASSED`
 is not eligibility or merge approval. Read the public cleanup rules rather than inventing
 a five-entry rejection for a valid cleanup batch.
+
+## Mechanical Conflict Preparation
+
+Prepare only selected candidates, in an isolated local directory/worktree. Fetch the actual
+current base branch tip, PR head and common ancestor; a PR's recorded base SHA may be older
+than the branch tip. Reconstruct the three-way conflict without executing contributor code.
+
+A conflict is mechanical only when the reviewed contribution can be preserved exactly alongside
+all current-base content, without an editorial choice. For independent additions at the same
+position, retain both entries in their intended section. Never blindly choose ours/theirs.
+Conflicting descriptions, URLs, placement, duplicates, removals or unrelated files require
+affected editorial/code review and a revised proposal; they are not mechanical repairs.
+
+Before proposing publication:
+
+1. Show the resolved diff against the current base. Prove that the complete resulting tree is
+   the current base plus only the previously reviewed contribution: no lost entries, incidental
+   edits or changes outside the approved scope. Recheck affected duplicates, placement and format.
+2. Record repository, target fork/branch, original head, current base, common ancestor, exact
+   patch and resolved tree/content digest. Reuse unaffected source/maintenance findings.
+3. Check tool capability and fork write permission. Missing permission metadata is unknown,
+   not a denial or a grant. If access cannot be established, keep publication blocked and supply
+   the prepared patch; any message to the author needs its own approved exact text.
+4. Prefer merging the observed base into the contributor branch with the contributor head as
+   first parent, followed by a guarded fast-forward update. Preserve history; do not force-push,
+   replace the PR or change the contribution as an implicit conflict repair.
+
+Local preparation needs no PR-write consent and does not establish merge readiness. Publication
+and any conditional merge must be explicitly included in the selected action bundle below.
+After publication, require both workflows for the resulting revision under the normal provenance
+rules. Old-head success and local validation cannot satisfy these gates. Do not attribute a CI
+failure to the conflict without evidence.
+
+Integrate selected PRs sequentially, refreshing the base before each one. If inputs change,
+reassess affected evidence and the prepared result; do not silently expand an approved patch or
+enter an unbounded repair/retry loop. Carry blocked work forward within the human review budget.
 
 ## CI Evidence Rules
 
@@ -302,6 +341,7 @@ Scope: <files, lane, entries>; duplicate search: <terms/scope/date/results/gaps>
 Eligibility: QUALIFIES | FAILS PUBLISHED RULE <rule/evidence> | NEEDS EVIDENCE
 Priority: <reason; distinct from eligibility>
 Readiness: READY | BLOCKED <specific blocker>
+Integration, when needed: <mechanical or editorial; preserved content; patch/tree digest; target branch and permission; observed base/head; publication/CI blockers>
 
 Automated validation:
 - Validate PR: PASS | FAIL | PENDING | UNVERIFIED
@@ -335,9 +375,21 @@ Ask for one explicit selection of that concrete bundle. A clear selection author
 listed actions for the observed inputs, once; do not ask again for identical approval, including
 a listed merge. Ambiguous selections authorize no unstated effects.
 
+For a prepared mechanical resolution, the bundle may explicitly authorize publication plus a
+conditional merge before new CI exists. Include the exact resolution and inputs recorded above,
+publication method, merge method, and conditions: verify the published commit's parents and full
+tree against the approved result, both latest workflow gates/provenance must pass, all affected
+manual findings must be resolved, and no material unapproved input change may have occurred.
+Record the resulting commit SHA and use it as the expected-head merge guard. The intended head
+transition to this verified result is already authorized; it does not itself require another
+consent prompt. A different result or unexpected head/base/body/title/policy change holds affected
+actions for renewed review/consent. Keep readiness BLOCKED and verdict INCOMPLETE until the gates
+pass; conditional authorization is not an APPROVE verdict or permission to bypass CI.
+
 Immediately before each selected PR's actions, refresh head/base/body, relevant external evidence,
 both latest required attempts/provenance and README/cross-PR duplicates. On failed refresh, hold
-the action as unverified. A material change invalidates affected findings and consent: hold that
+the action as unverified. Except for the verified head transition explicitly authorized above,
+a material change invalidates affected findings and consent: hold that
 PR, review the changed evidence, and obtain approval for the revised bundle within available
 time. Unaffected PRs may proceed under their original selection after their own refresh; overflow
 carries forward. Pending CI prevents merge; a precisely approved evidence-request comment may
