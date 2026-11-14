@@ -634,6 +634,7 @@ for use cases, tradeoffs, and validation questions.
 
 ## Excel & Spreadsheet Integration
 
+- [Crypto Portfolio Tracker](https://github.com/assassinationss/crypto-portfolio-tracker) - `Excel` - Formula-driven crypto portfolio and trade-log tracker with FIFO P&L and tax-export columns. No macros, no accounts.
 - [Bilig](https://github.com/proompteng/bilig) - `TypeScript` - Formula WorkPaper and XLSX recalculation runtime for Node.js services and agent tools.
 - [xlwings](https://www.xlwings.org/) - `Python` - Make Excel fly with Python. [GitHub](https://github.com/xlwings/xlwings)
 - [openpyxl](https://openpyxl.readthedocs.io/en/latest/) - `Python` - Read/Write Excel 2007 xlsx/xlsm files.
