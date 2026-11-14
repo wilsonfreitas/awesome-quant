@@ -179,6 +179,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 ## Trading & Backtesting
 
+- [Kaspar-HFT](https://github.com/vincent212/kaspar-hft) - `C++` `Rust` - Trading system and queue-exact order-book simulator on a C++20 actor framework; the same strategy runs in PCAP replay, paper trading and live, with CME MDP3 and iLink 3 handlers included.
 - [TriDomainMoE](https://primeclub-quant.vercel.app/) - `Python` `PyTorch` `MetaTrader 5` - Institutional multi-domain Mixture of Experts (MoE) trading architecture with Continuous Softmax CAW routing, zero-forgetting ReCAP continual adaptation, and sub-20ms MetaTrader 5 live execution. [GitHub](https://github.com/ElMoorish/TriDomainMoE)
 - [QuantVibe](https://github.com/Ax3lsk3r3/QuantVibe) - `Python` `TypeScript` - Qlib-based trading research platform with Alpha158 and LightGBM models, model-quality checks, SHA-256 signal checksums, a read-only MCP server, and MetaTrader 5 execution integration.
 - [QuantDinger](https://github.com/OpenByteInc/QuantDinger) - `Python` - Self-hosted platform for AI-assisted Python strategy development, backtesting, and paper and live trading across crypto exchanges and traditional brokers.
