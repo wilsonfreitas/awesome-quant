@@ -11,7 +11,7 @@ class ReadmeAuditWorkflowTests(unittest.TestCase):
 
 on:
     schedule:
-        - cron: "0 9 * * 1"
+        - cron: "0 9 * * 5"
     workflow_dispatch:
 
 permissions:

@@ -3,11 +3,13 @@
 
 from __future__ import annotations
 
-import json
 import re
 import sys
 from pathlib import Path
-from urllib.request import urlopen
+
+ROOT = Path(__file__).resolve().parents[4]
+sys.path.insert(0, str(ROOT))
+from scripts.pypi_metadata import get_pypi_last_updated
 
 PYPI_PROJECTS = {
     "qfrm": "qfrm",
@@ -16,27 +18,7 @@ PYPI_PROJECTS = {
     "metatrader5": "MetaTrader5",
 }
 
-README_PATH = Path(__file__).resolve().parents[4] / "README.md"
-
-
-def get_pypi_last_updated(package_name: str) -> str | None:
-    url = f"https://pypi.org/pypi/{package_name}/json"
-    try:
-        with urlopen(url, timeout=10) as response:
-            data = json.loads(response.read().decode("utf-8"))
-    except Exception as exc:
-        print(f"ERROR fetching {package_name}: {exc}", file=sys.stderr)
-        return None
-
-    releases = data.get("releases", {})
-    for version in sorted(releases.keys(), reverse=True):
-        files = releases[version]
-        if not files:
-            continue
-        upload_time = files[0].get("upload_time_iso_8601")
-        if upload_time:
-            return upload_time.split("T", 1)[0]
-    return None
+README_PATH = ROOT / "README.md"
 
 
 def find_readme_entry(readme_content: str, display_name: str) -> tuple[int | None, str | None]:

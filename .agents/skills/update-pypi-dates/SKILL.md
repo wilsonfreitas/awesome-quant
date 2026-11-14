@@ -5,7 +5,11 @@ description: Refresh tracked PyPI last-updated dates in awesome-quant README.md.
 
 # Update PyPI Dates
 
-Refresh last release dates for selected PyPI packages listed in `README.md`.
+Refresh latest distribution-upload dates for selected PyPI packages in `README.md`.
+The shared `scripts/pypi_metadata.py` helper selects the latest valid upload in
+UTC across every release file, including prerelease and yanked files. This is
+upload recency, not latest stable-version selection. Unavailable dates preserve
+existing README notes.
 
 ## Workflow
 
@@ -34,4 +38,5 @@ The script currently tracks:
 - `tushare`
 - `metatrader5` / `MetaTrader5`
 
-To add packages, edit `PYPI_PROJECTS` in `scripts/check_pypi_dates.py`.
+To add packages, edit `PYPI_PROJECTS` in
+`.agents/skills/update-pypi-dates/scripts/check_pypi_dates.py` (relative to the repo).
