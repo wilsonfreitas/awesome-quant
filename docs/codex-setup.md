@@ -111,6 +111,9 @@ Explicit CSV mode fails if the CSV is unavailable; it never falls back to README
 Use `--readme PATH`, `--csv PATH`, and `--output PATH` for isolated previews.
 The generated `site/projects.csv` and `site/index.html` are ignored source-tree
 outputs, rebuilt for deployment. Source assets and `site/.nojekyll` remain tracked.
+Production restores the previously published CSV before enrichment so failed observations
+can retain their last successful values. See [catalogue metadata](metadata.md) for date
+meanings, freshness, source identity and cache-failure behavior.
 
 ## Agent Instructions
 

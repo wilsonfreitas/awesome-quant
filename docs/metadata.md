@@ -64,8 +64,10 @@ tag, and category edits do not invalidate observations of the same project.
 When CRAN previously supplied the repository, a failed discovery can reuse that
 repository for the unchanged entry. A successful package page that removes or
 changes its repository link invalidates the previous observations. A response
-without a complete, valid CRAN publication-date cell is treated as unavailable,
-not as evidence of repository removal. Only observations with the expected source, a valid
+without a complete, valid CRAN publication-date cell and properly ordered opening
+and closing `html`/`body` tags is treated as unavailable, not as evidence of
+repository removal. This includes truncation after the publication date but
+before later repository links. Only observations with the expected source, a valid
 value, and a valid successful-check timestamp can be reused. Trailing slashes in
 GitHub repository URLs are normalized for repository lookup; the identity still
 retains the exact primary URL and never carries observations to another repository.

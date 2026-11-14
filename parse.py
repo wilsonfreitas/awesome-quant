@@ -54,7 +54,7 @@ def get_cran_info(url):
     """Fetch Published date and GitHub URL from a CRAN package page.
 
     Return (published_date, github_url) for a package page, or None on failure.
-    A successful page without a repository link is an observed removal.
+    A complete document without a repository link is an observed removal.
     """
     try:
         m = re.search(r"package=([\w.]+)", url) or re.search(
@@ -73,10 +73,13 @@ def get_cran_info(url):
                 self._in_td = False
                 self._found_published = False
                 self._cell_text = ""
+                self.document_tags = []
                 self.date = ""
                 self.github_url = ""
 
             def handle_starttag(self, tag, attrs):
+                if tag in ("html", "body"):
+                    self.document_tags.append(tag)
                 if tag == "td":
                     self._in_td = True
                     self._cell_text = ""
@@ -87,6 +90,8 @@ def get_cran_info(url):
                         self.github_url = href
 
             def handle_endtag(self, tag):
+                if tag in ("html", "body"):
+                    self.document_tags.append("/" + tag)
                 if tag == "td":
                     cell = self._cell_text.strip()
                     if self._in_td and self._found_published and not self.date:
@@ -100,7 +105,8 @@ def get_cran_info(url):
 
         parser = CranParser()
         parser.feed(page_html)
-        if not parser.date:
+        parser.close()
+        if not parser.date or parser.document_tags != ["html", "body", "/body", "/html"]:
             return None
         # Clean trailing slashes or .git from GitHub URL
         gh = parser.github_url.rstrip("/")

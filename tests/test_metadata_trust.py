@@ -228,7 +228,7 @@ class MetadataTrustTests(unittest.TestCase):
         response = Mock()
         response.__enter__ = Mock(return_value=response)
         response.__exit__ = Mock(return_value=False)
-        response.read.return_value = b'<table><tr><td>Published:</td><td>2026-11-01</td></tr></table>'
+        response.read.return_value = b'<html><body><table><tr><td>Published:</td><td>2026-11-01</td></tr></table></body></html>'
         with patch.object(parse, 'urlopen', return_value=response), \
              patch.object(parse, 'get_github_client', side_effect=TimeoutError('offline')), \
              contextlib.redirect_stdout(io.StringIO()):
@@ -268,7 +268,7 @@ class MetadataTrustTests(unittest.TestCase):
                 response = Mock()
                 response.__enter__ = Mock(return_value=response)
                 response.__exit__ = Mock(return_value=False)
-                response.read.return_value = page
+                response.read.return_value = b'<html><body>' + page + b'</body></html>'
                 with patch.object(parse, 'urlopen', return_value=response), \
                      patch.object(parse, 'get_repo_info', return_value=('', None)), \
                      contextlib.redirect_stdout(io.StringIO()):
@@ -279,3 +279,33 @@ class MetadataTrustTests(unittest.TestCase):
                     self.assertEqual(row[field], value)
                     self.assertEqual(row[field + '_checked_at'], NOW)
                     self.assertEqual(row[field + '_status'], 'stale')
+
+    def test_cran_truncated_after_closed_publication_cell_preserves_all_observations(self):
+        url = 'https://cran.r-project.org/package=quantmod'
+        github = 'https://github.com/joshuaulrich/quantmod'
+        with patch.object(parse, 'get_cran_info', return_value=('2026-03-04', github)), \
+             patch.object(parse, 'get_repo_info', return_value=('2026-01-02', 3)), \
+             contextlib.redirect_stdout(io.StringIO()):
+            old = project(url=url, suffix='')
+        prefix = b'<html><body><table><tr><td>Published:</td><td>2026-11-01</td>'
+        full_page = prefix + (f'</tr><tr><td>URL:</td><td><a href="{github}">Source</a>'
+                              '</td></tr></table></body></html>').encode()
+        response = Mock()
+        response.__enter__ = Mock(return_value=response)
+        response.__exit__ = Mock(return_value=False)
+        with patch.object(parse, 'urlopen', return_value=response), \
+             patch.object(parse, 'get_repo_info', return_value=('', None)), \
+             contextlib.redirect_stdout(io.StringIO()):
+            response.read.return_value = full_page
+            self.assertEqual(parse.get_cran_info(url), ('2026-11-01', github))
+            for ending in (b'', b'</body>', b'</html>', b'<!-- </body></html> -->', b'</html></body>'):
+                with self.subTest(ending=ending):
+                    response.read.return_value = prefix + ending
+                    self.assertIsNone(parse.get_cran_info(url))
+                    row = project(url=url, suffix='', prior=old, checked_at=LATER)
+                    self.assertEqual(row['repo'], 'joshuaulrich/quantmod')
+                    for field in ('last_commit', 'stars', 'cran_published'):
+                        self.assertEqual(row[field], old[field])
+                        self.assertEqual(row[field + '_source'], old[field + '_source'])
+                        self.assertEqual(row[field + '_checked_at'], NOW)
+                        self.assertEqual(row[field + '_status'], 'stale')
