@@ -1697,6 +1697,44 @@ class ReviewSnapshotTests(unittest.TestCase):
                 review_pr("owner/list", 10, FakeClient(repository), now=NOW,
                           check_pull_request_duplicates=False)
 
+    def test_loaded_reviewer_code_must_match_disk_source(self):
+        import sys
+        import types
+        from pathlib import Path
+        path = Path(__file__).resolve().parents[1] / "scripts" / "review_pr.py"
+        altered = path.read_text().replace("MAX_README_ENTRIES_PER_PR = 5", "MAX_README_ENTRIES_PER_PR = 6")
+        self.assertIn("MAX_README_ENTRIES_PER_PR = 6", altered)
+        module = types.ModuleType("test_altered_review_pr")
+        module.__file__ = str(path)
+        sys.modules[module.__name__] = module
+        try:
+            exec(compile(altered, str(path), "exec", dont_inherit=True), module.__dict__)
+            self.assertEqual(module.MAX_README_ENTRIES_PER_PR, 6)
+            with self.assertRaisesRegex(RuntimeError, "loaded checker.*source"):
+                module.review_pr("owner/list", 10, FakeClient(FakeBaseRepository(FakePull(10))),
+                                 now=NOW, check_pull_request_duplicates=False)
+        finally:
+            del sys.modules[module.__name__]
+
+    def test_loaded_readme_helper_code_must_match_disk_source(self):
+        import sys
+        import types
+        from pathlib import Path
+        path = Path(__file__).resolve().parents[1] / "scripts" / "readme_entries.py"
+        altered = path.read_text().replace('HISTORICAL_TAG = "Historical"', 'HISTORICAL_TAG = "Changed"')
+        module = types.ModuleType("test_altered_readme_entries")
+        module.__file__ = str(path)
+        sys.modules[module.__name__] = module
+        try:
+            exec(compile(altered, str(path), "exec", dont_inherit=True), module.__dict__)
+            self.assertEqual(module.HISTORICAL_TAG, "Changed")
+            with patch("scripts.review_pr.LOADED_README_ENTRIES_CODE", module.LOADED_MODULE_CODE):
+                with self.assertRaisesRegex(RuntimeError, "loaded checker.*readme_entries"):
+                    review_pr("owner/list", 10, FakeClient(FakeBaseRepository(FakePull(10))),
+                              now=NOW, check_pull_request_duplicates=False)
+        finally:
+            del sys.modules[module.__name__]
+
     def test_source_changed_after_import_is_rejected_before_review(self):
         repository = FakeBaseRepository(FakePull(10))
         with patch("scripts.review_pr.IMPORTED_CHECKER_SHA256", "different", create=True):
@@ -1719,8 +1757,9 @@ class ReviewSnapshotTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             (root / "scripts").mkdir()
+            source_dir = Path(__file__).resolve().parents[1] / "scripts"
             for name in ("review_pr.py", "readme_entries.py"):
-                (root / "scripts" / name).write_text(name)
+                (root / "scripts" / name).write_bytes((source_dir / name).read_bytes())
             subprocess.run(["git", "init", "-q", str(root)], check=True)
             subprocess.run(["git", "-C", str(root), "add", "scripts"], check=True)
             subprocess.run(["git", "-C", str(root), "-c", "user.name=Test", "-c", "user.email=test@example.com", "commit", "-qm", "fixture"], check=True)

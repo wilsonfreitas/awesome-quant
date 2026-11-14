@@ -28,7 +28,10 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+LOADED_MODULE_CODE = sys._getframe().f_code
+
 from scripts.readme_entries import (
+    LOADED_MODULE_CODE as LOADED_README_ENTRIES_CODE,
     ENTRY_RE,
     GITHUB_LINK_RE,
     HISTORICAL_SECTION,
@@ -121,6 +124,16 @@ def read_checker_sources() -> dict[str, bytes]:
 
 
 IMPORTED_CHECKER_SHA256 = checker_sources_sha256(read_checker_sources())
+
+
+def verify_loaded_checker_sources() -> None:
+    contents = read_checker_sources()
+    loaded = (LOADED_MODULE_CODE, LOADED_README_ENTRIES_CODE)
+    for name, code in zip(CHECKER_SOURCES, loaded):
+        compiled = compile(contents[name], code.co_filename, "exec",
+                           dont_inherit=True, optimize=sys.flags.optimize)
+        if compiled != code:
+            raise RuntimeError(f"loaded checker code differs from source: {name}")
 
 
 def checker_source_state(revision: str) -> tuple[str, bool]:
@@ -802,6 +815,7 @@ def review_pr(
     source_state = checker_source_state(checker_revision)
     if source_state[0] != IMPORTED_CHECKER_SHA256:
         raise RuntimeError("checker sources changed since import")
+    verify_loaded_checker_sources()
     repository = client.get_repo(repository_name)
     pull_request = repository.get_pull(pr_number)
     snapshot = replace(
