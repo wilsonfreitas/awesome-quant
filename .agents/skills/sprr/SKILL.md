@@ -28,8 +28,9 @@ If GitHub MCP tools are unavailable, report that PR operations are blocked and p
 
 1. Fetch PR details/body, current head and base SHAs, files, labels, comments, diff and existing
    attributable review records with GitHub MCP. Record the evidence date and body digest below.
-   A `reviewed` label alone is never a skip or pass. Missing prior provenance means unknown,
-   not passed; reassess only what is needed. Do not silently ignore a body-only edit.
+   A `reviewed` label alone is never a skip or pass. Apply the legacy CI transition below
+   when provenance predates snapshots; otherwise missing provenance is unknown, not passed.
+   Reassess only what is needed. Do not silently ignore a body-only edit.
 2. Cheap triage first: classify new entry, accuracy correction, cleanup, historical, or
    code/infrastructure; inspect scope, format, duplicate candidates and outstanding findings.
    Route code/infrastructure or mixed changes to separate code review rather than README-entry
@@ -40,8 +41,9 @@ If GitHub MCP tools are unavailable, report that PR operations are blocked and p
    re-enter relevant review. Unchanged waiting-on-author/pending-CI work gets a short status;
    no repeat investigation without new evidence. No mass re-review/rejection. For already-open
    PRs request only missing evidence, not completion of the new template for its own sake.
-4. Fetch both latest required workflow attempts and apply the provenance rules below. A changed
-   head/base/body or checker invalidates affected automated evidence. Preserve useful manual
+4. Fetch both latest required workflow attempts and apply the provenance rules below, including
+   the legacy transition when applicable. A changed head/base/body or checker requires affected
+   evidence to be revalidated under the applicable path. Preserve useful manual
    findings independently of a missing check; pending CI blocks readiness, not eligibility.
 5. Revalidate affected findings using the table below; reuse unchanged attributable findings
    with their source links, date and limits. Refresh live facts when stale, changed, unavailable,
@@ -109,10 +111,12 @@ multi-project relatedness. CI cannot establish any of these manual criteria. Sea
 closed within the last 365 days for duplicate names and URLs.
 
 `PR Review` runs on `pull_request_target`: its workflow SHA is not proof of the inspected head.
-Use the latest associated attempt, including a newer pending/failing attempt, and require its
-trusted inspected-input snapshot. Never fall back to an older success. A missing/untrustworthy
-stamp or mismatched head/base/body/checker is `UNVERIFIED`, even on a green run; request a fresh
-trusted run. If failure reports a PR defect, return `NEEDS CHANGES` or `REJECT` under the published
+Use the latest associated attempt, including a newer pending/failing attempt. For a checker
+that supports snapshots, require its trusted inspected-input snapshot. Never fall back to an
+older success. A missing/untrustworthy stamp or mismatched head/base/body/checker from such a
+checker is `UNVERIFIED`, even on a green run; request a fresh trusted run. For a checker that
+predates snapshots, apply the legacy CI transition below. If failure reports a PR defect,
+return `NEEDS CHANGES` or `REJECT` under the published
 rule; infrastructure/retrieval failures leave readiness incomplete. Queued/pending/awaiting
 approval is `PENDING`; cancelled/skipped/missing is `UNVERIFIED`. None allows `APPROVE`.
 
@@ -142,8 +146,38 @@ before success and failed/incompleted on changes or failed refresh. Require `che
 be true and source attribution to be present; dirty local findings are not authoritative CI
 evidence. The checker must also invalidate its result if its local sources change during review.
 Observation time alone
-cannot establish freshness. Older runs without this stamp remain unverified; request a fresh
-trusted run rather than waive gates. Do not equate a target workflow commit with submitted code.
+cannot establish freshness. Runs from checkers predating this stamp use the transition below.
+Do not equate a target workflow commit with submitted code.
+
+## Legacy CI Transition
+
+Missing snapshots alone do not block successful checks produced by the checker before snapshot
+support. Determine this from the trusted checkout revision and checker source, not the age of
+the PR or a contributor assertion. This transition preserves both workflow gates:
+
+1. Require the latest relevant attempts of both workflows to have succeeded for the current
+   PR head. Establish the PR/head association from trusted Actions metadata and available logs;
+   a `pull_request_target` workflow SHA alone is insufficient. Never use an older success over
+   a newer pending/failing attempt or treat a success for an older head as current.
+2. Inspect the current complete diff and reconcile it with the successful run's scope. Check
+   current body/title evidence, current-base duplicates and affected policy/external facts.
+   Missing historical body hashes do not require reconstructing an unavailable old body:
+   assess its current claims directly. Reuse attributable unaffected manual findings.
+3. Record run/attempt links, current head/base/body/title, trusted checker revision, evidence
+   establishing the run's association, manual reconciliation and remaining gaps. Report
+   `PR Review: PASS (legacy CI + manual reconciliation)` and
+   `Inspected inputs: MANUALLY RECONCILED` only when these checks establish coverage. Do not
+   invent a snapshot or claim the old CI assessed current body/base/policy inputs.
+4. When association, coverage or a material subsequent change cannot be resolved within the
+   review budget, hold readiness as `UNVERIFIED` and request a fresh run using the current
+   trusted checker. Verify its actual checkout and snapshot: rerunning a historical job can
+   reuse the old checker. This is maintainer CI work, not an automatic request for an author
+   rebase, empty commit, template rewrite or another public comment.
+
+An attributable legacy success with complete manual reconciliation can support `APPROVE`
+after the normal editorial review. It needs no separate exception approval; the exact action
+bundle still requires user consent. A checker that supports snapshots but omits or mismatches
+one cannot use this transition. Apply it only to selected candidates, without a backlog-wide rerun.
 
 ## Validation Checklist
 
@@ -271,8 +305,9 @@ Readiness: READY | BLOCKED <specific blocker>
 
 Automated validation:
 - Validate PR: PASS | FAIL | PENDING | UNVERIFIED
-- PR Review: PASS | FAIL | PENDING | UNVERIFIED
-- Inspected inputs: MATCH | STALE | UNVERIFIED; run/attempt/log links: <links>
+- PR Review: PASS | PASS (legacy CI + manual reconciliation) | FAIL | PENDING | UNVERIFIED
+- Inspected inputs: MATCH | MANUALLY RECONCILED | STALE | UNVERIFIED; run/attempt/log links: <links>
+- Legacy transition, when applicable: <trusted checker revision, PR/head association, current-input reconciliation and gaps>
 - Mechanical checks: accepted from CI | reproduced locally | incomplete
 
 Findings:

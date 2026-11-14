@@ -82,7 +82,11 @@ source/service classification and commercial evidence remain semantic judgments.
 
 Keep notes to decisive evidence and missing questions; do not reproduce a full audit for each
 waiting PR. Include exact comment text, label changes, closure effects and merge SHA/method for
-every proposed action. Missing trusted snapshots are unverified; pending CI cannot authorize merge.
+every proposed action. Apply `sprr`'s Legacy CI Transition to successful runs from checkers
+predating snapshots; identify manual reconciliation in the digest rather than blocking solely
+on the missing stamp. Other missing/untrustworthy snapshots remain unverified. Pending CI cannot
+authorize merge. Resolve CI provenance gaps as maintainer work, without automatic author requests
+or a backlog-wide rerun.
 
 Ask once for selection of the listed action IDs/PR bundles, or `none`. For example:
 

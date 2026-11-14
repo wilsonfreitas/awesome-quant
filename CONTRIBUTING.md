@@ -312,7 +312,8 @@ missing, or stale, the pull request is not eligible for approval or merge. Fix a
 and push a new revision so the required workflows run again.
 
 For `Validate PR`, use the latest attempt for the current head SHA; a newer pending attempt
-supersedes an older success. For `PR Review`, a trusted log/job-summary snapshot must identify
+supersedes an older success. For snapshot-capable versions of `PR Review`, a trusted
+log/job-summary snapshot must identify
 the repository and PR, observed head/base/merge-base SHAs, PR-body and title SHA-256,
 trusted checker revision, source digest, clean-source status and observation time.
 The head, base, body and title must match the current inputs, and the checker
@@ -323,6 +324,24 @@ can supply findings but cannot waive either required workflow gate.
 The full contribution diff is reconstructed from immutable merge-base/head contents; current
 base contents remain the duplicate-check reference. A partial API patch cannot establish scope.
 Local modified checker sources are identified explicitly and cannot substitute for clean CI.
+
+### Transition for existing CI results
+
+Successful runs from the checker before snapshot support do not become unusable solely because
+they lack that record. Reviewers must establish from trusted Actions metadata/logs that both
+latest relevant workflow attempts succeeded for the current PR head, identify the old checker
+revision, and manually reconcile the complete current diff, body/title claims, current-base
+duplicates and affected policy or external evidence. They record those checks and their limits
+as **legacy CI with manual reconciliation**, without attributing current inputs to the old CI.
+This satisfies the evidence requirement without a separate exception approval; editorial review
+and approval of the exact public actions are still required.
+
+A newer pending/failed attempt or a success for an older head cannot use this transition. When
+the reviewed version or material coverage cannot be established, maintainers obtain a fresh run
+using the current trusted checker and verify its actual revision; rerunning an old job may reuse
+the old checker. Contributors need not rebase, make empty commits or rewrite submissions merely
+to supply this new CI record. Apply the transition to selected candidates, not the whole backlog.
+Runs from snapshot-capable checkers still require the matching trusted snapshot described above.
 
 Passing both workflows is necessary but not sufficient. Maintainers also review relevance,
 description quality, section placement, repository substance, commercial eligibility, and

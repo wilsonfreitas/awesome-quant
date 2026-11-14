@@ -142,9 +142,11 @@ Review requirements:
     historical/cleanup paths. Ask one decisive evidence question at uncertainty/timebox limits.
     The README-only checker's rejection of non-README files remains a CI limitation, not a
     project-eligibility verdict; resolve check applicability in code review without waiving gates.
-11. Record observed head/base/body and checker provenance. Require both current workflow gates;
-    `PR Review` without a trustworthy matching inspected-input stamp is unverified, including
-    older green runs. A `pull_request_target` SHA is not the inspected head. Keep eligibility,
+11. Record observed head/base/body and checker provenance. Require both current workflow gates.
+    For checkers predating snapshots, use `sprr`'s Legacy CI Transition: establish successful
+    current-head checks and reconcile current inputs manually; absence of a stamp alone is
+    not a blocker. Snapshot-capable checkers still require a trustworthy matching stamp.
+    A `pull_request_target` SHA is not the inspected head. Keep eligibility,
     editorial priority and readiness separate; checkable evidence is distinct from claims.
 12. Protect small, new, solo and pseudonymous projects; inspect actual implementation and
     dependencies rather than identity or popularity. Preserve the published permanent-free
