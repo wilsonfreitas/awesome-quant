@@ -146,36 +146,6 @@ def description_ends_with_period(description: str) -> bool:
     return bool(text) and text.endswith(".")
 
 
-def parse_patch(patch: str | None) -> list[tuple[str, str]]:
-    if not patch:
-        return []
-
-    result: list[tuple[str, str]] = []
-    section = ""
-    for raw_line in patch.splitlines():
-        if raw_line.startswith("@@"):
-            continue
-        if raw_line.startswith("+"):
-            line = raw_line[1:]
-            stripped = line.strip()
-            if stripped.startswith("## "):
-                section = stripped[3:].strip()
-            result.append((section, line))
-        elif raw_line.startswith(" "):
-            line = raw_line[1:]
-            stripped = line.strip()
-            if stripped.startswith("## "):
-                section = stripped[3:].strip()
-    return result
-
-
-def extract_entry_line(added_lines: list[tuple[str, str]]) -> tuple[str, str] | None:
-    entry_lines = [item for item in added_lines if item[1].strip().startswith("- ")]
-    if len(entry_lines) != 1:
-        return None
-    return entry_lines[0]
-
-
 def read_readme(repository: Any, ref: str) -> str:
     content = repository.get_contents("README.md", ref=ref)
     if isinstance(content, list):
