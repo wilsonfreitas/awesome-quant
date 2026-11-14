@@ -205,7 +205,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [mx-trader-bridge](https://github.com/27dream/mx-trader-bridge) - `Python` - AI auto-trading bridge for East Money's miaoxiang (妙想) China A-share simulation platform; BYOK multi-LLM (OpenAI/DeepSeek/Moonshot/GLM/Qwen) decision brain → automated order placement via miaoxiang API, with daily cron review and weekly AI reflection.
 - [AI Quant Agents](https://github.com/demandai/ai-quant-agents) - `Python` - Multi-agent LLM trading analysis where 12 AI agents (analysts, debaters, risk manager) debate stock picks in real-time, supporting US equities and China A-shares.
 - [TradeSight](https://github.com/rmbell09-lang/tradesight) - `Python` - Self-hosted AI trading platform with strategy evolution, technical analysis, backtesting, and paper trading via Alpaca.
-- [TRA (bitra)](https://github.com/BijectiveLabs/bitra) - `Python` `MCP` - Autonomous trading system for crypto perpetuals, spot, tokenized stocks and prediction markets in which language models only propose and deterministic rules decide: code computes every figure, prices the full round trip before an order exists, sizes from the operator's risk at the stop, keeps exits at the exchange, and records each cycle with a per-file SHA-256 that can be re-verified.
+- [trading-research-agents](https://github.com/BijectiveLabs/trading-research-agents) - `Python` `MCP` - Autonomous trading system for crypto linear perpetuals in which language models only propose and deterministic rules decide: code computes every figure, prices the full round trip before an order exists, sizes from the operator's risk at the stop, keeps exits at the exchange, and records each cycle with a per-file SHA-256 that can be re-verified.
 - [Orallexa](https://github.com/alex-jb/orallexa-ai-trading-agent) - `Python` - AI trading operating system with 9 ML models (RF, XGBoost, EMAformer, MOIRAI-2, Chronos-2, DDPM, PPO RL, GNN, LR) ranked by Sharpe ratio, Claude AI synthesis with dual-tier routing (~$0.003/analysis), real-time Next.js dashboard, Alpaca paper trading, and 277 automated tests.
 - [Vibe-Trading](https://github.com/HKUDS/Vibe-Trading) - `Python` - Natural-language multi-agent finance research agent with 29 swarm presets, 70 skills, and 28 auto-discovered tools; 7 backtest engines covering A-shares/US/Crypto/Futures/Forex/Options plus a cross-market CompositeEngine with shared capital pool; 5-source auto-fallback data layer (tushare/okx/yfinance/akshare/ccxt); 17-tool MCP server; includes trade-journal behavioral diagnostics for 同花顺/东财/富途 exports.
 - [DeepAlpha](https://deepalphabot.com) - `Python` - AI crypto trading bot for Bybit with 70.9% walk-forward validated accuracy on out-of-sample data, LightGBM + XGBoost ensemble with 72 ML features. [GitHub](https://github.com/stefanoviana/deepalpha)
@@ -348,7 +348,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [nt8-mcp](https://github.com/tbraman-dev/nt8-mcp) - `C#` `Python` `MCP` - MCP server and NinjaTrader 8 AddOn that give an AI coding assistant a build loop for NinjaScript: offline and in-platform compile with structured errors, chart and log reads, headless backtests, optimization and walk-forward; read-only by default.
 
 ## Portfolio Optimization & Risk Analysis
-
+- [Tycheon](https://anilatambharii.github.io/tycheon/) - `Python` - Calibrated forecast intervals, VaR and Expected Shortfall on top of time-series models, with point-in-time data and walk-forward evaluation against a random-walk baseline. [GitHub](https://github.com/anilatambharii/tycheon)
 - [portfolio-risk-lab](https://github.com/garroshub/portfolio-risk-lab) - `Python` - Uncertainty-aware portfolio optimization: compare covariance estimates, test allocations across risk scenarios, and see the cost of tighter constraints.
 - [Multi-Axis Robust Portfolio Optimization](https://github.com/Viraj-Nigwekar/multi-axis-robust-portfolio-optimization) - `Python` - Portfolio optimization framework combining covariance shrinkage, bootstrap aggregation, and parametric scenario modeling, with reproducible notebooks and an accompanying SSRN paper.
 - [AutoHypothesis](https://github.com/arteemg/AutoHypothesis) - `Python` - An agentic framework that mimics the real quant trading pipeline to find alpha: economic hypothesis, in-sample iteration, and out-of-sample validation.
@@ -527,7 +527,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 - [CNEquity](https://github.com/rootSunc/CNEquity) - `Python` `MCP` `A-shares` - Self-hosted China A-share data lake that keeps 55 datasets (prices, financials, capital flows, corporate events, futures and options) in local Parquet with incremental updates, point-in-time queries, delisted-stock retention, DuckDB SQL and a read-only MCP server.
 - [yahooquery](https://github.com/dpguthrie/yahooquery) - `Python` - Python interface for retrieving data through unofficial Yahoo Finance API.
 - [investpy](https://github.com/alvarobartt/investpy) - `Python` - Financial Data Extraction from Investing.com with Python! <https://investpy.readthedocs.io/>.
-- [yliveticker](https://github.com/yahoofinancelive/yliveticker) - `Python` - Unofficial Yahoo Finance WebSocket quote streaming with database sinks, per-symbol diagnostics, and a Docker Compose Grafana dashboard.
+- [yliveticker](https://github.com/yahoofinancelive/yliveticker) - `Python` - Live stream of market data from Yahoo Finance websocket.
 - [bbgbridge](https://github.com/ran404/bbgbridge) - `Python` - Easy to use Bloomberg Desktop API wrapper for Python.
 - [alpha_vantage](https://github.com/RomelTorres/alpha_vantage) - `Python` - A python wrapper for Alpha Vantage API for financial data.
 - [alphai-tui](https://github.com/makeev/alphai-tui) - `Rust` `TUI` - Terminal stock dashboard with keyless quotes, candlestick charts and portfolio tracking, plus optional news and SEC filing views powered by the AlphAI API.
@@ -665,7 +665,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
   - [PyQL](https://github.com/enthought/pyql) - Python port.
   - [QuantLib.jl](https://github.com/pazzo83/QuantLib.jl) - Julia port.
   - [QuantLib-Python Documentation](https://quantlib-python-docs.readthedocs.io/) - Documentation for the Python bindings for the QuantLib library.
-- [TA-Lib](https://ta-lib.org) - `C` `C++` `Rust` `Java` `C#` - Technical analysis library implemented natively in each language: 200+ functions, including candlestick patterns, with batch and streaming APIs. [GitHub](https://github.com/TA-Lib/ta-lib)
+- [TA-Lib](https://ta-lib.org) - perform technical analysis of financial market data. [GitHub](https://github.com/TA-Lib/ta-lib)
   - [ta-lib-python](https://github.com/TA-Lib/ta-lib-python)
   - [ta-lib](https://github.com/TA-Lib/ta-lib)
 - [godzilla.dev](https://godzilla.dev) - `C++` `Python` - Open-source framework for crypto quant trading, funding rate arbitrage and ultra-low-latency market making. [GitHub](https://github.com/godzilla-foundation/godzilla-community)
