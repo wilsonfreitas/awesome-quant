@@ -71,7 +71,8 @@ class FakePull:
         self.updated_at = closed_at or NOW
         self.title = title
         self.base = SimpleNamespace(
-            sha=base_sha or ("base-sha" if number == 10 else f"base-{number}")
+            sha=base_sha or ("base-sha" if number == 10 else f"base-{number}"),
+            repo=SimpleNamespace(full_name="owner/list")
         )
         self.head = SimpleNamespace(
             sha=head_sha or ("head-sha" if number == 10 else f"head-{number}")
@@ -135,10 +136,12 @@ class FakeBaseRepository:
             "## Trading & Backtesting\n"
         ),
         head_readme=None,
+        merge_base_readme=None,
     ):
         self.pull = pull
         self.other_pulls = list(other_pulls)
         self.base_readme = base_readme
+        self.merge_base_readme = merge_base_readme
         self.head_readme = head_readme or (
             base_readme.rstrip()
             + "\n"
@@ -153,11 +156,19 @@ class FakeBaseRepository:
             raise AssertionError(f"unexpected PR number: {number}")
         return self.pull
 
+    def compare(self, base, head):
+        if (base, head) != (self.pull.base.sha, self.pull.head.sha):
+            raise AssertionError(f"unexpected comparison: {base}, {head}")
+        return SimpleNamespace(files=self.pull._files, merge_base_commit=SimpleNamespace(
+            sha="merge-sha" if self.merge_base_readme is not None else base))
+
     def get_contents(self, path, ref=None):
         if path != "README.md":
             raise AssertionError(f"unexpected base content request: {path}, {ref}")
         self.content_refs.append(ref)
-        if ref in {self.default_branch, "base-sha"}:
+        if ref == "merge-sha" and self.merge_base_readme is not None:
+            content = self.merge_base_readme
+        elif ref in {self.default_branch, "base-sha"}:
             content = self.base_readme
         elif ref == "head-sha":
             content = self.head_readme
@@ -784,6 +795,7 @@ class ValidationPipelineTests(unittest.TestCase):
         head_readme=None,
         reachable=True,
         configure_project=None,
+        merge_base_readme=None,
     ):
         changed_files = files or [
             SimpleNamespace(filename="README.md", patch=patch_text)
@@ -812,6 +824,7 @@ class ValidationPipelineTests(unittest.TestCase):
             FakePull(10, body=body, files=changed_files),
             base_readme=base_readme,
             head_readme=head_readme,
+            merge_base_readme=merge_base_readme,
         )
         client = FakeClient(repository)
         if configure_project:
@@ -1097,6 +1110,7 @@ class ValidationPipelineTests(unittest.TestCase):
                 patch_text=TWO_ENTRY_PATCH,
                 base_readme=base_readme,
                 head_readme=head_readme,
+                merge_base_readme="# awesome-quant\n\n## Trading & Backtesting\n",
             ),
             set(),
         )
@@ -1521,6 +1535,272 @@ class MainTests(unittest.TestCase):
 
         self.assertEqual(result, 2)
         self.assertIn("ERROR PR_NUMBER must be an integer", stderr.getvalue())
+
+
+class ReviewSnapshotTests(unittest.TestCase):
+    def test_snapshot_tracks_body_and_ignores_observation_time(self):
+        from scripts.review_pr import capture_review_snapshot, same_review_inputs
+
+        pull = FakePull(10, body=None)
+        pull.base.repo = SimpleNamespace(full_name="owner/list")
+        first = capture_review_snapshot(pull, "trusted", NOW)
+        later = capture_review_snapshot(pull, "trusted", NOW + timedelta(seconds=1))
+        self.assertEqual(first.body_sha256, "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855")
+        self.assertTrue(same_review_inputs(first, later))
+        pull.body = "edited"
+        self.assertFalse(same_review_inputs(first, capture_review_snapshot(pull, "trusted", NOW)))
+
+    def test_stale_inputs_and_refresh_failure_never_succeed(self):
+        for change in ("head", "base", "body", "failure"):
+            with self.subTest(change=change):
+                pull = FakePull(10, files=[SimpleNamespace(filename="other", patch="")])
+                repository = FakeBaseRepository(pull)
+                calls = 0
+                def get_pull(number):
+                    nonlocal calls
+                    calls += 1
+                    if calls > 1:
+                        if change == "failure":
+                            raise RuntimeError("refresh failed")
+                        if change == "body":
+                            pull.body = "edited"
+                        else:
+                            getattr(pull, change).sha = "changed"
+                    return pull
+                repository.get_pull = get_pull
+                with self.assertRaisesRegex(RuntimeError, "stale|refresh"):
+                    review_pr("owner/list", 10, FakeClient(repository), now=NOW)
+
+    def test_stamp_matches_read_revisions_and_is_written_to_summary(self):
+        import tempfile
+        from pathlib import Path
+        repository = FakeBaseRepository(FakePull(10))
+        client = FakeClient(repository)
+        stdout = io.StringIO()
+        with tempfile.TemporaryDirectory() as directory:
+            summary = Path(directory) / "summary"
+            environment = {"GITHUB_TOKEN": "token", "GITHUB_REPOSITORY": "owner/list", "PR_NUMBER": "10", "GITHUB_STEP_SUMMARY": str(summary)}
+            with (patch.dict("os.environ", environment, clear=True), patch("sys.argv", ["review_pr.py", "--skip-pull-request-duplicates"]), patch("scripts.review_pr.Github", return_value=client), patch("scripts.review_pr.url_reachable", return_value=True), patch("scripts.review_pr.checker_source_state", return_value=("a" * 64, False)), patch("scripts.review_pr.IMPORTED_CHECKER_SHA256", "a" * 64), redirect_stdout(stdout)):
+                self.assertEqual(main(), 0)
+            output = stdout.getvalue()
+            self.assertIn("base-sha", output)
+            self.assertIn("head-sha", output)
+            self.assertIn("body_sha256", output)
+            self.assertIn("checker_revision", output)
+            self.assertIn("checker_clean: False", output)
+            self.assertIn("checker_sources_sha256: " + "a" * 64, output)
+            self.assertIn("merge_base_sha: base-sha", output)
+            self.assertIn("title_sha256:", output)
+            self.assertIn("observed_at", output)
+            self.assertIn("owner/list", output)
+            self.assertIn("base-sha", summary.read_text())
+            self.assertIn("head-sha", summary.read_text())
+            self.assertEqual(repository.content_refs[:2], ["base-sha", "head-sha"])
+
+    def test_review_uses_immutable_readmes_instead_of_live_patch(self):
+        pull = FakePull(10)
+        repository = FakeBaseRepository(pull)
+        requested = []
+        def compare(base, head):
+            requested.append((base, head))
+            return SimpleNamespace(files=[SimpleNamespace(filename="README.md", patch=VALID_PATCH)], merge_base_commit=SimpleNamespace(sha=base))
+        repository.compare = compare
+        pull._files[0].patch = "@@ -1 +1 @@\n-unrelated\n+unrelated\n"
+        with patch("scripts.review_pr.url_reachable", return_value=True):
+            findings, _, count = review_pr("owner/list", 10, FakeClient(repository), now=NOW,
+                                           check_pull_request_duplicates=False)
+        self.assertEqual(requested, [("base-sha", "head-sha")])
+        self.assertEqual(findings, [])
+        self.assertEqual(count, 1)
+
+    def test_complete_diff_detects_content_omitted_from_api_patch(self):
+        base = "# awesome-quant\n\n## Trading & Backtesting\n"
+        head = base + "- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.\nUnauthorized prose.\n"
+        repository = FakeBaseRepository(FakePull(10), base_readme=base, head_readme=head)
+        with patch("scripts.review_pr.url_reachable", return_value=True):
+            findings, _, _ = review_pr("owner/list", 10, FakeClient(repository), now=NOW,
+                                       check_pull_request_duplicates=False)
+        self.assertIn("content", {finding.check for finding in findings})
+
+    def test_diff_header_like_content_is_checked(self):
+        base = "# awesome-quant\n\n## Trading & Backtesting\n-- hidden policy\n"
+        head = base.replace("-- hidden policy\n", "") + "- [Fresh](https://github.com/example/fresh) - `Python` - Fresh project.\n"
+        repository = FakeBaseRepository(FakePull(10), base_readme=base, head_readme=head)
+        with patch("scripts.review_pr.url_reachable", return_value=True):
+            findings, _, _ = review_pr("owner/list", 10, FakeClient(repository), now=NOW,
+                                       check_pull_request_duplicates=False)
+        self.assertIn("content", {finding.check for finding in findings})
+
+    def test_merge_base_source_is_used_when_current_base_removed_entry(self):
+        base = "# awesome-quant\n\n## Trading & Backtesting\n"
+        old = "- [Fresh](https://github.com/example/fresh) - `Python` - Old project.\n"
+        new = old.replace("Old", "New")
+        pull = FakePull(10, files=[SimpleNamespace(filename="README.md", patch="@@ -1 +1 @@\n-" + old + "+" + new)])
+        repository = FakeBaseRepository(pull, base_readme=base, head_readme=base + new)
+        repository.compare = lambda base_sha, head_sha: SimpleNamespace(
+            files=pull._files, merge_base_commit=SimpleNamespace(sha="merge-sha"))
+        original_get_contents = repository.get_contents
+        def get_contents(path, ref=None):
+            if ref == "merge-sha":
+                repository.content_refs.append(ref)
+                return SimpleNamespace(decoded_content=(base + old).encode())
+            return original_get_contents(path, ref=ref)
+        repository.get_contents = get_contents
+        with patch("scripts.review_pr.url_reachable", return_value=True):
+            findings, _, count = review_pr("owner/list", 10, FakeClient(repository), now=NOW,
+                                           check_pull_request_duplicates=False)
+        self.assertEqual(findings, [])
+        self.assertEqual(count, 1)
+        self.assertIn("merge-sha", repository.content_refs)
+
+    def test_nested_reference_repair_uses_merge_base_not_updated_base(self):
+        parent = "- [Parent](https://github.com/example/parent) - `Python` - Toolkit.\n"
+        old = "  - Library [C++](https://github.com/example/old)\n"
+        new = old.replace("/old)", "/new)")
+        prefix = "## Trading & Backtesting\n" + parent
+        merge = prefix + old
+        head = prefix + new
+        base_tip = merge + "- [Other](https://github.com/example/other) - `Python` - Tool.\n"
+        repository = FakeBaseRepository(FakePull(10), base_readme=base_tip,
+                                        head_readme=head, merge_base_readme=merge)
+        client = FakeClient(repository)
+        client.project_repository.id = 123
+        with patch("scripts.review_pr.url_reachable", return_value=True):
+            findings, _, count = review_pr("owner/list", 10, client, now=NOW,
+                                           check_pull_request_duplicates=False)
+        self.assertEqual(findings, [])
+        self.assertEqual(count, 0)
+
+    def test_title_change_invalidates_snapshot(self):
+        pull = FakePull(10)
+        repository = FakeBaseRepository(pull)
+        calls = 0
+        def get_pull(number):
+            nonlocal calls
+            calls += 1
+            if calls == 3:
+                pull.title = "New title"
+            return pull
+        repository.get_pull = get_pull
+        with patch("scripts.review_pr.url_reachable", return_value=True):
+            with self.assertRaisesRegex(RuntimeError, "stale"):
+                review_pr("owner/list", 10, FakeClient(repository), now=NOW,
+                          check_pull_request_duplicates=False)
+
+    def test_comparison_with_extra_file_cannot_pass_after_live_files_change(self):
+        repository = FakeBaseRepository(FakePull(10))
+        repository.compare = lambda base, head: SimpleNamespace(
+            files=[SimpleNamespace(filename="README.md"), SimpleNamespace(filename="code.py")],
+            merge_base_commit=SimpleNamespace(sha=base))
+        with patch("scripts.review_pr.url_reachable", return_value=True):
+            with self.assertRaisesRegex(RuntimeError, "comparison"):
+                review_pr("owner/list", 10, FakeClient(repository), now=NOW,
+                          check_pull_request_duplicates=False)
+
+    def test_source_changed_after_import_is_rejected_before_review(self):
+        repository = FakeBaseRepository(FakePull(10))
+        with patch("scripts.review_pr.IMPORTED_CHECKER_SHA256", "different", create=True):
+            with self.assertRaisesRegex(RuntimeError, "checker.*import"):
+                review_pr("owner/list", 10, FakeClient(repository), now=NOW,
+                          check_pull_request_duplicates=False)
+
+    def test_checker_sources_change_during_review_fails_closed(self):
+        repository = FakeBaseRepository(FakePull(10))
+        with (patch("scripts.review_pr.checker_source_state", side_effect=[("a", False), ("b", False)]),
+              patch("scripts.review_pr.IMPORTED_CHECKER_SHA256", "a")):
+            with self.assertRaisesRegex(RuntimeError, "checker.*changed"):
+                review_pr("owner/list", 10, FakeClient(repository), now=NOW,
+                          check_pull_request_duplicates=False)
+
+    def test_checker_source_changed_and_restored_during_review_is_rejected(self):
+        import subprocess
+        import tempfile
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "scripts").mkdir()
+            for name in ("review_pr.py", "readme_entries.py"):
+                (root / "scripts" / name).write_text(name)
+            subprocess.run(["git", "init", "-q", str(root)], check=True)
+            subprocess.run(["git", "-C", str(root), "add", "scripts"], check=True)
+            subprocess.run(["git", "-C", str(root), "-c", "user.name=Test", "-c", "user.email=test@example.com", "commit", "-qm", "fixture"], check=True)
+            pull = FakePull(10)
+            original_get_files = pull.get_files
+            def change_and_restore():
+                path = root / "scripts" / "readme_entries.py"
+                original = path.read_bytes()
+                path.write_bytes(b"temporary change")
+                path.write_bytes(original)
+                return original_get_files()
+            pull.get_files = change_and_restore
+            from scripts.review_pr import checker_sources_sha256, read_checker_sources
+            with patch("scripts.review_pr.ROOT", root), patch("scripts.review_pr.url_reachable", return_value=True):
+                fixture_hash = checker_sources_sha256(read_checker_sources())
+                with patch("scripts.review_pr.IMPORTED_CHECKER_SHA256", fixture_hash), self.assertRaisesRegex(RuntimeError, "checker sources changed during review"):
+                    review_pr("owner/list", 10, FakeClient(FakeBaseRepository(pull)), now=NOW,
+                              check_pull_request_duplicates=False)
+
+    def test_checker_state_detects_dirty_tracked_dependency(self):
+        import subprocess
+        import tempfile
+        from pathlib import Path
+        from scripts.review_pr import checker_source_state
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "scripts").mkdir()
+            for name in ("review_pr.py", "readme_entries.py"):
+                (root / "scripts" / name).write_text(name)
+            subprocess.run(["git", "init", "-q", str(root)], check=True)
+            subprocess.run(["git", "-C", str(root), "add", "scripts"], check=True)
+            subprocess.run(["git", "-C", str(root), "-c", "user.name=Test", "-c", "user.email=test@example.com", "commit", "-qm", "fixture"], check=True)
+            revision = subprocess.check_output(["git", "-C", str(root), "rev-parse", "HEAD"], text=True).strip()
+            with patch("scripts.review_pr.ROOT", root):
+                clean_hash, clean = checker_source_state(revision)
+                (root / "scripts" / "readme_entries.py").write_text("changed")
+                dirty_hash, dirty = checker_source_state(revision)
+            self.assertTrue(clean)
+            self.assertFalse(dirty)
+            self.assertNotEqual(clean_hash, dirty_hash)
+
+    def test_final_refresh_detects_changes_and_failure_after_readme_reads(self):
+        for change in ("head", "base", "body", "failure"):
+            with self.subTest(change=change):
+                pull = FakePull(10)
+                repository = FakeBaseRepository(pull)
+                calls = 0
+                def get_pull(number):
+                    nonlocal calls
+                    calls += 1
+                    if calls == 3:
+                        if change == "failure":
+                            raise RuntimeError("refresh failed")
+                        if change == "body":
+                            pull.body = "edited"
+                        else:
+                            getattr(pull, change).sha = "changed"
+                    return pull
+                repository.get_pull = get_pull
+                with patch("scripts.review_pr.url_reachable", return_value=True):
+                    with self.assertRaisesRegex(RuntimeError, "stale|refresh"):
+                        review_pr("owner/list", 10, FakeClient(repository), now=NOW,
+                                  check_pull_request_duplicates=False)
+                self.assertEqual(repository.content_refs[:2], ["base-sha", "head-sha"])
+
+    def test_file_retrieval_error_is_followed_by_refresh(self):
+        pull = FakePull(10)
+        repository = FakeBaseRepository(pull)
+        calls = []
+        def get_pull(number):
+            calls.append(number)
+            if len(calls) > 1:
+                pull.body = "changed"
+            return pull
+        repository.get_pull = get_pull
+        def broken_files():
+            raise RuntimeError("file retrieval failed")
+        pull.get_files = broken_files
+        with self.assertRaisesRegex(RuntimeError, "stale"):
+            review_pr("owner/list", 10, FakeClient(repository), now=NOW)
 
 
 if __name__ == "__main__":

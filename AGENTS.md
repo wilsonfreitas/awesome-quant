@@ -112,7 +112,10 @@ Review requirements:
 1. Only review the PRs the user asked you to review.
 2. Use GitHub MCP tools for PR operations, not the `gh` CLI.
 3. Present findings before any PR-modifying action.
-4. Always ask the user before commenting, labeling, closing, or merging.
+4. Present exact comment text, label changes, closures and merge targets as one action bundle.
+   Obtain one explicit selection before executing that scope; do not request identical consent
+   again. Refresh inputs, required checks and duplicates immediately before acting. Material
+   changes hold affected actions for renewed review and consent. No automatic public actions.
 5. Check section placement, duplicates in `README.md`, entry format, URL format,
    and project activity/documentation. Give substantial positive weight to a verifiable
    GitHub repository mentioned as either the main URL or exact suffix, while confirming that
@@ -125,6 +128,27 @@ Review requirements:
    correctable evidence or disclosure, wording, URL, documentation, or placement defects when
    the underlying offering can qualify.
 8. Use the `reviewed` label only after the user approves a review comment.
+   Include the label change in that approved bundle; it is never implied by a verdict.
+9. Follow CONTRIBUTING.md's evidence intake and weekly capacity policy: 120 total human PR
+   review minutes, including asynchronous decisions and follow-ups; at most four detailed
+   candidates, reduced to available time. At most one fully evidenced hosted service replaces
+   a slot after source/correction work. No SLA. Implementation and general maintenance have
+   separate scheduling; code/infrastructure PR reviews still count toward PR review time.
+10. Triage scope, format, duplicates and prior findings before costly investigation. Select new,
+    changed or stale submissions; the `reviewed` label is never the sole skip reason. Detect
+    body-only changes. Revalidate affected findings, reuse attributable unchanged evidence,
+    and summarize waiting/unchanged/pending work. Already-open PRs need only missing evidence;
+    no mass re-review or rejection. Route code/infrastructure to code review and preserve
+    historical/cleanup paths. Ask one decisive evidence question at uncertainty/timebox limits.
+    The README-only checker's rejection of non-README files remains a CI limitation, not a
+    project-eligibility verdict; resolve check applicability in code review without waiving gates.
+11. Record observed head/base/body and checker provenance. Require both current workflow gates;
+    `PR Review` without a trustworthy matching inspected-input stamp is unverified, including
+    older green runs. A `pull_request_target` SHA is not the inspected head. Keep eligibility,
+    editorial priority and readiness separate; checkable evidence is distinct from claims.
+12. Protect small, new, solo and pseudonymous projects; inspect actual implementation and
+    dependencies rather than identity or popularity. Preserve the published permanent-free
+    rules and 12-month activity requirement. Classification labels never imply approval.
 
 ## GitHub MCP Tools
 
