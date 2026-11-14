@@ -5,15 +5,17 @@ from __future__ import annotations
 
 import argparse
 import difflib
+import hashlib
 import http.client
 import ipaddress
 import os
 import re
 import socket
 import ssl
+import subprocess
 import sys
 from collections import Counter
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import datetime, timedelta, timezone
 from functools import cache
 from pathlib import Path
@@ -26,7 +28,10 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+LOADED_MODULE_CODE = sys._getframe().f_code
+
 from scripts.readme_entries import (
+    LOADED_MODULE_CODE as LOADED_README_ENTRIES_CODE,
     ENTRY_RE,
     GITHUB_LINK_RE,
     HISTORICAL_SECTION,
@@ -70,6 +75,83 @@ CHECK_ORDER = (
 class Finding:
     check: str
     detail: str
+
+
+@dataclass(frozen=True)
+class ReviewSnapshot:
+    repository: str
+    pr_number: int
+    head_sha: str
+    base_sha: str
+    body_sha256: str
+    checker_revision: str
+    observed_at: str
+    checker_sources_sha256: str = ""
+    checker_clean: bool = False
+    merge_base_sha: str = ""
+    title_sha256: str = ""
+
+
+def capture_review_snapshot(pull_request: Any, checker_revision: str, observed_at: datetime) -> ReviewSnapshot:
+    return ReviewSnapshot(
+        pull_request.base.repo.full_name, pull_request.number,
+        pull_request.head.sha, pull_request.base.sha,
+        hashlib.sha256((pull_request.body or "").encode("utf-8")).hexdigest(),
+        checker_revision, observed_at.isoformat(),
+        title_sha256=hashlib.sha256((pull_request.title or "").encode("utf-8")).hexdigest(),
+    )
+
+
+def same_review_inputs(before: ReviewSnapshot, after: ReviewSnapshot) -> bool:
+    return (before.repository, before.pr_number, before.head_sha, before.base_sha,
+            before.body_sha256, before.checker_revision, before.title_sha256) == (
+            after.repository, after.pr_number, after.head_sha, after.base_sha,
+            after.body_sha256, after.checker_revision, after.title_sha256)
+
+
+CHECKER_SOURCES = ("scripts/review_pr.py", "scripts/readme_entries.py")
+
+
+def checker_sources_sha256(contents: dict[str, bytes]) -> str:
+    digest = hashlib.sha256()
+    for name, content in contents.items():
+        digest.update(name.encode("utf-8") + b"\0" + len(content).to_bytes(8, "big") + content)
+    return digest.hexdigest()
+
+
+def read_checker_sources() -> dict[str, bytes]:
+    return {name: (ROOT / name).read_bytes() for name in CHECKER_SOURCES}
+
+
+IMPORTED_CHECKER_SHA256 = checker_sources_sha256(read_checker_sources())
+
+
+def verify_loaded_checker_sources() -> None:
+    contents = read_checker_sources()
+    loaded = (LOADED_MODULE_CODE, LOADED_README_ENTRIES_CODE)
+    for name, code in zip(CHECKER_SOURCES, loaded):
+        compiled = compile(contents[name], code.co_filename, "exec",
+                           dont_inherit=True, optimize=sys.flags.optimize)
+        if compiled != code:
+            raise RuntimeError(f"loaded checker code differs from source: {name}")
+
+
+def checker_source_state(revision: str) -> tuple[str, bool]:
+    contents = read_checker_sources()
+    tracked = {
+        name: subprocess.check_output(["git", "-C", str(ROOT), "show", f"{revision}:{name}"])
+        for name in contents
+    }
+    clean = contents == tracked
+    return checker_sources_sha256(contents), clean
+
+
+def checker_source_versions() -> tuple[tuple[int, ...], ...]:
+    versions = []
+    for name in CHECKER_SOURCES:
+        info = (ROOT / name).stat()
+        versions.append((info.st_dev, info.st_ino, info.st_size, info.st_mtime_ns, info.st_ctime_ns))
+    return tuple(versions)
 
 
 def parse_args() -> argparse.Namespace:
@@ -197,7 +279,7 @@ def analyze_readme_change(
     added_lines: list[str] = []
     removed_lines: list[str] = []
     for raw_line in (patch or "").splitlines():
-        if raw_line.startswith(("@@", "+++", "---")):
+        if raw_line.startswith("@@"):
             continue
         if raw_line.startswith("+"):
             added_lines.append(raw_line[1:])
@@ -274,7 +356,8 @@ def match_existing_entries(
 def remove_entry_lines(readme_text: str, entry_lines: list[str]) -> str:
     lines = readme_text.splitlines()
     for entry_line in entry_lines:
-        lines.remove(entry_line)
+        if entry_line in lines:
+            lines.remove(entry_line)
     return "\n".join(lines)
 
 
@@ -720,17 +803,81 @@ def review_pr(
     *,
     now: datetime | None = None,
     check_pull_request_duplicates: bool = True,
+    snapshot_sink: list[ReviewSnapshot] | None = None,
 ) -> tuple[list[Finding], str, int]:
     current_time = now or datetime.now(timezone.utc)
-
+    checker_revision = subprocess.check_output(
+        ["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True
+    ).strip()
+    if not re.fullmatch(r"[0-9a-f]{40,64}", checker_revision):
+        raise RuntimeError("invalid trusted checker revision")
+    source_versions = checker_source_versions()
+    source_state = checker_source_state(checker_revision)
+    if source_state[0] != IMPORTED_CHECKER_SHA256:
+        raise RuntimeError("checker sources changed since import")
+    verify_loaded_checker_sources()
     repository = client.get_repo(repository_name)
     pull_request = repository.get_pull(pr_number)
+    snapshot = replace(
+        capture_review_snapshot(pull_request, checker_revision, datetime.now(timezone.utc)),
+        checker_sources_sha256=source_state[0], checker_clean=source_state[1],
+    )
+    if snapshot.repository.casefold() != repository_name.casefold() or snapshot.pr_number != pr_number:
+        raise RuntimeError("PR identity does not match requested repository and number")
+
+    def refresh() -> None:
+        try:
+            latest = repository.get_pull(pr_number)
+            refreshed = capture_review_snapshot(latest, checker_revision, datetime.now(timezone.utc))
+        except Exception as exc:
+            raise RuntimeError(f"PR snapshot refresh failed: {exc}") from exc
+        if not same_review_inputs(snapshot, refreshed):
+            raise RuntimeError("stale PR inputs; rerun review")
+
+    try:
+        try:
+            files = list(pull_request.get_files())
+        finally:
+            refresh()
+        if len(files) == 1 and files[0].filename == "README.md":
+            comparison = repository.compare(snapshot.base_sha, snapshot.head_sha)
+            if len(comparison.files) != 1 or comparison.files[0].filename != "README.md":
+                raise RuntimeError("captured comparison does not match PR files")
+            merge_base_sha = comparison.merge_base_commit.sha
+            if not isinstance(merge_base_sha, str) or not merge_base_sha:
+                raise RuntimeError("missing comparison merge base")
+            snapshot = replace(snapshot, merge_base_sha=merge_base_sha)
+        result = _review_pr_inputs(
+            repository, pull_request, files, snapshot, client, current_time,
+            check_pull_request_duplicates,
+        )
+    finally:
+        try:
+            refresh()
+        finally:
+            if (checker_source_versions() != source_versions
+                    or checker_source_state(checker_revision) != source_state):
+                raise RuntimeError("checker sources changed during review")
+            current_revision = subprocess.check_output(
+                ["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True
+            ).strip()
+            if current_revision != checker_revision:
+                raise RuntimeError("checker revision changed during review")
+    if snapshot_sink is not None:
+        snapshot_sink.append(snapshot)
+    return result
+
+
+def _review_pr_inputs(
+    repository: Any, pull_request: Any, files: list[Any], snapshot: ReviewSnapshot,
+    client: Github, current_time: datetime, check_pull_request_duplicates: bool,
+) -> tuple[list[Finding], str, int]:
+    pr_number = snapshot.pr_number
     findings: list[Finding] = []
 
     if not (pull_request.body or "").strip():
         findings.append(Finding("description", "PR body is empty"))
 
-    files = list(pull_request.get_files())
     if len(files) != 1 or files[0].filename != "README.md":
         changed = ", ".join(file.filename for file in files) or "none"
         findings.append(
@@ -750,11 +897,16 @@ def review_pr(
             return None
         return identity if type(identity) is int and identity > 0 else None
 
-    base_readme = read_readme(repository, pull_request.base.sha)
-    head_readme = read_readme(repository, pull_request.head.sha)
-    patch_text = files[0].patch
+    base_readme = read_readme(repository, snapshot.base_sha)
+    head_readme = read_readme(repository, snapshot.head_sha)
+    merge_base_readme = (base_readme if snapshot.merge_base_sha == snapshot.base_sha
+                         else read_readme(repository, snapshot.merge_base_sha))
+    diff_lines = list(difflib.unified_diff(
+        merge_base_readme.splitlines(), head_readme.splitlines(), lineterm=""
+    ))
+    patch_text = "\n".join(diff_lines[2:])
     verified_lines: Counter[str] = Counter()
-    reference_repairs = nested_reference_repairs(base_readme, head_readme)
+    reference_repairs = nested_reference_repairs(merge_base_readme, head_readme)
     for old_index, new_index, old_url, new_url in reference_repairs:
         old_id, new_id = repository_id(old_url), repository_id(new_url)
         if old_id is None or old_id != new_id:
@@ -762,7 +914,7 @@ def review_pr(
                 "reference", "nested reference must retain its verified GitHub repository identity"
             ))
             continue
-        verified_lines["-" + base_readme.splitlines()[old_index]] += 1
+        verified_lines["-" + merge_base_readme.splitlines()[old_index]] += 1
         verified_lines["+" + head_readme.splitlines()[new_index]] += 1
     if verified_lines:
         remaining_patch = []
@@ -777,7 +929,7 @@ def review_pr(
                 "reference", "nested reference repair missing from PR patch"
             ))
         elif not any(
-            line.startswith(("+", "-")) and not line.startswith(("+++", "---"))
+            line.startswith(("+", "-"))
             for line in remaining_patch
         ):
             return findings, pull_request.title, 0
@@ -790,8 +942,8 @@ def review_pr(
 
     duplicate_base_readme = remove_entry_lines(base_readme, removed_entry_lines)
     readme_cache = {
-        pull_request.base.sha: base_readme,
-        pull_request.head.sha: head_readme,
+        snapshot.base_sha: base_readme,
+        snapshot.head_sha: head_readme,
     }
     previous_entries = match_existing_entries(
         entry_lines, removed_entry_lines, repository_id
@@ -816,7 +968,7 @@ def review_pr(
                 previous_line=previous_line,
                 repository_id=repository_id,
                 previous_section=(
-                    find_entry_section(base_readme, previous_line, require_unique=False)
+                    find_entry_section(merge_base_readme, previous_line, require_unique=False)
                     if previous_line
                     else ""
                 ),
@@ -850,12 +1002,25 @@ def main() -> int:
         if not repository_name:
             return fail("GITHUB_REPOSITORY is required")
         client = Github(auth=Auth.Token(token))
+        snapshots: list[ReviewSnapshot] = []
         findings, title, entries_reviewed = review_pr(
             repository_name,
             pr_number,
             client,
             check_pull_request_duplicates=not args.skip_pull_request_duplicates,
+            snapshot_sink=snapshots,
         )
+        if snapshots:
+            snapshot = snapshots[0]
+            stamp = "Review snapshot:\n" + "\n".join(
+                f"- {field}: {getattr(snapshot, field)}"
+                for field in snapshot.__dataclass_fields__
+            )
+            summary = env("GITHUB_STEP_SUMMARY")
+            if summary:
+                with open(summary, "a", encoding="utf-8") as output:
+                    output.write(stamp + "\n")
+            print(stamp)
     except Exception as exc:
         return fail(str(exc))
 
