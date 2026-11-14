@@ -101,12 +101,20 @@ class FakePull:
 
 
 class FakeProjectRepository:
+    default_branch = "main"
+
     def __init__(self):
         self.archived = False
         self.pushed_at = NOW
         self.has_root_readme = True
         self.has_readme = True
         self.readme_error = None
+
+    def get_commit(self, sha):
+        if sha != self.default_branch:
+            raise AssertionError(f"unexpected commit ref: {sha}")
+        return SimpleNamespace(commit=SimpleNamespace(
+            committer=SimpleNamespace(date=self.pushed_at)))
 
     def get_contents(self, path):
         if path != "README.md":

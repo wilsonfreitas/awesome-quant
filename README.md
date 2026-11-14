@@ -4,6 +4,9 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 [![](https://awesome.re/badge.svg)](https://awesome.re)
 
+Choosing a backtesting tool? [Start with the backtesting selection guide](docs/choosing-backtesting.md)
+for use cases, tradeoffs, and validation questions.
+
 ## Contents
 
 - [Numerical Libraries & Data Structures](#numerical-libraries--data-structures)

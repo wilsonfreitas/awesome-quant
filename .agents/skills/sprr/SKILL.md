@@ -183,6 +183,13 @@ attributable unchanged evidence and preserve the cleanup exceptions above:
 - GitHub projects are checked for source availability, activity, archived status,
   documentation, and community evidence. GitHub relevance does not waive duplicate, format,
   or quality checks.
+- Apply CONTRIBUTING.md's meaningful-maintenance, mature low-change software, and educational
+  resource criteria. A recent default-branch commit is a screening signal only. An old or
+  unverified date requires a focused evidence assessment, not an automatic rejection. Inspect
+  one relevant fix, release, compatibility example, substantive documentation change or support
+  interaction. Record the evidence and any exception rationale; missing evidence blocks manual
+  approval even when deterministic CI passes. Repository age, stars, team size and legal names
+  are not eligibility gates. Archived source retains the historical/cleanup restrictions.
 - Multiple projects in one PR are closely related and explained in the PR body.
 
 ## Repository Substance and Linked Services
@@ -250,8 +257,10 @@ Use these verdicts:
   A precise missing-evidence request may use this verdict while eligibility remains
   `NEEDS EVIDENCE`; it does not assert that the service qualifies.
 - Other `REJECT` cases include duplicates, unrelated multi-project PRs, empty PR descriptions,
-  archived or abandoned projects unless they qualify under CONTRIBUTING.md's
-  `Historical & Archived Projects` exception, and other hard rejections.
+  archived projects outside CONTRIBUTING.md's `Historical & Archived Projects` or documented
+  cleanup exceptions, and other demonstrated hard failures. Old or missing commit dates alone
+  do not establish abandonment: assess the documented low-change and educational criteria,
+  requesting missing evidence before deciding eligibility.
 - Cleanup follows CONTRIBUTING.md's limited exceptions, with manual review still required.
 
 ## Output Shape
