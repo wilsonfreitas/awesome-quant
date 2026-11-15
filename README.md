@@ -826,6 +826,7 @@ for use cases, tradeoffs, and validation questions.
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Sunday Gap](https://sundaygap.com) - Free futures economic calendar in US Central time with an iCalendar feed, CME Globex market and holiday hours, and tick-value and position-size calculators for 17 contracts; every feature is free without an account or payment details.
 
 ## Historical & Archived Projects
 
