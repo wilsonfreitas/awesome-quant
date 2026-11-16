@@ -2,111 +2,52 @@
 """Parse README.md and generate a static HTML site for awesome-quant.
 
 Can run in two modes:
-1. With projects.csv (produced by parse.py) — includes stars, last commit, etc.
-2. Without CSV — parses README.md directly for a quick local preview.
+1. Default README preview — always reflects the current catalogue.
+2. Explicit --source csv — uses enriched data produced by parse.py.
 """
 
+import argparse
 import csv
 import html
+import json
 import re
 import sys
 from pathlib import Path
 
 
-def slugify(text: str) -> str:
-    """Convert text to lowercase hyphen-separated slug."""
-    text = text.lower().strip()
-    text = re.sub(r"[&/]+", "-", text)
-    text = re.sub(r"[^\w\s-]", "", text)
-    text = re.sub(r"[\s_]+", "-", text)
-    text = re.sub(r"-+", "-", text)
-    return text.strip("-")
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+from scripts.readme_entries import GITHUB_LINK_RE, iter_readme_entries, slugify
+from scripts.metadata import FIELDS, checked_at_value, date_value, stars_value
 
 
 def parse_readme(path: str) -> list[dict]:
-    """Parse README.md and return a list of project entries (no API data)."""
+    """Adapt the shared catalogue parser to the site's existing entry schema."""
     entries = []
-    current_category = ""
-
-    re_h2 = re.compile(r"^## (.+)$")
-    re_entry = re.compile(r"^\s*- \[(.+?)\]\((.+?)\) - (.+)$")
-    re_github = re.compile(r"\[GitHub\]\((https://github\.com/[\w-]+/[-\w\.]+)\)")
-    re_badge = re.compile(r"\s*!\[[^\]]*\]\([^)]*\)\s*")
-    re_langs = re.compile(r'^((?:`[^`]+`\s*)+)-\s*(.*)$')
-
-    skip_sections = {"Contents"}
-
-    with open(path, "r", encoding="utf-8") as f:
-        for line in f:
-            line = re_badge.sub(" ", line).rstrip("\n")
-
-            m = re_h2.match(line)
-            if m:
-                current_category = m.group(1).strip()
-                continue
-
-            if current_category in skip_sections:
-                continue
-
-            m = re_entry.match(line)
-            if m:
-                name = m.group(1).strip()
-                url = m.group(2).strip()
-                raw_desc = m.group(3).strip()
-
-                # Extract inline language tags
-                m_lang = re_langs.match(raw_desc)
-                if m_lang:
-                    lang_str = m_lang.group(1)
-                    desc = m_lang.group(2)
-                    languages = re.findall(r'`([^`]+)`', lang_str)
-                else:
-                    desc = raw_desc
-                    languages = []
-
-                primary_language = languages[0] if languages else ""
-
-                github_url = ""
-                gh_match = re_github.search(desc)
-                if gh_match:
-                    github_url = gh_match.group(1)
-                    desc = re_github.sub("", desc).rstrip(". ").rstrip() + "."
-                elif "github.com" in url:
-                    github_url = url
-
-                repo = ""
-                if github_url:
-                    repo_match = re.match(
-                        r"https://github\.com/([\w-]+/[-\w\.]+)", github_url
-                    )
-                    if repo_match:
-                        repo = repo_match.group(1)
-
-                is_cran = "cran.r-project.org" in url
-                is_pypi = "pypi.org" in url or "pypi.python.org" in url
-                is_commercial = current_category == "Commercial & Proprietary Services"
-                section_slug = slugify(current_category)
-
-                entries.append(
-                    {
-                        "project": name,
-                        "language": primary_language,
-                        "languages": ",".join(languages),
-                        "category": current_category,
-                        "section_slug": section_slug,
-                        "url": url,
-                        "description": desc,
-                        "github": bool(github_url),
-                        "cran": is_cran,
-                        "pypi": is_pypi,
-                        "commercial": is_commercial,
-                        "github_url": github_url,
-                        "repo": repo,
-                        "stars": 0,
-                        "last_commit": "",
-                    }
-                )
-
+    for entry in iter_readme_entries(path):
+        desc = entry.description
+        github_match = GITHUB_LINK_RE.search(desc)
+        github_url = github_match.group(1) if github_match else entry.github_url
+        if github_match:
+            desc = GITHUB_LINK_RE.sub("", desc).rstrip(". ").rstrip() + "."
+        repo_match = re.match(r"https://github\.com/([\w-]+/[-\w\.]+)", github_url)
+        entries.append({
+            "project": entry.name,
+            "language": entry.languages[0] if entry.languages else "",
+            "languages": ",".join(entry.languages),
+            "category": entry.section,
+            "section_slug": slugify(entry.section),
+            "url": entry.url,
+            "description": desc,
+            "github": bool(github_url),
+            "cran": "cran.r-project.org" in entry.url,
+            "pypi": "pypi.org" in entry.url or "pypi.python.org" in entry.url,
+            "commercial": entry.section == "Commercial & Proprietary Services",
+            "github_url": github_url,
+            "repo": repo_match.group(1) if repo_match else "",
+            "stars": None,
+            "last_commit": "",
+        })
     return entries
 
 
@@ -120,7 +61,7 @@ def load_csv(path: str) -> list[dict]:
             for key in ("github", "cran", "pypi", "commercial"):
                 row[key] = row.get(key, "").lower() in ("true", "1", "yes")
             # Normalize numbers
-            row["stars"] = int(float(row.get("stars", 0) or 0))
+            row["stars"] = stars_value(row.get("stars"))
             # Extract github_url and repo from CSV data
             repo = row.get("repo", "")
             row["github_url"] = f"https://github.com/{repo}" if repo else ""
@@ -145,7 +86,47 @@ def format_stars(n: int) -> str:
     """Format star count for display."""
     if n >= 1000:
         return f"{n / 1000:.1f}k".replace(".0k", "k")
-    return str(n) if n > 0 else ""
+    return str(n)
+
+
+def metadata_observation(entry: dict, field: str) -> dict:
+    """Interpret additive provenance fields; legacy dates have no known meaning."""
+    source, label = FIELDS[field]
+    value = stars_value(entry.get(field)) if field == "stars" else date_value(entry.get(field))
+    checked = checked_at_value(entry.get(field + "_checked_at"))
+    attributed = entry.get(field + "_source") == source
+    status = entry.get(field + "_status") if checked and attributed else "unknown"
+    if status not in ("fresh", "stale"):
+        status = "unknown"
+    if not attributed and value not in (None, ""):
+        label = ("Stars" if field == "stars" else "Date") + " (source unknown)"
+    if not attributed or value in (None, ""):
+        checked, status = "", "unknown"
+    note = {"fresh": "fresh", "stale": "stale (reused)", "unknown": "freshness unknown"}[status]
+    note = f"Checked {checked or 'unknown'} · {note}"
+    return dict(value=value, label=label, note=note, status=status)
+
+
+def build_metadata_details(entry: dict) -> str:
+    """Expose each field's successful check separately, including on mobile."""
+    details = []
+    for field, flag in (("last_commit", "github"), ("stars", "github"),
+                        ("pypi_upload", "pypi"), ("cran_published", "cran")):
+        observation = metadata_observation(entry, field)
+        value = observation["value"]
+        if not entry.get(flag) and value in (None, ""):
+            continue
+        display = "Unknown" if value in (None, "") else str(value)
+        details.append(
+            f'<p><strong>{html.escape(observation["label"])}</strong>: {html.escape(display)} '
+            f'<span class="metadata-note">{html.escape(observation["note"])}</span></p>'
+        )
+    attempted = checked_at_value(entry.get("metadata_attempted_at"))
+    if not details:
+        return ""
+    if attempted:
+        details.append(f'<p>Last metadata attempt: {html.escape(attempted)}</p>')
+    return '<div class="metadata-details">' + "".join(details) + '</div>'
 
 
 def build_tags_html(e: dict) -> str:
@@ -235,18 +216,15 @@ def build_tag_cloud(entries: list[dict]) -> str:
     all_items.sort(key=lambda x: x[2], reverse=True)
 
     # Calculate size scale (1.0 to 1.6x)
-    if all_items:
-        min_count = min(item[2] for item in all_items)
-        max_count = max(item[2] for item in all_items)
-        count_range = max_count - min_count if max_count > min_count else 1
-    else:
-        min_count = max_count = count_range = 1
+    min_count = min(item[2] for item in all_items)
+    max_count = max(item[2] for item in all_items)
+    count_range = max_count - min_count if max_count > min_count else 1
 
     tags = []
     esc = html.escape
     for tag_type, value, count in all_items:
         # Calculate font size: 1.0 to 1.6
-        size = 1.0 + ((count - min_count) / count_range * 0.6) if count_range > 0 else 1.0
+        size = 1.0 + ((count - min_count) / count_range * 0.6)
 
         if tag_type == "language":
             tags.append(
@@ -260,9 +238,6 @@ def build_tag_cloud(entries: list[dict]) -> str:
                 f'data-filter-type="category" data-filter-value="{esc(value)}" '
                 f'style="font-size: {size:.2f}em;">{esc(value)}</button>'
             )
-
-    if not tags:
-        return ""
 
     return f"""        <div class="tag-cloud">
           <div class="tag-cloud-label">Popular filters:</div>
@@ -301,34 +276,42 @@ def generate_html(entries: list[dict]) -> str:
         desc = esc(e["description"])
         category = esc(e.get("category", ""))
         github_url = esc(e.get("github_url", ""))
-        repo = esc(e.get("repo", ""))
-        stars = int(e.get("stars", 0) or 0)
-        last_commit = e.get("last_commit", "") or ""
+        stars_observation = metadata_observation(e, "stars")
+        stars = stars_observation["value"]
+        dates = [(metadata_observation(e, field), e.get(flag)) for field, flag in
+                 (("last_commit", "github"), ("pypi_upload", "pypi"), ("cran_published", "cran"))]
+        update = next((observation for observation, _ in dates if observation["value"]),
+                      next((observation for observation, applies in dates if applies), dates[0][0]))
+        update_date = update["value"] or ""
         is_github = e.get("github", False)
         is_cran = e.get("cran", False)
         is_pypi = e.get("pypi", False)
         is_commercial = e.get("commercial", False)
 
-        # Languages attribute (space-separated)
-        languages_attr = esc(" ".join(
+        # Exact tag strings, including spaces and HTML-sensitive characters.
+        tags_attr = esc(json.dumps([
             l.strip() for l in e.get("languages", e.get("language", "")).split(",") if l.strip()
-        ))
+        ]))
 
         # Stars display
         stars_html = (
-            f'<span class="stars" title="{stars:,} stars">'
+            f'<span class="stars" title="{stars:,} stars; {esc(stars_observation["note"])}">'
             f'<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'
             f" {format_stars(stars)}</span>"
-            if stars > 0
-            else ""
+            if stars is not None
+            else '<span class="metadata-unknown">Unknown</span>'
         )
+        if stars is not None and stars_observation["status"] != "fresh":
+            stars_html += f'<span class="metadata-label">{esc("stale (reused)" if stars_observation["status"] == "stale" else "source / check date unknown")}</span>'
 
-        # Last update display
+        # A registry date never acquires the label or provenance of a commit.
         last_update_html = (
-            f'<span class="last-update" title="Last commit: {esc(last_commit)}">{esc(last_commit)}</span>'
-            if last_commit and last_commit != "error"
-            else ""
+            f'<span class="last-update" title="{esc(update["note"])}">{esc(update_date) or "Unknown"}</span>'
+            f'<span class="metadata-label">{esc(update["label"]) if update_date or any(applies for _, applies in dates) else "No date available"}</span>'
         )
+        if update_date and update["status"] == "stale":
+            last_update_html += '<span class="metadata-label">stale (reused)</span>'
+        metadata_details = build_metadata_details(e)
 
         # Source flags for data attributes
         sources = []
@@ -345,7 +328,7 @@ def generate_html(entries: list[dict]) -> str:
         tags_html = build_tags_html(e)
 
         rows.append(
-            f"""      <tr class="row" data-languages="{languages_attr}" data-category="{category}" data-sources="{sources_attr}" data-stars="{stars}">
+            f"""      <tr class="row" data-tags="{tags_attr}" data-category="{category}" data-sources="{sources_attr}" data-stars="{stars if stars is not None else -1}" data-update="{esc(update_date)}">
         <td class="col-num">{i}</td>
         <td class="col-name">
           <a href="{url}" target="_blank" rel="noopener">{name}</a>
@@ -362,6 +345,7 @@ def generate_html(entries: list[dict]) -> str:
         <td colspan="6">
           <div class="expand-content">
             <p class="expand-desc">{desc}</p>
+            {metadata_details}
             <div class="expand-links">
               <a href="{url}" target="_blank" rel="noopener">{url}</a>
               {f'<a href="{github_url}" target="_blank" rel="noopener">{github_url}</a>' if github_url and github_url != url else ''}
@@ -393,7 +377,8 @@ def generate_html(entries: list[dict]) -> str:
       <nav class="nav">
         <span class="nav-brand">awesome-quant</span>
         <div class="nav-links">
-          <a href="https://github.com/wilsonfreitas/awesome-quant/blob/master/CONTRIBUTING.md" class="nav-submit">Submit a Project</a>
+          <a href="https://github.com/wilsonfreitas/awesome-quant/blob/main/CONTRIBUTING.md" class="nav-submit">Submit a Project</a>
+          <a href="https://github.com/wilsonfreitas/awesome-quant/blob/main/docs/choosing-backtesting.md">Choosing a backtester</a>
           <a href="https://github.com/wilsonfreitas/awesome-quant">GitHub</a>
           <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
             <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
@@ -408,7 +393,7 @@ def generate_html(entries: list[dict]) -> str:
         <div class="hero-stats">
           <span class="stat"><strong>{total}</strong> projects</span>
           <span class="stat-sep"></span>
-          <span class="stat"><strong>{len(languages)}</strong> languages</span>
+          <span class="stat"><strong>{len(languages)}</strong> tags</span>
         </div>
         <a href="#content" class="hero-cta">Browse the List</a>
       </div>
@@ -484,28 +469,24 @@ def generate_html(entries: list[dict]) -> str:
 </html>"""
 
 
-def main():
-    root = Path(__file__).resolve().parent.parent
-    readme = root / "README.md"
-    csv_path = root / "site" / "projects.csv"
-    output = root / "site" / "index.html"
-
-    # Prefer CSV if it exists (has stars, last commit from API)
-    if csv_path.exists():
-        print(f"Loading from {csv_path}")
-        entries = load_csv(str(csv_path))
-    elif readme.exists():
-        print(f"Parsing {readme} (no CSV — stars/dates will be empty)")
-        entries = parse_readme(str(readme))
-    else:
-        print(f"ERROR: neither {csv_path} nor {readme} found", file=sys.stderr)
-        sys.exit(1)
-
-    print(f"Loaded {len(entries)} projects")
-    html_content = generate_html(entries)
-    output.write_text(html_content, encoding="utf-8")
-    print(f"Generated {output}")
+def main(argv=None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source", choices=("readme", "csv"), default="readme")
+    parser.add_argument("--readme", type=Path, default=ROOT / "README.md")
+    parser.add_argument("--csv", type=Path, default=ROOT / "site/projects.csv")
+    parser.add_argument("--output", type=Path, default=ROOT / "site/index.html")
+    args = parser.parse_args(argv)
+    source = args.csv if args.source == "csv" else args.readme
+    try:
+        entries = load_csv(source) if args.source == "csv" else parse_readme(source)
+        args.output.write_text(generate_html(entries), encoding="utf-8")
+    except (OSError, ValueError, csv.Error) as exc:
+        print(f"ERROR generating site from {source}: {exc}", file=sys.stderr)
+        return 1
+    print(f"Loaded {len(entries)} projects from {source}")
+    print(f"Generated {args.output}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
