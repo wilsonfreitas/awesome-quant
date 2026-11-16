@@ -740,6 +740,7 @@ for use cases, tradeoffs, and validation questions.
 - [TradeMux Snippets](https://github.com/KVignesh122/trademux-examples) - `Python` - Code snippets for Metatrader (MT5) forex/CFD trading and data retrieval via trademux API client.
 - [QuantTrainer Stochastic Calculus Labs](https://quanttrainer.com.br) - `Python` `Training` `Interviews` - Step-by-step derivations in Portuguese of Itô's lemma, Girsanov's theorem and the Black-Scholes to heat equation reduction, with free browser simulators and Python scripts that verify each result numerically. [GitHub](https://github.com/JPAurelio-creator/stochastic-calculus-labs) 
 - [EPSILON](https://epsilonfield.space/) - `Python` - Open-source backtesting simulator with a 25-minute Assumption Clinic worksheet that teaches students to inspect backtest assumptions using published failed cases. [GitHub](https://github.com/DresdenGman/EPSILON-trading-simulator)
+- [celsus](https://github.com/0ywfe/celsus) - `Python` - Given an arXiv paper, it rebuilds the analysis from public data in a sandbox and checks whether the reported numbers hold up.
 
 ## Commercial & Proprietary Services
 
