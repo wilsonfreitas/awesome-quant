@@ -147,6 +147,7 @@ for use cases, tradeoffs, and validation questions.
 - [RustQuant](https://github.com/avhz/RustQuant) - `Rust` - Quantitative finance library written in Rust.
 - [stochastic-rs](https://stochastic.rust-dd.com) - `Rust` `Python` - Quantitative finance library with 130+ stochastic processes, option pricing and calibration, volatility surfaces and copulas, SIMD/GPU accelerated with Python bindings. [GitHub](https://github.com/rust-dd/stochastic-rs)
 - [QoX](https://github.com/bboutelje/qox-python-samples) - `Python` - Finite difference pricing library written in Rust.
+- [zinging](https://github.com/SMC17/zinging) - `Zig` `Python` `WebAssembly` - Zero-allocation Zig 0.15.2 computational substrate featuring options and fixed-income pricing (Black-Scholes, Bachelier, Heston, SABR, SVI, Dupire, Monte Carlo), ITCH limit order book and microstructure analytics, sequential A/B testing, and DSP/Kalman filtering, with 199 C ABI symbols, a Python wheel, and WebAssembly bindings.
 
 ## Technical Indicators
 
