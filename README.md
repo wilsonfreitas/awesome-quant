@@ -742,6 +742,7 @@ for use cases, tradeoffs, and validation questions.
 - [EPSILON](https://epsilonfield.space/) - `Python` - Open-source backtesting simulator with a 25-minute Assumption Clinic worksheet that teaches students to inspect backtest assumptions using published failed cases. [GitHub](https://github.com/DresdenGman/EPSILON-trading-simulator)
 
 ## Commercial & Proprietary Services
+- [StockYears](https://stockyears.com/) - Annual financials, 10-K report lists and insider transactions for S&P 500 companies. Freemium.
 
 - [Korea Stock Data](https://aikstockdata.com/) - `Data` - Free Korean equity settled closes with 250 trading days of per-stock history, DART filings and earnings as JSON/CSV, without signup, an API key or request quotas. [GitHub](https://github.com/na77tech-creator/aikstockdata)
 - [Korean Market Data](https://kexportstars.com/tools/) - `Data` - Free Korean investor-flow and sector-index datasets in English CSV/JSON, updated each trading day under CC BY 4.0 without signup. Versioned Zenodo archive, DOI: 10.5281/zenodo.21833374. [GitHub](https://github.com/james-brand/korea-market-data)
