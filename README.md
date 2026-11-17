@@ -826,6 +826,7 @@ for use cases, tradeoffs, and validation questions.
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Xun Qiao](https://xunqiao.qq10.fun/about) - Free research workspace for crypto and U.S. stocks that connects headlines to price context across 1,200+ sources; a free email-verified account with no card required unlocks the workbench, news reader, markets and published research, optional Gold adds GPT conversations and a developer API, optional Premium adds a paid read-only news API, and the site does not execute trades. [GitHub](https://github.com/xunqiao111/xunqiao-market-intelligence)
 
 ## Historical & Archived Projects
 
