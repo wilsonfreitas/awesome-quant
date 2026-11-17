@@ -645,6 +645,7 @@ for use cases, tradeoffs, and validation questions.
 
 ## Quant Research Environments
 
+- [Arthon](https://github.com/Ayushshuklai/arthon) - `Python` - Multi-agent stock research for NSE/BSE and global markets with realistic Indian trading costs and walk-forward forecast accuracy published in every report.
 - [AxonX](https://github.com/FlowLLM-AI/AxonX) - `Python` `MCP` - Agent-native quantitative research harness with plugin-based tasks for data processing, factor analysis, model training, and backtesting, traceable artifacts, and CLI and web interfaces.
 - [thesis-ci](https://github.com/kentian742-creator/thesis-ci) - `Python` `CLI` `YAML` - Linter and CI for written investment theses that fails a number without a filing citation, freezes test thresholds once results are out, and Brier-scores forecasts.
 - [TradingAgents](https://github.com/TauricResearch/TradingAgents) - `Python` `LLM` - Multi-agent financial research framework combining fundamental, technical, news, and sentiment analysis with structured investment debates and risk assessment.
