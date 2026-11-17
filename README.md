@@ -826,6 +826,7 @@ for use cases, tradeoffs, and validation questions.
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Crystal Ball Markets Rates API](https://crystalballmarkets.com/markets/rates-api) - `REST` - Free JSON exchange rates for 60 currencies against USD, gold prices in local currency and units for 69 countries, and live broker quotes, refreshed every minute, at up to 60 requests per minute without signup or payment information; a visible credit link is required. [GitHub](https://github.com/crystalballmarkets/rates-api-examples)
 
 ## Historical & Archived Projects
 
