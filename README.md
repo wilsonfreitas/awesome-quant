@@ -352,6 +352,7 @@ for use cases, tradeoffs, and validation questions.
 - [IBKR-Telegram](https://github.com/GeiserX/IBKR-Telegram) - `Python` `Telegram` - Self-hosted Telegram bot for Interactive Brokers that runs next to IB Gateway: position snapshots and P&L tracking, plus option orders from chat commands or webhook signals, each confirmed in Telegram before it is sent, with market-hours, duplicate-signal and position-limit checks on webhook signals.
 - [Algo-Trading-Skills](https://github.com/HimanshuJ16/Algo-Trading-Skills) - `Python` `AI` `Agent-Skills` - Library of 501 agentskills.io-format skills giving AI coding agents trading-infrastructure playbooks for order idempotency, look-ahead-bias elimination, kill switches, execution algorithms and point-in-time data, each with a standalone Python reference implementation and its own unittest suite.
 - [nt8-mcp](https://github.com/tbraman-dev/nt8-mcp) - `C#` `Python` `MCP` - MCP server and NinjaTrader 8 AddOn that give an AI coding assistant a build loop for NinjaScript: offline and in-platform compile with structured errors, chart and log reads, headless backtests, optimization and walk-forward; read-only by default.
+- [Goodbye FuffaGuru](https://github.com/proof-over-hype/goodbye-fuffaguru) - `Python` `Claude Code` - Toolkit to reality-check trading educators: capture their videos and live streams, extract the trades and rules they show, verify the trades on market data and test the rules against random-direction and fake-level nulls with sha256 preregistration.
 
 ## Portfolio Optimization & Risk Analysis
 
