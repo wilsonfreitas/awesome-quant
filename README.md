@@ -826,6 +826,7 @@ for use cases, tradeoffs, and validation questions.
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [ApexTick](https://apextick.com) - `Python` `REST` `MCP` - Market data API for equities, ETFs, FX and crypto with option chains and Greeks, technical indicators, Excel functions and a hosted MCP server; the permanent free tier includes quotes, OHLCV history, ticker search and four MCP tools at 500 requests per day without a credit card. [GitHub](https://github.com/apextick/apextick-starter-kit)
 
 ## Historical & Archived Projects
 
