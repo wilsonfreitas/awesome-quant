@@ -655,6 +655,7 @@ for use cases, tradeoffs, and validation questions.
 - [Jupyter Quant](https://github.com/quantbelt/jupyter-quant) - `Python` - A dockerized Jupyter quant research environment with preloaded tools for quant analysis, statsmodels, pymc, arch, py_vollib, zipline-reloaded, PyPortfolioOpt, etc.
 - [AlphaLattice](https://github.com/xinglin-li/alphalattice) - `Python` `Claude Code` `Codex` - Local research workbench that a coding agent drives from one sentence: dated US large-cap research positions bounded by each date's information cutoff, SEC-filing evidence review, and an investment committee that changes no numbers.
 - [SmartMoney-Cub](https://github.com/myc0576/SmartMoney-Cub) - `Python` `LLM` - Local-first, agent-agnostic trading journal and review harness that freezes point-in-time run envelopes and evidence packs, replays them deterministically, and evaluates rule candidates against a frozen 240-case finance benchmark, with no order or broker access.
+- [ATALAYA Financial](https://github.com/fundedtradersclub-code/atalayafinancial) - `TypeScript` `Next.js` - Browser market terminal in English and Spanish with candlestick charts, indicators and drawing tools, multi-timeframe trend scoring, VaR/CVaR and tearsheet risk via TradingCalc, SEC EDGAR fundamentals and an optional AI analyst, using free data sources by default or the user's own API keys.
 
 ## Cross-Language Frameworks
 
