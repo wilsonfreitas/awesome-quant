@@ -826,6 +826,7 @@ for use cases, tradeoffs, and validation questions.
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [CrowdWisdom Trading](https://www.crowdwisdomtrading.com/x402) - `REST` `MCP` `Python` - Daily and weekly crowd sentiment score (-100 to +100) with the number of distinct pro traders behind it for US stocks, ETFs, crypto, futures and FX, aggregated from trader posts on YouTube, X, StockTwits, Reddit, podcasts and newsletters; permanent free tier of 50 daily and 50 weekly score calls per day per IP without signup or payment details; historical consensus, support/resistance levels and trade setups are paid per call over x402.
 
 ## Historical & Archived Projects
 
