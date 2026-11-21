@@ -132,6 +132,7 @@ for use cases, tradeoffs, and validation questions.
 - [quantcomponents](https://github.com/lsgro/quantcomponents) - `Java` - Free Java components for Quantitative Finance and Algorithmic Trading.
 - [DRIP](https://lakshmidrip.github.io/DRIP/) - `Java` - Fixed Income, Asset Allocation, Transaction Cost Analysis, XVA Metrics Libraries.
 - [finance.js](https://github.com/ebradyjobory/finance.js) - `JavaScript` - A JavaScript library for common financial calculations.
+- [headroomdesk-calculators](https://github.com/headroomdesk/calculators) - `JavaScript` `MCP` - Options P/L at expiry for any mix of calls, puts and shares, Black-Scholes value, Greeks and implied volatility in plain JavaScript, checked against 3,123 vectors from an independent Python reference; also served as a read-only MCP server.
 - [hagan-sabr](https://github.com/moshejs/hagan-sabr) - `TypeScript` - SABR stochastic-volatility model (Hagan 2002 lognormal/normal expansions, Obłój correction, smile calibration); zero dependencies, matches QuantLib's sabrVolatility to 1e-9.
 - [svi-vol-surface](https://github.com/moshejs/svi-vol-surface) - `TypeScript` - Gatheral SVI volatility surface (raw/natural/jump-wings), butterfly and calendar arbitrage checks, slice calibration; zero dependencies.
 - [compounded-sofr](https://github.com/moshejs/compounded-sofr) - `TypeScript` - SOFR compounding-in-arrears per ARRC/ISDA conventions (lookback, observation shift, lockout) and the SOFR Index method; reproduces the NY Fed's published averages.
