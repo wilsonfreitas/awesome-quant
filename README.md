@@ -826,6 +826,7 @@ for use cases, tradeoffs, and validation questions.
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Trade4 Backtester](https://trade-4.com) - Hosted no-code backtester for US small-cap intraday strategies (gaps, runners, re-entries, swings) on 1-minute to 4-hour bars; the permanent free plan runs three backtests a day over a 30-day window, and the stock-split and skip-candle datasets are open without signup.
 
 ## Historical & Archived Projects
 
