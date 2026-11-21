@@ -2,6 +2,100 @@
 
 Your contributions are always welcome! Please ensure your pull request meets the following guidelines.
 
+## Evidence to Include
+
+Help reviewers assess the submitted functionality with a short evidence block in the PR body.
+Links to existing documentation are enough; do not duplicate it or run code for the reviewer.
+
+- **Quant use case:** the concrete task, intended users, and useful result.
+- **Implementation and example:** representative source implementing that task, plus one
+  example or test and its expected behavior. Distinguish public functionality from a hosted
+  companion; a repository URL, license, stars, or generated output alone is not implementation
+  evidence. Disclose what has actually been checked versus what is claimed or unresolved.
+- **Maintenance and support:** one meaningful fix, development change, documentation update,
+  or other maintenance artifact; a stable maintainer handle/team and a public support route.
+  A new solo project can link its initial implementation, documented limitations and support
+  arrangements. No old issues, response quota, legal name, minimum stars, or minimum project
+  age is required. Pseudonymous maintainers are welcome. Apply the meaningful-maintenance,
+  low-change software and educational-resource criteria below.
+- **Dependencies and access:** license, external services/data, credentials, payment or other
+  restrictions, and what useful workflow is available from the public project itself.
+- **Affiliation and duplicates:** your relationship to the project (or none), related existing
+  entries, and searches of the README and open/recently closed PRs, with results or links.
+
+For a **hosted service without substantive public implementation**, also link the precise
+permanent-free quantitative workflow, pricing and exact limits, payment-information
+requirements, and public documentation, methodology or examples. A thin SDK does not establish
+that the service is open source. The [commercial rules](#commercial--proprietary-projects)
+remain authoritative. For a substantive source project's required hosted dependencies, disclose
+access and payment requirements and explain what the public implementation supplies. Paid data
+credentials do not by themselves disqualify a substantive decoder, analysis library or standalone
+client. The permanent-free eligibility gate applies to the submitted repository-less/thin-service
+offering, not automatically to every external dependency. Paid hosting alone does not move a
+substantive source project into the hosted-service lane. Useful standalone data clients and
+open-core projects are assessed on their actual public implementation and dependencies.
+
+For an **existing-entry correction or cleanup**, identify the inaccurate claim, broken link,
+move or removal and supply evidence for that change. Use the
+[cleanup rules](#audit-cleanup-pull-requests); do not resubmit an unrelated new-project dossier.
+Code and infrastructure changes take a separate code-review path, not README-entry rejection.
+The existing README-only `PR Review` checker may reject non-README files; this routing guidance
+does not change that CI limitation. Resolve check applicability in code review rather than
+treating it as project ineligibility; this policy does not waive required checks.
+
+## Review Capacity and Outcomes
+
+Usefulness, eligibility and merge readiness are separate judgments. A useful project solves
+a concrete quantitative task; eligibility follows the published rules below; readiness also
+requires current checks and manual review of this exact revision. Editorial priority determines
+when a candidate receives scarce review time. Low priority is not ineligibility, and a missing
+or inaccessible source is unresolved evidence, not proof of a failed rule. Reviewers ask one
+decisive question rather than perform an exhaustive audit or certify trading performance.
+
+There is **no review SLA** or promise to clear the backlog. The best-case allowance is
+**120 total weekly human PR review minutes**, across all sessions and asynchronous messages:
+
+| Activity | Minutes |
+| --- | --- |
+| Digest, triage and selection | 15 |
+| Focused evidence review and editorial decisions | 60 |
+| Feedback, action approval and result verification | 25 |
+| Metrics and a deferred/rejected candidate spot-check | 10 |
+| Follow-up and contingency | 10 |
+| Total | 120 |
+
+Notifications, author follow-ups, re-review, agent questions, conflicts and merge decisions
+all count. Implementation, engineering oversight and general maintenance are scheduled
+separately; this is not a whole-project time limit. Actual review of code/infrastructure PRs
+still counts as PR review. Agent preparation and compute are recorded separately from human
+verification time; moving a decision to an asynchronous message does not remove its cost.
+
+Agents prepare an on-demand batch with at most **four detailed candidates per week**, reduced
+when less review time is available. Prioritize accuracy corrections across all categories and
+substantive source projects, then comparable candidates oldest-first. At most **one fully
+evidenced hosted service may replace a slot** when capacity remains after source/correction
+work; it never adds a fifth slot, reserves capacity, or guarantees review. Defer service review
+first when time shrinks. Start with a 10–15 minute investigation boundary per candidate, not
+an approval shortcut. At the time or weekly limit, request focused evidence or defer unresolved
+work and carry overflow forward. Unexpected work displaces other reviews; standards and the
+weekly allowance do not change. With zero available review time, promise no decisions or writes.
+
+Unchanged submissions waiting on authors or CI are summarized without repeated investigation.
+Changed submissions return for review of the affected findings, including PR-body-only edits.
+The `reviewed` label alone never establishes a current review or approval. Maintainers approve
+exact comment text, label changes, closures and merge targets in one explicit action-bundle
+selection; that consent is sufficient once for the unchanged scope. Relevant inputs, workflow
+evidence and duplicates are refreshed before execution. Material changes hold affected actions
+for renewed review and consent. Passing checks or a classification label cannot authorize writes.
+
+These intake and scheduling rules apply going forward, including the next review of already-open
+PRs. For those PRs, reuse supplied evidence and request **only missing evidence** needed to decide
+the submission; absence of the new template is not a rejection reason. There is no mass re-review,
+mass rejection or purge of existing listings. Correction requests remain in the correction queue
+regardless of category. Existing duplicate rules, historical exceptions, cleanup rules, permanent
+free-tier requirements and the maintenance criteria below remain authoritative. An old commit
+date is a review lead, not a reason for a mass reclassification or removal.
+
 ## Entry Format
 
 Each non-commercial entry must include one or more backtick-delimited tags and follow one of
@@ -77,9 +171,28 @@ Link to the PyPI package page. If the project has a GitHub repo, append it after
 
 ## Quality Requirements
 
-- **Active source-backed projects**: Projects backed by substantive source in the active
-  categories must show recent repository activity (commits within the last 12 months) and
-  provide a clear README with usage examples.
+- **Active source-backed projects**: Provide substantive implementation, a clear README with
+  usage examples, and evidence of meaningful maintenance within the preceding 12 months.
+  Examples include a relevant fix, compatibility update, release, substantive documentation
+  improvement, or engagement that resolves a reported problem. Link one representative
+  artifact and identify the responsible maintainer or team through a stable public handle
+  and support route. A recent push, bot commit, license, or README alone is not proof.
+- **Mature, low-change software**: A project without recent development may still qualify
+  when the contribution supplies current compatibility or reproducibility evidence, known
+  limitations, and an accountable support route. The reviewer records the specific evidence
+  and exception rationale; a submitter's claim alone does not grant an exception. If that
+  evidence is missing, request it or consider historical placement rather than automatically
+  rejecting or removing the project because of its age.
+- **History and identity**: Public development and release history provide context; there is
+  no minimum repository age, star count, team size, or legal-name requirement. A young or
+  migrated repository is not evidence of immaturity. Solo and pseudonymous maintainers can
+  demonstrate responsibility through their work and engagement.
+- **Educational resources**: In Reproducing Works, Training & Books, evaluate the concrete
+  learning/reproduction purpose, provenance, instructions, and documented environment and
+  limitations. Fixed research artifacts need not receive continuous commits. Executable
+  examples need reproducibility evidence for the stated environment; a book or paper needs
+  a reachable authoritative source. This does not exempt ordinary active software from
+  maintenance assessment or allow archived repositories outside the historical category.
 - **Historical & Archived Projects**: This category is the narrow exception to the active
   activity and archive-state requirements. An entry must use `Historical` plus a language or
   runtime tag, link to reachable substantive source or documentation, state a specific
@@ -88,6 +201,31 @@ Link to the PyPI package page. If the project has a GitHub repo, append it after
   marketing material, unsupported SDKs, or duplicate implementations.
 - **Repository-less commercial services**: See the permanent-free-tier, public-documentation,
   and transparency rules in the commercial section below.
+
+The automated reviewer reports the latest default-branch **committer** date as a preliminary
+recency screen. An old or unavailable date triggers a manual evidence assessment; a recent
+date does not verify that the work was meaningful. Check relevant releases, fixes, examples
+or support when making the editorial decision. Archived source still requires historical
+placement, apart from the documented same-section cleanup exception. Passing deterministic
+checks never approves a maintenance exception or establishes merge readiness.
+
+### Editorial quality and upkeep
+
+Describe the quantitative task and concrete capability in factual language. For a benchmark
+claim, provide the compared versions, workload/data, metric, environment and reproducible
+methodology; otherwise use a factual capability description without the unsupported number
+or superiority claim. Reviewers do not need to reproduce an exhaustive benchmark suite.
+
+Use the weekly audit as leads for focused correction batches. Recheck changed or genuinely
+unresolved evidence, retaining attributable prior decisions; HTTP restrictions and temporary
+errors alone do not justify removal. Review work for corrections and guide updates belongs
+in the same weekly PR review budget, not an additional mandatory deep audit. A relevant
+upstream change or reported error can trigger a guide update. Broader catalogue maintenance
+and engineering have separately scheduled effort.
+
+The [backtesting selection guide](docs/choosing-backtesting.md) illustrates task-oriented
+comparison and records its sources and limits. It is a starting point, not a ranking or a
+guarantee of suitability.
 
 
 ## Commercial & Proprietary Projects
@@ -168,6 +306,33 @@ When submitting multiple projects:
 - Avoid creating duplicate entries within the same README file
 - All entries must meet quality and format requirements independently
 
+### Audit cleanup pull requests
+
+Keep cleanup batches focused on existing entries and explain each update, move, or removal
+with supporting evidence in the PR description. A cleanup batch may change more than five
+entries or only remove entries. The reviewer identifies cleanup from the diff: every added
+entry line must correspond one-to-one to a removed entry for the same project. Unrelated new
+projects belong in a separate contribution PR; ordinary contributions retain the limit of
+five added entry lines. Existing indented non-entry references may receive a canonical
+GitHub repository URL repair only: exactly one HTTPS repository link may change, the old and new links must
+resolve to the same immutable GitHub repository ID, and all surrounding text, indentation,
+category, parent entry occurrence, and relative position must remain unchanged. Pair each repair with its existing
+reference; new references, extra copies, removals, and other non-entry prose or heading
+changes are outside cleanup scope. Offline validation checks the repair structure;
+`PR Review` additionally verifies repository identity.
+
+Changed entries still undergo format, section, HTTPS, duplicate, primary-link reachability,
+and repository/documentation checks. Within the same section, cleanup does not reapply the
+new-project activity/archive requirements to an unchanged repository, or require a previously
+repository-less entry to acquire a repository. Replacement repositories and section moves
+receive the normal source and activity checks. These limited exceptions allow legacy links
+to be repaired; they do not establish that the entry meets every current eligibility rule.
+
+Removed entries receive structural checks, without probing the unavailable resources being
+removed. Maintainers must verify the removal evidence, replacement searches, historical
+eligibility, and commercial status as applicable. A passing automated review reports
+`CHECKS PASSED` and requires maintainer review; it does not approve or merge a cleanup.
+
 ## Before Submitting
 
 1. Search the existing list to make sure the project is not already included.
@@ -176,7 +341,7 @@ When submitting multiple projects:
 
 ## Required Pull Request Workflows
 
-Every pull request that adds or updates a README entry must pass both required GitHub Actions
+Every pull request that adds, updates, or removes a README entry must pass both required GitHub Actions
 workflows:
 
 - **`Validate PR`** checks the added README entries against the parser and formatting rules,
@@ -190,17 +355,56 @@ A success from an older revision does not count. If either workflow is failed, p
 missing, or stale, the pull request is not eligible for approval or merge. Fix any reported issues
 and push a new revision so the required workflows run again.
 
+For `Validate PR`, use the latest attempt for the current head SHA; a newer pending attempt
+supersedes an older success. For snapshot-capable versions of `PR Review`, a trusted
+log/job-summary snapshot must identify
+the repository and PR, observed head/base/merge-base SHAs, PR-body and title SHA-256,
+trusted checker revision, source digest, clean-source status and observation time.
+The head, base, body and title must match the current inputs, and the checker
+revision must be the trusted implementation used for that run. A `pull_request_target` workflow
+SHA alone does not identify the submitted head. Missing, mismatched or untrustworthy provenance
+is **unverified**, even when the check is green; request a fresh trusted run. Local validation
+can supply findings but cannot waive either required workflow gate.
+The full contribution diff is reconstructed from immutable merge-base/head contents; current
+base contents remain the duplicate-check reference. A partial API patch cannot establish scope.
+Local modified checker sources are identified explicitly and cannot substitute for clean CI.
+
+### Transition for existing CI results
+
+Successful runs from the checker before snapshot support do not become unusable solely because
+they lack that record. Reviewers must establish from trusted Actions metadata/logs that both
+latest relevant workflow attempts succeeded for the current PR head, identify the old checker
+revision, and manually reconcile the complete current diff, body/title claims, current-base
+duplicates and affected policy or external evidence. They record those checks and their limits
+as **legacy CI with manual reconciliation**, without attributing current inputs to the old CI.
+This satisfies the evidence requirement without a separate exception approval; editorial review
+and approval of the exact public actions are still required.
+
+A newer pending/failed attempt or a success for an older head cannot use this transition. When
+the reviewed version or material coverage cannot be established, maintainers obtain a fresh run
+using the current trusted checker and verify its actual revision; rerunning an old job may reuse
+the old checker. Contributors need not rebase, make empty commits or rewrite submissions merely
+to supply this new CI record. Apply the transition to selected candidates, not the whole backlog.
+Runs from snapshot-capable checkers still require the matching trusted snapshot described above.
+
 Passing both workflows is necessary but not sufficient. Maintainers also review relevance,
 description quality, section placement, repository substance, commercial eligibility, and
 duplicates in other open or recently closed pull requests.
 
-## Automatic Rejection
+## Rejection and Corrections
 
-PRs will be closed if:
+Reviewers recommend rejection for confirmed failures of the published eligibility rules,
+including:
 
 - Multiple unrelated projects added in a single PR without a clear grouping rationale.
-- Entry format does not match the required pattern.
 - Duplicate of an existing entry or a recently closed PR.
-- Project is archived or abandoned, unless it meets the documented
-  **Historical & Archived Projects** eligibility criteria.
+- Source is archived outside the **Historical & Archived Projects** category, except the
+  documented same-section cleanup cases. Missing or old commit dates alone do not establish
+  abandonment; apply the maintenance and educational criteria before deciding eligibility.
 - Empty PR description.
+
+Correctable format, wording, placement or missing-evidence defects receive a focused change
+request. Uncertain service access or failed evidence retrieval is not a confirmed rejection.
+Confirmed paid-only, trial-only, demo-only and waitlist-only services still fail the commercial
+rules. Every comment, label, closure or merge requires explicit approval of its exact action;
+there are no automatic public actions.

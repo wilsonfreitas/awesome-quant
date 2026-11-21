@@ -9,6 +9,12 @@ on:
       - 'README.md'
       - 'parse.py'
       - 'site/**'
+      - 'scripts/readme_entries.py'
+      - 'scripts/pypi_metadata.py'
+      - 'scripts/metadata.py'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - '.github/workflows/build.yml'
 
 concurrency:
   group: build-and-deploy
@@ -26,13 +32,28 @@ jobs:
     - name: Install dependencies
       run: |
         uv sync --no-install-project
+    - name: Restore published metadata
+      run: |
+        published_ref="$(git ls-remote --heads origin refs/heads/gh-pages)"
+        if [ -n "$published_ref" ]; then
+          git fetch --no-tags --depth=1 origin refs/heads/gh-pages
+          published_csv="$(git ls-tree --name-only FETCH_HEAD -- projects.csv)"
+          if [ "$published_csv" = projects.csv ]; then
+            git show FETCH_HEAD:projects.csv > "$RUNNER_TEMP/prior-projects.csv"
+            cp "$RUNNER_TEMP/prior-projects.csv" site/projects.csv
+          else
+            echo '::notice::No published projects.csv; unavailable metadata will be unknown.'
+          fi
+        else
+          echo '::notice::First Pages build; unavailable metadata will be unknown.'
+        fi
     - name: Run parser
       run: |
         export GITHUB_ACCESS_TOKEN=${{ secrets.GITHUB_TOKEN }}
         uv run python parse.py
     - name: Generate site
       run: |
-        uv run python site/generate.py
+        uv run python site/generate.py --source csv
     - name: Deploy pages
       uses: peaceiris/actions-gh-pages@v3
       with:
