@@ -182,6 +182,7 @@ for use cases, tradeoffs, and validation questions.
 
 ## Trading & Backtesting
 
+- [kiwoom-client](https://github.com/younghwan91/kiwoom-client) - `Python` `REST` `WebSocket` `MCP` - Client for the Kiwoom Securities (Korea) REST API and real-time WebSocket covering 182 domestic-stock endpoints, sync and asyncio, with token refresh, per-TR rate limiting, pagination, KRX tick-size helpers, OHLCV DataFrames and an MCP server whose live-order tools are opt-in.
 - [Kaspar-HFT](https://github.com/vincent212/kaspar-hft) - `C++` `Rust` - Trading system and queue-exact order-book simulator on a C++20 actor framework; the same strategy runs in PCAP replay, paper trading and live, with CME MDP3 and iLink 3 handlers included.
 - [TriDomainMoE](https://primeclub-quant.vercel.app/) - `Python` `PyTorch` `MetaTrader 5` - Institutional multi-domain Mixture of Experts (MoE) trading architecture with Continuous Softmax CAW routing, zero-forgetting ReCAP continual adaptation, and sub-20ms MetaTrader 5 live execution. [GitHub](https://github.com/ElMoorish/TriDomainMoE)
 - [QuantVibe](https://github.com/Ax3lsk3r3/QuantVibe) - `Python` `TypeScript` - Qlib-based trading research platform with Alpha158 and LightGBM models, model-quality checks, SHA-256 signal checksums, a read-only MCP server, and MetaTrader 5 execution integration.
