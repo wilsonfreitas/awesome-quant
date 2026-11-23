@@ -846,5 +846,6 @@ for use cases, tradeoffs, and validation questions.
 
 ## Related Lists
 
+- [awesome-quant-competitions](https://github.com/KonstantinRogozhkin/awesome-quant-competitions) - A curated, daily-verified list of quantitative trading competitions, financial ML benchmarks, student fellowships, live `.ics` deadlines, and direct-employer ATS quant openings.
 - [awesome-sec-filings](https://github.com/vibeyclaw/awesome-sec-filings) - A curated list of tools, data sources, libraries, and resources for working with SEC filings (13F, 10-K, 10-Q, 8-K).
 - [CONVEXFI](https://github.com/convexfi) - Official GitHub organization for the convex research group at the Hong Kong University of Science and Technology (HKUST).
