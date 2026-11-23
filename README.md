@@ -587,6 +587,7 @@ for use cases, tradeoffs, and validation questions.
 - [The Stall](https://github.com/thebrierfox/the-stall) - `JavaScript` `MCP` - Self-hostable data and analytics service with equity technical indicators, multi-chain portfolio valuation, market-data adapters, and MCP interfaces.
 - [smv-eeff](https://github.com/AtlasLedger/smv-eeff) - `Python` `Parquet` `Data` - Normalized financial statements of 682 Peruvian companies supervised by the SMV, 2000-2026, with comparable concepts and standard ratios, validated against the regulator's own index.
 - [ninjatrader-to-parquet](https://github.com/tbraman-dev/ninjatrader-to-parquet) - `Python` - NinjaTrader 8 .ncd tick and minute history files to Parquet without NinjaTrader running; row-exact against NinjaTrader's own export, incremental re-runs.
+- [fastitch](https://github.com/ArkaKhorchidian/fastitch) - `Python` `C++` `Polars` - Fast NASDAQ TotalView-ITCH 5.0 parser that decodes full trading days into Polars, pandas, Arrow or Parquet and reconstructs limit order books.
 
 
 ## Prediction Markets
@@ -631,6 +632,7 @@ for use cases, tradeoffs, and validation questions.
 - [MyLinedChart](https://mylinedchart.com) - `Desktop` - Technical-analysis charting app for Interactive Brokers (IBKR) that exports drawings, notes, indicators and OHLCV as JSON/XLSX/CSV, and exposes chart context to AI agents over MCP.
 - [OpenKline](https://rekurt.github.io/openkline/) - `TypeScript` - Canvas-based OHLCV charting engine with technical indicators, drawing tools, and streaming-data support. [GitHub](https://github.com/rekurt/openkline)
 - [TradeCanvas](https://github.com/bonguynvan/tradecanvas) - `TypeScript` - Financial charting library for the web, drawn with Canvas 2D or WebGL: 18 chart types, 111 indicators, drawing tools, live exchange feeds, orders on the chart, replay and backtesting.
+- [booktop](https://github.com/ArkaKhorchidian/booktop) - `Python` `TUI` - Live terminal order book for Coinbase and Kraken with a depth ladder, trade tape and order-flow gauges, plus NASDAQ ITCH replay.
 
 ## Excel & Spreadsheet Integration
 
