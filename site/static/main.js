@@ -73,7 +73,7 @@
         " " +
         (expand ? expand.textContent : "")
       ).toLowerCase();
-      const languages = (row.dataset.languages || "").split(" ");
+      const tags = JSON.parse(row.dataset.tags || "[]");
       const category = row.dataset.category || "";
       const sources = row.dataset.sources || "";
 
@@ -86,7 +86,7 @@
       if (show && activeFilter.value) {
         const ft = activeFilter.type;
         const fv = activeFilter.value;
-        if (ft === "language" && !languages.includes(fv)) show = false;
+        if (ft === "language" && !tags.includes(fv)) show = false;
         if (ft === "category" && category !== fv) show = false;
         if (ft === "source" && !sources.split(" ").includes(fv)) show = false;
       }
@@ -203,7 +203,7 @@
       return parseInt(row.dataset.stars || "0", 10);
     }
     if (key === "update") {
-      return ($(".last-update", row)?.textContent || "").trim();
+      return row.dataset.update || "";
     }
     return "";
   }

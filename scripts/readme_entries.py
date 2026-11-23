@@ -4,9 +4,12 @@ from __future__ import annotations
 
 import difflib
 import re
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
+
+LOADED_MODULE_CODE = sys._getframe().f_code
 
 ENTRY_RE = re.compile(r"^\s*- \[(.*)\]\((.*)\) - (.*)$")
 HEADING_RE = re.compile(r"^(#+) (.*)$")

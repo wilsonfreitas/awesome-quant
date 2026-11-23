@@ -1,12 +1,10 @@
 
 import requests
 import re
+import sys
 import pandas as pd
 
 reu = re.compile(r'https://github.com/([\w-]+/[\w-]+)')
-red = re.compile(r'\d\d\d\d-\d\d-\d\d')
-
-url = 'https://cran.r-project.org/web/packages/xts/index.html'
 
 urls = [
     'https://cran.r-project.org/web/packages/xts/index.html',
@@ -63,7 +61,8 @@ urls = [
 
 
 def get_data(url):
-    res = requests.get(url)
+    res = requests.get(url, timeout=10)
+    res.raise_for_status()
     m = reu.search(res.text)
     if m:
         return dict(cran=url, github=m.group(0), repo=m.group(1))
@@ -71,6 +70,16 @@ def get_data(url):
         return dict(cran=url, github='', repo='')
 
 
-all_data = [get_data(url) for url in urls]
-df = pd.DataFrame(all_data)
-df.to_csv('cran.csv', index=False)
+def main() -> int:
+    """Fetch the manual discovery list and write cran.csv in the working directory."""
+    try:
+        all_data = [get_data(url) for url in urls]
+        pd.DataFrame(all_data).to_csv('cran.csv', index=False)
+    except (requests.RequestException, OSError) as exc:
+        print(f'CRAN discovery failed: {exc}', file=sys.stderr)
+        return 1
+    return 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

@@ -50,6 +50,12 @@ class PullRequestReviewWorkflowContractTests(unittest.TestCase):
 
         self.assertEqual(workflow, EXPECTED_WORKFLOW)
 
+    def test_summary_transport_uses_actions_environment(self):
+        workflow = WORKFLOW_PATH.read_text(encoding="utf-8")
+        self.assertIn("run: uv run python scripts/review_pr.py", workflow)
+        self.assertNotIn("GITHUB_STEP_SUMMARY:", workflow)
+        self.assertNotIn("CHECKER_REVISION:", workflow)
+
 
 if __name__ == "__main__":
     unittest.main()
