@@ -461,6 +461,7 @@ for use cases, tradeoffs, and validation questions.
 - [TimeSeries.jl](https://github.com/JuliaStats/TimeSeries.jl) - `Julia` - Time series toolkit for Julia.
 - [TimeFrames.jl](https://github.com/femtotrader/TimeFrames.jl) - `Julia` - A Julia library that defines TimeFrame (essentially for resampling TimeSeries).
 - [PineForge](https://github.com/pineforge-4pass/pineforge-engine) - `C++` - Deterministic offline PineScript v6 → C++ backtest runtime, validated trade-for-trade against TradingView (245/246 strict, 0 engine bugs). Runs locally via Docker and is drivable by AI agents through a bundled MCP server.
+- [FrugalCast](https://frugalcast.cyrilvoyant.com) - `JavaScript` `Browser` - In-browser benchmark of 30 frugal forecasting models (persistence, ARMA, Holt-Winters, Theta, extreme learning machines) with prediction intervals and 20 deterministic and probabilistic scores; on price series it shows whether a model beats persistence. [GitHub](https://github.com/cyrilvoyant/frugalcast)
 
 ## Market Data & Data Sources
 
