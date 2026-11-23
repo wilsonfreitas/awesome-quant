@@ -587,7 +587,7 @@ for use cases, tradeoffs, and validation questions.
 - [The Stall](https://github.com/thebrierfox/the-stall) - `JavaScript` `MCP` - Self-hostable data and analytics service with equity technical indicators, multi-chain portfolio valuation, market-data adapters, and MCP interfaces.
 - [smv-eeff](https://github.com/AtlasLedger/smv-eeff) - `Python` `Parquet` `Data` - Normalized financial statements of 682 Peruvian companies supervised by the SMV, 2000-2026, with comparable concepts and standard ratios, validated against the regulator's own index.
 - [ninjatrader-to-parquet](https://github.com/tbraman-dev/ninjatrader-to-parquet) - `Python` - NinjaTrader 8 .ncd tick and minute history files to Parquet without NinjaTrader running; row-exact against NinjaTrader's own export, incremental re-runs.
-
+- [PropFirmVS Prop Firm Rules Dataset](https://propfirmvs.com/data) - `Data` `CSV` - Open CC BY 4.0 dataset of evaluation prices, drawdown limits and trading rules for 78 prop trading firms and 1,272 account sizes. [GitHub](https://github.com/propfirmvs/prop-firm-rules-dataset)
 
 ## Prediction Markets
 
