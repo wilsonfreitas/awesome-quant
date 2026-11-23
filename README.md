@@ -617,6 +617,7 @@ for use cases, tradeoffs, and validation questions.
 - [fx-value-date](https://github.com/moshejs/fx-value-date) - `TypeScript` - FX spot/forward value-date calculation across two currency holiday calendars, with the USD-lag and end-of-month rules; zero dependencies.
 
 ## Visualization
+- [Tape](https://github.com/Yvsleyen00941/Tape) - `Swift` - Native macOS stock & crypto ticker sitting in the unused corner space beside the Dock.
 
 - [D-Tale](https://github.com/man-group/dtale) - `Python` - Visualizer for pandas dataframes and xarray datasets.
 - [mplfinance](https://github.com/matplotlib/mplfinance) - `Python` - matplotlib utilities for the visualization, and visual analysis, of financial data.
