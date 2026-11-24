@@ -179,6 +179,7 @@ for use cases, tradeoffs, and validation questions.
 - [Wickra](https://github.com/wickra-lib/wickra) - `Rust` `Python` `JavaScript` `C++` `C#` `Golang` `Java` `R` - Streaming-first technical-analysis library with a Rust core: 514 indicators updating in O(1) per tick, with bit-exact batch-vs-streaming results.
 - [wickworks](https://github.com/psyb0t/docker-wickworks) - `REST` `MCP` - Stateless OHLC analyzer: POST bars and requested indicators, get back RSI/MACD/Bollinger/ADX/ATR/VWAP/Ichimoku plus smart-money-concept primitives (order blocks, FVGs, BOS/CHoCH, swing structure). No database, no AI signals.
 - [gamma-seed](https://github.com/Timonkru/gamma-seed) - `Python` `Pine` `Options` - Daily dealer-gamma levels (gamma flip, call and put walls, max pain, expected move) for DAX, Nasdaq, Dow and gold, computed from options open interest (Eurex ODAX for the DAX, ETF proxies for the US) and written into a TradingView Pine v6 indicator; the method is documented in open studies on the author's site. [Website](https://kruegeralgorithms.com/en/research)
+- [PipAtlas Trading Tools](https://github.com/pipatlas26/pipatlas-trading-tools) - `MQL4` `MQL5` `Pine` - Open-source MetaTrader 4/5 and TradingView indicators (session ranges, previous day/week high-low, fair value gaps, ATR stop sizing, economic calendar lines) plus a fixed-fractional risk EA template with no entry signals.
 
 ## Trading & Backtesting
 
