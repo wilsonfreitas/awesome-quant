@@ -604,6 +604,7 @@ for use cases, tradeoffs, and validation questions.
 - [QuantRank500](https://github.com/RusUsf/quantrank500) - `Python` - Open-source public record of stock predictions: commit-reveal before the open, automatic settlement against exchange data, tamper-evident hash-chained ledger. Live at [quantrank500.com](https://quantrank500.com).
 - [outcometick](https://outcometick.com) - `Python` `JavaScript` - Tick-level history for Polymarket and Predict.fun crypto Up/Down markets, including the full-precision Chainlink settlement feeds and each market's strike and settled outcome, with a sandboxed runner that replays a submitted strategy against the same archive. [GitHub](https://github.com/outcometick/outcometick-sdk-ts)
 - [pm-hftbacktest](https://github.com/mileswangs/pm-hftbacktest) - `Rust` `Python` - High-frequency trading and market-making backtesting for Polymarket, written in Rust, with queue position, latency and maker/taker fee models applied to tick-level L2 order book and trade data.
+- [quant-radar-cli](https://github.com/devbox-zero-ops/quant-radar-cli) - `Python` - Zero-dependency CLI scanning Polymarket NegRisk sum-to-1 & short-dated bond yields alongside cross-venue perpetual funding spreads (Hyperliquid, Binance, Bybit) with taker fee break-even math and a persistent delta-neutral paper-trading ledger.
 
 ## Calendars & Market Hours
 
