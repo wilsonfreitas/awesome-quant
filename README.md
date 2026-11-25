@@ -355,6 +355,7 @@ for use cases, tradeoffs, and validation questions.
 
 ## Portfolio Optimization & Risk Analysis
 
+- [vlab](https://github.com/aazh2026/vlab) - `Python` - Zero-dependency multi-asset allocation backtesting lab that separates an investable-reality window from an index-proxy long window, refuses to let unlisted assets enter early, and pins four historical engine bugs with dedicated regression tests.
 - [portfolio-risk-lab](https://github.com/garroshub/portfolio-risk-lab) - `Python` - Uncertainty-aware portfolio optimization: compare covariance estimates, test allocations across risk scenarios, and see the cost of tighter constraints.
 - [Multi-Axis Robust Portfolio Optimization](https://github.com/Viraj-Nigwekar/multi-axis-robust-portfolio-optimization) - `Python` - Portfolio optimization framework combining covariance shrinkage, bootstrap aggregation, and parametric scenario modeling, with reproducible notebooks and an accompanying SSRN paper.
 - [AutoHypothesis](https://github.com/arteemg/AutoHypothesis) - `Python` - An agentic framework that mimics the real quant trading pipeline to find alpha: economic hypothesis, in-sample iteration, and out-of-sample validation.
