@@ -353,6 +353,7 @@ for use cases, tradeoffs, and validation questions.
 - [Algo-Trading-Skills](https://github.com/HimanshuJ16/Algo-Trading-Skills) - `Python` `AI` `Agent-Skills` - Library of 501 agentskills.io-format skills giving AI coding agents trading-infrastructure playbooks for order idempotency, look-ahead-bias elimination, kill switches, execution algorithms and point-in-time data, each with a standalone Python reference implementation and its own unittest suite.
 - [nt8-mcp](https://github.com/tbraman-dev/nt8-mcp) - `C#` `Python` `MCP` - MCP server and NinjaTrader 8 AddOn that give an AI coding assistant a build loop for NinjaScript: offline and in-platform compile with structured errors, chart and log reads, headless backtests, optimization and walk-forward; read-only by default.
 
+- [Melaya](https://melaya.org) - `Rust` / `Python` / `TypeScript` - Hosted agentic trading platform with a Rust execution engine (310 ns ticker write, 14.4 µs end-to-end), normalized REST and WebSocket API across 65 CEX + 6 prediction markets, deterministic native backtesting, and a 7-persona AI trading crew (Macro, TA, Quant, Sentiment, Risk, Portfolio, Execution) with HITL approval on every order. 9 official SDKs (Python, Rust, TypeScript, Go, Java, Kotlin, C#, Ruby, PHP) wrap one unified API.
 ## Portfolio Optimization & Risk Analysis
 
 - [portfolio-risk-lab](https://github.com/garroshub/portfolio-risk-lab) - `Python` - Uncertainty-aware portfolio optimization: compare covariance estimates, test allocations across risk scenarios, and see the cost of tighter constraints.
