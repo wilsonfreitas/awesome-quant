@@ -305,6 +305,7 @@ for use cases, tradeoffs, and validation questions.
 - [VARRD](https://github.com/varrdinc/varrd) - `Python` - AI-powered trading edge discovery platform that validates trading ideas with event studies, statistical tests, and real market data. Web app, MCP server, CLI (`pip install varrd`), and Python SDK.
 - [JIT-Optimization-Engine](https://github.com/cloudsealed/JIT-Optimization-Engine) - `Python` - High-performance analytical core using LLVM JIT (Numba) to process large-scale telemetry for quant diagnostics.
 - [backtester-mcp](https://pypi.org/project/backtester-mcp/) - `Python` - Local-first backtesting engine with built-in overfitting checks (PBO, deflated Sharpe, bootstrap CI, walk-forward) and a native MCP server for AI agents. [GitHub](https://github.com/bcosm/backtester-mcp)
+- [QuantCheck](https://quanttrader-quantcheck.hf.space) - Free no-code backtest validation tool by QuantDojo. Flags overfitting using multiple-testing correction and Deflated Sharpe Ratio. No signup required.
 - [backtest](https://cran.r-project.org/web/packages/backtest/index.html) - `R` - Exploring Portfolio-Based Conjectures About Financial Instruments.
 - [backtest-audit-kit](https://github.com/rytjy/backtest-audit-kit) - `Python` - Dependency-free audit toolkit for backtests (no numpy/pandas): detects look-ahead, checks cash/position ledger conservation, flags fee and funding double-counting, and mutation-tests your own suite for blind spots.
 - [pa](https://cran.r-project.org/web/packages/pa/index.html) - `R` - Performance Attribution for Equity Portfolios.
