@@ -539,6 +539,7 @@ for use cases, tradeoffs, and validation questions.
 - [alphai-tui](https://github.com/makeev/alphai-tui) - `Rust` `TUI` - Terminal stock dashboard with keyless quotes, candlestick charts and portfolio tracking, plus optional news and SEC filing views powered by the AlphAI API.
 - [oilpriceapi](https://github.com/OilpriceAPI/python-sdk) - `Python` - Commodity-price API client with local moving averages, RSI, MACD, Bollinger Bands and ATR calculations on supplied data.
 - [FinanceDataReader](https://github.com/FinanceData/FinanceDataReader) - `Python` - Open Source Financial data reader for U.S, Korean, Japanese, Chinese, Vietnamese Stocks.
+- [SEFCON API](https://api.sefcon.kr) - REST API for Korean stock fundamentals — 1,200+ KOSPI/KOSDAQ companies, 10-year financials parsed directly from DART XBRL. Includes SCI quality scores, sector cycle detection, and macro crisis index (AUROC 0.927).
 - [pystlouisfed](https://github.com/TomasKoutek/pystlouisfed) - `Python` - Python client for Federal Reserve Bank of St. Louis API - FRED, ALFRED, GeoFRED and FRASER.
 - [python-bcb](https://github.com/wilsonfreitas/python-bcb) - `Python` - Python interface to Brazilian Central Bank web services.
 - [swiss-finance-data](https://github.com/EMen11/swiss-finance-data) - `Python` - Python package for Swiss financial data (SNB Policy Rate, SARON, CHF FX rates, CPI, SMI equities, Confederation bond yields) from official SNB sources.
