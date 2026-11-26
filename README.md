@@ -826,6 +826,7 @@ for use cases, tradeoffs, and validation questions.
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [Cavalry](https://cavalryterminal.com/) - `MCP` - SEC filing research with free public tables of the past week's largest insider purchases, cluster buys, Form 144 proposed sales, 13F filings, 8-K items and equity financings, plus new 13D stakes and trading suspension orders, each limited to 50 rows and usable without an account or payment information; full history and the hosted MCP server require a paid plan. [GitHub](https://github.com/Cipherweave/cavalry-mcp)
 
 ## Historical & Archived Projects
 
