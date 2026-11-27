@@ -587,6 +587,7 @@ for use cases, tradeoffs, and validation questions.
 - [The Stall](https://github.com/thebrierfox/the-stall) - `JavaScript` `MCP` - Self-hostable data and analytics service with equity technical indicators, multi-chain portfolio valuation, market-data adapters, and MCP interfaces.
 - [smv-eeff](https://github.com/AtlasLedger/smv-eeff) - `Python` `Parquet` `Data` - Normalized financial statements of 682 Peruvian companies supervised by the SMV, 2000-2026, with comparable concepts and standard ratios, validated against the regulator's own index.
 - [ninjatrader-to-parquet](https://github.com/tbraman-dev/ninjatrader-to-parquet) - `Python` - NinjaTrader 8 .ncd tick and minute history files to Parquet without NinjaTrader running; row-exact against NinjaTrader's own export, incremental re-runs.
+- [A-share limit-up dataset](https://github.com/DANGNIANQIN/astock-sample-library) - `Python` `CSV` `Data` - A-share daily limit-up and consecutive-board dataset from 2021 (98,754 rows, 5,391 symbols incl. delisted, 1,424 trading days), rebuilt after every close: price-limit reconstruction that is date-aware (main-board ST 5% until 2026-08-03, 10% after), Decimal-exact limit prices, board-aware limits (10/20/30%), streak height, one-word-board flag and next-day open-gap/high/close/continued-limit fields. Free 40-trading-day full CSV sample (no signup); full history is a paid product.
 
 
 ## Prediction Markets
