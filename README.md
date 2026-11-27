@@ -431,6 +431,7 @@ for use cases, tradeoffs, and validation questions.
 - [CoWorker Fin-Agent](https://github.com/ZiwayZhao/agent-coworker) - `Python` - LLM-powered A-share stock analysis via P2P agent collaboration. Technical analysis (MA60, volume-price patterns, golden eye), deep research reports using proprietary methodology, and market state summaries. Analysis logic stays private via Skill-as-API protocol.
 - [StockKit](https://stockkit.net/) - `TypeScript` - Free AI-powered stock research reports for US, China & HK using Claude Opus and multi-model AI with 20+ technical indicators. [GitHub](https://github.com/kentmswood-ui/stockkit)
 - [AlphaAI](https://alphai.io/developers) - `Python` - Pre-analyzed financial news via REST API and MCP for AI agents: per-ticker impact and sentiment, a category, and a 1-10 relevance score on every story, plus structured SEC Form 4 insider data. Free tier, no card. [GitHub](https://github.com/makeev/alphai-mcp)
+- [Fear Gauge by Trifecta Signals](https://github.com/trifectasignals/fear-gauge-feed) - `REST` `JSON` - Daily close-based stock market sentiment gauge (0-100) with daily history back to 2020, served as a free JSON feed with Python and JavaScript examples.
 
 ## Time Series Analysis
 
