@@ -826,6 +826,7 @@ for use cases, tradeoffs, and validation questions.
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [YieldTerminal Pro](https://yieldterminalpro.com/developers) - `Python` `REST` `MCP` - Quarterly revenue, net income and diluted EPS read from company results filings and keyed to the filing date, with the SEC filing link on every figure and XBRL history as first reported; a permanent free key allows 100 requests per day for personal non-commercial use without payment information. [GitHub](https://github.com/boshroid/yieldterminal-sec-data)
 
 ## Historical & Archived Projects
 
