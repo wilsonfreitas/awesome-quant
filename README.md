@@ -826,6 +826,9 @@ for use cases, tradeoffs, and validation questions.
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
+- [QuantKit Equities Portfolio Risk X-Ray](https://quantkit.co/tools/equities-portfolio-risk-xray/) - Free in-browser portfolio risk diagnostics from user CSVs (correlation, volatility, drawdown, historical and parametric VaR/CVaR, Monte Carlo bands) for US, Hong Kong and A-share holdings, with no signup or upload.
+- [QuantKit CFD All-In Cost Calculator](https://quantkit.co/products/cfd-all-in-cost-calculator/) - Free in-browser round-trip CFD cost calculator itemizing spread, commission, overnight funding and FX conversion, with unknown fields kept explicit and no signup.
+- [QuantKit Crypto Exchange Cost & Perp Funding Calculator](https://quantkit.co/tools/crypto-exchange-cost-funding-calculator/) - Free in-browser maker/taker round-trip and perpetual funding cost calculator across dated retail fee schedules for six exchanges, with no signup.
 
 ## Historical & Archived Projects
 
