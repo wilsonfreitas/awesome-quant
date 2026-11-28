@@ -757,7 +757,7 @@ A curated list of insanely awesome libraries, packages and resources for Quants 
 
 - [FXMacroData](https://fxmacrodata.com/) - `Python` - Macroeconomic release data with permanent free access to USD announcements covering the latest 90 days at 100 requests per day without an API key or payment information. [GitHub](https://github.com/fxmacrodata/fxmacrodata)
 - [London Strategic Edge](https://londonstrategicedge.com/data/) - `Python` - Free market and economic data with up to 10 databank downloads per hour of one million rows each, subject to a shared monthly bandwidth allowance, without a credit card. [GitHub](https://github.com/londonstrategicedge/lse-data)
-- [Loophole Tape](https://api.loopholetape.com/) - `REST` `MCP` - pump.fun and Robinhood Chain launch data computed from an independent on-chain capture, with calibrated rug and graduation probabilities, paid per call in USDC via x402 ($0.001 to $0.025 per call, $5 per daily parquet dataset); the permanent free tier needs no account, key or payment information and covers a live radar of ten mints per list refreshed every 5 seconds, samples delayed at least 300 seconds, a 200-row dataset sample, public calibration tables, a daily track record and eight MCP tools. [GitHub](https://github.com/gosadu/loophole-tape)
+- [Loopholetape Replay](https://replay.loopholetape.com/) - `REST` `MCP` - Replays a trading bot's past pump.fun and PumpSwap buys against the recorded trades with landing delay, fees and failed orders, so that an exit rule can be tested on what the bot really bought; a free try takes the bot's wallet address, and a run of fifty buys costs 1 USDC over x402.
 
 ## Historical & Archived Projects
 
